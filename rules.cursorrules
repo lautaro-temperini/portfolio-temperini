@@ -1,0 +1,113 @@
+{
+  "project": "Portfolio Lautaro Temperini",
+  "context": "Portfolio de Product Designer con foco en UX/UI, web interactivo y casos de estudio detallados",
+  
+  "stack": {
+    "framework": "Next.js 14 App Router",
+    "language": "TypeScript",
+    "styling": "Tailwind CSS",
+    "animations": ["framer-motion", "tailwindcss-animate"],
+    "icons": "lucide-react",
+    "3D": "ogl (para Playground)",
+    "i18n": "App Router nativo (/en, /es)"
+  },
+
+  "structure": {
+    "app/": "Rutas y layouts (App Router)",
+    "app/[lang]/": "Rutas localizadas (en, es)",
+    "components/ui/": "Componentes base reutilizables",
+    "components/features/": "Componentes específicos (ProjectCard, Hero, etc.)",
+    "lib/": "Utils, constantes, tipos TypeScript",
+    "public/": "Assets estáticos (imágenes, videos)"
+  },
+
+  "conventions": {
+    "components": {
+      "default": "Server Components (sin 'use client')",
+      "clientOnly": "Solo usar 'use client' si requiere: useState, useEffect, onClick, onHover, useRouter navigation",
+      "naming": "PascalCase para componentes, camelCase para funciones y variables"
+    },
+    "files": {
+      "routes": "page.tsx, layout.tsx, loading.tsx, error.tsx",
+      "components": "[ComponentName].tsx",
+      "utils": "camelCase.ts"
+    },
+    "imports": "Preferir imports absolutos: '@/components/...' en vez de relativos '../../'"
+  },
+
+  "performance": {
+    "components": "Server components por defecto para mejor performance",
+    "lazyLoading": "Dynamic imports para: Playground (ogl, p5.js), videos pesados, componentes de terceros",
+    "images": "Siempre next/image con width/height explícitos",
+    "bundles": "Evitar importar librerías completas, usar imports específicos"
+  },
+
+  "images": {
+    "component": "next/image obligatorio (nunca <img>)",
+    "props": {
+      "required": "src, alt, width, height",
+      "hero": "priority={true} solo en hero/above-fold",
+      "lazy": "loading='lazy' por defecto (automático)",
+      "placeholder": "placeholder='blur' cuando sea posible"
+    },
+    "alt": "Descriptivo y específico: 'Dashboard de app bancaria mostrando gastos mensuales', NO 'imagen de proyecto'"
+  },
+
+  "accessibility": {
+    "keyboard": "Navegación completa por teclado (Tab, Enter, Escape)",
+    "contrast": "Mínimo 4.5:1 para textos normales, 3:1 para textos grandes",
+    "aria": "aria-label en iconos sin texto, roles semánticos correctos",
+    "focus": "Estados de focus visibles y distinguibles"
+  },
+
+  "animations": {
+    "library": "framer-motion para animaciones complejas, tailwindcss-animate para simples",
+    "performance": "Preferir transform y opacity (GPU accelerated)",
+    "reduce": "Respetar prefers-reduced-motion",
+    "mobile": "Reducir/simplificar animaciones en móviles"
+  },
+
+  "i18n": {
+    "structure": "app/[lang]/ con lang = 'en' | 'es'",
+    "detection": "Middleware para detectar idioma del navegador",
+    "storage": "localStorage para guardar preferencia de usuario",
+    "fallback": "Español como idioma por defecto"
+  },
+
+  "seo": {
+    "metadata": "metadata export en cada page.tsx",
+    "required": "title, description, openGraph para cada ruta",
+    "dynamic": "generateMetadata() para rutas dinámicas (proyectos individuales)"
+  },
+
+  "errorHandling": {
+    "boundaries": "error.tsx en cada ruta importante",
+    "loading": "loading.tsx con skeleton loaders profesionales",
+    "fallbacks": "Suspense con fallbacks específicos, no genéricos"
+  },
+
+  "prohibitions": {
+    "neverDo": [
+      "No usar pages/ directory (deprecado para este proyecto)",
+      "No agregar 'use client' sin necesidad real",
+      "No usar <img> en vez de next/image",
+      "No importar librerías completas (import _ from 'lodash' ❌)",
+      "No animaciones pesadas en mobile sin optimización",
+      "No localStorage/sessionStorage en Server Components"
+    ]
+  },
+
+  "codeStyle": {
+    "typescript": "Strict mode activado, evitar 'any'",
+    "formatting": "Prettier con semi:false y singleQuote:true",
+    "linting": "ESLint con reglas de Next.js y React Hooks",
+    "comments": "Solo comentarios que expliquen 'por qué', no 'qué'"
+  },
+
+  "testing": {
+    "manual": "Probar en Chrome, Firefox, Safari",
+    "devices": "Desktop, tablet (768px), mobile (375px)",
+    "performance": "Lighthouse score objetivo: 80+ en todas las métricas",
+    "realWorld": "Probar con throttling 3G en móvil"
+  }
+}

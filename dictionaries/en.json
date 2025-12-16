@@ -1,0 +1,647 @@
+{
+  "hero": {
+    "title": "I turn complex problems into interfaces people understand",
+    "subtitle": "End-to-end Product Design: research, prototype, code",
+    "cta": "Explore my work"
+  },
+  "nav": {
+    "projects": "Projects",
+    "playground": "Playground",
+    "connect": "Contact"
+  },
+  "projects": {
+    "title": "From idea to action",
+    "description": "Projects where I build robust digital solutions.",
+    "items": {
+      "digito": {
+        "title": "Dígito",
+        "subtitle": "Operations Module",
+        "description": "Case Study",
+        "tags": {
+          "productDesign": "Product Design",
+          "uxResearch": "UX Research",
+          "b2bSaaS": "B2B SaaS",
+          "workflowDesign": "Workflow Design",
+          "prototyping": "Prototyping"
+        }
+      },
+      "gloryfit": {
+        "title": "Glory Fit",
+        "subtitle": "App Redesign",
+        "description": "Mobile UX",
+        "tags": {
+          "uxUi": "UX/UI",
+          "biometricDataResearch": "Biometric Data Research",
+          "onboardingFlow": "Onboarding Flow",
+          "materialDesign": "Material Design",
+          "androidDesign": "Android Design"
+        }
+      },
+      "levelup": {
+        "title": "Level Up",
+        "subtitle": "Web & Content Redesign",
+        "description": "Editorial Design",
+        "tags": {
+          "contentStrategy": "Content Strategy",
+          "geolocationUx": "Geolocation UX",
+          "uiDesign": "UI Design",
+          "webDesign": "Web Design",
+          "figma": "Figma"
+        }
+      },
+      "vorterix": {
+        "title": "Vorterix",
+        "subtitle": "Landing Page",
+        "description": "Web Development",
+        "tags": {
+          "conversionDesign": "Conversion Design",
+          "frontend": "Frontend",
+          "performance": "Performance",
+          "htmlCssJs": "HTML/CSS/JS",
+          "uiDesign": "UI Design"
+        }
+      },
+      "rectofinal": {
+        "title": "Recto Final",
+        "subtitle": "Phygital Video Game",
+        "description": "Game Design",
+        "tags": {
+          "physicalComputing": "Physical Computing",
+          "unity2d": "Unity 2D",
+          "hardwareIntegration": "Hardware Integration",
+          "cSharpProgramming": "C# Programming",
+          "sensorIntegration": "Sensor Integration"
+        }
+      }
+    }
+  },
+  "about": {
+    "title": "ABOUT",
+    "text1": "I'm Lautaro, a Product Designer in training. I design, prototype in code, and understand technical constraints. I come from multimedia academic projects.",
+    "text2": "I'm looking for my first job at an agency that challenges me and prioritizes judgment over hype.",
+    "cta": "Let's talk",
+    "ctaLink": "/contact"
+  },
+  "contact": {
+    "title": "Get in touch",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send 🚀",
+      "sending": "Sending...",
+      "sent": "Sent!",
+      "success": "Excellent, {name}! Message sent.",
+      "successGeneric": "Excellent! Your message was sent. I'll reply soon.",
+      "errors": {
+        "nameMin": "Name must be at least 2 characters.",
+        "invalidEmail": "Please enter a valid email.",
+        "messageMin": "Message must be at least 10 characters.",
+        "rateLimit": "Please wait {seconds} seconds before sending another message.",
+        "tooManyAttempts": "You sent too many messages. Please try again later.",
+        "generic": "There was an error sending the message. Please try again.",
+        "network": "Connection error. Please check your internet connection and try again."
+      }
+    }
+  },
+  "cta": {
+    "exploreProjects": "Explore my work",
+    "connect": "Let's connect",
+    "backToHome": "Back to Home"
+  },
+  "construction": {
+    "title": "Under Construction",
+    "text": "We're working to improve this section.",
+    "backToHome": "Back to Home"
+  },
+  "footer": {
+    "title": "Have an idea or challenge in mind?",
+    "cta": "Let's talk"
+  },
+  "projectPages": {
+    "gloryfit": {
+      "hero": {
+        "title": "GLORYFIT",
+        "subtitle": "Personalized routines from your data",
+        "description": "We designed a mobile experience that transforms biometric data into adapted, accessible, and motivating routines. The goal was clear: generate enough trust for users to share sensitive information in exchange for recommendations that truly impact their health."
+      },
+      "myRole": {
+        "title": "My role",
+        "description": "My specific contribution: • Qualitative research on barriers to biometric data entry. • Design of onboarding flow and routine personalization. • Construction of the complete visual system. • Functional prototyping in Figma for Android, validated with real users."
+      },
+      "challenge": {
+        "title": "The challenge",
+        "text1": "GloryFit came pre-installed on the Q18 smartwatch, an affordable wearable targeting a broad audience. Its promise: track steps, heart rate, sleep, and provide basic training routines.",
+        "text2": "But in practice, the problems became evident. The interface felt arbitrary, onboarding was chaotic, and routines were generic. There was no experience that truly connected with users.",
+        "text3": "From the start, our focus was to rethink this logic: how do we build an experience that invites rather than imposes?"
+      },
+      "research": {
+        "title": "Research and discovery",
+        "text1": "We began by mapping friction points in existing fitness apps. We conducted user interviews, data privacy surveys, and benchmarked platforms like Google Fit, Zepp, and MiFitness.",
+        "text2": "A clear pattern emerged: users were willing to share biometric data only when they perceived immediate value—not at the end of onboarding, but in the moment."
+      },
+      "strategy": {
+        "title": "Design strategy",
+        "text1": "We made a key decision: demonstrate value before collecting data. The flow needed to be progressive without being slow, simple without being superficial.",
+        "text2": "We structured the experience around two key moments:",
+        "moment1": "First, gradual and justified information entry. We only asked for essentials upfront: age, activity level, and goals.",
+        "moment2": "Second, immediate visible personalization. Once users completed the basics, they instantly accessed the \"My Routine\" module."
+      },
+      "system": {
+        "title": "The system behind it",
+        "text1": "We designed a personalization system that combined age, activity level, medical history, and goals.",
+        "examples": ["A sedentary user over 40 received a progressive, low-impact routine.", "An active user without injuries got a medium-to-high intensity routine.", "Users with injury history were shown low-risk exercises first."],
+        "text2": "We also built an algorithmic transparency module—each recommendation could display its underlying logic."
+      },
+      "experience": {
+        "title": "Experience design",
+        "text1": "The experience needed to convey clarity, control, and wellness—not glamour or \"extreme fitness.\"",
+        "components": ["Segmented buttons for activity level and time selection", "Dropdowns with real-world examples", "Animated tooltips explaining data usage", "Persistent FAB for quick routine access", "Progress indicators throughout onboarding"],
+        "visualSystem": "Visual system:",
+        "visualSystemText": "Soft greens as the primary color, neutral grays for information hierarchy, and Roboto typography for optimal Android readability."
+      },
+      "iterations": {
+        "title": "Iterations and validation",
+        "text1": "During initial testing, we identified a critical issue: asking for sensitive data too early caused users to abandon the flow.",
+        "text2": "We solved this by reordering: first show a preliminary routine, then request sensitive data to refine it.",
+        "result": "The result? More complete onboarding with a stronger sense of security and user control."
+      },
+      "learningsTitle": "Key learnings",
+      "learnings": [
+        {"title": "Timing matters as much as the data itself.", "text": "When you ask for information directly impacts abandonment rates."},
+        {"title": "Transparency beats automation.", "text": "Users prefer understanding why something is recommended over black-box suggestions."},
+        {"title": "Control builds trust.", "text": "Allowing users to adjust their routines strengthens their sense of ownership and security."},
+        {"title": "Clarity resonates with 35+ users.", "text": "This demographic rejects visually cluttered or overwhelming experiences."}
+      ],
+      "validation": {"title": "Validation and feedback", "text": "We validated with our target demographic: adults 35-55 looking to rebuild their fitness habits."},
+      "conclusion": {"title": "Conclusion", "subtitle": "GloryFit taught us a powerful lesson:", "text": "Trust isn't earned through polished visuals—it's built through interactions that deliver real value, respect user pace, and clearly explain their purpose."}
+    },
+    "digito": {
+      "hero": {
+        "title": "DÍGITO",
+        "subtitle": "Operations Module",
+        "description": "UX/UI redesign of Dígito's operations module: I transformed time tracking from a forgotten chore into a natural part of daily workflow."
+      },
+      "myRole": {
+        "title": "My role",
+        "description": "Research & synthesis • Strategy & architecture • Design & prototyping • Testing & validation"
+      },
+      "context": {
+        "title": "Context",
+        "text1": "Dígito is a Business Intelligence and RPA company. Their B2B SaaS platform handled billing, reports, and administration—but the operations module for consultants suffered from low adoption.",
+        "text2": "The goal was clear: integrate time tracking naturally into workflow, not as an additional burden."
+      },
+      "problem": {
+        "title": "Initial hypothesis vs. reality",
+        "hypothesis": "\"Users forget to log their hours.\"",
+        "hypothesisAuthor": "— CEO's hypothesis",
+        "criticalQuestion": "Critical question: Are users forgetting, or actively avoiding?",
+        "problemTitle": "The real problem: hours logged 1-3 weeks late",
+        "businessImpact": "Business impact:",
+        "impactText": "This delay cascaded into:",
+        "impactItems": ["Billing accuracy", "Operational visibility", "Capacity planning", "Early issue detection"],
+        "scopeTitle": "Defined scope:",
+        "scopeText": "No changes to contracts, organizational processes, or core infrastructure."
+      },
+      "research": {
+        "title": "Research: the real problem isn't forgetting—it's active deprioritization",
+        "subtitle": "I combined desk research, user interviews, and MVP auditing.",
+        "methodsTitle": "Methods",
+        "deskResearch": {
+          "title": "Desk Research",
+          "text": "Validated behavioral patterns through productivity literature.",
+          "theory": "Theoretical backing: Users avoid processes requiring excessive cognitive overhead.",
+          "benchmark": "Industry benchmark: 60% of employees view time tracking as surveillance."
+        },
+        "interviews": {
+          "title": "3 Qualitative interviews",
+          "profiles": "Profiles: PM, Developer, UX Designer",
+          "objective": "Objective: observe behavior patterns"
+        },
+        "audit": {
+          "title": "MVP heuristic audit",
+          "text": "Identified fragmented flows, admin-centered interface, and permanent cognitive load."
+        },
+        "quotesTitle": "Quotes that revealed the real problem",
+        "quotes": {
+          "perception": {
+            "label": "System perception:",
+            "text": "\"On a scale of 1 to 10, I see it more as a 1: administrative control.\""
+          },
+          "postponement": {
+            "label": "Active postponement:",
+            "text1": "\"If an emergency comes up, tracking is left for later.\"",
+            "text2": "\"I do it at the end of the day, where I log everything at once.\""
+          },
+          "friction": {
+            "label": "Physical friction:",
+            "text": "\"If I close my laptop, it's annoying to turn it back on just to log.\""
+          },
+          "dependencies": {
+            "label": "Operational dependencies:",
+            "text": "\"If the CEO doesn't review that day, approval gets paused.\""
+          }
+        }
+      },
+      "insight": {
+        "title": "Core insight",
+        "mainText": "Tracking isn't happening because it adds no value to actual work.",
+        "explanation": "The system was built around data collection, not user action.",
+        "pivotTitle": "Design pivot:",
+        "pivotFrom": "From: \"How do we make people remember to log hours?\"",
+        "pivotTo": "To: \"How do we make tracking a natural byproduct of work?\""
+      },
+      "strategy": {
+        "title": "Strategy: operations module, not complete overhaul",
+        "text": "After analyzing insights, it became clear that improving tracking didn't require redesigning the entire platform.",
+        "alternativeTitle": "Business alternative considered: penalize late entries",
+        "alternativeText": "The business team proposed: enforce tracking through penalties.",
+        "discardedTitle": "Why we rejected this approach:",
+        "discardedReasons": ["Forces compliance, not genuine adoption", "Degrades data quality through gaming", "Punishes users for unresolved friction", "Contradicts the autonomy-based culture"],
+        "conclusion": "Conclusion: The sustainable path is making tracking fast, useful, and seamlessly integrated.",
+        "scopeTitle": "Scope: focus on consultant operations",
+        "scopeText1": "The original brief covered 8 improvement areas. Redesigning the entire platform was infeasible within 3.5 months.",
+        "ourDecision": "Our decision:",
+        "ourDecisionText": "Focus where consultants track time, manage tasks, and monitor workload.",
+        "thisAllowed": "This enabled us to:",
+        "thisAllowedItems": ["Directly address the core problem", "Deliver a complete, testable solution", "Maintain compatibility with existing modules", "Establish foundation for future features"],
+        "whyNotJustScope": "Why this wasn't just scope reduction:",
+        "whyNotJustScopeText": "Research confirmed consultants had no issues with billing or management reporting—the pain was in daily operations."
+      },
+      "principles": {
+        "title": "Design principles",
+        "subtitle": "Build a tool, not a burden.",
+        "items": {
+          "relevance": {"title": "Relevance:", "text": "Deliver immediate value to consultants."},
+          "userImpact": {"title": "User impact:", "text": "Minimize cognitive load and friction."},
+          "differentiation": {"title": "Differentiation:", "text": "Be an operational tool, not just a time logger."},
+          "technicalViability": {"title": "Technical viability:", "text": "Integrate with existing MVP without a full rewrite."},
+          "scalability": {"title": "Scalability:", "text": "Establish foundation for future capabilities."}
+        },
+        "guidingPrinciple": "Build a tool, not a burden."
+      },
+      "frictions": {
+        "title": "5 critical frictions & design decisions",
+        "subtitle": "Each friction point mapped directly to a design solution.",
+        "friction1": {
+          "number": "1",
+          "title": "Friction: Tracking feels like extra work",
+          "pain": "User quote: \"I forget to log hours because I'm focused on actual work.\"",
+          "decision": "Solution: Embed tracking into daily workflow.",
+          "whyWorks": "Impact: Reduces cognitive load through contextual, proactive prompts.",
+          "translatedTo": "Implementation: FAB with smart suggestions and autocomplete."
+        },
+        "friction2": {
+          "number": "2",
+          "title": "Friction: No visibility into why tracking matters",
+          "pain": "User quote: \"I don't see the point—it's just for billing.\"",
+          "decision": "Solution: Surface real-time impact of tracking.",
+          "whyWorks": ["Creates sense of purpose and team connection.", "Shows personal and team progress.", "Enables better self-management and planning."],
+          "translatedTo": "Implementation: Dashboard with personal and team analytics."
+        },
+        "friction3": {
+          "number": "3",
+          "title": "Friction: System is rigid, can't handle interruptions",
+          "pain": "User quote: \"When an emergency hits, the system slows me down.\"",
+          "decision": "Solution: Make tracking flexible and fast.",
+          "whyWorks": "Impact: Adapts to real work patterns, not idealized ones.",
+          "translatedTo": "Implementation: Quick-log with shortcuts and bulk edit."
+        },
+        "friction4": {
+          "number": "4",
+          "title": "Friction: Too many clicks required",
+          "pain": "User quote: \"It takes too many clicks just to log one hour.\"",
+          "decision": "Solution: Streamline interface and minimize steps.",
+          "whyWorks": "Impact: Reduces time tax on administrative tasks.",
+          "translatedTo": "Implementation: Minimal UI, intuitive navigation patterns."
+        },
+        "friction5": {
+          "number": "5",
+          "title": "Friction: Feels like surveillance, not a tool",
+          "pain": "User quote: \"The system controls me instead of helping me.\"",
+          "decision": "Solution: Give consultants autonomy and control.",
+          "whyWorks": "Impact: Shifts perception from oversight to empowerment.",
+          "translatedTo": "Implementation: Customizable calendar, progress-tracking views."
+        }
+      },
+      "architecture": {
+        "title": "Solution architecture: 3 core pillars",
+        "subtitle": "The solution centers on three interconnected design pillars.",
+        "unifiedPanel": {
+          "title": "Unified Hub: Autonomy & Visibility",
+          "axis": "Pillar: Autonomy + Visibility",
+          "problem": "Consultants juggle multiple tools to manage work.",
+          "solution": "One centralized dashboard integrating tasks, projects, and time tracking.",
+          "features": ["Customizable dashboard", "Kanban & Gantt views", "Proactive notifications"],
+          "components": ["Task & project widgets", "Personal & team metrics", "Integrated calendar"],
+          "syncTitle": "Real-time sync:",
+          "syncText": "All data updates instantly across views."
+        },
+        "automation": {
+          "title": "Smart Assistance: Speed & Context",
+          "axis": "Pillar: Speed + Context",
+          "problem": "Manual time tracking is tedious and constantly delayed.",
+          "solution": "Intelligent tracking that adapts to user behavior.",
+          "features": ["FAB with contextual suggestions", "History-based autocomplete", "One-tap quick logging", "Bulk entry editing"]
+        },
+        "social": {
+          "title": "Transparency Layer: Trust & Value",
+          "axis": "Pillar: Trust + Value",
+          "problem": "Tracking feels like surveillance, not support.",
+          "solution": "Transparent reporting that surfaces value.",
+          "solutionItems": ["Visual breakdowns by project/client", "Progress vs. goals comparison", "Real-time billing estimates"],
+          "result": "Shifts perception from oversight tool to value driver."
+        },
+        "dashboard": {
+          "title": "Refined Dashboard",
+          "subtitle": "Consultant's operations center",
+          "text": "A panel that unifies all relevant information.",
+          "includes": ["Pending tasks view", "Productivity metrics", "Calendar with workload", "Quick access to active projects"]
+        }
+      },
+      "testing": {
+        "title": "User testing & validation",
+        "subtitle": "Moderated usability testing with Dígito consultants.",
+        "participants": "4 consultants: PM, Developer, UX Designer, Analyst.",
+        "method": "Moderated sessions with 4 core tasks.",
+        "objective": "Validate ease of use and identify friction points.",
+        "frictionsTitle": "Issues discovered:",
+        "friction1": {
+          "title": "Issue 1: Can't find archived projects",
+          "text": "Users needed to access project history, but the filter was buried."
+        },
+        "friction2": {
+          "title": "Issue 2: Unclear task states",
+          "text": "Visual distinction between \"in progress\" and \"pending\" was ambiguous."
+        },
+        "iterationsTitle": "Iterations based on feedback:",
+        "iteration1": {
+          "title": "Fix 1: Enhanced project filtering",
+          "adjustments": ["Added 'Show archived' toggle", "Surfaced filter controls"],
+          "result": "Project discovery became effortless."
+        },
+        "iteration2": {
+          "title": "Fix 2: Clear state indicators",
+          "adjustments": ["Distinct icons for each state", "Contextual tooltips on hover"],
+          "learning": "Visual clarity directly reduces cognitive load."
+        }
+      },
+      "results": {
+        "title": "Impact & learnings",
+        "qualitative": {
+          "title": "Qualitative shift:",
+          "before": "Before:",
+          "beforeQuote": "\"Time tracking is a necessary evil.\"",
+          "after": "After:",
+          "afterQuote": "\"It's actually fast now. The suggestions save me time.\"",
+          "impact": "Core transformation:",
+          "impactText": "From administrative burden to productivity tool."
+        },
+        "learnings": {
+          "title": "Key takeaways:",
+          "subtitle": "Design is strategy, not decoration.",
+          "text1": "The breakthrough was reframing the problem from \"forgetting\" to \"active avoidance.\"",
+          "text2": "Effective design addresses both business goals and user needs.",
+          "learning": "Good design is invisible. Great design empowers.",
+          "text3": "Early user validation prevents expensive pivots."
+        },
+        "aiEvolution": {
+          "title": "Future roadmap: AI integration",
+          "text": "Planned evolution toward intelligent automation.",
+          "componentsTitle": "Planned capabilities:",
+          "components": ["Calendar-based smart suggestions", "Automatic activity detection", "Predictive capacity planning"],
+          "benefitsTitle": "Expected benefits:",
+          "benefits": ["~80% automation of routine logging", "Higher data accuracy", "More time for strategic work"],
+          "note": "AI augments humans, it doesn't replace them."
+        },
+        "nextSteps": {
+          "title": "Next steps and roadmap",
+          "onboarding": {
+            "title": "Phase 1: Onboarding and personalization",
+            "text": "Improve first-use experience.",
+            "flows": "Flows to optimize:",
+            "flowItems": ["Initial profile setup", "Interactive dashboard guide", "Calendar integration"],
+            "note": "Effective onboarding is key to retention.",
+            "impact": "Expected impact:",
+            "impactText": "50% reduction in setup time."
+          },
+          "mobile": {
+            "title": "Phase 2: Mobile experience",
+            "text1": "Develop a mobile version of the operations module.",
+            "text2": "The goal is for consultants to manage their time from anywhere.",
+            "note": "Mobility is essential for modern productivity."
+          }
+        },
+        "phase2Principles": {
+          "title": "Phase 2 design principles",
+          "items": [
+            {"title": "Simplicity:", "text": "Less is more on mobile."},
+            {"title": "Context:", "text": "Use location and time data for suggestions."},
+            {"title": "Speed:", "text": "One-tap tracking."}
+          ]
+        },
+        "gridLearnings": [
+          {"title": "Design is discovery, not decoration.", "text": "Initial hypotheses rarely match the real problem."},
+          {"title": "Empathy unlocks better solutions.", "text": "Deep understanding of user pain points reveals the path forward."},
+          {"title": "Iteration beats perfection.", "text": "Each round of feedback compounds improvements."},
+          {"title": "Impact lives in stories and metrics.", "text": "Numbers validate, narratives inspire."}
+        ],
+        "closing": {
+          "title": "Final thoughts",
+          "text1": "Dígito reinforced that product design transcends aesthetics.",
+          "text2": "The real challenge was reframing \"surveillance\" as \"empowerment.\"",
+          "highlight": "Design bridges the gap between problems and solutions."
+        },
+        "conclusion": {
+          "title": "Conclusion",
+          "subtitle": "Dígito proved that thoughtful design shifts perception:",
+          "text": "From time-tracking burden to productivity catalyst."
+        }
+      }
+    },
+    "levelup": {
+      "hero": {
+        "title": "LEVEL UP",
+        "subtitle": "Redesigning gaming editorial for Latin America",
+        "description": "I transformed a generic gaming news site into a personalized, region-aware experience for Latin American audiences."
+      },
+      "myRole": {
+        "title": "My role",
+        "description": "Regional preference research • Personalization system design • Geosegmentation strategy • Scalable interface design"
+      },
+      "challenge": {
+        "title": "The challenge",
+        "text1": "Transform a one-size-fits-all news portal into something personally relevant.",
+        "text2": "The key challenge: honor regional gaming preferences without fragmenting the experience."
+      },
+      "problem": {
+        "title": "The problem",
+        "text": "One editorial view fits nobody well. Level Up published 20+ stories daily with no filtering or personalization.",
+        "quote": "\"I'm on PlayStation, so Xbox and Nintendo news just clutter my feed. I get lost in the noise.\"",
+        "quoteAuthor": "— User interview"
+      },
+      "insight": {
+        "title": "Strategic insight",
+        "text": "Gaming preferences cluster by region: Mexico favors Xbox, Argentina leans PlayStation/PC.",
+        "proposal": "Build an editorial experience that adapts to both preference and location."
+      },
+      "vision": {
+        "title": "System Vision",
+        "text": "I projected an active + passive segmentation solution:",
+        "passive": {
+          "title": "Passive segmentation:",
+          "text": "Configurable filters saved via localStorage."
+        },
+        "active": {
+          "title": "Active segmentation (roadmap):",
+          "text": "Geolocation API integration for regional content."
+        }
+      },
+      "proposal": {
+        "title": "My initial proposal",
+        "items": ["Sidebar menu with dropdowns", "Dynamic tag system", "Lateral ad column", "Persistent personalization without login"]
+      },
+      "finalVersion": {
+        "title": "The final implemented version",
+        "items": ["Horizontal menu with visible filters", "Removed lateral ads", "Contextualized labels", "Clean aesthetic, dark mode, red accent"]
+      },
+      "learnings": [
+        {"title": "Personalization should feel gradual, not invasive.", "text": "Users opt in when they see immediate value."},
+        {"title": "Regional differences are actionable design data.", "text": "Mexico/Xbox vs. Argentina/PlayStation patterns matter."},
+        {"title": "Editorial UX must respect business needs.", "text": "Monetization and experience coexist or both fail."},
+        {"title": "Timing matters when requesting preferences.", "text": "Demonstrate value first, then ask for data."}
+      ],
+      "reflection": {
+        "title": "Final reflection",
+        "text": "This wasn't just a redesign—it was a strategic framework for how editorial platforms can scale while staying personally relevant."
+      },
+      "conclusion": {
+        "title": "Conclusion",
+        "subtitle": "LevelUp showed that smart editorial personalization delivers:",
+        "text": "Combining regional intelligence, user preferences, and thoughtful design creates genuinely useful editorial experiences."
+      }
+    },
+    "vorterix": {
+      "hero": {
+        "title": "VORTERIX",
+        "subtitle": "Paren la mano - Landing Page",
+        "description": "A no-nonsense landing page. Designed to hook attention and convert casual listeners into community—in under 10 seconds."
+      },
+      "brief": {
+        "title": "The real brief: constraints as design fuel",
+        "quote": "\"Convert listeners to leads. No metrics. No data. Just smart decisions that work.\"",
+        "description": "Academic project, professional execution. Goal: capture young audiences through exclusive content."
+      },
+      "why": {
+        "title": "Why this landing existed",
+        "reasons": ["Vorterix's main site didn't match Paren la Mano's vibe.", "Young fans engaged on Twitch but never converted.", "Exclusive content existed but had no clear discovery path.", "The main site lacked CTAs and narrative pull."]
+      },
+      "audience": {
+        "title": "Design starts with understanding them",
+        "description": "We analyzed the show's tone, social media patterns, and studied what worked for peers like Olga and LuzuTV.",
+        "wants": ["Edgy and direct—no corporate speak.", "Don't over-explain or patronize.", "Give value upfront, not empty promises."]
+      },
+      "insights": {
+        "title": "Insights that guided decisions",
+        "items": [
+          {"title": "Vibrant palette (green/purple):", "text": "maintains PLM's energy."},
+          {"title": "Heavy typography:", "text": "reflects the show's tone."},
+          {"title": "Visible exclusive content:", "text": "value before asking for data."}
+        ]
+      },
+      "persona": {
+        "text": "We didn't design for a general audience. We designed for Agustín, who listens to Twitch while editing in Premiere."
+      },
+      "conversion": {
+        "title": "Conversion without losing identity",
+        "decisions": [
+          {"title": "Hero with GIF + immediate CTA:", "text": "impact in the first 3 seconds."},
+          {"title": "Duplicated form:", "text": "maximum visibility without visual repetition."},
+          {"title": "Clips carousel:", "text": "shows value before asking for email."},
+          {"title": "FOMO narrative:", "text": "\"Access what others miss\"."}
+        ]
+      },
+      "iterations": {
+        "title": "Key iterations",
+        "items": ["Cut anything not driving conversion.", "Redesigned clips section 3x for mobile responsiveness.", "Debated: highlight hosts or showcase content?"],
+        "resolution": "Content won. Communities form around value, not personalities.",
+        "learning": "These choices didn't make the prettiest version—they made the version that converted."
+      },
+      "ux": {
+        "title": "UX without narrative is just decoration",
+        "text": "I learned: without real content, design is theater. Without narrative structure, conversion is luck."
+      },
+      "conclusion": {
+        "title": "What this really was",
+        "text1": "A lab for decision-making under constraints: design, narrative, content, technical limits.",
+        "text2": "I confirmed: constraints don't limit creativity—they sharpen judgment. And that's what I love most about design."
+      }
+    },
+    "rectofinal": {
+      "hero": {
+        "title": "RECTO FINAL",
+        "subtitle": "Physical-digital game where the only way out... is through",
+        "description": "UNLP academic project fusing Unity 2D with hacked hardware to create a resilient, immersive installation."
+      },
+      "myRole": {
+        "title": "My role",
+        "description": "Lead programmer (Unity 2D + C#) • Hardware integration • Co-creative director & narrative design"
+      },
+      "context": {
+        "title": "Project context",
+        "details": ["Duration: 1 semester", "Team: 10 people, multidisciplinary", "Year: 2024", "Venue: Student fair, general public"],
+        "brief": "The brief was unforgiving: build a physical-digital game that survives hours of public use without constant tech support."
+      },
+      "specs": {
+        "title": "Technical specs",
+        "engine": "Unity 2D with custom input handling • C#",
+        "hardware": "Modded PC steering wheel + hacked keyboard + arcade buttons",
+        "software": "VS Code, Photoshop",
+        "operation": "3-min sessions • Must self-recover for 3+ hours"
+      },
+      "challenge": {
+        "title": "The real challenge",
+        "subtitle": "Build an installation that survives 3+ hours of public use without breaking",
+        "elements": "Mandatory elements: Pirate + dimetrodon + rusty hammer + ecofuturism.",
+        "decision": "Key decision: Don't fight the absurd—embrace it and make it viscerally coherent."
+      },
+      "narrative": {
+        "title": "Making absurdity coherent",
+        "solution": "El Pelusa, a pirate, gets swallowed by a dimetrodon. From inside the dinosaur's stomach, he defends his ship by smashing pirate skeletons.",
+        "twist": "The punchline: The \"light at the end of the tunnel\" is literally the digestive exit. Hence Recto Final."
+      },
+      "mechanics": {
+        "title": "From concept to code: physical mechanics",
+        "description": "Hybrid of Whac-A-Mole + Subway Surfers, but with real hardware:",
+        "items": ["Hittable skulls: hacked keyboard with embedded buttons", "Steering wheel: modded PC wheel for navigation", "Auto-flow: Start → Intro → Tutorial → Game → Game Over → Loop"]
+      },
+      "technical": {
+        "title": "Critical technical calls",
+        "responsibility": "My responsibility: full Unity game system programming",
+        "items": ["Lives & escalating waves with responsive HUD", "Zero-button flow: hit to start immediately", "Fixed 3-min sessions: engagement without burnout", "Calibrated difficulty: ~80% win rate"],
+        "goal": "One goal: the system should be self-explanatory."
+      },
+      "tension": {
+        "title": "Real crisis moments",
+        "incidents": ["Day before launch: wheel started drifting right.", "7-year-old smashed the hammer so hard it broke.", "Team conflict mid-project."],
+        "resolution": "I rewrote input handling to accept direct hand hits. Players never noticed the switch."
+      },
+      "resistance": {
+        "title": "System resilience",
+        "metrics": ["Continuous play for 3+ hours", "Strong visual appeal created spontaneous queues", "Real-time adaptation to unexpected failures"],
+        "learning": "It wasn't the fanciest tech—it was the most resilient. In real-world conditions, that's what matters."
+      },
+      "learnings": [
+        {"title": "The best systems survive, not just impress.", "text": "Elegant tech fails if it can't handle enthusiastic kids."},
+        {"title": "Absurd constraints demand narrative engineering.", "text": "The humor was a design constraint, not a bug."},
+        {"title": "Leading under pressure means keeping it playable.", "text": "Real-time adaptation is non-negotiable."},
+        {"title": "The best tech disappears.", "text": "Success is measured by visceral player connection."}
+      ],
+      "conclusion": {
+        "title": "Conclusion",
+        "subtitle": "Recto Final proved creative engineering can tame chaos:",
+        "text": "Robust code + hacked hardware + absurd narrative = experiences that survive real-world conditions."
+      }
+    }
+  }
+}
