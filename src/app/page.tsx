@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-import { redirect } from 'next/navigation'
-
-export default function RootPage() {
-  redirect('/en')
-=======
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 
@@ -16,5 +10,4 @@ export default async function RootPage() {
   const lang = (savedLang === 'es' || savedLang === 'en') ? savedLang : 'en'
   
   redirect(`/${lang}`)
->>>>>>> b96d859 (feat: agregar RootPage con redirección por idioma y persistencia de cookie)
 }
