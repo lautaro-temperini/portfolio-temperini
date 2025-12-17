@@ -6,12 +6,7 @@
       "use": "@vercel/next"
     }
   ],
-  "functions": {
-    "src/app/**/*.tsx": {
-      "maxDuration": 30
-    }
-  },
   "env": {
     "NODE_ENV": "production"
   }
-} 
+}
