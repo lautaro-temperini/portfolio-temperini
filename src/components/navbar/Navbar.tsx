@@ -8,6 +8,7 @@ import { socialLinks } from "@/data/socialLinks"
 import Image from "next/image"
 import LanguageSelector from "@/components/LanguageSelector"
 import type { Dictionary } from '@/lib/getDictionary'
+import { sendGAEvent } from '@next/third-parties/google'
 
 interface NavbarProps {
   dict: Dictionary
@@ -82,6 +83,25 @@ export default function Navbar({ dict, lang }: NavbarProps) {
     }
   }
 
+  // 🎯 EVENTO GA4: Click en botón de contacto del navbar
+  const handleContactClick = () => {
+    sendGAEvent('event', 'cta_click', {
+      event_category: 'engagement',
+      event_label: 'navbar_contact_button',
+      button_location: 'navbar'
+    })
+  }
+
+  // 🎯 EVENTO GA4: Click en redes sociales del navbar
+  const handleSocialClick = (platform: string) => {
+    sendGAEvent('event', 'social_click', {
+      event_category: 'engagement',
+      event_label: platform,
+      platform: platform,
+      click_location: 'navbar'
+    })
+  }
+  
   return (
     <nav
       role="navigation"

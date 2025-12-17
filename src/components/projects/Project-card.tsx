@@ -2,6 +2,7 @@ import Link from "next/link"
 import OptimizedImage from "../optimized-image"
 import GlareHover from '../fxscripts/GlareHover'
 import type { Dictionary } from '@/lib/getDictionary'
+import { sendGAEvent } from '@next/third-parties/google'
 
 /**
  * Props del componente ProjectCard
@@ -35,6 +36,17 @@ export default function ProjectCard({
 
   // Extraer tags del objeto de tags del diccionario
   const tags = Object.values(projectData.tags)
+
+ // 🎯 EVENTO GA4: Click en proyecto
+ const handleProjectClick = () => {
+  sendGAEvent('event', 'project_click', {
+    event_category: 'engagement',
+    event_label: projectData.title,
+    project_name: projectData.title,
+    project_slug: slug,
+    click_location: 'home_grid'
+  })
+}
 
   return (
     <div className={`w-full ${className}`}>
