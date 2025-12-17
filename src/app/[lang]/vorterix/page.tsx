@@ -50,9 +50,10 @@ export default async function VorterixLandingPage({
   const dict = await getDictionary(lang)
 
   return (
-    <div className="page-transition">
+    <>
       <Navbar dict={dict} lang={lang} />
-      <main className="pt-16 md:pt-20 lg:pt-24">
+      <div className="page-transition">
+        <main className="pt-16 md:pt-20 lg:pt-24">
         <CaseStudyLayout>
           {/* Hero Section - 60vh */}
           <section className="w-full h-[60vh] flex items-center justify-center">
@@ -363,6 +364,7 @@ export default async function VorterixLandingPage({
       </main>
       <Footer dict={dict} lang={lang} />
       <ScrollToTop size={48} />
-    </div>
+      </div>
+    </>
   )
 }

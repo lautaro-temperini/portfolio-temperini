@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { usePathname, useRouter } from "next/navigation"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
@@ -17,30 +17,73 @@ interface NavbarProps {
 
 export default function Navbar({ dict, lang }: NavbarProps) {
   const [isVisible, setIsVisible] = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
+  const lastScrollY = useRef(0)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const pathname = usePathname()
   const router = useRouter()
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY
-
-      if (currentScrollY < 100) {
-        setIsVisible(true)
-      } else if (currentScrollY > lastScrollY) {
-        setIsVisible(false)
-        setMobileMenuOpen(false)
-      } else if (currentScrollY < lastScrollY) {
-        setIsVisible(true)
-      }
-
-      setLastScrollY(currentScrollY)
+    // Inicializar con el valor actual del scroll
+    if (typeof window !== 'undefined') {
+      lastScrollY.current = window.scrollY || document.documentElement.scrollTop || 0
     }
 
+    let ticking = false
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          // Obtener la posición actual del scroll de forma robusta
+          const currentScrollY = window.scrollY || 
+                                window.pageYOffset || 
+                                document.documentElement.scrollTop || 
+                                0
+
+          // Threshold mínimo para evitar cambios muy pequeños que puedan causar flickering
+          const scrollThreshold = 5
+
+          // Si estamos cerca del top, siempre mostrar el navbar
+          if (currentScrollY < 100) {
+            setIsVisible(true)
+            lastScrollY.current = currentScrollY
+            ticking = false
+            return
+          }
+
+          // Calcular la diferencia de scroll
+          const scrollDifference = currentScrollY - lastScrollY.current
+
+          // Solo procesar si hay un cambio significativo
+          if (Math.abs(scrollDifference) > scrollThreshold) {
+            // Si scrolleamos hacia abajo (scroll aumentó)
+            if (scrollDifference > 0) {
+              setIsVisible(false)
+              setMobileMenuOpen(false)
+            } 
+            // Si scrolleamos hacia arriba (scroll disminuyó)
+            else {
+              setIsVisible(true)
+            }
+
+            lastScrollY.current = currentScrollY
+          }
+
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+
+    // Registrar el listener inmediatamente
     window.addEventListener("scroll", handleScroll, { passive: true })
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [lastScrollY])
+    // También escuchar en document para máxima compatibilidad
+    document.addEventListener("scroll", handleScroll, { passive: true })
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      document.removeEventListener("scroll", handleScroll)
+    }
+  }, [])
 
   const isActive = (path: string) => pathname === path
 
