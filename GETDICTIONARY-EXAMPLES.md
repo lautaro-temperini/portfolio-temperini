@@ -123,7 +123,7 @@ export default function HeroContent({ dict }: HeroContentProps) {
       <RevealOnScroll>
         <div className="mb-4 md:mb-6">
           <h1
-            className="fluid-text-3xl md:fluid-text-4xl lg:fluid-text-5xl font-semibold leading-tight text-light max-w-full md:max-w-md lg:max-w-lg xl:max-w-[394px]"
+            className="fluid-text-3xl md:fluid-text-4xl lg:fluid-text-5xl font-semibold leading-tight text-light max-w-full md:max-w-md lg:max-w-lg xl:max-w-[605px]"
             style={{ fontFamily: "var(--font-neue-haas)" }}
           >
             {titleLines.map((line, index) => (
@@ -140,7 +140,7 @@ export default function HeroContent({ dict }: HeroContentProps) {
       <RevealOnScroll delay={100}>
         <div className="mb-6 md:mb-8">
           <p
-            className="fluid-text-base md:fluid-text-lg font-semibold leading-relaxed text-accent max-w-full md:max-w-md lg:max-w-lg xl:max-w-[427px]"
+            className="fluid-text-base md:fluid-text-lg font-semibold leading-relaxed text-accent max-w-full md:max-w-md lg:max-w-lg xl:max-w-[500px]"
             style={{ fontFamily: "var(--font-manrope)" }}
           >
             {dict.hero.subtitle}

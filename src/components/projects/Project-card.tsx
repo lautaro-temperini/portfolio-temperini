@@ -144,7 +144,7 @@ export default function ProjectCard({
                   {tags.slice(0, 4).map((tag, index) => (
                     <div
                       key={index}
-                      className="hidden lg:flex xl:hidden items-center justify-center px-3 py-0.5 lg:px-4 lg:py-1 border border-[#595959] rounded-full flex-shrink-0"
+                      className="hidden lg:flex xl:hidden items-center justify-center px-3 py-1 lg:px-4 lg:py-2 border border-[#595959] rounded-full flex-shrink-0"
                     >
                       <span
                         className="fluid-text-xs md:fluid-text-sm font-semibold whitespace-nowrap transition-colors"

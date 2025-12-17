@@ -48,6 +48,7 @@
   }: {
     params: Promise<{ lang: string }>
   }) {
+    // Await params en Next.js 15
     const { lang: langParam } = await params
     const lang = (langParam === 'es' || langParam === 'en') ? langParam : 'es'
     const dict = await getDictionary(lang)
@@ -72,7 +73,7 @@
           <CaseStudyLayout>
           {/* Hero Section - 60vh */}
           <section className="w-full h-[60vh] flex items-center justify-center">
-            <div className="w-3/5 mx-auto px-8 md:px-10 lg:px-12">
+            <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12">
               <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold leading-tight text-[#F2F2F2] mb-6">
                 {t.hero.title}
               </h1>
@@ -86,7 +87,7 @@
           </section>
 
           {/* Mi rol - Sin contenedor */}
-          <div className="w-3/5 mx-auto px-8 md:px-10 lg:px-12 mb-16">
+          <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12 mb-16">
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <p>{t.myRole.description}</p>
             </div>
@@ -231,15 +232,18 @@
               </div>
             </ProseSection>
 
-          {/* Conclusión - Sin contenedor */}
-          <div className="w-3/5 mx-auto px-8 md:px-10 lg:px-12 mb-16">
-            <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
-              <p className="text-lg font-semibold text-[#F2F2F2] mb-4">
-                {t.conclusion.subtitle}
-              </p>
-              <p className="text-xl">{t.conclusion.text}</p>
-            </div>
-          </div>
+            {/* Conclusión */}
+            <ProseSection className="mb-16">
+              <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">
+                {t.conclusion.title}
+              </h2>
+              <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
+                <p className="text-lg font-semibold text-[#F2F2F2] mb-4">
+                  {t.conclusion.subtitle}
+                </p>
+                <p className="text-xl">{t.conclusion.text}</p>
+              </div>
+            </ProseSection>
           </CaseStudyLayout>
         </main>
         <Footer dict={dict} lang={lang} />

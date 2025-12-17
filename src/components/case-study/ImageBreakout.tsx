@@ -35,7 +35,7 @@ const ImageBreakout: React.FC<ImageBreakoutProps> = ({
   priority = false,
 }) => {
   const containerClasses = `
-    w-3/5 mx-auto px-8 md:px-10 lg:px-12
+    w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12
     mb-16
   `
 

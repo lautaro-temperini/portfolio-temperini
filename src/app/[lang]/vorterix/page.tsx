@@ -44,6 +44,7 @@ export default async function VorterixLandingPage({
 }: {
   params: Promise<{ lang: string }>
 }) {
+  // Await params en Next.js 15
   const { lang: langParam } = await params
   const lang = (langParam === 'es' || langParam === 'en') ? langParam : 'es'
   const dict = await getDictionary(lang)
@@ -55,7 +56,7 @@ export default async function VorterixLandingPage({
         <CaseStudyLayout>
           {/* Hero Section - 60vh */}
           <section className="w-full h-[60vh] flex items-center justify-center">
-            <div className="w-3/5 mx-auto px-8 md:px-10 lg:px-12">
+            <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12">
               <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold leading-tight text-[#F2F2F2] mb-6">
                 VORTERIX
               </h1>
@@ -158,7 +159,7 @@ export default async function VorterixLandingPage({
           </ProseSection>
 
           {/* Quote destacado */}
-          <div className="w-3/5 mx-auto px-8 md:px-10 lg:px-12 mb-16">
+          <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12 mb-16">
             <div className="text-center">
               <p className="text-[#F1F1F1] text-lg lg:text-xl leading-relaxed">
                 No diseñamos para una audiencia general. Diseñamos para Agustín, que escucha Twitch mientras edita en
@@ -168,7 +169,7 @@ export default async function VorterixLandingPage({
           </div>
 
           {/* Colores y Tipografía */}
-          <div className="w-3/5 mx-auto px-8 md:px-10 lg:px-12 mb-16">
+          <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12 mb-16">
             <div className="grid md:grid-cols-2 gap-6">
               <div className="w-full h-[70vh] flex items-center justify-center rounded-lg overflow-hidden bg-[#F2F2F2]">
                 <Image
@@ -192,7 +193,7 @@ export default async function VorterixLandingPage({
           </div>
 
           {/* Hero y Referencias */}
-          <div className="w-3/5 mx-auto px-8 md:px-10 lg:px-12 mb-16">
+          <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12 mb-16">
             <div className="grid md:grid-cols-2 gap-6">
               <div className="h-full rounded-lg overflow-hidden" style={{backgroundColor: '#1A1F26'}}>
                 <video
@@ -341,7 +342,7 @@ export default async function VorterixLandingPage({
           </ProseSection>
 
           {/* Conclusión - Sin contenedor */}
-          <div className="w-3/5 mx-auto px-8 md:px-10 lg:px-12 mb-16">
+          <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12 mb-16">
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <h2 className="text-4xl font-bold text-[#F2F2F2] mb-6 text-center">¿Qué fue esto realmente?</h2>
               <div className="space-y-6 text-center max-w-3xl mx-auto">

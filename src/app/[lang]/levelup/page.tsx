@@ -44,6 +44,7 @@ export default async function LevelUpPage({
 }: {
   params: Promise<{ lang: string }>
 }) {
+  // Await params en Next.js 15
   const { lang: langParam } = await params
   const lang = (langParam === 'es' || langParam === 'en') ? langParam : 'es'
   const dict = await getDictionary(lang)
@@ -55,7 +56,7 @@ export default async function LevelUpPage({
         <CaseStudyLayout>
           {/* Hero Section - 60vh */}
           <section className="w-full h-[60vh] flex items-center justify-center">
-            <div className="w-3/5 mx-auto px-8 md:px-10 lg:px-12">
+            <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12">
               <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold leading-tight text-[#F2F2F2] mb-6">
                 LEVEL UP
               </h1>
@@ -75,7 +76,7 @@ export default async function LevelUpPage({
           </section>
 
           {/* Mi rol - Sin contenedor */}
-          <div className="w-3/5 mx-auto px-8 md:px-10 lg:px-12 mb-16">
+          <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12 mb-16">
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <p>Mi aporte específico en el proyecto: • Investigación sobre preferencias regionales de gaming. • Diseño del sistema de personalización y filtros. • Propuesta de geosegmentación automática. • Diseño de interfaz con arquitectura editorial escalable. • Estrategia de segmentación activa y pasiva.</p>
             </div>
@@ -234,7 +235,7 @@ export default async function LevelUpPage({
           </ProseSection>
 
           {/* Conclusión - Sin contenedor */}
-          <div className="w-3/5 mx-auto px-8 md:px-10 lg:px-12 mb-16">
+          <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12 mb-16">
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6 text-center">Conclusión</h2>
               <div className="space-y-4 text-center">

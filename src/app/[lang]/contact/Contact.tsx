@@ -41,12 +41,20 @@ interface ContactProps {
  */
 const Contact: React.FC<ContactProps> = ({ dict }) => {
   return (
-    <section className="flex flex-col items-center justify-center min-h-[70vh] py-8 md:py-16 px-4 md:px-6 lg:px-10 pt-16 md:pt-20 lg:pt-24 relative">
+    <section className="flex flex-col items-center px-4 md:px-6 lg:px-10 relative pt-28">
       
       {/* ==================== TARJETA PRINCIPAL ==================== */}
       {/* SpotlightCard crea el efecto de luz que sigue el cursor */}
-      <SpotlightCard className="w-full max-w-lg md:max-w-xl lg:max-w-2xl rounded-2xl md:rounded-3xl shadow-2xl flex items-center justify-center p-4 sm:p-6 md:p-10 lg:p-12 relative">
-        <div className="w-full max-w-md mx-auto">
+      <SpotlightCard
+  className="
+    w-full
+    max-w-xl md:max-w-2xl
+    flex items-center justify-center
+    px-6 md:px-8
+    py-8 md:py-10
+  "
+>
+<div className="w-full max-w-none mx-auto">
           {/* Título de la sección */}
           <h2 
             className="fluid-text-2xl md:fluid-text-3xl lg:fluid-text-4xl font-bold mb-6 md:mb-8 text-[#F2F2F2] text-center" 

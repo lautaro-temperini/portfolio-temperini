@@ -54,18 +54,21 @@ export default function Footer({ onlyIcons = false, dict, lang = 'es' }: FooterP
               {dict?.footer?.title || "¿Tenés una idea o desafío en mente?"}
             </h3>
             <Link
-              href={`/${lang}/contact`}
-              className="flex items-center justify-center w-full max-w-sm md:w-[180px] min-h-[44px] h-8 min-[360px]:h-8 md:h-[32px] rounded-full px-2 min-[360px]:px-6 transition-all duration-200 hover:shadow-lg btn-primary"
-              style={{
-                background: "linear-gradient(180deg, #8900C3 72%, #595959 100%)",
-                border: "1px solid rgba(156, 150, 164, 0.5)",
-                borderRadius: "100px",
-              }}
-            >
-              <span className="text-sm min-[360px]:text-sm md:text-[15px] font-semibold text-white whitespace-nowrap" style={{ fontFamily: "var(--font-inter)" }}>
-                {dict?.footer?.cta || "Creemos juntos"}
-              </span>
-            </Link>
+  href={`/${lang}/contact`}
+  className="flex items-center justify-center w-full max-w-sm md:w-[180px] min-h-[44px] md:h-[40px] rounded-full px-6 md:px-6 transition-all duration-200 hover:shadow-lg btn-primary"
+  style={{
+    background: "linear-gradient(180deg, #8900C3 72%, #595959 100%)",
+    border: "1px solid rgba(156, 150, 164, 0.5)",
+    borderRadius: "100px",
+  }}
+>
+  <span
+    className="text-sm md:text-[15px] font-semibold text-white whitespace-nowrap"
+    style={{ fontFamily: "var(--font-inter)" }}
+  >
+    {dict?.footer?.cta || "Creemos juntos"}
+  </span>
+</Link>
           </div>
         )}
         
@@ -77,7 +80,7 @@ export default function Footer({ onlyIcons = false, dict, lang = 'es' }: FooterP
               href={socialNetwork.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="min-w-[44px] min-h-[44px] w-10 h-10 md:w-12 md:h-12 lg:w-[48px] lg:h-[48px] rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-white/20 transition-all duration-200"
+              className="w-10 h-10 md:w-12 md:h-12 lg:w-[48px] lg:h-[48px] rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-white/20 transition-all duration-200"
               aria-label={socialNetwork.name}
             >
               <Image src={socialNetwork.icon} alt={socialNetwork.name} width={24} height={24} className="object-contain" />

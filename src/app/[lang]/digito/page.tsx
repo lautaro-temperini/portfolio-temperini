@@ -45,6 +45,7 @@ export default async function DigitoPage({
 }: {
   params: Promise<{ lang: string }>
 }) {
+  // Await params en Next.js 15
   const { lang: langParam } = await params
   const lang = langParam === "es" || langParam === "en" ? langParam : "es"
   const dict = await getDictionary(lang)
@@ -537,7 +538,7 @@ export default async function DigitoPage({
         <CaseStudyLayout>
           {/* Hero Section - 60vh */}
           <section className="w-full h-[60vh] flex items-center justify-center">
-            <div className="w-3/5 mx-auto px-8 md:px-10 lg:px-12">
+            <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12">
               <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold leading-tight text-[#F2F2F2] mb-6">
                 {t.hero.title}
               </h1>
@@ -674,7 +675,7 @@ export default async function DigitoPage({
           </ProseSection>
 
           {/* Insight Emergente */}
-          <div className="w-3/5 mx-auto px-8 md:px-10 lg:px-12 mb-16">
+          <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12 mb-16">
             <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-blue-400/30">
               <h3 className="text-2xl font-bold text-[#F2F2F2] mb-4">{t.insight.title}</h3>
               <p className="text-xl text-[#F2F2F2] mb-6">{t.insight.mainText}</p>
@@ -1064,7 +1065,7 @@ export default async function DigitoPage({
           />
 
           {/* Dashboard Refinado */}
-          <div className="w-3/5 mx-auto px-8 md:px-10 lg:px-12 mb-16">
+          <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12 mb-16">
             <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-blue-400/30">
               <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">{t.architecture.dashboard.title}</h2>
               <p className="text-[#F1F1F1] mb-4">{t.architecture.dashboard.subtitle}</p>
@@ -1204,7 +1205,7 @@ export default async function DigitoPage({
           </ProseSection>
 
           {/* Cómo evolucionaría hacia IA */}
-          <div className="w-3/5 mx-auto px-8 md:px-10 lg:px-12 mb-16">
+          <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12 mb-16">
             <div className="bg-gradient-to-br from-purple-500/10 to-blue-500/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-purple-400/30">
               <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">{t.results.aiEvolution.title}</h2>
               <p className="text-[#F1F1F1] mb-6">{t.results.aiEvolution.text}</p>
@@ -1276,7 +1277,7 @@ export default async function DigitoPage({
           </ProseSection>
 
           {/* Cierre */}
-          <div className="w-3/5 mx-auto px-8 md:px-10 lg:px-12 mb-16">
+          <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12 mb-16">
             <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-blue-400/30">
               <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6 text-center">{t.results.closing.title}</h2>
               <div className="space-y-6 text-center max-w-3xl mx-auto">

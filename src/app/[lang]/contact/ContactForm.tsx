@@ -307,10 +307,10 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
           aria-required="true"
           aria-invalid={formStatus === 'error' && formData.name.length < 2 ? "true" : "false"}
           aria-describedby={formStatus === 'error' ? "form-status" : undefined}
-          className={`mt-2 block w-full min-h-[44px] px-4 py-3 rounded-lg border bg-[#0D0D0D] text-[#F2F2F2] placeholder-[#595959] shadow-sm transition-colors
+          className={`mt-1 block w-full min-h-[44px] px-3 py-2.5 rounded-md border bg-[#181818] text-[#F2F2F2] placeholder-[#595959] shadow-sm transition-colors
             ${isFormDisabled 
               ? 'border-[#333] opacity-60 cursor-not-allowed' 
-              : 'border-[#333] focus:border-[#8900C3] focus:ring-1 focus:ring-[#8900C3]'
+              : 'border-[#333]  focus-visible:-visible:-visible::border-[#9D00E0] focus-visible:-visible:-visible::ring-0 focus-visible:-visible:-visible::ring-offset-0'
             }
           `}
         />
@@ -335,10 +335,10 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
           aria-required="true"
           aria-invalid={formStatus === 'error' && !formData.email.includes('@') ? "true" : "false"}
           aria-describedby={formStatus === 'error' ? "form-status" : undefined}
-          className={`mt-2 block w-full min-h-[44px] px-4 py-3 rounded-lg border bg-[#0D0D0D] text-[#F2F2F2] placeholder-[#595959] shadow-sm transition-colors
+          className={`mt-1 block w-full min-h-[44px] px-3 py-2.5 rounded-md border bg-[#181818] text-[#F2F2F2] placeholder-[#595959] shadow-sm transition-colors
             ${isFormDisabled 
               ? 'border-[#333] opacity-60 cursor-not-allowed' 
-              : 'border-[#333] focus:border-[#8900C3] focus:ring-1 focus:ring-[#8900C3]'
+              : 'border-[#333] focus-visible:-visible:-visible::border-[#9D00E0] focus-visible:-visible:-visible::ring-0 focus-visible:-visible:-visible::ring-offset-0'
             }
           `}
         />
@@ -353,24 +353,35 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
           {dict.contact.form.message}
         </label>
         <textarea
-          name="message"
-          id="message"
-          rows={4}
-          value={formData.message}
-          onChange={handleInputChange}
-          required
-          disabled={isFormDisabled}
-          maxLength={5000}
-          aria-required="true"
-          aria-invalid={formStatus === 'error' && formData.message.length < 10 ? "true" : "false"}
-          aria-describedby={formStatus === 'error' ? "form-status" : undefined}
-          className={`mt-2 block w-full min-h-[120px] px-4 py-3 rounded-lg border bg-[#0D0D0D] text-[#F2F2F2] placeholder-[#595959] shadow-sm transition-colors resize-none
-            ${isFormDisabled 
-              ? 'border-[#333] opacity-60 cursor-not-allowed' 
-              : 'border-[#333] focus:border-[#8900C3] focus:ring-1 focus:ring-[#8900C3]'
-            }
-          `}
-        />
+  name="message"
+  id="message"
+  rows={3}
+  value={formData.message}
+  onChange={handleInputChange}
+  required
+  disabled={isFormDisabled}
+  maxLength={5000}
+  aria-required="true"
+  aria-invalid={formStatus === 'error' && formData.message.length < 10 ? "true" : "false"}
+  aria-describedby={formStatus === 'error' ? "form-status" : undefined}
+  className={`
+    mt-1 block w-full
+    px-3 py-2.5
+    rounded-md
+    border
+    bg-[#18181b]
+    text-[#F2F2F2]
+    placeholder-[#595959]
+    shadow-sm
+    resize-none
+    transition-colors
+    ${
+      isFormDisabled
+        ? 'border-[#333] opacity-60 cursor-not-allowed'
+        : 'border-[#333] focus-visible:-visible:-visible::border-[#9D00E0] focus-visible:-visible:-visible::ring-0 focus-visible:-visible:-visible::ring-offset-0'
+    }
+  `}
+ />
         {/* Contador de caracteres */}
         <p className="mt-1 text-xs text-[#595959] text-right">
           {formData.message.length} / 5000
@@ -394,7 +405,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
           // Loading spinner
           <span className="flex items-center gap-2">
             <svg 
-              className="animate-spin h-5 w-5 text-[#0D0D0D]" 
+              className="animate-spin h-5 w-5 text-[#181818]" 
               xmlns="http://www.w3.org/2000/svg" 
               fill="none" 
               viewBox="0 0 24 24"
@@ -414,7 +425,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
                 d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
               />
             </svg>
-            <span className="fluid-text-sm font-semibold text-[#0D0D0D]">
+            <span className="fluid-text-sm font-semibold text-[#181818]">
               {dict.contact.form.sending || 'Enviando...'}
             </span>
           </span>
@@ -422,7 +433,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
           // Checkmark de éxito
           <span className="flex items-center gap-2">
             <svg 
-              className="h-5 w-5 text-[#0D0D0D]" 
+              className="h-5 w-5 text-[#181818]" 
               fill="none" 
               viewBox="0 0 24 24" 
               stroke="currentColor"
@@ -435,7 +446,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
                 d="M5 13l4 4L19 7" 
               />
             </svg>
-            <span className="fluid-text-sm font-semibold text-[#0D0D0D]">
+            <span className="fluid-text-sm font-semibold text-[#181818]">
               {dict.contact.form.sent || '¡Enviado!'}
             </span>
           </span>
@@ -453,7 +464,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
           id="form-status"
           role="alert"
           aria-live="polite"
-          className={`mt-4 p-4 rounded-lg text-sm font-medium transition-all duration-300 ${
+          className={`mt-4 p-4 rounded-md text-sm font-medium transition-all duration-300 ${
             formStatus === 'success'
               ? 'bg-[#00FFC2]/10 border border-[#00FFC2]/30 text-[#00FFC2]'
               : formStatus === 'error'

@@ -77,7 +77,7 @@ export default async function UnderConstruction({
           <div className="pt-4 md:pt-8">
             <Link 
               href={`/${lang}`}
-              className="inline-flex items-center min-h-[44px] px-6 md:px-8 py-3 bg-[#F2F2F2] text-[#181818] font-semibold rounded-full hover:bg-[#E0E0E0] transition-colors duration-200"
+              className="inline-flex items-center min-h-[44px] md:h-[40px] px-6 md:px-8 py-3 bg-[#F2F2F2] text-[#181818] font-semibold rounded-full hover:bg-[#E0E0E0] transition-colors duration-200"
             >
               {dict.construction.backToHome}
             </Link>

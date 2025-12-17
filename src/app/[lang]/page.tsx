@@ -2,15 +2,15 @@ import { getDictionary } from '@/lib/getDictionary'
 import Navbar from "@/components/navbar/Navbar";
 import Hero from "@/components/hero/Hero";
 import Projects from "@/components/projects/SeccionProjects";
-import About from "@/components/about/About";
+import Perfil from "@/components/perfil/Perfil";
 import Footer from "@/components/footer/Footer";
 
 export const metadata = {
-  title: "Lautaro R. Temperini | Product Designer & Frontend Developer",
+  title: "Lautaro R. Temperini | Product Designer • UX/UI",
   description: "Portfolio de Lautaro R. Temperini: Product Designer especializado en UX/UI y Frontend Developer. Explora proyectos de diseño digital y desarrollo web.",
   keywords: "Lautaro Temperini, Product Designer, UX/UI, Frontend Developer, diseño digital, desarrollo web, portfolio",
   openGraph: {
-    title: "Lautaro R. Temperini | Product Designer & Frontend Developer",
+    title: "Lautaro R. Temperini | Product Designer • UX/UI",
     description: "Portfolio de Lautaro R. Temperini: Product Designer especializado en UX/UI y Frontend Developer. Explora proyectos de diseño digital y desarrollo web.",
     url: "https://temperini.vercel.app",
     siteName: "Temperini Portfolio",
@@ -59,7 +59,7 @@ export default async function HomePage({
           {/* Pasar el idioma a cada componente */}
           <Hero lang={lang} />
           <Projects lang={lang} />
-          <About lang={lang} />
+          <Perfil lang={lang} />
         </main>
         <Footer dict={dict} />
       </div>
