@@ -41,7 +41,7 @@ interface ContactProps {
  */
 const Contact: React.FC<ContactProps> = ({ dict }) => {
   return (
-    <section className="flex flex-col items-center px-4 md:px-6 lg:px-10 relative pt-28">
+    <section className="flex flex-col items-center px-4 md:px-6 lg:px-8 relative pt-28">
       
       {/* ==================== TARJETA PRINCIPAL ==================== */}
       {/* SpotlightCard crea el efecto de luz que sigue el cursor */}
@@ -50,8 +50,8 @@ const Contact: React.FC<ContactProps> = ({ dict }) => {
     w-full
     max-w-xl md:max-w-2xl
     flex items-center justify-center
-    px-6 md:px-8
-    py-8 md:py-10
+    px-s md:px-8
+    py-4 md:py-6
   "
 >
 <div className="w-full max-w-none mx-auto">
