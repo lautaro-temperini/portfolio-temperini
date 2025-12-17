@@ -18,11 +18,15 @@ const eslintConfig = [
       "src/components/2 Hero/**",
       "src/components/3 Projects/**",
       "src/components/5 Footer/**",
+      ".next/",
+      "node_modules/",
+      "dist/",
+      "build/",
     ],
   },
   {
     rules: {
-      "react/no-unescaped-entities": "off", // Desactiva esta regla
+      "react/no-unescaped-entities": "off",
     },
   },
 ];
