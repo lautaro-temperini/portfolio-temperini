@@ -62,14 +62,14 @@ export const metadata = {
 // ============================================================================
 // COMPONENTE PRINCIPAL
 // ============================================================================
-export default async function RootLayout({
+export default function RootLayout({
   children,
-  params,
 }: {
   children: React.ReactNode
-  params: { lang?: string }
 }) {
-  const validLang = params.lang === 'en' ? 'en' : 'es'
+  // Idioma por defecto: español
+  // El idioma se maneja vía middleware y los params de cada página
+  const validLang = 'es'
 
   // JSON-LD con @graph para Person + WebPage
   const jsonLdGraph = validLang === 'es' ? {
