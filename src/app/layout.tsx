@@ -6,6 +6,7 @@ import { Inter, Manrope } from "next/font/google"
 import { preloadDictionary } from '@/lib/getDictionary'
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { GoogleAnalytics } from '@next/third-parties/google'
 import "../styles/globals.css"
 
 preloadDictionary('es')
@@ -207,6 +208,8 @@ export default async function RootLayout({
         {children}
         <Analytics />
         <SpeedInsights />
+        
+  <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
       </body>
     </html>
   )

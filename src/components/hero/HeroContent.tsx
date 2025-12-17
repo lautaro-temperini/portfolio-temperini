@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import RevealOnScroll from '../fxscripts/reveal-on-scroll'
 import type { Dictionary } from '@/lib/dictionary-types'
+import { sendGAEvent } from '@next/third-parties/google'
 
 interface HeroContentProps {
   dict: Dictionary
@@ -32,6 +33,22 @@ export default function HeroContent({ dict }: HeroContentProps) {
     }
 
     requestAnimationFrame(animate)
+  }
+
+  // 🎯 EVENTO GA4: Click en CTA del hero
+  const handleCTAClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    
+    sendGAEvent('event', 'cta_click', {
+      event_category: 'engagement',
+      event_label: 'hero_view_projects',
+      button_location: 'hero',
+      button_text: dict.hero.cta
+    })
+    
+    const section = document.getElementById('projects')
+    if (section) smoothScrollToElement(section)
+    else window.location.hash = '#projects'
   }
 
   // ✅ Render unificado con estilos correctos desde el inicio

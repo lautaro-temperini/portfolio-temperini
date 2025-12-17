@@ -6,6 +6,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { socialLinks } from "@/data/socialLinks"
 import type { Dictionary } from '@/lib/dictionary-types'
+import { sendGAEvent } from '@next/third-parties/google'
 
 // ============================================================================
 // TIPOS E INTERFACES
@@ -38,6 +39,28 @@ interface FooterProps {
  * @param dict - Diccionario de traducciones
  */
 export default function Footer({ onlyIcons = false, dict, lang = 'es' }: FooterProps = {}) {
+ 
+ // 🎯 EVENTO GA4: Click en "Creemos juntos"
+ const handleTalkButtonClick = () => {
+  sendGAEvent('event', 'cta_click', {
+    event_category: 'engagement',
+    event_label: 'footer_talk_button',
+    button_location: 'footer',
+    button_text: dict?.footer?.cta || 'creemos_juntos'
+  })
+}
+
+// 🎯 EVENTO GA4: Click en redes sociales del footer
+const handleSocialClick = (platform: string) => {
+  sendGAEvent('event', 'social_click', {
+    event_category: 'engagement',
+    event_label: platform,
+    platform: platform,
+    click_location: 'footer'
+  })
+}
+
+ 
   return (
     <footer
       className="relative w-full h-auto min-h-[80px] md:min-h-[120px] overflow-hidden py-4 md:py-6 bg-[#0D0D0D]/80"

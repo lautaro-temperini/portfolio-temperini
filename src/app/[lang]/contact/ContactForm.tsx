@@ -6,6 +6,7 @@
 
 import React, { useState, FormEvent } from "react"
 import type { Dictionary } from '@/lib/dictionary-types'
+import { sendGAEvent } from '@next/third-parties/google'
 
 // ============================================================================
 // TIPOS E INTERFACES
@@ -255,6 +256,13 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
             : dict.contact.form.successGeneric
         )
         
+ // 🎯 EVENTO GA4: Formulario enviado exitosamente
+ sendGAEvent('event', 'contact_form_submit', {
+  event_category: 'conversion',
+  event_label: 'success',
+  value: 1
+})
+
         // Limpiar formulario después de 500ms para mejor UX
         setTimeout(() => {
           setFormData({ name: '', email: '', message: '' })
@@ -264,6 +272,14 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
         setFormStatus('error')
         setStatusMessage(data.error || dict.contact.form.errors?.generic || 'Hubo un error al enviar el mensaje.')
       }
+
+        // 📊 EVENTO GA4: Error en formulario
+        sendGAEvent('event', 'contact_form_error', {
+          event_category: 'error',
+          event_label: 'submission_failed',
+          error_message: data.error || 'unknown_error'
+        })
+
     } catch (error) {
       // Error de red o inesperado
       console.error('Error al enviar formulario:', error)
@@ -272,6 +288,13 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
         dict.contact.form.errors?.network || 
         'Error de conexión. Por favor, verifica tu conexión a internet e intenta nuevamente.'
       )
+
+      // 📊 EVENTO GA4: Error de red
+      sendGAEvent('event', 'contact_form_error', {
+        event_category: 'error',
+        event_label: 'network_error'
+      })
+
     }
   }
 
