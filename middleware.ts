@@ -111,6 +111,17 @@ function esRutaBloqueada(pathname: string): boolean {
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
+  // ==================== 0. VALIDACIONES DE SEGURIDAD ====================
+  // Prevenir path traversal y caracteres peligrosos
+  if (pathname.includes('..') || pathname.includes('//') || pathname.includes('\\')) {
+    return new NextResponse('Bad Request', { status: 400 })
+  }
+
+  // Limitar longitud de pathname para prevenir DoS
+  if (pathname.length > 2048) {
+    return new NextResponse('URI Too Long', { status: 414 })
+  }
+
   // ==================== 1. EXCLUIR ASSETS Y APIs ====================
   if (esRutaExcluida(pathname)) {
     return NextResponse.next()

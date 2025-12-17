@@ -52,7 +52,7 @@ export default async function Perfil({ lang }: PerfilProps) {
   <div className="w-full h-full flex flex-col justify-center mb-24 px-4 md:px-6 lg:px-10">
 
 {/* TÍTULO "ABOUT" */}
-<div className="mb-8 sm:mb-10 md:-mb-12 lg:-mb-16">
+<div className="mb-8 sm:mb-10 md:-mb-12 lg:-mb-16 mt-8">
   <PerfilAboutTitle text={dictionary.about.title} />
 </div>
 

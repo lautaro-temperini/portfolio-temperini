@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
+import { sendGAEvent } from '@next/third-parties/google'
 
 interface FeaturedProjectCardProps {
   project: {
@@ -26,8 +27,19 @@ export default function FeaturedProjectCard({ project, dict, lang }: FeaturedPro
   const subtitle = projectData?.subtitle || project.subtitle
   const tags: string[] = projectData?.tags ? (Object.values(projectData.tags) as string[]) : project.tags
 
+  // 🎯 EVENTO GA4: Click en proyecto
+  const handleProjectClick = () => {
+    sendGAEvent('event', 'project_click', {
+      event_category: 'engagement',
+      event_label: title,
+      project_name: title,
+      project_slug: project.slug,
+      click_location: 'home_grid'
+    })
+  }
+
   return (
-    <Link href={`/${lang}/${project.slug}`} className="block w-full group">
+    <Link href={`/${lang}/${project.slug}`} className="block w-full group" onClick={handleProjectClick}>
       <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] rounded-2xl border border-[#333] transition-all duration-300 hover:border-[#8900C3] hover:shadow-[0px_8px_35px_rgba(115,0,165,0.18)] cursor-pointer overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 rounded-2xl overflow-hidden">

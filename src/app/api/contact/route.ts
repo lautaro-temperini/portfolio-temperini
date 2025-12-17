@@ -23,8 +23,9 @@ function getResendClient() {
 
 /**
  * Email destino donde se recibirán los mensajes de contacto
+ * Se puede configurar mediante variable de entorno CONTACT_EMAIL
  */
-const DESTINATION_EMAIL = 'latta.romero@gmail.com'
+const DESTINATION_EMAIL = process.env.CONTACT_EMAIL || 'latta.romero@gmail.com'
 
 /**
  * Email remitente (debe ser un dominio verificado en Resend o onboarding@resend.dev)
@@ -94,10 +95,12 @@ function isValidEmail(email: string): boolean {
  */
 function sanitizeText(text: string): string {
   return text
+    .replace(/&/g, '&amp;')  // Debe ir primero para evitar doble escape
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&#x27;')
+    .replace(/\//g, '&#x2F;')  // Prevenir inyección de scripts
 }
 
 /**
@@ -167,11 +170,40 @@ export async function POST(request: NextRequest): Promise<NextResponse<SuccessRe
       )
     }
 
+    // ==================== VALIDAR TAMAÑO DEL BODY ====================
+    const contentLength = request.headers.get('content-length')
+    const MAX_BODY_SIZE = 10 * 1024 // 10KB máximo
+    
+    if (contentLength && parseInt(contentLength) > MAX_BODY_SIZE) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: 'El tamaño de la solicitud excede el límite permitido.',
+          code: 'PAYLOAD_TOO_LARGE'
+        },
+        { status: 413 }
+      )
+    }
+
     // ==================== PARSEAR BODY ====================
     let body: ContactFormBody
     
     try {
-      body = await request.json()
+      const bodyText = await request.text()
+      
+      // Validar tamaño del body parseado
+      if (bodyText.length > MAX_BODY_SIZE) {
+        return NextResponse.json(
+          {
+            success: false,
+            error: 'El tamaño de la solicitud excede el límite permitido.',
+            code: 'PAYLOAD_TOO_LARGE'
+          },
+          { status: 413 }
+        )
+      }
+      
+      body = JSON.parse(bodyText)
     } catch {
       return NextResponse.json(
         {
