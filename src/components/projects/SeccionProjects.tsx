@@ -3,6 +3,7 @@ import { getDictionary } from '@/lib/getDictionary'
 import AwwwardsProjectCard from "./AwwwardsProjectCard"
 import ProjectCardSkeleton from "./ProjectCardSkeleton"
 import { projectsData } from "@/data/projectsData"
+import RevealOnScroll from "../fxscripts/reveal-on-scroll"
 
 /**
  * Props del componente Projects
@@ -44,7 +45,7 @@ export default async function Projects({ lang }: ProjectsProps) {
 
       {/* Projects Container */}
       <div className="w-full">
-        <div className="flex flex-col gap-2 md:gap-4 lg:gap-6 px-4 md:px-6 lg:px-10">
+        <div className="flex flex-col gap-6 md:gap-4 lg:gap-6 px-4 md:px-6 lg:px-10">
           <Suspense
             fallback={
               <>
@@ -57,6 +58,7 @@ export default async function Projects({ lang }: ProjectsProps) {
               </>
             }
           >
+            <div id="projects-featured" />
             {/* Featured Project (Digito) - Full Width */}
             {projectsData
               .filter((project) => project.slug === "digito")
@@ -66,22 +68,26 @@ export default async function Projects({ lang }: ProjectsProps) {
                   project={project}
                   dict={dict}
                   lang={lang}
+                  variant="featured"
                 />
               ))}
 
-            {/* Other Projects - Grid 2x2 */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 lg:gap-6">
-              {projectsData
-                .filter((project) => project.slug !== "digito")
-                .map((project) => (
-                  <AwwwardsProjectCard
-                    key={project.id}
-                    project={project}
-                    dict={dict}
-                    lang={lang}
-                  />
-                ))}
-            </div>
+            {/* Other Projects - Grid 2x2 Banner Layout con Fade */}
+            <RevealOnScroll delay={100}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-4 lg:gap-6">
+                {projectsData
+                  .filter((project) => project.slug !== "digito")
+                  .map((project) => (
+                    <AwwwardsProjectCard
+                      key={project.id}
+                      project={project}
+                      dict={dict}
+                      lang={lang}
+                      variant="secondary"
+                    />
+                  ))}
+              </div>
+            </RevealOnScroll>
           </Suspense>
         </div>
       </div>

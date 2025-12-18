@@ -21,7 +21,8 @@ export default function HeroContent({ dict }: HeroContentProps) {
 
   function smoothScrollToElement(target: HTMLElement, duration = 300) {
     const start = window.scrollY
-    const end = target.getBoundingClientRect().top + start
+    const offset = window.innerHeight * 0.05 // 5% del viewport
+const end = target.getBoundingClientRect().top + start - offset
     const distance = end - start
     const startTime = performance.now()
 
@@ -86,13 +87,13 @@ export default function HeroContent({ dict }: HeroContentProps) {
       {/* CTA Button */}
       <RevealOnScroll delay={200}>
         <Link
-          href="/#projects"
+          href="/#projects-featured"
           className="flex items-center justify-center w-full max-w-xs md:w-auto md:max-w-none md:min-w-[257px] h-10 md:h-[40px] bg-gradient-to-r from-[#F2F2F2] via-[#F2F2F2] to-[#9D00E0] rounded-full px-6 shadow-[0px_4px_25px_rgba(115,0,165,0.25)] transition-all duration-200 hover:shadow-[0px_6px_30px_rgba(115,0,165,0.4)] btn-primary group cursor-pointer"
           onClick={(e) => {
             e.preventDefault()
-            const section = document.getElementById('projects')
+            const section = document.getElementById('projects-featured')
             if (section) smoothScrollToElement(section)
-            else window.location.hash = '#projects'
+            else window.location.hash = '#projects-featured'
           }}
         >
           <span
