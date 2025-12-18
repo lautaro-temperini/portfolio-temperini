@@ -60,6 +60,9 @@ const nextConfig = {
         net: false,
         tls: false,
       };
+      
+      // Target ES2022+ para eliminar polyfills legacy
+      config.target = ['web', 'es2022'];
     }
     
     return config;
@@ -148,6 +151,13 @@ const nextConfig = {
           {
             key: 'Cross-Origin-Opener-Policy',
             value: 'same-origin',
+          },
+          // Cache-Control optimizado para bfcache (back/forward cache)
+          // Permite que el navegador cachee la página para navegación rápida
+          // No usar 'no-store' que bloquea bfcache
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=0, must-revalidate',
           },
         ],
       },

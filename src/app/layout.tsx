@@ -4,10 +4,9 @@
 import type React from "react"
 import { Inter, Manrope } from "next/font/google"
 import { preloadDictionary } from '@/lib/getDictionary'
-import { Analytics } from "@vercel/analytics/react"
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { headers } from 'next/headers'
+import VercelAnalyticsLoader from '@/components/analytics/VercelAnalyticsLoader'
 import "../styles/globals.css"
 
 preloadDictionary('es')
@@ -200,20 +199,11 @@ export default async function RootLayout({
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        
-        {/* Preconnect para Vercel Analytics */}
-        <link rel="preconnect" href="https://va.vercel-scripts.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://va.vercel-scripts.com" />
-        <link rel="preconnect" href="https://vitals.vercel-insights.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://vitals.vercel-insights.com" />
 
         {/* Critical CSS inline */}
         <style 
           nonce={nonce}
-          dangerouslySetInnerHTML={{__html: `
-            body { background-color: #0D0D0D; font-family: var(--font-inter); }
-            * { box-sizing: border-box; margin: 0; padding: 0; }
-          `}} 
+          dangerouslySetInnerHTML={{__html: `body{background-color:#0D0D0D;font-family:var(--font-inter)}*,::before,::after{box-sizing:border-box;margin:0;padding:0}`}} 
         />
 
         {/* JSON-LD Schema con @graph */}
@@ -233,10 +223,12 @@ export default async function RootLayout({
       >
         <div className="fixed inset-0 -z-1 pointer-events-none bg-black/40 backdrop-blur-2xl" />
         {children}
-        <Analytics />
-        <SpeedInsights />
         
-  <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
+        {/* Vercel Analytics - Carga después del load event */}
+        <VercelAnalyticsLoader />
+        
+        {/* Google Analytics - Ya optimizado por @next/third-parties/google con lazy loading */}
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
       </body>
     </html>
   )
