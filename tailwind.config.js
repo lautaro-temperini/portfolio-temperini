@@ -25,6 +25,7 @@ module.exports = {
         background: "#0D0D0D",
         surface: "#111111",
         border: "#9C96A4",
+        subtle: "#333", // Border sutil para cards y secciones
         light: "#F2F2F2",
         white: "#fff",
         dark: "#1A1A1A",
@@ -91,12 +92,60 @@ module.exports = {
       transitionTimingFunction: {
         custom: "cubic-bezier(0.4, 0, 0.2, 1)",
       },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+       // Spacing personalizado (mantiene el de Tailwind por defecto)
+      spacing: {
+        '18': '4.5rem',
+        '88': '22rem',
+        '128': '32rem',
+        'touch': '44px', // Touch target mínimo para accesibilidad (WCAG)
       },
+      minHeight: {
+        'touch': '44px', // Touch target mínimo para accesibilidad
+      },
+      
+      // Border radius con nomenclatura clara
+      borderRadius: {
+        'none': '0',
+        'xs': '0.125rem',    // 2px
+        'sm': '0.25rem',     // 4px
+        'DEFAULT': '0.375rem', // 6px
+        'md': '0.5rem',      // 8px - tu --radius actual
+        'lg': '0.75rem',     // 12px
+        'xl': '1rem',        // 16px
+        '2xl': '1.5rem',     // 24px
+        '3xl': '2rem',       // 32px
+        'full': '9999px',
+      },
+      
+      // Tipografía ya la tenés, pero agregá weights consistentes
+      fontWeight: {
+        normal: '400',
+        medium: '500',
+        semibold: '600',
+        bold: '700',
+      },
+      
+      // Line heights específicos
+      lineHeight: {
+        'tight': '1.25',
+        'snug': '1.375',
+        'normal': '1.5',
+        'relaxed': '1.625',
+        'loose': '2',
+      },
+      
+      // Shadows consistentes
+      boxShadow: {
+        'sm': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+        'DEFAULT': '0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)',
+        'md': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+        'lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+        'xl': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+        'inner': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
+        'glow': '0 0 20px rgba(137, 0, 195, 0.3)',
+        'none': 'none',
     },
-  },
+  }, 
+ },
   plugins: [require("tailwindcss-animate")],
 }

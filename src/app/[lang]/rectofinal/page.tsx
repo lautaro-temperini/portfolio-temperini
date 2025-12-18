@@ -14,6 +14,9 @@ export const metadata = {
     "Recto Final es un videojuego físico-digital donde la única salida es por el final. Proyecto académico que combina Unity 2D con hardware modificado para crear una experiencia inmersiva.",
   keywords:
     "Recto Final, videojuego físico-digital, Unity 2D, instalación interactiva, UNLP, Lautaro Temperini, hardware modificado, experiencia inmersiva",
+  alternates: {
+    canonical: '/rectofinal',
+  },
   openGraph: {
     title: "Recto Final | Videojuego físico-digital | Lautaro R. Temperini",
     description:
@@ -59,10 +62,10 @@ export default async function RectoFinalPage({
           {/* Hero Section - 60vh */}
           <section className="w-full h-[60vh] flex items-center justify-center">
             <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12">
-              <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold leading-tight text-[#F2F2F2] mb-6">
+              <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold leading-tight text-light mb-6">
                 RECTO FINAL
               </h1>
-              <p className="text-xl md:text-2xl font-semibold text-[#F2F2F2] mb-4">
+              <p className="text-xl md:text-2xl font-semibold text-light mb-4">
                 Videojuego físico-digital donde la única salida… es por el final
               </p>
               <div className="text-base md:text-lg text-[#F1F1F1] leading-relaxed">
@@ -85,7 +88,7 @@ export default async function RectoFinalPage({
 
           {/* Contexto del Proyecto */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">Contexto del Proyecto</h2>
+            <h2 className="text-3xl font-bold text-light mb-6">Contexto del Proyecto</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <p className="mb-4">Proyecto académico UNLP - Taller de Experiencias Interactivas</p>
               <ul className="list-disc pl-5 space-y-2 mb-4">
@@ -100,22 +103,22 @@ export default async function RectoFinalPage({
 
           {/* Especificaciones Técnicas */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">Especificaciones Técnicas</h2>
+            <h2 className="text-3xl font-bold text-light mb-6">Especificaciones Técnicas</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed space-y-4">
               <div>
-                <h4 className="font-semibold text-[#F2F2F2] mb-2">Motor y Lenguaje:</h4>
+                <h4 className="font-semibold text-light mb-2">Motor y Lenguaje:</h4>
                 <p>Unity 2D con input personalizado • C#</p>
               </div>
               <div>
-                <h4 className="font-semibold text-[#F2F2F2] mb-2">Hardware:</h4>
+                <h4 className="font-semibold text-light mb-2">Hardware:</h4>
                 <p>Volante PC modificado + teclado hackeado + botones pulsadores</p>
               </div>
               <div>
-                <h4 className="font-semibold text-[#F2F2F2] mb-2">Software:</h4>
+                <h4 className="font-semibold text-light mb-2">Software:</h4>
                 <p>Visual Studio Code, Photoshop</p>
               </div>
               <div>
-                <h4 className="font-semibold text-[#F2F2F2] mb-2">Operación:</h4>
+                <h4 className="font-semibold text-light mb-2">Operación:</h4>
                 <p>3 minutos por partida • Adaptabilidad en tiempo real durante 3+ horas</p>
               </div>
             </div>
@@ -123,24 +126,24 @@ export default async function RectoFinalPage({
 
           {/* El Desafío Real */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">El Desafío Real</h2>
+            <h2 className="text-3xl font-bold text-light mb-6">El Desafío Real</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
-              <h3 className="text-2xl font-semibold text-[#F2F2F2] mb-4">
+              <h3 className="text-2xl font-semibold text-light mb-4">
                 Crear una instalación que sobreviva 3+ horas de público general sin colapsar
               </h3>
               <p className="mb-4">El brief académico era brutal: desarrollar un videojuego físico-digital para feria estudiantil que operara sin técnicos constantemente reiniciando el sistema. Además, los elementos narrativos llegaron por sorteo obligatorio: un pirata, un dimetrodón, un martillo oxidado y ecofuturismo.</p>
               <p className="mb-4">La decisión clave: No resistir el absurdo, sino transformarlo en un mundo visceralmente coherente.</p>
-              <p className="text-[#F2F2F2] font-semibold">Mi propuesta narrativa fue seleccionada entre más de 20 ideas, pero no por su creatividad libre, sino por su viabilidad técnica bajo restricciones absurdas.</p>
+              <p className="text-light font-semibold">Mi propuesta narrativa fue seleccionada entre más de 20 ideas, pero no por su creatividad libre, sino por su viabilidad técnica bajo restricciones absurdas.</p>
             </div>
           </ProseSection>
 
           {/* Transformar el Absurdo en Coherencia */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">Transformar el Absurdo en Coherencia</h2>
+            <h2 className="text-3xl font-bold text-light mb-6">Transformar el Absurdo en Coherencia</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <p className="mb-4">Los elementos impuestos: Pirata + dimetrodón + martillo oxidado + ecofuturismo.</p>
               <p className="mb-4">Mi solución narrativa: El Pelusa, un pirata, es tragado por un dimetrodón. Desde el estómago ácido del dinosaurio, defiende su barco golpeando esqueletos piratas con su martillo mientras el entorno se vuelve progresivamente más visceral y repugnante.</p>
-              <p className="text-[#F2F2F2] font-semibold mb-4">El twist que lo cierra: La "luz al final del túnel" de escape es, literalmente, la salida del tracto digestivo. De ahí Recto Final: chiste, metáfora y cierre narrativo en una sola frase.</p>
+              <p className="text-light font-semibold mb-4">El twist que lo cierra: La "luz al final del túnel" de escape es, literalmente, la salida del tracto digestivo. De ahí Recto Final: chiste, metáfora y cierre narrativo en una sola frase.</p>
               <p className="mb-4">La solución visual del ecofuturismo: El equipo de arte resolvió brillantemente la contradicción con un barco con forma de tiburón, vegetación real integrada a la instalación y un pirata ciborg. La UI navegaba entre steampunk y dieselpunk, logrando coherencia estética donde el concepto inicial parecía imposible.</p>
               <p>Mi rol: Desarrollé la lógica narrativa que hiciera funcionar elementos inconexos como un universo jugable coherente. El humor absurdo no fue una elección creativa libre, fue ingeniería narrativa bajo restricciones.</p>
             </div>
@@ -166,7 +169,7 @@ export default async function RectoFinalPage({
 
           {/* Del Cuerpo al Código: Mecánicas Físicas */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">Del Cuerpo al Código: Mecánicas Físicas</h2>
+            <h2 className="text-3xl font-bold text-light mb-6">Del Cuerpo al Código: Mecánicas Físicas</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <p className="mb-4">Combiné Whac-A-Mole (golpear puntos fijos) + Subway Surfers (cambiar carriles) pero con interfaces físicas reales:</p>
               <ul className="list-disc pl-5 space-y-2 mb-4">
@@ -180,7 +183,7 @@ export default async function RectoFinalPage({
 
           {/* Decisiones Técnicas Críticas */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">Decisiones Técnicas Críticas</h2>
+            <h2 className="text-3xl font-bold text-light mb-6">Decisiones Técnicas Críticas</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <p className="mb-4">Responsabilidad directa: Programación completa del sistema de juego en Unity</p>
               <ul className="list-disc pl-5 space-y-2 mb-4">
@@ -189,7 +192,7 @@ export default async function RectoFinalPage({
                 <li>Duración fija de 3 minutos: Calculada para mantener engagement sin fatiga y permitir flujo constante de jugadores</li>
                 <li>Calibración de dificultad: Ajustada para que el 80% de jugadores ganara, maximizando satisfacción emocional</li>
               </ul>
-              <p className="text-[#F2F2F2] font-semibold">Todo estaba orientado a una sola meta: que el sistema no requiriera explicación, ni asistencia humana, ni reinicios manuales.</p>
+              <p className="text-light font-semibold">Todo estaba orientado a una sola meta: que el sistema no requiriera explicación, ni asistencia humana, ni reinicios manuales.</p>
             </div>
           </ProseSection>
 
@@ -204,18 +207,18 @@ export default async function RectoFinalPage({
 
           {/* Momentos de Tensión Real */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">Momentos de Tensión Real</h2>
+            <h2 className="text-3xl font-bold text-light mb-6">Momentos de Tensión Real</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <p className="mb-4">El día previo a la muestra, el volante comenzó a generar input involuntario hacia la derecha. Lo recalibré desde código, ajustando los umbrales de detección. Además, tuvimos que salir casi de urgencia a comprar un extensor USB porque el cable original no alcanzaba la nueva configuración del stand.</p>
               <p className="mb-4">Durante la feria, una nena de 7 años le dio tan fuerte al martillo que lo desarmó en dos. Tomé la decisión en caliente: reprogramé el input para permitir golpes directos con la mano. Mientras tanto, organizamos la soldadura del cable roto y restituí la jugabilidad completa sin detener la partida. Los jugadores no notaron la transición.</p>
-              <p className="text-[#F2F2F2] font-semibold mb-4">Ese momento me confirmó que no se trataba solo de saber programar. Se trataba de pensar en tiempo real, liderar bajo presión y mantener la jugabilidad viva sin importar lo que fallara.</p>
+              <p className="text-light font-semibold mb-4">Ese momento me confirmó que no se trataba solo de saber programar. Se trataba de pensar en tiempo real, liderar bajo presión y mantener la jugabilidad viva sin importar lo que fallara.</p>
               <p>Crisis de equipo a mitad del proyecto: Cuando una integrante clave se desinteresó y hubo conflictos internos, asumí coordinar la redistribución de tareas según habilidades reales: quién soldaba mejor, quién ejecutaba diseño, quién podía programar bajo presión.</p>
             </div>
           </ProseSection>
 
           {/* Resistencia del Sistema en Condiciones Reales */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">Resistencia del Sistema en Condiciones Reales</h2>
+            <h2 className="text-3xl font-bold text-light mb-6">Resistencia del Sistema en Condiciones Reales</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <p className="mb-4">Métricas de Éxito Internas:</p>
               <ul className="list-disc pl-5 space-y-2 mb-4">
@@ -223,11 +226,11 @@ export default async function RectoFinalPage({
                 <li>Alto reconocimiento visual que generaba colas espontáneas</li>
                 <li>Adaptabilidad en tiempo real ante imprevistos técnicos menores</li>
               </ul>
-              <p className="text-[#F2F2F2] font-semibold mb-4">No fue la más tecnológica, fue la más resistente. Y eso, en un entorno real, vale más que cualquier shader.</p>
+              <p className="text-light font-semibold mb-4">No fue la más tecnológica, fue la más resistente. Y eso, en un entorno real, vale más que cualquier shader.</p>
               <p className="mb-4">Mi Aporte Visual-Técnico: Implementé efectos que emulaban texturas de carne y ácido, colaborando con ilustradores para lograr un resultado visceral convincente. No era solo código: era programación con criterio estético para reforzar la inmersión.</p>
               <p className="mb-4">El Momento Emocional: El Outro Sorprendente: La mayoría de jugadores no esperaba el remate narrativo. Ver sus caras cuando El Pelusa finalmente "salía" del dinosaurio era genuinamente satisfactorio. Ahí entendían el chiste del título. "¿¡Salió de ahí!?", decían. No tenías que explicarlo. Se entendía en silencio.</p>
               <p className="mb-4">Era el tipo de final que no necesitaba explicación, solo una sonrisa incómoda. Eso es diseño emocional.</p>
-              <p className="text-[#F2F2F2] font-semibold">El aprendizaje: Los mejores sistemas no son los más complejos, sino los que sobreviven a golpes, cables sueltos… y niños entusiasmados.</p>
+              <p className="text-light font-semibold">El aprendizaje: Los mejores sistemas no son los más complejos, sino los que sobreviven a golpes, cables sueltos… y niños entusiasmados.</p>
             </div>
           </ProseSection>
 
@@ -281,28 +284,28 @@ export default async function RectoFinalPage({
 
           {/* El Casi-Colapso Final */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">El Casi-Colapso Final</h2>
+            <h2 className="text-3xl font-bold text-light mb-6">El Casi-Colapso Final</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <p className="mb-4">El drama real: Casi no llegamos. El equipo de ilustración estaba muy atrasado a 48 horas de la muestra. Todos intervinimos para salvar el proyecto: yo parcheando assets provisorios, el equipo de escenografía construyendo el barco en menos de una semana tras devoluciones duras, programadores ajustando efectos visuales en tiempo real.</p>
               <p className="mb-4">Las calaveras golpeables: Terminaron siendo pelotas de papel y cinta, soldadas con cables de teclado. Funcional, resistente y completamente artesanal.</p>
               <p className="mb-4">La tensión: No era solo un proyecto académico. Era la diferencia entre mostrar algo funcional o presentarse con pantallas en blanco.</p>
-              <p className="text-[#F2F2F2] font-semibold">El resultado: Teníamos calaveras de papel, cartapesta, código, voluntad... y un poco de delirio técnico. No fue magia: fue resiliencia organizada.</p>
+              <p className="text-light font-semibold">El resultado: Teníamos calaveras de papel, cartapesta, código, voluntad... y un poco de delirio técnico. No fue magia: fue resiliencia organizada.</p>
             </div>
           </ProseSection>
 
           {/* Visión Personal: Más Allá del Proyecto */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">Visión Personal: Más Allá del Proyecto</h2>
+            <h2 className="text-3xl font-bold text-light mb-6">Visión Personal: Más Allá del Proyecto</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <p className="mb-4">Este proyecto me marcó porque me enseñó que lo importante no es el realismo técnico, sino la conexión visceral con el jugador. Y que los mejores sistemas no son los más complejos, sino los que sobreviven al mundo real.</p>
               <p className="mb-4">Hoy sigo diseñando experiencias físico-digitales, pero Recto Final sigue siendo mi referencia: cómo transformar limitaciones absurdas en coherencia jugable, cómo programar sistemas que se adapten cuando todo falla, y cómo liderar decisiones técnicas críticas bajo presión extrema.</p>
-              <p className="text-[#F2F2F2] font-semibold">La lección más valiosa: La mejor tecnología es la que se hace invisible cuando el usuario está completamente inmerso en golpear calaveras dentro del estómago de un dinosaurio.</p>
+              <p className="text-light font-semibold">La lección más valiosa: La mejor tecnología es la que se hace invisible cuando el usuario está completamente inmerso en golpear calaveras dentro del estómago de un dinosaurio.</p>
             </div>
           </ProseSection>
 
           {/* Documentación Técnica */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">Documentación Técnica</h2>
+            <h2 className="text-3xl font-bold text-light mb-6">Documentación Técnica</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <p>Link a PDF técnico o GDD (si corresponde)</p>
             </div>
@@ -310,7 +313,7 @@ export default async function RectoFinalPage({
 
           {/* Aprendizajes clave */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-8">
+            <h2 className="text-3xl font-bold text-light mb-8">
               Aprendizajes clave
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -332,9 +335,9 @@ export default async function RectoFinalPage({
           {/* Conclusión - Sin contenedor */}
           <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12 mb-16">
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
-              <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6 text-center">Conclusión</h2>
+              <h2 className="text-3xl font-bold text-light mb-6 text-center">Conclusión</h2>
               <div className="space-y-4 text-center">
-                <p className="text-lg font-semibold text-[#F2F2F2]">Recto Final demostró que la ingeniería creativa puede transformar el caos en coherencia:</p>
+                <p className="text-lg font-semibold text-light">Recto Final demostró que la ingeniería creativa puede transformar el caos en coherencia:</p>
                 <p className="text-xl">La combinación de programación robusta, hardware modificado y narrativa absurda puede crear experiencias que no solo funcionan, sino que sobreviven y emocionan en condiciones reales.</p>
               </div>
             </div>
@@ -342,7 +345,7 @@ export default async function RectoFinalPage({
 
           {/* Demo del Juego */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">Demo del Juego</h2>
+            <h2 className="text-3xl font-bold text-light mb-6">Demo del Juego</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <p>Botón Jugar o video de demo en caso de versión digital</p>
             </div>

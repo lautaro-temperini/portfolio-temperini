@@ -25,7 +25,6 @@ const nextConfig = {
   
   experimental: {
     optimizePackageImports: ['lucide-react'],
-    // turbo: {}, // COMENTADO para evitar el error
   },
   
   compiler: {
@@ -50,7 +49,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=86400, stale-while-revalidate=604800',
+            value: 'public, max-age=31536000, immutable',
           },
         ],
       },
@@ -68,7 +67,7 @@ const nextConfig = {
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=604800, stale-while-revalidate=86400',
+            value: 'public, max-age=31536000, immutable',
           },
         ],
       },
@@ -116,11 +115,11 @@ const nextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://vercel.live https://vercel.com https://*.vercel-analytics.com https://*.vercel-insights.com",
+              "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://vercel.live https://vercel.com https://*.vercel-analytics.com https://*.vercel-insights.com https://va.vercel-scripts.com https://www.googletagmanager.com https://www.google-analytics.com",
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: blob: https:",
               "font-src 'self' data:",
-              "connect-src 'self' https://*.vercel-analytics.com https://*.vercel-insights.com https://api.resend.com",
+              "connect-src 'self' https://*.vercel-analytics.com https://*.vercel-insights.com https://vitals.vercel-insights.com https://api.resend.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com",
               "frame-src 'none'",
               "object-src 'none'",
               "base-uri 'self'",

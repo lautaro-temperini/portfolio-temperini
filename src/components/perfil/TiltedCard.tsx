@@ -288,7 +288,7 @@ export default function TiltedCard({
       {/* Tooltip que sigue el cursor, visible solo si showTooltip es true y hay captionText */}
       {showTooltip && !isMobileDevice && captionText && (
         <div
-          className="pointer-events-none absolute left-0 top-0 rounded-[4px] bg-[#E6DADA] px-[10px] py-[4px] text-[10px] text-[#2d2d2d] z-[3] transition-opacity duration-200"
+          className="pointer-events-none absolute left-0 top-0 rounded-sm bg-[#E6DADA] px-2.5 py-1 text-[10px] text-[#2d2d2d] z-[3] transition-opacity duration-200"
           style={{
             left: tooltipPosition.x,
             top: tooltipPosition.y,

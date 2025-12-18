@@ -19,6 +19,9 @@ export const metadata = {
   title: "Playground | Lautaro R. Temperini",
   description: "Laboratorio creativo donde experimento con código, diseño y tecnología. Explora prototipos interactivos, sketches y experimentos visuales.",
   keywords: "playground, experimentos, prototipos, microproyectos, Lautaro Temperini, diseño, desarrollo web, creative coding",
+  alternates: {
+    canonical: '/playground',
+  },
   
   // Open Graph
   openGraph: {
@@ -91,7 +94,7 @@ export default async function PlaygroundPage({
       </main>
       
       {/* Footer */}
-      <Suspense fallback={<footer className="h-32 bg-[#0D0D0D]/80" />}>
+      <Suspense fallback={<footer className="h-32 bg-background/80" />}>
         <Footer dict={dictionary} />
       </Suspense>
     </>

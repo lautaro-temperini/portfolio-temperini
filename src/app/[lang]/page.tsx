@@ -9,6 +9,9 @@ export const metadata = {
   title: "Lautaro R. Temperini | Product Designer • UX/UI",
   description: "Portfolio de Lautaro R. Temperini: Product Designer especializado en UX/UI y Frontend Developer. Explora proyectos de diseño digital y desarrollo web.",
   keywords: "Lautaro Temperini, Product Designer, UX/UI, Frontend Developer, diseño digital, desarrollo web, portfolio",
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: "Lautaro R. Temperini | Product Designer • UX/UI",
     description: "Portfolio de Lautaro R. Temperini: Product Designer especializado en UX/UI y Frontend Developer. Explora proyectos de diseño digital y desarrollo web.",

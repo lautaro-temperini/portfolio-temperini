@@ -40,7 +40,7 @@ export default function FeaturedProjectCard({ project, dict, lang }: FeaturedPro
 
   return (
     <Link href={`/${lang}/${project.slug}`} className="block w-full group" onClick={handleProjectClick}>
-      <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] rounded-2xl border border-[#333] transition-all duration-300 hover:border-[#8900C3] hover:shadow-[0px_8px_35px_rgba(115,0,165,0.18)] cursor-pointer overflow-hidden">
+      <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] rounded-2xl border border-subtle transition-all duration-300 hover:border-primary hover:shadow-[0px_8px_35px_rgba(115,0,165,0.18)] cursor-pointer overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 rounded-2xl overflow-hidden">
           <Image

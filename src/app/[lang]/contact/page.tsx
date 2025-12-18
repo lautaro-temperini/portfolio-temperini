@@ -1,17 +1,21 @@
 import { Suspense } from 'react'
 import { getDictionary } from '@/lib/getDictionary'
 import dynamic from 'next/dynamic'
-import Navbar from "@/components/navbar/Navbar";
+import Navbar from "@/components/navbar/Navbar"
+import PageTransition from "@/components/fxscripts/PageTransition"
 
 // Code splitting: Cargar Contact dinámicamente
 const Contact = dynamic(() => import("./Contact"), {
-  loading: () => <div className="min-h-screen flex items-center justify-center"><div className="animate-pulse text-[#A6A6A6]">Cargando...</div></div>,
+  loading: () => <div className="min-h-screen flex items-center justify-center"><div className="animate-pulse text-accent">Cargando...</div></div>,
 })
 
 export const metadata = {
   title: "Contacto | Lautaro R. Temperini",
   description: "Ponte en contacto con Lautaro R. Temperini para proyectos de diseño multimedia, desarrollo web y experiencias digitales.",
   keywords: "contacto, Lautaro Temperini, diseño multimedia, desarrollo web, UX/UI, experiencias digitales",
+  alternates: {
+    canonical: '/contact',
+  },
   openGraph: {
     title: "Contacto | Lautaro R. Temperini",
     description: "Ponte en contacto con Lautaro R. Temperini para proyectos de diseño multimedia, desarrollo web y experiencias digitales.",
@@ -55,11 +59,11 @@ export default async function ContactPage({
   const dict = await getDictionary(lang)
   
   return (
-    <>
+    <PageTransition>
       <Navbar dict={dict} lang={lang} />
-      <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="animate-pulse text-[#A6A6A6]">Cargando...</div></div>}>
+      <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="animate-pulse text-accent">Cargando...</div></div>}>
         <Contact dict={dict} />
       </Suspense>
-    </>
+    </PageTransition>
   );
 }

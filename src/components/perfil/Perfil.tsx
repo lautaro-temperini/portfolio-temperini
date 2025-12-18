@@ -62,7 +62,7 @@ export default async function Perfil({ lang }: PerfilProps) {
       {/* TEXTO */}
       <div className="flex-1 max-w-2xl lg:max-w-xl xl:max-w-2xl mt-0">
         <RevealOnScroll delay={100}>
-          <p className="mb-10 md:mb-12 mt-0 text-lg sm:text-xl md:text-2xl xl:text-[28px] 2xl:text-[32px] font-semibold leading-relaxed xl:leading-[36px] 2xl:leading-[40px] text-[#F2F2F2]" style={{ fontFamily: "var(--font-manrope)" }}>
+          <p className="mb-10 md:mb-12 mt-0 text-lg sm:text-xl md:text-2xl xl:text-[28px] 2xl:text-[32px] font-semibold leading-relaxed xl:leading-[36px] 2xl:leading-[40px] text-light" style={{ fontFamily: "var(--font-manrope)" }}>
             {dictionary.about.text1}
           </p>
 
@@ -81,7 +81,7 @@ export default async function Perfil({ lang }: PerfilProps) {
             </div>
           </div>
 
-          <p className="text-lg sm:text-xl md:text-2xl xl:text-[28px] 2xl:text-[32px] font-semibold leading-relaxed xl:leading-[36px] 2xl:leading-[40px] text-[#F2F2F2] mt-0 text-right md:text-left"  style={{ fontFamily: "var(--font-manrope)" }}>
+          <p className="text-lg sm:text-xl md:text-2xl xl:text-[28px] 2xl:text-[32px] font-semibold leading-relaxed xl:leading-[36px] 2xl:leading-[40px] text-light mt-0 text-right md:text-left"  style={{ fontFamily: "var(--font-manrope)" }}>
             {dictionary.about.text2}
           </p>
         </RevealOnScroll>

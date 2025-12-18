@@ -64,14 +64,13 @@ export default function AwwwardsProjectCard({ project, dict, lang, variant = "se
   return (
     <Link href={`/${lang}/${project.slug}`} className="block w-full group" onClick={handleProjectClick}>
       <GlareHover
-        className={`relative w-full ${heightClasses} rounded-2xl border border-[#333] transition-all duration-300 hover:border-[#8900C3] hover:shadow-[0px_8px_35px_rgba(115,0,165,0.18)] cursor-pointer`}
+        className={`relative w-full ${heightClasses} rounded-2xl border border-subtle transition-all duration-300 hover:border-primary hover:shadow-[0px_8px_35px_rgba(115,0,165,0.18)] cursor-pointer`}
         glareColor="#f2f2f2"
         glareOpacity={0.07}
         glareAngle={-30}
         glareSize={200}
         transitionDuration={700}
         playOnce={true}
-        style={{ borderRadius: "1rem" }}
       >
         {/* Background Image */}
         <div className="absolute inset-0 rounded-2xl overflow-hidden">

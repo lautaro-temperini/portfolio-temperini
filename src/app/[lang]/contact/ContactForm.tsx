@@ -314,7 +314,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
       <div>
         <label 
           htmlFor="name" 
-          className="block text-sm font-medium text-[#A6A6A6]"
+          className="block text-sm font-medium text-accent"
         >
           {dict.contact.form.name}
         </label>
@@ -330,10 +330,10 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
           aria-required="true"
           aria-invalid={formStatus === 'error' && formData.name.length < 2 ? "true" : "false"}
           aria-describedby={formStatus === 'error' ? "form-status" : undefined}
-          className={`mt-1 block w-full min-h-[44px] px-3 py-2.5 rounded-md border bg-[#181818] text-[#F2F2F2] placeholder-[#595959] shadow-sm transition-colors
+          className={`mt-1 block w-full min-h-touch px-3 py-2.5 rounded-lg border bg-[#181818] text-light placeholder-secondary shadow-sm transition-colors
             ${isFormDisabled 
-              ? 'border-[#333] opacity-60 cursor-not-allowed' 
-              : 'border-[#333]  focus-visible:-visible:-visible::border-[#9D00E0] focus-visible:-visible:-visible::ring-0 focus-visible:-visible:-visible::ring-offset-0'
+              ? 'border-subtle opacity-60 cursor-not-allowed' 
+              : 'border-subtle  focus-visible:-visible:-visible::border-[#9D00E0] focus-visible:-visible:-visible::ring-0 focus-visible:-visible:-visible::ring-offset-0'
             }
           `}
         />
@@ -343,7 +343,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
       <div>
         <label 
           htmlFor="email" 
-          className="block text-sm font-medium text-[#A6A6A6]"
+          className="block text-sm font-medium text-accent"
         >
           {dict.contact.form.email}
         </label>
@@ -358,10 +358,10 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
           aria-required="true"
           aria-invalid={formStatus === 'error' && !formData.email.includes('@') ? "true" : "false"}
           aria-describedby={formStatus === 'error' ? "form-status" : undefined}
-          className={`mt-1 block w-full min-h-[44px] px-3 py-2.5 rounded-md border bg-[#181818] text-[#F2F2F2] placeholder-[#595959] shadow-sm transition-colors
+          className={`mt-1 block w-full min-h-touch px-3 py-2.5 rounded-lg border bg-[#181818] text-light placeholder-secondary shadow-sm transition-colors
             ${isFormDisabled 
-              ? 'border-[#333] opacity-60 cursor-not-allowed' 
-              : 'border-[#333] focus-visible:-visible:-visible::border-[#9D00E0] focus-visible:-visible:-visible::ring-0 focus-visible:-visible:-visible::ring-offset-0'
+              ? 'border-subtle opacity-60 cursor-not-allowed' 
+              : 'border-subtle focus-visible:-visible:-visible::border-[#9D00E0] focus-visible:-visible:-visible::ring-0 focus-visible:-visible:-visible::ring-offset-0'
             }
           `}
         />
@@ -371,7 +371,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
       <div>
         <label 
           htmlFor="message" 
-          className="block text-sm font-medium text-[#A6A6A6]"
+          className="block text-sm font-medium text-accent"
         >
           {dict.contact.form.message}
         </label>
@@ -390,23 +390,23 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
   className={`
     mt-1 block w-full
     px-3 py-2.5
-    rounded-md
+    rounded-lg
     border
     bg-[#18181b]
-    text-[#F2F2F2]
-    placeholder-[#595959]
+    text-light
+    placeholder-secondary
     shadow-sm
     resize-none
     transition-colors
     ${
       isFormDisabled
-        ? 'border-[#333] opacity-60 cursor-not-allowed'
-        : 'border-[#333] focus-visible:-visible:-visible::border-[#9D00E0] focus-visible:-visible:-visible::ring-0 focus-visible:-visible:-visible::ring-offset-0'
+        ? 'border-subtle opacity-60 cursor-not-allowed'
+        : 'border-subtle focus-visible:-visible:-visible::border-[#9D00E0] focus-visible:-visible:-visible::ring-0 focus-visible:-visible:-visible::ring-offset-0'
     }
   `}
  />
         {/* Contador de caracteres */}
-        <p className="mt-1 text-xs text-[#595959] text-right">
+        <p className="mt-1 text-xs text-secondary text-right">
           {formData.message.length} / 5000
         </p>
       </div>
@@ -415,7 +415,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
       <button
         type="submit"
         disabled={isFormDisabled}
-        className={`btn-primary flex items-center justify-center w-full min-h-[44px] h-10 rounded-full px-6 transition-all duration-200 group
+        className={`btn-primary flex items-center justify-center w-full min-h-touch h-10 rounded-full px-6 transition-all duration-200 group
           ${isFormDisabled 
             ? 'bg-[#333] cursor-not-allowed opacity-70' 
             : 'bg-gradient-to-r from-[#F2F2F2] via-[#F2F2F2] to-[#9D00E0] shadow-[0px_4px_25px_rgba(115,0,165,0.25)] hover:shadow-[0px_6px_30px_rgba(115,0,165,0.4)] cursor-pointer'
@@ -487,7 +487,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
           id="form-status"
           role="alert"
           aria-live="polite"
-          className={`mt-4 p-4 rounded-md text-sm font-medium transition-all duration-300 ${
+          className={`mt-4 p-4 rounded-lg text-sm font-medium transition-all duration-300 ${
             formStatus === 'success'
               ? 'bg-[#00FFC2]/10 border border-[#00FFC2]/30 text-[#00FFC2]'
               : formStatus === 'error'

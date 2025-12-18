@@ -12,6 +12,9 @@ export const metadata = {
     "Rediseño UX/UI del módulo operativo de Dígito: transformé el registro de horas de una tarea olvidada en parte natural del flujo diario.",
   keywords:
     "Dígito, UX/UI, time tracking, módulo operativo, registro de horas, B2B SaaS, Lautaro Temperini, caso de estudio, productividad, business intelligence",
+  alternates: {
+    canonical: '/digito',
+  },
   openGraph: {
     title: "DÍGITO | Módulo Operativo | Lautaro R. Temperini",
     description: "Dígito es una empresa de Business Intelligence y RPA. Su plataforma SaaS B2B incluía facturación, reportes y administración, pero el módulo operativo para consultores tenía baja adopción y uso inconsistente.",
@@ -540,22 +543,22 @@ export default async function DigitoPage({
           {/* Hero Section - 60vh */}
           <section className="w-full h-[60vh] flex items-center justify-center">
             <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12">
-              <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold leading-tight text-[#F2F2F2] mb-6">
+              <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold leading-tight text-light mb-6">
                 {t.hero.title}
               </h1>
-              <p className="text-xl md:text-2xl font-semibold text-[#F2F2F2] mb-4">{t.hero.subtitle}</p>
+              <p className="text-xl md:text-2xl font-semibold text-light mb-4">{t.hero.subtitle}</p>
               <p className="text-base md:text-lg text-[#F1F1F1] leading-relaxed">{t.hero.description}</p>
             </div>
           </section>
 
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">{t.myRole.title}</h2>
+            <h2 className="text-3xl font-bold text-light mb-6">{t.myRole.title}</h2>
             <p className="text-[#F1F1F1] mb-8 leading-relaxed">{t.myRole.description}</p>
 
             <div className="space-y-8">
               {t.myRole.sections?.map((section: any, index: number) => (
                 <div key={index}>
-                  <h3 className="text-xl font-semibold text-[#F2F2F2] mb-4">{section.subtitle}</h3>
+                  <h3 className="text-xl font-semibold text-light mb-4">{section.subtitle}</h3>
                   <ul className="list-disc pl-5 space-y-2 text-[#F1F1F1]">
                     {section.items.map((item: string, idx: number) => (
                       <li key={idx}>{item}</li>
@@ -566,7 +569,7 @@ export default async function DigitoPage({
             </div>
 
             <div className="mt-8">
-              <h3 className="text-xl font-semibold text-[#F2F2F2] mb-4">Decisiones clave que propuse:</h3>
+              <h3 className="text-xl font-semibold text-light mb-4">Decisiones clave que propuse:</h3>
               <ul className="list-disc pl-5 space-y-2 text-[#F1F1F1]">
                 {t.myRole.decisions?.map((decision: string, index: number) => (
                   <li key={index}>{decision}</li>
@@ -577,7 +580,7 @@ export default async function DigitoPage({
 
           {/* Contexto */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">{t.context.title}</h2>
+            <h2 className="text-3xl font-bold text-light mb-6">{t.context.title}</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <p className="mb-4">{t.context.text1}</p>
               <p>{t.context.text2}</p>
@@ -586,9 +589,9 @@ export default async function DigitoPage({
 
           {/* El Problema */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">{t.problem.title}</h2>
+            <h2 className="text-3xl font-bold text-light mb-6">{t.problem.title}</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
-              <h3 className="text-2xl font-semibold text-[#F2F2F2] mt-6 mb-4">{t.problem.businessImpact}</h3>
+              <h3 className="text-2xl font-semibold text-light mt-6 mb-4">{t.problem.businessImpact}</h3>
               <p className="mb-4">{t.problem.impactText}</p>
               <ul className="list-disc pl-5 space-y-2 mb-6">
                 {(t.problem.impactItems || []).map((item: string, index: number) => (
@@ -596,14 +599,14 @@ export default async function DigitoPage({
                 ))}
               </ul>
 
-              <h3 className="text-2xl font-semibold text-[#F2F2F2] mt-8 mb-4">Hipótesis inicial vs. realidad</h3>
+              <h3 className="text-2xl font-semibold text-light mt-8 mb-4">Hipótesis inicial vs. realidad</h3>
               <blockquote className="text-[#F1F1F1] italic border-l-4 border-red-500 pl-4 mb-6">
                 Hipótesis del CEO: {t.problem.hypothesis}
               </blockquote>
-              <p className="text-[#F2F2F2] font-semibold mb-4">{t.problem.criticalQuestion}</p>
+              <p className="text-light font-semibold mb-4">{t.problem.criticalQuestion}</p>
 
               <div className="bg-[#F2F2F2]/10 backdrop-blur-sm rounded-lg p-4 border border-[#F2F2F2]/20 mt-6">
-                <h4 className="font-semibold text-[#F2F2F2] mb-2">{t.problem.scopeTitle}</h4>
+                <h4 className="font-semibold text-light mb-2">{t.problem.scopeTitle}</h4>
                 <p className="text-[#F1F1F1] text-sm">{t.problem.scopeText}</p>
               </div>
             </div>
@@ -620,23 +623,23 @@ export default async function DigitoPage({
 
           {/* Research: Métodos */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">{t.research.title}</h2>
+            <h2 className="text-3xl font-bold text-light mb-6">{t.research.title}</h2>
             <p className="text-[#F1F1F1] mb-6">{t.research.subtitle}</p>
-            <h3 className="text-2xl font-bold text-[#F2F2F2] mb-4">{t.research.methodsTitle}</h3>
+            <h3 className="text-2xl font-bold text-light mb-4">{t.research.methodsTitle}</h3>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed space-y-6">
               <div>
-                <h4 className="font-semibold text-[#F2F2F2] mb-2">{t.research.deskResearch.title}</h4>
+                <h4 className="font-semibold text-light mb-2">{t.research.deskResearch.title}</h4>
                 <p className="mb-2">{t.research.deskResearch.text}</p>
                 <p className="text-sm mb-2">{t.research.deskResearch.theory}</p>
                 <p className="text-sm">{t.research.deskResearch.benchmark}</p>
               </div>
               <div>
-                <h4 className="font-semibold text-[#F2F2F2] mb-2">{t.research.interviews.title}</h4>
+                <h4 className="font-semibold text-light mb-2">{t.research.interviews.title}</h4>
                 <p className="mb-2">{t.research.interviews.profiles}</p>
                 <p>{t.research.interviews.objective}</p>
               </div>
               <div>
-                <h4 className="font-semibold text-[#F2F2F2] mb-2">{t.research.audit.title}</h4>
+                <h4 className="font-semibold text-light mb-2">{t.research.audit.title}</h4>
                 <p>{t.research.audit.text}</p>
               </div>
             </div>
@@ -653,24 +656,24 @@ export default async function DigitoPage({
 
           {/* Quotes de usuarios */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">{t.research.quotesTitle}</h2>
+            <h2 className="text-3xl font-bold text-light mb-6">{t.research.quotesTitle}</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed space-y-4">
               <div className="bg-[#F2F2F2]/10 backdrop-blur-sm rounded-lg p-4 border border-[#F2F2F2]/20">
                 <p className="text-[#F1F1F1] italic mb-2">{t.research.quotes.perception.label}</p>
-                <p className="text-[#F2F2F2]">{t.research.quotes.perception.text}</p>
+                <p className="text-light">{t.research.quotes.perception.text}</p>
               </div>
               <div className="bg-[#F2F2F2]/10 backdrop-blur-sm rounded-lg p-4 border border-[#F2F2F2]/20">
                 <p className="text-[#F1F1F1] italic mb-2">{t.research.quotes.postponement.label}</p>
-                <p className="text-[#F2F2F2] mb-2">{t.research.quotes.postponement.text1}</p>
-                <p className="text-[#F2F2F2]">{t.research.quotes.postponement.text2}</p>
+                <p className="text-light mb-2">{t.research.quotes.postponement.text1}</p>
+                <p className="text-light">{t.research.quotes.postponement.text2}</p>
               </div>
               <div className="bg-[#F2F2F2]/10 backdrop-blur-sm rounded-lg p-4 border border-[#F2F2F2]/20">
                 <p className="text-[#F1F1F1] italic mb-2">{t.research.quotes.friction.label}</p>
-                <p className="text-[#F2F2F2]">{t.research.quotes.friction.text}</p>
+                <p className="text-light">{t.research.quotes.friction.text}</p>
               </div>
               <div className="bg-[#F2F2F2]/10 backdrop-blur-sm rounded-lg p-4 border border-[#F2F2F2]/20">
                 <p className="text-[#F1F1F1] italic mb-2">{t.research.quotes.dependencies.label}</p>
-                <p className="text-[#F2F2F2]">{t.research.quotes.dependencies.text}</p>
+                <p className="text-light">{t.research.quotes.dependencies.text}</p>
               </div>
             </div>
           </ProseSection>
@@ -678,13 +681,13 @@ export default async function DigitoPage({
           {/* Insight Emergente */}
           <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12 mb-16">
             <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-blue-400/30">
-              <h3 className="text-2xl font-bold text-[#F2F2F2] mb-4">{t.insight.title}</h3>
-              <p className="text-xl text-[#F2F2F2] mb-6">{t.insight.mainText}</p>
+              <h3 className="text-2xl font-bold text-light mb-4">{t.insight.title}</h3>
+              <p className="text-xl text-light mb-6">{t.insight.mainText}</p>
               <p className="text-[#F1F1F1] leading-relaxed mb-6">{t.insight.explanation}</p>
               <div className="mt-8 pt-6 border-t border-[#F2F2F2]/20">
-                <p className="text-[#F2F2F2] font-semibold mb-2">{t.insight.pivotTitle}</p>
+                <p className="text-light font-semibold mb-2">{t.insight.pivotTitle}</p>
                 <p className="text-[#F1F1F1] mb-2">{t.insight.pivotFrom}</p>
-                <p className="text-[#F2F2F2] text-lg">{t.insight.pivotTo}</p>
+                <p className="text-light text-lg">{t.insight.pivotTo}</p>
               </div>
             </div>
           </div>
@@ -700,91 +703,91 @@ export default async function DigitoPage({
 
           {/* Estrategia */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">{t.strategy.title}</h2>
+            <h2 className="text-3xl font-bold text-light mb-6">{t.strategy.title}</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <p className="mb-4">{t.strategy.text}</p>
-              <h4 className="text-lg font-semibold text-[#F2F2F2] mt-6 mb-2">{t.strategy.alternativeTitle}</h4>
+              <h4 className="text-lg font-semibold text-light mt-6 mb-2">{t.strategy.alternativeTitle}</h4>
               <p className="mb-4">{t.strategy.alternativeText}</p>
-              <p className="text-[#F2F2F2] font-semibold mb-2">{t.strategy.discardedTitle}</p>
+              <p className="text-light font-semibold mb-2">{t.strategy.discardedTitle}</p>
               <ul className="list-disc pl-5 space-y-2 mb-4">
                 {(t.strategy.discardedReasons || []).map((reason: string, index: number) => (
                   <li key={index}>{reason}</li>
                 ))}
               </ul>
               <div className="bg-[#F2F2F2]/10 backdrop-blur-sm rounded-lg p-4 border border-green-400/30 mt-4">
-                <p className="text-[#F2F2F2]">{t.strategy.conclusion}</p>
+                <p className="text-light">{t.strategy.conclusion}</p>
               </div>
-              <h4 className="text-lg font-semibold text-[#F2F2F2] mt-6 mb-2">{t.strategy.scopeTitle}</h4>
+              <h4 className="text-lg font-semibold text-light mt-6 mb-2">{t.strategy.scopeTitle}</h4>
               <p className="mb-4">{t.strategy.scopeText1}</p>
-              <h4 className="text-lg font-semibold text-[#F2F2F2] mb-2">{t.strategy.ourDecision}</h4>
+              <h4 className="text-lg font-semibold text-light mb-2">{t.strategy.ourDecision}</h4>
               <p className="mb-4">{t.strategy.ourDecisionText}</p>
-              <h4 className="text-lg font-semibold text-[#F2F2F2] mt-4 mb-2">{t.strategy.thisAllowed}</h4>
+              <h4 className="text-lg font-semibold text-light mt-4 mb-2">{t.strategy.thisAllowed}</h4>
               <ul className="list-disc pl-5 space-y-2 mb-4">
                 {(t.strategy.thisAllowedItems || []).map((item: string, index: number) => (
                   <li key={index}>{item}</li>
                 ))}
               </ul>
-              <p className="text-[#F2F2F2] font-semibold mt-4 mb-2">{t.strategy.whyNotJustScope}</p>
+              <p className="text-light font-semibold mt-4 mb-2">{t.strategy.whyNotJustScope}</p>
               <p>{t.strategy.whyNotJustScopeText}</p>
             </div>
           </ProseSection>
 
           {/* Principios que guiaron las decisiones */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">{t.principles.title}</h2>
+            <h2 className="text-3xl font-bold text-light mb-6">{t.principles.title}</h2>
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div className="bg-[#F2F2F2]/10 backdrop-blur-sm rounded-lg p-4 border border-[#F2F2F2]/20">
-                <p className="text-[#F2F2F2] font-semibold mb-2">{t.principles.items.relevance.title}</p>
+                <p className="text-light font-semibold mb-2">{t.principles.items.relevance.title}</p>
                 <p className="text-[#F1F1F1] text-sm">{t.principles.items.relevance.text}</p>
               </div>
               <div className="bg-[#F2F2F2]/10 backdrop-blur-sm rounded-lg p-4 border border-[#F2F2F2]/20">
-                <p className="text-[#F2F2F2] font-semibold mb-2">{t.principles.items.userImpact.title}</p>
+                <p className="text-light font-semibold mb-2">{t.principles.items.userImpact.title}</p>
                 <p className="text-[#F1F1F1] text-sm">{t.principles.items.userImpact.text}</p>
               </div>
               <div className="bg-[#F2F2F2]/10 backdrop-blur-sm rounded-lg p-4 border border-[#F2F2F2]/20">
-                <p className="text-[#F2F2F2] font-semibold mb-2">{t.principles.items.differentiation.title}</p>
+                <p className="text-light font-semibold mb-2">{t.principles.items.differentiation.title}</p>
                 <p className="text-[#F1F1F1] text-sm">{t.principles.items.differentiation.text}</p>
               </div>
               <div className="bg-[#F2F2F2]/10 backdrop-blur-sm rounded-lg p-4 border border-[#F2F2F2]/20">
-                <p className="text-[#F2F2F2] font-semibold mb-2">{t.principles.items.technicalViability.title}</p>
+                <p className="text-light font-semibold mb-2">{t.principles.items.technicalViability.title}</p>
                 <p className="text-[#F1F1F1] text-sm">{t.principles.items.technicalViability.text}</p>
               </div>
               <div className="bg-[#F2F2F2]/10 backdrop-blur-sm rounded-lg p-4 border border-[#F2F2F2]/20 md:col-span-2">
-                <p className="text-[#F2F2F2] font-semibold mb-2">{t.principles.items.scalability.title}</p>
+                <p className="text-light font-semibold mb-2">{t.principles.items.scalability.title}</p>
                 <p className="text-[#F1F1F1] text-sm">{t.principles.items.scalability.text}</p>
               </div>
             </div>
-            <p className="text-xl text-[#F2F2F2] font-semibold text-center">{t.principles.guidingPrinciple}</p>
+            <p className="text-xl text-light font-semibold text-center">{t.principles.guidingPrinciple}</p>
           </ProseSection>
 
           {/* Insights y decisiones de diseño: 5 fricciones críticas */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">{t.frictions.title}</h2>
+            <h2 className="text-3xl font-bold text-light mb-6">{t.frictions.title}</h2>
             <p className="text-[#F1F1F1] mb-8">{t.frictions.subtitle}</p>
 
             {/* Fricción 1 */}
             <div className="mb-12">
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-2xl font-bold text-[#F2F2F2]">{t.frictions.friction1.number}</span>
-                <h3 className="text-2xl font-bold text-[#F2F2F2]">{t.frictions.friction1.title}</h3>
+                <span className="text-2xl font-bold text-light">{t.frictions.friction1.number}</span>
+                <h3 className="text-2xl font-bold text-light">{t.frictions.friction1.title}</h3>
               </div>
               <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed space-y-3">
                 <div>
-                  <h4 className="font-semibold text-[#F2F2F2] mb-2">{lang === "es" ? "Dolor:" : "Pain:"}</h4>
+                  <h4 className="font-semibold text-light mb-2">{lang === "es" ? "Dolor:" : "Pain:"}</h4>
                   <p>{t.frictions.friction1.pain}</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#F2F2F2] mb-2">{lang === "es" ? "Decisión:" : "Decision:"}</h4>
-                  <p className="text-[#F2F2F2]">{t.frictions.friction1.decision}</p>
+                  <h4 className="font-semibold text-light mb-2">{lang === "es" ? "Decisión:" : "Decision:"}</h4>
+                  <p className="text-light">{t.frictions.friction1.decision}</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#F2F2F2] mb-2">
+                  <h4 className="font-semibold text-light mb-2">
                     {lang === "es" ? "Por qué funciona:" : "Why it works:"}
                   </h4>
                   <p>{t.frictions.friction1.whyWorks}</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#F2F2F2] mb-2">
+                  <h4 className="font-semibold text-light mb-2">
                     {lang === "es" ? "Se tradujo en UI como:" : "Translated to UI as:"}
                   </h4>
                   <p>{t.frictions.friction1.translatedTo}</p>
@@ -795,20 +798,20 @@ export default async function DigitoPage({
             {/* Fricción 2 */}
             <div className="mb-12">
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-2xl font-bold text-[#F2F2F2]">{t.frictions.friction2.number}</span>
-                <h3 className="text-2xl font-bold text-[#F2F2F2]">{t.frictions.friction2.title}</h3>
+                <span className="text-2xl font-bold text-light">{t.frictions.friction2.number}</span>
+                <h3 className="text-2xl font-bold text-light">{t.frictions.friction2.title}</h3>
               </div>
               <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed space-y-3">
                 <div>
-                  <h4 className="font-semibold text-[#F2F2F2] mb-2">{lang === "es" ? "Dolor:" : "Pain:"}</h4>
+                  <h4 className="font-semibold text-light mb-2">{lang === "es" ? "Dolor:" : "Pain:"}</h4>
                   <p>{t.frictions.friction2.pain}</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#F2F2F2] mb-2">{lang === "es" ? "Decisión:" : "Decision:"}</h4>
-                  <p className="text-[#F2F2F2]">{t.frictions.friction2.decision}</p>
+                  <h4 className="font-semibold text-light mb-2">{lang === "es" ? "Decisión:" : "Decision:"}</h4>
+                  <p className="text-light">{t.frictions.friction2.decision}</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#F2F2F2] mb-2">
+                  <h4 className="font-semibold text-light mb-2">
                     {lang === "es" ? "Por qué funciona:" : "Why it works:"}
                   </h4>
                   <ul className="list-disc pl-5 space-y-1 text-sm">
@@ -821,7 +824,7 @@ export default async function DigitoPage({
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#F2F2F2] mb-2">
+                  <h4 className="font-semibold text-light mb-2">
                     {lang === "es" ? "Se tradujo en UI como:" : "Translated to UI as:"}
                   </h4>
                   <p>{t.frictions.friction2.translatedTo}</p>
@@ -832,26 +835,26 @@ export default async function DigitoPage({
             {/* Fricción 3 */}
             <div className="mb-12">
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-2xl font-bold text-[#F2F2F2]">{t.frictions.friction3.number}</span>
-                <h3 className="text-2xl font-bold text-[#F2F2F2]">{t.frictions.friction3.title}</h3>
+                <span className="text-2xl font-bold text-light">{t.frictions.friction3.number}</span>
+                <h3 className="text-2xl font-bold text-light">{t.frictions.friction3.title}</h3>
               </div>
               <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed space-y-3">
                 <div>
-                  <h4 className="font-semibold text-[#F2F2F2] mb-2">{lang === "es" ? "Dolor:" : "Pain:"}</h4>
+                  <h4 className="font-semibold text-light mb-2">{lang === "es" ? "Dolor:" : "Pain:"}</h4>
                   <p className="italic">{t.frictions.friction3.pain}</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#F2F2F2] mb-2">{lang === "es" ? "Decisión:" : "Decision:"}</h4>
-                  <p className="text-[#F2F2F2]">{t.frictions.friction3.decision}</p>
+                  <h4 className="font-semibold text-light mb-2">{lang === "es" ? "Decisión:" : "Decision:"}</h4>
+                  <p className="text-light">{t.frictions.friction3.decision}</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#F2F2F2] mb-2">
+                  <h4 className="font-semibold text-light mb-2">
                     {lang === "es" ? "Por qué funciona:" : "Why it works:"}
                   </h4>
                   <p>{t.frictions.friction3.whyWorks}</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#F2F2F2] mb-2">
+                  <h4 className="font-semibold text-light mb-2">
                     {lang === "es" ? "Se tradujo en UI como:" : "Translated to UI as:"}
                   </h4>
                   <p>{t.frictions.friction3.translatedTo}</p>
@@ -862,26 +865,26 @@ export default async function DigitoPage({
             {/* Fricción 4 */}
             <div className="mb-12">
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-2xl font-bold text-[#F2F2F2]">{t.frictions.friction4.number}</span>
-                <h3 className="text-2xl font-bold text-[#F2F2F2]">{t.frictions.friction4.title}</h3>
+                <span className="text-2xl font-bold text-light">{t.frictions.friction4.number}</span>
+                <h3 className="text-2xl font-bold text-light">{t.frictions.friction4.title}</h3>
               </div>
               <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed space-y-3">
                 <div>
-                  <h4 className="font-semibold text-[#F2F2F2] mb-2">{lang === "es" ? "Dolor:" : "Pain:"}</h4>
+                  <h4 className="font-semibold text-light mb-2">{lang === "es" ? "Dolor:" : "Pain:"}</h4>
                   <p className="italic">{t.frictions.friction4.pain}</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#F2F2F2] mb-2">{lang === "es" ? "Decisión:" : "Decision:"}</h4>
-                  <p className="text-[#F2F2F2]">{t.frictions.friction4.decision}</p>
+                  <h4 className="font-semibold text-light mb-2">{lang === "es" ? "Decisión:" : "Decision:"}</h4>
+                  <p className="text-light">{t.frictions.friction4.decision}</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#F2F2F2] mb-2">
+                  <h4 className="font-semibold text-light mb-2">
                     {lang === "es" ? "Por qué funciona:" : "Why it works:"}
                   </h4>
                   <p>{t.frictions.friction4.whyWorks}</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#F2F2F2] mb-2">
+                  <h4 className="font-semibold text-light mb-2">
                     {lang === "es" ? "Se tradujo en UI como:" : "Translated to UI as:"}
                   </h4>
                   <p>{t.frictions.friction4.translatedTo}</p>
@@ -892,26 +895,26 @@ export default async function DigitoPage({
             {/* Fricción 5 */}
             <div className="mb-12">
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-2xl font-bold text-[#F2F2F2]">{t.frictions.friction5.number}</span>
-                <h3 className="text-2xl font-bold text-[#F2F2F2]">{t.frictions.friction5.title}</h3>
+                <span className="text-2xl font-bold text-light">{t.frictions.friction5.number}</span>
+                <h3 className="text-2xl font-bold text-light">{t.frictions.friction5.title}</h3>
               </div>
               <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed space-y-3">
                 <div>
-                  <h4 className="font-semibold text-[#F2F2F2] mb-2">{lang === "es" ? "Dolor:" : "Pain:"}</h4>
+                  <h4 className="font-semibold text-light mb-2">{lang === "es" ? "Dolor:" : "Pain:"}</h4>
                   <p className="italic">{t.frictions.friction5.pain}</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#F2F2F2] mb-2">{lang === "es" ? "Decisión:" : "Decision:"}</h4>
-                  <p className="text-[#F2F2F2]">{t.frictions.friction5.decision}</p>
+                  <h4 className="font-semibold text-light mb-2">{lang === "es" ? "Decisión:" : "Decision:"}</h4>
+                  <p className="text-light">{t.frictions.friction5.decision}</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#F2F2F2] mb-2">
+                  <h4 className="font-semibold text-light mb-2">
                     {lang === "es" ? "Por qué funciona:" : "Why it works:"}
                   </h4>
                   <p>{t.frictions.friction5.whyWorks}</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#F2F2F2] mb-2">
+                  <h4 className="font-semibold text-light mb-2">
                     {lang === "es" ? "Se tradujo en UI como:" : "Translated to UI as:"}
                   </h4>
                   <p>{t.frictions.friction5.translatedTo}</p>
@@ -931,7 +934,7 @@ export default async function DigitoPage({
 
           {/* Arquitectura, flujos y UI */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">{t.architecture.title}</h2>
+            <h2 className="text-3xl font-bold text-light mb-6">{t.architecture.title}</h2>
             <p className="text-[#F1F1F1] mb-8">{t.architecture.subtitle}</p>
           </ProseSection>
 
@@ -946,34 +949,34 @@ export default async function DigitoPage({
 
           {/* Panel Operativo Unificado */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">{t.architecture.unifiedPanel.title}</h2>
+            <h2 className="text-3xl font-bold text-light mb-6">{t.architecture.unifiedPanel.title}</h2>
             <div className="bg-blue-500/10 backdrop-blur-sm rounded-lg p-4 border border-blue-400/30 mb-4">
-              <p className="text-[#F2F2F2] font-semibold">{t.architecture.unifiedPanel.axis}</p>
+              <p className="text-light font-semibold">{t.architecture.unifiedPanel.axis}</p>
             </div>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed space-y-4">
               <div>
-                <h4 className="font-semibold text-[#F2F2F2] mb-2">
+                <h4 className="font-semibold text-light mb-2">
                   {lang === "es" ? "Problema detectado:" : "Detected problem:"}
                 </h4>
                 <p>{t.architecture.unifiedPanel.problem}</p>
               </div>
               <div>
-                <h4 className="font-semibold text-[#F2F2F2] mb-2">{lang === "es" ? "Solución:" : "Solution:"}</h4>
+                <h4 className="font-semibold text-light mb-2">{lang === "es" ? "Solución:" : "Solution:"}</h4>
                 <p>{t.architecture.unifiedPanel.solution}</p>
               </div>
               <div>
-                <h4 className="font-semibold text-[#F2F2F2] mb-2">{lang === "es" ? "Componentes:" : "Components:"}</h4>
+                <h4 className="font-semibold text-light mb-2">{lang === "es" ? "Componentes:" : "Components:"}</h4>
                 <ul className="list-disc pl-5 space-y-2">
                   {(t.architecture.unifiedPanel.components || []).map((component: string, index: number) => (
                     <li key={index}>
-                      <span className="text-[#F2F2F2]">{component.split(":")[0]}:</span>
+                      <span className="text-light">{component.split(":")[0]}:</span>
                       {component.split(":")[1]}
                     </li>
                   ))}
                 </ul>
               </div>
               <div className="bg-[#F2F2F2]/10 backdrop-blur-sm rounded-lg p-4 border border-green-400/30">
-                <h4 className="font-semibold text-[#F2F2F2] mb-2">{t.architecture.unifiedPanel.syncTitle}</h4>
+                <h4 className="font-semibold text-light mb-2">{t.architecture.unifiedPanel.syncTitle}</h4>
                 <p className="text-[#F1F1F1] text-sm">{t.architecture.unifiedPanel.syncText}</p>
               </div>
             </div>
@@ -990,23 +993,23 @@ export default async function DigitoPage({
 
           {/* Automatización Ligera */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">{t.architecture.automation.title}</h2>
+            <h2 className="text-3xl font-bold text-light mb-6">{t.architecture.automation.title}</h2>
             <div className="bg-green-500/10 backdrop-blur-sm rounded-lg p-4 border border-green-400/30 mb-4">
-              <p className="text-[#F2F2F2] font-semibold">{t.architecture.automation.axis}</p>
+              <p className="text-light font-semibold">{t.architecture.automation.axis}</p>
             </div>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed space-y-4">
               <div>
-                <h4 className="font-semibold text-[#F2F2F2] mb-2">
+                <h4 className="font-semibold text-light mb-2">
                   {lang === "es" ? "Problema detectado:" : "Detected problem:"}
                 </h4>
                 <p>{t.architecture.automation.problem}</p>
               </div>
               <div>
-                <h4 className="font-semibold text-[#F2F2F2] mb-2">{lang === "es" ? "Solución:" : "Solution:"}</h4>
+                <h4 className="font-semibold text-light mb-2">{lang === "es" ? "Solución:" : "Solution:"}</h4>
                 <p>{t.architecture.automation.solution}</p>
               </div>
               <div>
-                <h4 className="font-semibold text-[#F2F2F2] mb-2">
+                <h4 className="font-semibold text-light mb-2">
                   {lang === "es" ? "Funcionalidades principales:" : "Main features:"}
                 </h4>
                 <ul className="list-disc pl-5 space-y-2">
@@ -1029,19 +1032,19 @@ export default async function DigitoPage({
 
           {/* Capa Social y Transparencia */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">{t.architecture.social.title}</h2>
+            <h2 className="text-3xl font-bold text-light mb-6">{t.architecture.social.title}</h2>
             <div className="bg-purple-500/10 backdrop-blur-sm rounded-lg p-4 border border-purple-400/30 mb-4">
-              <p className="text-[#F2F2F2] font-semibold">{t.architecture.social.axis}</p>
+              <p className="text-light font-semibold">{t.architecture.social.axis}</p>
             </div>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed space-y-4">
               <div>
-                <h4 className="font-semibold text-[#F2F2F2] mb-2">
+                <h4 className="font-semibold text-light mb-2">
                   {lang === "es" ? "Problema detectado:" : "Detected problem:"}
                 </h4>
                 <p>{t.architecture.social.problem}</p>
               </div>
               <div>
-                <h4 className="font-semibold text-[#F2F2F2] mb-2">{lang === "es" ? "Solución:" : "Solution:"}</h4>
+                <h4 className="font-semibold text-light mb-2">{lang === "es" ? "Solución:" : "Solution:"}</h4>
                 <p className="mb-2">{t.architecture.social.solution}</p>
                 <ul className="list-disc pl-5 space-y-2">
                   {(t.architecture.social.solutionItems || []).map((item: string, index: number) => (
@@ -1050,7 +1053,7 @@ export default async function DigitoPage({
                 </ul>
               </div>
               <div className="bg-[#F2F2F2]/10 backdrop-blur-sm rounded-lg p-4 border border-[#F2F2F2]/20">
-                <h4 className="font-semibold text-[#F2F2F2] mb-2">{lang === "es" ? "Resultado:" : "Result:"}</h4>
+                <h4 className="font-semibold text-light mb-2">{lang === "es" ? "Resultado:" : "Result:"}</h4>
                 <p className="text-[#F1F1F1] text-sm">{t.architecture.social.result}</p>
               </div>
             </div>
@@ -1068,17 +1071,17 @@ export default async function DigitoPage({
           {/* Dashboard Refinado */}
           <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12 mb-16">
             <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-blue-400/30">
-              <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">{t.architecture.dashboard.title}</h2>
+              <h2 className="text-3xl font-bold text-light mb-6">{t.architecture.dashboard.title}</h2>
               <p className="text-[#F1F1F1] mb-4">{t.architecture.dashboard.subtitle}</p>
               <p className="text-[#F1F1F1] mb-6">{t.architecture.dashboard.text}</p>
-              <h4 className="text-lg font-semibold text-[#F2F2F2] mb-3">{lang === "es" ? "Incluye:" : "Includes:"}</h4>
+              <h4 className="text-lg font-semibold text-light mb-3">{lang === "es" ? "Incluye:" : "Includes:"}</h4>
               <div className="grid md:grid-cols-2 gap-4">
                 {(t.architecture.dashboard.includes || []).map((item: string, index: number) => (
                   <div
                     key={index}
                     className="bg-[#F2F2F2]/10 backdrop-blur-sm rounded-lg p-4 border border-[#F2F2F2]/20"
                   >
-                    <p className="text-[#F2F2F2]">• {item}</p>
+                    <p className="text-light">• {item}</p>
                   </div>
                 ))}
               </div>
@@ -1096,39 +1099,39 @@ export default async function DigitoPage({
 
           {/* Testing: validación con usuarios reales */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">{t.testing.title}</h2>
+            <h2 className="text-3xl font-bold text-light mb-6">{t.testing.title}</h2>
             <p className="text-[#F1F1F1] mb-8">{t.testing.subtitle}</p>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed space-y-4">
               <div>
-                <h4 className="font-semibold text-[#F2F2F2] mb-2">
+                <h4 className="font-semibold text-light mb-2">
                   {lang === "es" ? "Participantes:" : "Participants:"}
                 </h4>
                 <p>{t.testing.participants}</p>
               </div>
               <div>
-                <h4 className="font-semibold text-[#F2F2F2] mb-2">{lang === "es" ? "Método:" : "Method:"}</h4>
+                <h4 className="font-semibold text-light mb-2">{lang === "es" ? "Método:" : "Method:"}</h4>
                 <p>{t.testing.method}</p>
               </div>
               <div>
-                <h4 className="font-semibold text-[#F2F2F2] mb-2">{lang === "es" ? "Objetivo:" : "Objective:"}</h4>
+                <h4 className="font-semibold text-light mb-2">{lang === "es" ? "Objetivo:" : "Objective:"}</h4>
                 <p>{t.testing.objective}</p>
               </div>
             </div>
-            <h3 className="text-2xl font-bold text-[#F2F2F2] mt-8 mb-4">{t.testing.frictionsTitle}</h3>
+            <h3 className="text-2xl font-bold text-light mt-8 mb-4">{t.testing.frictionsTitle}</h3>
             <div className="space-y-4">
               <div className="bg-red-500/10 backdrop-blur-sm rounded-lg p-4 border border-red-400/30">
-                <h4 className="font-semibold text-[#F2F2F2] mb-2">{t.testing.friction1.title}</h4>
+                <h4 className="font-semibold text-light mb-2">{t.testing.friction1.title}</h4>
                 <p className="text-[#F1F1F1] text-sm">{t.testing.friction1.text}</p>
               </div>
               <div className="bg-red-500/10 backdrop-blur-sm rounded-lg p-4 border border-red-400/30">
-                <h4 className="font-semibold text-[#F2F2F2] mb-2">{t.testing.friction2.title}</h4>
+                <h4 className="font-semibold text-light mb-2">{t.testing.friction2.title}</h4>
                 <p className="text-[#F1F1F1] text-sm">{t.testing.friction2.text}</p>
               </div>
             </div>
-            <h3 className="text-2xl font-bold text-[#F2F2F2] mt-8 mb-4">{t.testing.iterationsTitle}</h3>
+            <h3 className="text-2xl font-bold text-light mt-8 mb-4">{t.testing.iterationsTitle}</h3>
             <div className="space-y-6">
               <div>
-                <h4 className="font-semibold text-[#F2F2F2] mb-3">{t.testing.iteration1.title}</h4>
+                <h4 className="font-semibold text-light mb-3">{t.testing.iteration1.title}</h4>
                 <div className="space-y-2">
                   <p className="text-[#F1F1F1] text-sm font-semibold">{lang === "es" ? "Ajustes:" : "Adjustments:"}</p>
                   <ul className="list-disc pl-5 text-[#F1F1F1] text-sm space-y-1">
@@ -1136,14 +1139,14 @@ export default async function DigitoPage({
                       <li key={index}>{item}</li>
                     ))}
                   </ul>
-                  <p className="text-[#F2F2F2] text-sm font-semibold mt-2">
+                  <p className="text-light text-sm font-semibold mt-2">
                     {lang === "es" ? "Resultado:" : "Result:"}
                   </p>
                   <p className="text-[#F1F1F1] text-sm">{t.testing.iteration1.result}</p>
                 </div>
               </div>
               <div>
-                <h4 className="font-semibold text-[#F2F2F2] mb-3">{t.testing.iteration2.title}</h4>
+                <h4 className="font-semibold text-light mb-3">{t.testing.iteration2.title}</h4>
                 <div className="space-y-2">
                   <p className="text-[#F1F1F1] text-sm font-semibold">{lang === "es" ? "Ajustes:" : "Adjustments:"}</p>
                   <ul className="list-disc pl-5 text-[#F1F1F1] text-sm space-y-1">
@@ -1151,7 +1154,7 @@ export default async function DigitoPage({
                       <li key={index}>{item}</li>
                     ))}
                   </ul>
-                  <p className="text-[#F2F2F2] text-sm font-semibold mt-2">
+                  <p className="text-light text-sm font-semibold mt-2">
                     {lang === "es" ? "Aprendizaje:" : "Learning:"}
                   </p>
                   <p className="text-[#F1F1F1] text-sm">{t.testing.iteration2.learning}</p>
@@ -1179,27 +1182,27 @@ export default async function DigitoPage({
 
           {/* Resultados, aprendizajes y próximos pasos */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">{t.results.title}</h2>
-            <h3 className="text-2xl font-bold text-[#F2F2F2] mb-4">{t.results.qualitative.title}</h3>
+            <h2 className="text-3xl font-bold text-light mb-6">{t.results.title}</h2>
+            <h3 className="text-2xl font-bold text-light mb-4">{t.results.qualitative.title}</h3>
             <div className="space-y-4 mb-6">
               <div className="bg-red-500/10 backdrop-blur-sm rounded-lg p-4 border border-red-400/30">
                 <p className="text-[#F1F1F1] text-sm mb-2">{t.results.qualitative.before}</p>
-                <p className="text-[#F2F2F2] italic">{t.results.qualitative.beforeQuote}</p>
+                <p className="text-light italic">{t.results.qualitative.beforeQuote}</p>
               </div>
               <div className="bg-green-500/10 backdrop-blur-sm rounded-lg p-4 border border-green-400/30">
                 <p className="text-[#F1F1F1] text-sm mb-2">{t.results.qualitative.after}</p>
-                <p className="text-[#F2F2F2] italic">{t.results.qualitative.afterQuote}</p>
+                <p className="text-light italic">{t.results.qualitative.afterQuote}</p>
               </div>
             </div>
-            <p className="text-[#F2F2F2] font-semibold text-lg mb-2">{t.results.qualitative.impact}</p>
+            <p className="text-light font-semibold text-lg mb-2">{t.results.qualitative.impact}</p>
             <p className="text-[#F1F1F1]">{t.results.qualitative.impactText}</p>
 
-            <h3 className="text-2xl font-bold text-[#F2F2F2] mt-8 mb-4">{t.results.learnings.title}</h3>
-            <h4 className="text-lg font-semibold text-[#F2F2F2] mb-2">{t.results.learnings.subtitle}</h4>
+            <h3 className="text-2xl font-bold text-light mt-8 mb-4">{t.results.learnings.title}</h3>
+            <h4 className="text-lg font-semibold text-light mb-2">{t.results.learnings.subtitle}</h4>
             <p className="mb-4 text-[#F1F1F1]">{t.results.learnings.text1}</p>
             <p className="mb-4 text-[#F1F1F1]">{t.results.learnings.text2}</p>
             <div className="bg-yellow-500/10 backdrop-blur-sm rounded-lg p-4 border border-yellow-400/30 mb-4">
-              <p className="text-[#F2F2F2] font-semibold mb-2">{lang === "es" ? "Aprendizaje:" : "Learning:"}</p>
+              <p className="text-light font-semibold mb-2">{lang === "es" ? "Aprendizaje:" : "Learning:"}</p>
               <p className="text-[#F1F1F1] text-sm">{t.results.learnings.learning}</p>
             </div>
             <p className="text-[#F1F1F1]">{t.results.learnings.text3}</p>
@@ -1208,11 +1211,11 @@ export default async function DigitoPage({
           {/* Cómo evolucionaría hacia IA */}
           <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12 mb-16">
             <div className="bg-gradient-to-br from-purple-500/10 to-blue-500/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-purple-400/30">
-              <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">{t.results.aiEvolution.title}</h2>
+              <h2 className="text-3xl font-bold text-light mb-6">{t.results.aiEvolution.title}</h2>
               <p className="text-[#F1F1F1] mb-6">{t.results.aiEvolution.text}</p>
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <h4 className="font-semibold text-[#F2F2F2] mb-3">{t.results.aiEvolution.componentsTitle}</h4>
+                  <h4 className="font-semibold text-light mb-3">{t.results.aiEvolution.componentsTitle}</h4>
                   <ul className="list-disc pl-5 text-[#F1F1F1] space-y-2 text-sm">
                     {(t.results.aiEvolution.components || []).map((item: string, index: number) => (
                       <li key={index}>{item}</li>
@@ -1220,7 +1223,7 @@ export default async function DigitoPage({
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-[#F2F2F2] mb-3">{t.results.aiEvolution.benefitsTitle}</h4>
+                  <h4 className="font-semibold text-light mb-3">{t.results.aiEvolution.benefitsTitle}</h4>
                   <ul className="list-disc pl-5 text-[#F1F1F1] space-y-2 text-sm">
                     {(t.results.aiEvolution.benefits || []).map((item: string, index: number) => (
                       <li key={index}>{item}</li>
@@ -1229,19 +1232,19 @@ export default async function DigitoPage({
                 </div>
               </div>
               <div className="bg-[#F2F2F2]/10 backdrop-blur-sm rounded-lg p-4 border border-[#F2F2F2]/20">
-                <p className="text-[#F2F2F2] text-sm">{t.results.aiEvolution.note}</p>
+                <p className="text-light text-sm">{t.results.aiEvolution.note}</p>
               </div>
             </div>
           </div>
 
           {/* Próximos pasos estratégicos */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-8">{t.results.nextSteps.title}</h2>
+            <h2 className="text-3xl font-bold text-light mb-8">{t.results.nextSteps.title}</h2>
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold text-[#F2F2F2] mb-4">{t.results.nextSteps.onboarding.title}</h3>
+                <h3 className="text-2xl font-bold text-light mb-4">{t.results.nextSteps.onboarding.title}</h3>
                 <p className="mb-4 text-[#F1F1F1]">{t.results.nextSteps.onboarding.text}</p>
-                <h4 className="font-semibold text-[#F2F2F2] mb-2">{t.results.nextSteps.onboarding.flows}</h4>
+                <h4 className="font-semibold text-light mb-2">{t.results.nextSteps.onboarding.flows}</h4>
                 <ul className="list-disc pl-5 text-[#F1F1F1] space-y-2 text-sm mb-4">
                   {(t.results.nextSteps.onboarding.flowItems || []).map((item: string, index: number) => (
                     <li key={index}>{item}</li>
@@ -1249,16 +1252,16 @@ export default async function DigitoPage({
                 </ul>
                 <p className="text-[#F1F1F1] text-sm mb-4">{t.results.nextSteps.onboarding.note}</p>
                 <div className="bg-green-500/10 backdrop-blur-sm rounded-lg p-4 border border-green-400/30">
-                  <p className="text-[#F2F2F2] font-semibold mb-2">{t.results.nextSteps.onboarding.impact}</p>
+                  <p className="text-light font-semibold mb-2">{t.results.nextSteps.onboarding.impact}</p>
                   <p className="text-[#F1F1F1] text-sm">{t.results.nextSteps.onboarding.impactText}</p>
                 </div>
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-[#F2F2F2] mb-4">{t.results.nextSteps.mobile.title}</h3>
+                <h3 className="text-2xl font-bold text-light mb-4">{t.results.nextSteps.mobile.title}</h3>
                 <p className="mb-4 text-[#F1F1F1]">{t.results.nextSteps.mobile.text1}</p>
                 <p className="mb-4 text-[#F1F1F1]">{t.results.nextSteps.mobile.text2}</p>
                 <div className="bg-blue-500/10 backdrop-blur-sm rounded-lg p-4 border border-blue-400/30">
-                  <p className="text-[#F2F2F2] text-sm">{t.results.nextSteps.mobile.note}</p>
+                  <p className="text-light text-sm">{t.results.nextSteps.mobile.note}</p>
                 </div>
               </div>
             </div>
@@ -1266,11 +1269,11 @@ export default async function DigitoPage({
 
           {/* Principios que guían la Fase 2 */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">{t.results.phase2Principles.title}</h2>
+            <h2 className="text-3xl font-bold text-light mb-6">{t.results.phase2Principles.title}</h2>
             <div className="space-y-4">
               {(t.results.phase2Principles.items || []).map((item: { title: string; text: string }, index: number) => (
                 <div key={index} className="bg-[#F2F2F2]/10 backdrop-blur-sm rounded-lg p-4 border border-[#F2F2F2]/20">
-                  <p className="text-[#F2F2F2] font-semibold mb-2">{item.title}</p>
+                  <p className="text-light font-semibold mb-2">{item.title}</p>
                   <p className="text-[#F1F1F1] text-sm">{item.text}</p>
                 </div>
               ))}
@@ -1280,11 +1283,11 @@ export default async function DigitoPage({
           {/* Cierre */}
           <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12 mb-16">
             <div className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-blue-400/30">
-              <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6 text-center">{t.results.closing.title}</h2>
+              <h2 className="text-3xl font-bold text-light mb-6 text-center">{t.results.closing.title}</h2>
               <div className="space-y-6 text-center max-w-3xl mx-auto">
                 <p className="text-xl text-[#F1F1F1] leading-relaxed">{t.results.closing.text1}</p>
                 <p className="text-xl text-[#F1F1F1] leading-relaxed">{t.results.closing.text2}</p>
-                <p className="text-2xl text-[#F2F2F2] font-bold mt-8">{t.results.closing.highlight}</p>
+                <p className="text-2xl text-light font-bold mt-8">{t.results.closing.highlight}</p>
               </div>
             </div>
           </div>

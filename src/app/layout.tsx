@@ -38,6 +38,7 @@ export const metadata = {
   keywords: "diseño multimedia, UX/UI, desarrollo web, experiencias digitales, diseño interactivo",
   authors: [{ name: "Lautaro R. Temperini" }],
   creator: "Lautaro R. Temperini",
+  metadataBase: new URL('https://temperini.vercel.app'),
   other: {
     "google-site-verification": "D3RvMWTjZPYnfxRHFO_0n2hETBVHXaKKNT9hbQlN0D8"
   },
@@ -184,11 +185,16 @@ export default function RootLayout({
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <meta name="theme-color" content="#0D0D0D" />
-        <link rel="canonical" href="https://temperini.vercel.app/" />
         <meta name="apple-mobile-web-app-title" content="Temperini" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/svg+xml" href="/favicon-temperini/icon0.svg" />
         <link rel="apple-touch-icon" href="/favicon-temperini/apple-icon.png" />
+
+        {/* Critical CSS inline */}
+        <style dangerouslySetInnerHTML={{__html: `
+          body { background-color: #0D0D0D; font-family: var(--font-inter); }
+          * { box-sizing: border-box; margin: 0; padding: 0; }
+        `}} />
 
         {/* JSON-LD Schema con @graph */}
         <script

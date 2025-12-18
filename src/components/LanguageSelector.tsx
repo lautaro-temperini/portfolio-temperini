@@ -95,7 +95,7 @@ export default function LanguageSelector({ currentLang }: LanguageSelectorProps)
       <button
         type="button"
         onClick={handleToggleDropdown}
-        className={`flex items-center gap-3 px-4 py-1 min-h-[44px] rounded-full bg-transparent border border-white text-white transition-all duration-200 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D0D0D] ${isDropdownOpen ? 'bg-white/10' : ''}`}
+        className={`flex items-center gap-3 px-4 py-1 min-h-touch rounded-full bg-transparent border border-white text-white transition-all duration-200 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D0D0D] ${isDropdownOpen ? 'bg-white/10' : ''}`}
         style={{ fontFamily: 'var(--font-inter)' }}
         aria-haspopup="menu"
         aria-expanded={isDropdownOpen}
@@ -142,7 +142,7 @@ export default function LanguageSelector({ currentLang }: LanguageSelectorProps)
               role="menuitem"
               onClick={() => handleLanguageChange(language.code as SupportedLanguage)}
               onKeyDown={(e) => handleKeyDown(e, language.code as SupportedLanguage)}
-              className="w-full min-h-[44px] pl-4 pr-4 py-1 flex items-center text-sm font-medium rounded-full transition-opacity duration-150 focus:outline-none focus:bg-white/10 bg-[#0D0D0D] border border-white/10"
+              className="w-full min-h-touch pl-4 pr-4 py-1 flex items-center text-sm font-medium rounded-full transition-opacity duration-150 focus:outline-none focus:bg-white/10 bg-background border border-white/10"
               style={{
                 opacity: currentLang === language.code ? 1 : 0.7,
                 color: currentLang === language.code ? '#FFFFFF' : '#A6A6A6',
