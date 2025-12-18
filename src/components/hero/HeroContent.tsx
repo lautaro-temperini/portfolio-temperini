@@ -95,6 +95,7 @@ const end = target.getBoundingClientRect().top + start - offset
             if (section) smoothScrollToElement(section)
             else window.location.hash = '#projects-featured'
           }}
+          aria-label={dict.hero.cta}
         >
           <span
             className="fluid-text-sm font-semibold text-background group-hover:text-background transition-colors"

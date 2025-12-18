@@ -63,6 +63,7 @@ const handleSocialClick = (platform: string) => {
  
   return (
     <footer
+      role="contentinfo"
       className="relative w-full h-auto min-h-[80px] md:min-h-[120px] overflow-hidden py-4 md:py-6 bg-background/80"
       style={{ width: "100%" }}
     >

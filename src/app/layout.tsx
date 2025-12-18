@@ -7,6 +7,7 @@ import { preloadDictionary } from '@/lib/getDictionary'
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { headers } from 'next/headers'
 import "../styles/globals.css"
 
 preloadDictionary('es')
@@ -64,7 +65,7 @@ export const metadata = {
 // ============================================================================
 // COMPONENTE PRINCIPAL
 // ============================================================================
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
@@ -72,6 +73,10 @@ export default function RootLayout({
   // Idioma por defecto: español
   // El idioma se maneja vía middleware y los params de cada página
   const validLang = 'es'
+  
+  // Obtener nonce del header para CSP
+  const headersList = await headers()
+  const nonce = headersList.get('x-nonce') || ''
 
   // JSON-LD con @graph para Person + WebPage
   const jsonLdGraph = validLang === 'es' ? {
@@ -189,15 +194,31 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" type="image/svg+xml" href="/favicon-temperini/icon0.svg" />
         <link rel="apple-touch-icon" href="/favicon-temperini/apple-icon.png" />
+        
+        {/* Preconnect para Google Analytics - Mejora LCP y FCP */}
+        <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        
+        {/* Preconnect para Vercel Analytics */}
+        <link rel="preconnect" href="https://va.vercel-scripts.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://va.vercel-scripts.com" />
+        <link rel="preconnect" href="https://vitals.vercel-insights.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://vitals.vercel-insights.com" />
 
         {/* Critical CSS inline */}
-        <style dangerouslySetInnerHTML={{__html: `
-          body { background-color: #0D0D0D; font-family: var(--font-inter); }
-          * { box-sizing: border-box; margin: 0; padding: 0; }
-        `}} />
+        <style 
+          nonce={nonce}
+          dangerouslySetInnerHTML={{__html: `
+            body { background-color: #0D0D0D; font-family: var(--font-inter); }
+            * { box-sizing: border-box; margin: 0; padding: 0; }
+          `}} 
+        />
 
         {/* JSON-LD Schema con @graph */}
         <script
+          nonce={nonce}
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
         />
