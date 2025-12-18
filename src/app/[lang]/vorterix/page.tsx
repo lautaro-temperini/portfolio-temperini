@@ -13,6 +13,9 @@ export const metadata = {
     "Diseñé una landing de conversión para Paren la Mano (Vorterix), alineando tono, identidad visual y propuesta de valor. Sin frameworks. Sin métricas. Con decisiones de diseño real.",
   keywords:
     "Vorterix - Landing Page, Vorterix, Paren la Mano, UX/UI, landing page, FOMO, comunidad, suscripciones, identidad visual, Lautaro Temperini, diseño web",
+  alternates: {
+    canonical: '/vorterix',
+  },
   openGraph: {
     title: "Paren la Mano | Landing que convierte audiencia en comunidad | Lautaro R. Temperini",
     description:
@@ -58,10 +61,10 @@ export default async function VorterixLandingPage({
           {/* Hero Section - 60vh */}
           <section className="w-full h-[60vh] flex items-center justify-center">
             <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12">
-              <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold leading-tight text-[#F2F2F2] mb-6">
+              <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold leading-tight text-light mb-6">
                 VORTERIX
               </h1>
-              <p className="text-xl md:text-2xl font-semibold text-[#F2F2F2] mb-4">
+              <p className="text-xl md:text-2xl font-semibold text-light mb-4">
                 Paren la mano - Landing Page
               </p>
               <div className="text-base md:text-lg text-[#F1F1F1] leading-relaxed">
@@ -73,7 +76,7 @@ export default async function VorterixLandingPage({
 
           {/* El brief real */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">El brief real: un reto con límites claros</h2>
+            <h2 className="text-3xl font-bold text-light mb-6">El brief real: un reto con límites claros</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <blockquote className="text-[#F1F1F1] italic mb-6 text-lg border-l-4 border-purple-500 pl-4">
                 "Tenés que convertir oyentes en leads. Sin métricas. Sin data. Solo criterio y decisiones que funcionen."
@@ -85,7 +88,7 @@ export default async function VorterixLandingPage({
 
           {/* Por qué hacía falta esta landing */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">¿Por qué hacía falta esta landing?</h2>
+            <h2 className="text-3xl font-bold text-light mb-6">¿Por qué hacía falta esta landing?</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <ul className="list-disc pl-5 space-y-3 mb-6">
                 <li>La web de Vorterix no reflejaba el espíritu de Paren la Mano.</li>
@@ -108,14 +111,14 @@ export default async function VorterixLandingPage({
 
           {/* El diseño empieza por ellos */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">
+            <h2 className="text-3xl font-bold text-light mb-6">
               El diseño empieza por ellos
             </h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <p className="mb-6">Estudiamos el tono y contenido del programa, analizamos redes, y observamos qué funcionaba en medios como Olga y LuzuTV.</p>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="flex-1 rounded-2xl p-8 bg-[#9C96A4]/10 border-2 border-[#F1F1F1]/10">
-                  <h3 className="text-[#F2F2F2] font-semibold text-xl mb-4">La audiencia no quería "algo lindo"</h3>
+                  <h3 className="text-light font-semibold text-xl mb-4">La audiencia no quería "algo lindo"</h3>
                   <p className="text-[#F1F1F1] mb-4">Quería algo que hablara como ellos:</p>
                   <ul className="text-[#F1F1F1] space-y-2">
                     <li className="flex items-start">
@@ -133,24 +136,24 @@ export default async function VorterixLandingPage({
                   </ul>
                 </div>
                 <div className="flex-1 rounded-2xl p-8 bg-[#9C96A4]/10 border-2 border-[#F1F1F1]/10">
-                  <h3 className="text-[#F2F2F2] font-semibold text-xl mb-4">Insights que guiaron decisiones</h3>
+                  <h3 className="text-light font-semibold text-xl mb-4">Insights que guiaron decisiones</h3>
                   <ul className="text-[#F1F1F1] space-y-3">
                     <li className="flex items-start">
                       <span className="text-gray-400 mr-3">🡆</span>
                       <div>
-                        <strong className="text-[#F2F2F2]">Paleta vibrante (verde/violeta):</strong> mantiene la energía de PLM.
+                        <strong className="text-light">Paleta vibrante (verde/violeta):</strong> mantiene la energía de PLM.
                       </div>
                     </li>
                     <li className="flex items-start">
                       <span className="text-gray-400 mr-3">🡆</span>
                       <div>
-                        <strong className="text-[#F2F2F2]">Tipografías pesadas:</strong> refleja el tono del show.
+                        <strong className="text-light">Tipografías pesadas:</strong> refleja el tono del show.
                       </div>
                     </li>
                     <li className="flex items-start">
                       <span className="text-gray-400 mr-3">🡆</span>
                       <div>
-                        <strong className="text-[#F2F2F2]">Contenido exclusivo visible:</strong> valor antes de pedir datos.
+                        <strong className="text-light">Contenido exclusivo visible:</strong> valor antes de pedir datos.
                       </div>
                     </li>
                   </ul>
@@ -221,7 +224,7 @@ export default async function VorterixLandingPage({
 
           {/* Conversión sin perder identidad */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">Conversión sin perder identidad</h2>
+            <h2 className="text-3xl font-bold text-light mb-6">Conversión sin perder identidad</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="h-[700px] rounded-2xl overflow-hidden" style={{backgroundColor: '#1A1F26'}}>
@@ -236,30 +239,30 @@ export default async function VorterixLandingPage({
                   />
                 </div>
                 <div className="flex flex-col h-full justify-start pt-8">
-                  <div className="text-lg font-semibold text-[#F2F2F2] mb-1">Decisiones de diseño:</div>
+                  <div className="text-lg font-semibold text-light mb-1">Decisiones de diseño:</div>
                   <ul className="space-y-1">
                     <li className="flex items-start">
                       <span className="text-green-400 mr-3 mt-1">•</span>
                       <span>
-                        <strong className="text-[#F2F2F2]">Hero con GIF + CTA inmediato:</strong> impacto en los primeros 3 segundos.
+                        <strong className="text-light">Hero con GIF + CTA inmediato:</strong> impacto en los primeros 3 segundos.
                       </span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-green-400 mr-3 mt-1">•</span>
                       <span>
-                        <strong className="text-[#F2F2F2]">Formulario duplicado:</strong> máxima visibilidad sin repetir visualmente.
+                        <strong className="text-light">Formulario duplicado:</strong> máxima visibilidad sin repetir visualmente.
                       </span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-green-400 mr-3 mt-1">•</span>
                       <span>
-                        <strong className="text-[#F2F2F2]">Carrusel de clips:</strong> muestra el valor antes de pedir el email.
+                        <strong className="text-light">Carrusel de clips:</strong> muestra el valor antes de pedir el email.
                       </span>
                     </li>
                     <li className="flex items-start">
                       <span className="text-green-400 mr-3 mt-1">•</span>
                       <span>
-                        <strong className="text-[#F2F2F2]">Narrativa FOMO:</strong> "Accedé a lo que otros se pierden".
+                        <strong className="text-light">Narrativa FOMO:</strong> "Accedé a lo que otros se pierden".
                       </span>
                     </li>
                   </ul>
@@ -285,11 +288,11 @@ export default async function VorterixLandingPage({
 
           {/* Iteraciones clave */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">Iteraciones clave</h2>
+            <h2 className="text-3xl font-bold text-light mb-6">Iteraciones clave</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-4">
-                  <p className="text-sm text-[#595959] italic mb-4">(basadas en conflicto real)</p>
+                  <p className="text-sm text-secondary italic mb-4">(basadas en conflicto real)</p>
                   <ul className="space-y-3">
                     <li className="flex items-start">
                       <span className="text-red-400 mr-3 mt-1">×</span>
@@ -304,11 +307,11 @@ export default async function VorterixLandingPage({
                       Discutimos si mostrar staff o contenido de otros programas.
                     </li>
                   </ul>
-                  <p className="text-[#595959] italic">
+                  <p className="text-secondary italic">
                     Ganó la segunda opción. La comunidad no se enamora de nombres: se queda por el contenido.
                   </p>
-                  <div className="border-t border-[#333] pt-4 mt-6">
-                    <p className="text-[#F2F2F2] font-medium">
+                  <div className="border-t border-subtle pt-4 mt-6">
+                    <p className="text-light font-medium">
                       Este tipo de decisiones no crearon la versión más linda. Crearon la versión que convertía.
                     </p>
                     <p className="text-[#F1F1F1] mt-2">Y entender eso fue una de las mejores lecciones del proyecto.</p>
@@ -331,7 +334,7 @@ export default async function VorterixLandingPage({
 
           {/* UX sin narrativa */}
           <ProseSection className="mb-16">
-            <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">
+            <h2 className="text-3xl font-bold text-light mb-6">
               UX sin narrativa es solo UI
             </h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
@@ -345,14 +348,14 @@ export default async function VorterixLandingPage({
           {/* Conclusión - Sin contenedor */}
           <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12 mb-16">
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
-              <h2 className="text-4xl font-bold text-[#F2F2F2] mb-6 text-center">¿Qué fue esto realmente?</h2>
+              <h2 className="text-4xl font-bold text-light mb-6 text-center">¿Qué fue esto realmente?</h2>
               <div className="space-y-6 text-center max-w-3xl mx-auto">
                 <p className="text-lg">
                   Un laboratorio de decisiones: diseño, storytelling, contenido, límites técnicos.
                   <br />Y sobre todo, una prueba de cómo convertir atención en comunidad sin recursos, pero con criterio.
                 </p>
-                <div className="border-t border-[#333] pt-6">
-                  <p className="text-xl text-[#F2F2F2] font-medium">
+                <div className="border-t border-subtle pt-6">
+                  <p className="text-xl text-light font-medium">
                     Pude confirmar que donde hay límite técnico y poco tiempo, hay lugar para criterio.
                     <br />Y eso es lo que más disfruto diseñando.
                   </p>

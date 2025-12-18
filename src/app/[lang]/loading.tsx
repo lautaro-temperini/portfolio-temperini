@@ -20,13 +20,13 @@
  */
 export default function Loading() {
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-[#0D0D0D]">
+    <div className="fixed inset-0 flex items-center justify-center bg-background">
       <div className="text-center">
         {/* Spinner animado */}
-        <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-[#8900C3] border-r-transparent" />
+        <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-primary border-r-transparent" />
         
         {/* Texto de carga */}
-        <p className="mt-4 text-[#A6A6A6] text-sm">Cargando...</p>
+        <p className="mt-4 text-accent text-sm">Cargando...</p>
       </div>
     </div>
   )

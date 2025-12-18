@@ -13,6 +13,9 @@
       "Rediseño UX/UI de app fitness para smartwatch Q18: rutinas personalizadas basadas en datos biométricos con onboarding que genera confianza.",
     keywords:
       "GloryFit, UX/UI, smartwatch Q18, diseño de experiencia, rutinas personalizadas, datos biométricos, onboarding, confianza, Lautaro Temperini, fitness app, caso de estudio",
+    alternates: {
+      canonical: '/gloryfit',
+    },
     openGraph: {
       title: "GloryFit | App de entrenamiento personalizado | Lautaro R. Temperini",
       description:
@@ -75,10 +78,10 @@
           {/* Hero Section - 60vh */}
           <section className="w-full h-[60vh] flex items-center justify-center">
             <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12">
-              <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold leading-tight text-[#F2F2F2] mb-6">
+              <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold leading-tight text-light mb-6">
                 {t.hero.title}
               </h1>
-              <p className="text-xl md:text-2xl font-semibold text-[#F2F2F2] mb-4">
+              <p className="text-xl md:text-2xl font-semibold text-light mb-4">
                 {t.hero.subtitle}
               </p>
               <p className="text-base md:text-lg text-[#F1F1F1] leading-relaxed">
@@ -96,7 +99,7 @@
 
             {/* El reto */}
             <ProseSection className="mb-16">
-              <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">
+              <h2 className="text-3xl font-bold text-light mb-6">
                 {t.challenge.title}
               </h2>
               <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
@@ -108,7 +111,7 @@
 
             {/* Investigación */}
             <ProseSection className="mb-16">
-              <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">
+              <h2 className="text-3xl font-bold text-light mb-6">
                 {t.research.title}
               </h2>
               <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
@@ -119,7 +122,7 @@
 
             {/* Estrategia de diseño */}
             <ProseSection className="mb-16">
-              <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">
+              <h2 className="text-3xl font-bold text-light mb-6">
                 {t.strategy.title}
               </h2>
               <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
@@ -143,7 +146,7 @@
 
             {/* El sistema detrás */}
             <ProseSection className="mb-16">
-              <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">
+              <h2 className="text-3xl font-bold text-light mb-6">
                 {t.system.title}
               </h2>
               <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
@@ -159,7 +162,7 @@
 
             {/* Diseño de experiencia */}
             <ProseSection className="mb-16">
-              <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">
+              <h2 className="text-3xl font-bold text-light mb-6">
                 {t.experience.title}
               </h2>
               <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
@@ -169,7 +172,7 @@
                     <li key={index}>{component}</li>
                   ))}
                 </ul>
-                <h4 className="text-lg font-semibold text-[#F2F2F2] mb-2">
+                <h4 className="text-lg font-semibold text-light mb-2">
                   {t.experience.visualSystem}
                 </h4>
                 <p>{t.experience.visualSystemText}</p>
@@ -187,13 +190,13 @@
 
             {/* Iteraciones y validación */}
             <ProseSection className="mb-16">
-              <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">
+              <h2 className="text-3xl font-bold text-light mb-6">
                 {t.iterations.title}
               </h2>
               <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
                 <p className="mb-4">{t.iterations.text1}</p>
                 <p className="mb-4">{t.iterations.text2}</p>
-                <p className="font-semibold text-[#F2F2F2]">
+                <p className="font-semibold text-light">
                   {t.iterations.result}
                 </p>
               </div>
@@ -211,7 +214,7 @@
 
             {/* Aprendizajes clave */}
             <ProseSection className="mb-16">
-              <h2 className="text-3xl font-bold text-[#F2F2F2] mb-8">
+              <h2 className="text-3xl font-bold text-light mb-8">
                 Aprendizajes clave
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -225,7 +228,7 @@
 
             {/* Validación y feedback */}
             <ProseSection className="mb-16">
-              <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">
+              <h2 className="text-3xl font-bold text-light mb-6">
                 {t.validation.title}
               </h2>
               <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
@@ -235,11 +238,11 @@
 
             {/* Conclusión */}
             <ProseSection className="mb-16">
-              <h2 className="text-3xl font-bold text-[#F2F2F2] mb-6">
+              <h2 className="text-3xl font-bold text-light mb-6">
                 {t.conclusion.title}
               </h2>
               <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
-                <p className="text-lg font-semibold text-[#F2F2F2] mb-4">
+                <p className="text-lg font-semibold text-light mb-4">
                   {t.conclusion.subtitle}
                 </p>
                 <p className="text-xl">{t.conclusion.text}</p>

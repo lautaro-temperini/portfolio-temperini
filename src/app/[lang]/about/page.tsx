@@ -26,7 +26,7 @@ export async function generateMetadata({
       follow: true,
     },
     alternates: {
-      canonical: `https://temperini.vercel.app/${lang}/about`,
+      canonical: '/about',
       languages: {
         'es': 'https://temperini.vercel.app/es/about',
         'en': 'https://temperini.vercel.app/en/about',

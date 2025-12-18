@@ -61,10 +61,10 @@ export default async function UnderConstruction({
       <main className="min-h-screen pt-16 md:pt-20 lg:pt-24 flex items-center justify-center px-4 md:px-6 lg:px-10">
         <div className="text-center space-y-6 md:space-y-8 max-w-xl md:max-w-2xl mx-auto">
           <div className="space-y-3 md:space-y-4">
-            <h1 className="fluid-text-3xl md:fluid-text-5xl lg:fluid-text-6xl font-bold text-[#F2F2F2]">
+            <h1 className="fluid-text-3xl md:fluid-text-5xl lg:fluid-text-6xl font-bold text-light">
               {dict.construction.title}
             </h1>
-            <p className="fluid-text-base md:fluid-text-lg lg:fluid-text-xl text-[#A6A6A6] leading-relaxed">
+            <p className="fluid-text-base md:fluid-text-lg lg:fluid-text-xl text-accent leading-relaxed">
               {textLines.map((line, index) => (
                 <span key={index}>
                   {line}
@@ -77,7 +77,7 @@ export default async function UnderConstruction({
           <div className="pt-4 md:pt-8">
             <Link 
               href={`/${lang}`}
-              className="inline-flex items-center min-h-[44px] md:h-[40px] px-6 md:px-8 py-3 bg-[#F2F2F2] text-[#181818] font-semibold rounded-full hover:bg-[#E0E0E0] transition-colors duration-200"
+              className="inline-flex items-center min-h-touch md:h-10 px-6 md:px-8 py-3 bg-[#F2F2F2] text-[#181818] font-semibold rounded-full hover:bg-[#E0E0E0] transition-colors duration-200"
             >
               {dict.construction.backToHome}
             </Link>

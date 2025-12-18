@@ -57,7 +57,7 @@ const Contact: React.FC<ContactProps> = ({ dict }) => {
 <div className="w-full max-w-none mx-auto">
           {/* Título de la sección */}
           <h2 
-            className="fluid-text-2xl md:fluid-text-3xl lg:fluid-text-4xl font-bold mb-6 md:mb-8 text-[#F2F2F2] text-center" 
+            className="fluid-text-2xl md:fluid-text-3xl lg:fluid-text-4xl font-bold mb-6 md:mb-8 text-light text-center" 
             style={{ fontFamily: "var(--font-manrope)" }}
           >
             {dict.contact.title}
@@ -78,7 +78,7 @@ const Contact: React.FC<ContactProps> = ({ dict }) => {
             href={socialNetwork.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="min-w-[44px] min-h-[44px] w-11 h-11 md:w-12 md:h-12 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-white/20 transition-all duration-200"
+            className="min-w-touch min-h-touch w-11 h-11 md:w-12 md:h-12 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-white/20 transition-all duration-200"
             aria-label={socialNetwork.name}
           >
             <Image

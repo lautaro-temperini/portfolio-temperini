@@ -59,7 +59,7 @@ export default function BentoCard({ item }: BentoCardProps) {
     </>
   )
 
-  const cardClassName = "relative overflow-hidden rounded-xl bg-[#0D0D0D] border flex flex-col"
+  const cardClassName = "relative overflow-hidden rounded-xl bg-background border flex flex-col"
   const cardStyle = {
     borderColor,
     aspectRatio: '1 / 1' as const,

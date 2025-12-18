@@ -52,7 +52,7 @@ export default function ProjectCard({
     <div className={`w-full ${className}`}>
       <Link href={`/${lang}/${slug}`} className="block relative w-full group cursor-pointer">
         <GlareHover
-          className="group bg-[#0D0D0D] border border-[#9C96A4] rounded-2xl transition-all duration-300 hover:border-[#8900C3] hover:shadow-[0px_8px_35px_rgba(115,0,165,0.18)] hover:scale-[1.005] cursor-pointer"
+          className="group bg-background border border-[#9C96A4] rounded-2xl transition-all duration-300 hover:border-primary hover:shadow-[0px_8px_35px_rgba(115,0,165,0.18)] hover:scale-[1.005] cursor-pointer"
           glareColor="#f2f2f2"
           glareOpacity={0.07}
           glareAngle={-30}
@@ -72,7 +72,7 @@ export default function ProjectCard({
               {/* Project Info */}
               <div className="flex-1 text-left">
                 <h3
-                  className="fluid-text-xl font-semibold leading-tight text-[#F2F2F2] mb-1 transition-shadow group-hover:shadow-lg"
+                  className="fluid-text-xl font-semibold leading-tight text-light mb-1 transition-shadow group-hover:shadow-lg"
                   style={{ fontFamily: "var(--font-inter)" }}
                 >
                   {projectData.title}
@@ -118,19 +118,19 @@ export default function ProjectCard({
               {/* Project Info */}
               <div className="flex-1 min-w-0 mt-4">
                 <h3
-                  className="fluid-text-xl md:fluid-text-2xl lg:fluid-text-3xl font-semibold leading-tight text-[#F2F2F2] mb-2 md:mb-3 lg:mb-4 transition-shadow group-hover:shadow-lg"
+                  className="fluid-text-xl md:fluid-text-2xl lg:fluid-text-3xl font-semibold leading-tight text-light mb-2 md:mb-3 lg:mb-4 transition-shadow group-hover:shadow-lg"
                   style={{ fontFamily: "var(--font-inter)" }}
                 >
                   {projectData.title}
                 </h3>
                 <p
-                  className="fluid-text-lg md:fluid-text-xl font-normal leading-tight text-[#A6A6A6] mb-2 md:mb-3"
+                  className="fluid-text-lg md:fluid-text-xl font-normal leading-tight text-accent mb-2 md:mb-3"
                   style={{ fontFamily: "var(--font-inter)" }}
                 >
                   {projectData.subtitle}
                 </p>
                 <p
-                  className="fluid-text-base md:fluid-text-lg font-normal text-[#A6A6A6] mb-3 md:mb-4"
+                  className="fluid-text-base md:fluid-text-lg font-normal text-accent mb-3 md:mb-4"
                   style={{ fontFamily: "var(--font-inter)" }}
                 >
                   {projectData.description}

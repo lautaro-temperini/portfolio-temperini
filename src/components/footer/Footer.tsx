@@ -63,7 +63,7 @@ const handleSocialClick = (platform: string) => {
  
   return (
     <footer
-      className="relative w-full h-auto min-h-[80px] md:min-h-[120px] overflow-hidden py-4 md:py-6 bg-[#0D0D0D]/80"
+      className="relative w-full h-auto min-h-[80px] md:min-h-[120px] overflow-hidden py-4 md:py-6 bg-background/80"
       style={{ width: "100%" }}
     >
       <div className="w-full px-4 md:px-6 lg:px-10 mx-auto flex flex-col md:flex-row items-center justify-between py-4 md:py-6 gap-8 md:gap-4">
@@ -78,7 +78,7 @@ const handleSocialClick = (platform: string) => {
             </h3>
             <Link
   href={`/${lang}/contact`}
-  className="flex items-center justify-center w-full max-w-sm md:w-[180px] min-h-[44px] md:h-[40px] rounded-full px-6 md:px-6 transition-all duration-200 hover:shadow-lg btn-primary"
+  className="flex items-center justify-center w-full max-w-sm md:w-[180px] min-h-touch md:h-10 rounded-full px-6 md:px-6 transition-all duration-200 hover:shadow-lg btn-primary"
   style={{
     background: "linear-gradient(180deg, #8900C3 72%, #595959 100%)",
     border: "1px solid rgba(156, 150, 164, 0.5)",

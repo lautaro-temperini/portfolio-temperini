@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 
 // Skeleton IDÉNTICO al layout final
 const BentoGridSkeleton = () => (
-  <section className="relative w-full min-h-screen py-12 md:py-16 lg:py-20 bg-[#0D0D0D]">
+  <section className="relative w-full min-h-screen py-12 md:py-16 lg:py-20 bg-background">
     <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
       <div className="text-center mb-12 md:mb-16">
         <div className="h-12 md:h-16 lg:h-20 w-64 md:w-80 mx-auto mb-6 bg-[#1A1A1A] rounded-lg animate-pulse" />

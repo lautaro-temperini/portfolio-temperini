@@ -13,7 +13,7 @@ import Skeleton from '@/components/ui/skeleton'
 export default function ProjectCardSkeleton() {
   return (
     <div className="w-full">
-      <div className="group bg-[#0D0D0D] border border-[#9C96A4] rounded-2xl transition-all duration-300">
+      <div className="group bg-background border border-[#9C96A4] rounded-2xl transition-all duration-300">
         <div className="p-6">
           {/* Mobile Layout Skeleton */}
           <div className="flex flex-row items-center md:hidden gap-4">

@@ -148,7 +148,7 @@ export default function Navbar({ dict, lang }: NavbarProps) {
   return (
     <nav
       role="navigation"
-      className={`fixed top-0 left-0 right-0 w-full h-16 md:h-20 lg:h-24 z-[9999] flex items-center justify-between px-4 md:px-6 lg:px-10 bg-[#0D0D0D] border-b border-[#333]/50 transition-transform duration-300 ${
+      className={`fixed top-0 left-0 right-0 w-full h-16 md:h-20 lg:h-24 z-[9999] flex items-center justify-between px-4 md:px-6 lg:px-10 bg-background border-b border-subtle/50 transition-transform duration-300 ${
         !isVisible ? "-translate-y-full" : "translate-y-0"
       }`}
     >
@@ -182,7 +182,7 @@ export default function Navbar({ dict, lang }: NavbarProps) {
         {!pathname.includes('/contact') && (
           <Link
             href={`/${lang}/contact`}
-            className="hidden sm:flex items-center justify-center px-6 h-10 md:h-[40px] rounded-full transition-all duration-200 hover:shadow-lg btn-primary cursor-pointer"
+            className="hidden sm:flex items-center justify-center px-6 h-10 md:h-10 rounded-full transition-all duration-200 hover:shadow-lg btn-primary cursor-pointer"
             style={{
               background: "linear-gradient(180deg, #8900C3 72%, #595959 100%)",
               border: "1px solid rgba(156, 150, 164, 0.5)",
@@ -190,7 +190,7 @@ export default function Navbar({ dict, lang }: NavbarProps) {
             }}
           >
             <span
-              className="fluid-text-sm font-semibold text-[#F2F2F2] whitespace-nowrap relative"
+              className="fluid-text-sm font-semibold text-light whitespace-nowrap relative"
               style={{ fontFamily: "var(--font-inter)" }}
             >
               {dict.nav.connect}
@@ -209,7 +209,7 @@ export default function Navbar({ dict, lang }: NavbarProps) {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="min-w-[44px] min-h-[44px] w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-white/20 transition-all duration-200"
+                className="min-w-touch min-h-touch w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-white/20 transition-all duration-200"
                 aria-label={social.name}
               >
                 <Image
@@ -225,7 +225,7 @@ export default function Navbar({ dict, lang }: NavbarProps) {
         )}
         
         <button
-          className="md:hidden min-w-[44px] min-h-[44px] p-2 text-[#F2F2F2] transition-transform duration-200 cursor-pointer flex items-center justify-center"
+          className="md:hidden min-w-touch min-h-touch p-2 text-light transition-transform duration-200 cursor-pointer flex items-center justify-center"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
           aria-expanded={mobileMenuOpen}
@@ -238,7 +238,7 @@ export default function Navbar({ dict, lang }: NavbarProps) {
       {mobileMenuOpen && (
         <div
           id="navbar-mobile-menu"
-          className="absolute top-full left-0 w-full bg-[#0D0D0D]/95 backdrop-blur-sm border-t border-[#333]/50 md:hidden"
+          className="absolute top-full left-0 w-full bg-background/95 backdrop-blur-sm border-t border-subtle/50 md:hidden"
         >
           <div className="flex flex-col p-4 space-y-4">
             <div className="flex justify-start py-2">
@@ -257,7 +257,7 @@ export default function Navbar({ dict, lang }: NavbarProps) {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span
-                  className="fluid-text-base font-semibold text-[#F2F2F2] relative"
+                  className="fluid-text-base font-semibold text-light relative"
                   style={{ fontFamily: "var(--font-inter)" }}
                 >
                   {dict.nav.connect}
