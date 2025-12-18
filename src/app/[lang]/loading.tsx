@@ -2,6 +2,11 @@
 // COMPONENTE DE CARGA
 // ============================================================================
 
+'use client'
+
+import DelayedSkeleton from '@/components/ui/DelayedSkeleton'
+import { HomePageSkeleton, LoadingFallback } from '@/components/ui/PageSkeletons'
+
 /**
  * Loading - Componente de carga para rutas localizadas
  * 
@@ -10,8 +15,10 @@
  * - Se renderizan los Server Components
  * - Se obtienen datos de APIs
  * 
- * Muestra un spinner centrado con un mensaje de "Cargando..."
- * para indicar al usuario que el contenido está siendo preparado.
+ * Usa DelayedSkeleton para:
+ * - No mostrar nada si la carga es < 300ms (instantánea)
+ * - Mostrar skeleton si la carga es >= 300ms y < 3s
+ * - Mostrar fallback "Cargando..." si la carga es >= 3s
  * 
  * Next.js usa este componente como fallback de Suspense para toda
  * la ruta /[lang]/* cuando hay operaciones asíncronas pendientes.
@@ -20,14 +27,11 @@
  */
 export default function Loading() {
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-background">
-      <div className="text-center">
-        {/* Spinner animado */}
-        <div className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-primary border-r-transparent" />
-        
-        {/* Texto de carga */}
-        <p className="mt-4 text-accent text-sm">Cargando...</p>
-      </div>
-    </div>
+    <DelayedSkeleton
+      skeleton={<HomePageSkeleton />}
+      delay={300}
+      fallbackDelay={3000}
+      fallback={<LoadingFallback />}
+    />
   )
 }

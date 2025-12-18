@@ -148,11 +148,12 @@ export default function Navbar({ dict, lang }: NavbarProps) {
   return (
     <nav
       role="navigation"
+      aria-label="Navegación principal"
       className={`fixed top-0 left-0 right-0 w-full h-16 md:h-20 lg:h-24 z-[9999] flex items-center justify-between px-4 md:px-6 lg:px-10 bg-background border-b border-subtle/50 transition-transform duration-300 ${
         !isVisible ? "-translate-y-full" : "translate-y-0"
       }`}
     >
-      <Link href={`/${lang}`} className="flex items-center justify-center group cursor-pointer">
+      <Link href={`/${lang}`} className="flex items-center justify-center group cursor-pointer" aria-label="Ir al inicio">
         <h1
           className={`fluid-text-xl md:fluid-text-3xl lg:fluid-text-4xl xl:fluid-text-5xl font-medium tracking-[0.15em] transition-all duration-200
             ${(pathname === `/${lang}` || pathname === `/${lang}/`) ? 'underline underline-offset-8 decoration-[#666973]' : ''}

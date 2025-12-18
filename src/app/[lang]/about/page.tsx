@@ -109,7 +109,7 @@ export default async function AboutPage({
     <>
       <Navbar dict={dict} lang={lang} />
       <div className="page-transition">
-        <main className="pt-32 md:pt-40 lg:pt-48">
+        <main id="main-content" role="main" className="pt-32 md:pt-40 lg:pt-48">
           <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12 pb-24">
         <article className="prose prose-invert prose-lg max-w-none">
           <h1 className="text-4xl md:text-5xl font-bold mb-8">

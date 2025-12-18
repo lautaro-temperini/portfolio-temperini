@@ -59,11 +59,10 @@ export default function Skeleton({
   
   /**
    * Clases base que aplican a todas las variantes:
-   * - bg-gray-300: Color de fondo gris claro
-   * - dark:bg-gray-700: Color de fondo gris oscuro en modo oscuro
+   * - bg-[#1a1a1a]: Color de fondo oscuro que coincide con el tema
    * - animate-pulse: Animación de pulsación de Tailwind
    */
-  const baseClasses = 'bg-gray-300 dark:bg-gray-700 animate-pulse'
+  const baseClasses = 'bg-[#1a1a1a] animate-pulse'
   
   /**
    * Clases específicas para cada variante

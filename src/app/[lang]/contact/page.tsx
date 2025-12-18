@@ -3,15 +3,24 @@ import { getDictionary } from '@/lib/getDictionary'
 import dynamic from 'next/dynamic'
 import Navbar from "@/components/navbar/Navbar"
 import PageTransition from "@/components/fxscripts/PageTransition"
+import DelayedSkeleton from '@/components/ui/DelayedSkeleton'
+import { ContactPageSkeleton, LoadingFallback } from '@/components/ui/PageSkeletons'
 
 // Code splitting: Cargar Contact dinámicamente
 const Contact = dynamic(() => import("./Contact"), {
-  loading: () => <div className="min-h-screen flex items-center justify-center"><div className="animate-pulse text-accent">Cargando...</div></div>,
+  loading: () => (
+    <DelayedSkeleton
+      skeleton={<ContactPageSkeleton />}
+      delay={300}
+      fallbackDelay={3000}
+      fallback={<LoadingFallback />}
+    />
+  ),
 })
 
 export const metadata = {
   title: "Contacto | Lautaro R. Temperini",
-  description: "Ponte en contacto con Lautaro R. Temperini para proyectos de diseño multimedia, desarrollo web y experiencias digitales.",
+  description: "Contacta con Lautaro R. Temperini para proyectos de diseño de producto, UX/UI y desarrollo front-end. Disponible para colaboraciones y oportunidades freelance.",
   keywords: "contacto, Lautaro Temperini, diseño multimedia, desarrollo web, UX/UI, experiencias digitales",
   alternates: {
     canonical: '/contact',
@@ -61,9 +70,18 @@ export default async function ContactPage({
   return (
     <PageTransition>
       <Navbar dict={dict} lang={lang} />
-      <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="animate-pulse text-accent">Cargando...</div></div>}>
-        <Contact dict={dict} />
-      </Suspense>
+      <main id="main-content" role="main">
+        <Suspense fallback={
+          <DelayedSkeleton
+            skeleton={<ContactPageSkeleton />}
+            delay={300}
+            fallbackDelay={3000}
+            fallback={<LoadingFallback />}
+          />
+        }>
+          <Contact dict={dict} />
+        </Suspense>
+      </main>
     </PageTransition>
   );
 }

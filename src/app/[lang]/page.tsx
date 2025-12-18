@@ -7,7 +7,7 @@ import Footer from "@/components/footer/Footer";
 
 export const metadata = {
   title: "Lautaro R. Temperini | Product Designer • UX/UI",
-  description: "Portfolio de Lautaro R. Temperini: Product Designer especializado en UX/UI y Frontend Developer. Explora proyectos de diseño digital y desarrollo web.",
+  description: "Product Designer especializado en UX/UI y Frontend Developer. Portfolio con proyectos de diseño digital, desarrollo web y experiencias interactivas. Buenos Aires, Argentina.",
   keywords: "Lautaro Temperini, Product Designer, UX/UI, Frontend Developer, diseño digital, desarrollo web, portfolio",
   alternates: {
     canonical: '/',
@@ -58,13 +58,13 @@ export default async function HomePage({
     <>
       <Navbar dict={dict} lang={lang} />
       <div className="page-transition">
-        <main>
+        <main id="main-content" role="main">
           {/* Pasar el idioma a cada componente */}
           <Hero lang={lang} />
           <Projects lang={lang} />
           <Perfil lang={lang} />
         </main>
-        <Footer dict={dict} />
+        <Footer dict={dict} lang={lang} />
       </div>
     </>
   )

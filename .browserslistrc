@@ -1,5 +1,15 @@
+# Navegadores modernos - Reduce polyfills innecesarios
+# Soporta navegadores con > 0.5% de uso global
 > 0.5%
+# Últimas 2 versiones de cada navegador principal
 last 2 versions
+# Excluir navegadores sin soporte activo
 not dead
+# Excluir Opera Mini
 not op_mini all
+# Incluir navegadores modernos específicos
+Chrome >= 90
+Firefox >= 88
+Safari >= 14
+Edge >= 90
 

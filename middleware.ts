@@ -4,6 +4,7 @@
 
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
+import { randomBytes } from 'crypto'
 
 // ============================================================================
 // CONSTANTES DE CONFIGURACIÓN
@@ -104,6 +105,15 @@ function esRutaBloqueada(pathname: string): boolean {
   return RUTAS_BLOQUEADAS.some(ruta => rutaSinIdioma.startsWith(ruta))
 }
 
+/**
+ * Genera un nonce único para CSP (Content Security Policy)
+ * Un nonce es un número aleatorio usado una sola vez que permite
+ * ejecutar scripts inline específicos sin usar 'unsafe-inline'.
+ */
+function generateNonce(): string {
+  return randomBytes(16).toString('base64')
+}
+
 // ============================================================================
 // MIDDLEWARE PRINCIPAL
 // ============================================================================
@@ -138,6 +148,10 @@ export function middleware(request: NextRequest) {
     const rutaDestino = `/${idioma}/`
     const urlRedireccion = new URL(rutaDestino, request.url)
     const response = NextResponse.redirect(urlRedireccion)
+    
+    // Generar nonce para CSP (aunque es redirect, se aplicará en la siguiente request)
+    const nonce = generateNonce()
+    response.headers.set('x-nonce', nonce)
     
     // Establecer cookie para persistencia
     response.cookies.set('NEXT_LOCALE', idioma, {
@@ -174,6 +188,31 @@ export function middleware(request: NextRequest) {
     const response = NextResponse.next()
     response.headers.set('x-locale', idioma)
     
+    // Generar nonce para CSP y pasarlo como header
+    const nonce = generateNonce()
+    response.headers.set('x-nonce', nonce)
+    
+    // Configurar CSP con nonce dinámico
+    const cspHeader = [
+      "default-src 'self'",
+      `script-src 'self' 'strict-dynamic' 'nonce-${nonce}' 'unsafe-eval' https://vercel.live https://vercel.com https://*.vercel-analytics.com https://*.vercel-insights.com https://va.vercel-scripts.com https://www.googletagmanager.com https://www.google-analytics.com`,
+      `script-src-elem 'self' 'strict-dynamic' 'nonce-${nonce}' https://vercel.live https://vercel.com https://*.vercel-analytics.com https://*.vercel-insights.com https://va.vercel-scripts.com https://www.googletagmanager.com https://www.google-analytics.com`,
+      `style-src 'self' 'nonce-${nonce}'`,
+      "img-src 'self' data: blob: https:",
+      "font-src 'self' data:",
+      "connect-src 'self' https://*.vercel-analytics.com https://*.vercel-insights.com https://vitals.vercel-insights.com https://api.resend.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com",
+      "frame-src 'none'",
+      "object-src 'none'",
+      "base-uri 'self'",
+      "form-action 'self'",
+      "frame-ancestors 'none'",
+      "require-trusted-types-for 'script'",
+      "trusted-types default",
+      "upgrade-insecure-requests",
+    ].join('; ')
+    
+    response.headers.set('Content-Security-Policy', cspHeader)
+    
     // Actualizar cookie siempre para mantener persistencia
     const cookieLocale = request.cookies.get('NEXT_LOCALE')?.value
     if (!cookieLocale || cookieLocale !== idioma) {
@@ -195,6 +234,32 @@ export function middleware(request: NextRequest) {
   // Evitar loop: verificar que no estemos ya en la ruta correcta
   if (pathname === nuevaRuta) {
     const response = NextResponse.next()
+    
+    // Generar nonce para CSP
+    const nonce = generateNonce()
+    response.headers.set('x-nonce', nonce)
+    
+    // Configurar CSP con nonce dinámico
+    const cspHeader = [
+      "default-src 'self'",
+      `script-src 'self' 'strict-dynamic' 'nonce-${nonce}' 'unsafe-eval' https://vercel.live https://vercel.com https://*.vercel-analytics.com https://*.vercel-insights.com https://va.vercel-scripts.com https://www.googletagmanager.com https://www.google-analytics.com`,
+      `script-src-elem 'self' 'strict-dynamic' 'nonce-${nonce}' https://vercel.live https://vercel.com https://*.vercel-analytics.com https://*.vercel-insights.com https://va.vercel-scripts.com https://www.googletagmanager.com https://www.google-analytics.com`,
+      `style-src 'self' 'nonce-${nonce}'`,
+      "img-src 'self' data: blob: https:",
+      "font-src 'self' data:",
+      "connect-src 'self' https://*.vercel-analytics.com https://*.vercel-insights.com https://vitals.vercel-insights.com https://api.resend.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com",
+      "frame-src 'none'",
+      "object-src 'none'",
+      "base-uri 'self'",
+      "form-action 'self'",
+      "frame-ancestors 'none'",
+      "require-trusted-types-for 'script'",
+      "trusted-types default",
+      "upgrade-insecure-requests",
+    ].join('; ')
+    
+    response.headers.set('Content-Security-Policy', cspHeader)
+    
     // Asegurar que la cookie esté establecida
     const cookieLocale = request.cookies.get('NEXT_LOCALE')?.value
     if (!cookieLocale || cookieLocale !== idiomaDetectado) {
@@ -230,6 +295,32 @@ export function middleware(request: NextRequest) {
   
   // IMPORTANTE: Establecer cookie en la redirección para persistencia
   const response = NextResponse.redirect(urlRedireccion)
+  
+  // Generar nonce para CSP
+  const nonce = generateNonce()
+  response.headers.set('x-nonce', nonce)
+  
+  // Configurar CSP con nonce dinámico (aunque es redirect, se aplicará en la siguiente request)
+  const cspHeader = [
+    "default-src 'self'",
+    `script-src 'self' 'strict-dynamic' 'nonce-${nonce}' 'unsafe-eval' https://vercel.live https://vercel.com https://*.vercel-analytics.com https://*.vercel-insights.com https://va.vercel-scripts.com https://www.googletagmanager.com https://www.google-analytics.com`,
+    `script-src-elem 'self' 'strict-dynamic' 'nonce-${nonce}' https://vercel.live https://vercel.com https://*.vercel-analytics.com https://*.vercel-insights.com https://va.vercel-scripts.com https://www.googletagmanager.com https://www.google-analytics.com`,
+    `style-src 'self' 'nonce-${nonce}'`,
+    "img-src 'self' data: blob: https:",
+    "font-src 'self' data:",
+    "connect-src 'self' https://*.vercel-analytics.com https://*.vercel-insights.com https://vitals.vercel-insights.com https://api.resend.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com",
+    "frame-src 'none'",
+    "object-src 'none'",
+    "base-uri 'self'",
+    "form-action 'self'",
+    "frame-ancestors 'none'",
+    "require-trusted-types-for 'script'",
+    "trusted-types default",
+    "upgrade-insecure-requests",
+  ].join('; ')
+  
+  response.headers.set('Content-Security-Policy', cspHeader)
+  
   response.cookies.set('NEXT_LOCALE', idiomaDetectado, {
     path: '/',
     maxAge: 31536000,
