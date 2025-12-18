@@ -125,15 +125,16 @@ function generateNonce(): string {
 }
 
 /**
- * Genera los headers de CSP con nonce dinámico
+ * Genera los headers de CSP
  * Solo se usa en producción
+ * CSP relajado para evitar bloqueos de scripts de Next.js
+ * @param nonce - Nonce generado (no se usa actualmente pero se mantiene para compatibilidad)
  */
 function generarHeadersCSP(nonce: string) {
   const cspHeader = [
     "default-src 'self'",
-    `script-src 'self' 'strict-dynamic' 'nonce-${nonce}' 'unsafe-eval' https://vercel.live https://vercel.com https://*.vercel-analytics.com https://*.vercel-insights.com https://va.vercel-scripts.com https://www.googletagmanager.com https://www.google-analytics.com`,
-    `script-src-elem 'self' 'strict-dynamic' 'nonce-${nonce}' https://vercel.live https://vercel.com https://*.vercel-analytics.com https://*.vercel-insights.com https://va.vercel-scripts.com https://www.googletagmanager.com https://www.google-analytics.com`,
-    `style-src 'self' 'nonce-${nonce}' 'unsafe-inline'`,
+    `script-src 'self' 'unsafe-inline' 'unsafe-eval' https://vercel.live https://vercel.com https://*.vercel-analytics.com https://*.vercel-insights.com https://va.vercel-scripts.com https://www.googletagmanager.com https://www.google-analytics.com`,
+    `style-src 'self' 'unsafe-inline'`,
     "img-src 'self' data: blob: https:",
     "font-src 'self' data:",
     "connect-src 'self' https://*.vercel-analytics.com https://*.vercel-insights.com https://vitals.vercel-insights.com https://api.resend.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com",
@@ -142,8 +143,9 @@ function generarHeadersCSP(nonce: string) {
     "base-uri 'self'",
     "form-action 'self'",
     "frame-ancestors 'none'",
-    "require-trusted-types-for 'script'",
-    "trusted-types default nextjs nextjs#bundler",
+    // ❌ Trusted Types eliminado - estaba bloqueando scripts de Next.js
+    // "require-trusted-types-for 'script'",
+    // "trusted-types default nextjs nextjs#bundler",
     "upgrade-insecure-requests",
   ].join('; ')
   
