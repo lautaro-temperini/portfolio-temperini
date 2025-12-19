@@ -27,9 +27,6 @@ const nextConfig = {
     optimizePackageImports: ['lucide-react'],
   },
   
-  // Optimización estándar para navegadores modernos
-  swcMinify: true,
-  
   // Configuración de compilador para reducir bundle
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production' ? {
