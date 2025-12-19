@@ -4,7 +4,7 @@
   import Footer from "@/components/footer/Footer";
   import CaseStudyLayout from "@/components/case-study/CaseStudyLayout";
   import ProseSection from "@/components/case-study/ProseSection";
-  import ImageBreakout from "@/components/case-study/ImageBreakout";
+  import ImageBreakout from "@/components/sections/ImageBreakout";
   import InsightCard from "@/components/sections/InsightCard";
     
   export const metadata = {
