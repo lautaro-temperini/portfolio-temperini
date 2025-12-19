@@ -127,22 +127,6 @@ export default async function DigitoPage({
           </section>
             </FadeOnScroll>
 
-          {/* ==================== 4. PROTOTIPO FIGMA ==================== */}
-            <FadeOnScroll delay={80}>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">Explorá la solución</h2>
-            <div className="relative w-full mx-auto rounded-lg overflow-hidden mb-4" style={{paddingBottom: '56.25%', height: '80vh'}}>
-              <iframe 
-                className="absolute top-0 left-0 w-full h-full border border-container-light/10 rounded-lg"
-                src="https://embed.figma.com/proto/8rFWTzDEStjT51B7NNb0kq/D%C3%ADgito---Team-2---Prototipo-v2----Latta?node-id=2016-8502&p=f&m=draw&scaling=scale-down&content-scaling=fixed&page-id=623%3A3290&starting-point-node-id=2016%3A8502&embed-host=share"
-                allowFullScreen
-                title="Prototipo Dígito - Figma"
-              />
-            </div>
-            <p className="text-light text-sm md:text-base text-center italic">Prototipo en alta fidelidad mostrando el flujo del módulo operativo.</p>
-          </section>
-            </FadeOnScroll>
-
           {/* ==================== 5. HIPÓTESIS INICIAL ==================== */}
             <FadeOnScroll>
             <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
