@@ -171,7 +171,7 @@ export default async function DigitoPage({
     alt="Diagrama de flujo mostrando cómo la experiencia del usuario se degradaba progresivamente desde la ejecución hasta el registro"
     width={1376}
     height={768}
-     imageClassName="object-cover object-[center_80%]" 
+     imageClassName="object-cover object-center]" 
     caption="La experiencia se degradaba progresivamente. Lo que comenzaba fluido terminaba generando resistencia activa al registro."
     border={false}
     full={true}
