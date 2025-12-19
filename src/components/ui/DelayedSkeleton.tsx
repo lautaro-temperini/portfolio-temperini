@@ -24,8 +24,8 @@ interface DelayedSkeletonProps {
  */
 export default function DelayedSkeleton({
   skeleton,
-  delay = 300,
-  fallbackDelay = 3000,
+  delay = 1000,
+  fallbackDelay = 5000,
   fallback,
 }: DelayedSkeletonProps) {
   const [showSkeleton, setShowSkeleton] = useState(false)

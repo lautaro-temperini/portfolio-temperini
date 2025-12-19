@@ -3,7 +3,7 @@ import type { ReactNode } from "react"
 
 export interface BentoItemProps {
   children: ReactNode
-  colSpan?: 1 | 2
+  colSpan?: 1 | 2 | { default?: 1 | 2; md?: 1 | 2; lg?: 1 | 2 }
   rowSpan?: 1 | 2
   className?: string
 }
@@ -41,9 +41,19 @@ const gapClasses: Record<string, string> = {
   lg: "gap-4 md:gap-5",
 }
 
-const colSpanClasses: Record<number, string> = {
+const colSpanDefaultClasses: Record<number, string> = {
   1: "col-span-1",
-  2: "col-span-1 md:col-span-2",
+  2: "col-span-2",
+}
+
+const colSpanMdClasses: Record<number, string> = {
+  1: "md:col-span-1",
+  2: "md:col-span-2",
+}
+
+const colSpanLgClasses: Record<number, string> = {
+  1: "lg:col-span-1",
+  2: "lg:col-span-2",
 }
 
 const rowSpanClasses: Record<number, string> = {
@@ -53,7 +63,15 @@ const rowSpanClasses: Record<number, string> = {
 
 // BentoItem: Item individual con spans configurables
 export function BentoItem({ children, colSpan = 1, rowSpan = 1, className }: BentoItemProps) {
-  return <div className={cn(colSpanClasses[colSpan], rowSpanClasses[rowSpan], className)}>{children}</div>
+  let colSpanClass = ""
+  if (typeof colSpan === "number") {
+    colSpanClass = colSpanDefaultClasses[colSpan] || ""
+  } else {
+    if (colSpan.default) colSpanClass += colSpanDefaultClasses[colSpan.default] + " "
+    if (colSpan.md) colSpanClass += colSpanMdClasses[colSpan.md] + " "
+    if (colSpan.lg) colSpanClass += colSpanLgClasses[colSpan.lg] + " "
+  }
+  return <div className={cn(colSpanClass, rowSpanClasses[rowSpan], className)}>{children}</div>
 }
 
 // BentoGrid: Grid estilo bento con items de tamaños variados
