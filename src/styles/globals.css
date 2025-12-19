@@ -147,8 +147,8 @@ body::before {
     box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-  /* Focus styles */
- @layer base {
+/* Focus styles */
+@layer base {
   button,
   a,
   input,

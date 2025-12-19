@@ -264,10 +264,8 @@
         "ourDecision": "Nuestra decisión:",
         "ourDecisionText": "Concentrarnos en donde registra horas, gestiona tareas y ve su carga de trabajo.",
         "thisAllowed": "Esto permitió:",
-        "thisAllowedItems": ["Atacar directamente el problema detectado", "Proponer una solución completa y validable", "Mantener compatibilidad con módulos administrativos", "Sentar bases para futuras integraciones"],
-        "whyNotJustScope": "Por qué no fue solo una limitación de scope:",
-        "whyNotJustScopeText": "El research validó que los consultores no se quejaban de facturación ni reportes gerenciales."
-      },
+        "thisAllowedItems": ["Atacar directamente el problema detectado", "Proponer una solución completa y validable", "Mantener compatibilidad con módulos administrativos", "Sentar bases para futuras integraciones"]
+       },
       "principles": {
         "title": "Principios de diseño",
         "subtitle": "El sistema debe ser una herramienta, no una carga.",

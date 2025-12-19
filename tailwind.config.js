@@ -29,6 +29,14 @@ module.exports = {
         light: "#F2F2F2",
         white: "#fff",
         dark: "#1A1A1A",
+        // Tokens semánticos para contenedores y textos
+        container: {
+          DEFAULT: "#18181b", // Color base para contenedores oscuros
+          light: "#F2F2F2", // Color base para contenedores claros
+        },
+        text: {
+          light: "#F1F1F1", // Texto claro (ligeramente diferente de light para mejor contraste)
+        },
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         foreground: "hsl(var(--foreground))",
@@ -143,9 +151,11 @@ module.exports = {
         'xl': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
         'inner': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
         'glow': '0 0 20px rgba(137, 0, 195, 0.3)',
-        'none': 'none',
+        'multi-layer-shadow':
+          '0 2px 4px rgba(0, 0, 0, 0.35), 0 8px 16px rgba(0, 0, 0, 0.28), 0 20px 32px rgba(0, 0, 0, 0.22)',
+        none: 'none',
+      },
     },
-  }, 
- },
+  },
   plugins: [require("tailwindcss-animate")],
 }
