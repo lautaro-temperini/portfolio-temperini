@@ -83,7 +83,7 @@ export default async function DigitoPage({
 
             {/* ==================== BANNER HERO ==================== */}
             <FadeOnScroll delay={80}>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
+            <section className="w-full px-8 md:px-12 lg:px-20 mb-8">
   <div className="relative w-full h-[150px] md:h-[200px] rounded-lg overflow-hidden bg-[#0A1628]">
     <Image
       src="/images/digitoImages/DigitoRender3d.jpg"
@@ -96,6 +96,33 @@ export default async function DigitoPage({
 </section>
             </FadeOnScroll>
 
+{/* ==================== PROJECT SNAPSHOT ==================== */}
+<section className="w-full px-8 md:px-12 lg:px-20 mb-20">
+  <div className="text-sm text-light/80 space-y-2">
+
+    <div>
+      <span className="text-light/70 font-semibold">Empresa</span> · B2B SaaS
+    </div>
+
+    <div>
+      <span className="text-light/70 font-semibold">Rol</span> · Product Designer
+    </div>
+
+    <div>
+      <span className="text-light/70 font-semibold">Timeline</span> · 3.5 meses
+    </div>
+
+    <div>
+      <span className="text-light/70 font-semibold">Scope</span> · Research · Arquitectura · UI · Testing
+    </div>
+
+    <div>
+      <span className="text-light/70 font-semibold">Problema</span> · Baja adopción del registro de horas
+    </div>
+
+  </div>
+</section>
+
           {/* ==================== 2. CONTEXTO ==================== */}
             <FadeOnScroll delay={150}>
             <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
@@ -107,25 +134,11 @@ export default async function DigitoPage({
           </section>
             </FadeOnScroll>
 
-          {/* ==================== 3. MI ROL - Título y subtítulo ==================== */}
-            <FadeOnScroll>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">{t.myRole?.title}</h2>
-            <p className="text-lg text-light mb-8">{t.myRole?.description}</p>
-            <BentoGrid cols={{ default: 1, md: 2, lg: 4 }} gap="md" className="[&>*]:h-full">
-              {t.myRole?.sections?.map((section: any, index: number) => (
-                <BentoItem key={index} colSpan={1}>
-                  <FeatureCard
-                    title={section.subtitle}
-                    description={section.items.slice(0, 2).join(". ")}
-                    variant="dark"
-                    className="h-full"
-                  />
-                </BentoItem>
-              ))}
-            </BentoGrid>
-          </section>
-            </FadeOnScroll>
+
+{/* ==================== DIVIDER ==================== */}
+<div className="w-full px-8 md:px-12 lg:px-20 mb-20">
+  <div className="h-px w-full bg-gradient-to-r from-transparent via-[#08A4E1]/40 to-transparent" />
+</div>
 
           {/* ==================== 5. HIPÓTESIS INICIAL ==================== */}
             <FadeOnScroll>
@@ -138,6 +151,11 @@ export default async function DigitoPage({
                 <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 h-full">
                   <h3 className="text-2xl font-semibold text-light mb-4">{t.problem?.businessImpact}</h3>
                   <div className="text-light leading-relaxed space-y-4">
+                    {t.problem?.impactSummary && (
+                      <blockquote className="text-light italic border-l-4 border-red-500 pl-4 mb-2">
+                        {t.problem.impactSummary}
+                      </blockquote>
+                    )}
                     <p>{t.problem?.impactText}</p>
                     <ul className="list-disc pl-5 space-y-2">
                       {(t.problem?.impactItems || []).map((item: string, index: number) => (
@@ -737,138 +755,153 @@ export default async function DigitoPage({
           </section>
             </FadeOnScroll>
 
-          {/* ==================== 21. RESULTADOS ==================== */}
-            <FadeOnScroll delay={150}>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-light mb-8">{t.results.title}</h2>
-            <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0 mb-8 [&>*]:h-full">
-              <Block colSpan={1}>
-                <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 h-full">
-                  <h3 className="text-2xl font-bold text-light mb-4">{t.results.qualitative.title}</h3>
-                  <div className="bg-[#081730]/30 backdrop-blur-sm rounded-lg p-4 border border-[#3282A9]/30 mb-4">
-                    <p className="text-light text-sm leading-relaxed mb-2">{t.results.qualitative.before}</p>
-                    <p className="text-light italic">{t.results.qualitative.beforeQuote}</p>
-                  </div>
-                  <div className="bg-[#081730]/30 backdrop-blur-sm rounded-lg p-4 border border-[#3282A9]/30 mb-4">
-                    <p className="text-light text-sm leading-relaxed mb-2">{t.results.qualitative.after}</p>
-                    <p className="text-light italic">{t.results.qualitative.afterQuote}</p>
-                  </div>
-                  <p className="text-light font-semibold text-lg mb-2">{t.results.qualitative.impact}</p>
-                  <p className="text-light">{t.results.qualitative.impactText}</p>
-                </div>
-              </Block>
-              <Block colSpan={1}>
-                <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 h-full">
-                  <h3 className="text-2xl font-bold text-light mb-4">{t.results.learnings.title}</h3>
-                  <h4 className="text-lg font-semibold text-light mb-2">{t.results.learnings.subtitle}</h4>
-                  <p className="mb-4 text-light">{t.results.learnings.text1}</p>
-                  <p className="mb-4 text-light">{t.results.learnings.text2}</p>
-                  <div className="bg-gradient-to-br from-[#081730]/30 to-[#3282A9]/30 backdrop-blur-sm rounded-lg p-4 border border-[#08A4E1]/30 mb-4">
-                    <p className="text-light font-semibold mb-2">Aprendizaje:</p>
-                    <p className="text-light text-sm leading-relaxed">{t.results.learnings.learning}</p>
-                  </div>
-                  <p className="text-light">{t.results.learnings.text3}</p>
-                </div>
-              </Block>
-            </GridContainer>
-            
-            {/* Evolución hacia IA - Full width */}
-            <div className="bg-[#081730]/30 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-[#3282A9]/30">
-              <h2 className="text-2xl md:text-3xl font-bold text-light mb-4">{t.results.aiEvolution.title}</h2>
-              <p className="text-light mb-6 text-lg">{t.results.aiEvolution.text}</p>
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <h4 className="font-semibold text-light mb-3">{t.results.aiEvolution.componentsTitle}</h4>
-                  <ul className="list-disc pl-5 text-light space-y-2 text-sm leading-relaxed">
-                    {(t.results.aiEvolution.components || []).map((item: string, index: number) => (
-                      <li key={index}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-light mb-3">{t.results.aiEvolution.benefitsTitle}</h4>
-                  <ul className="list-disc pl-5 text-light space-y-2 text-sm leading-relaxed">
-                    {(t.results.aiEvolution.benefits || []).map((item: string, index: number) => (
-                      <li key={index}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-              <div className="bg-container-light/10 backdrop-blur-sm rounded-lg p-4 border border-container-light/20">
-                <p className="text-light text-sm leading-relaxed">{t.results.aiEvolution.note}</p>
-              </div>
-            </div>
-          </section>
-            </FadeOnScroll>
+         {/* ==================== 24. IMPACTO CUALITATIVO ==================== */}
+<FadeOnScroll delay={150}>
+  <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
 
-          {/* ==================== 22. PRÓXIMOS PASOS ==================== */}
-            <FadeOnScroll>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-light mb-8">{t.results.nextSteps.title}</h2>
-            
-            {/* FASE 1 Y EXPERIENCIA MÓVIL - GridContainer 2 cols */}
-            <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0 [&>*]:h-full">
-              <Block colSpan={1}>
-                <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 h-full">
-                  <h3 className="text-2xl font-bold text-light mb-4">{t.results.nextSteps.onboarding.title}</h3>
-                  <p className="mb-4 text-light">{t.results.nextSteps.onboarding.text}</p>
-                  <h4 className="font-semibold text-light mb-2">{t.results.nextSteps.onboarding.flows}</h4>
-                  <ul className="list-disc pl-5 text-light space-y-2 text-sm leading-relaxed mb-4">
-                    {(t.results.nextSteps.onboarding.flowItems || []).map((item: string, index: number) => (
-                      <li key={index}>{item}</li>
-                    ))}
-                  </ul>
-                  <p className="text-light text-sm leading-relaxed mb-4">{t.results.nextSteps.onboarding.note}</p>
-                  <div className="bg-[#081730]/30 backdrop-blur-sm rounded-lg p-4 border border-[#3282A9]/30">
-                    <p className="text-light font-semibold mb-2">{t.results.nextSteps.onboarding.impact}</p>
-                    <p className="text-light text-sm leading-relaxed">{t.results.nextSteps.onboarding.impactText}</p>
-                  </div>
-                </div>
-              </Block>
-              <Block colSpan={1}>
-                <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 h-full">
-                  <h3 className="text-2xl font-bold text-light mb-4">{t.results.nextSteps.mobile.title}</h3>
-                  <p className="mb-4 text-light">{t.results.nextSteps.mobile.text1}</p>
-                  <p className="mb-4 text-light">{t.results.nextSteps.mobile.text2}</p>
-                  <div className="bg-[#081730]/30 backdrop-blur-sm rounded-lg p-4 border border-[#3282A9]/30">
-                    <p className="text-light text-sm leading-relaxed">{t.results.nextSteps.mobile.note}</p>
-                  </div>
-                </div>
-              </Block>
-            </GridContainer>
-          </section>
-            </FadeOnScroll>
+    <h2 className="text-2xl md:text-3xl font-bold text-light mb-6 text-left">
+      {lang === 'es' ? 'Impacto cualitativo:' : 'Qualitative impact:'}
+    </h2>
 
-          {/* ==================== 24. PRINCIPIOS FASE 2 - 3 bloques ==================== */}
-            <FadeOnScroll delay={80}>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">{t.results.phase2Principles.title}</h2>
-            <BentoGrid cols={{ default: 1, md: 3 }} gap="md" className="[&>*]:h-full">
-              {(t.results.phase2Principles.items || []).map((item: { title: string; text: string }, index: number) => (
-                <BentoItem key={index} colSpan={1}>
-                  <FeatureCard
-                    title={item.title}
-                    description={item.text}
-                    variant="dark"
-                    className="h-full"
-                  />
-                </BentoItem>
-              ))}
-            </BentoGrid>
-          </section>
-            </FadeOnScroll>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+
+      {/* ANTES */}
+      <div className="bg-container-light/10 backdrop-blur-sm rounded-lg p-6 border border-container-light/20 text-left">
+        <p className="text-light font-semibold mb-3">
+          {lang === 'es' ? 'Antes:' : 'Before:'}
+        </p>
+
+        <p className="text-light italic text-lg leading-relaxed">
+          {lang === 'es'
+            ? '"El registro de horas es un mal necesario."'
+            : '"Time tracking is a necessary evil."'}
+        </p>
+      </div>
+
+      {/* DESPUÉS */}
+      <div className="bg-container-light/10 backdrop-blur-sm rounded-lg p-6 border border-container-light/20 text-left">
+        <p className="text-light font-semibold mb-3">
+          {lang === 'es' ? 'Después:' : 'After:'}
+        </p>
+
+        <p className="text-light italic text-lg leading-relaxed">
+          {lang === 'es'
+            ? '"Ahora es mucho más rápido. Las sugerencias me ahorran tiempo."'
+            : '"Now it’s much faster. The suggestions save me time."'}
+        </p>
+      </div>
+
+    </div>
+
+    <p className="mt-6 text-left text-sm text-light/70 max-w-3xl">
+      <span className="font-semibold text-light/80">
+        {lang === 'es' ? 'Impacto:' : 'Impact:'}
+      </span>{' '}
+      {lang === 'es'
+        ? 'Transformación de una tarea administrativa en una herramienta de valor.'
+        : 'Turning an administrative chore into a valuable tool.'}
+    </p>
+
+  </section>
+</FadeOnScroll>
+
+{/* ==================== DIVIDER ==================== */}
+<div className="w-full px-8 md:px-12 lg:px-20 mb-20">
+  <div className="h-px w-full bg-gradient-to-r from-transparent via-[#08A4E1]/40 to-transparent" />
+</div>
 
           {/* ==================== 25. CIERRE ==================== */}
             <FadeOnScroll delay={150}>
             <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
-            <div className="bg-gradient-to-br from-[#081730]/30 to-[#3282A9]/30 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-[#08A4E1]/30">
-              <h2 className="text-3xl md:text-4xl font-bold text-light mb-6 text-center">{t.results.closing.title}</h2>
-              <div className="space-y-6 text-center max-w-3xl mx-auto">
-                <p className="text-xl text-light leading-relaxed">{t.results.closing.text1}</p>
-                <p className="text-xl text-light leading-relaxed">{t.results.closing.text2}</p>
-                <p className="text-2xl text-light font-bold mt-8">{t.results.closing.highlight}</p>
-              </div>
+            <div className="max-w-3xl mx-auto mb-10 text-light">
+              <h2 className="text-3xl md:text-4xl font-bold text-light mb-4 text-center">
+                Reflexión metodológica
+              </h2>
+              {lang === 'es' ? (
+                <p className="text-lg leading-relaxed text-center">
+                  El rediseño resolvió fricciones claras de interfaz y flujo. Pero el problema central del
+                  registro de horas está profundamente ligado al comportamiento en contexto real, y eso
+                  requiere otro tipo de validación.
+                </p>
+              ) : (
+                <p className="text-lg leading-relaxed text-center">
+                  The redesign addressed clear interface and flow frictions. But the core problem of time tracking
+                  is deeply tied to real-world behavior, and that demands a different kind of validation.
+                </p>
+              )}
             </div>
+
+            <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0">
+              <Block colSpan={1}>
+                <div className="bg-gradient-to-br from-[#081730]/30 to-[#3282A9]/30 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-[#08A4E1]/30 h-full text-light">
+                  <h3 className="text-2xl font-semibold mb-3">
+                    {lang === 'es' ? 'Testing en contexto real' : 'Testing in real context'}
+                  </h3>
+                  {lang === 'es' ? (
+                    <>
+                      <p className="text-lg leading-relaxed mb-2">
+                        En lugar de diseñar tareas dirigidas, testearía con escenarios de trabajo reales.
+                      </p>
+                      <p className="text-lg leading-relaxed mb-2">
+                        El problema principal no está en la usabilidad puntual de la interfaz, sino en cómo
+                        el registro de horas se integra al flujo cotidiano de trabajo.
+                      </p>
+                      <p className="text-lg leading-relaxed">
+                        Probar el producto dentro de ese contexto permitiría observar comportamientos reales.
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="text-lg leading-relaxed mb-2">
+                        Instead of designing directed tasks, I would test with real work scenarios.
+                      </p>
+                      <p className="text-lg leading-relaxed mb-2">
+                        The main issue is not the point-in-time usability of the interface, but how time tracking
+                        integrates into everyday workflow.
+                      </p>
+                      <p className="text-lg leading-relaxed">
+                        Testing the product in that real context would allow us to observe actual behavior.
+                      </p>
+                    </>
+                  )}
+                </div>
+              </Block>
+
+              <Block colSpan={1}>
+                <div className="bg-gradient-to-br from-[#081730]/30 to-[#3282A9]/30 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-[#08A4E1]/30 h-full text-light">
+                  <h3 className="text-2xl font-semibold mb-3">
+                    {lang === 'es' ? 'Métrica de comportamiento' : 'Behavioral metric'}
+                  </h3>
+                  {lang === 'es' ? (
+                    <>
+                      <p className="text-lg leading-relaxed mb-2">
+                        Hoy el registro suele ocurrir con semanas de retraso, por lo que muy pocas horas se
+                        registran dentro de las primeras 24hs. Si volviera a encarar este proyecto, mediría
+                        el % de horas registradas en 24hs como North Star.
+                      </p>
+                      <p className="text-lg leading-relaxed">
+                        Esto hubiera orientado las decisiones de diseño más directamente al comportamiento que
+                        queríamos cambiar:{' '}
+                        <strong>integrar el registro de horas al flujo real de trabajo.</strong>
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="text-lg leading-relaxed mb-2">
+                        Today, logging often happens weeks late, so very few hours are recorded within the first
+                        24 hours. If I were to tackle this project again, I would track the percentage of hours
+                        logged within 24 hours as the North Star metric.
+                      </p>
+                      <p className="text-lg leading-relaxed">
+                        That would have guided design decisions more directly toward the behavior we wanted to
+                        change:{' '}
+                        <strong>integrating time tracking into the actual workflow.</strong>
+                      </p>
+                    </>
+                  )}
+                </div>
+              </Block>
+            </GridContainer>
           </section>
             </FadeOnScroll>
         </main>

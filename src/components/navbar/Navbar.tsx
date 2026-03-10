@@ -183,7 +183,7 @@ export default function Navbar({ dict, lang }: NavbarProps) {
         {!pathname.includes('/contact') && (
           <Link
             href={`/${lang}/contact`}
-            className="hidden sm:flex items-center justify-center px-6 h-10 md:h-10 rounded-full transition-all duration-200 hover:shadow-lg btn-primary cursor-pointer"
+            className="hidden md:flex items-center justify-center px-6 h-10 md:h-10 rounded-full transition-all duration-200 hover:shadow-lg btn-primary cursor-pointer"
             style={{
               background: "linear-gradient(180deg, #8900C3 72%, #595959 100%)",
               border: "1px solid rgba(156, 150, 164, 0.5)",
@@ -242,32 +242,34 @@ export default function Navbar({ dict, lang }: NavbarProps) {
           className="absolute top-full left-0 w-full bg-background/95 backdrop-blur-sm border-t border-subtle/50 md:hidden"
         >
           <div className="flex flex-col p-4 space-y-4">
-            <div className="flex justify-start py-2">
-              <LanguageSelector currentLang={lang} />
-            </div>
-            
-            {!pathname.includes('/contact') && (
-              <Link
-                href={`/${lang}/contact`}
-                className="flex items-center justify-center px-6 h-10 rounded-full mt-4 transition-all cursor-pointer"
-                style={{
-                  background: "linear-gradient(180deg, #8900C3 72%, #595959 100%)",
-                  border: "1px solid rgba(156, 150, 164, 0.5)",
-                  borderRadius: "100px",
-                }}
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <span
-                  className="fluid-text-base font-semibold text-light relative"
-                  style={{ fontFamily: "var(--font-inter)" }}
+            <div className="flex flex-row items-center gap-3 py-2">
+              <div className="flex-1 min-w-0">
+                <LanguageSelector currentLang={lang} />
+              </div>
+              
+              {!pathname.includes('/contact') && (
+                <Link
+                  href={`/${lang}/contact`}
+                  className="flex-1 min-w-0 flex items-center justify-center px-4 h-10 rounded-full transition-all cursor-pointer"
+                  style={{
+                    background: "linear-gradient(180deg, #8900C3 72%, #595959 100%)",
+                    border: "1px solid rgba(156, 150, 164, 0.5)",
+                    borderRadius: "100px",
+                  }}
+                  onClick={() => setMobileMenuOpen(false)}
                 >
-                  {dict.nav.connect}
-                  {pathname.includes('/contact') && (
-                    <span className="absolute -bottom-0.5 left-0 w-full h-0.5 bg-[#666973] rounded-full" />
-                  )}
-                </span>
-              </Link>
-            )}
+                  <span
+                    className="fluid-text-base font-semibold text-light relative"
+                    style={{ fontFamily: "var(--font-inter)" }}
+                  >
+                    {dict.nav.connect}
+                    {pathname.includes('/contact') && (
+                      <span className="absolute -bottom-0.5 left-0 w-full h-0.5 bg-[#666973] rounded-full" />
+                    )}
+                  </span>
+                </Link>
+              )}
+            </div>
           </div>
         </div>
       )}

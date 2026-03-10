@@ -1,4 +1,4 @@
-﻿{
+{
   "hero": {
     "title": "Convierto problemas complejos en interfaces que la gente entiende",
     "subtitle": "Product Design end-to-end:  research, prototipo, código.",
@@ -198,6 +198,7 @@
         "criticalQuestion": "Pregunta crítica: ¿El registro realmente se olvida o se evita activamente?",
         "problemTitle": "El problema: las horas se registraban 1-3 semanas tarde",
         "businessImpact": "Impacto en el negocio:",
+        "impactSummary": "El registro podía demorarse entre una y tres semanas. El equipo directivo estimó que esta falta de visibilidad podía representar pérdidas de hasta USD 11.000 por proyecto.",
         "impactText": "Esa demora afectaba:",
         "impactItems": ["Facturación", "Seguimiento operativo", "Evaluación de carga y capacidad", "Detección temprana de desvíos"],
         "scopeTitle": "Alcance definido:",

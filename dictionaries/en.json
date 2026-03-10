@@ -198,6 +198,7 @@
         "criticalQuestion": "Critical question: Are users forgetting, or actively avoiding?",
         "problemTitle": "The real problem: hours logged 1-3 weeks late",
         "businessImpact": "Business impact:",
+        "impactSummary": "Logging could take between one and three weeks. Leadership estimated that this lack of visibility could represent losses of up to USD 11,000 per project.",
         "impactText": "This delay cascaded into:",
         "impactItems": ["Billing accuracy", "Operational visibility", "Capacity planning", "Early issue detection"],
         "scopeTitle": "Defined scope:",
