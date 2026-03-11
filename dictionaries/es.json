@@ -77,8 +77,9 @@
   },
   "about": {
     "title": "ABOUT",
-    "text1": "Soy Lautaro, Product Designer en formación. Diseño, prototipo en código, entiendo constraints técnicos. Vengo de proyectos académicos multimediales.",
-    "text2": "Busco mi primer trabajo en un lugar que me desafíe y priorice criterio sobre humo.",
+    "text1": "Vengo de proyectos multimediales, tengo base sólida en diseño, prototipo en código y entiendo constraints técnicos.",
+    "text2": "Me entusiasma jugar el juego, pero sobre todo entender cómo está construido el tablero.",
+    "text3": "Busco trabajar en un lugar que me desafíe, con un equipo que priorice criterio sobre humo.",
     "cta": "Hablemos",
     "ctaLink": "/contact"
   },
@@ -182,6 +183,18 @@
         "subtitle": "Módulo Operativo",
         "description": "Rediseño UX/UI del módulo operativo de Dígito: transformé el registro de horas de una tarea olvidada en parte natural del flujo diario."
       },
+      "snapshotTop": {
+        "companyLabel": "Empresa",
+        "companyValue": "B2B SaaS",
+        "roleLabel": "Rol",
+        "roleValue": "Product Designer",
+        "timelineLabel": "Timeline",
+        "timelineValue": "3.5 meses",
+        "scopeLabel": "Scope",
+        "scopeValue": "Research · Arquitectura · UI · Testing",
+        "problemLabel": "Problema",
+        "problemValue": "Baja adopción del registro de horas"
+      },
       "myRole": {
         "title": "Mi rol",
         "description": "Research y síntesis • Estrategia y arquitectura • Diseño y prototipado • Testing y validación"
@@ -191,6 +204,7 @@
         "text1": "Dígito es una empresa de Business Intelligence y RPA. Su plataforma SaaS B2B incluía facturación, reportes y administración, pero el módulo operativo para consultores tenía baja adopción.",
         "text2": "El objetivo fue claro: convertir el registro de horas en parte natural del flujo de trabajo, no en una tarea adicional."
       },
+      "mvpOriginalImageCaption": "MVP original de Dígito previo al rediseño.",
       "problem": {
         "title": "Hipótesis inicial vs. realidad",
         "hypothesis": "\"Los usuarios se olvidan de cargar las horas.\"",
@@ -205,7 +219,7 @@
         "scopeText": "No modificar contratos, procesos organizacionales ni estructuras internas."
       },
       "research": {
-        "title": "Research: el problema real no es olvido, es depriorización activa",
+        "title": "Discovery: el problema real no es olvido, es depriorización activa",
         "subtitle": "Combiné desk research, entrevistas con usuarios reales y auditoría del MVP.",
         "methodsTitle": "Métodos",
         "deskResearch": {
@@ -332,8 +346,8 @@
           "problem": "Los consultores usan múltiples herramientas para gestionar tareas.",
           "solution": "Un dashboard centralizado que integra tareas, proyectos y registro de horas.",
           "features": ["Dashboard personalizable", "Vista Kanban y Gantt", "Notificaciones proactivas"],
-          "components": ["Widgets de tareas y proyectos", "Métricas personales y de equipo", "Calendario integrado"],
-          "syncTitle": "Sincronización:",
+          "components": ["Vista de tareas pendientes", "Métricas personales y de equipo", "Calendario integrado", "Acceso rápido a proyectos activos"],
+          "syncTitle": "Sincronización",
           "syncText": "Datos actualizados en tiempo real entre todas las vistas."
         },
         "automation": {
@@ -456,6 +470,25 @@
           "subtitle": "Dígito demostró que un buen diseño puede cambiar la percepción:",
           "text": "De un registrador de horas a una herramienta operativa que impulsa la productividad."
         }
+      },
+      "snapshot": {
+        "impactTitle": "Impacto cualitativo:",
+        "impactBeforeLabel": "Antes:",
+        "impactBeforeQuote": "\"El registro de horas es un mal necesario.\"",
+        "impactAfterLabel": "Después:",
+        "impactAfterQuote": "\"Ahora es mucho más rápido. Las sugerencias me ahorran tiempo.\"",
+        "impactLabel": "Impacto:",
+        "impactText": "Transformación de una tarea administrativa en una herramienta de valor.",
+        "reflectionTitle": "Reflexión metodológica",
+        "reflectionIntro": "El rediseño resolvió fricciones claras de interfaz y flujo. Pero el problema central del registro de horas está profundamente ligado al comportamiento en contexto real, y eso requiere otro tipo de validación.",
+        "testingTitle": "Testing en contexto real",
+        "testingP1": "En lugar de diseñar tareas dirigidas, testearía con escenarios de trabajo reales.",
+        "testingP2": "El problema principal no está en la usabilidad puntual de la interfaz, sino en cómo el registro de horas se integra al flujo cotidiano de trabajo.",
+        "testingP3": "Probar el producto dentro de ese contexto permitiría observar comportamientos reales.",
+        "metricTitle": "Métrica de comportamiento",
+        "metricP1": "Hoy el registro suele ocurrir con semanas de retraso, por lo que muy pocas horas se registran dentro de las primeras 24hs. Si volviera a encarar este proyecto, mediría el % de horas registradas en 24hs como North Star.",
+        "metricP2Prefix": "Esto hubiera orientado las decisiones de diseño más directamente al comportamiento que el rediseño buscaba cambiar:",
+        "metricP2Bold": "integrar el registro de horas al flujo real de trabajo."
       }
     },
     "levelup": {

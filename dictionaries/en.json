@@ -77,8 +77,9 @@
   },
   "about": {
     "title": "ABOUT",
-    "text1": "I'm Lautaro, a Product Designer in training. I design, prototype in code, and understand technical constraints. I come from multimedia academic projects.",
-    "text2": "I'm looking for my first job at an agency that challenges me and prioritizes judgment over hype.",
+    "text1": "I come from multimedia projects, have a solid design foundation, prototype in code, and understand technical constraints.",
+    "text2": "I enjoy playing the game, but what really drives me is understanding how the board is built.",
+    "text3": "I'm looking for a place that challenges me, with a team that values substance over noise.",
     "cta": "Let's talk",
     "ctaLink": "/contact"
   },
@@ -182,6 +183,18 @@
         "subtitle": "Operations Module",
         "description": "UX/UI redesign of Dígito's operations module: I transformed time tracking from a forgotten chore into a natural part of daily workflow."
       },
+      "snapshotTop": {
+        "companyLabel": "Company",
+        "companyValue": "B2B SaaS",
+        "roleLabel": "Role",
+        "roleValue": "Product Designer",
+        "timelineLabel": "Timeline",
+        "timelineValue": "3.5 months",
+        "scopeLabel": "Scope",
+        "scopeValue": "Research · Information Architecture · UI · Testing",
+        "problemLabel": "Problem",
+        "problemValue": "Low adoption of time tracking"
+      },
       "myRole": {
         "title": "My role",
         "description": "Research & synthesis • Strategy & architecture • Design & prototyping • Testing & validation"
@@ -191,6 +204,7 @@
         "text1": "Dígito is a Business Intelligence and RPA company. Their B2B SaaS platform handled billing, reports, and administration—but the operations module for consultants suffered from low adoption.",
         "text2": "The goal was clear: integrate time tracking naturally into workflow, not as an additional burden."
       },
+      "mvpOriginalImageCaption": "Original Dígito MVP before the redesign.",
       "problem": {
         "title": "Initial hypothesis vs. reality",
         "hypothesis": "\"Users forget to log their hours.\"",
@@ -205,7 +219,7 @@
         "scopeText": "No changes to contracts, organizational processes, or core infrastructure."
       },
       "research": {
-        "title": "Research: the real problem isn't forgetting—it's active deprioritization",
+        "title": "Discovery: the real problem isn't forgetting—it's active deprioritization",
         "subtitle": "I combined desk research, user interviews, and MVP auditing.",
         "methodsTitle": "Methods",
         "deskResearch": {
@@ -334,8 +348,8 @@
           "problem": "Consultants juggle multiple tools to manage work.",
           "solution": "One centralized dashboard integrating tasks, projects, and time tracking.",
           "features": ["Customizable dashboard", "Kanban & Gantt views", "Proactive notifications"],
-          "components": ["Task & project widgets", "Personal & team metrics", "Integrated calendar"],
-          "syncTitle": "Real-time sync:",
+          "components": ["Pending tasks view", "Personal & team metrics", "Integrated calendar", "Quick access to active projects"],
+          "syncTitle": "Real-time sync",
           "syncText": "All data updates instantly across views."
         },
         "automation": {
@@ -458,6 +472,25 @@
           "subtitle": "Dígito proved that thoughtful design shifts perception:",
           "text": "From time-tracking burden to productivity catalyst."
         }
+      },
+      "snapshot": {
+        "impactTitle": "Qualitative impact:",
+        "impactBeforeLabel": "Before:",
+        "impactBeforeQuote": "\"Time tracking is a necessary evil.\"",
+        "impactAfterLabel": "After:",
+        "impactAfterQuote": "\"Now it’s much faster. The suggestions save me time.\"",
+        "impactLabel": "Impact:",
+        "impactText": "Turning an administrative chore into a valuable tool.",
+        "reflectionTitle": "Methodological reflection",
+        "reflectionIntro": "The redesign addressed clear interface and flow frictions. But the core problem of time tracking is deeply tied to real-world behavior, and that demands a different kind of validation.",
+        "testingTitle": "Testing in real context",
+        "testingP1": "Instead of designing directed tasks, I would test with real work scenarios.",
+        "testingP2": "The main issue is not point-in-time interface usability, but how time tracking integrates into everyday workflow.",
+        "testingP3": "Testing the product in that real context would allow us to observe actual behavior.",
+        "metricTitle": "Behavioral metric",
+        "metricP1": "Today, logging often happens weeks late, so very few hours are recorded within the first 24 hours. If I were to tackle this project again, I would track the percentage of hours logged within 24 hours as the North Star metric.",
+        "metricP2Prefix": "That would have guided design decisions more directly toward the behavior the redesign aimed to change: ",
+        "metricP2Bold": "integrating time tracking into the actual workflow."
       }
     },
     "levelup": {

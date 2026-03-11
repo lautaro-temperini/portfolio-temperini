@@ -90,38 +90,51 @@ export default async function DigitoPage({
       alt="Render3D de Logo de Dígito"
       width={1198}
       height={206}
-      className="w-full h-full object-contain scale-110"
+      className="w-full h-full object-cover"
     />
   </div>
 </section>
             </FadeOnScroll>
 
-{/* ==================== PROJECT SNAPSHOT ==================== */}
-<section className="w-full px-8 md:px-12 lg:px-20 mb-20">
-  <div className="text-sm text-light/80 space-y-2">
+          {/* ==================== PROJECT SNAPSHOT ==================== */}
+          <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
+            <div className="text-sm text-light/80 space-y-2">
+              <div>
+                <span className="text-light/70 font-semibold">
+                  {t.snapshotTop?.companyLabel}
+                </span>{" "}
+                · {t.snapshotTop?.companyValue}
+              </div>
 
-    <div>
-      <span className="text-light/70 font-semibold">Empresa</span> · B2B SaaS
-    </div>
+              <div>
+                <span className="text-light/70 font-semibold">
+                  {t.snapshotTop?.roleLabel}
+                </span>{" "}
+                · {t.snapshotTop?.roleValue}
+              </div>
 
-    <div>
-      <span className="text-light/70 font-semibold">Rol</span> · Product Designer
-    </div>
+              <div>
+                <span className="text-light/70 font-semibold">
+                  {t.snapshotTop?.timelineLabel}
+                </span>{" "}
+                · {t.snapshotTop?.timelineValue}
+              </div>
 
-    <div>
-      <span className="text-light/70 font-semibold">Timeline</span> · 3.5 meses
-    </div>
+              <div>
+                <span className="text-light/70 font-semibold">
+                  {t.snapshotTop?.scopeLabel}
+                </span>{" "}
+                · {t.snapshotTop?.scopeValue}
+              </div>
 
-    <div>
-      <span className="text-light/70 font-semibold">Scope</span> · Research · Arquitectura · UI · Testing
-    </div>
-
-    <div>
-      <span className="text-light/70 font-semibold">Problema</span> · Baja adopción del registro de horas
-    </div>
-
-  </div>
-</section>
+              <div>
+                <span className="text-light/70 font-semibold">
+                  {t.snapshotTop?.problemLabel}
+                </span>{" "}
+                · {t.snapshotTop?.problemValue}
+              </div>
+            </div>
+          </section>
 
           {/* ==================== 2. CONTEXTO ==================== */}
             <FadeOnScroll delay={150}>
@@ -167,9 +180,11 @@ export default async function DigitoPage({
               </Block>
               <Block colSpan={1}>
                 <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 h-full">
-                  <h3 className="text-2xl font-semibold text-light mb-4">Hipótesis inicial vs. realidad</h3>
+                  <h3 className="text-2xl font-semibold text-light mb-4">
+                    {t.problem?.title}
+                  </h3>
                   <blockquote className="text-light italic border-l-4 border-red-500 pl-4 mb-4">
-                    Hipótesis del CEO: {t.problem?.hypothesis}
+                    {t.problem?.hypothesisAuthor} {t.problem?.hypothesis}
                   </blockquote>
                   <p className="text-light font-semibold mb-4">{t.problem?.criticalQuestion}</p>
                   <div className="bg-container-light/10 backdrop-blur-sm rounded-lg p-4 border border-container-light/20">
@@ -185,15 +200,23 @@ export default async function DigitoPage({
           {/* ==================== 6. CUSTOMER JOURNEY BANNER (Full width 16:9) ==================== */}
 <FadeOnScroll>
   <ImageBreakout
-    src="/images/digitoImages/flujo-usuario-degradacion-progresiva-timetracking.png"
-    alt="Diagrama de flujo mostrando cómo la experiencia del usuario se degradaba progresivamente desde la ejecución hasta el registro"
-    width={1376}
-    height={768}
-     imageClassName="object-cover object-center]" 
-    caption="La experiencia se degradaba progresivamente. Lo que comenzaba fluido terminaba generando resistencia activa al registro."
-    border={false}
-    full={true}
-  />
+  src="/images/digitoImages/flujo-usuario-degradacion-progresiva-timetracking.png"
+  alt={
+    lang === "es"
+      ? "Diagrama de flujo mostrando cómo la experiencia del usuario se degradaba progresivamente desde la ejecución hasta el registro"
+      : "Flow diagram showing how the user experience progressively degraded from execution to logging"
+  }
+  width={1376}
+  height={768}
+   imageClassName="object-cover object-center]" 
+  caption={
+    lang === "es"
+      ? "La experiencia se degradaba progresivamente. Lo que comenzaba fluido terminaba generando resistencia activa al registro."
+      : "The experience progressively degraded: what started smooth ended up creating active resistance to logging."
+  }
+  border={false}
+  full={true}
+/>
 </FadeOnScroll>
 
           {/* ==================== 7. RESEARCH ==================== */}
@@ -229,15 +252,6 @@ export default async function DigitoPage({
                 </BentoItem>
               </BentoGrid>
             </div>
-            <ImageBreakout
-              src="/tabla-comparativa-de-desk-research--entrevistas-y-.jpg"
-              alt="Tabla comparativa - Desk Research"
-              width={1920}
-              height={1080}
-              border={false}
-              full={true}
-              noPadding={true}
-            />
           </section>
             </FadeOnScroll>
 
@@ -370,15 +384,21 @@ export default async function DigitoPage({
                   </div>
                   <div className="space-y-3 text-light text-sm leading-relaxed">
                     <div>
-                      <h4 className="font-semibold text-light mb-1">Dolor:</h4>
+                      <h4 className="font-semibold text-light mb-1">
+                        {lang === "es" ? "Dolor:" : "Pain:"}
+                      </h4>
                       <p className="text-sm leading-relaxed">{t.frictions.friction1.pain}</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-light mb-1">Decisión:</h4>
+                      <h4 className="font-semibold text-light mb-1">
+                        {lang === "es" ? "Decisión:" : "Decision:"}
+                      </h4>
                       <p className="text-light text-sm leading-relaxed">{t.frictions.friction1.decision}</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-light mb-1">Por qué funciona:</h4>
+                      <h4 className="font-semibold text-light mb-1">
+                        {lang === "es" ? "Por qué funciona:" : "Why it works:"}
+                      </h4>
                       <p className="text-sm leading-relaxed">{t.frictions.friction1.whyWorks}</p>
                     </div>
                   </div>
@@ -392,11 +412,15 @@ export default async function DigitoPage({
                   </div>
                   <div className="space-y-3 text-light text-sm leading-relaxed">
                     <div>
-                      <h4 className="font-semibold text-light mb-1">Dolor:</h4>
+                      <h4 className="font-semibold text-light mb-1">
+                        {lang === "es" ? "Dolor:" : "Pain:"}
+                      </h4>
                       <p className="text-sm leading-relaxed">{t.frictions.friction2.pain}</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-light mb-1">Decisión:</h4>
+                      <h4 className="font-semibold text-light mb-1">
+                        {lang === "es" ? "Decisión:" : "Decision:"}
+                      </h4>
                       <p className="text-light text-sm leading-relaxed">{t.frictions.friction2.decision}</p>
                     </div>
                   </div>
@@ -410,11 +434,15 @@ export default async function DigitoPage({
                   </div>
                   <div className="space-y-3 text-light text-sm leading-relaxed">
                     <div>
-                      <h4 className="font-semibold text-light mb-1">Dolor:</h4>
+                      <h4 className="font-semibold text-light mb-1">
+                        {lang === "es" ? "Dolor:" : "Pain:"}
+                      </h4>
                       <p className="text-sm leading-relaxed">{t.frictions.friction3.pain}</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-light mb-1">Decisión:</h4>
+                      <h4 className="font-semibold text-light mb-1">
+                        {lang === "es" ? "Decisión:" : "Decision:"}
+                      </h4>
                       <p className="text-light text-sm leading-relaxed">{t.frictions.friction3.decision}</p>
                     </div>
                   </div>
@@ -428,11 +456,15 @@ export default async function DigitoPage({
                   </div>
                   <div className="space-y-3 text-light text-sm leading-relaxed">
                     <div>
-                      <h4 className="font-semibold text-light mb-1">Dolor:</h4>
+                      <h4 className="font-semibold text-light mb-1">
+                        {lang === "es" ? "Dolor:" : "Pain:"}
+                      </h4>
                       <p className="text-sm leading-relaxed">{t.frictions.friction4.pain}</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-light mb-1">Decisión:</h4>
+                      <h4 className="font-semibold text-light mb-1">
+                        {lang === "es" ? "Decisión:" : "Decision:"}
+                      </h4>
                       <p className="text-light text-sm leading-relaxed">{t.frictions.friction4.decision}</p>
                     </div>
                   </div>
@@ -446,11 +478,15 @@ export default async function DigitoPage({
                   </div>
                   <div className="space-y-3 text-light text-sm leading-relaxed">
                     <div>
-                      <h4 className="font-semibold text-light mb-1">Dolor:</h4>
+                      <h4 className="font-semibold text-light mb-1">
+                        {lang === "es" ? "Dolor:" : "Pain:"}
+                      </h4>
                       <p className="text-sm leading-relaxed">{t.frictions.friction5.pain}</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-light mb-1">Decisión:</h4>
+                      <h4 className="font-semibold text-light mb-1">
+                        {lang === "es" ? "Decisión:" : "Decision:"}
+                      </h4>
                       <p className="text-light text-sm leading-relaxed">{t.frictions.friction5.decision}</p>
                     </div>
                   </div>
@@ -460,69 +496,92 @@ export default async function DigitoPage({
           </section>
             </FadeOnScroll>
 
-          {/* ==================== 12. DIAGRAMA DE ARQUITECTURA FULL (Full width 16:9) ==================== */}
+          {/* ==================== 12. Vista general de proyectos en el MVP original de Dígito, antes del rediseño (Full width 16:9) ==================== */}
             <FadeOnScroll>
             <ImageBreakout
-            src="/diagrama-de-arquitectura-mostrando-tres-ejes--estr.jpg"
-            alt="Diagrama de arquitectura - Tres ejes"
+            src="/vista-proyectos-mvp-original.webp"
+            alt="Vista general de proyectos en el MVP original de Dígito, antes del rediseño"
+            width={1920}
+            height={1080}
+            border={false}
+            full={true}
+            caption={t.mvpOriginalImageCaption}
+          />
+            </FadeOnScroll>
+
+            {/* ==================== DIVIDER ==================== */}
+<div className="w-full px-8 md:px-12 lg:px-20 mb-20">
+  <div className="h-px w-full bg-gradient-to-r from-transparent via-[#08A4E1]/40 to-transparent" />
+</div>
+
+          {/* ==================== 13. PANEL UNIFICADO - Snapshot de dashboard ==================== */}
+            <FadeOnScroll>
+            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
+            <div className="bg-gradient-to-br from-[#081730]/30 to-[#3282A9]/30 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-[#08A4E1]/30">
+              <h2 className="text-3xl md:text-4xl font-bold text-light mb-4">
+                {t.architecture.unifiedPanel.title}
+              </h2>
+              <p className="text-light mb-6 text-lg">
+                {t.architecture.unifiedPanel.axis}
+              </p>
+
+              <div className="space-y-4 text-light mb-6">
+                <div>
+                  <h4 className="font-semibold text-light mb-2">
+                    {lang === "es" ? "Problema detectado:" : "Problem identified:"}
+                  </h4>
+                  <p>{t.architecture.unifiedPanel.problem}</p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-light mb-2">
+                    {lang === "es" ? "Solución:" : "Solution:"}
+                  </h4>
+                  <p>{t.architecture.unifiedPanel.solution}</p>
+                </div>
+              </div>
+
+              <div className="space-y-4 text-light">
+                <h4 className="font-semibold text-light mb-2">
+                  {lang === "es" ? "Componentes:" : "Components:"}
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  {(t.architecture.unifiedPanel.components || []).map((item: string, index: number) => (
+                    <div
+                      key={index}
+                      className="bg-container-light/10 backdrop-blur-sm rounded-lg p-4 border border-container-light/20"
+                    >
+                      <p className="text-light text-sm leading-relaxed">
+                        • {item}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+                <div>
+                  <h4 className="font-semibold text-light mb-2">
+                    {t.architecture.unifiedPanel.syncTitle}:
+                  </h4>
+                  <p className="text-light text-sm leading-relaxed">
+                    {t.architecture.unifiedPanel.syncText}
+                  </p>
+                </div>
+              </div>
+            </div>
+            </section>
+            </FadeOnScroll>
+
+           {/* ==================== 18. DASHBOARD DIGITO EN USO REAL (Full width 16:9) ==================== */}
+           <FadeOnScroll>
+            <ImageBreakout
+            src="/dashboard-digito-en-uso-real.webp"
+            alt="Dashboard principal de Dígito en uso real: consultor revisando estado de proyectos y horas registradas"
             width={1920}
             height={1080}
             border={false}
             full={true}
           />
             </FadeOnScroll>
-
-          {/* ==================== 13. PANEL UNIFICADO - Texto izquierda, mockup derecha ==================== */}
-            <FadeOnScroll>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
-            <h2 className="text-3xl md:text-4xl font-bold text-light mb-2">{t.architecture.unifiedPanel.title}</h2>
-            <p className="text-lg text-light mb-6">{t.architecture.unifiedPanel.axis}</p>
-            <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0 [&>*]:h-full">
-              <Block colSpan={1}>
-                <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 h-full">
-                  <div className="space-y-4 text-light">
-                    <div>
-                      <h4 className="font-semibold text-light mb-2">Problema detectado:</h4>
-                      <p>{t.architecture.unifiedPanel.problem}</p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-light mb-2">Solución:</h4>
-                      <p>{t.architecture.unifiedPanel.solution}</p>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-light mb-2">Componentes:</h4>
-                      <ul className="list-disc pl-5 space-y-2">
-                        {(t.architecture.unifiedPanel.components || []).map((component: string, index: number) => (
-                          <li key={index}>
-                            <span className="text-light">{component.split(":")[0]}:</span>
-                            {component.split(":")[1]}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="bg-[#081730]/30 backdrop-blur-sm rounded-lg p-4 border border-[#3282A9]/30">
-                      <h4 className="font-semibold text-light mb-2">{t.architecture.unifiedPanel.syncTitle}</h4>
-                      <p className="text-light text-sm leading-relaxed">{t.architecture.unifiedPanel.syncText}</p>
-                    </div>
-                  </div>
-                </div>
-              </Block>
-              <Block colSpan={1}>
-                <div className="relative w-full h-full rounded-lg overflow-hidden bg-white flex items-center">
-                  <Image
-                    src="/panel-unificado-con-tabs-kanban--gantt-y-calendari.jpg"
-                    alt="Mockup - Panel unificado"
-                    width={1200}
-                    height={800}
-                    className="w-full h-auto object-contain"
-                  />
-                </div>
-              </Block>
-            </GridContainer>
-          </section>
-            </FadeOnScroll>
-
-          {/* ==================== 14. AUTOMATIZACIÓN LIGERA - Texto derecha, mockup izquierda ==================== */}
+            
+          {/* ==================== 14. ANIMACIÓN FAB CON SUGERENCIAS CONTEXTUALES (Full width 16:9) ==================== */}
             <FadeOnScroll delay={80}>
             <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
             <h2 className="text-3xl md:text-4xl font-bold text-light mb-2">{t.architecture.automation.title}</h2>
@@ -531,8 +590,8 @@ export default async function DigitoPage({
               <Block colSpan={1}>
                 <div className="relative w-full h-full rounded-lg overflow-hidden bg-white flex items-center">
                   <Image
-                    src="/fab-con-sugerencias-contextuales--duplicar-d-a-ant.jpg"
-                    alt="Mockup - FAB con sugerencias"
+                    src="/animacion-fab-con-sugerencias-contextuales.webp"
+                    alt="Animación del botón FAB desplegando sugerencias contextuales para registro rápido de horas"
                     width={1200}
                     height={800}
                     className="w-full h-auto object-contain"
@@ -543,15 +602,21 @@ export default async function DigitoPage({
                 <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 h-full">
                   <div className="space-y-4 text-light">
                     <div>
-                      <h4 className="font-semibold text-light mb-2">Problema detectado:</h4>
+                      <h4 className="font-semibold text-light mb-2">
+                        {lang === "es" ? "Problema detectado:" : "Problem identified:"}
+                      </h4>
                       <p>{t.architecture.automation.problem}</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-light mb-2">Solución:</h4>
+                      <h4 className="font-semibold text-light mb-2">
+                        {lang === "es" ? "Solución:" : "Solution:"}
+                      </h4>
                       <p>{t.architecture.automation.solution}</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-light mb-2">Funcionalidades principales:</h4>
+                      <h4 className="font-semibold text-light mb-2">
+                        {lang === "es" ? "Funcionalidades principales:" : "Key features:"}
+                      </h4>
                       <ul className="list-disc pl-5 space-y-2">
                         {(t.architecture.automation.features || []).map((feature: string, index: number) => (
                           <li key={index}>{feature}</li>
@@ -575,11 +640,15 @@ export default async function DigitoPage({
                 <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 h-full">
                   <div className="space-y-4 text-light">
                     <div>
-                      <h4 className="font-semibold text-light mb-2">Problema detectado:</h4>
+                      <h4 className="font-semibold text-light mb-2">
+                        {lang === "es" ? "Problema detectado:" : "Problem identified:"}
+                      </h4>
                       <p>{t.architecture.social.problem}</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-light mb-2">Solución:</h4>
+                      <h4 className="font-semibold text-light mb-2">
+                        {lang === "es" ? "Solución:" : "Solution:"}
+                      </h4>
                       <p className="mb-2">{t.architecture.social.solution}</p>
                       <ul className="list-disc pl-5 space-y-2">
                         {(t.architecture.social.solutionItems || []).map((item: string, index: number) => (
@@ -588,7 +657,9 @@ export default async function DigitoPage({
                       </ul>
                     </div>
                     <div className="bg-container-light/10 backdrop-blur-sm rounded-lg p-4 border border-container-light/20">
-                      <h4 className="font-semibold text-light mb-2">Resultado:</h4>
+                      <h4 className="font-semibold text-light mb-2">
+                        {lang === "es" ? "Resultado:" : "Result:"}
+                      </h4>
                       <p className="text-light text-sm leading-relaxed">{t.architecture.social.result}</p>
                     </div>
                   </div>
@@ -597,8 +668,8 @@ export default async function DigitoPage({
               <Block colSpan={1}>
                 <div className="relative w-full h-full rounded-lg overflow-hidden bg-white flex items-center">
                   <Image
-                    src="/dashboard-con-indicadores-de-progreso-social-y-se-.jpg"
-                    alt="Mockup - Dashboard con indicadores"
+                    src="/animacion-proyectos-gantt-kanban.webp"
+                    alt="Animación del panel de proyectos alternando entre vista Gantt y vista Kanban"
                     width={1200}
                     height={800}
                     className="w-full h-auto object-contain"
@@ -609,51 +680,10 @@ export default async function DigitoPage({
           </section>
             </FadeOnScroll>
 
-          {/* ==================== 16. MOCKUP (Full width 16:9) ==================== */}
-            <FadeOnScroll>
-            <ImageBreakout
-            src="/dashboard-completo-mostrando-tareas--reuniones--pr.jpg"
-            alt="Mockup - Dashboard completo"
-            width={1920}
-            height={1080}
-            border={false}
-            full={true}
-          />
-            </FadeOnScroll>
-
-          {/* ==================== 17. DASHBOARD REFINADO ==================== */}
-            <FadeOnScroll>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
-            <div className="bg-gradient-to-br from-[#081730]/30 to-[#3282A9]/30 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-[#08A4E1]/30">
-              <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">{t.architecture.dashboard.title}</h2>
-              <p className="text-light mb-4">{t.architecture.dashboard.subtitle}</p>
-              <p className="text-light mb-6">{t.architecture.dashboard.text}</p>
-              <h4 className="text-lg font-semibold text-light mb-3">Incluye:</h4>
-              <div className="grid md:grid-cols-2 gap-4">
-                {(t.architecture.dashboard.includes || []).map((item: string, index: number) => (
-                  <div
-                    key={index}
-                    className="bg-container-light/10 backdrop-blur-sm rounded-lg p-4 border border-container-light/20"
-                  >
-                    <p className="text-light">• {item}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-            </FadeOnScroll>
-
-          {/* ==================== 18. DASHBOARD COMPLETO FULL (Full width 16:9) ==================== */}
-            <FadeOnScroll>
-            <ImageBreakout
-            src="/dashboard-completo-mostrando-tareas--reuniones--pr.jpg"
-            alt="Mockup - Dashboard completo"
-            width={1920}
-            height={1080}
-            border={false}
-            full={true}
-          />
-            </FadeOnScroll>
+{/* ==================== DIVIDER ==================== */}
+<div className="w-full px-8 md:px-12 lg:px-20 mb-20">
+  <div className="h-px w-full bg-gradient-to-r from-transparent via-[#08A4E1]/40 to-transparent" />
+</div>
 
           {/* ==================== 19. TESTING ==================== */}
             <FadeOnScroll>
@@ -665,15 +695,21 @@ export default async function DigitoPage({
                   <p className="text-light mb-6 text-lg">{t.testing.subtitle}</p>
                   <div className="bg-container/60 rounded-lg p-4 space-y-4 text-light">
                     <div>
-                      <h4 className="font-semibold text-light mb-2">Participantes:</h4>
+                      <h4 className="font-semibold text-light mb-2">
+                        {lang === "es" ? "Participantes:" : "Participants:"}
+                      </h4>
                       <p>{t.testing.participants}</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-light mb-2">Método:</h4>
+                      <h4 className="font-semibold text-light mb-2">
+                        {lang === "es" ? "Método:" : "Method:"}
+                      </h4>
                       <p>{t.testing.method}</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-light mb-2">Objetivo:</h4>
+                      <h4 className="font-semibold text-light mb-2">
+                        {lang === "es" ? "Objetivo:" : "Objective:"}
+                      </h4>
                       <p>{t.testing.objective}</p>
                     </div>
                   </div>
@@ -701,13 +737,17 @@ export default async function DigitoPage({
                 <div className="bg-container/80 rounded-lg p-6 border border-container-light/10">
                   <h4 className="font-semibold text-light mb-3">{t.testing.iteration1.title}</h4>
                   <div className="space-y-2">
-                    <p className="text-light text-sm leading-relaxed font-semibold">Ajustes:</p>
+                    <p className="text-light text-sm leading-relaxed font-semibold">
+                      {lang === "es" ? "Ajustes:" : "Adjustments:"}
+                    </p>
                     <ul className="list-disc pl-5 text-light text-sm leading-relaxed space-y-1">
                       {(t.testing.iteration1.adjustments || []).map((item: string, index: number) => (
                         <li key={index}>{item}</li>
                       ))}
                     </ul>
-                    <p className="text-light text-sm leading-relaxed font-semibold mt-2">Resultado:</p>
+                    <p className="text-light text-sm leading-relaxed font-semibold mt-2">
+                      {lang === "es" ? "Resultado:" : "Result:"}
+                    </p>
                     <p className="text-light text-sm leading-relaxed">{t.testing.iteration1.result}</p>
                   </div>
                 </div>
@@ -716,13 +756,17 @@ export default async function DigitoPage({
                 <div className="bg-container/80 rounded-lg p-6 border border-container-light/10">
                   <h4 className="font-semibold text-light mb-3">{t.testing.iteration2.title}</h4>
                   <div className="space-y-2">
-                    <p className="text-light text-sm leading-relaxed font-semibold">Ajustes:</p>
+                    <p className="text-light text-sm leading-relaxed font-semibold">
+                      {lang === "es" ? "Ajustes:" : "Adjustments:"}
+                    </p>
                     <ul className="list-disc pl-5 text-light text-sm leading-relaxed space-y-1">
                       {(t.testing.iteration2.adjustments || []).map((item: string, index: number) => (
                         <li key={index}>{item}</li>
                       ))}
                     </ul>
-                    <p className="text-light text-sm leading-relaxed font-semibold mt-2">Aprendizaje:</p>
+                    <p className="text-light text-sm leading-relaxed font-semibold mt-2">
+                      {lang === "es" ? "Aprendizaje:" : "Learning:"}
+                    </p>
                     <p className="text-light text-sm leading-relaxed">{t.testing.iteration2.learning}</p>
                   </div>
                 </div>
@@ -737,16 +781,16 @@ export default async function DigitoPage({
             <div className="space-y-8">
               <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden bg-white">
                 <Image
-                  src="/antes-despu-s-del-dashboard-iterado-mostrando-reor.jpg"
-                  alt="Antes/Después - Dashboard iterado"
+                  src="/iteracion-jerarquia-dashboard.webp"
+                  alt="Ajuste de jerarquía visual en el header del dashboard"
                   fill
                   className="object-contain"
                 />
               </div>
               <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden bg-white">
                 <Image
-                  src="/antes-despu-s-tooltips-y-se-ales-contextuales-most.jpg"
-                  alt="Antes/Después - Tooltips"
+                  src="/iteracion-tooltips-contextuales.webp"
+                  alt="Incorporación de tooltips contextuales en el registro de horas"
                   fill
                   className="object-contain"
                 />
@@ -755,12 +799,31 @@ export default async function DigitoPage({
           </section>
             </FadeOnScroll>
 
+          {/* ==================== FIGMA PROTOTYPE EMBED ==================== */}
+          <section className="w-full px-0 md:px-8 lg:px-20 mb-20">
+            <div className="w-full flex justify-center">
+              <div className="w-full rounded-lg overflow-hidden">
+                <iframe
+                  title={lang === "es" ? "Prototipo interactivo de Dígito" : "Dígito interactive prototype"}
+                  style={{
+                    border: "1px solid rgba(0, 0, 0, 0.1)",
+                    width: "100%",
+                    aspectRatio: "800 / 450",
+                    maxHeight: "100vh",
+                  }}
+                  src="https://www.figma.com/proto/CAzpfuJZBHMEaGPytW4kV0/Prototipo-Interactivo---D%C3%ADgito---Lautaro-R.-Temperini?node-id=3063-8285&p=f&t=7YcIkQI6Z52Y1B7L-1&scaling=contain&content-scaling=fixed&page-id=623%3A3290&starting-point-node-id=3063%3A8285&embed-host=share"
+                  allowFullScreen
+                />
+              </div>
+            </div>
+          </section>
+
          {/* ==================== 24. IMPACTO CUALITATIVO ==================== */}
 <FadeOnScroll delay={150}>
   <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
 
     <h2 className="text-2xl md:text-3xl font-bold text-light mb-6 text-left">
-      {lang === 'es' ? 'Impacto cualitativo:' : 'Qualitative impact:'}
+      {t.snapshot?.impactTitle}
     </h2>
 
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
@@ -768,26 +831,22 @@ export default async function DigitoPage({
       {/* ANTES */}
       <div className="bg-container-light/10 backdrop-blur-sm rounded-lg p-6 border border-container-light/20 text-left">
         <p className="text-light font-semibold mb-3">
-          {lang === 'es' ? 'Antes:' : 'Before:'}
+          {t.snapshot?.impactBeforeLabel}
         </p>
 
         <p className="text-light italic text-lg leading-relaxed">
-          {lang === 'es'
-            ? '"El registro de horas es un mal necesario."'
-            : '"Time tracking is a necessary evil."'}
+          {t.snapshot?.impactBeforeQuote}
         </p>
       </div>
 
       {/* DESPUÉS */}
       <div className="bg-container-light/10 backdrop-blur-sm rounded-lg p-6 border border-container-light/20 text-left">
         <p className="text-light font-semibold mb-3">
-          {lang === 'es' ? 'Después:' : 'After:'}
+          {t.snapshot?.impactAfterLabel}
         </p>
 
         <p className="text-light italic text-lg leading-relaxed">
-          {lang === 'es'
-            ? '"Ahora es mucho más rápido. Las sugerencias me ahorran tiempo."'
-            : '"Now it’s much faster. The suggestions save me time."'}
+          {t.snapshot?.impactAfterQuote}
         </p>
       </div>
 
@@ -795,11 +854,9 @@ export default async function DigitoPage({
 
     <p className="mt-6 text-left text-sm text-light/70 max-w-3xl">
       <span className="font-semibold text-light/80">
-        {lang === 'es' ? 'Impacto:' : 'Impact:'}
+        {t.snapshot?.impactLabel}
       </span>{' '}
-      {lang === 'es'
-        ? 'Transformación de una tarea administrativa en una herramienta de valor.'
-        : 'Turning an administrative chore into a valuable tool.'}
+      {t.snapshot?.impactText}
     </p>
 
   </section>
@@ -811,99 +868,49 @@ export default async function DigitoPage({
 </div>
 
           {/* ==================== 25. CIERRE ==================== */}
-            <FadeOnScroll delay={150}>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
-            <div className="max-w-3xl mx-auto mb-10 text-light">
-              <h2 className="text-3xl md:text-4xl font-bold text-light mb-4 text-center">
-                Reflexión metodológica
-              </h2>
-              {lang === 'es' ? (
-                <p className="text-lg leading-relaxed text-center">
-                  El rediseño resolvió fricciones claras de interfaz y flujo. Pero el problema central del
-                  registro de horas está profundamente ligado al comportamiento en contexto real, y eso
-                  requiere otro tipo de validación.
-                </p>
-              ) : (
-                <p className="text-lg leading-relaxed text-center">
-                  The redesign addressed clear interface and flow frictions. But the core problem of time tracking
-                  is deeply tied to real-world behavior, and that demands a different kind of validation.
-                </p>
-              )}
-            </div>
-
-            <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0">
-              <Block colSpan={1}>
-                <div className="bg-gradient-to-br from-[#081730]/30 to-[#3282A9]/30 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-[#08A4E1]/30 h-full text-light">
-                  <h3 className="text-2xl font-semibold mb-3">
-                    {lang === 'es' ? 'Testing en contexto real' : 'Testing in real context'}
-                  </h3>
-                  {lang === 'es' ? (
-                    <>
-                      <p className="text-lg leading-relaxed mb-2">
-                        En lugar de diseñar tareas dirigidas, testearía con escenarios de trabajo reales.
-                      </p>
-                      <p className="text-lg leading-relaxed mb-2">
-                        El problema principal no está en la usabilidad puntual de la interfaz, sino en cómo
-                        el registro de horas se integra al flujo cotidiano de trabajo.
-                      </p>
-                      <p className="text-lg leading-relaxed">
-                        Probar el producto dentro de ese contexto permitiría observar comportamientos reales.
-                      </p>
-                    </>
-                  ) : (
-                    <>
-                      <p className="text-lg leading-relaxed mb-2">
-                        Instead of designing directed tasks, I would test with real work scenarios.
-                      </p>
-                      <p className="text-lg leading-relaxed mb-2">
-                        The main issue is not the point-in-time usability of the interface, but how time tracking
-                        integrates into everyday workflow.
-                      </p>
-                      <p className="text-lg leading-relaxed">
-                        Testing the product in that real context would allow us to observe actual behavior.
-                      </p>
-                    </>
-                  )}
-                </div>
-              </Block>
-
-              <Block colSpan={1}>
-                <div className="bg-gradient-to-br from-[#081730]/30 to-[#3282A9]/30 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-[#08A4E1]/30 h-full text-light">
-                  <h3 className="text-2xl font-semibold mb-3">
-                    {lang === 'es' ? 'Métrica de comportamiento' : 'Behavioral metric'}
-                  </h3>
-                  {lang === 'es' ? (
-                    <>
-                      <p className="text-lg leading-relaxed mb-2">
-                        Hoy el registro suele ocurrir con semanas de retraso, por lo que muy pocas horas se
-                        registran dentro de las primeras 24hs. Si volviera a encarar este proyecto, mediría
-                        el % de horas registradas en 24hs como North Star.
-                      </p>
-                      <p className="text-lg leading-relaxed">
-                        Esto hubiera orientado las decisiones de diseño más directamente al comportamiento que
-                        queríamos cambiar:{' '}
-                        <strong>integrar el registro de horas al flujo real de trabajo.</strong>
-                      </p>
-                    </>
-                  ) : (
-                    <>
-                      <p className="text-lg leading-relaxed mb-2">
-                        Today, logging often happens weeks late, so very few hours are recorded within the first
-                        24 hours. If I were to tackle this project again, I would track the percentage of hours
-                        logged within 24 hours as the North Star metric.
-                      </p>
-                      <p className="text-lg leading-relaxed">
-                        That would have guided design decisions more directly toward the behavior we wanted to
-                        change:{' '}
-                        <strong>integrating time tracking into the actual workflow.</strong>
-                      </p>
-                    </>
-                  )}
-                </div>
-              </Block>
-            </GridContainer>
-          </section>
-            </FadeOnScroll>
+<FadeOnScroll delay={150}>
+  <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
+    <div className="max-w-3xl mx-auto mb-10 text-light">
+      <h2 className="text-3xl md:text-4xl font-bold text-light mb-4 text-center">
+        {t.snapshot?.reflectionTitle}
+      </h2>
+      <p className="text-lg leading-relaxed text-center">
+        {t.snapshot?.reflectionIntro}
+      </p>
+    </div>
+    <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0">
+      <Block colSpan={1}>
+        <div className="bg-gradient-to-br from-[#081730]/30 to-[#3282A9]/30 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-[#08A4E1]/30 h-full text-light">
+          <h3 className="text-2xl font-semibold mb-3">
+            {t.snapshot?.testingTitle}
+          </h3>
+          <p className="text-lg leading-relaxed mb-2">
+            {t.snapshot?.testingP1}
+          </p>
+          <p className="text-lg leading-relaxed mb-2">
+            {t.snapshot?.testingP2}
+          </p>
+          <p className="text-lg leading-relaxed">
+            {t.snapshot?.testingP3}
+          </p>
+        </div>
+      </Block>
+      <Block colSpan={1}>
+        <div className="bg-gradient-to-br from-[#081730]/30 to-[#3282A9]/30 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-[#08A4E1]/30 h-full text-light">
+          <h3 className="text-2xl font-semibold mb-3">
+            {t.snapshot?.metricTitle}
+          </h3>
+          <p className="text-lg leading-relaxed mb-2">
+            {t.snapshot?.metricP1}
+          </p>
+          <p className="text-lg leading-relaxed">
+            {t.snapshot?.metricP2Prefix}<strong>{t.snapshot?.metricP2Bold}</strong>
+          </p>
+        </div>
+      </Block>
+    </GridContainer>
+  </section>
+</FadeOnScroll>
         </main>
       </div>
       <div className="relative z-[20]">
