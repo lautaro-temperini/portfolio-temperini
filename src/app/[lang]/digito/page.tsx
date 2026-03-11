@@ -803,17 +803,17 @@ export default async function DigitoPage({
           <section className="w-full px-0 md:px-8 lg:px-20 mb-20">
             <div className="w-full flex justify-center">
               <div className="w-full rounded-lg overflow-hidden">
-                <iframe
-                  title={lang === "es" ? "Prototipo interactivo de Dígito" : "Dígito interactive prototype"}
-                  style={{
-                    border: "1px solid rgba(0, 0, 0, 0.1)",
-                    width: "100%",
-                    aspectRatio: "800 / 450",
-                    maxHeight: "100vh",
-                  }}
-                  src="https://www.figma.com/proto/CAzpfuJZBHMEaGPytW4kV0/Prototipo-Interactivo---D%C3%ADgito---Lautaro-R.-Temperini?node-id=3063-8285&p=f&t=7YcIkQI6Z52Y1B7L-1&scaling=contain&content-scaling=fixed&page-id=623%3A3290&starting-point-node-id=3063%3A8285&embed-host=share"
-                  allowFullScreen
-                />
+              <iframe
+  title={lang === "es" ? "Prototipo interactivo de Dígito" : "Dígito interactive prototype"}
+  style={{
+    border: "1px solid rgba(0, 0, 0, 0.1)",
+    width: "100%",
+    aspectRatio: "800 / 450",
+    maxHeight: "100vh",
+  }}
+  src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/CAzpfuJZBHMEaGPytW4kV0/Prototipo-Interactivo---D%C3%ADgito---Lautaro-R.-Temperini?node-id=3063-8285&p=f&t=7YcIkQI6Z52Y1B7L-1&scaling=contain&content-scaling=fixed&page-id=623%3A3290&starting-point-node-id=3063%3A8285"
+  allowFullScreen
+/>
               </div>
             </div>
           </section>
