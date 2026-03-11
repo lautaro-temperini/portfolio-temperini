@@ -904,7 +904,7 @@ export default async function DigitoPage({
             {t.snapshot?.metricP1}
           </p>
           <p className="text-lg leading-relaxed">
-            {t.snapshot?.metricP2Prefix}<strong>{t.snapshot?.metricP2Bold}</strong>
+            {t.snapshot?.metricP2Prefix}<br /><strong>{t.snapshot?.metricP2Bold}</strong>
           </p>
         </div>
       </Block>

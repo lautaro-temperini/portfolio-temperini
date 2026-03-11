@@ -138,7 +138,7 @@ function generarHeadersCSP(nonce: string) {
     "img-src 'self' data: blob: https:",
     "font-src 'self' data:",
     "connect-src 'self' https://*.vercel-analytics.com https://*.vercel-insights.com https://vitals.vercel-insights.com https://api.resend.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com",
-    "frame-src 'none'",
+    "frame-src https://www.figma.com https://embed.figma.com",
     "object-src 'none'",
     "base-uri 'self'",
     "form-action 'self'",
