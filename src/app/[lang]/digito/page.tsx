@@ -295,6 +295,11 @@ export default async function DigitoPage({
           </section>
             </FadeOnScroll>
 
+{/* ==================== DIVIDER ==================== */}
+<div className="w-full px-8 md:px-12 lg:px-20 mb-20">
+  <div className="h-px w-full bg-gradient-to-r from-transparent via-[#08A4E1]/40 to-transparent" />
+</div>
+
           {/* ==================== 9. ESTRATEGIA ==================== */}
             <FadeOnScroll delay={150}>
             <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
@@ -496,17 +501,35 @@ export default async function DigitoPage({
           </section>
             </FadeOnScroll>
 
+{/* ==================== DIVIDER ==================== */}
+<div className="w-full px-8 md:px-12 lg:px-20 mb-20">
+  <div className="h-px w-full bg-gradient-to-r from-transparent via-[#08A4E1]/40 to-transparent" />
+</div>
+
           {/* ==================== 12. Vista general de proyectos en el MVP original de Dígito, antes del rediseño (Full width 16:9) ==================== */}
             <FadeOnScroll>
             <ImageBreakout
-            src="/vista-proyectos-mvp-original.webp"
-            alt="Vista general de proyectos en el MVP original de Dígito, antes del rediseño"
+            src="/modulo-registro-horas-mvp-original.webp"
+            alt="Módulo de registro de horas en el MVP original de Dígito, antes del rediseño"
             width={1920}
             height={1080}
             border={false}
             full={true}
             caption={t.mvpOriginalImageCaption}
           />
+            </FadeOnScroll>
+
+          {/* ==================== Design tokens (antes de Panel Unificado) ==================== */}
+            <FadeOnScroll>
+            <ImageBreakout
+              src="/design-tokens-digito.webp"
+              alt={lang === "es" ? "Tokens de diseño del proyecto Dígito: color, tipografía, espaciado y radios." : "Dígito project design tokens: color, typography, spacing, and border radii."}
+              width={1920}
+              height={1080}
+              border={false}
+              full={true}
+              caption={t.designTokensImageCaption}
+            />
             </FadeOnScroll>
 
             {/* ==================== DIVIDER ==================== */}
@@ -680,7 +703,23 @@ export default async function DigitoPage({
           </section>
             </FadeOnScroll>
 
-{/* ==================== DIVIDER ==================== */}
+ {/* ==================== 20. EVOLUCIÓN DEL DISEÑO - MVP → Wireframe → HiFi ==================== */}
+ <FadeOnScroll delay={80}>
+            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
+            <div className="space-y-8">
+              <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden bg-white">
+                <Image
+                  src="/comparativa-mvp-wireframe-hifi.webp"
+                  alt="Evolución del diseño: MVP original, wireframe de baja fidelidad y prototipo de alta fidelidad"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            </div>
+          </section>
+            </FadeOnScroll>
+
+            {/* ==================== DIVIDER ==================== */}
 <div className="w-full px-8 md:px-12 lg:px-20 mb-20">
   <div className="h-px w-full bg-gradient-to-r from-transparent via-[#08A4E1]/40 to-transparent" />
 </div>
@@ -775,29 +814,10 @@ export default async function DigitoPage({
           </section>
             </FadeOnScroll>
 
-          {/* ==================== 20. ANTES/DESPUÉS - Vertical ==================== */}
-            <FadeOnScroll delay={80}>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
-            <div className="space-y-8">
-              <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden bg-white">
-                <Image
-                  src="/iteracion-jerarquia-dashboard.webp"
-                  alt="Ajuste de jerarquía visual en el header del dashboard"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden bg-white">
-                <Image
-                  src="/iteracion-tooltips-contextuales.webp"
-                  alt="Incorporación de tooltips contextuales en el registro de horas"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-            </div>
-          </section>
-            </FadeOnScroll>
+            {/* ==================== DIVIDER ==================== */}
+<div className="w-full px-8 md:px-12 lg:px-20 mb-20">
+  <div className="h-px w-full bg-gradient-to-r from-transparent via-[#08A4E1]/40 to-transparent" />
+</div>
 
           {/* ==================== FIGMA PROTOTYPE EMBED ==================== */}
           <section className="w-full px-0 md:px-8 lg:px-20 mb-20">

@@ -204,7 +204,8 @@
         "text1": "Dígito es una empresa de Business Intelligence y RPA. Su plataforma SaaS B2B incluía facturación, reportes y administración, pero el módulo operativo para consultores tenía baja adopción.",
         "text2": "El objetivo fue claro: convertir el registro de horas en parte natural del flujo de trabajo, no en una tarea adicional."
       },
-      "mvpOriginalImageCaption": "MVP original de Dígito previo al rediseño.",
+      "mvpOriginalImageCaption": "Módulo de registro de horas original previo al rediseño.",
+      "designTokensImageCaption": "Tokens de color, tipografía, espaciado y radios definidos para el rediseño.",
       "problem": {
         "title": "Hipótesis inicial vs. realidad",
         "hypothesis": "\"Los usuarios se olvidan de cargar las horas.\"",

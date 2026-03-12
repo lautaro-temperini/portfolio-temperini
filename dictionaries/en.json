@@ -204,7 +204,8 @@
         "text1": "Dígito is a Business Intelligence and RPA company. Their B2B SaaS platform handled billing, reports, and administration—but the operations module for consultants suffered from low adoption.",
         "text2": "The goal was clear: integrate time tracking naturally into workflow, not as an additional burden."
       },
-      "mvpOriginalImageCaption": "Original Dígito MVP before the redesign.",
+      "mvpOriginalImageCaption": "Original time tracking module prior to the redesign.",
+      "designTokensImageCaption": "Color, typography, spacing, and radius tokens defined for the redesign.",
       "problem": {
         "title": "Initial hypothesis vs. reality",
         "hypothesis": "\"Users forget to log their hours.\"",
