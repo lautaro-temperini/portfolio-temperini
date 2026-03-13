@@ -37,8 +37,8 @@ export const socialLinks = [
     url: "https://www.upwork.com/freelancers/~01529096d18cf48f3d",
   },
   {
-    name: "Fiverr",
-    icon: "/images/icon-fiverr.png",
-    url: "https://www.fiverr.com/users/lautaroromerot/",
+    name: "GitHub",
+    icon: "/images/icon-github.png",
+    url: "https://github.com/lautaro-temperini",
   },
 ]
