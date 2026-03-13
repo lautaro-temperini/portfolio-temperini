@@ -297,13 +297,13 @@
   "title": "Insights y decisiones de diseño: 5 fricciones críticas",
   "subtitle": "Cada fricción detectada se tradujo en una decisión de diseño concreta.",
   "friction1": {
-    "number": "1",
-    "title": "Fricción: El registro es una tarea extra, no parte del flujo.",
-    "pain": "\"Me olvido de cargar las horas porque estoy enfocado en el proyecto.\"",
-    "decision": "Integrar el registro en el flujo de trabajo diario.",
-    "whyWorks": "El registro contextual reduce la carga cognitiva: el sistema sugiere en el momento correcto, no interrumpe el flujo.",
-    "translatedTo": "Traducido a diseño: FAB con sugerencias contextuales y autocompletado."
-  },
+  "number": "1",
+  "title": "Fricción: La interfaz es compleja y requiere muchos clics.",
+  "pain": "\"Tengo que hacer muchos clics para registrar una hora.\"",
+  "decision": "Separar el módulo operativo del entorno administrativo, mostrando solo las herramientas relevantes para el consultor.",
+  "whyWorks": "Cada clic extra es una oportunidad para postergar. Menos pasos = menos fricción = más adopción real.",
+  "translatedTo": "Módulo operativo separado: el consultor accede solo a las herramientas que le corresponden, sin ruido administrativo."
+},
   "friction2": {
     "number": "2",
     "title": "Fricción: Falta de visibilidad del impacto del registro.",
@@ -322,11 +322,11 @@
   },
   "friction4": {
   "number": "4",
-  "title": "Fricción: La interfaz es compleja y requiere muchos clics.",
-  "pain": "\"Tengo que hacer muchos clics para registrar una hora.\"",
-  "decision": "Separar el módulo operativo del entorno administrativo, mostrando solo las herramientas relevantes para el consultor.",
-  "whyWorks": "Cada clic extra es una oportunidad para postergar. Menos pasos = menos fricción = más adopción real.",
-  "translatedTo": "Módulo operativo separado: el consultor accede solo a las herramientas que le corresponden, sin ruido administrativo."
+  "title": "Fricción: El registro es una tarea extra, no parte del flujo.",
+  "pain": "\"Me olvido de cargar las horas porque estoy enfocado en el proyecto.\"",
+  "decision": "Integrar el registro en el flujo de trabajo diario.",
+  "whyWorks": "El registro contextual reduce la carga cognitiva: el sistema sugiere en el momento correcto, no interrumpe el flujo.",
+  "translatedTo": "Traducido a diseño: FAB con sugerencias contextuales y autocompletado."
 },
   "friction5": {
     "number": "5",

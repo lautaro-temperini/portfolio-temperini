@@ -301,11 +301,11 @@
         "subtitle": "Each friction point mapped directly to a design solution.",
         "friction1": {
           "number": "1",
-          "title": "Friction: Tracking feels like extra work",
-          "pain": "User quote: \"I forget to log hours because I'm focused on actual work.\"",
-          "decision": "Embed tracking into daily workflow.",
-          "whyWorks": "Impact: Reduces cognitive load through contextual, proactive prompts.",
-          "translatedTo": "Implementation: FAB with smart suggestions and autocomplete."
+          "title": "Friction: Interface is complex and click-heavy",
+          "pain": "User quote: \"It takes too many clicks just to log one hour.\"",
+          "decision": "Separate the operations module from the admin environment, surfacing only the tools relevant to the consultant.",
+          "whyWorks": "Impact: Reduces time tax on administrative tasks.",
+          "translatedTo": "Dedicated operations module: consultants see only their tools, with no administrative noise."
         },
         "friction2": {
           "number": "2",
@@ -325,11 +325,11 @@
         },
         "friction4": {
           "number": "4",
-          "title": "Friction: Too many clicks required",
-          "pain": "User quote: \"It takes too many clicks just to log one hour.\"",
-          "decision": "Streamline interface and minimize steps.",
-          "whyWorks": "Impact: Reduces time tax on administrative tasks.",
-          "translatedTo": "Implementation: Minimal UI, intuitive navigation patterns."
+          "title": "Friction: Tracking feels like extra work",
+          "pain": "User quote: \"I forget to log hours because I'm focused on actual work.\"",
+          "decision": "Embed tracking into daily workflow.",
+          "whyWorks": "Impact: Reduces cognitive load through contextual, proactive prompts.",
+          "translatedTo": "Implementation: FAB with smart suggestions and autocomplete."
         },
         "friction5": {
           "number": "5",
