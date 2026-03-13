@@ -20,7 +20,7 @@ export const projectsData: ProjectData[] = [
     id: 1,
     slug: "digito",
     image: "/images/digito-logo.webp",
-    previewImage: "/images/projects/digito-preview.jpg",
+    previewImage: "/images/projects/digito-preview.png",
     title: "Dígito",
     subtitle: "Módulo Operativo",
     description: "Case Study",

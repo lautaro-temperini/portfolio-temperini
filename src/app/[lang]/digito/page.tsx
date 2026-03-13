@@ -84,7 +84,7 @@ export default async function DigitoPage({
             <section className="w-full px-8 md:px-12 lg:px-20 mb-8">
   <div className="relative w-full h-[150px] md:h-[200px] rounded-lg overflow-hidden bg-[#0A1628]">
     <Image
-      src="/images/digitoImages/DigitoRender3d.jpg"
+      src="/images/digitoImages/DigitoRender3d.webp"
       alt="Render3D de Logo de Dígito"
       width={1198}
       height={206}
@@ -771,7 +771,8 @@ export default async function DigitoPage({
                   src="/images/digitoImages/comparativa-mvp-wireframe-hifi.webp"
                   alt="Evolución del diseño: MVP original, wireframe de baja fidelidad y prototipo de alta fidelidad"
                   fill
-                  className="object-contain"
+                  className="object-contain bg-[#0D0D0D]"
+                  
                 />
               </div>
             </div>
