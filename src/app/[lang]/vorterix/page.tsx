@@ -59,8 +59,8 @@ export default async function VorterixLandingPage({
         <main className="pt-16 md:pt-20 lg:pt-24">
         <CaseStudyLayout>
           {/* Hero Section - 60vh */}
-          <section className="w-full h-[60vh] flex items-center justify-center">
-            <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12">
+          <section className="w-full h-[60vh] flex items-center">
+            <div className="w-full px-8 md:px-12 lg:px-20">
               <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold leading-tight text-light mb-6">
                 VORTERIX
               </h1>
@@ -163,8 +163,8 @@ export default async function VorterixLandingPage({
           </ProseSection>
 
           {/* Quote destacado */}
-          <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12 mb-16">
-            <div className="text-center">
+          <div className="w-full px-8 md:px-12 lg:px-20 mb-16">
+            <div>
               <p className="text-[#F1F1F1] text-lg lg:text-xl leading-relaxed">
                 No diseñamos para una audiencia general. Diseñamos para Agustín, que escucha Twitch mientras edita en
                 Premiere, que odia los mails largos y que quiere algo que lo haga reír.
@@ -173,7 +173,7 @@ export default async function VorterixLandingPage({
           </div>
 
           {/* Colores y Tipografía */}
-          <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12 mb-16">
+          <div className="w-full px-8 md:px-12 lg:px-20 mb-16">
             <div className="grid md:grid-cols-2 gap-6">
               <div className="w-full h-[70vh] flex items-center justify-center rounded-lg overflow-hidden bg-[#F2F2F2]">
                 <Image
@@ -181,7 +181,7 @@ export default async function VorterixLandingPage({
                   alt="Paleta de colores Vorterix"
                   width={600}
                   height={400}
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-cover"
                 />
               </div>
               <div className="w-full h-[70vh] flex items-center justify-center rounded-lg overflow-hidden bg-[#F2F2F2]">
@@ -190,16 +190,16 @@ export default async function VorterixLandingPage({
                   alt="Tipografía Vorterix"
                   width={600}
                   height={400}
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
           </div>
 
           {/* Hero y Referencias */}
-          <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12 mb-16">
+          <div className="w-full px-8 md:px-12 lg:px-20 mb-16">
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="h-full rounded-lg overflow-hidden" style={{backgroundColor: '#1A1F26'}}>
+              <div className="h-[70vh] rounded-lg overflow-hidden" style={{backgroundColor: '#1A1F26'}}>
                 <video
                   src="/images/vorterixImages/VorterixHero.webm"
                   autoPlay
@@ -325,7 +325,7 @@ export default async function VorterixLandingPage({
                     height={600}
                     className="w-full h-full object-cover rounded-2xl"
                     priority={false}
-                    quality={85}
+                    quality={75}
                   />
                 </div>
               </div>
@@ -346,7 +346,7 @@ export default async function VorterixLandingPage({
           </ProseSection>
 
           {/* Conclusión - Sin contenedor */}
-          <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12 mb-16">
+          <div className="w-full px-8 md:px-12 lg:px-20">
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <h2 className="text-4xl font-bold text-light mb-6 text-center">¿Qué fue esto realmente?</h2>
               <div className="space-y-6 text-center max-w-3xl mx-auto">

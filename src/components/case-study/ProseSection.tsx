@@ -20,7 +20,7 @@ const ProseSection: React.FC<ProseSectionProps> = ({
   }
 
   return (
-    <section className={`w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12 ${className}`}>
+    <section className={`w-full px-8 md:px-12 lg:px-20 ${className}`}>
       {children}
     </section>
   )

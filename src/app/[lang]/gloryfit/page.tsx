@@ -76,8 +76,8 @@
           <main className="pt-16 md:pt-20 lg:pt-24">
           <CaseStudyLayout>
           {/* Hero Section - 60vh */}
-          <section className="w-full h-[60vh] flex items-center justify-center">
-            <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12">
+          <section className="w-full h-[60vh] flex items-center">
+          <div className="w-full px-8 md:px-12 lg:px-20">
               <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold leading-tight text-light mb-6">
                 {t.hero.title}
               </h1>
@@ -91,7 +91,7 @@
           </section>
 
           {/* Mi rol - Sin contenedor */}
-          <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12 mb-16">
+          <div className="w-full px-8 md:px-12 lg:px-20 mb-16">
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <p>{t.myRole.description}</p>
             </div>
@@ -142,6 +142,7 @@
               width={1200}
               height={800}
               border={false}
+              imageClassName="object-contain bg-[#F2F2F2]"
             />
 
             {/* El sistema detrás */}
@@ -186,6 +187,7 @@
               width={1200}
               height={800}
               shadow={true}
+              imageClassName="object-contain bg-[#F2F2F2]"
             />
 
             {/* Iteraciones y validación */}
@@ -210,6 +212,7 @@
               height={800}
               border={false}
               shadow={true}
+              imageClassName="object-contain bg-[#F2F1F1]"
             />
 
             {/* Aprendizajes clave */}

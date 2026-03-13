@@ -60,8 +60,8 @@ export default async function RectoFinalPage({
         <main className="pt-16 md:pt-20 lg:pt-24">
         <CaseStudyLayout>
           {/* Hero Section - 60vh */}
-          <section className="w-full h-[60vh] flex items-center justify-center">
-            <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12">
+          <section className="w-full h-[60vh] flex items-center">
+            <div className="w-full px-8 md:px-12 lg:px-20">
               <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold leading-tight text-light mb-6">
                 RECTO FINAL
               </h1>
@@ -80,7 +80,7 @@ export default async function RectoFinalPage({
           </section>
 
           {/* Mi rol - Sin contenedor */}
-          <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12 mb-16">
+          <div className="w-full px-8 md:px-12 lg:px-20 mb-16">
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <p>Mi aporte específico en el proyecto: • Programador principal en Unity 2D con C#. • Integrador técnico de hardware modificado (volante PC + teclado hackeado). • Co-director creativo y desarrollador de narrativa.</p>
             </div>
@@ -235,7 +235,7 @@ export default async function RectoFinalPage({
           </ProseSection>
 
           {/* Placeholders para capturas y fotos */}
-          <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12 mb-16">
+          <div className="w-full px-8 md:px-12 lg:px-20 mb-16">
             <div className="grid md:grid-cols-2 gap-6">
               <figure className="w-full h-[70vh] flex items-center justify-center rounded-lg overflow-hidden bg-[#F2F2F2]">
                 <Image

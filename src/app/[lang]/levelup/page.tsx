@@ -59,8 +59,8 @@ export default async function LevelUpPage({
         <main className="pt-16 md:pt-20 lg:pt-24">
         <CaseStudyLayout>
           {/* Hero Section - 60vh */}
-          <section className="w-full h-[60vh] flex items-center justify-center">
-            <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12">
+          <section className="w-full h-[60vh] flex items-center">
+            <div className="w-full px-8 md:px-12 lg:px-20">
               <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold leading-tight text-light mb-6">
                 LEVEL UP
               </h1>
@@ -80,7 +80,7 @@ export default async function LevelUpPage({
           </section>
 
           {/* Mi rol - Sin contenedor */}
-          <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12 mb-16">
+          <div className="w-full px-8 md:px-12 lg:px-20 mb-16">
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <p>Mi aporte específico en el proyecto: • Investigación sobre preferencias regionales de gaming. • Diseño del sistema de personalización y filtros. • Propuesta de geosegmentación automática. • Diseño de interfaz con arquitectura editorial escalable. • Estrategia de segmentación activa y pasiva.</p>
             </div>
@@ -239,10 +239,10 @@ export default async function LevelUpPage({
           </ProseSection>
 
           {/* Conclusión - Sin contenedor */}
-          <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12 mb-16">
+          <div className="w-full px-8 md:px-12 lg:px-20 mb-16">
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
-              <h2 className="text-3xl font-bold text-light mb-6 text-center">Conclusión</h2>
-              <div className="space-y-4 text-center">
+              <h2 className="text-3xl font-bold text-light mb-6">Conclusión</h2>
+              <div className="space-y-4">
                 <p className="text-lg font-semibold text-light">LevelUp demostró que la personalización editorial puede ser poderosa:</p>
                 <p className="text-xl">La combinación de datos regionales, preferencias personales y diseño centrado en el usuario puede crear experiencias editoriales que no solo son relevantes, sino también verdaderamente útiles.</p>
               </div>

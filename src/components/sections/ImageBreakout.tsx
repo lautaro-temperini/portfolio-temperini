@@ -45,11 +45,11 @@ const ImageBreakout: React.FC<ImageBreakoutProps> = ({
   // Determinar el padding según las props
   let paddingClasses = ''
   if (!noPadding) {
-    paddingClasses = full ? 'px-8 md:px-12 lg:px-20' : 'px-4 md:px-6 lg:px-12'
+    paddingClasses = 'px-8 md:px-12 lg:px-20'
   }
   
   const containerClasses = `
-    w-full ${full ? '' : 'lg:w-3/5 lg:mx-auto'} ${paddingClasses}
+    w-full ${paddingClasses}
     mb-16
   `
 

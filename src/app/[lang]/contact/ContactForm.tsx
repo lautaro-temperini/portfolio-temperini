@@ -322,6 +322,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
           type="text"
           name="name"
           id="name"
+          autoComplete="name"
           value={formData.name}
           onChange={handleInputChange}
           required
@@ -351,6 +352,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
           type="email"
           name="email"
           id="email"
+          autoComplete="email"
           value={formData.email}
           onChange={handleInputChange}
           required
@@ -378,6 +380,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
         <textarea
   name="message"
   id="message"
+  autoComplete="off"
   rows={3}
   value={formData.message}
   onChange={handleInputChange}
