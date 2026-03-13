@@ -4,23 +4,25 @@ interface ProseSectionProps {
   children: React.ReactNode
   className?: string
   contained?: boolean
+  id?: string
 }
 
 const ProseSection: React.FC<ProseSectionProps> = ({
   children,
   className = "",
   contained = true,
+  id,
 }) => {
   if (!contained) {
     return (
-      <section className={`w-full ${className}`}>
+      <section id={id} className={`w-full ${className}`}>
         {children}
       </section>
     )
   }
 
   return (
-    <section className={`w-full px-8 md:px-12 lg:px-20 ${className}`}>
+    <section id={id} className={`w-full px-8 md:px-12 lg:px-20 ${className}`}>
       {children}
     </section>
   )

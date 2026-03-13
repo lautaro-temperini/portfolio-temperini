@@ -358,16 +358,22 @@
           "axis": "Pillar: Speed + Context",
           "problem": "Manual time tracking is tedious and constantly delayed.",
           "solution": "Intelligent tracking that adapts to user behavior.",
-          "features": ["FAB with contextual suggestions", "History-based autocomplete", "One-tap quick logging", "Bulk entry editing"]
+          "features": ["FAB with contextual suggestions", "History-based autocomplete", "One-tap quick logging"]
         },
         "social": {
-          "title": "Transparency Layer: Trust & Value",
-          "axis": "Pillar: Trust + Value",
-          "problem": "Tracking feels like surveillance, not support.",
-          "solution": "Transparent reporting that surfaces value.",
-          "solutionItems": ["Visual breakdowns by project/client", "Progress vs. goals comparison", "Real-time billing estimates"],
-          "result": "Shifts perception from oversight tool to value driver."
-        },
+  "title": "Social Layer & Transparency",
+  "axis": "Axis: Trust + Value",
+  "problem": "Consultants perceive time tracking as a surveillance tool, not something that gives them value back.",
+  "solution": "A system where each individual action visibly impacts the team, turning tracking into collaboration.",
+  "solutionItemsTitle": "Single Source of Truth (SSoT):",
+  "solutionItems": [
+    "Individual Kanban connected to a shared Gantt: moving a task updates project progress in real time",
+    "Project activity feed: visibility into who moved what and when, without status meetings",
+    "Public and private notes per profile: encourages knowledge sharing between consultants",
+    "Progress percentages calculated automatically from task status"
+  ],
+  "result": "Tracking stops being an individual obligation and becomes visible team infrastructure."
+},
         "dashboard": {
           "title": "Refined Dashboard",
           "subtitle": "Consultant's operations center",

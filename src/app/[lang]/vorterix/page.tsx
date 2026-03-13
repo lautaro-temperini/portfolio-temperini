@@ -6,6 +6,7 @@ import CaseStudyLayout from "@/components/case-study/CaseStudyLayout"
 import ProseSection from "@/components/case-study/ProseSection"
 import ImageBreakout from "@/components/sections/ImageBreakout"
 import Image from "next/image"
+import SectionNav from "@/components/case-study/SectionNav"
 
 export const metadata = {
   title: "Paren la Mano | Landing que convierte audiencia en comunidad | Lautaro R. Temperini",
@@ -57,6 +58,14 @@ export default async function VorterixLandingPage({
       <Navbar dict={dict} lang={lang} />
       <div className="page-transition">
         <main className="pt-16 md:pt-20 lg:pt-24">
+        <SectionNav sections={[
+          { id: "brief" },
+          { id: "por-que" },
+          { id: "diseno" },
+          { id: "conversion" },
+          { id: "iteraciones" },
+          { id: "ux" },
+        ]} />
         <CaseStudyLayout>
           {/* Hero Section - 60vh */}
           <section className="w-full h-[60vh] flex items-center">
@@ -75,7 +84,7 @@ export default async function VorterixLandingPage({
           </section>
 
           {/* El brief real */}
-          <ProseSection className="mb-16">
+          <ProseSection id="brief" className="mb-16">
             <h2 className="text-3xl font-bold text-light mb-6">El brief real: un reto con límites claros</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <blockquote className="text-[#F1F1F1] italic mb-6 text-lg border-l-4 border-purple-500 pl-4">
@@ -87,7 +96,7 @@ export default async function VorterixLandingPage({
           </ProseSection>
 
           {/* Por qué hacía falta esta landing */}
-          <ProseSection className="mb-16">
+          <ProseSection id="por-que" className="mb-16">
             <h2 className="text-3xl font-bold text-light mb-6">¿Por qué hacía falta esta landing?</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <ul className="list-disc pl-5 space-y-3 mb-6">
@@ -110,7 +119,7 @@ export default async function VorterixLandingPage({
           />
 
           {/* El diseño empieza por ellos */}
-          <ProseSection className="mb-16">
+          <ProseSection id="diseno" className="mb-16">
             <h2 className="text-3xl font-bold text-light mb-6">
               El diseño empieza por ellos
             </h2>
@@ -223,7 +232,7 @@ export default async function VorterixLandingPage({
           </div>
 
           {/* Conversión sin perder identidad */}
-          <ProseSection className="mb-16">
+          <ProseSection id="conversion" className="mb-16">
             <h2 className="text-3xl font-bold text-light mb-6">Conversión sin perder identidad</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <div className="grid md:grid-cols-2 gap-6">
@@ -287,7 +296,7 @@ export default async function VorterixLandingPage({
           </div>
 
           {/* Iteraciones clave */}
-          <ProseSection className="mb-16">
+          <ProseSection id="iteraciones" className="mb-16">
             <h2 className="text-3xl font-bold text-light mb-6">Iteraciones clave</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <div className="grid md:grid-cols-2 gap-6">
@@ -333,7 +342,7 @@ export default async function VorterixLandingPage({
           </ProseSection>
 
           {/* UX sin narrativa */}
-          <ProseSection className="mb-16">
+          <ProseSection id="ux" className="mb-16">
             <h2 className="text-3xl font-bold text-light mb-6">
               UX sin narrativa es solo UI
             </h2>

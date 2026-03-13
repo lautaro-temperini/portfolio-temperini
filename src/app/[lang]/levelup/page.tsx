@@ -6,6 +6,7 @@ import CaseStudyLayout from "@/components/case-study/CaseStudyLayout"
 import ProseSection from "@/components/case-study/ProseSection"
 import ImageBreakout from "@/components/sections/ImageBreakout"
 import InsightCard from "@/components/sections/InsightCard"
+import SectionNav from "@/components/case-study/SectionNav"
 
 export const metadata = {
   title: "LevelUp | Rediseño editorial gamer | Lautaro R. Temperini",
@@ -57,6 +58,16 @@ export default async function LevelUpPage({
       <Navbar dict={dict} lang={lang} />
       <div className="page-transition">
         <main className="pt-16 md:pt-20 lg:pt-24">
+        <SectionNav sections={[
+          { id: "desafio" },
+          { id: "problema" },
+          { id: "insight" },
+          { id: "sistema" },
+          { id: "propuesta" },
+          { id: "version-final" },
+          { id: "aprendizajes" },
+          { id: "reflexion" },
+        ]} />
         <CaseStudyLayout>
           {/* Hero Section - 60vh */}
           <section className="w-full h-[60vh] flex items-center">
@@ -87,7 +98,7 @@ export default async function LevelUpPage({
           </div>
 
           {/* El Desafío */}
-          <ProseSection className="mb-16">
+          <ProseSection id="desafio" className="mb-16">
             <h2 className="text-3xl font-bold text-light mb-6">El Desafío</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <p className="mb-4">Transformar un portal de noticias genérico en una experiencia personalizada, relevante y escalable para el público gamer de Latinoamérica.</p>
@@ -96,7 +107,7 @@ export default async function LevelUpPage({
           </ProseSection>
 
           {/* El Problema */}
-          <ProseSection className="mb-16">
+          <ProseSection id="problema" className="mb-16">
             <h2 className="text-3xl font-bold text-light mb-6">El Problema</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <h3 className="text-2xl font-semibold text-light mb-4">
@@ -112,7 +123,7 @@ export default async function LevelUpPage({
           </ProseSection>
 
           {/* Insight Estratégico */}
-          <ProseSection className="mb-16">
+          <ProseSection id="insight" className="mb-16">
             <h2 className="text-3xl font-bold text-light mb-6">Insight Estratégico</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <h3 className="text-2xl font-semibold text-light mb-4">
@@ -128,7 +139,7 @@ export default async function LevelUpPage({
           </ProseSection>
 
           {/* Visión del Sistema */}
-          <ProseSection className="mb-16">
+          <ProseSection id="sistema" className="mb-16">
             <h2 className="text-3xl font-bold text-light mb-6">Visión del Sistema</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <p className="mb-4">Proyecté una solución de segmentación activa + pasiva:</p>
@@ -180,7 +191,7 @@ export default async function LevelUpPage({
           </ProseSection>
 
           {/* Mi propuesta inicial */}
-          <ProseSection className="mb-16">
+          <ProseSection id="propuesta" className="mb-16">
             <h2 className="text-3xl font-bold text-light mb-6">Mi propuesta inicial</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <p className="mb-6">Diseñé una interfaz más alineada a un producto digital real:</p>
@@ -194,7 +205,7 @@ export default async function LevelUpPage({
           </ProseSection>
 
           {/* La versión final implementada */}
-          <ProseSection className="mb-16">
+          <ProseSection id="version-final" className="mb-16">
             <h2 className="text-3xl font-bold text-light mb-6">La versión final implementada</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <p className="mb-6">El equipo decidió simplificar la interfaz:</p>
@@ -208,7 +219,7 @@ export default async function LevelUpPage({
           </ProseSection>
 
           {/* Aprendizajes clave */}
-          <ProseSection className="mb-16">
+          <ProseSection id="aprendizajes" className="mb-16">
             <h2 className="text-3xl font-bold text-light mb-8">
               Aprendizajes clave
             </h2>
@@ -229,7 +240,7 @@ export default async function LevelUpPage({
           </ProseSection>
 
           {/* Reflexión Final */}
-          <ProseSection className="mb-16">
+          <ProseSection id="reflexion" className="mb-16">
             <h2 className="text-3xl font-bold text-light mb-6">
               Reflexión Final
             </h2>

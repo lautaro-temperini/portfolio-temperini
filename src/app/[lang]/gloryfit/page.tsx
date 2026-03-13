@@ -3,9 +3,10 @@
   import ScrollToTop from "@/components/fxscripts/scroll-to-top";
   import Footer from "@/components/footer/Footer";
   import CaseStudyLayout from "@/components/case-study/CaseStudyLayout";
-  import ProseSection from "@/components/case-study/ProseSection";
+import ProseSection from "@/components/case-study/ProseSection";
   import ImageBreakout from "@/components/sections/ImageBreakout";
   import InsightCard from "@/components/sections/InsightCard";
+  import SectionNav from "@/components/case-study/SectionNav";
     
   export const metadata = {
     title: "GloryFit | App de entrenamiento personalizado | Lautaro R. Temperini",
@@ -73,7 +74,16 @@
       <>
         <Navbar dict={dict} lang={lang} />
         <div className="page-transition">
-          <main className="pt-16 md:pt-20 lg:pt-24">
+        <main className="pt-16 md:pt-20 lg:pt-24">
+          <SectionNav sections={[
+            { id: "reto" },
+            { id: "investigacion" },
+            { id: "estrategia" },
+            { id: "sistema" },
+            { id: "experiencia" },
+            { id: "iteraciones" },
+            { id: "conclusion" },
+          ]} />
           <CaseStudyLayout>
           {/* Hero Section - 60vh */}
           <section className="w-full h-[60vh] flex items-center">
@@ -98,7 +108,7 @@
           </div>
 
             {/* El reto */}
-            <ProseSection className="mb-16">
+            <ProseSection id="reto" className="mb-16">
               <h2 className="text-3xl font-bold text-light mb-6">
                 {t.challenge.title}
               </h2>
@@ -110,7 +120,7 @@
             </ProseSection>
 
             {/* Investigación */}
-            <ProseSection className="mb-16">
+            <ProseSection id="investigacion" className="mb-16">
               <h2 className="text-3xl font-bold text-light mb-6">
                 {t.research.title}
               </h2>
@@ -121,7 +131,7 @@
             </ProseSection>
 
             {/* Estrategia de diseño */}
-            <ProseSection className="mb-16">
+            <ProseSection id="estrategia" className="mb-16">
               <h2 className="text-3xl font-bold text-light mb-6">
                 {t.strategy.title}
               </h2>
@@ -146,7 +156,7 @@
             />
 
             {/* El sistema detrás */}
-            <ProseSection className="mb-16">
+            <ProseSection id="sistema" className="mb-16">
               <h2 className="text-3xl font-bold text-light mb-6">
                 {t.system.title}
               </h2>
@@ -162,7 +172,7 @@
             </ProseSection>
 
             {/* Diseño de experiencia */}
-            <ProseSection className="mb-16">
+            <ProseSection id="experiencia" className="mb-16">
               <h2 className="text-3xl font-bold text-light mb-6">
                 {t.experience.title}
               </h2>
@@ -191,7 +201,7 @@
             />
 
             {/* Iteraciones y validación */}
-            <ProseSection className="mb-16">
+            <ProseSection id="iteraciones" className="mb-16">
               <h2 className="text-3xl font-bold text-light mb-6">
                 {t.iterations.title}
               </h2>
@@ -240,7 +250,7 @@
             </ProseSection>
 
             {/* Conclusión */}
-            <ProseSection className="mb-16">
+            <ProseSection id="conclusion" className="mb-16">
               <h2 className="text-3xl font-bold text-light mb-6">
                 {t.conclusion.title}
               </h2>

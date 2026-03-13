@@ -318,7 +318,7 @@
     "pain": "\"Si tengo una urgencia, el sistema me frena.\"",
     "decision": "Flexibilizar el registro y permitir la carga rápida.",
     "whyWorks": "Un sistema que no tolera interrupciones genera evitación. La carga rápida elimina la excusa de 'lo hago después'.",
-    "translatedTo": "Traducido a diseño: Registro rápido con atajos y edición masiva."
+    "translatedTo": "Traducido a diseño: Registro rápido con atajos."
   },
   "friction4": {
   "number": "4",
@@ -355,16 +355,22 @@
           "axis": "Eje: Velocidad + Contexto",
           "problem": "El registro de horas es manual, tedioso y se posterga.",
           "solution": "Sistema de registro inteligente que minimiza la fricción.",
-          "features": ["FAB con sugerencias contextuales", "Autocompletado basado en historial", "Registro rápido con un solo clic", "Edición masiva de registros"]
+          "features": ["FAB con sugerencias contextuales", "Autocompletado basado en historial", "Registro rápido con un solo clic"]
         },
         "social": {
-          "title": "Capa Social y Transparencia",
-          "axis": "Eje: Confianza + Valor",
-          "problem": "Los consultores perciben el registro como herramienta de control.",
-          "solution": "Reportes transparentes que muestran el impacto del registro.",
-          "solutionItems": ["Reportes visuales por proyecto y cliente", "Comparativa de progreso personal vs. objetivos", "Estimaciones de facturación"],
-          "result": "Transforma la percepción del sistema de control a herramienta de valor."
-        },
+  "title": "Capa Social y Transparencia",
+  "axis": "Eje: Confianza + Valor",
+  "problem": "Los consultores perciben el registro como herramienta de control, no como algo que les devuelve valor.",
+  "solution": "Un sistema donde cada acción individual impacta visiblemente en el equipo, convirtiendo el registro en colaboración.",
+  "solutionItemsTitle": "Fuente Única de Verdad (SSoT):",
+  "solutionItems": [
+    "Kanban individual conectado a un Gantt grupal: mover una tarea actualiza el progreso del proyecto en tiempo real",
+    "Feed de actividad por proyecto: visibilidad de quién movió qué y cuándo, sin necesidad de reuniones de seguimiento",
+    "Notas públicas y privadas por perfil: fomenta el intercambio de conocimiento entre consultores",
+    "Porcentajes de avance calculados automáticamente desde el estado de las tareas"
+  ],
+  "result": "El registro deja de ser una obligación individual y se convierte en infraestructura visible del equipo."
+},
         "dashboard": {
           "title": "Dashboard Refinado",
           "subtitle": "Centro de operaciones del consultor",
@@ -402,7 +408,7 @@
       "results": {
         "title": "Resultados y aprendizajes",
         "qualitative": {
-          "title": "Impacto cualitativo:",
+          "title": "Impacto cualitativo",
           "before": "Antes:",
           "beforeQuote": "\"El registro de horas es un mal necesario.\"",
           "after": "Después:",
@@ -472,7 +478,7 @@
         }
       },
       "snapshot": {
-        "impactTitle": "Impacto cualitativo:",
+        "impactTitle": "Impacto cualitativo",
         "impactBeforeLabel": "Antes:",
         "impactBeforeQuote": "\"El registro de horas es un mal necesario.\"",
         "impactAfterLabel": "Después:",

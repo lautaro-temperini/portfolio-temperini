@@ -7,6 +7,7 @@ import ProseSection from "@/components/case-study/ProseSection"
 import ImageBreakout from "@/components/sections/ImageBreakout"
 import InsightCard from "@/components/sections/InsightCard"
 import Image from "next/image"
+import SectionNav from "@/components/case-study/SectionNav"
 
 export const metadata = {
   title: "Recto Final | Videojuego físico-digital | Lautaro R. Temperini",
@@ -58,6 +59,16 @@ export default async function RectoFinalPage({
       <Navbar dict={dict} lang={lang} />
       <div className="page-transition">
         <main className="pt-16 md:pt-20 lg:pt-24">
+        <SectionNav sections={[
+          { id: "contexto" },
+          { id: "especificaciones" },
+          { id: "desafio-real" },
+          { id: "mecanicas" },
+          { id: "decisiones-tecnicas" },
+          { id: "tension" },
+          { id: "resistencia" },
+          { id: "cierre" },
+        ]} />
         <CaseStudyLayout>
           {/* Hero Section - 60vh */}
           <section className="w-full h-[60vh] flex items-center">
@@ -87,7 +98,7 @@ export default async function RectoFinalPage({
           </div>
 
           {/* Contexto del Proyecto */}
-          <ProseSection className="mb-16">
+          <ProseSection id="contexto" className="mb-16">
             <h2 className="text-3xl font-bold text-light mb-6">Contexto del Proyecto</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <p className="mb-4">Proyecto académico UNLP - Taller de Experiencias Interactivas</p>
@@ -102,7 +113,7 @@ export default async function RectoFinalPage({
           </ProseSection>
 
           {/* Especificaciones Técnicas */}
-          <ProseSection className="mb-16">
+          <ProseSection id="especificaciones" className="mb-16">
             <h2 className="text-3xl font-bold text-light mb-6">Especificaciones Técnicas</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed space-y-4">
               <div>
@@ -125,7 +136,7 @@ export default async function RectoFinalPage({
           </ProseSection>
 
           {/* El Desafío Real */}
-          <ProseSection className="mb-16">
+          <ProseSection id="desafio-real" className="mb-16">
             <h2 className="text-3xl font-bold text-light mb-6">El Desafío Real</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <h3 className="text-2xl font-semibold text-light mb-4">
@@ -168,7 +179,7 @@ export default async function RectoFinalPage({
           />
 
           {/* Del Cuerpo al Código: Mecánicas Físicas */}
-          <ProseSection className="mb-16">
+          <ProseSection id="mecanicas" className="mb-16">
             <h2 className="text-3xl font-bold text-light mb-6">Del Cuerpo al Código: Mecánicas Físicas</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <p className="mb-4">Combiné Whac-A-Mole (golpear puntos fijos) + Subway Surfers (cambiar carriles) pero con interfaces físicas reales:</p>
@@ -182,7 +193,7 @@ export default async function RectoFinalPage({
           </ProseSection>
 
           {/* Decisiones Técnicas Críticas */}
-          <ProseSection className="mb-16">
+          <ProseSection id="decisiones-tecnicas" className="mb-16">
             <h2 className="text-3xl font-bold text-light mb-6">Decisiones Técnicas Críticas</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <p className="mb-4">Responsabilidad directa: Programación completa del sistema de juego en Unity</p>
@@ -206,7 +217,7 @@ export default async function RectoFinalPage({
           />
 
           {/* Momentos de Tensión Real */}
-          <ProseSection className="mb-16">
+          <ProseSection id="tension" className="mb-16">
             <h2 className="text-3xl font-bold text-light mb-6">Momentos de Tensión Real</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <p className="mb-4">El día previo a la muestra, el volante comenzó a generar input involuntario hacia la derecha. Lo recalibré desde código, ajustando los umbrales de detección. Además, tuvimos que salir casi de urgencia a comprar un extensor USB porque el cable original no alcanzaba la nueva configuración del stand.</p>
@@ -217,7 +228,7 @@ export default async function RectoFinalPage({
           </ProseSection>
 
           {/* Resistencia del Sistema en Condiciones Reales */}
-          <ProseSection className="mb-16">
+          <ProseSection id="resistencia" className="mb-16">
             <h2 className="text-3xl font-bold text-light mb-6">Resistencia del Sistema en Condiciones Reales</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <p className="mb-4">Métricas de Éxito Internas:</p>
@@ -283,7 +294,7 @@ export default async function RectoFinalPage({
           </div>
 
           {/* El Casi-Colapso Final */}
-          <ProseSection className="mb-16">
+          <ProseSection id="cierre" className="mb-16">
             <h2 className="text-3xl font-bold text-light mb-6">El Casi-Colapso Final</h2>
             <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
               <p className="mb-4">El drama real: Casi no llegamos. El equipo de ilustración estaba muy atrasado a 48 horas de la muestra. Todos intervinimos para salvar el proyecto: yo parcheando assets provisorios, el equipo de escenografía construyendo el barco en menos de una semana tras devoluciones duras, programadores ajustando efectos visuales en tiempo real.</p>
