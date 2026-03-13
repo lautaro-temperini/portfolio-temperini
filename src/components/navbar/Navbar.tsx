@@ -241,16 +241,16 @@ export default function Navbar({ dict, lang }: NavbarProps) {
           id="navbar-mobile-menu"
           className="absolute top-full left-0 w-full bg-background/95 backdrop-blur-sm border-t border-subtle/50 md:hidden"
         >
-          <div className="flex flex-col p-4 space-y-4">
-            <div className="flex flex-row items-center gap-3 py-2">
-              <div className="flex-1 min-w-0">
+          <div className="flex flex-col px-4 py-2 space-y-4">
+          <div className="flex flex-row items-center gap-3 py-1 w-full justify-end">
+              <div>
                 <LanguageSelector currentLang={lang} />
               </div>
               
               {!pathname.includes('/contact') && (
                 <Link
                   href={`/${lang}/contact`}
-                  className="flex-1 min-w-0 flex items-center justify-center px-4 h-10 rounded-full transition-all cursor-pointer"
+                  className="flex items-center justify-center px-4 h-10 rounded-full transition-all cursor-pointer"
                   style={{
                     background: "linear-gradient(180deg, #8900C3 72%, #595959 100%)",
                     border: "1px solid rgba(156, 150, 164, 0.5)",
@@ -259,7 +259,7 @@ export default function Navbar({ dict, lang }: NavbarProps) {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <span
-                    className="fluid-text-base font-semibold text-light relative"
+                    className="fluid-text-sm font-semibold text-light relative"
                     style={{ fontFamily: "var(--font-inter)" }}
                   >
                     {dict.nav.connect}
