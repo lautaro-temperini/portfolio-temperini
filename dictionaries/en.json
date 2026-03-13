@@ -312,7 +312,7 @@
           "title": "Friction: No visibility into why tracking matters",
           "pain": "User quote: \"I don't see the point—it's just for billing.\"",
           "decision": "Surface real-time impact of tracking.",
-          "whyWorks": ["Creates sense of purpose and team connection.", "Shows personal and team progress.", "Enables better self-management and planning."],
+          "whyWorks": "When consultants see the effect of their tracking on personal and team metrics, the system stops feeling like control and starts feeling like a tool.",
           "translatedTo": "Implementation: Dashboard with personal and team analytics."
         },
         "friction3": {

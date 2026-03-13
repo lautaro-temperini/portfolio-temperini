@@ -63,8 +63,6 @@ export default async function DigitoPage({
 
   return (
     <>
-      {/* Fondo sólido oscuro para sobrescribir el gradiente */}
-      <div className="fixed inset-0 bg-[#0D0D0D] z-[5] pointer-events-none" style={{ backgroundAttachment: 'fixed' }} />
       <Navbar dict={dict} lang={lang} />
       <div className="relative z-[20]">
         <main style={{ transform: 'none' }} className="[&>*]:!transform-none">
