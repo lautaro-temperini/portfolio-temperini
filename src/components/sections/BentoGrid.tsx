@@ -79,7 +79,7 @@ export function BentoGrid({ children, cols = { default: 1, md: 2, lg: 3 }, gap =
   return (
     <div
       className={cn(
-        "grid auto-rows-fr",
+        "grid auto-rows-auto md:auto-rows-fr",
         cols.default && colsDefaultClasses[cols.default],
         cols.md && colsMdClasses[cols.md],
         cols.lg && colsLgClasses[cols.lg],

@@ -275,10 +275,9 @@
         "discardedTitle": "Camino descartado por:",
         "discardedReasons": ["Genera cumplimiento, no adopción", "Degrada la calidad del dato", "Castiga al usuario por una fricción no resuelta", "Contradice una cultura basada en autonomía"],
         "conclusion": "Conclusión: La vía sostenible es lograr que registrar sea rápido, útil y parte del ritmo de trabajo.",
-        "scopeTitle": "Alcance: concentrarnos en el módulo operativo del consultor",
+        "scopeTitle": "Scope: módulo operativo del consultor",
         "scopeText1": "El brief original incluía 8 áreas de mejora. Rediseñar toda la plataforma era inviable en 3.5 meses.",
-        "ourDecision": "Nuestra decisión:",
-        "ourDecisionText": "Concentrarnos en donde registra horas, gestiona tareas y ve su carga de trabajo.",
+        "ourDecisionText": "Priorizamos el módulo operativo donde los consultores registran horas, gestionan tareas y ven su carga de trabajo, ya que es el cuello de botella directo de la facturación.",
         "thisAllowed": "Esto permitió:",
         "thisAllowedItems": ["Atacar directamente el problema detectado", "Proponer una solución completa y validable", "Mantener compatibilidad con módulos administrativos", "Sentar bases para futuras integraciones"]
        },
@@ -295,48 +294,48 @@
         "guidingPrinciple": "El sistema debe ser una herramienta, no una carga."
       },
       "frictions": {
-        "title": "Insights y decisiones de diseño: 5 fricciones críticas",
-        "subtitle": "Cada fricción detectada se tradujo en una decisión de diseño concreta.",
-        "friction1": {
-          "number": "1",
-          "title": "Fricción: El registro es una tarea extra, no parte del flujo.",
-          "pain": "Dolor: \"Me olvido de cargar las horas porque estoy enfocado en el proyecto.\"",
-          "decision": "Decisión: Integrar el registro en el flujo de trabajo diario.",
-          "whyWorks": "Por qué funciona: Reduce la carga cognitiva al hacer el registro contextual y proactivo.",
-          "translatedTo": "Traducido a diseño: FAB con sugerencias contextuales y autocompletado."
-        },
-        "friction2": {
-          "number": "2",
-          "title": "Fricción: Falta de visibilidad del impacto del registro.",
-          "pain": "Dolor: \"No sé para qué sirve cargar las horas, es solo para facturación.\"",
-          "decision": "Decisión: Mostrar el impacto del registro en tiempo real.",
-          "whyWorks": ["Genera sentido de propósito y pertenencia.", "Permite al consultor ver su progreso y el del equipo.", "Facilita la autogestión y la planificación."],
-          "translatedTo": "Traducido a diseño: Dashboard con métricas personales y de equipo."
-        },
-        "friction3": {
-          "number": "3",
-          "title": "Fricción: El sistema es rígido y no se adapta al ritmo de trabajo.",
-          "pain": "Dolor: \"Si tengo una urgencia, el sistema me frena.\"",
-          "decision": "Decisión: Flexibilizar el registro y permitir la carga rápida.",
-          "whyWorks": "Por qué funciona: Se adapta a la realidad operativa.",
-          "translatedTo": "Traducido a diseño: Registro rápido con atajos y edición masiva."
-        },
-        "friction4": {
-          "number": "4",
-          "title": "Fricción: La interfaz es compleja y requiere muchos clics.",
-          "pain": "Dolor: \"Tengo que hacer muchos clics para registrar una hora.\"",
-          "decision": "Decisión: Simplificar la interfaz y reducir interacciones.",
-          "whyWorks": "Por qué funciona: Minimiza la fricción y el tiempo dedicado.",
-          "translatedTo": "Traducido a diseño: Diseño limpio, navegación intuitiva."
-        },
-        "friction5": {
-          "number": "5",
-          "title": "Fricción: Falta de autonomía y control sobre el propio trabajo.",
-          "pain": "Dolor: \"El sistema me controla, no me ayuda.\"",
-          "decision": "Decisión: Empoderar al consultor con herramientas de autogestión.",
-          "whyWorks": "Por qué funciona: Fomenta la responsabilidad y la proactividad.",
-          "translatedTo": "Traducido a diseño: Calendario personalizable, vista de proyectos con progreso."
-        }
+  "title": "Insights y decisiones de diseño: 5 fricciones críticas",
+  "subtitle": "Cada fricción detectada se tradujo en una decisión de diseño concreta.",
+  "friction1": {
+    "number": "1",
+    "title": "Fricción: El registro es una tarea extra, no parte del flujo.",
+    "pain": "\"Me olvido de cargar las horas porque estoy enfocado en el proyecto.\"",
+    "decision": "Integrar el registro en el flujo de trabajo diario.",
+    "whyWorks": "El registro contextual reduce la carga cognitiva: el sistema sugiere en el momento correcto, no interrumpe el flujo.",
+    "translatedTo": "Traducido a diseño: FAB con sugerencias contextuales y autocompletado."
+  },
+  "friction2": {
+    "number": "2",
+    "title": "Fricción: Falta de visibilidad del impacto del registro.",
+    "pain": "\"No sé para qué sirve cargar las horas, es solo para facturación.\"",
+    "decision": "Mostrar el efecto del registro en métricas propias y del equipo.",
+    "whyWorks": "Cuando el consultor ve el efecto de su registro en métricas propias y del equipo, el sistema deja de sentirse como control y empieza a sentirse como herramienta.",
+    "translatedTo": "Traducido a diseño: Dashboard con métricas personales y de equipo."
+  },
+  "friction3": {
+    "number": "3",
+    "title": "Fricción: El sistema es rígido y no se adapta al ritmo de trabajo.",
+    "pain": "\"Si tengo una urgencia, el sistema me frena.\"",
+    "decision": "Flexibilizar el registro y permitir la carga rápida.",
+    "whyWorks": "Un sistema que no tolera interrupciones genera evitación. La carga rápida elimina la excusa de 'lo hago después'.",
+    "translatedTo": "Traducido a diseño: Registro rápido con atajos y edición masiva."
+  },
+  "friction4": {
+  "number": "4",
+  "title": "Fricción: La interfaz es compleja y requiere muchos clics.",
+  "pain": "\"Tengo que hacer muchos clics para registrar una hora.\"",
+  "decision": "Separar el módulo operativo del entorno administrativo, mostrando solo las herramientas relevantes para el consultor.",
+  "whyWorks": "Cada clic extra es una oportunidad para postergar. Menos pasos = menos fricción = más adopción real.",
+  "translatedTo": "Módulo operativo separado: el consultor accede solo a las herramientas que le corresponden, sin ruido administrativo."
+},
+  "friction5": {
+    "number": "5",
+    "title": "Fricción: Falta de autonomía y control sobre el propio trabajo.",
+    "pain": "\"El sistema me controla, no me ayuda.\"",
+    "decision": "Empoderar al consultor con herramientas de autogestión.",
+    "whyWorks": "La percepción de vigilancia se rompe cuando el consultor tiene control sobre su propia vista. El sistema trabaja para él, no al revés.",
+    "translatedTo": "Traducido a diseño: Calendario personalizable, vista de proyectos con progreso."
+  }
       },
       "architecture": {
         "title": "Arquitectura de la solución: 3 ejes de diseño",

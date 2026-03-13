@@ -28,7 +28,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://temperini.vercel.app/images/digito-logo.png",
+        url: "https://temperini.vercel.app/images/digito-logo.webp",
         width: 1200,
         height: 630,
         alt: "DÍGITO - Módulo Operativo",
@@ -39,7 +39,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "DÍGITO | Módulo Operativo | Lautaro R. Temperini",
     description: "Transformé el registro de horas de una tarea adicional en parte natural del flujo de trabajo.",
-    images: ["https://temperini.vercel.app/images/digito-logo.png"],
+    images: ["https://temperini.vercel.app/images/digito-logo.webp"],
   },
 }
 
@@ -161,7 +161,7 @@ export default async function DigitoPage({
             </div>
             <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0 [&>*]:h-full">
               <Block colSpan={1}>
-                <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 h-full">
+                <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 md:h-full">
                   <h3 className="text-2xl font-semibold text-light mb-4">{t.problem?.businessImpact}</h3>
                   <div className="text-light leading-relaxed space-y-4">
                     {t.problem?.impactSummary && (
@@ -179,7 +179,7 @@ export default async function DigitoPage({
                 </div>
               </Block>
               <Block colSpan={1}>
-                <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 h-full">
+                    <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 md:h-full">
                   <h3 className="text-2xl font-semibold text-light mb-4">
                     {t.problem?.title}
                   </h3>
@@ -200,7 +200,7 @@ export default async function DigitoPage({
           {/* ==================== 6. CUSTOMER JOURNEY BANNER (Full width 16:9) ==================== */}
 <FadeOnScroll>
   <ImageBreakout
-  src="/images/digitoImages/flujo-usuario-degradacion-progresiva-timetracking.png"
+  src="/images/digitoImages/flujo-usuario-degradacion-progresiva-timetracking.webp"
   alt={
     lang === "es"
       ? "Diagrama de flujo mostrando cómo la experiencia del usuario se degradaba progresivamente desde la ejecución hasta el registro"
@@ -208,7 +208,8 @@ export default async function DigitoPage({
   }
   width={1376}
   height={768}
-   imageClassName="object-cover object-center]" 
+  className="bg-[#F2F2F2]"
+  imageClassName="object-cover object-center]" 
   caption={
     lang === "es"
       ? "La experiencia se degradaba progresivamente. Lo que comenzaba fluido terminaba generando resistencia activa al registro."
@@ -349,7 +350,7 @@ export default async function DigitoPage({
 
           {/* ==================== PRINCIPIOS DE DISEÑO ==================== */}
             <FadeOnScroll>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
+            <section className="w-full px-8 md:px-12 lg:px-20 mb-20 hidden md:block">
             <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">{t.principles.title}</h2>
             <BentoGrid cols={{ default: 1, md: 2, lg: 3 }} gap="md" className="mb-6 [&>*]:h-full">
               {Object.values(t.principles.items || {}).map((item: any, index: number) => (
@@ -387,8 +388,8 @@ export default async function DigitoPage({
                     <span className="text-2xl font-bold text-light">{t.frictions.friction1.number}</span>
                     <h3 className="text-xl font-bold text-light">{t.frictions.friction1.title}</h3>
                   </div>
-                  <div className="space-y-3 text-light text-sm leading-relaxed">
-                    <div>
+                  <div className="space-y-2 text-light text-sm leading-relaxed">
+                    <div className="hidden md:block">
                       <h4 className="font-semibold text-light mb-1">
                         {lang === "es" ? "Dolor:" : "Pain:"}
                       </h4>
@@ -396,7 +397,7 @@ export default async function DigitoPage({
                     </div>
                     <div>
                       <h4 className="font-semibold text-light mb-1">
-                        {lang === "es" ? "Decisión:" : "Decision:"}
+                        {lang === "es" ? "Solución:" : "Solution:"}
                       </h4>
                       <p className="text-light text-sm leading-relaxed">{t.frictions.friction1.decision}</p>
                     </div>
@@ -406,17 +407,23 @@ export default async function DigitoPage({
                       </h4>
                       <p className="text-sm leading-relaxed">{t.frictions.friction1.whyWorks}</p>
                     </div>
+                    <div>
+                      <h4 className="font-semibold text-light mb-1">
+                        {lang === "es" ? "Traducido a diseño:" : "Translated to design:"}
+                      </h4>
+                      <p className="text-light text-sm leading-relaxed">{t.frictions.friction1.translatedTo}</p>
+                    </div>
                   </div>
                 </div>
               </BentoItem>
               <BentoItem colSpan={1}>
-                <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 h-full">
+                <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 md:h-full">
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-2xl font-bold text-light">{t.frictions.friction2.number}</span>
                     <h3 className="text-xl font-bold text-light">{t.frictions.friction2.title}</h3>
                   </div>
-                  <div className="space-y-3 text-light text-sm leading-relaxed">
-                    <div>
+                  <div className="space-y-2 text-light text-sm leading-relaxed">
+                    <div className="hidden md:block">
                       <h4 className="font-semibold text-light mb-1">
                         {lang === "es" ? "Dolor:" : "Pain:"}
                       </h4>
@@ -424,21 +431,33 @@ export default async function DigitoPage({
                     </div>
                     <div>
                       <h4 className="font-semibold text-light mb-1">
-                        {lang === "es" ? "Decisión:" : "Decision:"}
+                        {lang === "es" ? "Solución:" : "Solution:"}
                       </h4>
                       <p className="text-light text-sm leading-relaxed">{t.frictions.friction2.decision}</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-light mb-1">
+                        {lang === "es" ? "Por qué funciona:" : "Why it works:"}
+                      </h4>
+                      <p className="text-light text-sm leading-relaxed">{t.frictions.friction2.whyWorks}</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-light mb-1">
+                        {lang === "es" ? "Traducido a diseño:" : "Translated to design:"}
+                      </h4>
+                      <p className="text-light text-sm leading-relaxed">{t.frictions.friction2.translatedTo}</p>
                     </div>
                   </div>
                 </div>
               </BentoItem>
               <BentoItem colSpan={1}>
-                <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 h-full">
+                <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 md:h-full">
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-2xl font-bold text-light">{t.frictions.friction3.number}</span>
                     <h3 className="text-xl font-bold text-light">{t.frictions.friction3.title}</h3>
                   </div>
-                  <div className="space-y-3 text-light text-sm leading-relaxed">
-                    <div>
+                  <div className="space-y-2 text-light text-sm leading-relaxed">
+                    <div className="hidden md:block">
                       <h4 className="font-semibold text-light mb-1">
                         {lang === "es" ? "Dolor:" : "Pain:"}
                       </h4>
@@ -446,21 +465,33 @@ export default async function DigitoPage({
                     </div>
                     <div>
                       <h4 className="font-semibold text-light mb-1">
-                        {lang === "es" ? "Decisión:" : "Decision:"}
+                        {lang === "es" ? "Solución:" : "Solution:"}
                       </h4>
                       <p className="text-light text-sm leading-relaxed">{t.frictions.friction3.decision}</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-light mb-1">
+                        {lang === "es" ? "Por qué funciona:" : "Why it works:"}
+                      </h4>
+                      <p className="text-light text-sm leading-relaxed">{t.frictions.friction3.whyWorks}</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-light mb-1">
+                        {lang === "es" ? "Traducido a diseño:" : "Translated to design:"}
+                      </h4>
+                      <p className="text-light text-sm leading-relaxed">{t.frictions.friction3.translatedTo}</p>
                     </div>
                   </div>
                 </div>
               </BentoItem>
               <BentoItem colSpan={1}>
-                <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 h-full">
+                <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 md:h-full">
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-2xl font-bold text-light">{t.frictions.friction4.number}</span>
                     <h3 className="text-xl font-bold text-light">{t.frictions.friction4.title}</h3>
                   </div>
-                  <div className="space-y-3 text-light text-sm leading-relaxed">
-                    <div>
+                  <div className="space-y-2 text-light text-sm leading-relaxed">
+                    <div className="hidden md:block">
                       <h4 className="font-semibold text-light mb-1">
                         {lang === "es" ? "Dolor:" : "Pain:"}
                       </h4>
@@ -468,21 +499,33 @@ export default async function DigitoPage({
                     </div>
                     <div>
                       <h4 className="font-semibold text-light mb-1">
-                        {lang === "es" ? "Decisión:" : "Decision:"}
+                        {lang === "es" ? "Solución:" : "Solution:"}
                       </h4>
                       <p className="text-light text-sm leading-relaxed">{t.frictions.friction4.decision}</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-light mb-1">
+                        {lang === "es" ? "Por qué funciona:" : "Why it works:"}
+                      </h4>
+                      <p className="text-light text-sm leading-relaxed">{t.frictions.friction4.whyWorks}</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-light mb-1">
+                        {lang === "es" ? "Traducido a diseño:" : "Translated to design:"}
+                      </h4>
+                      <p className="text-light text-sm leading-relaxed">{t.frictions.friction4.translatedTo}</p>
                     </div>
                   </div>
                 </div>
               </BentoItem>
               <BentoItem colSpan={1}>
-                <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 h-full">
+                <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 md:h-full">
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-2xl font-bold text-light">{t.frictions.friction5.number}</span>
                     <h3 className="text-xl font-bold text-light">{t.frictions.friction5.title}</h3>
                   </div>
-                  <div className="space-y-3 text-light text-sm leading-relaxed">
-                    <div>
+                  <div className="space-y-2 text-light text-sm leading-relaxed">
+                    <div className="hidden md:block">
                       <h4 className="font-semibold text-light mb-1">
                         {lang === "es" ? "Dolor:" : "Pain:"}
                       </h4>
@@ -490,9 +533,21 @@ export default async function DigitoPage({
                     </div>
                     <div>
                       <h4 className="font-semibold text-light mb-1">
-                        {lang === "es" ? "Decisión:" : "Decision:"}
+                        {lang === "es" ? "Solución:" : "Solution:"}
                       </h4>
                       <p className="text-light text-sm leading-relaxed">{t.frictions.friction5.decision}</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-light mb-1">
+                        {lang === "es" ? "Por qué funciona:" : "Why it works:"}
+                      </h4>
+                      <p className="text-light text-sm leading-relaxed">{t.frictions.friction5.whyWorks}</p>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-light mb-1">
+                        {lang === "es" ? "Traducido a diseño:" : "Translated to design:"}
+                      </h4>
+                      <p className="text-light text-sm leading-relaxed">{t.frictions.friction5.translatedTo}</p>
                     </div>
                   </div>
                 </div>
@@ -509,12 +564,14 @@ export default async function DigitoPage({
           {/* ==================== 12. Vista general de proyectos en el MVP original de Dígito, antes del rediseño (Full width 16:9) ==================== */}
             <FadeOnScroll>
             <ImageBreakout
-            src="/modulo-registro-horas-mvp-original.webp"
+            src="/images/digitoImages/modulo-registro-horas-mvp-original.webp"
             alt="Módulo de registro de horas en el MVP original de Dígito, antes del rediseño"
             width={1920}
             height={1080}
             border={false}
             full={true}
+            className="bg-[#F2F2F2]"
+            imageClassName="object-cover object-top"
             caption={t.mvpOriginalImageCaption}
           />
             </FadeOnScroll>
@@ -522,12 +579,14 @@ export default async function DigitoPage({
           {/* ==================== Design tokens (antes de Panel Unificado) ==================== */}
             <FadeOnScroll>
             <ImageBreakout
-              src="/design-tokens-digito.webp"
+              src="/images/digitoImages/design-tokens-digito.webp"
               alt={lang === "es" ? "Tokens de diseño del proyecto Dígito: color, tipografía, espaciado y radios." : "Dígito project design tokens: color, typography, spacing, and border radii."}
               width={1920}
               height={1080}
               border={false}
               full={true}
+              className="bg-[#E4E4E4] "
+              imageClassName="object-contain"
               caption={t.designTokensImageCaption}
             />
             </FadeOnScroll>
@@ -539,7 +598,7 @@ export default async function DigitoPage({
 
           {/* ==================== 13. PANEL UNIFICADO - Snapshot de dashboard ==================== */}
             <FadeOnScroll>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
+            <section className="w-full px-8 md:px-12 lg:px-20 mb-8">
             <div className="bg-gradient-to-br from-[#081730]/30 to-[#3282A9]/30 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-[#08A4E1]/30">
               <h2 className="text-3xl md:text-4xl font-bold text-light mb-4">
                 {t.architecture.unifiedPanel.title}
@@ -595,12 +654,14 @@ export default async function DigitoPage({
            {/* ==================== 18. DASHBOARD DIGITO EN USO REAL (Full width 16:9) ==================== */}
            <FadeOnScroll>
             <ImageBreakout
-            src="/dashboard-digito-en-uso-real.webp"
+            src="/images/digitoImages/dashboard-digito-en-uso-real.webp"
             alt="Dashboard principal de Dígito en uso real: consultor revisando estado de proyectos y horas registradas"
             width={1920}
             height={1080}
             border={false}
             full={true}
+            className="bg-[#F2F2F2]"
+            imageClassName="image-swing-dashboard"
           />
             </FadeOnScroll>
             
@@ -613,7 +674,7 @@ export default async function DigitoPage({
               <Block colSpan={1}>
                 <div className="relative w-full h-full rounded-lg overflow-hidden bg-white flex items-center">
                   <Image
-                    src="/animacion-fab-con-sugerencias-contextuales.webp"
+                    src="/images/digitoImages/animacion-fab-con-sugerencias-contextuales.webp"
                     alt="Animación del botón FAB desplegando sugerencias contextuales para registro rápido de horas"
                     width={1200}
                     height={800}
@@ -691,7 +752,7 @@ export default async function DigitoPage({
               <Block colSpan={1}>
                 <div className="relative w-full h-full rounded-lg overflow-hidden bg-white flex items-center">
                   <Image
-                    src="/animacion-proyectos-gantt-kanban.webp"
+                    src="/images/digitoImages//animacion-proyectos-gantt-kanban.webp"
                     alt="Animación del panel de proyectos alternando entre vista Gantt y vista Kanban"
                     width={1200}
                     height={800}
@@ -709,7 +770,7 @@ export default async function DigitoPage({
             <div className="space-y-8">
               <div className="relative w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden bg-white">
                 <Image
-                  src="/comparativa-mvp-wireframe-hifi.webp"
+                  src="/images/digitoImages/comparativa-mvp-wireframe-hifi.webp"
                   alt="Evolución del diseño: MVP original, wireframe de baja fidelidad y prototipo de alta fidelidad"
                   fill
                   className="object-contain"

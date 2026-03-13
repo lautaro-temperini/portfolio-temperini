@@ -303,7 +303,7 @@
           "number": "1",
           "title": "Friction: Tracking feels like extra work",
           "pain": "User quote: \"I forget to log hours because I'm focused on actual work.\"",
-          "decision": "Solution: Embed tracking into daily workflow.",
+          "decision": "Embed tracking into daily workflow.",
           "whyWorks": "Impact: Reduces cognitive load through contextual, proactive prompts.",
           "translatedTo": "Implementation: FAB with smart suggestions and autocomplete."
         },
@@ -311,7 +311,7 @@
           "number": "2",
           "title": "Friction: No visibility into why tracking matters",
           "pain": "User quote: \"I don't see the point—it's just for billing.\"",
-          "decision": "Solution: Surface real-time impact of tracking.",
+          "decision": "Surface real-time impact of tracking.",
           "whyWorks": ["Creates sense of purpose and team connection.", "Shows personal and team progress.", "Enables better self-management and planning."],
           "translatedTo": "Implementation: Dashboard with personal and team analytics."
         },
@@ -319,7 +319,7 @@
           "number": "3",
           "title": "Friction: System is rigid, can't handle interruptions",
           "pain": "User quote: \"When an emergency hits, the system slows me down.\"",
-          "decision": "Solution: Make tracking flexible and fast.",
+          "decision": "Make tracking flexible and fast.",
           "whyWorks": "Impact: Adapts to real work patterns, not idealized ones.",
           "translatedTo": "Implementation: Quick-log with shortcuts and bulk edit."
         },
@@ -327,7 +327,7 @@
           "number": "4",
           "title": "Friction: Too many clicks required",
           "pain": "User quote: \"It takes too many clicks just to log one hour.\"",
-          "decision": "Solution: Streamline interface and minimize steps.",
+          "decision": "Streamline interface and minimize steps.",
           "whyWorks": "Impact: Reduces time tax on administrative tasks.",
           "translatedTo": "Implementation: Minimal UI, intuitive navigation patterns."
         },
@@ -335,7 +335,7 @@
           "number": "5",
           "title": "Friction: Feels like surveillance, not a tool",
           "pain": "User quote: \"The system controls me instead of helping me.\"",
-          "decision": "Solution: Give consultants autonomy and control.",
+          "decision": "Give consultants autonomy and control.",
           "whyWorks": "Impact: Shifts perception from oversight to empowerment.",
           "translatedTo": "Implementation: Customizable calendar, progress-tracking views."
         }

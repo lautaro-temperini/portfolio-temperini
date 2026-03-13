@@ -302,4 +302,17 @@ section {
   }
 }
 
+@keyframes swing {
+  0%   { transform: perspective(1200px) rotateX(-5deg) rotateY(12deg); }
+  25%  { transform: perspective(1200px) rotateX(-1deg) rotateY(2deg); }
+  50%  { transform: perspective(1200px) rotateX(-5deg) rotateY(-12deg); }
+  75%  { transform: perspective(1200px) rotateX(-1deg) rotateY(2deg); }
+  100% { transform: perspective(1200px) rotateX(-5deg) rotateY(12deg); }
+}
+.image-swing-dashboard {
+  transform-origin: center center;
+  animation: swing 8s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+  object-fit: contain;
+}
+
 

@@ -54,7 +54,7 @@ const ImageBreakout: React.FC<ImageBreakoutProps> = ({
   `
 
   const imageWrapperClasses = `
-    rounded-lg overflow-hidden bg-[#F2F2F2]
+    rounded-lg overflow-hidden
     ${shadow ? "shadow-2xl" : ""}
     ${border ? "border-2 border-[#A6A6A6]" : ""}
     w-full ${className.includes('h-') ? '' : 'aspect-video md:h-[60vh] lg:h-[70vh]'}
@@ -62,7 +62,7 @@ const ImageBreakout: React.FC<ImageBreakoutProps> = ({
     ${className}
   `
 
-  const imageClasses = `w-full h-full object-contain ${imageClassName}`
+  const imageClasses = `w-full h-full ${imageClassName || 'object-contain'}`
 
   return (
     <figure className={containerClasses}>
