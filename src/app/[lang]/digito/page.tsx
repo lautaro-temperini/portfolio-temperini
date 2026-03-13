@@ -884,18 +884,42 @@ export default async function DigitoPage({
           <section className="w-full px-0 md:px-8 lg:px-20 mb-20">
             <div className="w-full flex justify-center">
               <div className="w-full rounded-lg overflow-hidden">
-              <iframe
-  title={lang === "es" ? "Prototipo interactivo de Dígito" : "Dígito interactive prototype"}
-  style={{
-    border: "1px solid rgba(0, 0, 0, 0.1)",
-    width: "100%",
-    aspectRatio: "800 / 450",
-    maxHeight: "100vh",
-  }}
-  src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/CAzpfuJZBHMEaGPytW4kV0/Prototipo-Interactivo---D%C3%ADgito---Lautaro-R.-Temperini?node-id=3063-8285&p=f&t=7YcIkQI6Z52Y1B7L-1&scaling=contain&content-scaling=fixed&page-id=623%3A3290&starting-point-node-id=3063%3A8285"
-  allowFullScreen
-/>
+                <iframe
+                  title={lang === "es" ? "Prototipo interactivo de Dígito" : "Dígito interactive prototype"}
+                  style={{
+                    border: "1px solid rgba(0, 0, 0, 0.1)",
+                    width: "100%",
+                    aspectRatio: "800 / 450",
+                    maxHeight: "100vh",
+                  }}
+                  src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/proto/CAzpfuJZBHMEaGPytW4kV0/Prototipo-Interactivo---D%C3%ADgito---Lautaro-R.-Temperini?node-id=3063-8285&p=f&t=7YcIkQI6Z52Y1B7L-1&scaling=contain&content-scaling=fixed&page-id=623%3A3290&starting-point-node-id=3063%3A8285"
+                  allowFullScreen
+                />
               </div>
+            </div>
+            <div className="mt-3 w-full flex justify-start px-4 md:px-0">
+              <a
+                href="https://www.figma.com/proto/CAzpfuJZBHMEaGPytW4kV0/Prototipo-Interactivo---D%C3%ADgito---Lautaro-R.-Temperini?node-id=3063-8285&p=f&t=ds4pNYUOG0UNPYhS-1&scaling=scale-down&content-scaling=fixed&page-id=623%3A3290&starting-point-node-id=3063%3A8285"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-sm text-light/80 hover:text-light underline underline-offset-4"
+              >
+                <span>{lang === "es" ? "Ver prototipo en Figma" : "View prototype in Figma"}</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={1.5}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M9.75 6.75h7.5m0 0v7.5m0-7.5L9 15.75M5.25 5.25v13.5h13.5"
+                  />
+                </svg>
+              </a>
             </div>
           </section>
 
