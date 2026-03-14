@@ -1,6 +1,7 @@
 import { getDictionary } from "@/lib/getDictionary"
 import Navbar from "@/components/navbar/Navbar"
 import ScrollToTop from "@/components/fxscripts/scroll-to-top"
+import ScrollToSection from "@/components/fxscripts/scroll-to-section"
 import Footer from "@/components/footer/Footer"
 import ImageBreakout from "@/components/sections/ImageBreakout"
 import { GridContainer } from "@/components/sections/GridContainer"
@@ -75,20 +76,31 @@ export default async function DigitoPage({
             { id: "fricciones" },
             { id: "arquitectura" },
             { id: "testing" },
-            { id: "cierre" },
+            { id: "prototipo", label: lang === "es" ? "Prototipo" : "Prototype" },
           ]} />
             {/* ==================== 1. HERO SECTION ==================== */}
             <FadeOnScroll>
-              <section className="w-full px-8 md:px-12 lg:px-20 pt-28 md:pt-32 lg:pt-36 mb-20">
+              <section className="w-full px-8 md:px-12 lg:px-20 pt-28 md:pt-32 lg:pt-36">
               <div className="w-full max-w-7xl">
-                <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold leading-tight text-light mb-6">
+                <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold leading-tight text-light mb-4">
                   {t.hero?.title || "DÍGITO"}
                 </h1>
                 <p className="text-xl md:text-2xl font-semibold text-light mb-4">{t.hero?.subtitle}</p>
-                <p className="text-base md:text-lg text-light leading-relaxed mb-8">{t.hero?.description}</p>
+                <p className="text-base md:text-lg text-light leading-relaxed mb-4">{t.hero?.description}</p>
               </div>
             </section>
             </FadeOnScroll>
+
+            <div className="w-full px-8 md:px-12 lg:px-20 mb-12 flex justify-left">
+              <ScrollToSection
+                href="#prototipo"
+                offset={60}
+                duration={400}
+                className="inline-flex items-center gap-1 text-sm text-light/80 hover:text-light underline underline-offset-4 transition-colors"
+              >
+                {lang === "es" ? "Ir al prototipo ↓" : "Go to prototype ↓"}
+              </ScrollToSection>
+            </div>
 
             {/* ==================== BANNER HERO ==================== */}
             <FadeOnScroll delay={80}>
@@ -903,7 +915,7 @@ export default async function DigitoPage({
 </div>
 
           {/* ==================== FIGMA PROTOTYPE EMBED ==================== */}
-          <section className="w-full px-0 md:px-8 lg:px-20 mb-20">
+          <section id="prototipo" className="w-full px-0 md:px-8 lg:px-20 mb-20 scroll-mt-24">
             <div className="w-full flex justify-center">
               <div className="w-full rounded-lg overflow-hidden">
                 <iframe

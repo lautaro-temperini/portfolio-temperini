@@ -367,10 +367,10 @@
   "solution": "A system where each individual action visibly impacts the team, turning tracking into collaboration.",
   "solutionItemsTitle": "Single Source of Truth (SSoT):",
   "solutionItems": [
-    "Individual Kanban connected to a shared Gantt: moving a task updates project progress in real time",
-    "Project activity feed: visibility into who moved what and when, without status meetings",
-    "Public and private notes per profile: encourages knowledge sharing between consultants",
-    "Progress percentages calculated automatically from task status"
+    "Gantt view: group progress tracking per project, calculated automatically from actual task status",
+    "Kanban view: each consultant manages their own tasks and updates team progress with every move",
+    "General view: activity feed that records what was moved, who did it and when, without status meetings",
+    "Consultant profiles: public and private notes visible to the team, with collaboration history and shared activity"
   ],
   "result": "Tracking stops being an individual obligation and becomes visible team infrastructure."
 },

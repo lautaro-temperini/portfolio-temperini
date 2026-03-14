@@ -82,84 +82,13 @@ export const playgroundFilters = [
 ]
 
 /**
- * Helper para generar placeholders de imagen con gradientes
+ * Helper para generar placeholders de imagen con gradientes (exportado para uso en páginas)
  */
-const getPlaceholderImage = (color: string) => {
+export const getPlaceholderImage = (color: string) => {
   return `data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='600'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:%23${color};stop-opacity:0.3'/><stop offset='100%' style='stop-color:%230d0d0d;stop-opacity:1'/></linearGradient></defs><rect width='100%' height='100%' fill='%230d0d0d'/><rect width='100%' height='100%' fill='url(%23grad)'/></svg>`
 }
 
 /**
- * Items del Bento Grid - Grid uniforme, todas las cards cuadradas
+ * Items del Bento Grid - importados desde playgroundItems.ts
  */
-export const playgroundItems: BentoItem[] = [
-  {
-    id: 1,
-    title: "Fluid Simulation",
-    description: "Simulación de fluidos interactiva con WebGL. Experimenta con física de partículas en tiempo real.",
-    image: getPlaceholderImage("a855f7"),
-    tags: ["WebGL", "GLSL", "Physics"],
-    type: "generative",
-    variant: "purple",
-    href: "#"
-  },
-  {
-    id: 2,
-    title: "Kinetic Typography",
-    description: "Animaciones tipográficas reactivas al audio con Motion.",
-    image: getPlaceholderImage("10b981"),
-    tags: ["Motion", "Typography"],
-    type: "motion",
-    variant: "green",
-    href: "#"
-  },
-  {
-    id: 3,
-    title: "AI Portrait Generator",
-    description: "Generador de retratos con Stable Diffusion y estilos custom.",
-    image: getPlaceholderImage("ec4899"),
-    tags: ["AI", "Stable Diffusion"],
-    type: "airenders",
-    variant: "pink",
-    href: "#"
-  },
-  {
-    id: 4,
-    title: "Particle System",
-    description: "Sistema de partículas GPU-accelerated con Three.js.",
-    image: getPlaceholderImage("f97316"),
-    tags: ["Three.js", "GPGPU"],
-    type: "generative",
-    variant: "orange",
-    href: "#"
-  },
-  {
-    id: 5,
-    title: "Shader Gallery",
-    description: "Colección de shaders experimentales y efectos visuales.",
-    image: getPlaceholderImage("6b7280"),
-    tags: ["GLSL", "Fragment Shaders"],
-    type: "generative",
-    variant: "gray",
-    href: "#"
-  },
-  {
-    id: 6,
-    title: "Interactive Canvas",
-    description: "Lienzo interactivo donde tu mouse genera arte generativo único.",
-    image: getPlaceholderImage("a855f7"),
-    tags: ["Canvas", "Generative Art"],
-    type: "interactive",
-    variant: "purple",
-    href: "#"
-  },
-  {
-    id: 7,
-    title: "3D Scene Builder",
-    description: "Constructor de escenas 3D interactivo con Three.js y controles intuitivos.",
-    image: getPlaceholderImage("3b82f6"),
-    tags: ["Three.js", "3D", "WebGL"],
-    type: "interactive",
-    variant: "blue",
-    href: "#"
-  }
-]
+export { playgroundItems } from './playgroundItems'

@@ -4,6 +4,8 @@ import React, { useEffect, useState } from "react"
 
 interface Section {
   id: string
+  /** Etiqueta opcional para el índice (p. ej. para secciones sin h2 o con texto por idioma) */
+  label?: string
 }
 
 interface SectionNavProps {
@@ -16,11 +18,15 @@ const SectionNav: React.FC<SectionNavProps> = ({ sections }) => {
 
   useEffect(() => {
     const map: Record<string, string> = {}
-    sections.forEach(({ id }) => {
-      const el = document.getElementById(id)
-      const h2 = el?.querySelector('h2')
-      if (h2) {
-        map[id] = h2.textContent || id
+    sections.forEach(({ id, label }) => {
+      if (label) {
+        map[id] = label
+      } else {
+        const el = document.getElementById(id)
+        const h2 = el?.querySelector('h2')
+        if (h2) {
+          map[id] = h2.textContent || id
+        }
       }
     })
     setLabels(map)

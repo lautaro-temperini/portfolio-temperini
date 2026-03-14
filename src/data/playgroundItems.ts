@@ -2,73 +2,84 @@
 // ITEMS DEL PLAYGROUND
 // ============================================================================
 
+import type { BentoItem } from '@/data/playgroundData'
+
 /**
  * playgroundItems - Lista de proyectos/experimentos del Playground
- * 
- * Cada item tiene:
- * - id: Identificador único numérico
- * - title: Título del experimento
- * - description: Descripción breve del experimento
- * - image: Imagen de preview (puede ser URL o data URL)
- * - tags: Etiquetas/categorías del experimento
- * - type: Tipo de experimento (usado para filtrar)
- *         Debe coincidir con los values de filterOptions
- * 
- * NOTA: Actualmente todos los items son placeholders "En construcción".
- * Cuando se agreguen proyectos reales, se debe actualizar:
- * - title con el nombre real del proyecto
- * - description con una descripción real
- * - image con la URL de la imagen real
- * - tags con las tecnologías/categorías reales
- * - type con el tipo correcto (motiongraphics, generative, airenders, interactive)
+ * Interfaz BentoItem: { id, title, description, image, tags, type, variant, href? }
+ * Tipos: 'motion' | 'generative' | 'airenders' | 'interactive'
+ * Variants: 'purple' | 'green' | 'orange' | 'pink' | 'gray' | 'blue'
  */
-export const playgroundItems = [
+export const playgroundItems: BentoItem[] = [
   {
     id: 1,
-    title: "En construcción",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='300'><rect width='100%' height='100%' fill='%230d0d0d'/></svg>",
-    tags: ["-"],
-    type: "placeholder",
+    title: "Creación/Destrucción",
+    description: "Oxidación y contrastes en madera. Acetato férrico sobre roble: tres concentraciones, acrílico azul cobalto y exposición solar. El deterioro como método de creación.",
+    image: "/images/playground/oxidacion-madera.webp",
+    tags: ["Técnica mixta", "Madera", "Oxidación"],
+    type: "generative",
+    variant: "orange",
+    href: "/playground/oxidacion-madera",
   },
   {
     id: 2,
-    title: "En construcción",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='300'><rect width='100%' height='100%' fill='%230d0d0d'/></svg>",
-    tags: ["-"],
-    type: "placeholder",
+    title: "Cars — Página Web",
+    description: "Sitio web estático desarrollado para PMIW. HTML, CSS y JavaScript vanilla.",
+    image: "/images/playground/cars-web.webp",
+    tags: ["HTML", "CSS", "JavaScript"],
+    type: "interactive",
+    variant: "blue",
+    // TODO: reemplazar con la URL real del sitio PMIW
+    href: "#",
   },
   {
     id: 3,
-    title: "En construcción",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='300'><rect width='100%' height='100%' fill='%230d0d0d'/></svg>",
-    tags: ["-"],
-    type: "placeholder",
+    title: "Obra Generativa",
+    description: "Exploración generativa desarrollada con Processing y p5.js. Sistema de reglas visuales que produce patrones únicos.",
+    image: "/images/playground/obra-generativa.webp",
+    tags: ["Processing", "p5.js", "Generativo"],
+    type: "generative",
+    variant: "purple",
+    href: "/playground/obra-generativa",
   },
   {
     id: 4,
-    title: "En construcción",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='300'><rect width='100%' height='100%' fill='%230d0d0d'/></svg>",
-    tags: ["-"],
-    type: "placeholder",
+    title: "Galería Visual",
+    description: "Archivo de flyers de diseño gráfico y modelos 3D. Exploración entre lo digital plano y el volumen tridimensional.",
+    image: "/images/playground/galeria-preview.webp",
+    tags: ["Diseño Gráfico", "3D", "Flyers"],
+    type: "motion",
+    variant: "pink",
+    href: "/playground/galeria",
   },
   {
     id: 5,
-    title: "En construcción",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='300'><rect width='100%' height='100%' fill='%230d0d0d'/></svg>",
-    tags: ["-"],
-    type: "placeholder",
+    title: "Dibujar con la Voz",
+    description: "Experimento en p5.js donde la voz del usuario genera trazos visuales en tiempo real. Interface de audio como herramienta de dibujo.",
+    image: "/images/playground/voz-dibujo.webp",
+    tags: ["p5.js", "Audio", "Interactivo"],
+    type: "interactive",
+    variant: "green",
+    href: "/playground/dibujar-voz",
   },
   {
     id: 6,
-    title: "En construcción",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    image: "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='300'><rect width='100%' height='100%' fill='%230d0d0d'/></svg>",
-    tags: ["-"],
-    type: "placeholder",
+    title: "Light The Byte",
+    description: "Juego desarrollado en Unity. Jugable directamente en el navegador vía WebGL.",
+    image: "/images/playground/light-byte.webp",
+    tags: ["Unity", "WebGL", "Juego"],
+    type: "interactive",
+    variant: "gray",
+    href: "/playground/light-the-byte",
+  },
+  {
+    id: 7,
+    title: "Recto Final",
+    description: "Juego de carreras desarrollado en Unity. Jugable en el navegador vía WebGL build.",
+    image: "/images/playground/recto-final.webp",
+    tags: ["Unity", "WebGL", "Juego"],
+    type: "interactive",
+    variant: "blue",
+    href: "/playground/recto-final",
   },
 ]

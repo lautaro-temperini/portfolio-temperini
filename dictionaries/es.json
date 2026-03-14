@@ -364,10 +364,10 @@
   "solution": "Un sistema donde cada acción individual impacta visiblemente en el equipo, convirtiendo el registro en colaboración.",
   "solutionItemsTitle": "Fuente Única de Verdad (SSoT):",
   "solutionItems": [
-    "Kanban individual conectado a un Gantt grupal: mover una tarea actualiza el progreso del proyecto en tiempo real",
-    "Feed de actividad por proyecto: visibilidad de quién movió qué y cuándo, sin necesidad de reuniones de seguimiento",
-    "Notas públicas y privadas por perfil: fomenta el intercambio de conocimiento entre consultores",
-    "Porcentajes de avance calculados automáticamente desde el estado de las tareas"
+    "Vista Gantt: seguimiento del avance grupal por proyecto, calculado automáticamente desde el estado real de las tareas",
+    "Vista Kanban: cada consultor gestiona sus tareas propias y actualiza el progreso del equipo con cada movimiento",
+    "Vista General: feed de actividad que registra qué se movió, quién lo hizo y cuándo, sin necesidad de reuniones de seguimiento",
+    "Perfiles de consultor: notas públicas y privadas visibles para el equipo, con historial de colaboraciones y actividad compartida"
   ],
   "result": "El registro deja de ser una obligación individual y se convierte en infraestructura visible del equipo."
 },
