@@ -783,16 +783,21 @@ export default async function DigitoPage({
                 </div>
               </Block>
               <Block colSpan={1}>
-                <div className="relative w-full h-full rounded-lg overflow-hidden bg-white flex items-center">
-                  <Image
-                    src="/images/digitoImages//animacion-proyectos-gantt-kanban.webp"
-                    alt="Animación del panel de proyectos alternando entre vista Gantt y vista Kanban"
-                    width={1200}
-                    height={800}
-                    className="w-full h-auto object-contain"
-                  />
-                </div>
-              </Block>
+  <div className="relative w-full h-full rounded-lg overflow-hidden bg-white flex items-center">
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="w-full h-full object-contain bg-[#000000]"
+    >
+      <source
+        src="/images/digitoImages/animacion-proyectos-gantt-kanban.webm"
+        type="video/webm"
+      />
+    </video>
+  </div>
+</Block>
             </GridContainer>
           </section>
             </FadeOnScroll>
