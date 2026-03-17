@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 :root {
-  --font-inter: "Inter", sans-serif;
   --font-manrope: "Manrope", sans-serif;
   --font-neue-haas: "Neue Haas Grotesk Display Pro", sans-serif;
   
@@ -42,7 +41,7 @@ html {
 }
 
 body {
-  font-family: var(--font-inter);
+  font-family: var(--font-manrope);
   color: hsl(var(--foreground));
   overflow-x: hidden;
   min-height: 100vh;
@@ -147,8 +146,18 @@ body::before {
     box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Focus styles */
+/* Focus styles + heading fonts */
 @layer base {
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-neue-haas);
+  }
+
+  h4 {
+    font-family: var(--font-manrope);
+  }
+
   button,
   a,
   input,
@@ -167,6 +176,14 @@ body::before {
       0 0 0 2px hsl(var(--background)),
       0 0 0 4px hsl(var(--ring));
     border-radius: inherit;
+  }
+}
+
+@layer utilities {
+  .text-xs,
+  .text-sm,
+  .caption {
+    font-family: var(--font-manrope);
   }
 }
 

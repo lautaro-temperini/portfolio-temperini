@@ -150,6 +150,29 @@ export default function Navbar({ dict, lang }: NavbarProps) {
     requestAnimationFrame(animateScroll)
   }
 
+  // Si entramos a la home con #projects en la URL, aplicar scroll con offset
+  useEffect(() => {
+    if (typeof window === "undefined") return
+
+    const isHomePage = pathname === `/${lang}` || pathname === `/${lang}/`
+    if (!isHomePage) return
+
+    if (window.location.hash === "#projects") {
+      const timeout = setTimeout(() => {
+        const section = document.getElementById("projects")
+        if (section) {
+          const isDesktop = window.innerWidth >= 768
+          const offset = isDesktop ? -80 : 0
+          smoothScrollToElement(section, 300, offset)
+          // Limpiar el hash sin agregar entrada al historial
+          window.history.replaceState(null, "", window.location.pathname)
+        }
+      }, 100)
+
+      return () => clearTimeout(timeout)
+    }
+  }, [pathname, lang])
+
   const handleProjectsClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     const isHomePage = pathname === `/${lang}` || pathname === `/${lang}/`
 
@@ -160,12 +183,14 @@ export default function Navbar({ dict, lang }: NavbarProps) {
         // En desktop aplicamos un pequeño offset para que la sección respire bajo el navbar.
         // En mobile scrolleamos directo sin offset.
         const isDesktop = typeof window !== "undefined" && window.innerWidth >= 768
-        const offset = isDesktop ? -80 : 0
+        const offset = isDesktop ? 0 : 0
         smoothScrollToElement(section, 300, offset)
       }
     } else {
-      e.preventDefault()
-      router.push(`/${lang}/#projects`)
+      // Desde otras páginas usamos un anchor clásico a #projects
+      // para evitar condiciones raras de sincronización.
+      // Next gestionará el scroll automáticamente.
+      // No prevenimos el default para que el navegador haga el scroll.
     }
   }
 
@@ -281,7 +306,7 @@ export default function Navbar({ dict, lang }: NavbarProps) {
           >
             <span
               className="fluid-text-sm font-semibold text-light whitespace-nowrap relative"
-              style={{ fontFamily: "var(--font-inter)" }}
+              style={{ fontFamily: "var(--font-manrope)" }}
             >
               {dict.nav.connect}
               {pathname.includes('/contact') && (
@@ -368,7 +393,7 @@ export default function Navbar({ dict, lang }: NavbarProps) {
                   >
                     <span
                       className="fluid-text-sm font-semibold text-light relative"
-                      style={{ fontFamily: "var(--font-inter)" }}
+                      style={{ fontFamily: "var(--font-manrope)" }}
                     >
                       {dict.nav.connect}
                       {pathname.includes('/contact') && (

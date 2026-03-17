@@ -114,7 +114,7 @@ import ProseSection from "@/components/case-study/ProseSection";
 
           {/* Snapshot top (como en Dígito) */}
           <FadeOnScroll delay={80}>
-          <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
+          <section className="w-full px-8 md:px-12 lg:px-20 mb-28">
             <div className="text-sm text-light/80 space-y-2">
               <div>
                 <span className="text-light/70 font-semibold">
@@ -156,7 +156,7 @@ import ProseSection from "@/components/case-study/ProseSection";
 
             {/* El reto + Mi rol en grid 2 columnas */}
             <FadeOnScroll>
-            <ProseSection id="reto" className="mb-20">
+            <ProseSection id="reto" className="mb-28">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-10 md:gap-6">
                 <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
                   <h3 className="text-2xl font-semibold text-light mb-4">
@@ -183,7 +183,7 @@ import ProseSection from "@/components/case-study/ProseSection";
             </ProseSection>
 
             {/* Investigación - bloque destacado */}
-            <ProseSection id="investigacion" className="mb-20">
+            <ProseSection id="investigacion" className="mb-28">
               <h2 className="text-3xl font-bold text-light mb-6">
                 {t.research.title}
               </h2>
@@ -197,14 +197,14 @@ import ProseSection from "@/components/case-study/ProseSection";
             </FadeOnScroll>
 
             <FadeOnScroll>
-            <div className="w-full px-8 md:px-12 lg:px-20 mb-20">
+            <div className="w-full px-8 md:px-12 lg:px-20 mb-28">
               <div className="h-px w-full bg-gradient-to-r from-transparent via-[#22C55E]/50 to-transparent" />
             </div>
             </FadeOnScroll>
 
             {/* Estrategia de diseño */}
             <FadeOnScroll>
-            <ProseSection id="estrategia" className="mb-20">
+            <ProseSection id="estrategia" className="mb-28">
               <h2 className="text-3xl font-bold text-light mb-6">
                 {t.strategy.title}
               </h2>
@@ -234,12 +234,12 @@ import ProseSection from "@/components/case-study/ProseSection";
 
             {/* El sistema detrás + Diseño de experiencia en grid */}
             <FadeOnScroll>
-            <ProseSection id="sistema" className="mb-20">
-              <h2 className="text-3xl font-bold text-light mb-6">
-                {t.system.title}
-              </h2>
+            <ProseSection id="sistema" className="mb-28">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
+                  <h3 className="text-2xl font-semibold text-light mb-4">
+                    {t.system.title}
+                  </h3>
                   <p className="mb-4">{t.system.text1}</p>
                   <ul className="list-disc pl-5 space-y-2 mb-4">
                     {t.system.examples.map((example: string, index: number) => (
@@ -285,7 +285,7 @@ import ProseSection from "@/components/case-study/ProseSection";
 
             {/* Iteraciones y validación */}
             <FadeOnScroll>
-            <ProseSection id="iteraciones" className="mb-20">
+            <ProseSection id="iteraciones" className="mb-28">
               <h2 className="text-3xl font-bold text-light mb-6">
                 {t.iterations.title}
               </h2>
@@ -301,7 +301,7 @@ import ProseSection from "@/components/case-study/ProseSection";
 
             {/* Validación y feedback */}
             <FadeOnScroll>
-            <ProseSection className="mb-20">
+            <ProseSection className="mb-28">
               <h2 className="text-3xl font-bold text-light mb-6">
                 {t.validation.title}
               </h2>
@@ -326,7 +326,7 @@ import ProseSection from "@/components/case-study/ProseSection";
 
             {/* Aprendizajes clave */}
             <FadeOnScroll>
-            <ProseSection className="mb-20">
+            <ProseSection className="mb-28">
               <h2 className="text-3xl font-bold text-light mb-8">
                 {lang === "es" ? "Aprendizajes clave" : "Key learnings"}
               </h2>
@@ -341,14 +341,14 @@ import ProseSection from "@/components/case-study/ProseSection";
             </FadeOnScroll>
 
             <FadeOnScroll>
-            <div className="w-full px-8 md:px-12 lg:px-20 mb-20">
+            <div className="w-full px-8 md:px-12 lg:px-20 mb-28">
               <div className="h-px w-full bg-gradient-to-r from-transparent via-[#22C55E]/50 to-transparent" />
             </div>
             </FadeOnScroll>
 
             {/* Conclusión - bloque destacado */}
             <FadeOnScroll>
-            <ProseSection id="conclusion" className="mb-20">
+            <ProseSection id="conclusion" className="mb-28">
               <h2 className="text-3xl font-bold text-light mb-6">
                 {t.conclusion.title}
               </h2>

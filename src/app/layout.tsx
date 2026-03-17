@@ -2,7 +2,8 @@
 // IMPORTS
 // ============================================================================
 import type React from "react"
-import { Inter, Manrope } from "next/font/google"
+import { Manrope } from "next/font/google"
+import localFont from "next/font/local"
 import { preloadDictionary } from '@/lib/getDictionary'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { headers } from 'next/headers'
@@ -12,20 +13,25 @@ import "../styles/globals.css"
 preloadDictionary('es')
 preloadDictionary('en')
 
-const inter = Inter({
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-inter",
-  display: "swap",
-  preload: true,
-  fallback: ["system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
-})
-
 const manrope = Manrope({
   subsets: ["latin", "latin-ext"],
   variable: "--font-manrope",
   display: "swap",
   preload: true,
+  weight: ["400", "500", "600", "700", "800"],
   fallback: ["system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "sans-serif"],
+})
+
+const neueHaas = localFont({
+  src: [
+    {
+      path: "../../public/fonts/Neue-Haas.woff2",
+      weight: "400",
+      style: "normal",
+    },
+  ],
+  variable: "--font-neue-haas",
+  display: "swap",
 })
 
 // ============================================================================
@@ -183,7 +189,7 @@ export default async function RootLayout({
   return (
     <html
       lang={validLang}
-      className={`${inter.variable} ${manrope.variable}`}
+      className={`${manrope.variable} ${neueHaas.variable}`}
       style={{ backgroundColor: '#0D0D0D' }}
     >
       <head>
@@ -203,7 +209,7 @@ export default async function RootLayout({
         {/* Critical CSS inline */}
         <style 
           nonce={nonce}
-          dangerouslySetInnerHTML={{__html: `body{background-color:#0D0D0D;font-family:var(--font-inter)}*,::before,::after{box-sizing:border-box;margin:0;padding:0}`}} 
+          dangerouslySetInnerHTML={{__html: `body{background-color:#0D0D0D;font-family:var(--font-manrope)}*,::before,::after{box-sizing:border-box;margin:0;padding:0}`}} 
         />
 
         {/* JSON-LD Schema con @graph */}
