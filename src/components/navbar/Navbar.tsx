@@ -19,6 +19,7 @@ export default function Navbar({ dict, lang }: NavbarProps) {
   const [isVisible, setIsVisible] = useState(true)
   const lastScrollY = useRef(0)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [inProjectsSection, setInProjectsSection] = useState(false)
   const pathname = usePathname()
   const router = useRouter()
 
@@ -85,11 +86,49 @@ export default function Navbar({ dict, lang }: NavbarProps) {
     }
   }, [])
 
+  // Detectar si #projects está en viewport (solo en home)
+  useEffect(() => {
+    const isHomePage = pathname === `/${lang}` || pathname === `/${lang}/`
+    if (!isHomePage || typeof window === "undefined") {
+      setInProjectsSection(false)
+      return
+    }
+
+    const section = document.getElementById("projects")
+    if (!section) {
+      setInProjectsSection(false)
+      return
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.target === section) {
+            setInProjectsSection(entry.isIntersecting)
+          }
+        })
+      },
+      {
+        // margin negativo arriba para que "cuente" apenas la sección entra,
+        // incluso cuando hacemos scroll con offset hacia arriba
+        root: null,
+        rootMargin: "-120px 0px -40% 0px",
+        threshold: 0.1,
+      }
+    )
+
+    observer.observe(section)
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [pathname, lang])
+
   const isActive = (path: string) => pathname === path
 
-  function smoothScrollToElement(element: HTMLElement, duration = 300) {
+  function smoothScrollToElement(element: HTMLElement, duration = 300, offset = 0) {
     const start = window.scrollY
-    const end = element.getBoundingClientRect().top + window.scrollY
+    const end = element.getBoundingClientRect().top + window.scrollY + offset
     const change = end - start
     const startTime = performance.now()
 
@@ -102,7 +141,7 @@ export default function Navbar({ dict, lang }: NavbarProps) {
       }
     }
 
-    function easeInOutCubic(t: number) {
+  function easeInOutCubic(t: number) {
       return t < 0.5
         ? 4 * t * t * t
         : 1 - Math.pow(-2 * t + 2, 3) / 2
@@ -113,17 +152,26 @@ export default function Navbar({ dict, lang }: NavbarProps) {
 
   const handleProjectsClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     const isHomePage = pathname === `/${lang}` || pathname === `/${lang}/`
-    
+
     if (isHomePage) {
       e.preventDefault()
       const section = document.getElementById("projects")
       if (section) {
-        smoothScrollToElement(section, 300)
+        // En desktop aplicamos un pequeño offset para que la sección respire bajo el navbar.
+        // En mobile scrolleamos directo sin offset.
+        const isDesktop = typeof window !== "undefined" && window.innerWidth >= 768
+        const offset = isDesktop ? -80 : 0
+        smoothScrollToElement(section, 300, offset)
       }
     } else {
       e.preventDefault()
       router.push(`/${lang}/#projects`)
     }
+  }
+
+  const handlePlaygroundClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault()
+    router.push("/playground")
   }
 
   // 🎯 EVENTO GA4: Click en botón de contacto del navbar
@@ -145,6 +193,10 @@ export default function Navbar({ dict, lang }: NavbarProps) {
     })
   }
   
+  const projectsLabel = lang === 'es' ? 'Proyectos' : 'Projects'
+  const playgroundLabel = lang === 'es' ? 'Playground' : 'Playground'
+  const isPlaygroundPage = pathname === "/playground" || pathname === `/${lang}/playground`
+
   return (
     <nav
       role="navigation"
@@ -171,11 +223,48 @@ export default function Navbar({ dict, lang }: NavbarProps) {
       </Link>
 
       <div className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-        <div className="flex items-center gap-8 lg:gap-16">
+        <div className="flex items-center gap-6 lg:gap-10">
+          <Link
+            href={`/${lang}/#projects`}
+            onClick={handleProjectsClick}
+            className={`text-sm md:text-base font-medium transition-colors cursor-pointer ${
+              inProjectsSection ? "text-light" : "text-light/50 hover:text-light"
+            }`}
+          >
+            {projectsLabel}
+          </Link>
+          {/* Playground oculto en desktop, se mantiene el código para uso futuro */}
+          {/*
+          <Link
+            href="/playground"
+            onClick={handlePlaygroundClick}
+            className={`text-sm md:text-base font-medium underline-offset-8 transition-colors cursor-pointer ${
+              isPlaygroundPage ? "text-light underline" : "text-light/50 hover:text-light"
+            }`}
+          >
+            {playgroundLabel}
+          </Link>
+          */}
         </div>
       </div>
 
       <div className="flex items-center gap-3 md:gap-4 relative z-10">
+        {/* Proyectos solo en mobile, alineado a la derecha antes del menú */}
+        <div className="md:hidden">
+          <Link
+            href={`/${lang}/#projects`}
+            onClick={(e) => {
+              handleProjectsClick(e)
+              setMobileMenuOpen(false)
+            }}
+            className={`text-sm font-medium transition-colors cursor-pointer ${
+              inProjectsSection ? "text-light" : "text-light/70"
+            }`}
+          >
+            {projectsLabel}
+          </Link>
+        </div>
+
         <div className="hidden md:block">
           <LanguageSelector currentLang={lang} />
         </div>
@@ -241,34 +330,54 @@ export default function Navbar({ dict, lang }: NavbarProps) {
           id="navbar-mobile-menu"
           className="absolute top-full left-0 w-full bg-background/95 backdrop-blur-sm border-t border-subtle/50 md:hidden"
         >
-          <div className="flex flex-col px-4 py-2 space-y-4">
-          <div className="flex flex-row items-center gap-3 py-1 w-full justify-end">
-              <div>
-                <LanguageSelector currentLang={lang} />
-              </div>
-              
-              {!pathname.includes('/contact') && (
+          <div className="flex flex-col px-4 py-3 space-y-4">
+            {/* Fila inferior: solo idioma + contacto (Playground oculto en mobile) */}
+            <div className="flex flex-row items-center gap-3 pt-1 w-full justify-end">
+              {/*
+              <div className="flex-1 flex justify-center">
                 <Link
-                  href={`/${lang}/contact`}
-                  className="flex items-center justify-center px-4 h-10 rounded-full transition-all cursor-pointer"
-                  style={{
-                    background: "linear-gradient(180deg, #8900C3 72%, #595959 100%)",
-                    border: "1px solid rgba(156, 150, 164, 0.5)",
-                    borderRadius: "100px",
+                  href="/playground"
+                  onClick={(e) => {
+                    handlePlaygroundClick(e)
+                    setMobileMenuOpen(false)
                   }}
-                  onClick={() => setMobileMenuOpen(false)}
+                  className={`text-sm font-medium underline-offset-8 transition-colors cursor-pointer ${
+                    isPlaygroundPage ? "text-light underline" : "text-light/60 hover:text-light"
+                  }`}
                 >
-                  <span
-                    className="fluid-text-sm font-semibold text-light relative"
-                    style={{ fontFamily: "var(--font-inter)" }}
-                  >
-                    {dict.nav.connect}
-                    {pathname.includes('/contact') && (
-                      <span className="absolute -bottom-0.5 left-0 w-full h-0.5 bg-[#666973] rounded-full" />
-                    )}
-                  </span>
+                  {playgroundLabel}
                 </Link>
-              )}
+              </div>
+              */}
+
+              <div className="flex flex-row items-center gap-3">
+                <div>
+                  <LanguageSelector currentLang={lang} />
+                </div>
+                
+                {!pathname.includes('/contact') && (
+                  <Link
+                    href={`/${lang}/contact`}
+                    className="flex items-center justify-center px-4 h-10 rounded-full transition-all cursor-pointer"
+                    style={{
+                      background: "linear-gradient(180deg, #8900C3 72%, #595959 100%)",
+                      border: "1px solid rgba(156, 150, 164, 0.5)",
+                      borderRadius: "100px",
+                    }}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    <span
+                      className="fluid-text-sm font-semibold text-light relative"
+                      style={{ fontFamily: "var(--font-inter)" }}
+                    >
+                      {dict.nav.connect}
+                      {pathname.includes('/contact') && (
+                        <span className="absolute -bottom-0.5 left-0 w-full h-0.5 bg-[#666973] rounded-full" />
+                      )}
+                    </span>
+                  </Link>
+                )}
+              </div>
             </div>
           </div>
         </div>

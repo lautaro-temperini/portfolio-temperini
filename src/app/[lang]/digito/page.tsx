@@ -104,7 +104,7 @@ export default async function DigitoPage({
 
             {/* ==================== BANNER HERO ==================== */}
             <FadeOnScroll delay={80}>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
+            <section className="w-full px-8 md:px-12 lg:px-20 mb-28">
   <div className="relative w-full h-[150px] md:h-[200px] rounded-lg overflow-hidden bg-[#0A1628]">
     <Image
       src="/images/digitoImages/DigitoRender3d.webp"
@@ -119,7 +119,7 @@ export default async function DigitoPage({
             </FadeOnScroll>
 
           {/* ==================== PROJECT SNAPSHOT ==================== */}
-          <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
+          <section className="w-full px-8 md:px-12 lg:px-20 mb-28">
             <div className="text-sm text-light/80 space-y-2">
               <div>
                 <span className="text-light/70 font-semibold">
@@ -160,7 +160,7 @@ export default async function DigitoPage({
 
           {/* ==================== 2. CONTEXTO ==================== */}
             <FadeOnScroll delay={150}>
-            <section id="contexto" className="w-full px-8 md:px-12 lg:px-20 mb-20">
+            <section id="contexto" className="w-full px-8 md:px-12 lg:px-20 mb-28">
             <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">{t.context?.title}</h2>
             <div className="text-light leading-relaxed space-y-4 max-w-4xl">
               <p className="text-lg">{t.context?.text1}</p>
@@ -171,13 +171,13 @@ export default async function DigitoPage({
 
 
 {/* ==================== DIVIDER ==================== */}
-<div className="w-full px-8 md:px-12 lg:px-20 mb-20">
+<div className="w-full px-8 md:px-12 lg:px-20 mb-28">
   <div className="h-px w-full bg-gradient-to-r from-transparent via-[#08A4E1]/40 to-transparent" />
 </div>
 
           {/* ==================== 5. HIPÓTESIS INICIAL ==================== */}
             <FadeOnScroll>
-            <section id="problema" className="w-full px-8 md:px-12 lg:px-20 mb-20">
+            <section id="problema" className="w-full px-8 md:px-12 lg:px-20 mb-28">
             <div className="max-w-4xl mb-6">
               <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">{t.problem?.title}</h2>
             </div>
@@ -243,7 +243,7 @@ export default async function DigitoPage({
 
           {/* ==================== 7. RESEARCH ==================== */}
             <FadeOnScroll>
-            <section id="research" className="w-full px-8 md:px-12 lg:px-20 mb-20">
+            <section id="research" className="w-full px-8 md:px-12 lg:px-20 mb-28">
             {/* Mobile: título + subtítulo + stats ocupando 1 viewport, fondo negro fullwidth */}
             <div className="block md:hidden -mx-8">
             <div className="px-8 py-16 flex flex-col gap-12">
@@ -317,7 +317,7 @@ export default async function DigitoPage({
 
           {/* ==================== 8. CITAS E INSIGHT ==================== */}
             <FadeOnScroll delay={80}>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
+            <section className="w-full px-8 md:px-12 lg:px-20 mb-28">
             <h2 className="text-3xl md:text-4xl font-bold text-light mb-8">{t.research.quotesTitle}</h2>
 
             {/* Mobile: citas en stack simple alineadas a la izquierda */}
@@ -345,7 +345,7 @@ export default async function DigitoPage({
 
             {/* Desktop: BentoGrid de 2 columnas */}
             <div className="hidden md:block">
-              <BentoGrid cols={{ default: 1, md: 2 }} gap="md" className="mb-20">
+              <BentoGrid cols={{ default: 1, md: 2 }} gap="md" className="mb-28">
                 <BentoItem colSpan={1}>
                   <div className="p-6 h-full text-left md:bg-container-light/10 md:backdrop-blur-sm md:rounded-lg md:border md:border-container-light/20">
                     <p className="text-light italic mb-2 text-sm leading-relaxed">{t.research.quotes.perception.label}</p>
@@ -389,13 +389,13 @@ export default async function DigitoPage({
             </FadeOnScroll>
 
 {/* ==================== DIVIDER ==================== */}
-<div className="w-full px-8 md:px-12 lg:px-20 mb-20">
+<div className="w-full px-8 md:px-12 lg:px-20 mb-28">
   <div className="h-px w-full bg-gradient-to-r from-transparent via-[#08A4E1]/40 to-transparent" />
 </div>
 
           {/* ==================== 9. ESTRATEGIA ==================== */}
             <FadeOnScroll delay={150}>
-            <section id="estrategia" className="w-full px-8 md:px-12 lg:px-20 mb-20">
+            <section id="estrategia" className="w-full px-8 md:px-12 lg:px-20 mb-28">
             <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">{t.strategy.title}</h2>
             <div className="text-light leading-relaxed space-y-4 max-w-4xl">
               <p className="text-lg">{t.strategy.text}</p>
@@ -405,7 +405,7 @@ export default async function DigitoPage({
 
           {/* ==================== 10. ALTERNATIVA Y ALCANCE - GridContainer 2 cols ==================== */}
             <FadeOnScroll>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
+            <section className="w-full px-8 md:px-12 lg:px-20 mb-28">
             <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0 [&>*]:h-full">
               <Block colSpan={1}>
                 <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 h-full">
@@ -438,7 +438,7 @@ export default async function DigitoPage({
 
           {/* ==================== PRINCIPIOS DE DISEÑO ==================== */}
             <FadeOnScroll>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-20 hidden md:block">
+            <section className="w-full px-8 md:px-12 lg:px-20 mb-28 hidden md:block">
             <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">{t.principles.title}</h2>
             <BentoGrid cols={{ default: 1, md: 2, lg: 3 }} gap="md" className="mb-6 [&>*]:h-full">
               {Object.values(t.principles.items || {}).map((item: any, index: number) => (
@@ -464,7 +464,7 @@ export default async function DigitoPage({
 
           {/* ==================== 11. LOS 5 INSIGHTS EN BENTOGRID ==================== */}
             <FadeOnScroll delay={80}>
-            <section id="fricciones" className="w-full px-8 md:px-12 lg:px-20 mb-20">
+            <section id="fricciones" className="w-full px-8 md:px-12 lg:px-20 mb-28">
             <div className="max-w-4xl mb-8">
               <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">{t.frictions.title}</h2>
               <p className="text-light mb-8 text-lg">{t.frictions.subtitle}</p>
@@ -585,7 +585,7 @@ export default async function DigitoPage({
             </FadeOnScroll>
 
 {/* ==================== DIVIDER ==================== */}
-<div className="w-full px-8 md:px-12 lg:px-20 mb-20">
+<div className="w-full px-8 md:px-12 lg:px-20 mb-28">
   <div className="h-px w-full bg-gradient-to-r from-transparent via-[#08A4E1]/40 to-transparent" />
 </div>
 
@@ -600,7 +600,7 @@ export default async function DigitoPage({
             className="bg-[#F2F2F2]"
             imageClassName="object-cover object-top"
             caption={t.mvpOriginalImageCaption}
-            figureClassName="mb-8 md:mb-20"
+            figureClassName="mb-8 md:mb-28"
           />
             </FadeOnScroll>
 
@@ -619,7 +619,7 @@ export default async function DigitoPage({
             </FadeOnScroll>
 
             {/* ==================== DIVIDER ==================== */}
-<div className="w-full px-8 md:px-12 lg:px-20 mb-20">
+<div className="w-full px-8 md:px-12 lg:px-20 mb-28">
   <div className="h-px w-full bg-gradient-to-r from-transparent via-[#08A4E1]/40 to-transparent" />
 </div>
 
@@ -639,7 +639,7 @@ export default async function DigitoPage({
 
           {/* ==================== 13. PANEL UNIFICADO - Snapshot de dashboard ==================== */}
             <FadeOnScroll>
-              <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
+              <section className="w-full px-8 md:px-12 lg:px-20 mb-28">
                 <div className="bg-gradient-to-br from-[#081730]/30 to-[#3282A9]/30 backdrop-blur-sm rounded-2xl overflow-hidden p-8 md:p-12 border border-[#08A4E1]/30">
                   <h2 className="text-3xl md:text-4xl font-bold text-light mb-4">
                     {t.architecture.unifiedPanel.title}
@@ -722,7 +722,7 @@ export default async function DigitoPage({
             
           {/* ==================== 14. ANIMACIÓN FAB CON SUGERENCIAS CONTEXTUALES (Full width 16:9) ==================== */}
             <FadeOnScroll delay={80}>
-              <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
+              <section className="w-full px-8 md:px-12 lg:px-20 mb-28">
                 <div className="bg-gradient-to-br from-[#081730]/30 to-[#2D6B4A]/30 backdrop-blur-sm rounded-2xl overflow-hidden p-8 md:p-12 border border-[#08A4E1]/20">
                   <h2 className="text-3xl md:text-4xl font-bold text-light mb-4">{t.architecture.automation.title}</h2>
                   <p className="text-lg text-light mb-6">{t.architecture.automation.axis}</p>
@@ -810,7 +810,7 @@ export default async function DigitoPage({
 
           {/* ==================== 15. CAPA SOCIAL - Texto izquierda, mockup derecha ==================== */}
             <FadeOnScroll delay={150}>
-              <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
+              <section className="w-full px-8 md:px-12 lg:px-20 mb-28">
                 <div className="bg-gradient-to-br from-[#081730]/30 to-[#4A2D6B]/30 backdrop-blur-sm rounded-2xl overflow-hidden p-8 md:p-12 border border-[#08A4E1]/20">
                   <h2 className="text-3xl md:text-4xl font-bold text-light mb-4">{t.architecture.social.title}</h2>
                   <p className="text-lg text-light mb-6">{t.architecture.social.axis}</p>
@@ -912,15 +912,15 @@ export default async function DigitoPage({
 </FadeOnScroll>
 
             {/* ==================== DIVIDER ==================== */}
-<div className="w-full px-8 md:px-12 lg:px-20 mb-20">
+<div className="w-full px-8 md:px-12 lg:px-20 mb-28">
   <div className="h-px w-full bg-gradient-to-r from-transparent via-[#08A4E1]/40 to-transparent" />
 </div>
 
           {/* ==================== 19. TESTING ==================== */}
             <FadeOnScroll>
-            <section id="testing" className="w-full px-8 md:px-12 lg:px-20 mb-20">
+            <section id="testing" className="w-full px-8 md:px-12 lg:px-20 mb-28">
             <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">{t.testing.title}</h2>
-            <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0 [&>*]:h-full mb-20">
+            <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0 [&>*]:h-full mb-28">
               <Block colSpan={1}>
                 <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 h-full">
                   <p className="text-light mb-6 text-lg">{t.testing.subtitle}</p>
@@ -978,12 +978,12 @@ export default async function DigitoPage({
             </FadeOnScroll>
 
             {/* ==================== DIVIDER ==================== */}
-<div className="w-full px-8 md:px-12 lg:px-20 mb-20">
+<div className="w-full px-8 md:px-12 lg:px-20 mb-28">
   <div className="h-px w-full bg-gradient-to-r from-transparent via-[#08A4E1]/40 to-transparent" />
 </div>
 
           {/* ==================== FIGMA PROTOTYPE EMBED ==================== */}
-          <section id="prototipo" className="w-full px-8 md:px-12 lg:px-20 mb-20 scroll-mt-24">
+          <section id="prototipo" className="w-full px-8 md:px-12 lg:px-20 mb-28 scroll-mt-24">
             <div className="w-full mb-4">
               <h2 className="text-3xl md:text-4xl font-bold text-light">
                 {lang === "es" ? "Prototipo hi-fi" : "Hi-fi prototype"}
@@ -1032,7 +1032,7 @@ export default async function DigitoPage({
 
          {/* ==================== 24. IMPACTO CUALITATIVO ==================== */}
 <FadeOnScroll delay={150}>
-  <section id="cierre" className="w-full px-8 md:px-12 lg:px-20 mb-20">
+  <section id="cierre" className="w-full px-8 md:px-12 lg:px-20 mb-28">
     <h2 className="text-3xl md:text-4xl font-bold text-light mb-8">
       {t.snapshot?.impactTitle}
     </h2>
@@ -1066,13 +1066,13 @@ export default async function DigitoPage({
 </FadeOnScroll>
 
 {/* ==================== DIVIDER ==================== */}
-<div className="w-full px-8 md:px-12 lg:px-20 mb-20">
+<div className="w-full px-8 md:px-12 lg:px-20 mb-28">
   <div className="h-px w-full bg-gradient-to-r from-transparent via-[#08A4E1]/40 to-transparent" />
 </div>
 
           {/* ==================== 25. CIERRE ==================== */}
 <FadeOnScroll delay={150}>
-  <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
+  <section className="w-full px-8 md:px-12 lg:px-20 mb-28">
     <div className="max-w-3xl mx-auto mb-10 text-light">
       <h2 className="text-3xl md:text-4xl font-bold text-light mb-4 text-center">
         {t.snapshot?.reflectionTitle}

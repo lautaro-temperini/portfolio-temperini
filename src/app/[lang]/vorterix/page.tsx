@@ -118,7 +118,7 @@ export default async function VorterixLandingPage({
 
           {/* 2. Banner logo */}
           <FadeOnScroll delay={80}>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
+            <section className="w-full px-8 md:px-12 lg:px-20 mb-28">
               <div className="relative w-full h-[150px] md:h-[200px] rounded-lg overflow-hidden bg-[#121212]">
                 <Image
                   src="/images/vorterixImages/VorterixLogo.webp"
@@ -134,7 +134,7 @@ export default async function VorterixLandingPage({
 
           {/* 3. Snapshot */}
           <FadeOnScroll delay={150}>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
+            <section className="w-full px-8 md:px-12 lg:px-20 mb-28">
               <div className="text-sm text-light/80 space-y-2">
                 <div>
                   <span className="text-light/70 font-semibold">{t.snapshotTop.companyLabel}</span> · {t.snapshotTop.companyValue}
@@ -157,7 +157,7 @@ export default async function VorterixLandingPage({
 
           {/* 4. Brief + Por qué en 2 columnas */}
           <FadeOnScroll>
-            <ProseSection id="brief" className="mb-20">
+            <ProseSection id="brief" className="mb-28">
               <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0">
                 <Block colSpan={1}>
                   <h2 className="text-3xl font-bold text-light mb-6">{t.brief.title}</h2>
@@ -184,14 +184,14 @@ export default async function VorterixLandingPage({
 
           {/* 6. Divider */}
           <FadeOnScroll>
-            <div className="w-full px-8 md:px-12 lg:px-20 mb-20">
+            <div className="w-full px-8 md:px-12 lg:px-20 mb-28">
               <div className="h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent" />
             </div>
           </FadeOnScroll>
 
           {/* 7. Audiencia + Insights */}
           <FadeOnScroll>
-            <ProseSection id="diseno" className="mb-20">
+            <ProseSection id="diseno" className="mb-28">
               <h2 className="text-3xl font-bold text-light mb-6">{t.audience.title}</h2>
               <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
                 <p className="mb-6">{t.audience.description}</p>
@@ -230,7 +230,7 @@ export default async function VorterixLandingPage({
 
           {/* 8. Persona quote */}
           <FadeOnScroll>
-            <div className="w-full px-8 md:px-12 lg:px-20 mb-20">
+            <div className="w-full px-8 md:px-12 lg:px-20 mb-28">
               <p className="text-[#F1F1F1] text-lg lg:text-xl leading-relaxed">
                 {t.persona.text}
               </p>
@@ -239,7 +239,7 @@ export default async function VorterixLandingPage({
 
           {/* 9. Colores y Tipografía */}
           <FadeOnScroll>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
+            <section className="w-full px-8 md:px-12 lg:px-20 mb-28">
               <GridContainer cols={{ default: 1, md: 2 }} gap="md" className="!px-0">
                 <Block colSpan={1}>
                   <div className="w-full aspect-[4/3] rounded-lg overflow-hidden bg-[#F2F2F2]">
@@ -271,7 +271,7 @@ export default async function VorterixLandingPage({
 
           {/* 10. VorterixHero + Refes */}
           <FadeOnScroll>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
+            <section className="w-full px-8 md:px-12 lg:px-20 mb-28">
               <GridContainer cols={{ default: 1, md: 2 }} gap="md" className="!px-0">
                 <Block colSpan={1}>
                   <div className="w-full aspect-[4/3] rounded-lg overflow-hidden bg-[#1b1e26] ">
@@ -305,14 +305,14 @@ export default async function VorterixLandingPage({
 
           {/* 11. Divider */}
           <FadeOnScroll>
-            <div className="w-full px-8 md:px-12 lg:px-20 mb-20">
+            <div className="w-full px-8 md:px-12 lg:px-20 mb-28">
               <div className="h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent" />
             </div>
           </FadeOnScroll>
 
           {/* 12. VorterixFeedback + VorterixMockup lado a lado, decisiones e iteraciones alineadas */}
           <FadeOnScroll>
-            <section id="conversion" className="w-full px-8 md:px-12 lg:px-20 mb-20">
+            <section id="conversion" className="w-full px-8 md:px-12 lg:px-20 mb-28">
               <h2 className="text-3xl font-bold text-light mb-6">{t.conversion.title}</h2>
               <GridContainer cols={{ default: 1, md: 2 }} gap="md" className="!px-0 mb-12">
                 <Block colSpan={1}>
@@ -387,7 +387,7 @@ export default async function VorterixLandingPage({
 
 {/* 13. VorterixReel */}
 <FadeOnScroll>
-  <div className="w-full px-8 md:px-12 lg:px-20 mb-20">
+  <div className="w-full px-8 md:px-12 lg:px-20 mb-28">
     <div className="w-full aspect-[2/1] rounded-2xl overflow-hidden bg-[#000000]">
       <video
         src="/images/vorterixImages/VorterixReel.webm"
@@ -406,14 +406,14 @@ export default async function VorterixLandingPage({
 
           {/* Divider antes de UX + Conclusión */}
           <FadeOnScroll>
-            <div className="w-full px-8 md:px-12 lg:px-20 mb-20">
+            <div className="w-full px-8 md:px-12 lg:px-20 mb-28">
               <div className="h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent" />
             </div>
           </FadeOnScroll>
 
           {/* 14. UX + Conclusión en grid de 2 columnas */}
           <FadeOnScroll>
-            <section id="iteraciones" className="w-full px-8 md:px-12 lg:px-20 mb-20">
+            <section id="iteraciones" className="w-full px-8 md:px-12 lg:px-20 mb-28">
               <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0">
                 <Block colSpan={1}>
                   <div id="ux">
