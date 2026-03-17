@@ -126,6 +126,18 @@
         "subtitle": "Rutinas personalizadas a partir de tus datos",
         "description": "Diseñamos una experiencia móvil que transforma datos biométricos en rutinas adaptadas, accesibles y motivadoras. El objetivo fue claro: generar la confianza suficiente para que el usuario comparta información sensible a cambio de recomendaciones que realmente impacten en su salud."
       },
+      "snapshotTop": {
+        "companyLabel": "Tipo de producto",
+        "companyValue": "App móvil de fitness",
+        "roleLabel": "Rol",
+        "roleValue": "Product Designer · UX/UI",
+        "timelineLabel": "Timeline",
+        "timelineValue": "8 semanas",
+        "scopeLabel": "Scope",
+        "scopeValue": "Research · Estrategia de UX · Sistema visual · Prototipado",
+        "problemLabel": "Problema",
+        "problemValue": "Baja confianza y poco engagement con el onboarding de datos biométricos"
+      },
       "myRole": {
         "title": "Mi rol",
         "description": "Mi aporte específico en el proyecto: • Investigación cualitativa sobre barreras al ingreso de datos biométricos. • Diseño del flujo de onboarding y personalización de rutina. • Construcción del sistema visual completo (tipografía, color, iconografía, componentes). • Prototipado funcional en Figma para Android, validado con usuarios reales."
@@ -195,10 +207,6 @@
         "problemLabel": "Problema",
         "problemValue": "Baja adopción del registro de horas"
       },
-      "myRole": {
-        "title": "Mi rol",
-        "description": "Research y síntesis • Estrategia y arquitectura • Diseño y prototipado • Testing y validación"
-      },
       "context": {
         "title": "Contexto",
         "text1": "Dígito es una empresa de Business Intelligence y RPA. Su plataforma SaaS B2B incluía facturación, reportes y administración, pero el módulo operativo para consultores tenía baja adopción.",
@@ -211,7 +219,6 @@
         "hypothesis": "\"Los usuarios se olvidan de cargar las horas.\"",
         "hypothesisAuthor": "— Hipótesis del CEO",
         "criticalQuestion": "Pregunta crítica: ¿El registro realmente se olvida o se evita activamente?",
-        "problemTitle": "El problema: las horas se registraban 1-3 semanas tarde",
         "businessImpact": "Impacto en el negocio:",
         "impactSummary": "El registro podía demorarse entre una y tres semanas. El equipo directivo estimó que esta falta de visibilidad podía representar pérdidas de hasta USD 11.000 por proyecto.",
         "impactText": "Esa demora afectaba:",
@@ -222,41 +229,26 @@
       "research": {
         "title": "Discovery: el problema real no es olvido, es depriorización activa",
         "subtitle": "Combiné desk research, entrevistas con usuarios reales y auditoría del MVP.",
-        "methodsTitle": "Métodos",
-        "deskResearch": {
-          "title": "Desk Research",
-          "text": "Validé patrones de comportamiento en literatura sobre productividad.",
-          "theory": "Respaldo teórico: Los usuarios tienden a evitar procesos que demandan esfuerzo cognitivo extra.",
-          "benchmark": "Benchmark: 60% de empleados perciben el time tracking como vigilancia."
-        },
-        "interviews": {
-          "title": "3 Entrevistas cualitativas",
-          "profiles": "Perfiles: PM, Desarrollador, UX Designer",
-          "objective": "Objetivo: observar patrones de comportamiento"
-        },
-        "audit": {
-          "title": "Auditoría heurística del MVP",
-          "text": "Identifiqué flujos fragmentados, interfaz centrada en administración y carga cognitiva permanente."
-        },
         "quotesTitle": "Citas que revelaron el problema real",
         "quotes": {
           "perception": {
             "label": "Percepción del sistema:",
-            "text": "\"En una escala de 1 a 10, lo veo más como un 1: control administrativo.\""
+            "text": "\"En una escala donde 1 es control y 10 es herramienta útil, lo veo más como un 1.\""
           },
           "postponement": {
             "label": "Postergación activa:",
             "text1": "\"Si surge una urgencia, el registro queda para después.\"",
-            "text2": "\"Yo lo hago al final del día, donde registro todo junto.\""
-          },
-          "friction": {
-            "label": "Fricción física:",
-            "text": "\"Si cierro la laptop, es engorroso volver a encenderla solo para registrar.\""
+            "text2": ""
           },
           "dependencies": {
             "label": "Dependencias operativas:",
             "text": "\"Si el CEO no revisa ese día, la aprobación queda en pausa.\""
           }
+        },
+        "stats": {
+          "stat1": { "value": "30%", "description": "de los empleados dice que el time tracking se siente como vigilancia" },
+          "stat2": { "value": "26%", "description": "cree que agrega estrés o presión a su jornada" },
+          "source": "Buddy Punch, 2025"
         }
       },
       "insight": {
@@ -277,13 +269,12 @@
         "conclusion": "Conclusión: La vía sostenible es lograr que registrar sea rápido, útil y parte del ritmo de trabajo.",
         "scopeTitle": "Scope: módulo operativo del consultor",
         "scopeText1": "El brief original incluía 8 áreas de mejora. Rediseñar toda la plataforma era inviable en 3.5 meses.",
-        "ourDecisionText": "Priorizamos el módulo operativo donde los consultores registran horas, gestionan tareas y ven su carga de trabajo, ya que es el cuello de botella directo de la facturación.",
         "thisAllowed": "Esto permitió:",
-        "thisAllowedItems": ["Atacar directamente el problema detectado", "Proponer una solución completa y validable", "Mantener compatibilidad con módulos administrativos", "Sentar bases para futuras integraciones"]
-       },
+        "thisAllowedItems": ["Atacar directamente el problema detectado", "Proponer una solución completa y validable", "Mantener compatibilidad con módulos administrativos", "Sentar bases para futuras integraciones"],
+        "ourDecisionText": "Priorizamos el módulo operativo donde los consultores registran horas, gestionan tareas y ven su carga de trabajo, ya que es el cuello de botella directo de la facturación."
+      },
       "principles": {
         "title": "Principios de diseño",
-        "subtitle": "El sistema debe ser una herramienta, no una carga.",
         "items": {
           "relevance": {"title": "Relevancia:", "text": "El sistema debe devolver valor inmediato al consultor."},
           "userImpact": {"title": "Impacto en el usuario:", "text": "Reducir la carga cognitiva y la fricción."},
@@ -294,58 +285,55 @@
         "guidingPrinciple": "El sistema debe ser una herramienta, no una carga."
       },
       "frictions": {
-  "title": "Insights y decisiones de diseño: 5 fricciones críticas",
-  "subtitle": "Cada fricción detectada se tradujo en una decisión de diseño concreta.",
-  "friction1": {
-  "number": "1",
-  "title": "Fricción: La interfaz es compleja y requiere muchos clics.",
-  "pain": "\"Tengo que hacer muchos clics para registrar una hora.\"",
-  "decision": "Separar el módulo operativo del entorno administrativo, mostrando solo las herramientas relevantes para el consultor.",
-  "whyWorks": "Cada clic extra es una oportunidad para postergar. Menos pasos = menos fricción = más adopción real.",
-  "translatedTo": "Módulo operativo separado: el consultor accede solo a las herramientas que le corresponden, sin ruido administrativo."
-},
-  "friction2": {
-    "number": "2",
-    "title": "Fricción: Falta de visibilidad del impacto del registro.",
-    "pain": "\"No sé para qué sirve cargar las horas, es solo para facturación.\"",
-    "decision": "Mostrar el efecto del registro en métricas propias y del equipo.",
-    "whyWorks": "Cuando el consultor ve el efecto de su registro en métricas propias y del equipo, el sistema deja de sentirse como control y empieza a sentirse como herramienta.",
-    "translatedTo": "Traducido a diseño: Dashboard con métricas personales y de equipo."
-  },
-  "friction3": {
-    "number": "3",
-    "title": "Fricción: El sistema es rígido y no se adapta al ritmo de trabajo.",
-    "pain": "\"Si tengo una urgencia, el sistema me frena.\"",
-    "decision": "Flexibilizar el registro y permitir la carga rápida.",
-    "whyWorks": "Un sistema que no tolera interrupciones genera evitación. La carga rápida elimina la excusa de 'lo hago después'.",
-    "translatedTo": "Traducido a diseño: Registro rápido con atajos."
-  },
-  "friction4": {
-  "number": "4",
-  "title": "Fricción: El registro es una tarea extra, no parte del flujo.",
-  "pain": "\"Me olvido de cargar las horas porque estoy enfocado en el proyecto.\"",
-  "decision": "Integrar el registro en el flujo de trabajo diario.",
-  "whyWorks": "El registro contextual reduce la carga cognitiva: el sistema sugiere en el momento correcto, no interrumpe el flujo.",
-  "translatedTo": "Traducido a diseño: FAB con sugerencias contextuales y autocompletado."
-},
-  "friction5": {
-    "number": "5",
-    "title": "Fricción: Falta de autonomía y control sobre el propio trabajo.",
-    "pain": "\"El sistema me controla, no me ayuda.\"",
-    "decision": "Empoderar al consultor con herramientas de autogestión.",
-    "whyWorks": "La percepción de vigilancia se rompe cuando el consultor tiene control sobre su propia vista. El sistema trabaja para él, no al revés.",
-    "translatedTo": "Traducido a diseño: Calendario personalizable, vista de proyectos con progreso."
-  }
+        "title": "Insights y decisiones de diseño: 5 fricciones críticas",
+        "subtitle": "Cada fricción detectada se tradujo en una decisión de diseño concreta.",
+        "friction1": {
+          "number": "1",
+          "title": "Fricción: La interfaz es compleja y requiere muchos clics.",
+          "pain": "\"Tengo que hacer muchos clics para registrar una hora.\"",
+          "decision": "Separar el módulo operativo del entorno administrativo, mostrando solo las herramientas relevantes para el consultor.",
+          "whyWorks": "Cada clic extra es una oportunidad para postergar. Menos pasos = menos fricción = más adopción real.",
+          "translatedTo": "Módulo operativo separado: el consultor accede solo a las herramientas que le corresponden, sin ruido administrativo."
+        },
+        "friction2": {
+          "number": "2",
+          "title": "Fricción: Falta de visibilidad del impacto del registro.",
+          "pain": "\"No sé para qué sirve cargar las horas, es solo para facturación.\"",
+          "decision": "Mostrar el efecto del registro en métricas propias y del equipo.",
+          "whyWorks": "Cuando el consultor ve el efecto de su registro en métricas propias y del equipo, el sistema deja de sentirse como control y empieza a sentirse como herramienta.",
+          "translatedTo": "Dashboard con métricas personales y de equipo."
+        },
+        "friction3": {
+          "number": "3",
+          "title": "Fricción: El sistema es rígido y no se adapta al ritmo de trabajo.",
+          "pain": "\"Si tengo una urgencia, el sistema me frena.\"",
+          "decision": "Flexibilizar el registro y permitir la carga rápida.",
+          "whyWorks": "Un sistema que no tolera interrupciones genera evitación. La carga rápida elimina la excusa de 'lo hago después'.",
+          "translatedTo": "Registro rápido con atajos."
+        },
+        "friction4": {
+          "number": "4",
+          "title": "Fricción: El registro es una tarea extra, no parte del flujo.",
+          "pain": "\"Me olvido de cargar las horas porque estoy enfocado en el proyecto.\"",
+          "decision": "Integrar el registro en el flujo de trabajo diario.",
+          "whyWorks": "El registro contextual reduce la carga cognitiva: el sistema sugiere en el momento correcto, no interrumpe el flujo.",
+          "translatedTo": "FAB con sugerencias contextuales y autocompletado."
+        },
+        "friction5": {
+          "number": "5",
+          "title": "Fricción: Falta de autonomía y control sobre el propio trabajo.",
+          "pain": "\"El sistema me controla, no me ayuda.\"",
+          "decision": "Empoderar al consultor con herramientas de autogestión.",
+          "whyWorks": "La percepción de vigilancia se rompe cuando el consultor tiene control sobre su propia vista. El sistema trabaja para él, no al revés.",
+          "translatedTo": "Calendario personalizable, vista de proyectos con progreso."
+        }
       },
       "architecture": {
-        "title": "Arquitectura de la solución: 3 ejes de diseño",
-        "subtitle": "La solución se estructuró en torno a tres ejes principales.",
         "unifiedPanel": {
           "title": "Panel Unificado: Autonomía y Visibilidad",
           "axis": "Eje: Autonomía + Visibilidad",
           "problem": "Los consultores usan múltiples herramientas para gestionar tareas.",
           "solution": "Un dashboard centralizado que integra tareas, proyectos y registro de horas.",
-          "features": ["Dashboard personalizable", "Vista Kanban y Gantt", "Notificaciones proactivas"],
           "components": ["Vista de tareas pendientes", "Métricas personales y de equipo", "Calendario integrado", "Acceso rápido a proyectos activos"],
           "syncTitle": "Sincronización",
           "syncText": "Datos actualizados en tiempo real entre todas las vistas."
@@ -358,24 +346,17 @@
           "features": ["FAB con sugerencias contextuales", "Autocompletado basado en historial", "Registro rápido con un solo clic"]
         },
         "social": {
-  "title": "Capa Social y Transparencia",
-  "axis": "Eje: Confianza + Valor",
-  "problem": "Los consultores perciben el registro como herramienta de control, no como algo que les devuelve valor.",
-  "solution": "Un sistema donde cada acción individual impacta visiblemente en el equipo, convirtiendo el registro en colaboración.",
-  "solutionItemsTitle": "Fuente Única de Verdad (SSoT):",
-  "solutionItems": [
-    "Vista Gantt: seguimiento del avance grupal por proyecto, calculado automáticamente desde el estado real de las tareas",
-    "Vista Kanban: cada consultor gestiona sus tareas propias y actualiza el progreso del equipo con cada movimiento",
-    "Vista General: feed de actividad que registra qué se movió, quién lo hizo y cuándo, sin necesidad de reuniones de seguimiento",
-    "Perfiles de consultor: notas públicas y privadas visibles para el equipo, con historial de colaboraciones y actividad compartida"
-  ],
-  "result": "El registro deja de ser una obligación individual y se convierte en infraestructura visible del equipo."
-},
-        "dashboard": {
-          "title": "Dashboard Refinado",
-          "subtitle": "Centro de operaciones del consultor",
-          "text": "Un panel que unifica toda la información relevante.",
-          "includes": ["Vista de tareas pendientes", "Métricas de productividad", "Calendario con carga de trabajo", "Acceso rápido a proyectos activos"]
+          "title": "Capa Social y Transparencia",
+          "axis": "Eje: Confianza + Valor",
+          "problem": "Los consultores perciben el registro como herramienta de control, no como algo que les devuelve valor.",
+          "solution": "Un sistema donde cada acción individual impacta visiblemente en el equipo, convirtiendo el registro en colaboración.",
+          "solutionItems": [
+            "Vista Gantt: seguimiento del avance grupal por proyecto, calculado automáticamente desde el estado real de las tareas",
+            "Vista Kanban: cada consultor gestiona sus tareas propias y actualiza el progreso del equipo con cada movimiento",
+            "Vista General: feed de actividad que registra qué se movió, quién lo hizo y cuándo, sin necesidad de reuniones de seguimiento",
+            "Perfiles de consultor: notas públicas y privadas visibles para el equipo, con historial de colaboraciones y actividad compartida"
+          ],
+          "result": "El registro deja de ser una obligación individual y se convierte en infraestructura visible del equipo."
         }
       },
       "testing": {
@@ -393,98 +374,19 @@
           "title": "Fricción 2: Confusión con el estado de las tareas.",
           "text": "No estaba claro si una tarea estaba en progreso o pendiente."
         },
-        "iterationsTitle": "Iteraciones post-testing:",
         "iteration1": {
-          "title": "Iteración 1: Filtro de proyectos mejorado.",
-          "adjustments": ["Toggle 'Mostrar proyectos inactivos'", "Mejora de visibilidad de filtros"],
-          "result": "Los usuarios encontraron más fácilmente los proyectos."
+          "adjustments": ["Toggle 'Mostrar proyectos inactivos'", "Mejora de visibilidad de filtros"]
         },
         "iteration2": {
-          "title": "Iteración 2: Indicadores de estado de tareas.",
-          "adjustments": ["Íconos visuales claros para estados", "Tooltips explicativos"],
-          "learning": "La claridad visual reduce la carga cognitiva."
-        }
-      },
-      "results": {
-        "title": "Resultados y aprendizajes",
-        "qualitative": {
-          "title": "Impacto cualitativo",
-          "before": "Antes:",
-          "beforeQuote": "\"El registro de horas es un mal necesario.\"",
-          "after": "Después:",
-          "afterQuote": "\"Ahora es mucho más rápido. Las sugerencias me ahorran tiempo.\"",
-          "impact": "Impacto:",
-          "impactText": "Transformación de una tarea administrativa en una herramienta de valor."
-        },
-        "learnings": {
-          "title": "Aprendizajes clave:",
-          "subtitle": "El diseño no es solo estética, es estrategia.",
-          "text1": "La clave fue entender que el problema no era de \"olvido\", sino de \"depriorización activa\".",
-          "text2": "El diseño debe resolver problemas de negocio y de usuario simultáneamente.",
-          "learning": "Un buen diseño es invisible. Un gran diseño empodera.",
-          "text3": "La validación temprana con usuarios es crucial."
-        },
-        "aiEvolution": {
-          "title": "Evolución futura: integración con IA",
-          "text": "Roadmap para integrar IA en el registro de horas.",
-          "componentsTitle": "Componentes clave:",
-          "components": ["Sugerencias basadas en calendario", "Detección automática de actividad", "Análisis predictivo de carga"],
-          "benefitsTitle": "Beneficios:",
-          "benefits": ["Automatización del 80% del registro", "Mayor precisión y consistencia", "Liberación de tiempo para tareas de mayor valor"],
-          "note": "La IA no reemplaza al usuario, lo potencia."
-        },
-        "nextSteps": {
-          "title": "Próximos pasos y roadmap",
-          "onboarding": {
-            "title": "Fase 1: Onboarding y personalización",
-            "text": "Mejorar la experiencia de primer uso.",
-            "flows": "Flujos a optimizar:",
-            "flowItems": ["Configuración inicial de perfil", "Guía interactiva del dashboard", "Integración con calendario"],
-            "note": "Un onboarding efectivo es clave para la retención.",
-            "impact": "Impacto esperado:",
-            "impactText": "Reducción del tiempo de configuración en 50%."
-          },
-          "mobile": {
-            "title": "Fase 2: Experiencia móvil",
-            "text1": "Desarrollar una versión móvil del módulo operativo.",
-            "text2": "El objetivo es que el consultor pueda gestionar su tiempo desde cualquier lugar.",
-            "note": "La movilidad es esencial para la productividad moderna."
-          }
-        },
-        "phase2Principles": {
-          "title": "Principios de diseño para la Fase 2",
-          "items": [
-            {"title": "Simplicidad:", "text": "Menos es más en móvil."},
-            {"title": "Contexto:", "text": "Usar datos de ubicación y tiempo para sugerencias."},
-            {"title": "Velocidad:", "text": "Registro con un toque."}
-          ]
-        },
-        "gridLearnings": [
-          {"title": "El diseño es un proceso de descubrimiento.", "text": "Las hipótesis iniciales rara vez son el problema real."},
-          {"title": "La empatía es la herramienta más potente.", "text": "Entender el dolor del usuario revela las soluciones más efectivas."},
-          {"title": "La iteración es el camino a la excelencia.", "text": "Cada feedback es una oportunidad para mejorar."},
-          {"title": "El impacto se mide en números y en historias.", "text": "Las métricas validan, las historias inspiran."}
-        ],
-        "closing": {
-          "title": "Reflexión final",
-          "text1": "Dígito fue un recordatorio de que el diseño de producto no es solo estética.",
-          "text2": "Transformar una tarea percibida como \"control\" en una herramienta de \"empoderamiento\" fue el verdadero desafío.",
-          "highlight": "El diseño es la interfaz entre el problema y la solución."
-        },
-        "conclusion": {
-          "title": "Conclusión",
-          "subtitle": "Dígito demostró que un buen diseño puede cambiar la percepción:",
-          "text": "De un registrador de horas a una herramienta operativa que impulsa la productividad."
+          "adjustments": ["Íconos visuales claros para estados", "Tooltips explicativos"]
         }
       },
       "snapshot": {
         "impactTitle": "Impacto cualitativo",
         "impactBeforeLabel": "Antes:",
-        "impactBeforeQuote": "\"El registro de horas es un mal necesario.\"",
+        "impactBeforeQuote": "El registro se percibía como un mal necesario, sin valor para el trabajo diario.",
         "impactAfterLabel": "Después:",
-        "impactAfterQuote": "\"Ahora es mucho más rápido. Las sugerencias me ahorran tiempo.\"",
-        "impactLabel": "Impacto:",
-        "impactText": "Transformación de una tarea administrativa en una herramienta de valor.",
+        "impactAfterQuote": "Post-testing, los participantes destacaron la velocidad del flujo y el valor de las sugerencias contextuales.",
         "reflectionTitle": "Reflexión metodológica",
         "reflectionIntro": "El rediseño resolvió fricciones claras de interfaz y flujo. Pero el problema central del registro de horas está profundamente ligado al comportamiento en contexto real, y eso requiere otro tipo de validación.",
         "testingTitle": "Testing en contexto real",
@@ -502,6 +404,18 @@
         "title": "LEVEL UP",
         "subtitle": "Rediseñando la experiencia editorial gamer",
         "description": "Transformé un portal de noticias genérico en una experiencia personalizada, relevante y escalable para el público gamer de Latinoamérica."
+      },
+      "snapshotTop": {
+        "companyLabel": "Tipo de proyecto",
+        "companyValue": "Plataforma editorial gamer",
+        "roleLabel": "Rol",
+        "roleValue": "Product Designer · UX/UI",
+        "timelineLabel": "Timeline",
+        "timelineValue": "6 semanas",
+        "scopeLabel": "Scope",
+        "scopeValue": "Research · Modelo de segmentación · Flujos de UX · UI",
+        "problemLabel": "Problema",
+        "problemValue": "Un único feed editorial poco relevante según región y plataforma"
       },
       "myRole": {
         "title": "Mi rol",
@@ -543,6 +457,9 @@
         "title": "La versión final implementada",
         "items": ["Menú horizontal con filtros visibles", "Eliminación de anuncios laterales", "Etiquetas contextualizadas", "Estética limpia, modo oscuro, acento rojo"]
       },
+      "decisionsTitle": "Decisiones de diseño",
+      "proposalIntro": "Diseñé una interfaz más alineada a un producto digital real:",
+      "finalVersionIntro": "El equipo decidió simplificar la interfaz:",
       "learnings": [
         {"title": "La personalización debe ser progresiva, no invasiva.", "text": "Los usuarios comparten preferencias si ven valor inmediato."},
         {"title": "Las diferencias regionales son datos de diseño.", "text": "México prefiere Xbox, Argentina PlayStation."},
@@ -565,6 +482,18 @@
         "subtitle": "Paren la mano - Landing Page",
         "description": "Una landing sin vueltas. Diseñada para captar atención y convertir oyentes en comunidad, en menos de 10 segundos."
       },
+      "snapshotTop": {
+        "companyLabel": "Marca",
+        "companyValue": "Vorterix · Paren la Mano",
+        "roleLabel": "Rol",
+        "roleValue": "Product Designer · UX/UI",
+        "timelineLabel": "Timeline",
+        "timelineValue": "4 semanas (proyecto académico)",
+        "scopeLabel": "Scope",
+        "scopeValue": "Concepto · Narrativa · Sistema visual · UX de landing",
+        "problemLabel": "Problema",
+        "problemValue": "Mucha audiencia en streams, poca conversión hacia canales propios"
+      },
       "brief": {
         "title": "El brief real: un reto con límites claros",
         "quote": "\"Tenés que convertir oyentes en leads. Sin métricas. Sin data. Solo criterio y decisiones que funcionen.\"",
@@ -572,7 +501,7 @@
       },
       "why": {
         "title": "¿Por qué hacía falta esta landing?",
-        "reasons": ["La web de Vorterix no reflejaba el espíritu de Paren la Mano.", "La audiencia joven se enganchaba en Twitch pero no se quedaba.", "Había contenido exclusivo pero sin canal claro para comunicarlo.", "El sitio general no tenía CTA ni storytelling."]
+        "reasons": ["La web de Vorterix no reflejaba el espíritu de Paren la Mano.", "La audiencia joven se enganchaba en Twitch pero no se quedaba.", "Había contenido exclusivo pero sin un canal claro para comunicarlo.", "El sitio general no tenía CTA ni storytelling."]
       },
       "audience": {
         "title": "El diseño empieza por ellos",
@@ -613,72 +542,6 @@
         "title": "¿Qué fue esto realmente?",
         "text1": "Un laboratorio de decisiones: diseño, storytelling, contenido, límites técnicos.",
         "text2": "Pude confirmar que donde hay límite técnico y poco tiempo, hay lugar para criterio. Y eso es lo que más disfruto diseñando."
-      }
-    },
-    "rectofinal": {
-      "hero": {
-        "title": "RECTO FINAL",
-        "subtitle": "Videojuego físico-digital donde la única salida… es por el final",
-        "description": "Proyecto académico UNLP que combina Unity 2D con hardware modificado para crear una experiencia inmersiva."
-      },
-      "myRole": {
-        "title": "Mi aporte específico",
-        "description": "Programador principal en Unity 2D con C# • Integrador técnico de hardware modificado • Co-director creativo y desarrollador de narrativa"
-      },
-      "context": {
-        "title": "Contexto del Proyecto",
-        "details": ["Duración: 1 cuatrimestre", "Equipo: 10 personas multidisciplinarias", "Año: 2024", "Contexto: Feria estudiantil con público general"],
-        "brief": "El brief académico era brutal: desarrollar un videojuego físico-digital que operara sin técnicos constantemente reiniciando el sistema."
-      },
-      "specs": {
-        "title": "Especificaciones Técnicas",
-        "engine": "Unity 2D con input personalizado • C#",
-        "hardware": "Volante PC modificado + teclado hackeado + botones pulsadores",
-        "software": "Visual Studio Code, Photoshop",
-        "operation": "3 minutos por partida • Adaptabilidad en tiempo real durante 3+ horas"
-      },
-      "challenge": {
-        "title": "El Desafío Real",
-        "subtitle": "Crear una instalación que sobreviva 3+ horas de público general sin colapsar",
-        "elements": "Los elementos impuestos: Pirata + dimetrodón + martillo oxidado + ecofuturismo.",
-        "decision": "La decisión clave: No resistir el absurdo, sino transformarlo en un mundo visceralmente coherente."
-      },
-      "narrative": {
-        "title": "Transformar el Absurdo en Coherencia",
-        "solution": "El Pelusa, un pirata, es tragado por un dimetrodón. Desde el estómago ácido del dinosaurio, defiende su barco golpeando esqueletos piratas.",
-        "twist": "El twist que lo cierra: La \"luz al final del túnel\" es, literalmente, la salida del tracto digestivo. De ahí Recto Final."
-      },
-      "mechanics": {
-        "title": "Del Cuerpo al Código: Mecánicas Físicas",
-        "description": "Combiné Whac-A-Mole + Subway Surfers pero con interfaces físicas reales:",
-        "items": ["Calaveras golpeables: Teclado hackeado con botones embebidos", "Timón de navegación: Volante de PC modificado", "Flujo autónomo: Inicio → Intro → Tutorial → Juego → Game Over → Reinicio"]
-      },
-      "technical": {
-        "title": "Decisiones Técnicas Críticas",
-        "responsibility": "Responsabilidad directa: Programación completa del sistema de juego en Unity",
-        "items": ["Sistema de vidas y oleadas crecientes con HUD responsivo", "Flujo sin botones ni espera: golpe para iniciar", "Duración fija de 3 minutos: engagement sin fatiga", "Calibración: 80% de jugadores gana"],
-        "goal": "Todo estaba orientado a una sola meta: que el sistema no requiriera explicación."
-      },
-      "tension": {
-        "title": "Momentos de Tensión Real",
-        "incidents": ["El día previo, el volante comenzó a generar input involuntario hacia la derecha.", "Una nena de 7 años le dio tan fuerte al martillo que lo desarmó.", "Crisis de equipo a mitad del proyecto."],
-        "resolution": "Reprogramé el input para permitir golpes directos con la mano. Los jugadores no notaron la transición."
-      },
-      "resistance": {
-        "title": "Resistencia del Sistema",
-        "metrics": ["Flujo constante de jugadores durante más de 3 horas", "Alto reconocimiento visual que generaba colas espontáneas", "Adaptabilidad en tiempo real ante imprevistos"],
-        "learning": "No fue la más tecnológica, fue la más resistente. Y eso, en un entorno real, vale más."
-      },
-      "learnings": [
-        {"title": "Los mejores sistemas no son los más complejos, sino los que sobreviven.", "text": "La tecnología más elegante es inútil si no puede manejar niños entusiasmados."},
-        {"title": "Transformar limitaciones absurdas en coherencia requiere ingeniería narrativa.", "text": "El humor absurdo fue ingeniería bajo restricciones."},
-        {"title": "Liderar bajo presión significa mantener la jugabilidad viva.", "text": "La capacidad de adaptar en tiempo real es invaluable."},
-        {"title": "La mejor tecnología se hace invisible.", "text": "El éxito se mide por la conexión visceral con el jugador."}
-      ],
-      "conclusion": {
-        "title": "Conclusión",
-        "subtitle": "Recto Final demostró que la ingeniería creativa puede transformar el caos:",
-        "text": "La combinación de programación robusta, hardware modificado y narrativa absurda puede crear experiencias que sobreviven y emocionan en condiciones reales."
       }
     }
   }

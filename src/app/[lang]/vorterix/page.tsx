@@ -2,11 +2,12 @@ import { getDictionary } from '@/lib/getDictionary'
 import Navbar from "@/components/navbar/Navbar"
 import ScrollToTop from "@/components/fxscripts/scroll-to-top"
 import Footer from "@/components/footer/Footer"
-import CaseStudyLayout from "@/components/case-study/CaseStudyLayout"
 import ProseSection from "@/components/case-study/ProseSection"
-import ImageBreakout from "@/components/sections/ImageBreakout"
 import Image from "next/image"
 import SectionNav from "@/components/case-study/SectionNav"
+import FadeOnScroll from "@/components/fxscripts/FadeOnScroll"
+import { GridContainer } from "@/components/sections/GridContainer"
+import { Block } from "@/components/sections/Block"
 
 export const metadata = {
   title: "Paren la Mano | Landing que convierte audiencia en comunidad | Lautaro R. Temperini",
@@ -21,7 +22,7 @@ export const metadata = {
     title: "Paren la Mano | Landing que convierte audiencia en comunidad | Lautaro R. Temperini",
     description:
       "Diseñé una landing de conversión para Paren la Mano (Vorterix), alineando tono, identidad visual y propuesta de valor. Sin frameworks. Sin métricas. Con decisiones de diseño real.",
-    url: "https://temperini.vercel.app/level-up",
+    url: "https://temperini.vercel.app/vorterix",
     siteName: "Temperini Portfolio",
     locale: "es_AR",
     type: "website",
@@ -48,334 +49,394 @@ export default async function VorterixLandingPage({
 }: {
   params: Promise<{ lang: string }>
 }) {
-  // Await params en Next.js 15
   const { lang: langParam } = await params
   const lang = (langParam === 'es' || langParam === 'en') ? langParam : 'es'
   const dict = await getDictionary(lang)
+  const t = (dict as any).projectPages?.vorterix || {
+    hero: { title: "VORTERIX", subtitle: "", description: "" },
+    snapshotTop: {
+      companyLabel: "",
+      companyValue: "",
+      roleLabel: "",
+      roleValue: "",
+      timelineLabel: "",
+      timelineValue: "",
+      scopeLabel: "",
+      scopeValue: "",
+      problemLabel: "",
+      problemValue: "",
+    },
+    brief: { title: "", quote: "", description: "" },
+    why: { title: "", reasons: [] as string[] },
+    audience: { title: "", description: "", wants: [] as string[] },
+    insights: {
+      title: "",
+      items: [] as { title: string; text: string }[],
+    },
+    persona: { text: "" },
+    conversion: {
+      title: "",
+      decisions: [] as { title: string; text: string }[],
+    },
+    iterations: {
+      title: "",
+      items: [] as string[],
+      resolution: "",
+      learning: "",
+    },
+    ux: { title: "", text: "" },
+    conclusion: { title: "", text1: "", text2: "" },
+  }
 
   return (
     <>
       <Navbar dict={dict} lang={lang} />
-      <div className="page-transition">
-        <main className="pt-16 md:pt-20 lg:pt-24">
-        <SectionNav sections={[
-          { id: "brief" },
-          { id: "por-que" },
-          { id: "diseno" },
-          { id: "conversion" },
-          { id: "iteraciones" },
-          { id: "ux" },
-        ]} />
-        <CaseStudyLayout>
-          {/* Hero Section - 60vh */}
-          <section className="w-full h-[60vh] flex items-center">
-            <div className="w-full px-8 md:px-12 lg:px-20">
+      <div className="relative z-[20]">
+        <main style={{ transform: 'none' }} className="[&>*]:!transform-none">
+          <SectionNav sections={[
+            { id: "brief" },
+            { id: "diseno" },
+            { id: "conversion" },
+            { id: "decisiones", label: "Decisiones de diseño" },
+            { id: "iteraciones", label: "Iteraciones y UX" },
+          ]} />
+
+          {/* 1. Hero */}
+          <FadeOnScroll>
+            <section className="w-full px-8 md:px-12 lg:px-20 pt-28 md:pt-32 lg:pt-36 mb-12">
               <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold leading-tight text-light mb-6">
-                VORTERIX
+                {t.hero.title}
               </h1>
               <p className="text-xl md:text-2xl font-semibold text-light mb-4">
-                Paren la mano - Landing Page
+                {t.hero.subtitle}
               </p>
               <div className="text-base md:text-lg text-[#F1F1F1] leading-relaxed">
-                <p className="mb-2">Una landing sin vueltas.</p>
-                <p>Diseñada para captar atención y convertir oyentes en comunidad, en menos de 10 segundos.</p>
+                <p>{t.hero.description}</p>
               </div>
-            </div>
-          </section>
+            </section>
+          </FadeOnScroll>
 
-          {/* El brief real */}
-          <ProseSection id="brief" className="mb-16">
-            <h2 className="text-3xl font-bold text-light mb-6">El brief real: un reto con límites claros</h2>
-            <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
-              <blockquote className="text-[#F1F1F1] italic mb-6 text-lg border-l-4 border-purple-500 pl-4">
-                "Tenés que convertir oyentes en leads. Sin métricas. Sin data. Solo criterio y decisiones que funcionen."
-              </blockquote>
-              <p className="mb-2">Desafío académico, mentalidad profesional.</p>
-              <p>Nuestro objetivo fue claro: captar público joven a través de contenido exclusivo y llevarlo a otros streamings de Vorterix.</p>
-            </div>
-          </ProseSection>
-
-          {/* Por qué hacía falta esta landing */}
-          <ProseSection id="por-que" className="mb-16">
-            <h2 className="text-3xl font-bold text-light mb-6">¿Por qué hacía falta esta landing?</h2>
-            <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
-              <ul className="list-disc pl-5 space-y-3 mb-6">
-                <li>La web de Vorterix no reflejaba el espíritu de Paren la Mano.</li>
-                <li>La audiencia joven (16-30) se enganchaba en Twitch o TikTok, pero no se quedaba.</li>
-                <li>Había contenido exclusivo, pero sin un canal claro para comunicarlo.</li>
-                <li>El sitio general no tenía CTA, ni storytelling, ni sentido de comunidad.</li>
-              </ul>
-              <p>Esta landing buscó resolver eso: ser una entrada directa, rápida y relevante al universo Vorterix desde PLM.</p>
-            </div>
-          </ProseSection>
-
-          {/* Logo Vorterix */}
-          <ImageBreakout
-            src="/images/vorterixImages/VorterixLogo.webp"
-            alt="Logo Vorterix"
-            width={400}
-            height={200}
-            border={false}
-          />
-
-          {/* El diseño empieza por ellos */}
-          <ProseSection id="diseno" className="mb-16">
-            <h2 className="text-3xl font-bold text-light mb-6">
-              El diseño empieza por ellos
-            </h2>
-            <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
-              <p className="mb-6">Estudiamos el tono y contenido del programa, analizamos redes, y observamos qué funcionaba en medios como Olga y LuzuTV.</p>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="flex-1 rounded-2xl p-8 bg-[#9C96A4]/10 border-2 border-[#F1F1F1]/10">
-                  <h3 className="text-light font-semibold text-xl mb-4">La audiencia no quería "algo lindo"</h3>
-                  <p className="text-[#F1F1F1] mb-4">Quería algo que hablara como ellos:</p>
-                  <ul className="text-[#F1F1F1] space-y-2">
-                    <li className="flex items-start">
-                      <span className="text-gray-400 mr-3">🡆</span>
-                      Ácido, informal, sin rodeos.
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-gray-400 mr-3">🡆</span>
-                      Que no sobreexpliquen.
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-gray-400 mr-3">🡆</span>
-                      Que les den algo a cambio.
-                    </li>
-                  </ul>
-                </div>
-                <div className="flex-1 rounded-2xl p-8 bg-[#9C96A4]/10 border-2 border-[#F1F1F1]/10">
-                  <h3 className="text-light font-semibold text-xl mb-4">Insights que guiaron decisiones</h3>
-                  <ul className="text-[#F1F1F1] space-y-3">
-                    <li className="flex items-start">
-                      <span className="text-gray-400 mr-3">🡆</span>
-                      <div>
-                        <strong className="text-light">Paleta vibrante (verde/violeta):</strong> mantiene la energía de PLM.
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-gray-400 mr-3">🡆</span>
-                      <div>
-                        <strong className="text-light">Tipografías pesadas:</strong> refleja el tono del show.
-                      </div>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-gray-400 mr-3">🡆</span>
-                      <div>
-                        <strong className="text-light">Contenido exclusivo visible:</strong> valor antes de pedir datos.
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </ProseSection>
-
-          {/* Quote destacado */}
-          <div className="w-full px-8 md:px-12 lg:px-20 mb-16">
-            <div>
-              <p className="text-[#F1F1F1] text-lg lg:text-xl leading-relaxed">
-                No diseñamos para una audiencia general. Diseñamos para Agustín, que escucha Twitch mientras edita en
-                Premiere, que odia los mails largos y que quiere algo que lo haga reír.
-              </p>
-            </div>
-          </div>
-
-          {/* Colores y Tipografía */}
-          <div className="w-full px-8 md:px-12 lg:px-20 mb-16">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="w-full h-[70vh] flex items-center justify-center rounded-lg overflow-hidden bg-[#F2F2F2]">
+          {/* 2. Banner logo */}
+          <FadeOnScroll delay={80}>
+            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
+              <div className="relative w-full h-[150px] md:h-[200px] rounded-lg overflow-hidden bg-[#121212]">
                 <Image
-                  src="/images/vorterixImages/VorterixColors.webp"
-                  alt="Paleta de colores Vorterix"
-                  width={600}
-                  height={400}
-                  className="w-full h-full object-cover"
+                  src="/images/vorterixImages/VorterixLogo.webp"
+                  alt={lang === "es" ? "Logo de Vorterix para la campaña Paren la Mano" : "Vorterix logo for the Paren la Mano campaign"}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 768px) 100vw, 1200px"
+                  priority={true}
                 />
               </div>
-              <div className="w-full h-[70vh] flex items-center justify-center rounded-lg overflow-hidden bg-[#F2F2F2]">
-                <Image
-                  src="/images/vorterixImages/VorterixFont.webp"
-                  alt="Tipografía Vorterix"
-                  width={600}
-                  height={400}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          </div>
+            </section>
+          </FadeOnScroll>
 
-          {/* Hero y Referencias */}
-          <div className="w-full px-8 md:px-12 lg:px-20 mb-16">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="h-[70vh] rounded-lg overflow-hidden" style={{backgroundColor: '#1A1F26'}}>
-                <video
-                  src="/images/vorterixImages/VorterixHero.webm"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="metadata"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="w-full h-full flex items-center justify-center rounded-lg overflow-hidden bg-[#F2F2F2]">
-                <Image
-                  src="/images/vorterixImages/VorterixRefes.webp"
-                  alt="Referencias de diseño Vorterix"
-                  width={600}
-                  height={400}
-                  className="w-full h-full object-contain"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Conversión sin perder identidad */}
-          <ProseSection id="conversion" className="mb-16">
-            <h2 className="text-3xl font-bold text-light mb-6">Conversión sin perder identidad</h2>
-            <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="h-[700px] rounded-2xl overflow-hidden" style={{backgroundColor: '#1A1F26'}}>
-                  <video
-                    src="/images/vorterixImages/VorterixFeedback.webm"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="metadata"
-                    className="w-full h-auto object-cover"
-                  />
+          {/* 3. Snapshot */}
+          <FadeOnScroll delay={150}>
+            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
+              <div className="text-sm text-light/80 space-y-2">
+                <div>
+                  <span className="text-light/70 font-semibold">{t.snapshotTop.companyLabel}</span> · {t.snapshotTop.companyValue}
                 </div>
-                <div className="flex flex-col h-full justify-start pt-8">
-                  <div className="text-lg font-semibold text-light mb-1">Decisiones de diseño:</div>
-                  <ul className="space-y-1">
-                    <li className="flex items-start">
-                      <span className="text-green-400 mr-3 mt-1">•</span>
-                      <span>
-                        <strong className="text-light">Hero con GIF + CTA inmediato:</strong> impacto en los primeros 3 segundos.
-                      </span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-green-400 mr-3 mt-1">•</span>
-                      <span>
-                        <strong className="text-light">Formulario duplicado:</strong> máxima visibilidad sin repetir visualmente.
-                      </span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-green-400 mr-3 mt-1">•</span>
-                      <span>
-                        <strong className="text-light">Carrusel de clips:</strong> muestra el valor antes de pedir el email.
-                      </span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-green-400 mr-3 mt-1">•</span>
-                      <span>
-                        <strong className="text-light">Narrativa FOMO:</strong> "Accedé a lo que otros se pierden".
-                      </span>
-                    </li>
-                  </ul>
+                <div>
+                  <span className="text-light/70 font-semibold">{t.snapshotTop.roleLabel}</span> · {t.snapshotTop.roleValue}
+                </div>
+                <div>
+                  <span className="text-light/70 font-semibold">{t.snapshotTop.timelineLabel}</span> · {t.snapshotTop.timelineValue}
+                </div>
+                <div>
+                  <span className="text-light/70 font-semibold">{t.snapshotTop.scopeLabel}</span> · {t.snapshotTop.scopeValue}
+                </div>
+                <div>
+                  <span className="text-light/70 font-semibold">{t.snapshotTop.problemLabel}</span> · {t.snapshotTop.problemValue}
                 </div>
               </div>
-            </div>
-          </ProseSection>
+            </section>
+          </FadeOnScroll>
 
-          {/* Video Reel full width */}
-          <div className="w-full mb-16">
-            <div className="h-[800px] rounded-2xl overflow-hidden" style={{backgroundColor: '#1A1F26'}}>
-              <video
-                src="/images/vorterixImages/VorterixReel.webm"
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="metadata"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
+          {/* 4. Brief + Por qué en 2 columnas */}
+          <FadeOnScroll>
+            <ProseSection id="brief" className="mb-20">
+              <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0">
+                <Block colSpan={1}>
+                  <h2 className="text-3xl font-bold text-light mb-6">{t.brief.title}</h2>
+                  {t.brief.quote && (
+                    <blockquote className="text-[#F1F1F1] italic mb-6 text-lg border-l-4 border-purple-500 pl-4">
+                      {t.brief.quote}
+                    </blockquote>
+                  )}
+                  <p className="mb-2">{t.brief.description}</p>
+                </Block>
+                <div id="por-que">
+                  <Block colSpan={1}>
+                    <h2 className="text-3xl font-bold text-light mb-6">{t.why.title}</h2>
+                    <ul className="list-disc pl-5 space-y-3 mb-6">
+                      {t.why.reasons.map((reason: string, idx: number) => (
+                        <li key={idx}>{reason}</li>
+                      ))}
+                    </ul>
+                  </Block>
+                </div>
+              </GridContainer>
+            </ProseSection>
+          </FadeOnScroll>
 
-          {/* Iteraciones clave */}
-          <ProseSection id="iteraciones" className="mb-16">
-            <h2 className="text-3xl font-bold text-light mb-6">Iteraciones clave</h2>
-            <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-4">
-                  <p className="text-sm text-secondary italic mb-4">(basadas en conflicto real)</p>
-                  <ul className="space-y-3">
-                    <li className="flex items-start">
-                      <span className="text-red-400 mr-3 mt-1">×</span>
-                      Eliminamos secciones que nos gustaban, pero no aportaban a la conversión.
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-yellow-400 mr-3 mt-1">↻</span>
-                      Rediseñamos la sección de clips 3 veces hasta que funcionó bien en mobile.
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-blue-400 mr-3 mt-1">?</span>
-                      Discutimos si mostrar staff o contenido de otros programas.
-                    </li>
-                  </ul>
-                  <p className="text-secondary italic">
-                    Ganó la segunda opción. La comunidad no se enamora de nombres: se queda por el contenido.
-                  </p>
-                  <div className="border-t border-subtle pt-4 mt-6">
-                    <p className="text-light font-medium">
-                      Este tipo de decisiones no crearon la versión más linda. Crearon la versión que convertía.
-                    </p>
-                    <p className="text-[#F1F1F1] mt-2">Y entender eso fue una de las mejores lecciones del proyecto.</p>
+          {/* 6. Divider */}
+          <FadeOnScroll>
+            <div className="w-full px-8 md:px-12 lg:px-20 mb-20">
+              <div className="h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+            </div>
+          </FadeOnScroll>
+
+          {/* 7. Audiencia + Insights */}
+          <FadeOnScroll>
+            <ProseSection id="diseno" className="mb-20">
+              <h2 className="text-3xl font-bold text-light mb-6">{t.audience.title}</h2>
+              <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
+                <p className="mb-6">{t.audience.description}</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="flex-1 rounded-2xl p-8 bg-[#9C96A4]/10 border-2 border-[#F1F1F1]/10">
+                    <h3 className="text-light font-semibold text-xl mb-4">La audiencia no quería "algo lindo"</h3>
+                    <p className="text-[#F1F1F1] mb-4">Quería algo que hablara como ellos:</p>
+                    <ul className="text-[#F1F1F1] space-y-2">
+                      {t.audience.wants.map((item: string, idx: number) => (
+                        <li key={idx} className="flex items-start">
+                          <span className="text-gray-400 mr-3">🡆</span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="flex-1 rounded-2xl p-8 bg-[#9C96A4]/10 border-2 border-[#F1F1F1]/10">
+                    <h3 className="text-light font-semibold text-xl mb-4">{t.insights.title}</h3>
+                    <ul className="text-[#F1F1F1] space-y-3">
+                      {t.insights.items.map(
+                        (item: { title: string; text: string }, idx: number) => (
+                          <li key={idx} className="flex items-start">
+                            <span className="text-gray-400 mr-3">🡆</span>
+                            <div>
+                              <strong className="text-light">{item.title}</strong> {item.text}
+                            </div>
+                          </li>
+                        )
+                      )}
+                    </ul>
                   </div>
                 </div>
-                <div className="h-full flex items-start justify-start rounded-2xl overflow-hidden bg-[#181818]/40 border-2 border-[#F1F1F1]/10">
-                  <Image
-                    src="/images/vorterixImages/VorterixMockup.webp"
-                    alt="Mockup final de la landing Vorterix"
-                    width={800}
-                    height={600}
-                    className="w-full h-full object-cover rounded-2xl"
-                    priority={false}
-                    quality={75}
-                  />
-                </div>
               </div>
-            </div>
-          </ProseSection>
+            </ProseSection>
+          </FadeOnScroll>
 
-          {/* UX sin narrativa */}
-          <ProseSection id="ux" className="mb-16">
-            <h2 className="text-3xl font-bold text-light mb-6">
-              UX sin narrativa es solo UI
-            </h2>
-            <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
-              <p className="text-lg">
-                Aprendí que sin contenido real, el diseño es solo una maqueta. Que sin una narrativa concreta, la
-                conversión es suerte. Y que sin reflejar la voz del programa, todo el esfuerzo es invisible.
+          {/* 8. Persona quote */}
+          <FadeOnScroll>
+            <div className="w-full px-8 md:px-12 lg:px-20 mb-20">
+              <p className="text-[#F1F1F1] text-lg lg:text-xl leading-relaxed">
+                {t.persona.text}
               </p>
             </div>
-          </ProseSection>
+          </FadeOnScroll>
 
-          {/* Conclusión - Sin contenedor */}
-          <div className="w-full px-8 md:px-12 lg:px-20">
-            <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
-              <h2 className="text-4xl font-bold text-light mb-6 text-center">¿Qué fue esto realmente?</h2>
-              <div className="space-y-6 text-center max-w-3xl mx-auto">
-                <p className="text-lg">
-                  Un laboratorio de decisiones: diseño, storytelling, contenido, límites técnicos.
-                  <br />Y sobre todo, una prueba de cómo convertir atención en comunidad sin recursos, pero con criterio.
-                </p>
-                <div className="border-t border-subtle pt-6">
-                  <p className="text-xl text-light font-medium">
-                    Pude confirmar que donde hay límite técnico y poco tiempo, hay lugar para criterio.
-                    <br />Y eso es lo que más disfruto diseñando.
-                  </p>
-                </div>
-              </div>
+          {/* 9. Colores y Tipografía */}
+          <FadeOnScroll>
+            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
+              <GridContainer cols={{ default: 1, md: 2 }} gap="md" className="!px-0">
+                <Block colSpan={1}>
+                  <div className="w-full aspect-[4/3] rounded-lg overflow-hidden bg-[#F2F2F2]">
+                    <Image
+                      src="/images/vorterixImages/VorterixColors.webp"
+                      alt={lang === "es" ? "Paleta de colores del proyecto Vorterix Paren la Mano" : "Vorterix Paren la Mano project color palette"}
+                      width={600}
+                      height={400}
+                      sizes="(max-width: 768px) 100vw, 700px"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </Block>
+                <Block colSpan={1} className="hidden md:block">
+                  <div className="w-full aspect-[4/3] rounded-lg overflow-hidden bg-[#F2F2F2]">
+                    <Image
+                      src="/images/vorterixImages/VorterixFont.webp"
+                      alt={lang === "es" ? "Tipografía y jerarquía visual del proyecto Vorterix" : "Vorterix project typography and visual hierarchy"}
+                      width={600}
+                      height={400}
+                      sizes="(max-width: 768px) 100vw, 700px"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </Block>
+              </GridContainer>
+            </section>
+          </FadeOnScroll>
+
+          {/* 10. VorterixHero + Refes */}
+          <FadeOnScroll>
+            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
+              <GridContainer cols={{ default: 1, md: 2 }} gap="md" className="!px-0">
+                <Block colSpan={1}>
+                  <div className="w-full aspect-[4/3] rounded-lg overflow-hidden bg-[#1b1e26] ">
+                    <video
+                      src="/images/vorterixImages/VorterixHero.webm"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="metadata"
+                      aria-label={lang === "es" ? "Video hero de la landing Vorterix Paren la Mano" : "Vorterix Paren la Mano landing hero video"}
+                      className="w-full h-full object-cover scale-105 transition-none"
+                    />
+                  </div>
+                </Block>
+                <Block colSpan={1}>
+                  <div className="w-full aspect-[4/3] rounded-lg overflow-hidden bg-[#000000]">
+                    <Image
+                      src="/images/vorterixImages/VorterixRefes.webp"
+                      alt={lang === "es" ? "Referencias de diseño e inspiración visual para la landing Vorterix" : "Design references and visual inspiration for the Vorterix landing"}
+                      width={600}
+                      height={400}
+                      sizes="(max-width: 768px) 100vw, 700px"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                </Block>
+              </GridContainer>
+            </section>
+          </FadeOnScroll>
+
+          {/* 11. Divider */}
+          <FadeOnScroll>
+            <div className="w-full px-8 md:px-12 lg:px-20 mb-20">
+              <div className="h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent" />
             </div>
-          </div>
-        </CaseStudyLayout>
-      </main>
-      <Footer dict={dict} lang={lang} />
-      <ScrollToTop size={48} />
+          </FadeOnScroll>
+
+          {/* 12. VorterixFeedback + VorterixMockup lado a lado, decisiones e iteraciones alineadas */}
+          <FadeOnScroll>
+            <section id="conversion" className="w-full px-8 md:px-12 lg:px-20 mb-20">
+              <h2 className="text-3xl font-bold text-light mb-6">{t.conversion.title}</h2>
+              <GridContainer cols={{ default: 1, md: 2 }} gap="md" className="!px-0 mb-12">
+                <Block colSpan={1}>
+                  <div className="w-full aspect-[1/1] rounded-2xl overflow-hidden bg-[#1A1F26]">
+                    <video
+                      src="/images/vorterixImages/VorterixFeedback.webm"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      preload="metadata"
+                      aria-label={lang === "es" ? "Video de feedback y decisiones de diseño de la landing Vorterix" : "Vorterix landing feedback and design decisions video"}
+                      className="w-full h-full object-cover object-top -translate-y-8 md:-translate-y-24 scale-105 transition-none"
+                    />
+                  </div>
+                </Block>
+                <Block colSpan={1}>
+                  <div className="w-full aspect-[1/1] rounded-2xl overflow-hidden bg-[#181818]/40 border-2 border-[#F1F1F1]/10">
+                    <Image
+                      src="/images/vorterixImages/VorterixMockup.webp"
+                      alt={lang === "es" ? "Mockup final de la landing Paren la Mano (Vorterix) en dispositivo" : "Final mockup of Paren la Mano (Vorterix) landing on device"}
+                      width={800}
+                      height={600}
+                      sizes="(max-width: 768px) 100vw, 1200px"
+                      className="w-full h-full object-cover"
+                      priority={false}
+                      quality={75}
+                    />
+                  </div>
+                </Block>
+              </GridContainer>
+              <section id="decisiones">
+              <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0">
+                <Block colSpan={1}>
+                  <div className="space-y-3">
+                    <h2 className="text-2xl md:text-3xl font-bold text-light">Decisiones de diseño</h2>
+                    <ul className="space-y-3">
+                      {t.conversion.decisions.map(
+                        (dec: { title: string; text: string }, idx: number) => (
+                          <li key={idx} className="flex items-start">
+                            <span className="text-green-400 mr-3 mt-1">•</span>
+                            <span>
+                              <strong className="text-light">{dec.title}</strong> {dec.text}
+                            </span>
+                          </li>
+                        )
+                      )}
+                    </ul>
+                  </div>
+                </Block>
+                <Block colSpan={1} className="md:-mt-1">
+                  <div className="space-y-4 text-[#F1F1F1]">
+                    <h2 className="text-2xl md:text-3xl font-bold text-light">{t.iterations.title}</h2>
+                    <p className="text-sm italic text-[#F1F1F1]/60">(basadas en conflicto real)</p>
+                    <ul className="space-y-3 mb-4">
+                      {t.iterations.items.slice(0, 2).map((item: string, idx: number) => (
+                        <li key={idx} className="flex items-start">
+                          <span className="text-red-400 mr-3 mt-1">×</span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="text-[#F1F1F1]">
+                      {t.iterations.items[2]} {t.iterations.resolution}
+                    </p>
+                  </div>
+                </Block>
+              </GridContainer>
+              </section>
+            </section>
+          </FadeOnScroll>
+
+{/* 13. VorterixReel */}
+<FadeOnScroll>
+  <div className="w-full px-8 md:px-12 lg:px-20 mb-20">
+    <div className="w-full aspect-[2/1] rounded-2xl overflow-hidden bg-[#000000]">
+      <video
+        src="/images/vorterixImages/VorterixReel.webm"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="metadata"
+        aria-label={lang === "es" ? "Reel del proyecto de landing Vorterix Paren la Mano" : "Vorterix Paren la Mano landing project reel"}
+        className="w-full h-full object-contain"
+      />
+    </div>
+  </div>
+</FadeOnScroll>
+
+
+          {/* Divider antes de UX + Conclusión */}
+          <FadeOnScroll>
+            <div className="w-full px-8 md:px-12 lg:px-20 mb-20">
+              <div className="h-px w-full bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+            </div>
+          </FadeOnScroll>
+
+          {/* 14. UX + Conclusión en grid de 2 columnas */}
+          <FadeOnScroll>
+            <section id="iteraciones" className="w-full px-8 md:px-12 lg:px-20 mb-20">
+              <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0">
+                <Block colSpan={1}>
+                  <div id="ux">
+                    <h2 className="text-3xl font-bold text-light mb-6">{t.ux.title}</h2>
+                    <p className="text-[#F1F1F1] leading-relaxed mb-4">{t.iterations.learning}</p>
+                    <p className="text-lg text-[#F1F1F1] leading-relaxed">{t.ux.text}</p>
+                  </div>
+                </Block>
+                <Block colSpan={1}>
+                  <div>
+                    <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">{t.conclusion.title}</h2>
+                    <div className="space-y-4">
+                      <p className="text-lg text-[#F1F1F1] leading-relaxed">{t.conclusion.text1}</p>
+                      <p className="text-xl font-semibold text-light">{t.conclusion.text2}</p>
+                    </div>
+                  </div>
+                </Block>
+              </GridContainer>
+            </section>
+          </FadeOnScroll>
+        </main>
+        <Footer dict={dict} lang={lang} />
+        <ScrollToTop size={48} />
       </div>
     </>
   )

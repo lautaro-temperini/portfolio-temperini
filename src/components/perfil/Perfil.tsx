@@ -48,65 +48,69 @@ export default async function Perfil({ lang }: PerfilProps) {
   const dictionary = await getDictionary(lang)
 
   return (
-    <section id="about" className="relative w-full min-h-screen flex items-center" style={{ background: "conic-gradient(...)" }}>
-  <div className="w-full h-full flex flex-col justify-center mb-24 px-4 md:px-6 lg:px-10">
+    <section
+      id="about"
+      className="relative w-full min-h-screen flex items-center px-4 md:px-6 lg:px-10"
+      style={{ background: "conic-gradient(...)" }}
+    >
+      <div className="w-full h-full flex flex-col justify-center">
 
-{/* TÍTULO "ABOUT" */}
-<div className="mb-8 sm:mb-10 md:-mb-12 lg:-mb-16 mt-8">
-  <PerfilAboutTitle text={dictionary.about.title} />
-</div>
+        {/* CONTENEDOR PRINCIPAL - 2 columnas */}
+        <div className="flex flex-col md:flex-row items-start gap-8 w-full">
 
-    {/* CONTENEDOR DE CONTENIDO */}
-    <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8 lg:gap-12 xl:gap-16 flex-1">
-
-      {/* TEXTO */}
-      <div className="flex-1 max-w-2xl lg:max-w-xl xl:max-w-2xl mt-0">
-        <RevealOnScroll delay={100}>
-          <p className="mb-10 md:mb-12 mt-0 text-base sm:text-lg md:text-xl xl:text-2xl 2xl:text-[26px] font-semibold leading-relaxed xl:leading-[32px] 2xl:leading-[36px] text-light" style={{ fontFamily: "var(--font-manrope)" }}>
-            {dictionary.about.text1}
-            <br />
-            <br />
-            {dictionary.about.text2}
-          </p>
-
-          {/* IMAGEN MÓVIL */}
-          <div className="block md:hidden w-full my-12 flex justify-center">
-            <div className="w-full max-w-xs sm:max-w-sm">
-              <TiltedCard
-                imageSrc="/images/foto-lautaro.png"
-                altText="Lautaro R. Temperini - Diseñador Multimedia"
-                captionText=""
-                aspectRatio={1}
-                scaleOnHover={1.02}
-                rotateAmplitude={4}
-                showTooltip={false}
-              />
+          {/* COLUMNA IZQUIERDA: título + texto */}
+          <div className="w-full md:w-1/2 flex flex-col">
+            <div className="mb-2">
+              <PerfilAboutTitle text={dictionary.about.title} />
             </div>
+            <RevealOnScroll delay={100}>
+              <p
+                className="mb-6 mt-0 text-base sm:text-lg md:text-xl xl:text-2xl font-semibold leading-relaxed text-light"
+                style={{ fontFamily: "var(--font-manrope)" }}
+              >
+                {dictionary.about.text1}
+                <br />
+                <br />
+                {dictionary.about.text2}
+              </p>
+              {/* IMAGEN MÓVIL */}
+              <div className="block md:hidden w-full my-12">
+                <div className="w-full max-w-xs sm:max-w-sm">
+                  <TiltedCard
+                    imageSrc="/images/foto-lautaro.png"
+                    altText="Lautaro R. Temperini - Diseñador Multimedia"
+                    captionText=""
+                    aspectRatio={1}
+                    scaleOnHover={1.02}
+                    rotateAmplitude={4}
+                    showTooltip={false}
+                  />
+                </div>
+              </div>
+              <p
+                className="text-base sm:text-lg md:text-xl xl:text-2xl font-semibold leading-relaxed text-light"
+                style={{ fontFamily: "var(--font-manrope)" }}
+              >
+                {dictionary.about.text3}
+              </p>
+            </RevealOnScroll>
           </div>
 
-          <p className="text-base sm:text-lg md:text-xl xl:text-2xl 2xl:text-[26px] font-semibold leading-relaxed xl:leading-[32px] 2xl:leading-[36px] text-light mt-0 text-right md:text-left"  style={{ fontFamily: "var(--font-manrope)" }}>
-            {dictionary.about.text3}
-          </p>
-        </RevealOnScroll>
-      </div>
+          {/* COLUMNA DERECHA: imagen desktop */}
+          <div className="hidden md:block w-1/2">
+            <TiltedCard
+              imageSrc="/images/foto-lautaro.png"
+              altText="Lautaro R. Temperini - Diseñador Multimedia"
+              captionText=""
+              aspectRatio={1}
+              scaleOnHover={1.02}
+              rotateAmplitude={4}
+              showTooltip={false}
+            />
+          </div>
 
-      {/* IMAGEN DESKTOP */}
-      <div className="w-full md:w-1/2 xl:w-[45%] flex-shrink-0 flex justify-center md:justify-end -mt-24 hidden md:block">
-        <div className="w-full max-w-md lg:max-w-lg xl:max-w-xl">
-          <TiltedCard
-            imageSrc="/images/foto-lautaro.png"
-            altText="Lautaro R. Temperini - Diseñador Multimedia"
-            captionText=""
-            aspectRatio={1}
-            scaleOnHover={1.02}
-            rotateAmplitude={4}
-            showTooltip={false}
-          />
         </div>
       </div>
-
-    </div>
-  </div>
-</section>
+    </section>
   )}
 

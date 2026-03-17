@@ -10,9 +10,11 @@ interface Section {
 
 interface SectionNavProps {
   sections: Section[]
+  /** Variante de layout: 'fixed' (default, estilo Dígito) o 'inline' (se mueve con el scroll) */
+  variant?: 'fixed' | 'inline'
 }
 
-const SectionNav: React.FC<SectionNavProps> = ({ sections }) => {
+const SectionNav: React.FC<SectionNavProps> = ({ sections, variant = 'fixed' }) => {
   const [activeId, setActiveId] = useState<string | null>(null)
   const [labels, setLabels] = useState<Record<string, string>>({})
 
@@ -68,9 +70,14 @@ const SectionNav: React.FC<SectionNavProps> = ({ sections }) => {
 
   if (sections.length === 0) return null
 
+  const containerClasses =
+    variant === 'fixed'
+      ? "hidden lg:flex fixed right-6 top-0 h-screen z-30 items-center"
+      : "hidden lg:flex sticky top-32 z-20 items-start justify-end pointer-events-none"
+
   return (
-    <nav className="hidden lg:flex fixed right-6 top-0 h-screen z-30 items-center">
-      <div className="flex flex-col items-end gap-4">
+    <nav className={containerClasses}>
+      <div className="flex flex-col items-end gap-4 pointer-events-auto">
         {sections.map((section) => {
           const isActive = activeId === section.id
           const label = labels[section.id] || section.id

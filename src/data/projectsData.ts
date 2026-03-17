@@ -61,17 +61,6 @@ export const projectsData: ProjectData[] = [
     shortDescription: "Landing de conversión para Paren la Mano. Criterio sobre data, tono sobre templates.",
     tags: ["Conversion Landing Page", "FOMO Design Strategy", "HTML/CSS/JS", "Audience-Specific Design", "Performance-Optimized"],
   },
-  {
-    id: 5,
-    slug: "rectofinal",
-    image: "/images/rectofinal-logo.png",
-    previewImage: "/images/projects/rectofinal-preview.jpg",
-    title: "Recto Final",
-    subtitle: "Videojuego físico-digital",
-    description: "Physical-Digital Installation",
-    shortDescription: "Instalación física-digital que sobrevivió 3+ horas de público sin colapsar. Unity + hardware hackeado.",
-    tags: ["Unity 2D + C#", "Physical Computing", "Interactive Installation", "Hardware Integration", "Real-Time Adaptation"],
-  },
 ]
 
 // Helper para obtener proyecto destacado

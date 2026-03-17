@@ -7,6 +7,7 @@ import ProseSection from "@/components/case-study/ProseSection";
   import ImageBreakout from "@/components/sections/ImageBreakout";
   import InsightCard from "@/components/sections/InsightCard";
   import SectionNav from "@/components/case-study/SectionNav";
+  import FadeOnScroll from "@/components/fxscripts/FadeOnScroll";
     
   export const metadata = {
     title: "GloryFit | App de entrenamiento personalizado | Lautaro R. Temperini",
@@ -58,6 +59,18 @@ import ProseSection from "@/components/case-study/ProseSection";
     const dict = await getDictionary(lang)
     const t = (dict as any).projectPages?.gloryfit || {
       hero: { title: "GLORYFIT", subtitle: "Rutinas personalizadas a partir de tus datos", description: "" },
+      snapshotTop: {
+        companyLabel: "",
+        companyValue: "",
+        roleLabel: "",
+        roleValue: "",
+        timelineLabel: "",
+        timelineValue: "",
+        scopeLabel: "",
+        scopeValue: "",
+        problemLabel: "",
+        problemValue: "",
+      },
       myRole: { title: "Mi rol", description: "" },
       challenge: { title: "El reto", text1: "", text2: "", text3: "" },
       research: { title: "Investigación y descubrimiento", text1: "", text2: "" },
@@ -73,21 +86,20 @@ import ProseSection from "@/components/case-study/ProseSection";
     return (
       <>
         <Navbar dict={dict} lang={lang} />
-        <div className="page-transition">
-        <main className="pt-16 md:pt-20 lg:pt-24">
+        <div className="relative z-[20]">
+        <main style={{ transform: 'none' }} className="[&>*]:!transform-none">
           <SectionNav sections={[
             { id: "reto" },
             { id: "investigacion" },
             { id: "estrategia" },
             { id: "sistema" },
-            { id: "experiencia" },
             { id: "iteraciones" },
             { id: "conclusion" },
           ]} />
           <CaseStudyLayout>
-          {/* Hero Section - 60vh */}
-          <section className="w-full h-[60vh] flex items-center">
-          <div className="w-full px-8 md:px-12 lg:px-20">
+          {/* Hero Section - mismo padding top que Dígito */}
+          <FadeOnScroll>
+            <section className="w-full px-8 md:px-12 lg:px-20 pt-28 md:pt-32 lg:pt-36 mb-12">
               <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold leading-tight text-light mb-6">
                 {t.hero.title}
               </h1>
@@ -97,41 +109,102 @@ import ProseSection from "@/components/case-study/ProseSection";
               <p className="text-base md:text-lg text-[#F1F1F1] leading-relaxed">
                 {t.hero.description}
               </p>
+            </section>
+          </FadeOnScroll>
+
+          {/* Snapshot top (como en Dígito) */}
+          <FadeOnScroll delay={80}>
+          <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
+            <div className="text-sm text-light/80 space-y-2">
+              <div>
+                <span className="text-light/70 font-semibold">
+                  {t.snapshotTop.companyLabel}
+                </span>{" "}
+                · {t.snapshotTop.companyValue}
+              </div>
+
+              <div>
+                <span className="text-light/70 font-semibold">
+                  {t.snapshotTop.roleLabel}
+                </span>{" "}
+                · {t.snapshotTop.roleValue}
+              </div>
+
+              <div>
+                <span className="text-light/70 font-semibold">
+                  {t.snapshotTop.timelineLabel}
+                </span>{" "}
+                · {t.snapshotTop.timelineValue}
+              </div>
+
+              <div>
+                <span className="text-light/70 font-semibold">
+                  {t.snapshotTop.scopeLabel}
+                </span>{" "}
+                · {t.snapshotTop.scopeValue}
+              </div>
+
+              <div>
+                <span className="text-light/70 font-semibold">
+                  {t.snapshotTop.problemLabel}
+                </span>{" "}
+                · {t.snapshotTop.problemValue}
+              </div>
             </div>
           </section>
+          </FadeOnScroll>
 
-          {/* Mi rol - Sin contenedor */}
-          <div className="w-full px-8 md:px-12 lg:px-20 mb-16">
-            <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
-              <p>{t.myRole.description}</p>
-            </div>
-          </div>
-
-            {/* El reto */}
-            <ProseSection id="reto" className="mb-16">
-              <h2 className="text-3xl font-bold text-light mb-6">
-                {t.challenge.title}
-              </h2>
-              <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
-                <p className="mb-4">{t.challenge.text1}</p>
-                <p className="mb-4">{t.challenge.text2}</p>
-                <p>{t.challenge.text3}</p>
+            {/* El reto + Mi rol en grid 2 columnas */}
+            <FadeOnScroll>
+            <ProseSection id="reto" className="mb-20">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-10 md:gap-6">
+                <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
+                  <h3 className="text-2xl font-semibold text-light mb-4">
+                    {t.myRole.title}
+                  </h3>
+                  <ul className="space-y-2 text-[#F1F1F1]">
+                    {t.myRole.description.split(" • ").filter(Boolean).map((item: string, idx: number) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <span className="text-light/40 mt-1">•</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
+                  <h3 className="text-2xl font-semibold text-light mb-4">
+                    {t.challenge.title}
+                  </h3>
+                  <p className="mb-4">{t.challenge.text1}</p>
+                  <p className="mb-4">{t.challenge.text2}</p>
+                  <p>{t.challenge.text3}</p>
+                </div>
               </div>
             </ProseSection>
 
-            {/* Investigación */}
-            <ProseSection id="investigacion" className="mb-16">
+            {/* Investigación - bloque destacado */}
+            <ProseSection id="investigacion" className="mb-20">
               <h2 className="text-3xl font-bold text-light mb-6">
                 {t.research.title}
               </h2>
-              <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
-                <p className="mb-4">{t.research.text1}</p>
-                <p>{t.research.text2}</p>
+              <div className="bg-[#22C55E]/10 backdrop-blur-sm rounded-lg p-4 md:p-6 border border-[#22C55E]/30">
+                <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
+                  <p className="mb-4">{t.research.text1}</p>
+                  <p>{t.research.text2}</p>
+                </div>
               </div>
             </ProseSection>
+            </FadeOnScroll>
+
+            <FadeOnScroll>
+            <div className="w-full px-8 md:px-12 lg:px-20 mb-20">
+              <div className="h-px w-full bg-gradient-to-r from-transparent via-[#22C55E]/50 to-transparent" />
+            </div>
+            </FadeOnScroll>
 
             {/* Estrategia de diseño */}
-            <ProseSection id="estrategia" className="mb-16">
+            <FadeOnScroll>
+            <ProseSection id="estrategia" className="mb-20">
               <h2 className="text-3xl font-bold text-light mb-6">
                 {t.strategy.title}
               </h2>
@@ -144,64 +217,75 @@ import ProseSection from "@/components/case-study/ProseSection";
                 </ul>
               </div>
             </ProseSection>
+            </FadeOnScroll>
 
             {/* User Flow */}
+            <FadeOnScroll>
             <ImageBreakout
               src="/images/gloryfitImages/UserFlow.webp"
-              alt="User Flow de GloryFit: diagrama del proceso de configuración y personalización de rutinas en la app"
+              alt={lang === "es" ? "User Flow de GloryFit: diagrama del proceso de configuración y personalización de rutinas en la app" : "GloryFit user flow: diagram of the configuration and personalization process for routines in the app"}
               width={1200}
               height={800}
               border={false}
+              priority={true}
               imageClassName="object-contain bg-[#F2F2F2]"
             />
+            </FadeOnScroll>
 
-            {/* El sistema detrás */}
-            <ProseSection id="sistema" className="mb-16">
+            {/* El sistema detrás + Diseño de experiencia en grid */}
+            <FadeOnScroll>
+            <ProseSection id="sistema" className="mb-20">
               <h2 className="text-3xl font-bold text-light mb-6">
                 {t.system.title}
               </h2>
-              <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
-                <p className="mb-4">{t.system.text1}</p>
-                <ul className="list-disc pl-5 space-y-2 mb-4">
-                  {t.system.examples.map((example: string, index: number) => (
-                    <li key={index}>{example}</li>
-                  ))}
-                </ul>
-                <p>{t.system.text2}</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
+                  <p className="mb-4">{t.system.text1}</p>
+                  <ul className="list-disc pl-5 space-y-2 mb-4">
+                    {t.system.examples.map((example: string, index: number) => (
+                      <li key={index}>{example}</li>
+                    ))}
+                  </ul>
+                  <p>{t.system.text2}</p>
+                </div>
+                <div
+                  id="experiencia"
+                  className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed"
+                >
+                  <h3 className="text-2xl font-semibold text-light mb-4">
+                    {t.experience.title}
+                  </h3>
+                  <p className="mb-4">{t.experience.text1}</p>
+                  <ul className="list-disc pl-5 space-y-2 mb-4">
+                    {t.experience.components.map((component: string, index: number) => (
+                      <li key={index}>{component}</li>
+                    ))}
+                  </ul>
+                  <h4 className="text-lg font-semibold text-light mb-2">
+                    {t.experience.visualSystem}
+                  </h4>
+                  <p>{t.experience.visualSystemText}</p>
+                </div>
               </div>
             </ProseSection>
-
-            {/* Diseño de experiencia */}
-            <ProseSection id="experiencia" className="mb-16">
-              <h2 className="text-3xl font-bold text-light mb-6">
-                {t.experience.title}
-              </h2>
-              <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
-                <p className="mb-4">{t.experience.text1}</p>
-                <ul className="list-disc pl-5 space-y-2 mb-4">
-                  {t.experience.components.map((component: string, index: number) => (
-                    <li key={index}>{component}</li>
-                  ))}
-                </ul>
-                <h4 className="text-lg font-semibold text-light mb-2">
-                  {t.experience.visualSystem}
-                </h4>
-                <p>{t.experience.visualSystemText}</p>
-              </div>
-            </ProseSection>
+            </FadeOnScroll>
 
             {/* Style Guide */}
+            <FadeOnScroll>
             <ImageBreakout
               src="/images/gloryfitImages/StyleTile.webp"
-              alt="Style Tile de GloryFit: paleta de colores, tipografía, componentes de interfaz e iconografía de la app"
+              alt={lang === "es" ? "Style Tile de GloryFit: paleta de colores, tipografía, componentes de interfaz e iconografía de la app" : "GloryFit style tile: color palette, typography, UI components and app iconography"}
               width={1200}
               height={800}
               shadow={true}
+              border={false}
               imageClassName="object-contain bg-[#F2F2F2]"
             />
+            </FadeOnScroll>
 
             {/* Iteraciones y validación */}
-            <ProseSection id="iteraciones" className="mb-16">
+            <FadeOnScroll>
+            <ProseSection id="iteraciones" className="mb-20">
               <h2 className="text-3xl font-bold text-light mb-6">
                 {t.iterations.title}
               </h2>
@@ -213,22 +297,38 @@ import ProseSection from "@/components/case-study/ProseSection";
                 </p>
               </div>
             </ProseSection>
+            </FadeOnScroll>
+
+            {/* Validación y feedback */}
+            <FadeOnScroll>
+            <ProseSection className="mb-20">
+              <h2 className="text-3xl font-bold text-light mb-6">
+                {t.validation.title}
+              </h2>
+              <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
+                <p>{t.validation.text}</p>
+              </div>
+            </ProseSection>
+            </FadeOnScroll>
 
             {/* Cards GloryFit */}
+            <FadeOnScroll>
             <ImageBreakout
               src="/images/gloryfitImages/CardsGloryfit.webp"
-              alt="Pantallas de selección y detalles de rutina personalizada en GloryFit"
+              alt={lang === "es" ? "Pantallas de selección y detalles de rutina personalizada en GloryFit" : "GloryFit selection screens and personalized routine details"}
               width={1200}
               height={800}
               border={false}
               shadow={true}
               imageClassName="object-contain bg-[#F2F1F1]"
             />
+            </FadeOnScroll>
 
             {/* Aprendizajes clave */}
-            <ProseSection className="mb-16">
+            <FadeOnScroll>
+            <ProseSection className="mb-20">
               <h2 className="text-3xl font-bold text-light mb-8">
-                Aprendizajes clave
+                {lang === "es" ? "Aprendizajes clave" : "Key learnings"}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {t.learnings.map((learning: { title: string; text: string }, index: number) => (
@@ -238,29 +338,30 @@ import ProseSection from "@/components/case-study/ProseSection";
                 ))}
               </div>
             </ProseSection>
+            </FadeOnScroll>
 
-            {/* Validación y feedback */}
-            <ProseSection className="mb-16">
-              <h2 className="text-3xl font-bold text-light mb-6">
-                {t.validation.title}
-              </h2>
-              <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
-                <p>{t.validation.text}</p>
-              </div>
-            </ProseSection>
+            <FadeOnScroll>
+            <div className="w-full px-8 md:px-12 lg:px-20 mb-20">
+              <div className="h-px w-full bg-gradient-to-r from-transparent via-[#22C55E]/50 to-transparent" />
+            </div>
+            </FadeOnScroll>
 
-            {/* Conclusión */}
-            <ProseSection id="conclusion" className="mb-16">
+            {/* Conclusión - bloque destacado */}
+            <FadeOnScroll>
+            <ProseSection id="conclusion" className="mb-20">
               <h2 className="text-3xl font-bold text-light mb-6">
                 {t.conclusion.title}
               </h2>
-              <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
-                <p className="text-lg font-semibold text-light mb-4">
-                  {t.conclusion.subtitle}
-                </p>
-                <p className="text-xl">{t.conclusion.text}</p>
+              <div className="bg-[#22C55E]/10 backdrop-blur-sm rounded-lg p-4 md:p-6 border border-[#22C55E]/30">
+                <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
+                  <p className="text-lg font-semibold text-light mb-4">
+                    {t.conclusion.subtitle}
+                  </p>
+                  <p className="text-xl">{t.conclusion.text}</p>
+                </div>
               </div>
             </ProseSection>
+            </FadeOnScroll>
           </CaseStudyLayout>
         </main>
         <Footer dict={dict} lang={lang} />

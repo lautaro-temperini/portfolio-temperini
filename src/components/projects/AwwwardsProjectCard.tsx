@@ -4,6 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import GlareHover from "@/components/fxscripts/GlareHover"
 import { sendGAEvent } from '@next/third-parties/google'
+import RevealOnScroll from "../fxscripts/reveal-on-scroll"
 
 interface AwwwardsProjectCardProps {
   project: {
@@ -59,19 +60,20 @@ export default function AwwwardsProjectCard({ project, dict, lang, variant = "se
   // Secondary: Mobile mitad del featured, Desktop 220-260px
   const heightClasses = isFeatured
     ? "aspect-square md:aspect-video md:h-auto md:max-h-[85vh]" // Featured: mobile cuadrado, desktop 16:9 con max 85vh
-    : "h-[150px] md:h-[240px] lg:h-[260px]" // Secondary: mobile mitad, desktop 220-260px
+    : "h-[150px] md:h-[320px] lg:h-[380px]" // Secondary: mobile mitad, desktop más alto para balance visual
 
   return (
-    <Link href={`/${lang}/${project.slug}`} className="block w-full group" onClick={handleProjectClick}>
-      <GlareHover
-        className={`relative w-full ${heightClasses} rounded-2xl border border-subtle transition-all duration-300 hover:border-primary hover:shadow-[0px_8px_35px_rgba(115,0,165,0.18)] cursor-pointer`}
-        glareColor="#f2f2f2"
-        glareOpacity={0.07}
-        glareAngle={-30}
-        glareSize={200}
-        transitionDuration={700}
-        playOnce={true}
-      >
+    <RevealOnScroll>
+      <Link href={`/${lang}/${project.slug}`} className="block w-full group" onClick={handleProjectClick}>
+        <GlareHover
+          className={`relative w-full ${heightClasses} rounded-2xl border border-subtle transition-all duration-300 hover:border-primary hover:shadow-[0px_8px_35px_rgba(115,0,165,0.18)] cursor-pointer`}
+          glareColor="#f2f2f2"
+          glareOpacity={0.07}
+          glareAngle={-30}
+          glareSize={200}
+          transitionDuration={700}
+          playOnce={true}
+        >
         {/* Background Image */}
         <div className="absolute inset-0 rounded-2xl overflow-hidden">
           <Image
@@ -151,7 +153,8 @@ export default function AwwwardsProjectCard({ project, dict, lang, variant = "se
             </div>
           </div>
         </div>
-      </GlareHover>
-    </Link>
+        </GlareHover>
+      </Link>
+    </RevealOnScroll>
   )
 }

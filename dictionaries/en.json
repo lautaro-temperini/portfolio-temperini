@@ -126,6 +126,18 @@
         "subtitle": "Personalized routines from your data",
         "description": "We designed a mobile experience that transforms biometric data into adapted, accessible, and motivating routines. The goal was clear: generate enough trust for users to share sensitive information in exchange for recommendations that truly impact their health."
       },
+      "snapshotTop": {
+        "companyLabel": "Product type",
+        "companyValue": "Fitness mobile app",
+        "roleLabel": "Role",
+        "roleValue": "Product Designer · UX/UI",
+        "timelineLabel": "Timeline",
+        "timelineValue": "8 weeks",
+        "scopeLabel": "Scope",
+        "scopeValue": "Research · UX strategy · Visual system · Prototyping",
+        "problemLabel": "Problem",
+        "problemValue": "Low trust and engagement with biometric-data onboarding"
+      },
       "myRole": {
         "title": "My role",
         "description": "My specific contribution: • Qualitative research on barriers to biometric data entry. • Design of onboarding flow and routine personalization. • Construction of the complete visual system. • Functional prototyping in Figma for Android, validated with real users."
@@ -137,9 +149,9 @@
         "text3": "From the start, our focus was to rethink this logic: how do we build an experience that invites rather than imposes?"
       },
       "research": {
-        "title": "Research and discovery",
-        "text1": "We began by mapping friction points in existing fitness apps. We conducted user interviews, data privacy surveys, and benchmarked platforms like Google Fit, Zepp, and MiFitness.",
-        "text2": "A clear pattern emerged: users were willing to share biometric data only when they perceived immediate value—not at the end of onboarding, but in the moment."
+      "title": "Research and discovery",
+      "text1": "We began by mapping friction points in existing fitness apps. We conducted user interviews, data privacy surveys, and benchmarked platforms like Google Fit, Zepp, and MiFitness.",
+      "text2": "A clear pattern emerged: users were willing to share biometric data only when they perceived immediate value—not at the end of onboarding, but in the moment."
       },
       "strategy": {
         "title": "Design strategy",
@@ -195,10 +207,6 @@
         "problemLabel": "Problem",
         "problemValue": "Low adoption of time tracking"
       },
-      "myRole": {
-        "title": "My role",
-        "description": "Research & synthesis • Strategy & architecture • Design & prototyping • Testing & validation"
-      },
       "context": {
         "title": "Context",
         "text1": "Dígito is a Business Intelligence and RPA company. Their B2B SaaS platform handled billing, reports, and administration—but the operations module for consultants suffered from low adoption.",
@@ -211,7 +219,6 @@
         "hypothesis": "\"Users forget to log their hours.\"",
         "hypothesisAuthor": "— CEO's hypothesis",
         "criticalQuestion": "Critical question: Are users forgetting, or actively avoiding?",
-        "problemTitle": "The real problem: hours logged 1-3 weeks late",
         "businessImpact": "Business impact:",
         "impactSummary": "Logging could take between one and three weeks. Leadership estimated that this lack of visibility could represent losses of up to USD 11,000 per project.",
         "impactText": "This delay cascaded into:",
@@ -257,6 +264,11 @@
             "label": "Operational dependencies:",
             "text": "\"If the CEO doesn't review that day, approval gets paused.\""
           }
+        },
+        "stats": {
+          "stat1": { "value": "30%", "description": "of employees say time tracking feels like surveillance" },
+          "stat2": { "value": "26%", "description": "believe it adds stress or pressure to their day" },
+          "source": "Buddy Punch, 2025"
         }
       },
       "insight": {
@@ -277,12 +289,15 @@
         "conclusion": "Conclusion: The sustainable path is making tracking fast, useful, and seamlessly integrated.",
         "scopeTitle": "Scope: focus on consultant operations",
         "scopeText1": "The original brief covered 8 improvement areas. Redesigning the entire platform was infeasible within 3.5 months.",
-        "ourDecision": "Our decision:",
-        "ourDecisionText": "Focus where consultants track time, manage tasks, and monitor workload.",
-        "thisAllowed": "This enabled us to:",
-        "thisAllowedItems": ["Directly address the core problem", "Deliver a complete, testable solution", "Maintain compatibility with existing modules", "Establish foundation for future features"],
-        "whyNotJustScope": "Why this wasn't just scope reduction:",
-        "whyNotJustScopeText": "Research confirmed consultants had no issues with billing or management reporting—the pain was in daily operations."
+        "scopeText": "No changes to contracts, organizational processes, or core infrastructure.",
+        "thisAllowed": "This allowed us to:",
+        "thisAllowedItems": [
+          "Directly target the identified problem",
+          "Propose a complete, testable solution",
+          "Maintain compatibility with administrative modules",
+          "Lay groundwork for future integrations"
+        ],
+        "ourDecisionText": "We prioritized the operations module where consultants log hours, manage tasks, and see workload, as it is the direct bottleneck for billing."
       },
       "principles": {
         "title": "Design principles",
@@ -361,19 +376,19 @@
           "features": ["FAB with contextual suggestions", "History-based autocomplete", "One-tap quick logging"]
         },
         "social": {
-  "title": "Social Layer & Transparency",
-  "axis": "Axis: Trust + Value",
-  "problem": "Consultants perceive time tracking as a surveillance tool, not something that gives them value back.",
-  "solution": "A system where each individual action visibly impacts the team, turning tracking into collaboration.",
-  "solutionItemsTitle": "Single Source of Truth (SSoT):",
-  "solutionItems": [
-    "Gantt view: group progress tracking per project, calculated automatically from actual task status",
-    "Kanban view: each consultant manages their own tasks and updates team progress with every move",
-    "General view: activity feed that records what was moved, who did it and when, without status meetings",
-    "Consultant profiles: public and private notes visible to the team, with collaboration history and shared activity"
-  ],
-  "result": "Tracking stops being an individual obligation and becomes visible team infrastructure."
-},
+          "title": "Social Layer & Transparency",
+          "axis": "Axis: Trust + Value",
+          "problem": "Consultants perceive time tracking as a surveillance tool, not something that gives them value back.",
+          "solution": "A system where each individual action visibly impacts the team, turning tracking into collaboration.",
+          "solutionItemsTitle": "Single Source of Truth (SSoT):",
+          "solutionItems": [
+            "Gantt view: group progress tracking per project, calculated automatically from actual task status",
+            "Kanban view: each consultant manages their own tasks and updates team progress with every move",
+            "General view: activity feed that records what was moved, who did it and when, without status meetings",
+            "Consultant profiles: public and private notes visible to the team, with collaboration history and shared activity"
+          ],
+          "result": "Tracking stops being an individual obligation and becomes visible team infrastructure."
+        },
         "dashboard": {
           "title": "Refined Dashboard",
           "subtitle": "Consultant's operations center",
@@ -407,6 +422,25 @@
           "adjustments": ["Distinct icons for each state", "Contextual tooltips on hover"],
           "learning": "Visual clarity directly reduces cognitive load."
         }
+      },
+      "snapshot": {
+        "impactTitle": "Qualitative impact:",
+        "impactBeforeLabel": "Before:",
+        "impactBeforeQuote": "\"Time tracking is a necessary evil.\"",
+        "impactAfterLabel": "After:",
+        "impactAfterQuote": "\"Now it’s much faster. The suggestions save me time.\"",
+        "impactLabel": "Impact:",
+        "impactText": "Turning an administrative chore into a valuable tool.",
+        "reflectionTitle": "Methodological reflection",
+        "reflectionIntro": "The redesign addressed clear interface and flow frictions. But the core problem of time tracking is deeply tied to real-world behavior, and that demands a different kind of validation.",
+        "testingTitle": "Testing in real context",
+        "testingP1": "Instead of designing directed tasks, I would test with real work scenarios.",
+        "testingP2": "The main issue is not point-in-time interface usability, but how time tracking integrates into everyday workflow.",
+        "testingP3": "Testing the product in that real context would allow us to observe actual behavior.",
+        "metricTitle": "Behavioral metric",
+        "metricP1": "Today, logging often happens weeks late, so very few hours are recorded within the first 24 hours. If I were to tackle this project again, I would track the percentage of hours logged within 24 hours as the North Star metric.",
+        "metricP2Prefix": "That would have guided design decisions more directly toward the behavior the redesign aimed to change: ",
+        "metricP2Bold": "integrating time tracking into the actual workflow."
       },
       "results": {
         "title": "Impact & learnings",
@@ -478,26 +512,26 @@
           "title": "Conclusion",
           "subtitle": "Dígito proved that thoughtful design shifts perception:",
           "text": "From time-tracking burden to productivity catalyst."
+        },
+        "snapshot": {
+          "impactTitle": "Qualitative impact:",
+          "impactBeforeLabel": "Before:",
+          "impactBeforeQuote": "\"Time tracking is a necessary evil.\"",
+          "impactAfterLabel": "After:",
+          "impactAfterQuote": "\"Now it’s much faster. The suggestions save me time.\"",
+          "impactLabel": "Impact:",
+          "impactText": "Turning an administrative chore into a valuable tool.",
+          "reflectionTitle": "Methodological reflection",
+          "reflectionIntro": "The redesign addressed clear interface and flow frictions. But the core problem of time tracking is deeply tied to real-world behavior, and that demands a different kind of validation.",
+          "testingTitle": "Testing in real context",
+          "testingP1": "Instead of designing directed tasks, I would test with real work scenarios.",
+          "testingP2": "The main issue is not point-in-time interface usability, but how time tracking integrates into everyday workflow.",
+          "testingP3": "Testing the product in that real context would allow us to observe actual behavior.",
+          "metricTitle": "Behavioral metric",
+          "metricP1": "Today, logging often happens weeks late, so very few hours are recorded within the first 24 hours. If I were to tackle this project again, I would track the percentage of hours logged within 24 hours as the North Star metric.",
+          "metricP2Prefix": "That would have guided design decisions more directly toward the behavior the redesign aimed to change: ",
+          "metricP2Bold": "integrating time tracking into the actual workflow."
         }
-      },
-      "snapshot": {
-        "impactTitle": "Qualitative impact:",
-        "impactBeforeLabel": "Before:",
-        "impactBeforeQuote": "\"Time tracking is a necessary evil.\"",
-        "impactAfterLabel": "After:",
-        "impactAfterQuote": "\"Now it’s much faster. The suggestions save me time.\"",
-        "impactLabel": "Impact:",
-        "impactText": "Turning an administrative chore into a valuable tool.",
-        "reflectionTitle": "Methodological reflection",
-        "reflectionIntro": "The redesign addressed clear interface and flow frictions. But the core problem of time tracking is deeply tied to real-world behavior, and that demands a different kind of validation.",
-        "testingTitle": "Testing in real context",
-        "testingP1": "Instead of designing directed tasks, I would test with real work scenarios.",
-        "testingP2": "The main issue is not point-in-time interface usability, but how time tracking integrates into everyday workflow.",
-        "testingP3": "Testing the product in that real context would allow us to observe actual behavior.",
-        "metricTitle": "Behavioral metric",
-        "metricP1": "Today, logging often happens weeks late, so very few hours are recorded within the first 24 hours. If I were to tackle this project again, I would track the percentage of hours logged within 24 hours as the North Star metric.",
-        "metricP2Prefix": "That would have guided design decisions more directly toward the behavior the redesign aimed to change: ",
-        "metricP2Bold": "integrating time tracking into the actual workflow."
       }
     },
     "levelup": {
@@ -505,6 +539,18 @@
         "title": "LEVEL UP",
         "subtitle": "Redesigning gaming editorial for Latin America",
         "description": "I transformed a generic gaming news site into a personalized, region-aware experience for Latin American audiences."
+      },
+      "snapshotTop": {
+        "companyLabel": "Project type",
+        "companyValue": "Gaming editorial platform",
+        "roleLabel": "Role",
+        "roleValue": "Product Designer · UX/UI",
+        "timelineLabel": "Timeline",
+        "timelineValue": "6 weeks",
+        "scopeLabel": "Scope",
+        "scopeValue": "Research · Segmentation model · UX flows · UI",
+        "problemLabel": "Problem",
+        "problemValue": "One-size-fits-all news feed with low relevance per region"
       },
       "myRole": {
         "title": "My role",
@@ -546,6 +592,9 @@
         "title": "The final implemented version",
         "items": ["Horizontal menu with visible filters", "Removed lateral ads", "Contextualized labels", "Clean aesthetic, dark mode, red accent"]
       },
+      "decisionsTitle": "Design decisions",
+      "proposalIntro": "I designed an interface closer to a real digital product:",
+      "finalVersionIntro": "The team chose to simplify the interface:",
       "learnings": [
         {"title": "Personalization should feel gradual, not invasive.", "text": "Users opt in when they see immediate value."},
         {"title": "Regional differences are actionable design data.", "text": "Mexico/Xbox vs. Argentina/PlayStation patterns matter."},
@@ -567,6 +616,18 @@
         "title": "VORTERIX",
         "subtitle": "Paren la mano - Landing Page",
         "description": "A no-nonsense landing page. Designed to hook attention and convert casual listeners into community—in under 10 seconds."
+      },
+      "snapshotTop": {
+        "companyLabel": "Brand",
+        "companyValue": "Vorterix · Paren la Mano",
+        "roleLabel": "Role",
+        "roleValue": "Product Designer · UX/UI",
+        "timelineLabel": "Timeline",
+        "timelineValue": "4 weeks (academic project)",
+        "scopeLabel": "Scope",
+        "scopeValue": "Concept · Narrative · Visual system · Landing UX",
+        "problemLabel": "Problem",
+        "problemValue": "High audience on streams, low conversion to owned channels"
       },
       "brief": {
         "title": "The real brief: constraints as design fuel",
@@ -616,72 +677,6 @@
         "title": "What this really was",
         "text1": "A lab for decision-making under constraints: design, narrative, content, technical limits.",
         "text2": "I confirmed: constraints don't limit creativity—they sharpen judgment. And that's what I love most about design."
-      }
-    },
-    "rectofinal": {
-      "hero": {
-        "title": "RECTO FINAL",
-        "subtitle": "Physical-digital game where the only way out... is through",
-        "description": "UNLP academic project fusing Unity 2D with hacked hardware to create a resilient, immersive installation."
-      },
-      "myRole": {
-        "title": "My role",
-        "description": "Lead programmer (Unity 2D + C#) • Hardware integration • Co-creative director & narrative design"
-      },
-      "context": {
-        "title": "Project context",
-        "details": ["Duration: 1 semester", "Team: 10 people, multidisciplinary", "Year: 2024", "Venue: Student fair, general public"],
-        "brief": "The brief was unforgiving: build a physical-digital game that survives hours of public use without constant tech support."
-      },
-      "specs": {
-        "title": "Technical specs",
-        "engine": "Unity 2D with custom input handling • C#",
-        "hardware": "Modded PC steering wheel + hacked keyboard + arcade buttons",
-        "software": "VS Code, Photoshop",
-        "operation": "3-min sessions • Must self-recover for 3+ hours"
-      },
-      "challenge": {
-        "title": "The real challenge",
-        "subtitle": "Build an installation that survives 3+ hours of public use without breaking",
-        "elements": "Mandatory elements: Pirate + dimetrodon + rusty hammer + ecofuturism.",
-        "decision": "Key decision: Don't fight the absurd—embrace it and make it viscerally coherent."
-      },
-      "narrative": {
-        "title": "Making absurdity coherent",
-        "solution": "El Pelusa, a pirate, gets swallowed by a dimetrodon. From inside the dinosaur's stomach, he defends his ship by smashing pirate skeletons.",
-        "twist": "The punchline: The \"light at the end of the tunnel\" is literally the digestive exit. Hence Recto Final."
-      },
-      "mechanics": {
-        "title": "From concept to code: physical mechanics",
-        "description": "Hybrid of Whac-A-Mole + Subway Surfers, but with real hardware:",
-        "items": ["Hittable skulls: hacked keyboard with embedded buttons", "Steering wheel: modded PC wheel for navigation", "Auto-flow: Start → Intro → Tutorial → Game → Game Over → Loop"]
-      },
-      "technical": {
-        "title": "Critical technical calls",
-        "responsibility": "My responsibility: full Unity game system programming",
-        "items": ["Lives & escalating waves with responsive HUD", "Zero-button flow: hit to start immediately", "Fixed 3-min sessions: engagement without burnout", "Calibrated difficulty: ~80% win rate"],
-        "goal": "One goal: the system should be self-explanatory."
-      },
-      "tension": {
-        "title": "Real crisis moments",
-        "incidents": ["Day before launch: wheel started drifting right.", "7-year-old smashed the hammer so hard it broke.", "Team conflict mid-project."],
-        "resolution": "I rewrote input handling to accept direct hand hits. Players never noticed the switch."
-      },
-      "resistance": {
-        "title": "System resilience",
-        "metrics": ["Continuous play for 3+ hours", "Strong visual appeal created spontaneous queues", "Real-time adaptation to unexpected failures"],
-        "learning": "It wasn't the fanciest tech—it was the most resilient. In real-world conditions, that's what matters."
-      },
-      "learnings": [
-        {"title": "The best systems survive, not just impress.", "text": "Elegant tech fails if it can't handle enthusiastic kids."},
-        {"title": "Absurd constraints demand narrative engineering.", "text": "The humor was a design constraint, not a bug."},
-        {"title": "Leading under pressure means keeping it playable.", "text": "Real-time adaptation is non-negotiable."},
-        {"title": "The best tech disappears.", "text": "Success is measured by visceral player connection."}
-      ],
-      "conclusion": {
-        "title": "Conclusion",
-        "subtitle": "Recto Final proved creative engineering can tame chaos:",
-        "text": "Robust code + hacked hardware + absurd narrative = experiences that survive real-world conditions."
       }
     }
   }

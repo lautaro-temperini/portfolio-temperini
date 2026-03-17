@@ -76,10 +76,10 @@ export const playgroundItems: BentoItem[] = [
     id: 7,
     title: "Recto Final",
     description: "Juego de carreras desarrollado en Unity. Jugable en el navegador vía WebGL build.",
-    image: "/images/playground/recto-final.webp",
+    image: "/images/playground/rectofinal.webp",
     tags: ["Unity", "WebGL", "Juego"],
     type: "interactive",
     variant: "blue",
-    href: "/playground/recto-final",
+    href: "/playground/rectofinal",
   },
 ]

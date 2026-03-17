@@ -22,6 +22,7 @@ interface ImageBreakoutProps {
   full?: boolean
   noPadding?: boolean
   caption?: string
+  sizes?: string
 }
 
 // ============================================================================
@@ -41,16 +42,17 @@ const ImageBreakout: React.FC<ImageBreakoutProps> = ({
   full = false,
   noPadding = false,
   caption,
+  sizes,
 }) => {
-  // Determinar el padding según las props
+  // Determinar el padding según las props (full = ancho completo sin padding lateral)
   let paddingClasses = ''
-  if (!noPadding) {
+  if (!noPadding && !full) {
     paddingClasses = 'px-8 md:px-12 lg:px-20'
   }
   
   const containerClasses = `
     w-full ${paddingClasses}
-    mb-16
+    mb-20
   `
 
   const imageWrapperClasses = `
@@ -75,6 +77,7 @@ const ImageBreakout: React.FC<ImageBreakoutProps> = ({
           className={imageClasses}
           priority={priority}
           quality={90}
+          sizes={sizes ?? (full ? "100vw" : "(max-width: 768px) 100vw, 1200px")}
         />
       </div>
       {caption && (

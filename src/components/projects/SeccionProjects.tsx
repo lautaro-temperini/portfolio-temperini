@@ -74,11 +74,15 @@ export default async function Projects({ lang }: ProjectsProps) {
                 />
               ))}
 
-            {/* Other Projects - Grid 2x2 Banner Layout con Fade */}
+            {/* Other Projects - Lista en una sola columna */}
             <RevealOnScroll delay={100}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-4 lg:gap-6">
+              <div className="flex flex-col gap-6 md:gap-4 lg:gap-6">
                 {projectsData
                   .filter((project) => project.slug !== "digito")
+                  .sort((a, b) => {
+                    const order = ["gloryfit", "levelup", "vorterix"]
+                    return order.indexOf(a.slug) - order.indexOf(b.slug)
+                  })
                   .map((project) => (
                     <AwwwardsProjectCard
                       key={project.id}
