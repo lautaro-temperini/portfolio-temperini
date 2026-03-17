@@ -23,6 +23,7 @@ interface ImageBreakoutProps {
   noPadding?: boolean
   caption?: string
   sizes?: string
+  figureClassName?: string
 }
 
 // ============================================================================
@@ -43,6 +44,7 @@ const ImageBreakout: React.FC<ImageBreakoutProps> = ({
   noPadding = false,
   caption,
   sizes,
+  figureClassName = "",
 }) => {
   // Determinar el padding según las props (full = ancho completo sin padding lateral)
   let paddingClasses = ''
@@ -50,10 +52,7 @@ const ImageBreakout: React.FC<ImageBreakoutProps> = ({
     paddingClasses = 'px-8 md:px-12 lg:px-20'
   }
   
-  const containerClasses = `
-    w-full ${paddingClasses}
-    mb-20
-  `
+  const containerClasses = `w-full ${paddingClasses} mb-20 ${figureClassName}`
 
   const imageWrapperClasses = `
     rounded-lg overflow-hidden
@@ -90,5 +89,3 @@ const ImageBreakout: React.FC<ImageBreakoutProps> = ({
 }
 
 export default ImageBreakout
-
-

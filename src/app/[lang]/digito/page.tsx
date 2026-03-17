@@ -600,6 +600,7 @@ export default async function DigitoPage({
             className="bg-[#F2F2F2]"
             imageClassName="object-cover object-top"
             caption={t.mvpOriginalImageCaption}
+            figureClassName="mb-8 md:mb-20"
           />
             </FadeOnScroll>
 
@@ -739,7 +740,7 @@ export default async function DigitoPage({
                             className="w-full h-full object-contain object-top bg-[#000000]"
                           >
                             <source
-                              src="/images/digitoImages/animacion-fab-con-sugerencias-contextuales.webm"
+                              src="/images/digitoImages/animacion-fab-con-sugerencias-contextuales-desktop.webm"
                               type="video/webm"
                             />
                           </video>
@@ -789,7 +790,7 @@ export default async function DigitoPage({
                 </div>
 
                 {/* Mobile-only video below card */}
-                <div className="mt-4 md:hidden w-full px-8 md:px-12 lg:px-20">
+                <div className="mt-4 md:hidden">
                   <video
                     autoPlay
                     loop
@@ -875,42 +876,40 @@ export default async function DigitoPage({
                     </Block>
                   </GridContainer>
                 </div>
+
+                {/* Mobile-only video below card, fuera del contenedor */}
+                <div className="mt-4 md:hidden">
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="metadata"
+                    className="w-full h-auto object-contain rounded-xl bg-[#000000]"
+                  >
+                    <source
+                      src="/images/digitoImages/animacion-proyectos-gantt-kanban.webm"
+                      type="video/webm"
+                    />
+                  </video>
+                </div>
               </section>
             </FadeOnScroll>
 
-            {/* Mobile-only video below card */}
-            <div className="mt-2 md:hidden w-full px-8 md:px-12 lg:px-20">
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="metadata"
-                className="w-full h-auto object-contain rounded-xl bg-[#000000]"
-              >
-                <source
-                  src="/images/digitoImages/animacion-proyectos-gantt-kanban.webm"
-                  type="video/webm"
-                />
-              </video>
-            </div>
-
- {/* ==================== 20. EVOLUCIÓN DEL DISEÑO - MVP → Wireframe → HiFi ==================== */}
- <FadeOnScroll delay={80}>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-16">
-            <div className="space-y-6">
-              <div className="relative w-full h-[360px] md:h-[500px] rounded-2xl overflow-hidden bg-[#0D0D0D]">
-                <Image
-                  src="/images/digitoImages/comparativa-mvp-wireframe-hifi.webp"
-                  alt="Evolución del diseño: MVP original, wireframe de baja fidelidad y prototipo de alta fidelidad"
-                  fill
-                  className="object-contain bg-[#0D0D0D]"
-                  sizes="(max-width: 768px) 100vw, 1200px"
-                />
-              </div>
-            </div>
-          </section>
-            </FadeOnScroll>
+{/* ==================== 20. EVOLUCIÓN DEL DISEÑO - MVP → Wireframe → HiFi ==================== */}
+<FadeOnScroll delay={80}>
+  <section className="w-full px-8 md:px-12 lg:px-20 mb-16">
+    <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-[#0D0D0D]">
+      <Image
+        src="/images/digitoImages/comparativa-mvp-wireframe-hifi.webp"
+        alt="Evolución del diseño: MVP original, wireframe de baja fidelidad y prototipo de alta fidelidad"
+        fill
+        className="object-contain"
+        sizes="(max-width: 768px) 100vw, 1200px"
+      />
+    </div>
+  </section>
+</FadeOnScroll>
 
             {/* ==================== DIVIDER ==================== */}
 <div className="w-full px-8 md:px-12 lg:px-20 mb-20">
