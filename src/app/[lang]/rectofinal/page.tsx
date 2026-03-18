@@ -248,7 +248,7 @@ export default async function RectoFinalPage({
           {/* Placeholders para capturas y fotos */}
           <div className="w-full px-8 md:px-12 lg:px-20 mb-16">
             <div className="grid md:grid-cols-2 gap-6">
-              <figure className="w-full h-[70vh] flex items-center justify-center rounded-lg overflow-hidden bg-[#F2F2F2]">
+              <figure className="w-full h-[70vh] flex items-center justify-center rounded-lg overflow-hidden bg-light">
                 <Image
                   src="/images/placeholder-hud-outro.jpg"
                   alt="Captura de HUD, outro, golpe físico"
@@ -257,7 +257,7 @@ export default async function RectoFinalPage({
                   className="w-full h-full object-contain"
                 />
               </figure>
-              <figure className="w-full h-[70vh] flex items-center justify-center rounded-lg overflow-hidden bg-[#F2F2F2]">
+              <figure className="w-full h-[70vh] flex items-center justify-center rounded-lg overflow-hidden bg-light">
                 <Image
                   src="/images/placeholder-volante-recalibrado.jpg"
                   alt="Foto del volante siendo recalibrado"
@@ -272,7 +272,7 @@ export default async function RectoFinalPage({
           {/* Placeholders para instalación y reparación */}
           <div className="w-full lg:w-3/5 lg:mx-auto px-4 md:px-6 lg:px-12 mb-16">
             <div className="grid md:grid-cols-2 gap-6">
-              <figure className="w-full h-[70vh] flex items-center justify-center rounded-lg overflow-hidden bg-[#F2F2F2]">
+              <figure className="w-full h-[70vh] flex items-center justify-center rounded-lg overflow-hidden bg-light">
                 <Image
                   src="/images/placeholder-instalacion-publico.jpg"
                   alt="Instalación funcionando con público diverso"
@@ -281,7 +281,7 @@ export default async function RectoFinalPage({
                   className="w-full h-full object-contain"
                 />
               </figure>
-              <figure className="w-full h-[70vh] flex items-center justify-center rounded-lg overflow-hidden bg-[#F2F2F2]">
+              <figure className="w-full h-[70vh] flex items-center justify-center rounded-lg overflow-hidden bg-light">
                 <Image
                   src="/images/placeholder-reparacion-vivo.jpg"
                   alt="Momento de reparación en vivo"

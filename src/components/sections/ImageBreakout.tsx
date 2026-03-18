@@ -57,7 +57,7 @@ const ImageBreakout: React.FC<ImageBreakoutProps> = ({
   const imageWrapperClasses = `
     rounded-lg overflow-hidden
     ${shadow ? "shadow-2xl" : ""}
-    ${border ? "border-2 border-[#A6A6A6]" : ""}
+    ${border ? "border-2 border-accent" : ""}
     w-full ${className.includes('h-') ? '' : 'aspect-video md:h-[60vh] lg:h-[70vh]'}
     flex items-center justify-center
     ${className}

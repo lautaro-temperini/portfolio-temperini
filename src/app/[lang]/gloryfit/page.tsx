@@ -228,7 +228,7 @@ import ProseSection from "@/components/case-study/ProseSection";
               height={800}
               border={false}
               priority={true}
-              imageClassName="object-contain bg-[#F2F2F2]"
+              imageClassName="object-contain bg-light"
             />
             </FadeOnScroll>
 
@@ -279,7 +279,7 @@ import ProseSection from "@/components/case-study/ProseSection";
               height={800}
               shadow={true}
               border={false}
-              imageClassName="object-contain bg-[#F2F2F2]"
+              imageClassName="object-contain bg-light"
             />
             </FadeOnScroll>
 

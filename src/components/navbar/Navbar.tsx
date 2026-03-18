@@ -1,14 +1,14 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { usePathname, useRouter } from "next/navigation"
+import { usePathname } from "next/navigation"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { socialLinks } from "@/data/socialLinks"
 import Image from "next/image"
 import LanguageSelector from "@/components/LanguageSelector"
 import type { Dictionary } from '@/lib/getDictionary'
-import { sendGAEvent } from '@next/third-parties/google'
+import { trackCTAClick } from "@/lib/analytics"
 
 interface NavbarProps {
   dict: Dictionary
@@ -16,12 +16,12 @@ interface NavbarProps {
 }
 
 export default function Navbar({ dict, lang }: NavbarProps) {
+  const SHOW_PROJECTS = process.env.NEXT_PUBLIC_SHOW_PROJECTS === 'true'
   const [isVisible, setIsVisible] = useState(true)
   const lastScrollY = useRef(0)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [inProjectsSection, setInProjectsSection] = useState(false)
   const pathname = usePathname()
-  const router = useRouter()
 
   useEffect(() => {
     // Inicializar con el valor actual del scroll
@@ -194,36 +194,16 @@ export default function Navbar({ dict, lang }: NavbarProps) {
     }
   }
 
-  const handlePlaygroundClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-    e.preventDefault()
-    router.push("/playground")
-  }
-
   // 🎯 EVENTO GA4: Click en botón de contacto del navbar
   const handleContactClick = () => {
-    sendGAEvent('event', 'cta_click', {
-      event_category: 'engagement',
-      event_label: 'navbar_contact_button',
-      button_location: 'navbar'
-    })
+    trackCTAClick({ label: "navbar_contact_button", location: "navbar", lang })
   }
 
-  // 🎯 EVENTO GA4: Click en redes sociales del navbar
-  const handleSocialClick = (platform: string) => {
-    sendGAEvent('event', 'social_click', {
-      event_category: 'engagement',
-      event_label: platform,
-      platform: platform,
-      click_location: 'navbar'
-    })
-  }
-  
   const projectsLabel = lang === 'es' ? 'Proyectos' : 'Projects'
-  const playgroundLabel = lang === 'es' ? 'Playground' : 'Playground'
-  const isPlaygroundPage = pathname === "/playground" || pathname === `/${lang}/playground`
 
   return (
     <nav
+      suppressHydrationWarning
       role="navigation"
       aria-label="Navegación principal"
       className={`fixed top-0 left-0 right-0 w-full h-16 md:h-20 lg:h-24 z-[9999] flex items-center justify-between px-4 md:px-6 lg:px-10 bg-background border-b border-subtle/50 transition-transform duration-300 ${
@@ -249,7 +229,7 @@ export default function Navbar({ dict, lang }: NavbarProps) {
 
       <div className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
         <div className="flex items-center gap-6 lg:gap-10">
-          {false && (
+          {SHOW_PROJECTS && (
             <Link
               href={`/${lang}/#projects`}
               onClick={handleProjectsClick}
@@ -260,25 +240,13 @@ export default function Navbar({ dict, lang }: NavbarProps) {
               {projectsLabel}
             </Link>
           )}
-          {/* Playground oculto en desktop, se mantiene el código para uso futuro */}
-          {/*
-          <Link
-            href="/playground"
-            onClick={handlePlaygroundClick}
-            className={`text-sm md:text-base font-medium underline-offset-8 transition-colors cursor-pointer ${
-              isPlaygroundPage ? "text-light underline" : "text-light/50 hover:text-light"
-            }`}
-          >
-            {playgroundLabel}
-          </Link>
-          */}
         </div>
       </div>
 
       <div className="flex items-center gap-3 md:gap-4 relative z-10">
         {/* Proyectos solo en mobile, alineado a la derecha antes del menú */}
         <div className="md:hidden">
-          {false && (
+          {SHOW_PROJECTS && (
             <Link
               href={`/${lang}/#projects`}
               onClick={(e) => {
@@ -302,11 +270,7 @@ export default function Navbar({ dict, lang }: NavbarProps) {
           <Link
             href={`/${lang}/contact`}
             onClick={handleContactClick}
-            className="hidden md:flex items-center justify-center gap-3 w-[106px] px-4 py-1 min-h-touch rounded-full active:scale-100 transition-all duration-200 btn-primary group overflow-hidden relative cursor-pointer"
-            style={{
-              background: "linear-gradient(180deg, #BF5AF2 0%, rgb(90, 6, 146) 100%)",
-              boxShadow: "inset 0 1px 0 0 rgba(255, 255, 255, 0.2)",
-            }}
+            className="btn-cta-primary hidden md:flex items-center justify-center gap-3 min-w-[106px] w-auto px-4 py-1 min-h-touch rounded-full active:scale-100 transition-all duration-200 btn-primary group overflow-hidden relative cursor-pointer"
           >
             <span className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-full bg-gradient-to-b from-white/5 to-transparent" />
             <span className="pointer-events-none absolute inset-0 animate-btn-shine bg-gradient-to-r from-transparent via-white/5 to-transparent w-1/2" />
@@ -342,7 +306,7 @@ export default function Navbar({ dict, lang }: NavbarProps) {
         <button
           className="md:hidden min-w-touch min-h-touch p-2 text-light transition-transform duration-200 cursor-pointer flex items-center justify-center"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle menu"
+          aria-label={dict.navbar.menuToggle}
           aria-expanded={mobileMenuOpen}
           aria-controls="navbar-mobile-menu"
         >
@@ -358,23 +322,6 @@ export default function Navbar({ dict, lang }: NavbarProps) {
           <div className="flex flex-col px-4 py-3 space-y-4">
             {/* Fila inferior: solo idioma + contacto (Playground oculto en mobile) */}
             <div className="flex flex-row items-center gap-3 pt-1 w-full justify-end">
-              {/*
-              <div className="flex-1 flex justify-center">
-                <Link
-                  href="/playground"
-                  onClick={(e) => {
-                    handlePlaygroundClick(e)
-                    setMobileMenuOpen(false)
-                  }}
-                  className={`text-sm font-medium underline-offset-8 transition-colors cursor-pointer ${
-                    isPlaygroundPage ? "text-light underline" : "text-light/60 hover:text-light"
-                  }`}
-                >
-                  {playgroundLabel}
-                </Link>
-              </div>
-              */}
-
               <div className="flex flex-row items-center gap-3">
                 <div>
                   <LanguageSelector currentLang={lang} />
@@ -387,11 +334,7 @@ export default function Navbar({ dict, lang }: NavbarProps) {
                       handleContactClick()
                       setMobileMenuOpen(false)
                     }}
-                    className="flex items-center justify-center gap-3 w-[106px] px-4 py-1 min-h-touch rounded-full active:scale-100 transition-all duration-200 group overflow-hidden relative cursor-pointer"
-                    style={{
-                      background: "linear-gradient(180deg, #BF5AF2 0%, rgb(90, 6, 146) 100%)",
-                      boxShadow: "inset 0 1px 0 0 rgba(255, 255, 255, 0.2)",
-                    }}
+                    className="btn-cta-primary flex items-center justify-center gap-3 min-w-[106px] w-auto px-4 py-1 min-h-touch rounded-full active:scale-100 transition-all duration-200 group overflow-hidden relative cursor-pointer"
                   >
                     <span className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-full bg-gradient-to-b from-white/5 to-transparent" />
                     <span className="pointer-events-none absolute inset-0 animate-btn-shine bg-gradient-to-r from-transparent via-white/5 to-transparent w-1/2" />

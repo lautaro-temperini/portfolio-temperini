@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { sendGAEvent } from '@next/third-parties/google'
+import { trackProjectClick } from "@/lib/analytics"
 
 interface FeaturedProjectCardProps {
   project: {
@@ -16,12 +16,18 @@ interface FeaturedProjectCardProps {
   }
   dict: any
   lang: "es" | "en"
+  isAboveTheFold?: boolean
 }
 
 /**
  * FeaturedProjectCard - Card destacada full-width
  */
-export default function FeaturedProjectCard({ project, dict, lang }: FeaturedProjectCardProps) {
+export default function FeaturedProjectCard({
+  project,
+  dict,
+  lang,
+  isAboveTheFold = false,
+}: FeaturedProjectCardProps) {
   const projectData = dict?.projects?.items?.[project.slug]
   const title = projectData?.title || project.title
   const subtitle = projectData?.subtitle || project.subtitle
@@ -29,13 +35,7 @@ export default function FeaturedProjectCard({ project, dict, lang }: FeaturedPro
 
   // 🎯 EVENTO GA4: Click en proyecto
   const handleProjectClick = () => {
-    sendGAEvent('event', 'project_click', {
-      event_category: 'engagement',
-      event_label: title,
-      project_name: title,
-      project_slug: project.slug,
-      click_location: 'home_grid'
-    })
+    trackProjectClick({ slug: project.slug, title, location: "featured", lang })
   }
 
   return (
@@ -49,7 +49,7 @@ export default function FeaturedProjectCard({ project, dict, lang }: FeaturedPro
             fill
             sizes="100vw"
             className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-            priority
+            priority={isAboveTheFold}
           />
         </div>
 
@@ -78,6 +78,7 @@ export default function FeaturedProjectCard({ project, dict, lang }: FeaturedPro
                 src={project.image || "/images/projects/placeholder-logo.png"}
                 alt={`${title} logo`}
                 fill
+                sizes="(max-width: 768px) 64px, (max-width: 1024px) 80px, 96px"
                 className="object-contain drop-shadow-2xl"
               />
             </div>
@@ -94,7 +95,7 @@ export default function FeaturedProjectCard({ project, dict, lang }: FeaturedPro
 
         {/* Featured Badge */}
         <div className="absolute top-6 right-6 md:top-8 md:right-8">
-          <span className="px-3 py-1.5 text-xs font-semibold rounded-full bg-[#8900C3] text-white">Featured</span>
+          <span className="px-3 py-1.5 text-xs font-semibold rounded-full bg-primary text-white">Featured</span>
         </div>
       </div>
     </Link>

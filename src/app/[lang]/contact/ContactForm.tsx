@@ -6,7 +6,7 @@
 
 import React, { useState, FormEvent } from "react"
 import type { Dictionary } from '@/lib/dictionary-types'
-import { sendGAEvent } from '@next/third-parties/google'
+import { trackFormEvent } from "@/lib/analytics"
 
 // ============================================================================
 // TIPOS E INTERFACES
@@ -63,6 +63,11 @@ interface ApiResponse {
  * @returns Componente JSX del formulario
  */
 const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
+  const lang =
+    typeof document !== "undefined" && (document.documentElement.lang === "es" || document.documentElement.lang === "en")
+      ? document.documentElement.lang
+      : "es"
+
   // ============================================================================
   // ESTADOS
   // ============================================================================
@@ -214,6 +219,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
    */
   const handleFormSubmit = async (event: FormEvent) => {
     event.preventDefault()
+    trackFormEvent({ status: "submit", lang })
 
     // Validar formulario
     if (!validateForm()) {
@@ -255,13 +261,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
             ? dict.contact.form.success.replace('{name}', formData.name.trim().split(" ")[0])
             : dict.contact.form.successGeneric
         )
-        
- // 🎯 EVENTO GA4: Formulario enviado exitosamente
- sendGAEvent('event', 'contact_form_submit', {
-  event_category: 'conversion',
-  event_label: 'success',
-  value: 1
-})
+        trackFormEvent({ status: "success", lang })
 
         // Limpiar formulario después de 500ms para mejor UX
         setTimeout(() => {
@@ -271,14 +271,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
         // Error: mostrar mensaje de error
         setFormStatus('error')
         setStatusMessage(data.error || dict.contact.form.errors?.generic || 'Hubo un error al enviar el mensaje.')
+        trackFormEvent({ status: "error", lang })
       }
-
-        // 📊 EVENTO GA4: Error en formulario
-        sendGAEvent('event', 'contact_form_error', {
-          event_category: 'error',
-          event_label: 'submission_failed',
-          error_message: data.error || 'unknown_error'
-        })
 
     } catch (error) {
       // Error de red o inesperado
@@ -288,12 +282,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
         dict.contact.form.errors?.network || 
         'Error de conexión. Por favor, verifica tu conexión a internet e intenta nuevamente.'
       )
-
-      // 📊 EVENTO GA4: Error de red
-      sendGAEvent('event', 'contact_form_error', {
-        event_category: 'error',
-        event_label: 'network_error'
-      })
+      trackFormEvent({ status: "error", lang })
 
     }
   }
@@ -334,7 +323,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
           className={`mt-1 block w-full min-h-touch px-3 py-2.5 rounded-lg border bg-[#181818] text-light placeholder-secondary shadow-sm transition-colors
             ${isFormDisabled 
               ? 'border-subtle opacity-60 cursor-not-allowed' 
-              : 'border-subtle  focus-visible:-visible:-visible::border-[#9D00E0] focus-visible:-visible:-visible::ring-0 focus-visible:-visible:-visible::ring-offset-0'
+              : 'border-subtle focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#9D00E0]'
             }
           `}
         />
@@ -363,7 +352,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
           className={`mt-1 block w-full min-h-touch px-3 py-2.5 rounded-lg border bg-[#181818] text-light placeholder-secondary shadow-sm transition-colors
             ${isFormDisabled 
               ? 'border-subtle opacity-60 cursor-not-allowed' 
-              : 'border-subtle focus-visible:-visible:-visible::border-[#9D00E0] focus-visible:-visible:-visible::ring-0 focus-visible:-visible:-visible::ring-offset-0'
+              : 'border-subtle focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#9D00E0]'
             }
           `}
         />
@@ -404,7 +393,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
     ${
       isFormDisabled
         ? 'border-subtle opacity-60 cursor-not-allowed'
-        : 'border-subtle focus-visible:-visible:-visible::border-[#9D00E0] focus-visible:-visible:-visible::ring-0 focus-visible:-visible:-visible::ring-offset-0'
+        : 'border-subtle focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#9D00E0]'
     }
   `}
  />
@@ -419,6 +408,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
         type="submit"
         disabled={isFormDisabled}
         className={`btn-primary flex items-center justify-center w-full min-h-touch h-10 rounded-full px-6 transition-all duration-200 group
+          focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#9D00E0]
           ${isFormDisabled 
             ? 'bg-[#333] cursor-not-allowed opacity-70' 
             : 'bg-gradient-to-r from-[#F2F2F2] via-[#F2F2F2] to-[#9D00E0] shadow-[0px_4px_25px_rgba(115,0,165,0.25)] hover:shadow-[0px_6px_30px_rgba(115,0,165,0.4)] cursor-pointer'

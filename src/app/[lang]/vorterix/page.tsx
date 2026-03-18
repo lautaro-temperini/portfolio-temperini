@@ -242,7 +242,7 @@ export default async function VorterixLandingPage({
             <section className="w-full px-8 md:px-12 lg:px-20 mb-28">
               <GridContainer cols={{ default: 1, md: 2 }} gap="md" className="!px-0">
                 <Block colSpan={1}>
-                  <div className="w-full aspect-[4/3] rounded-lg overflow-hidden bg-[#F2F2F2]">
+                  <div className="w-full aspect-[4/3] rounded-lg overflow-hidden bg-light">
                     <Image
                       src="/images/vorterixImages/VorterixColors.webp"
                       alt={lang === "es" ? "Paleta de colores del proyecto Vorterix Paren la Mano" : "Vorterix Paren la Mano project color palette"}
@@ -254,7 +254,7 @@ export default async function VorterixLandingPage({
                   </div>
                 </Block>
                 <Block colSpan={1} className="hidden md:block">
-                  <div className="w-full aspect-[4/3] rounded-lg overflow-hidden bg-[#F2F2F2]">
+                  <div className="w-full aspect-[4/3] rounded-lg overflow-hidden bg-light">
                     <Image
                       src="/images/vorterixImages/VorterixFont.webp"
                       alt={lang === "es" ? "Tipografía y jerarquía visual del proyecto Vorterix" : "Vorterix project typography and visual hierarchy"}

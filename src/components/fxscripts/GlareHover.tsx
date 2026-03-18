@@ -140,7 +140,6 @@ const GlareHover: React.FC<GlareHoverProps> = ({
       style={style}
       onMouseEnter={animateGlareIn}
       onMouseLeave={animateGlareOut}
-      aria-hidden="true"
     >
       <div ref={glareOverlayRef} style={glareOverlayStyles} aria-hidden="true" />
 

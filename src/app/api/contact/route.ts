@@ -374,8 +374,6 @@ Enviado desde tu portfolio — temperini.vercel.app
     }
 
     // ==================== RESPUESTA EXITOSA ====================
-    console.log('Email enviado exitosamente:', data?.id)
-    
     return NextResponse.json(
       {
         success: true,

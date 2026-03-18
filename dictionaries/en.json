@@ -9,6 +9,9 @@
       "playground": "Playground",
       "connect": "Contact"
     },
+    "navbar": {
+      "menuToggle": "Toggle menu"
+    },
     "projects": {
       "title": "From idea to action",
       "description": "Projects where I build robust digital solutions.",
@@ -81,7 +84,31 @@
       "text2": "I enjoy playing the game, but what really drives me is understanding how the board is built.",
       "text3": "I'm looking for a place that challenges me, with a team that values substance over noise.",
       "cta": "Let's talk",
-      "ctaLink": "/contact"
+      "ctaLink": "/contact",
+      "page": {
+        "title": "About Lautaro R. Temperini — Product Designer [TODO: translate]",
+        "intro": "I'm Lautaro R. Temperini, a Product Designer based in Buenos Aires, Argentina. I specialize in end-to-end product design: research, prototyping, and front-end development. My approach combines strategic thinking, functional design, and technical execution to turn complex problems into interfaces people understand. [TODO: translate]",
+        "exp_title": "Experience and Focus [TODO: translate]",
+        "exp_content": "I work at the intersection of design, code, and product strategy. My expertise spans UX research, UI design, functional prototyping, and front-end development using tools like Figma, React, Next.js, Tailwind CSS, and Webflow. I've worked on projects ranging from B2B SaaS operations modules and mobile app redesigns to strategic landing pages and phygital interactive experiences. [TODO: translate]",
+        "exp_content2": "My process covers the full cycle: user research, problem definition, solution design, and iterative validation. I prioritize clarity, intention, and coherence between design decisions and product goals. [TODO: translate]",
+        "method_title": "Methodology [TODO: translate]",
+        "method_intro": "I approach design as a strategic process, not a cosmetic result. My work integrates: [TODO: translate]",
+        "method_list": [
+          "User Research and heuristic analysis [TODO: translate]",
+          "Design Systems and scalable UI architecture [TODO: translate]",
+          "Functional prototyping in Figma and code [TODO: translate]",
+          "Front-end development with React, Next.js, and Three.js [TODO: translate]",
+          "Workflow design for complex B2B tools [TODO: translate]",
+          "AI integration in digital products [TODO: translate]"
+        ],
+        "method_footer": "I design with technical constraints in mind, which allows me to create solutions that are not only visually solid but also feasible and efficient to implement. [TODO: translate]",
+        "interests_title": "Interests and Direction [TODO: translate]",
+        "interests_content": "I'm particularly interested in designing digital products for sectors like Fintech, Healthtech, B2B SaaS, and Web3, where technical complexity demands clear and effective solutions. I'm looking to collaborate with teams that understand design as a business tool and value methodological rigor as much as visual execution. [TODO: translate]",
+        "interests_content2": "Currently, I'm exploring AI integration in design workflows, 3D web development with Three.js, Web3 experience design, and backend systems to expand my ability to build end-to-end products. [TODO: translate]",
+        "contact_title": "Contact [TODO: translate]",
+        "contact_content": "If you have a project or challenge in mind, let's connect. I'm looking for my first opportunity at product agencies, digital design studios, and freelance projects that prioritize quality, strategy, and technical depth. [TODO: translate]",
+        "back": "Back to portfolio [TODO: translate]"
+      }
     },
     "contact": {
       "title": "Get in touch",

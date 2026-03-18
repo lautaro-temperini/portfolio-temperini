@@ -145,8 +145,6 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
     <div
       ref={cardRef}
       onMouseMove={handleMouseMove}
-      onFocus={handleFocus}
-      onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className={`relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md shadow-lg overflow-hidden p-8 ${className}`}
@@ -167,7 +165,7 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
         }}
       />
       
-      {/* Contenido de la tarjeta */}
+      {/* El spotlight es un efecto decorativo: el foco debe quedar en los elementos interactivos hijos. */}
       {children}
     </div>
   )

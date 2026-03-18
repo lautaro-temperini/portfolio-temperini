@@ -295,7 +295,7 @@ export default async function DigitoPage({
   }
   width={1376}
   height={768}
-  className="bg-[#F2F2F2]"
+  className="bg-light"
   imageClassName="object-cover object-center" 
   caption={
     lang === "es"
@@ -496,6 +496,39 @@ export default async function DigitoPage({
           </section>
             </FadeOnScroll>
 
+          {/* ==================== PRINCIPIOS DE DISEÑO (MOBILE) ==================== */}
+          <FadeOnScroll>
+            <section className="w-full px-8 md:px-12 lg:px-20 mb-28 block md:hidden">
+              <h2 className="text-3xl font-bold text-light mb-6">{t.principles.title}</h2>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {Object.values(t.principles.items || {}).map((item: any, index: number) => (
+                  <div
+                    key={index}
+                    className="bg-container/80 rounded-lg p-5 border border-container-light/10"
+                    style={{
+                      boxShadow:
+                        "0 0 0 1px rgba(255, 255, 255, 0.06), 0 4px 12px rgba(0, 0, 0, 0.5)",
+                    }}
+                  >
+                    <h3 className="text-base font-semibold text-light mb-2">{item.title}</h3>
+                    <p className="text-sm text-light/80 leading-relaxed">{item.text}</p>
+                  </div>
+                ))}
+
+                <div
+                  className="bg-container/80 rounded-lg p-5 border border-container-light/10 sm:col-span-2"
+                  style={{
+                    boxShadow:
+                      "0 0 0 1px rgba(255, 255, 255, 0.06), 0 4px 12px rgba(0, 0, 0, 0.5)",
+                  }}
+                >
+                  <h3 className="text-base font-semibold text-light">{t.principles.guidingPrinciple}</h3>
+                </div>
+              </div>
+            </section>
+          </FadeOnScroll>
+
           {/* ==================== 11. LOS 5 INSIGHTS EN BENTOGRID ==================== */}
             <FadeOnScroll delay={80}>
             <section id="fricciones" className="w-full px-8 md:px-12 lg:px-20 mb-20">
@@ -661,7 +694,7 @@ export default async function DigitoPage({
             width={1920}
             height={1080}
             border={false}
-            className="bg-[#F2F2F2]"
+            className="bg-light"
             imageClassName="object-cover object-top"
             caption={t.mvpOriginalImageCaption}
             figureClassName="mb-8 md:mb-28"
@@ -763,7 +796,7 @@ export default async function DigitoPage({
                       width={1920}
                       height={1080}
                       border={false}
-                      className="bg-[#F2F2F2]"
+                      className="bg-light"
                       imageClassName="image-swing-dashboard"
                     />
                   </div>
@@ -777,7 +810,7 @@ export default async function DigitoPage({
                     width={1920}
                     height={1080}
                     border={false}
-                    className="bg-[#F2F2F2]"
+                    className="bg-light"
                     imageClassName="image-swing-dashboard"
                   />
                 </div>
@@ -1010,7 +1043,7 @@ export default async function DigitoPage({
 {/* ==================== 20. EVOLUCIÓN DEL DISEÑO - MVP → Wireframe → HiFi ==================== */}
 <FadeOnScroll delay={80}>
   <section className="w-full px-8 md:px-12 lg:px-20 mb-28">
-    <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-[#0D0D0D]">
+    <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-background">
       <Image
         src="/images/digitoImages/comparativa-mvp-wireframe-hifi.webp"
         alt="Evolución del diseño: MVP original, wireframe de baja fidelidad y prototipo de alta fidelidad"

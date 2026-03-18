@@ -9,6 +9,9 @@
     "playground": "Playground",
     "connect": "Contacto"
   },
+  "navbar": {
+    "menuToggle": "Abrir menú"
+  },
   "projects": {
     "title": "De la idea a la acción",
     "description": "Proyectos donde construyo soluciones digitales robustas.",
@@ -81,7 +84,31 @@
     "text2": "Me entusiasma jugar el juego, pero sobre todo entender cómo está construido el tablero.",
     "text3": "Busco trabajar en un lugar que me desafíe, con un equipo que priorice criterio sobre humo.",
     "cta": "Hablemos",
-    "ctaLink": "/contact"
+    "ctaLink": "/contact",
+    "page": {
+      "title": "Sobre Lautaro R. Temperini — Product Designer",
+      "intro": "Soy Lautaro R. Temperini, Product Designer con base en Buenos Aires, Argentina. Me especializo en diseño de producto end-to-end: research, prototipado y desarrollo front-end. Mi enfoque combina pensamiento estratégico, diseño funcional y ejecución técnica para transformar problemas complejos en interfaces que las personas entienden.",
+      "exp_title": "Experiencia y Especialización",
+      "exp_content": "Trabajo en la intersección entre diseño, código y estrategia de producto. Mi expertise abarca UX research, diseño de UI, prototipado funcional y desarrollo front-end con herramientas como Figma, React, Next.js, Tailwind CSS y Webflow. He desarrollado proyectos que van desde módulos operativos B2B SaaS y rediseños de apps móviles hasta landing pages estratégicas y experiencias interactivas físico-digitales.",
+      "exp_content2": "Mi proceso cubre el ciclo completo: investigación de usuarios, definición del problema, diseño de soluciones y validación iterativa. Priorizo la claridad, la intención y la coherencia entre las decisiones de diseño y los objetivos del producto.",
+      "method_title": "Metodología de Trabajo",
+      "method_intro": "Concibo el diseño como un proceso estratégico, no como un resultado cosmético. Mi trabajo integra:",
+      "method_list": [
+        "User Research y análisis heurístico",
+        "Design Systems y arquitectura de UI escalable",
+        "Prototipado funcional en Figma y código",
+        "Desarrollo front-end con React, Next.js y Three.js",
+        "Diseño de workflows para herramientas B2B complejas",
+        "Integración de IA en productos digitales"
+      ],
+      "method_footer": "Diseño considerando constraints técnicas, lo que me permite crear soluciones que no solo son visualmente sólidas sino también factibles y eficientes de implementar.",
+      "interests_title": "Intereses y Proyección",
+      "interests_content": "Me interesa especialmente el diseño de productos digitales en sectores como Fintech, Healthtech, B2B SaaS y Web3, donde la complejidad técnica requiere soluciones claras y efectivas. Busco colaborar con equipos que entienden el diseño como herramienta de negocio y valoran el rigor metodológico tanto como la ejecución visual.",
+      "interests_content2": "Actualmente exploro la integración de IA en workflows de diseño, desarrollo web 3D con Three.js, diseño de experiencias Web3 y sistemas backend para ampliar mi capacidad de crear productos end-to-end.",
+      "contact_title": "Contacto",
+      "contact_content": "Si tenés un proyecto o desafío en mente, conectemos. Estoy buscando mi primera oportunidad en agencias de producto, estudios de diseño digital y proyectos freelance que prioricen calidad estratégica, criterio y profundidad técnica.",
+      "back": "Volver al portfolio"
+    }
   },
   "contact": {
     "title": "Hablemos",

@@ -4,14 +4,12 @@
 import type React from "react"
 import { Manrope } from "next/font/google"
 import localFont from "next/font/local"
-import { preloadDictionary } from '@/lib/getDictionary'
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { headers } from 'next/headers'
 import VercelAnalyticsLoader from '@/components/analytics/VercelAnalyticsLoader'
 import "../styles/globals.css"
 
-preloadDictionary('es')
-preloadDictionary('en')
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://temperini.vercel.app'
 
 const manrope = Manrope({
   subsets: ["latin", "latin-ext"],
@@ -44,14 +42,14 @@ export const metadata = {
   keywords: "diseño multimedia, UX/UI, desarrollo web, experiencias digitales, diseño interactivo",
   authors: [{ name: "Lautaro R. Temperini" }],
   creator: "Lautaro R. Temperini",
-  metadataBase: new URL('https://temperini.vercel.app'),
+  metadataBase: new URL(SITE_URL),
   other: {
     "google-site-verification": "D3RvMWTjZPYnfxRHFO_0n2hETBVHXaKKNT9hbQlN0D8"
   },
   openGraph: {
     title: "Lautaro R. Temperini - Diseñador Multimedia",
     description: "Transformo ideas en experiencias digitales reales.",
-    url: "https://temperini.dev",
+    url: SITE_URL,
     siteName: "Temperini Portfolio",
     locale: "es_AR",
     type: "website",
@@ -75,13 +73,11 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  // Idioma por defecto: español
-  // El idioma se maneja vía middleware y los params de cada página
-  const validLang = 'es'
-  
   // Obtener nonce del header para CSP
   const headersList = await headers()
   const nonce = headersList.get('x-nonce') || ''
+  const localeHeader = headersList.get('x-locale')
+  const validLang = localeHeader === 'en' || localeHeader === 'es' ? localeHeader : 'es'
 
   // JSON-LD con @graph para Person + WebPage
   const jsonLdGraph = validLang === 'es' ? {
@@ -131,7 +127,7 @@ export default async function RootLayout({
         "@type": "WebPage",
         "@id": "https://temperini.vercel.app",
         "name": "Lautaro R. Temperini - Diseñador Multimedia",
-        "inLanguage": "es"
+        "inLanguage": validLang
       }
     ]
   } : {
@@ -181,7 +177,7 @@ export default async function RootLayout({
         "@type": "WebPage",
         "@id": "https://temperini.vercel.app",
         "name": "Lautaro R. Temperini - Multimedia Designer",
-        "inLanguage": "en"
+        "inLanguage": validLang
       }
     ]
   }
@@ -192,6 +188,7 @@ export default async function RootLayout({
       className={`${manrope.variable} ${neueHaas.variable}`}
       style={{ backgroundColor: '#0D0D0D' }}
       data-scroll-behavior="smooth"
+      suppressHydrationWarning
     >
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
@@ -222,6 +219,7 @@ export default async function RootLayout({
       </head>
 
       <body
+        suppressHydrationWarning
         className="text-white antialiased"
         style={{
           background: "conic-gradient(from 203.7deg at 63.78% 39.65%, #0D0D0D 0deg, #0D0D0D 114.23deg, #666973 238.85deg, #0D0D0D 360deg)",
@@ -235,7 +233,7 @@ export default async function RootLayout({
         <VercelAnalyticsLoader />
         
         {/* Google Analytics - Ya optimizado por @next/third-parties/google con lazy loading */}
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID!} />
+        {process.env.NEXT_PUBLIC_GA_ID && <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />}
       </body>
     </html>
   )

@@ -133,8 +133,8 @@ function generateNonce(): string {
 function generarHeadersCSP(nonce: string) {
   const cspHeader = [
     "default-src 'self'",
-    `script-src 'self' 'unsafe-inline' 'unsafe-eval' https://vercel.live https://vercel.com https://*.vercel-analytics.com https://*.vercel-insights.com https://va.vercel-scripts.com https://www.googletagmanager.com https://www.google-analytics.com`,
-    `style-src 'self' 'unsafe-inline'`,
+    `script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https://vercel.live https://vercel.com https://*.vercel-analytics.com https://*.vercel-insights.com https://va.vercel-scripts.com https://www.googletagmanager.com https://www.google-analytics.com`,
+    `style-src 'self'`,
     "img-src 'self' data: blob: https:",
     "font-src 'self' data:",
     "connect-src 'self' https://*.vercel-analytics.com https://*.vercel-insights.com https://vitals.vercel-insights.com https://api.resend.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com",
@@ -195,11 +195,13 @@ export function middleware(request: NextRequest) {
     const idioma = detectarIdioma(request)
     const nuevaUrl = new URL(`/${idioma}${pathname}`, request.url)
     
-    console.log('[Middleware] Redirigiendo ruta sin idioma:', {
-      pathname,
-      idioma,
-      destino: nuevaUrl.pathname
-    })
+    if (process.env.NODE_ENV !== 'production') {
+      console.log('[Middleware] Redirigiendo ruta sin idioma:', {
+        pathname,
+        idioma,
+        destino: nuevaUrl.pathname,
+      })
+    }
     
     const response = NextResponse.redirect(nuevaUrl, 307)
     response.cookies.set('NEXT_LOCALE', idioma, {
@@ -287,12 +289,14 @@ export function middleware(request: NextRequest) {
   const idiomaDetectado = detectarIdioma(request)
   const nuevaRuta = construirRutaConIdioma(pathname, idiomaDetectado)
   
-  console.log('[Middleware] Ruta sin idioma:', {
-    pathname,
-    idiomaDetectado,
-    nuevaRuta,
-    cookie: request.cookies.get('NEXT_LOCALE')?.value,
-  })
+  if (process.env.NODE_ENV !== 'production') {
+    console.log('[Middleware] Ruta sin idioma:', {
+      pathname,
+      idiomaDetectado,
+      nuevaRuta,
+      cookie: request.cookies.get('NEXT_LOCALE')?.value,
+    })
+  }
   
   // Verificar si está bloqueada ANTES de redirigir
   const rutaBloqueada = RUTAS_BLOQUEADAS.some(ruta => pathname.startsWith(ruta))

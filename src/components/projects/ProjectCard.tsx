@@ -1,8 +1,8 @@
 import Link from "next/link"
 import OptimizedImage from "../optimized-image"
-import GlareHover from '../fxscripts/GlareHover'
-import type { Dictionary } from '@/lib/getDictionary'
-import { sendGAEvent } from '@next/third-parties/google'
+import GlareHover from "../fxscripts/GlareHover"
+import type { Dictionary } from "@/lib/getDictionary"
+import { trackProjectClick } from "@/lib/analytics"
 
 /**
  * Props del componente ProjectCard
@@ -12,7 +12,7 @@ interface ProjectCardProps {
   slug: string
   className?: string
   dict: Dictionary
-  lang: 'es' | 'en'
+  lang: "es" | "en"
 }
 
 /**
@@ -28,7 +28,7 @@ export default function ProjectCard({
 }: ProjectCardProps) {
   // Obtener los datos del proyecto desde el diccionario usando el slug
   const projectData = dict.projects.items[slug as keyof typeof dict.projects.items]
-  
+
   // Si no existe el proyecto en el diccionario, usar valores por defecto o retornar null
   if (!projectData) {
     return null
@@ -37,20 +37,18 @@ export default function ProjectCard({
   // Extraer tags del objeto de tags del diccionario
   const tags = Object.values(projectData.tags)
 
- // 🎯 EVENTO GA4: Click en proyecto
- const handleProjectClick = () => {
-  sendGAEvent('event', 'project_click', {
-    event_category: 'engagement',
-    event_label: projectData.title,
-    project_name: projectData.title,
-    project_slug: slug,
-    click_location: 'home_grid'
-  })
-}
+  // 🎯 EVENTO GA4: Click en proyecto
+  const handleProjectClick = () => {
+    trackProjectClick({ slug, title: projectData.title, location: "card", lang })
+  }
 
   return (
     <div className={`w-full ${className}`}>
-      <Link href={`/${lang}/${slug}`} className="block relative w-full group cursor-pointer">
+      <Link
+        href={`/${lang}/${slug}`}
+        className="block relative w-full group cursor-pointer"
+        onClick={handleProjectClick}
+      >
         <GlareHover
           className="group bg-background border border-[#9C96A4] rounded-2xl transition-all duration-300 hover:border-primary hover:shadow-[0px_8px_35px_rgba(115,0,165,0.18)] hover:scale-[1.005] cursor-pointer"
           glareColor="#f2f2f2"
@@ -59,14 +57,22 @@ export default function ProjectCard({
           glareSize={200}
           transitionDuration={700}
           playOnce={true}
-          style={{ borderRadius: '1rem', boxShadow: undefined }}
+          style={{ borderRadius: "1rem", boxShadow: undefined }}
         >
           <div className="p-6">
             {/* Mobile Layout */}
             <div className="flex flex-row items-center md:hidden gap-4">
               {/* Project Image */}
-              <div className="w-16 h-16 flex-shrink-0 drop-shadow-xs relative" style={{ filter: 'drop-shadow(0px 4px 12px rgba(115,0,165,0.10))' }}>
-                <OptimizedImage src={image} alt={projectData.title} className="rounded-full object-cover" useFill={true} />
+              <div
+                className="w-16 h-16 flex-shrink-0 drop-shadow-xs relative"
+                style={{ filter: "drop-shadow(0px 4px 12px rgba(115,0,165,0.10))" }}
+              >
+                <OptimizedImage
+                  src={image}
+                  alt={projectData.title}
+                  className="rounded-full object-cover"
+                  useFill={true}
+                />
               </div>
 
               {/* Project Info */}
@@ -79,17 +85,18 @@ export default function ProjectCard({
                 </h3>
                 <p
                   className="fluid-text-lg font-normal leading-tight mb-1"
-                  style={{ fontFamily: "var(--font-inter)", color: '#A6A6A6' }}
+                  style={{ fontFamily: "var(--font-inter)", color: "#A6A6A6" }}
                 >
                   {projectData.subtitle}
                 </p>
                 <p
                   className="fluid-text-base font-normal"
-                  style={{ fontFamily: "var(--font-inter)", color: '#595959' }}
+                  style={{ fontFamily: "var(--font-inter)", color: "#595959" }}
                 >
                   {projectData.description}
                 </p>
               </div>
+
               {/* Arrow for mobile */}
               <div className="flex items-center justify-center w-10 h-10 flex-shrink-0 ml-2">
                 <span
@@ -112,7 +119,12 @@ export default function ProjectCard({
             <div className="hidden md:flex items-center gap-6 lg:gap-8">
               {/* Project Image */}
               <div className="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 xl:w-48 xl:h-48 flex-shrink-0 mt-4 relative">
-                <OptimizedImage src={image} alt={projectData.title} className="rounded-full object-cover" useFill={true} />
+                <OptimizedImage
+                  src={image}
+                  alt={projectData.title}
+                  className="rounded-full object-cover"
+                  useFill={true}
+                />
               </div>
 
               {/* Project Info */}
@@ -142,39 +154,41 @@ export default function ProjectCard({
                   {tags.slice(0, 3).map((tag, index) => (
                     <div
                       key={index}
-                      className="hidden sm:flex lg:hidden items-center justify-center px-3 py-0.5 md:px-4 md:py-1 border border-[#595959] rounded-full flex-shrink-0"
+                      className="hidden sm:flex lg:hidden items-center justify-center px-3 py-0.5 md:px-4 md:py-1 border border-secondary rounded-full flex-shrink-0"
                     >
                       <span
                         className="fluid-text-xs md:fluid-text-sm font-semibold whitespace-nowrap transition-colors"
-                        style={{ fontFamily: "var(--font-inter)", color: '#595959' }}
+                        style={{ fontFamily: "var(--font-inter)", color: "#595959" }}
                       >
                         {tag}
                       </span>
                     </div>
                   ))}
+
                   {/* Entre 1024 y 1280px (lg) muestra 4 tags */}
                   {tags.slice(0, 4).map((tag, index) => (
                     <div
                       key={index}
-                      className="hidden lg:flex xl:hidden items-center justify-center px-3 py-1 lg:px-4 lg:py-2 border border-[#595959] rounded-full flex-shrink-0"
+                      className="hidden lg:flex xl:hidden items-center justify-center px-3 py-1 lg:px-4 lg:py-2 border border-secondary rounded-full flex-shrink-0"
                     >
                       <span
                         className="fluid-text-xs md:fluid-text-sm font-semibold whitespace-nowrap transition-colors"
-                        style={{ fontFamily: "var(--font-inter)", color: '#595959' }}
+                        style={{ fontFamily: "var(--font-inter)", color: "#595959" }}
                       >
                         {tag}
                       </span>
                     </div>
                   ))}
+
                   {/* Arriba de 1280px (xl) muestra 5 tags */}
                   {tags.slice(0, 5).map((tag, index) => (
                     <div
                       key={index}
-                      className="hidden xl:flex items-center justify-center px-3 py-0.5 xl:px-4 xl:py-1 border border-[#595959] rounded-full flex-shrink-0"
+                      className="hidden xl:flex items-center justify-center px-3 py-0.5 xl:px-4 xl:py-1 border border-secondary rounded-full flex-shrink-0"
                     >
                       <span
                         className="fluid-text-xs md:fluid-text-sm font-semibold whitespace-nowrap transition-colors"
-                        style={{ fontFamily: "var(--font-inter)", color: '#595959' }}
+                        style={{ fontFamily: "var(--font-inter)", color: "#595959" }}
                       >
                         {tag}
                       </span>
@@ -206,3 +220,4 @@ export default function ProjectCard({
     </div>
   )
 }
+
