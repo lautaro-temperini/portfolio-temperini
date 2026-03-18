@@ -1,16 +1,12 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+import next from "@next/eslint-plugin-next"
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+/** @type {import("eslint").Linter.FlatConfig[]} */
+export default [
+  // Next.js recommended rules (flat config)
+  next.configs.recommended,
+  next.configs["core-web-vitals"],
 
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
-
-const eslintConfig = [
-  ...compat.extends("next", "next/core-web-vitals"),
+  // Project ignores (replacement for .eslintignore)
   {
     ignores: [
       "src/components/LanguageToggle.tsx",
@@ -18,17 +14,18 @@ const eslintConfig = [
       "src/components/2 Hero/**",
       "src/components/3 Projects/**",
       "src/components/5 Footer/**",
-      ".next/",
-      "node_modules/",
-      "dist/",
-      "build/",
+      ".next/**",
+      "node_modules/**",
+      "dist/**",
+      "build/**",
     ],
   },
+
+  // Local rule tweaks
   {
     rules: {
       "react/no-unescaped-entities": "off",
     },
   },
-];
+]
 
-export default eslintConfig;
