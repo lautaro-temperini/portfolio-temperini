@@ -124,7 +124,7 @@ export default function ClientComponent({ dict }: { dict: any }) {
       "name": "Nombre",
       "email": "Email",
       "message": "Mensaje",
-      "submit": "Enviar 🚀",
+      "submit": "Enviar",
       "success": "Excelente, {name}! Mensaje enviado."
     }
   }

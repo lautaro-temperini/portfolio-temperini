@@ -89,7 +89,7 @@
       "name": "Nombre",
       "email": "Email",
       "message": "Mensaje",
-      "submit": "Enviar 🚀",
+      "submit": "Enviar",
       "sending": "Enviando...",
       "sent": "¡Enviado!",
       "success": "¡Excelente, {name}! Mensaje enviado.",

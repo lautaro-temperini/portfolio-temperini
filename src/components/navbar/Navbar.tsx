@@ -302,7 +302,7 @@ export default function Navbar({ dict, lang }: NavbarProps) {
           <Link
             href={`/${lang}/contact`}
             onClick={handleContactClick}
-            className="hidden md:flex items-center justify-center gap-3 px-4 py-1 min-h-touch rounded-full active:scale-100 transition-all duration-200 btn-primary group overflow-hidden relative cursor-pointer"
+            className="hidden md:flex items-center justify-center gap-3 w-[106px] px-4 py-1 min-h-touch rounded-full active:scale-100 transition-all duration-200 btn-primary group overflow-hidden relative cursor-pointer"
             style={{
               background: "linear-gradient(180deg, #BF5AF2 0%, rgb(90, 6, 146) 100%)",
               boxShadow: "inset 0 1px 0 0 rgba(255, 255, 255, 0.2)",
@@ -310,7 +310,7 @@ export default function Navbar({ dict, lang }: NavbarProps) {
           >
             <span className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-full bg-gradient-to-b from-white/5 to-transparent" />
             <span className="pointer-events-none absolute inset-0 animate-btn-shine bg-gradient-to-r from-transparent via-white/5 to-transparent w-1/2" />
-            <span className="relative z-10 text-base font-bold text-white/75 group-hover:text-white transition-colors duration-200 whitespace-nowrap" style={{ fontFamily: "var(--font-manrope)" }}>
+            <span className="relative z-10 text-sm font-semibold text-white/75 group-hover:text-white transition-colors duration-200 whitespace-nowrap" style={{ fontFamily: "var(--font-manrope)" }}>
               {dict.nav.connect}
             </span>
           </Link>
@@ -387,7 +387,7 @@ export default function Navbar({ dict, lang }: NavbarProps) {
                       handleContactClick()
                       setMobileMenuOpen(false)
                     }}
-                    className="flex items-center justify-center gap-3 px-4 py-1 min-h-touch rounded-full active:scale-100 transition-all duration-200 group overflow-hidden relative cursor-pointer"
+                    className="flex items-center justify-center gap-3 w-[106px] px-4 py-1 min-h-touch rounded-full active:scale-100 transition-all duration-200 group overflow-hidden relative cursor-pointer"
                     style={{
                       background: "linear-gradient(180deg, #BF5AF2 0%, rgb(90, 6, 146) 100%)",
                       boxShadow: "inset 0 1px 0 0 rgba(255, 255, 255, 0.2)",
@@ -395,7 +395,7 @@ export default function Navbar({ dict, lang }: NavbarProps) {
                   >
                     <span className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-full bg-gradient-to-b from-white/5 to-transparent" />
                     <span className="pointer-events-none absolute inset-0 animate-btn-shine bg-gradient-to-r from-transparent via-white/5 to-transparent w-1/2" />
-                    <span className="relative z-10 fluid-text-base font-bold text-white/75 group-hover:text-white transition-colors duration-200 whitespace-nowrap" style={{ fontFamily: "var(--font-manrope)" }}>
+                    <span className="relative z-10 text-sm font-semibold text-white/75 group-hover:text-white transition-colors duration-200 whitespace-nowrap" style={{ fontFamily: "var(--font-manrope)" }}>
                       {dict.nav.connect}
                     </span>
                   </Link>
