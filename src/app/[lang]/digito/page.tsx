@@ -1043,19 +1043,19 @@ export default async function DigitoPage({
                   <h3 className="text-2xl font-bold text-light mb-4">{t.testing.subtitle}</h3>
                   <div className="bg-container/60 rounded-lg p-4 space-y-4 text-light">
                     <div>
-                      <h5 className="font-medium text-light mb-2">
+                      <h5 className="text-sm font-medium text-light/80 mb-1">
                         {lang === "es" ? "Participantes:" : "Participants:"}
                       </h5>
                       <p className="text-sm text-light leading-relaxed">{t.testing.participants}</p>
                     </div>
                     <div>
-                      <h5 className="font-medium text-light mb-2">
+                      <h5 className="text-sm font-medium text-light/80 mb-1">
                         {lang === "es" ? "Método:" : "Method:"}
                       </h5>
                       <p className="text-sm text-light leading-relaxed">{t.testing.method}</p>
                     </div>
                     <div>
-                      <h5 className="font-medium text-light mb-2">
+                      <h5 className="text-sm font-medium text-light/80 mb-1">
                         {lang === "es" ? "Objetivo:" : "Objective:"}
                       </h5>
                       <p className="text-sm text-light leading-relaxed">{t.testing.objective}</p>

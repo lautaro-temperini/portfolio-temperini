@@ -271,7 +271,12 @@
         "scopeText1": "El brief original incluía 8 áreas de mejora. Rediseñar toda la plataforma era inviable en 3.5 meses.",
         "thisAllowed": "Esto permitió:",
         "thisAllowedItems": ["Atacar directamente el problema detectado", "Proponer una solución completa y validable", "Mantener compatibilidad con módulos administrativos", "Sentar bases para futuras integraciones"],
-        "ourDecisionText": "Priorizamos el módulo operativo donde los consultores registran horas, gestionan tareas y ven su carga de trabajo, ya que es el cuello de botella directo de la facturación."
+        "ourDecisionText": "Priorizamos el módulo operativo donde los consultores registran horas, gestionan tareas y ven su carga de trabajo, ya que es el cuello de botella directo de la facturación.",
+        "aiTradeoffTitle": "Trade-off: descartamos la IA",
+        "aiTradeoffText1": "Consideramos inicialmente incorporar IA para automatizar el registro de horas, una solución común con fuerte atractivo para el negocio.",
+        "aiTradeoffText2": "Sin embargo, el research mostró que el problema no era la fricción del registro, sino la falta de valor percibido. Los usuarios no se olvidaban: simplemente no lo priorizaban.",
+        "aiTradeoffText3": "Automatizar hubiera optimizado una acción que los usuarios ya consideraban irrelevante. Aunque recordaran hacerlo, no había incentivos reales para registrar: la IA sola no resolvía la adopción.",
+        "aiTradeoffText4": "Descartamos la IA y nos enfocamos en integrar el registro al flujo real de trabajo como consecuencia natural de la actividad, una solución menos 'vendible' pero más alineada con el problema real."
       },
       "principles": {
         "title": "Principios de diseño",
