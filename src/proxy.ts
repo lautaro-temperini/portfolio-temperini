@@ -125,8 +125,8 @@ function generateNonce(): string {
  * CSP relajado para evitar bloqueos de scripts de Next.js
  * @param nonce - Nonce generado (no se usa actualmente pero se mantiene para compatibilidad)
  */
-function generarHeadersCSP(nonce: string) {
-  const cspHeader = [
+function generarHeadersCSP(nonce: string, opts: { isSecureContext: boolean }) {
+  const directives = [
     "default-src 'self'",
     `script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https://vercel.live https://vercel.com https://*.vercel-analytics.com https://*.vercel-insights.com https://va.vercel-scripts.com https://www.googletagmanager.com https://www.google-analytics.com`,
     // Permite <style nonce="..."> (p.ej. critical CSS) sin abrir style attrs por defecto
@@ -145,10 +145,14 @@ function generarHeadersCSP(nonce: string) {
     // ❌ Trusted Types eliminado - estaba bloqueando scripts de Next.js
     // "require-trusted-types-for 'script'",
     // "trusted-types default nextjs nextjs#bundler",
-    'upgrade-insecure-requests',
-  ].join('; ')
+  ]
 
-  return cspHeader
+  // En localhost/http (por ejemplo Playwright + next start), esto rompe assets al forzar https://localhost.
+  if (opts.isSecureContext) {
+    directives.push('upgrade-insecure-requests')
+  }
+
+  return directives.join('; ')
 }
 
 // ============================================================================
@@ -226,7 +230,10 @@ export function proxy(request: NextRequest) {
     if (process.env.NODE_ENV === 'production') {
       const nonce = generateNonce()
       response.headers.set('x-nonce', nonce)
-      response.headers.set('Content-Security-Policy', generarHeadersCSP(nonce))
+      response.headers.set(
+        'Content-Security-Policy',
+        generarHeadersCSP(nonce, { isSecureContext: request.nextUrl.protocol === 'https:' })
+      )
     }
 
     // Establecer cookie para persistencia
@@ -266,7 +273,10 @@ export function proxy(request: NextRequest) {
     if (process.env.NODE_ENV === 'production') {
       const nonce = generateNonce()
       response.headers.set('x-nonce', nonce)
-      response.headers.set('Content-Security-Policy', generarHeadersCSP(nonce))
+      response.headers.set(
+        'Content-Security-Policy',
+        generarHeadersCSP(nonce, { isSecureContext: request.nextUrl.protocol === 'https:' })
+      )
     }
 
     // Sincronizar cookie con el idioma de la ruta
@@ -325,7 +335,10 @@ export function proxy(request: NextRequest) {
   if (process.env.NODE_ENV === 'production') {
     const nonce = generateNonce()
     response.headers.set('x-nonce', nonce)
-    response.headers.set('Content-Security-Policy', generarHeadersCSP(nonce))
+    response.headers.set(
+      'Content-Security-Policy',
+      generarHeadersCSP(nonce, { isSecureContext: request.nextUrl.protocol === 'https:' })
+    )
   }
 
   response.cookies.set('NEXT_LOCALE', idiomaDetectado, {
