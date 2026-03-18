@@ -129,7 +129,11 @@ function generarHeadersCSP(nonce: string) {
   const cspHeader = [
     "default-src 'self'",
     `script-src 'self' 'nonce-${nonce}' 'strict-dynamic' https://vercel.live https://vercel.com https://*.vercel-analytics.com https://*.vercel-insights.com https://va.vercel-scripts.com https://www.googletagmanager.com https://www.google-analytics.com`,
-    `style-src 'self'`,
+    // Permite <style nonce="..."> (p.ej. critical CSS) sin abrir style attrs por defecto
+    `style-src 'self' 'nonce-${nonce}'`,
+    // Permite style="" / style={{...}} (React inline styles). Si querés CSP más estricta,
+    // hay que eliminar styles inline del JSX y borrar esta directiva.
+    `style-src-attr 'unsafe-inline'`,
     "img-src 'self' data: blob: https:",
     "font-src 'self' data:",
     "connect-src 'self' https://*.vercel-analytics.com https://*.vercel-insights.com https://vitals.vercel-insights.com https://api.resend.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com",

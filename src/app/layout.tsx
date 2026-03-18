@@ -186,7 +186,6 @@ export default async function RootLayout({
     <html
       lang={validLang}
       className={`${manrope.variable} ${neueHaas.variable}`}
-      style={{ backgroundColor: '#0D0D0D' }}
       data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
@@ -222,10 +221,6 @@ export default async function RootLayout({
       <body
         suppressHydrationWarning
         className="text-white antialiased"
-        style={{
-          background: "conic-gradient(from 203.7deg at 63.78% 39.65%, #0D0D0D 0deg, #0D0D0D 114.23deg, #666973 238.85deg, #0D0D0D 360deg)",
-          backgroundAttachment: "fixed",
-        }}
       >
         <div className="fixed inset-0 -z-1 pointer-events-none bg-black/40 backdrop-blur-2xl" />
         {children}

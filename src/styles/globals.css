@@ -46,7 +46,8 @@ body {
   overflow-x: hidden;
   min-height: 100vh;
   position: relative;
-  background-color: #0D0D0D;
+  background: conic-gradient(from 203.7deg at 63.78% 39.65%, #0D0D0D 0deg, #0D0D0D 114.23deg, #666973 238.85deg, #0D0D0D 360deg);
+  background-attachment: fixed;
 }
 
 body::before {
