@@ -147,13 +147,7 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`relative rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md shadow-lg overflow-hidden p-8 ${className}`}
-      style={{
-        // Estilos de glassmorphism para el efecto de vidrio
-        WebkitBackdropFilter: 'blur(12px) saturate(180%)',
-        backdropFilter: 'blur(12px) saturate(180%)',
-        border: '1px solid rgba(255,255,255,0.18)',
-      }}
+      className={`relative rounded-3xl border border-white/10 bg-white/5 shadow-lg overflow-hidden p-8 glass-card ${className}`}
     >
       {/* ==================== CAPA DEL EFECTO SPOTLIGHT ==================== */}
       {/* Gradiente radial que crea el efecto de luz */}

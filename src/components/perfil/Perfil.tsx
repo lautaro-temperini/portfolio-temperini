@@ -50,8 +50,7 @@ export default async function Perfil({ lang }: PerfilProps) {
   return (
     <section
       id="about"
-      className="relative w-full min-h-screen flex items-center px-4 md:px-6 lg:px-10"
-      style={{ background: "conic-gradient(...)" }}
+      className="relative w-full min-h-screen flex items-center px-4 md:px-6 lg:px-10 perfil-bg"
     >
       <div className="w-full h-full flex flex-col justify-center">
 
@@ -65,8 +64,7 @@ export default async function Perfil({ lang }: PerfilProps) {
             </div>
             <RevealOnScroll delay={100}>
               <p
-                className="mb-6 mt-0 text-base sm:text-lg md:text-xl xl:text-2xl font-semibold leading-relaxed text-light"
-                style={{ fontFamily: "var(--font-manrope)" }}
+                className="mb-6 mt-0 text-base sm:text-lg md:text-xl xl:text-2xl font-semibold leading-relaxed text-light font-manrope"
               >
                 {dictionary.about.text1}
                 <br />
@@ -88,8 +86,7 @@ export default async function Perfil({ lang }: PerfilProps) {
                 </div>
               </div>
               <p
-                className="text-base sm:text-lg md:text-xl xl:text-2xl font-semibold leading-relaxed text-light"
-                style={{ fontFamily: "var(--font-manrope)" }}
+                className="text-base sm:text-lg md:text-xl xl:text-2xl font-semibold leading-relaxed text-light font-manrope"
               >
                 {dictionary.about.text3}
               </p>

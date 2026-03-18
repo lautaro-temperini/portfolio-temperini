@@ -414,7 +414,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ dict }) => {
             : 'bg-gradient-to-r from-[#F2F2F2] via-[#F2F2F2] to-[#9D00E0] shadow-[0px_4px_25px_rgba(115,0,165,0.25)] hover:shadow-[0px_6px_30px_rgba(115,0,165,0.4)] cursor-pointer'
           }
         `}
-        style={{ fontFamily: 'var(--font-inter)' }}
+        style={undefined}
         aria-busy={formStatus === 'submitting'}
       >
         {formStatus === 'submitting' ? (

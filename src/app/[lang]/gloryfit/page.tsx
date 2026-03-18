@@ -1,13 +1,13 @@
-  import { getDictionary } from '@/lib/getDictionary'
-  import Navbar from "@/components/navbar/Navbar";
-  import ScrollToTop from "@/components/fxscripts/scroll-to-top";
-  import Footer from "@/components/footer/Footer";
-  import CaseStudyLayout from "@/components/case-study/CaseStudyLayout";
+import { getDictionary } from '@/lib/getDictionary'
+import Navbar from "@/components/navbar/Navbar";
+import ScrollToTop from "@/components/fxscripts/scroll-to-top";
+import Footer from "@/components/footer/Footer";
+import CaseStudyLayout from "@/components/case-study/CaseStudyLayout";
 import ProseSection from "@/components/case-study/ProseSection";
-  import ImageBreakout from "@/components/sections/ImageBreakout";
-  import InsightCard from "@/components/sections/InsightCard";
-  import SectionNav from "@/components/case-study/SectionNav";
-  import FadeOnScroll from "@/components/fxscripts/FadeOnScroll";
+import ImageBreakout from "@/components/sections/ImageBreakout";
+import InsightCard from "@/components/sections/InsightCard";
+import SectionNav from "@/components/case-study/SectionNav";
+import FadeOnScroll from "@/components/fxscripts/FadeOnScroll";
     
   export const metadata = {
     title: "GloryFit | App de entrenamiento personalizado | Lautaro R. Temperini",
@@ -87,7 +87,7 @@ import ProseSection from "@/components/case-study/ProseSection";
       <>
         <Navbar dict={dict} lang={lang} />
         <div className="relative z-[20]">
-        <main style={{ transform: 'none' }} className="[&>*]:!transform-none">
+        <main className="[&>*]:!transform-none">
           <SectionNav sections={[
             { id: "reto" },
             { id: "investigacion" },

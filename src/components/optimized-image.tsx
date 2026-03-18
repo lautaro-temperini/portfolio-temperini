@@ -128,7 +128,9 @@ export default function OptimizedImage({
           src={src}
           alt={alt}
           fill
-          className={`image-fade-in ${isImageLoaded ? "loaded" : ""} ${className}`}
+          className={`image-fade-in ${isImageLoaded ? "loaded" : ""} ${className} ${
+            hasLoadError ? "hidden" : "block"
+          }`}
           onLoad={() => setIsImageLoaded(true)}
           onError={() => {
             setHasLoadError(true)
@@ -137,7 +139,6 @@ export default function OptimizedImage({
           priority={priority}
           placeholder="blur"
           blurDataURL={BLUR_PLACEHOLDER_DATA_URL}
-          style={{ display: hasLoadError ? "none" : "block" }}
           // Tamaños responsivos para optimización automática
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
@@ -149,7 +150,9 @@ export default function OptimizedImage({
           alt={alt}
           width={width}
           height={height}
-          className={`image-fade-in ${isImageLoaded ? "loaded" : ""} ${className}`}
+          className={`image-fade-in ${isImageLoaded ? "loaded" : ""} ${className} ${
+            hasLoadError ? "hidden" : "block"
+          }`}
           onLoad={() => setIsImageLoaded(true)}
           onError={() => {
             setHasLoadError(true)
@@ -158,7 +161,6 @@ export default function OptimizedImage({
           priority={priority}
           placeholder="blur"
           blurDataURL={BLUR_PLACEHOLDER_DATA_URL}
-          style={{ display: hasLoadError ? "none" : "block" }}
         />
       )}
 

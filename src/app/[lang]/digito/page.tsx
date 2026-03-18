@@ -67,7 +67,7 @@ export default async function DigitoPage({
     <>
       <Navbar dict={dict} lang={lang} />
       <div className="relative z-[20]">
-        <main style={{ transform: 'none' }} className="[&>*]:!transform-none">
+        <main className="[&>*]:!transform-none">
           <SectionNav sections={[
             { id: "contexto" },
             { id: "problema" },
@@ -236,13 +236,7 @@ export default async function DigitoPage({
             </div>
             <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0 [&>*]:h-full">
               <Block colSpan={1}>
-                <div
-                  className="bg-container/80 rounded-lg p-6 md:h-full"
-                  style={{
-                    boxShadow:
-                      "0 0 0 1px rgba(255, 255, 255, 0.06), 0 4px 12px rgba(0, 0, 0, 0.5)",
-                  }}
-                >
+                <div className="bg-container/80 rounded-lg p-6 md:h-full card-elevated">
                   <h3 className="text-2xl font-semibold text-light mb-4">{t.problem?.businessImpact}</h3>
                   <div className="text-light leading-relaxed space-y-4">
                     {t.problem?.impactSummary && (
@@ -260,13 +254,7 @@ export default async function DigitoPage({
                 </div>
               </Block>
               <Block colSpan={1}>
-                    <div
-                      className="bg-container/80 rounded-lg p-6 md:h-full"
-                      style={{
-                        boxShadow:
-                          "0 0 0 1px rgba(255, 255, 255, 0.06), 0 4px 12px rgba(0, 0, 0, 0.5)",
-                      }}
-                    >
+                    <div className="bg-container/80 rounded-lg p-6 md:h-full card-elevated">
                   <h3 className="text-2xl font-semibold text-light mb-4">
                     {t.problem?.title}
                   </h3>
@@ -496,20 +484,16 @@ export default async function DigitoPage({
           </section>
             </FadeOnScroll>
 
-          {/* ==================== PRINCIPIOS DE DISEÑO (MOBILE) ==================== */}
+          {/* ==================== PRINCIPIOS DE DISEÑO (MOBILE) - oculto en mobile ==================== */}
           <FadeOnScroll>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-28 block md:hidden">
+            <section className="hidden">
               <h2 className="text-3xl font-bold text-light mb-6">{t.principles.title}</h2>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {Object.values(t.principles.items || {}).map((item: any, index: number) => (
                   <div
                     key={index}
-                    className="bg-container/80 rounded-lg p-5 border border-container-light/10"
-                    style={{
-                      boxShadow:
-                        "0 0 0 1px rgba(255, 255, 255, 0.06), 0 4px 12px rgba(0, 0, 0, 0.5)",
-                    }}
+                    className="bg-container/80 rounded-lg p-5 border border-container-light/10 card-elevated"
                   >
                     <h3 className="text-base font-semibold text-light mb-2">{item.title}</h3>
                     <p className="text-sm text-light/80 leading-relaxed">{item.text}</p>
@@ -517,11 +501,7 @@ export default async function DigitoPage({
                 ))}
 
                 <div
-                  className="bg-container/80 rounded-lg p-5 border border-container-light/10 sm:col-span-2"
-                  style={{
-                    boxShadow:
-                      "0 0 0 1px rgba(255, 255, 255, 0.06), 0 4px 12px rgba(0, 0, 0, 0.5)",
-                  }}
+                  className="bg-container/80 rounded-lg p-5 border border-container-light/10 sm:col-span-2 card-elevated"
                 >
                   <h3 className="text-base font-semibold text-light">{t.principles.guidingPrinciple}</h3>
                 </div>
@@ -538,13 +518,7 @@ export default async function DigitoPage({
             </div>
             <BentoGrid cols={{ default: 1, md: 2, lg: 3 }} gap="md">
               <BentoItem colSpan={{ default: 1, md: 2 }}>
-                <div
-                  className="bg-container/80 rounded-lg p-6 md:h-full"
-                  style={{
-                    boxShadow:
-                      "0 0 0 1px rgba(255, 255, 255, 0.06), 0 4px 12px rgba(0, 0, 0, 0.5)",
-                  }}
-                >
+                <div className="bg-container/80 rounded-lg p-6 md:h-full card-elevated">
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-2xl font-bold text-light">{t.frictions.friction1.number}</span>
                     <h3 className="text-xl font-bold text-light">{t.frictions.friction1.title}</h3>
@@ -566,13 +540,7 @@ export default async function DigitoPage({
                 </div>
               </BentoItem>
               <BentoItem colSpan={1}>
-                <div
-                  className="bg-container/80 rounded-lg p-6 md:h-full"
-                  style={{
-                    boxShadow:
-                      "0 0 0 1px rgba(255, 255, 255, 0.06), 0 4px 12px rgba(0, 0, 0, 0.5)",
-                  }}
-                >
+                <div className="bg-container/80 rounded-lg p-6 md:h-full card-elevated">
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-2xl font-bold text-light">{t.frictions.friction2.number}</span>
                     <h3 className="text-xl font-bold text-light">{t.frictions.friction2.title}</h3>
@@ -594,13 +562,7 @@ export default async function DigitoPage({
                 </div>
               </BentoItem>
               <BentoItem colSpan={1}>
-                <div
-                  className="bg-container/80 rounded-lg p-6 md:h-full"
-                  style={{
-                    boxShadow:
-                      "0 0 0 1px rgba(255, 255, 255, 0.06), 0 4px 12px rgba(0, 0, 0, 0.5)",
-                  }}
-                >
+                <div className="bg-container/80 rounded-lg p-6 md:h-full card-elevated">
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-2xl font-bold text-light">{t.frictions.friction3.number}</span>
                     <h3 className="text-xl font-bold text-light">{t.frictions.friction3.title}</h3>
@@ -623,11 +585,7 @@ export default async function DigitoPage({
               </BentoItem>
               <BentoItem colSpan={1}>
                 <div
-                  className="bg-container/80 rounded-lg p-6 md:h-full"
-                  style={{
-                    boxShadow:
-                      "0 0 0 1px rgba(255, 255, 255, 0.06), 0 4px 12px rgba(0, 0, 0, 0.5)",
-                  }}
+                  className="bg-container/80 rounded-lg p-6 md:h-full card-elevated"
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-2xl font-bold text-light">{t.frictions.friction4.number}</span>
@@ -651,11 +609,7 @@ export default async function DigitoPage({
               </BentoItem>
               <BentoItem colSpan={1}>
                 <div
-                  className="bg-container/80 rounded-lg p-6 md:h-full"
-                  style={{
-                    boxShadow:
-                      "0 0 0 1px rgba(255, 255, 255, 0.06), 0 4px 12px rgba(0, 0, 0, 0.5)",
-                  }}
+                  className="bg-container/80 rounded-lg p-6 md:h-full card-elevated"
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-2xl font-bold text-light">{t.frictions.friction5.number}</span>

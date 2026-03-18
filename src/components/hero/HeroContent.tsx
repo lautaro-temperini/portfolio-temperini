@@ -59,8 +59,7 @@ const end = target.getBoundingClientRect().top + start - offset
       <RevealOnScroll>
         <div className="mb-4 md:mb-6">
           <h1
-            className="fluid-text-3xl md:fluid-text-4xl lg:fluid-text-5xl font-semibold leading-tight text-light max-w-full md:max-w-md lg:max-w-lg xl:max-w-[605px]"
-            style={{ fontFamily: 'var(--font-neue-haas)' }}
+            className="fluid-text-3xl md:fluid-text-4xl lg:fluid-text-5xl font-semibold leading-tight text-light max-w-full md:max-w-md lg:max-w-lg xl:max-w-[605px] font-neue-haas"
           >
             {heroTitleLines.map((line, i) => (
               <span key={i}>
@@ -76,8 +75,7 @@ const end = target.getBoundingClientRect().top + start - offset
       <RevealOnScroll delay={100}>
         <div className="mb-6 md:mb-8">
           <p
-            className="fluid-text-base md:fluid-text-lg font-semibold leading-relaxed text-accent max-w-full md:max-w-md lg:max-w-lg xl:max-w-[500px]"
-            style={{ fontFamily: 'var(--font-manrope)' }}
+            className="fluid-text-base md:fluid-text-lg font-semibold leading-relaxed text-accent max-w-full md:max-w-md lg:max-w-lg xl:max-w-[500px] font-manrope"
           >
             {dict.hero.subtitle}
           </p>
@@ -98,8 +96,7 @@ const end = target.getBoundingClientRect().top + start - offset
           aria-label={dict.hero.cta}
         >
           <span
-            className="fluid-text-sm font-semibold text-background group-hover:text-background transition-colors"
-            style={{ fontFamily: 'var(--font-inter)' }}
+            className="fluid-text-sm font-semibold text-background group-hover:text-background transition-colors font-inter"
           >
             {dict.hero.cta}
           </span>

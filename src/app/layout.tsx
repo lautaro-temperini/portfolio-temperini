@@ -6,6 +6,7 @@ import { Manrope } from "next/font/google"
 import localFont from "next/font/local"
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { headers } from 'next/headers'
+import ThirdPartyErrorFilter from '@/components/fxscripts/ThirdPartyErrorFilter'
 import VercelAnalyticsLoader from '@/components/analytics/VercelAnalyticsLoader'
 import "../styles/globals.css"
 
@@ -223,6 +224,7 @@ export default async function RootLayout({
         className="text-white antialiased"
       >
         <div className="fixed inset-0 -z-1 pointer-events-none bg-black/40 backdrop-blur-2xl" />
+        <ThirdPartyErrorFilter />
         {children}
         
         {/* Vercel Analytics - Carga después del load event */}

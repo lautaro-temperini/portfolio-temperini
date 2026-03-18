@@ -95,8 +95,7 @@ export default function LanguageSelector({ currentLang }: LanguageSelectorProps)
       <button
         type="button"
         onClick={handleToggleDropdown}
-        className={`flex items-center gap-3 px-4 py-1 min-h-touch rounded-full bg-transparent border border-white text-white transition-all duration-200 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D0D0D] ${isDropdownOpen ? 'bg-white/10' : ''}`}
-        style={{ fontFamily: 'var(--font-inter)' }}
+        className={`flex items-center gap-3 px-4 py-1 min-h-touch rounded-full bg-transparent border border-white text-white transition-all duration-200 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D0D0D] font-inter ${isDropdownOpen ? 'bg-white/10' : ''}`}
         aria-haspopup="menu"
         aria-expanded={isDropdownOpen}
         aria-label={`Idioma actual: ${currentLanguageData.label}. Cambiar idioma`}
@@ -142,15 +141,12 @@ export default function LanguageSelector({ currentLang }: LanguageSelectorProps)
               role="menuitem"
               onClick={() => handleLanguageChange(language.code as SupportedLanguage)}
               onKeyDown={(e) => handleKeyDown(e, language.code as SupportedLanguage)}
-              className="w-full min-h-touch pl-4 pr-4 py-1 flex items-center text-sm font-medium rounded-full transition-opacity duration-150 focus:outline-none focus:bg-white/10 bg-background border border-white/10"
-              style={{
-                opacity: currentLang === language.code ? 1 : 0.7,
-                color: currentLang === language.code ? '#FFFFFF' : '#A6A6A6',
-              }}
+              className={`w-full min-h-touch pl-4 pr-4 py-1 flex items-center text-sm font-medium rounded-full transition-opacity duration-150 focus:outline-none focus:bg-white/10 bg-background border border-white/10 font-inter ${
+                currentLang === language.code ? 'opacity-100 text-white' : 'opacity-70 text-[#A6A6A6]'
+              }`}
             >
               <span 
-                className="inline-flex items-center justify-center flex-shrink-0" 
-                style={{ width: '16px', height: '16px', marginRight: '8px' }}
+                className="inline-flex items-center justify-center flex-shrink-0 lang-icon-space" 
               >
                 {currentLang === language.code ? (
                   <svg
@@ -166,7 +162,7 @@ export default function LanguageSelector({ currentLang }: LanguageSelectorProps)
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 ) : (
-                  <span style={{ width: '16px', height: '16px' }} />
+                  <span className="lang-icon-space" />
                 )}
               </span>
               <span>{language.label}</span>

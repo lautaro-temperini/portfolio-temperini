@@ -74,15 +74,13 @@ const handleSocialClick = (platform: string) => {
     <footer
       role="contentinfo"
       className="relative w-full h-auto min-h-[80px] md:min-h-[120px] overflow-hidden py-4 md:py-6 bg-background/80"
-      style={{ width: "100%" }}
     >
       <div className="w-full px-4 md:px-6 lg:px-10 mx-auto flex flex-col md:flex-row items-center justify-between py-4 md:py-6 gap-8 md:gap-4">
         {/* Contenido izquierdo - Título y CTA */}
         {!onlyIcons && (
           <div className="flex flex-col gap-4 md:gap-6 text-left">
             <h3
-              className="text-sm min-[381px]:text-xl md:text-2xl lg:text-[28px] font-semibold leading-tight md:leading-[38px] text-white max-w-full md:max-w-[600px] lg:max-w-[50vw] px-2 min-[381px]:px-0"
-              style={{ fontFamily: "var(--font-manrope)" }}
+              className="text-sm min-[381px]:text-xl md:text-2xl lg:text-[28px] font-semibold leading-tight md:leading-[38px] text-white max-w-full md:max-w-[600px] lg:max-w-[50vw] px-2 min-[381px]:px-0 font-manrope"
             >
               {t.footer.title}
             </h3>
@@ -93,7 +91,7 @@ const handleSocialClick = (platform: string) => {
             >
               <span className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-full bg-gradient-to-b from-white/10 to-transparent" />
               <span className="pointer-events-none absolute inset-0 animate-btn-shine bg-gradient-to-r from-transparent via-white/5 to-transparent w-1/2" />
-              <span className="relative z-10 text-base md:text-[15px] font-bold text-white/75 group-hover:text-white transition-colors duration-200 whitespace-nowrap">
+              <span className="relative z-10 text-base md:text-[15px] font-bold text-white/90 group-hover:text-white transition-colors duration-200 whitespace-nowrap">
                 {t.footer.cta}
               </span>
             </Link>
