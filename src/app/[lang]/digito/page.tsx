@@ -119,7 +119,7 @@ export default async function DigitoPage({
             </FadeOnScroll>
 
           {/* ==================== PROJECT SNAPSHOT ==================== */}
-          <section className="w-full px-8 md:px-12 lg:px-20 mb-28">
+          <section className="w-full px-8 md:px-12 lg:px-20 mb-16">
             <div className="text-sm text-light/80 space-y-2">
               <div>
                 <span className="text-light/70 font-semibold">
@@ -1010,10 +1010,7 @@ export default async function DigitoPage({
 {/* ==================== 20. EVOLUCIÓN DEL DISEÑO - MVP → Wireframe → HiFi ==================== */}
 <FadeOnScroll delay={80}>
   <section className="w-full px-8 md:px-12 lg:px-20 mb-28">
-    <div
-      className="relative w-full aspect-video rounded-2xl overflow-hidden bg-[#0D0D0D]"
-      style={{ position: "relative" }}
-    >
+    <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-[#0D0D0D]">
       <Image
         src="/images/digitoImages/comparativa-mvp-wireframe-hifi.webp"
         alt="Evolución del diseño: MVP original, wireframe de baja fidelidad y prototipo de alta fidelidad"

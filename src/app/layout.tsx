@@ -189,9 +189,9 @@ export default async function RootLayout({
   return (
     <html
       lang={validLang}
-      data-scroll-behavior="smooth"
       className={`${manrope.variable} ${neueHaas.variable}`}
       style={{ backgroundColor: '#0D0D0D' }}
+      data-scroll-behavior="smooth"
     >
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />

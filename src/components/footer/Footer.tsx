@@ -72,27 +72,25 @@ const handleSocialClick = (platform: string) => {
         {!onlyIcons && (
           <div className="flex flex-col gap-4 md:gap-6 text-left">
             <h3
-              className="text-sm min-[381px]:text-xl md:text-2xl lg:text-[28px] font-semibold leading-tight md:leading-[38px] text-white max-w-full md:max-w-[488px] px-2 min-[381px]:px-0"
+              className="text-sm min-[381px]:text-xl md:text-2xl lg:text-[28px] font-semibold leading-tight md:leading-[38px] text-white max-w-full md:max-w-[600px] lg:max-w-[50vw] px-2 min-[381px]:px-0"
               style={{ fontFamily: "var(--font-manrope)" }}
             >
               {dict?.footer?.title || "¿Tenés una idea o desafío en mente?"}
             </h3>
             <Link
-  href={`/${lang}/contact`}
-  className="flex items-center justify-center w-full max-w-sm md:w-[180px] min-h-touch md:h-10 rounded-full px-6 md:px-6 transition-all duration-200 hover:shadow-lg btn-primary"
-  style={{
-    background: "linear-gradient(180deg, #8900C3 72%, #595959 100%)",
-    border: "1px solid rgba(156, 150, 164, 0.5)",
-    borderRadius: "100px",
-  }}
->
-  <span
-    className="text-sm md:text-[15px] font-semibold text-white whitespace-nowrap"
-    style={{ fontFamily: "var(--font-inter)" }}
-  >
-    {dict?.footer?.cta || "Creemos juntos"}
-  </span>
-</Link>
+              href={`/${lang}/contact`}
+              className="flex items-center justify-center w-full max-w-sm md:w-[180px] min-h-touch md:h-10 rounded-full px-6 active:scale-100 transition-all duration-200 btn-primary group overflow-hidden relative"
+              style={{
+                background: "linear-gradient(180deg, #BF5AF2 0%, rgb(90, 6, 146) 100%)",
+                boxShadow: "inset 0 1px 0 0 rgba(255, 255, 255, 0.2)",
+              }}
+            >
+              <span className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-full bg-gradient-to-b from-white/10 to-transparent" />
+              <span className="pointer-events-none absolute inset-0 animate-btn-shine bg-gradient-to-r from-transparent via-white/5 to-transparent w-1/2" />
+              <span className="relative z-10 text-sm md:text-[15px] font-semibold text-white/90 group-hover:text-white transition-colors duration-200 whitespace-nowrap">
+                {dict?.footer?.cta || "Creemos juntos"}
+              </span>
+            </Link>
           </div>
         )}
         

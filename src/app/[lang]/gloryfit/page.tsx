@@ -156,7 +156,7 @@ import ProseSection from "@/components/case-study/ProseSection";
 
             {/* El reto + Mi rol en grid 2 columnas */}
             <FadeOnScroll>
-            <ProseSection id="reto" className="mb-28">
+            <ProseSection id="reto" className="mb-20">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-10 md:gap-6">
                 <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
                   <h3 className="text-2xl font-semibold text-light mb-4">
@@ -183,7 +183,7 @@ import ProseSection from "@/components/case-study/ProseSection";
             </ProseSection>
 
             {/* Investigación - bloque destacado */}
-            <ProseSection id="investigacion" className="mb-28">
+            <ProseSection id="investigacion" className="mb-20">
               <h2 className="text-3xl font-bold text-light mb-6">
                 {t.research.title}
               </h2>
@@ -301,7 +301,7 @@ import ProseSection from "@/components/case-study/ProseSection";
 
             {/* Validación y feedback */}
             <FadeOnScroll>
-            <ProseSection className="mb-28">
+            <ProseSection className="mb-20">
               <h2 className="text-3xl font-bold text-light mb-6">
                 {t.validation.title}
               </h2>

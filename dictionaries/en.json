@@ -267,16 +267,25 @@
           "discardedTitle": "Why we rejected this approach:",
           "discardedReasons": ["Forces compliance, not genuine adoption", "Degrades data quality through gaming", "Punishes users for unresolved friction", "Contradicts the autonomy-based culture"],
           "conclusion": "Conclusion: The sustainable path is making tracking fast, useful, and seamlessly integrated.",
+          "scopeTitle": "Scope: consultant operations module",
+          "scopeText1": "The original brief covered 8 improvement areas. Redesigning the entire platform was infeasible within 3.5 months.",
+          "scopeText": "No changes to contracts, organizational processes, or internal structures.",
           "thisAllowed": "This allowed us to:",
           "thisAllowedItems": [
             "Directly target the identified problem",
             "Propose a complete, testable solution",
             "Lay groundwork for future integrations"
           ],
-          "ourDecisionText": "We prioritized the operations module where consultants log hours, manage tasks, and see workload, as it is the direct bottleneck for billing."
+          "ourDecisionText": "We prioritized the operations module where consultants log hours, manage tasks, and see workload, as it is the direct bottleneck for billing.",
+          "aiTradeoffTitle": "Trade-off: AI discarded",
+          "aiTradeoffText1": "We initially considered incorporating AI to automate time logging, a common solution with strong business appeal.",
+          "aiTradeoffText2": "However, research showed the problem wasn't friction in logging, but the lack of perceived value. Users didn't forget — they simply didn't prioritize it.",
+          "aiTradeoffText3": "Automating would optimize an action users already considered irrelevant. Even if they remembered, there were no incentives to log — so AI alone wouldn't solve adoption.",
+          "aiTradeoffText4": "We discarded AI and focused on integrating logging into the real work flow as a natural consequence of activity — a less 'sellable' solution, but more aligned with the actual problem."
         },
         "principles": {
           "title": "Design principles",
+          "subtitle": "Build a tool, not a burden.",
           "items": {
             "relevance": {"title": "Relevance:", "text": "Deliver immediate value to consultants."},
             "userImpact": {"title": "User impact:", "text": "Minimize cognitive load and friction."},
@@ -331,11 +340,14 @@
           }
         },
         "architecture": {
+          "title": "Solution architecture: 3 core pillars",
+          "subtitle": "The solution centers on three interconnected design pillars.",
           "unifiedPanel": {
             "title": "Unified Hub: Autonomy & Visibility",
             "axis": "Pillar: Autonomy + Visibility",
             "problem": "Consultants juggle multiple tools to manage work.",
             "solution": "One centralized dashboard integrating tasks, projects, and time tracking.",
+            "features": ["Customizable dashboard", "Kanban & Gantt views", "Proactive notifications"],
             "components": ["Pending tasks view", "Personal & team metrics", "Integrated calendar", "Quick access to active projects"],
             "syncTitle": "Real-time sync",
             "syncText": "All data updates instantly across views."
@@ -352,6 +364,7 @@
             "axis": "Axis: Trust + Value",
             "problem": "Consultants perceive time tracking as a surveillance tool, not something that gives them value back.",
             "solution": "A system where each individual action visibly impacts the team, turning tracking into collaboration.",
+            "solutionItemsTitle": "Single Source of Truth (SSoT):",
             "solutionItems": [
               "Gantt view: group progress tracking per project, calculated automatically from actual task status",
               "Kanban view: each consultant manages their own tasks and updates team progress with every move",
@@ -359,6 +372,12 @@
               "Consultant profiles: public and private notes visible to the team, with collaboration history and shared activity"
             ],
             "result": "Tracking stops being an individual obligation and becomes visible team infrastructure."
+          },
+          "dashboard": {
+            "title": "Refined Dashboard",
+            "subtitle": "Consultant's operations center",
+            "text": "A panel that unifies all relevant information.",
+            "includes": ["Pending tasks view", "Productivity metrics", "Calendar with workload", "Quick access to active projects"]
           }
         },
         "testing": {
@@ -376,11 +395,16 @@
             "title": "Issue 2: Unclear task states",
             "text": "Visual distinction between \"in progress\" and \"pending\" was ambiguous."
           },
+          "iterationsTitle": "Iterations based on feedback:",
           "iteration1": {
-            "adjustments": ["Added 'Show archived' toggle", "Surfaced filter controls"]
+            "title": "Fix 1: Enhanced project filtering",
+            "adjustments": ["Added 'Show archived' toggle", "Surfaced filter controls"],
+            "result": "Project discovery became effortless."
           },
           "iteration2": {
-            "adjustments": ["Distinct icons for each state", "Contextual tooltips on hover"]
+            "title": "Fix 2: Clear state indicators",
+            "adjustments": ["Distinct icons for each state", "Contextual tooltips on hover"],
+            "learning": "Visual clarity directly reduces cognitive load."
           }
         },
         "snapshot": {
@@ -389,6 +413,8 @@
           "impactBeforeQuote": "\"Time tracking is a necessary evil.\"",
           "impactAfterLabel": "After:",
           "impactAfterQuote": "\"Now it’s much faster. The suggestions save me time.\"",
+          "impactLabel": "Impact:",
+          "impactText": "Turning an administrative chore into a valuable tool.",
           "reflectionTitle": "Methodological reflection",
           "reflectionIntro": "The redesign addressed clear interface and flow frictions. But the core problem of time tracking is deeply tied to real-world behavior, and that demands a different kind of validation.",
           "testingTitle": "Testing in real context",
@@ -399,6 +425,97 @@
           "metricP1": "Today, logging often happens weeks late, so very few hours are recorded within the first 24 hours. If I were to tackle this project again, I would track the percentage of hours logged within 24 hours as the North Star metric.",
           "metricP2Prefix": "That would have guided design decisions more directly toward the behavior the redesign aimed to change: ",
           "metricP2Bold": "integrating time tracking into the actual workflow."
+        },
+        "results": {
+          "title": "Impact & learnings",
+          "qualitative": {
+            "title": "Qualitative shift:",
+            "before": "Before:",
+            "beforeQuote": "\"Time tracking is a necessary evil.\"",
+            "after": "After:",
+            "afterQuote": "\"It's actually fast now. The suggestions save me time.\"",
+            "impact": "Core transformation:",
+            "impactText": "From administrative burden to productivity tool."
+          },
+          "learnings": {
+            "title": "Key takeaways:",
+            "subtitle": "Design is strategy, not decoration.",
+            "text1": "The breakthrough was reframing the problem from \"forgetting\" to \"active avoidance.\"",
+            "text2": "Effective design addresses both business goals and user needs.",
+            "learning": "Good design is invisible. Great design empowers.",
+            "text3": "Early user validation prevents expensive pivots."
+          },
+          "aiEvolution": {
+            "title": "Future roadmap: AI integration",
+            "text": "Planned evolution toward intelligent automation.",
+            "componentsTitle": "Planned capabilities:",
+            "components": ["Calendar-based smart suggestions", "Automatic activity detection", "Predictive capacity planning"],
+            "benefitsTitle": "Expected benefits:",
+            "benefits": ["~80% automation of routine logging", "Higher data accuracy", "More time for strategic work"],
+            "note": "AI augments humans, it doesn't replace them."
+          },
+          "nextSteps": {
+            "title": "Next steps and roadmap",
+            "onboarding": {
+              "title": "Phase 1: Onboarding and personalization",
+              "text": "Improve first-use experience.",
+              "flows": "Flows to optimize:",
+              "flowItems": ["Initial profile setup", "Interactive dashboard guide", "Calendar integration"],
+              "note": "Effective onboarding is key to retention.",
+              "impact": "Expected impact:",
+              "impactText": "50% reduction in setup time."
+            },
+            "mobile": {
+              "title": "Phase 2: Mobile experience",
+              "text1": "Develop a mobile version of the operations module.",
+              "text2": "The goal is for consultants to manage their time from anywhere.",
+              "note": "Mobility is essential for modern productivity."
+            }
+          },
+          "phase2Principles": {
+            "title": "Phase 2 design principles",
+            "items": [
+              {"title": "Simplicity:", "text": "Less is more on mobile."},
+              {"title": "Context:", "text": "Use location and time data for suggestions."},
+              {"title": "Speed:", "text": "One-tap tracking."}
+            ]
+          },
+          "gridLearnings": [
+            {"title": "Design is discovery, not decoration.", "text": "Initial hypotheses rarely match the real problem."},
+            {"title": "Empathy unlocks better solutions.", "text": "Deep understanding of user pain points reveals the path forward."},
+            {"title": "Iteration beats perfection.", "text": "Each round of feedback compounds improvements."},
+            {"title": "Impact lives in stories and metrics.", "text": "Numbers validate, narratives inspire."}
+          ],
+          "closing": {
+            "title": "Final thoughts",
+            "text1": "Dígito reinforced that product design transcends aesthetics.",
+            "text2": "The real challenge was reframing \"surveillance\" as \"empowerment.\"",
+            "highlight": "Design bridges the gap between problems and solutions."
+          },
+          "conclusion": {
+            "title": "Conclusion",
+            "subtitle": "Dígito proved that thoughtful design shifts perception:",
+            "text": "From time-tracking burden to productivity catalyst."
+          },
+          "snapshot": {
+            "impactTitle": "Qualitative impact:",
+            "impactBeforeLabel": "Before:",
+            "impactBeforeQuote": "\"Time tracking is a necessary evil.\"",
+            "impactAfterLabel": "After:",
+            "impactAfterQuote": "\"Now it’s much faster. The suggestions save me time.\"",
+            "impactLabel": "Impact:",
+            "impactText": "Turning an administrative chore into a valuable tool.",
+            "reflectionTitle": "Methodological reflection",
+            "reflectionIntro": "The redesign addressed clear interface and flow frictions. But the core problem of time tracking is deeply tied to real-world behavior, and that demands a different kind of validation.",
+            "testingTitle": "Testing in real context",
+            "testingP1": "Instead of designing directed tasks, I would test with real work scenarios.",
+            "testingP2": "The main issue is not point-in-time interface usability, but how time tracking integrates into everyday workflow.",
+            "testingP3": "Testing the product in that real context would allow us to observe actual behavior.",
+            "metricTitle": "Behavioral metric",
+            "metricP1": "Today, logging often happens weeks late, so very few hours are recorded within the first 24 hours. If I were to tackle this project again, I would track the percentage of hours logged within 24 hours as the North Star metric.",
+            "metricP2Prefix": "That would have guided design decisions more directly toward the behavior the redesign aimed to change: ",
+            "metricP2Bold": "integrating time tracking into the actual workflow."
+          }
         }
       },
       "levelup": {

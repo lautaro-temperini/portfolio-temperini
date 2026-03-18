@@ -118,7 +118,7 @@ export default async function VorterixLandingPage({
 
           {/* 2. Banner logo */}
           <FadeOnScroll delay={80}>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-28">
+            <section className="w-full px-8 md:px-12 lg:px-20 mb-16">
               <div className="relative w-full h-[150px] md:h-[200px] rounded-lg overflow-hidden bg-[#121212]">
                 <Image
                   src="/images/vorterixImages/VorterixLogo.webp"
@@ -134,7 +134,7 @@ export default async function VorterixLandingPage({
 
           {/* 3. Snapshot */}
           <FadeOnScroll delay={150}>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-28">
+            <section className="w-full px-8 md:px-12 lg:px-20 mb-16">
               <div className="text-sm text-light/80 space-y-2">
                 <div>
                   <span className="text-light/70 font-semibold">{t.snapshotTop.companyLabel}</span> · {t.snapshotTop.companyValue}
@@ -157,7 +157,7 @@ export default async function VorterixLandingPage({
 
           {/* 4. Brief + Por qué en 2 columnas */}
           <FadeOnScroll>
-            <ProseSection id="brief" className="mb-28">
+            <ProseSection id="brief" className="mb-20">
               <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0">
                 <Block colSpan={1}>
                   <h2 className="text-3xl font-bold text-light mb-6">{t.brief.title}</h2>

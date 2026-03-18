@@ -249,15 +249,17 @@ export default function Navbar({ dict, lang }: NavbarProps) {
 
       <div className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
         <div className="flex items-center gap-6 lg:gap-10">
-          <Link
-            href={`/${lang}/#projects`}
-            onClick={handleProjectsClick}
-            className={`text-sm md:text-base font-medium transition-colors cursor-pointer ${
-              inProjectsSection ? "text-light" : "text-light/50 hover:text-light"
-            }`}
-          >
-            {projectsLabel}
-          </Link>
+          {false && (
+            <Link
+              href={`/${lang}/#projects`}
+              onClick={handleProjectsClick}
+              className={`text-sm md:text-base font-medium transition-colors cursor-pointer ${
+                inProjectsSection ? "text-light" : "text-light/50 hover:text-light"
+              }`}
+            >
+              {projectsLabel}
+            </Link>
+          )}
           {/* Playground oculto en desktop, se mantiene el código para uso futuro */}
           {/*
           <Link
@@ -276,18 +278,20 @@ export default function Navbar({ dict, lang }: NavbarProps) {
       <div className="flex items-center gap-3 md:gap-4 relative z-10">
         {/* Proyectos solo en mobile, alineado a la derecha antes del menú */}
         <div className="md:hidden">
-          <Link
-            href={`/${lang}/#projects`}
-            onClick={(e) => {
-              handleProjectsClick(e)
-              setMobileMenuOpen(false)
-            }}
-            className={`text-sm font-medium transition-colors cursor-pointer ${
-              inProjectsSection ? "text-light" : "text-light/70"
-            }`}
-          >
-            {projectsLabel}
-          </Link>
+          {false && (
+            <Link
+              href={`/${lang}/#projects`}
+              onClick={(e) => {
+                handleProjectsClick(e)
+                setMobileMenuOpen(false)
+              }}
+              className={`text-sm font-medium transition-colors cursor-pointer ${
+                inProjectsSection ? "text-light" : "text-light/70"
+              }`}
+            >
+              {projectsLabel}
+            </Link>
+          )}
         </div>
 
         <div className="hidden md:block">
@@ -297,21 +301,17 @@ export default function Navbar({ dict, lang }: NavbarProps) {
         {!pathname.includes('/contact') && (
           <Link
             href={`/${lang}/contact`}
-            className="hidden md:flex items-center justify-center px-6 h-10 md:h-10 rounded-full transition-all duration-200 hover:shadow-lg btn-primary cursor-pointer"
+            onClick={handleContactClick}
+            className="hidden md:flex items-center justify-center gap-3 px-4 py-1 min-h-touch rounded-full active:scale-100 transition-all duration-200 btn-primary group overflow-hidden relative cursor-pointer"
             style={{
-              background: "linear-gradient(180deg, #8900C3 72%, #595959 100%)",
-              border: "1px solid rgba(156, 150, 164, 0.5)",
-              borderRadius: "100px",
+              background: "linear-gradient(180deg, #BF5AF2 0%, rgb(90, 6, 146) 100%)",
+              boxShadow: "inset 0 1px 0 0 rgba(255, 255, 255, 0.2)",
             }}
           >
-            <span
-              className="fluid-text-sm font-semibold text-light whitespace-nowrap relative"
-              style={{ fontFamily: "var(--font-manrope)" }}
-            >
+            <span className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-full bg-gradient-to-b from-white/5 to-transparent" />
+            <span className="pointer-events-none absolute inset-0 animate-btn-shine bg-gradient-to-r from-transparent via-white/5 to-transparent w-1/2" />
+            <span className="relative z-10 fluid-text-sm font-semibold text-white/75 group-hover:text-white transition-colors duration-200 whitespace-nowrap" style={{ fontFamily: "var(--font-manrope)" }}>
               {dict.nav.connect}
-              {pathname.includes('/contact') && (
-                <span className="absolute -bottom-0.5 left-0 w-full h-0.5 bg-[#B277D1] rounded-full" />
-              )}
             </span>
           </Link>
         )}
@@ -383,22 +383,20 @@ export default function Navbar({ dict, lang }: NavbarProps) {
                 {!pathname.includes('/contact') && (
                   <Link
                     href={`/${lang}/contact`}
-                    className="flex items-center justify-center px-4 h-10 rounded-full transition-all cursor-pointer"
-                    style={{
-                      background: "linear-gradient(180deg, #8900C3 72%, #595959 100%)",
-                      border: "1px solid rgba(156, 150, 164, 0.5)",
-                      borderRadius: "100px",
+                    onClick={() => {
+                      handleContactClick()
+                      setMobileMenuOpen(false)
                     }}
-                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex items-center justify-center gap-3 px-4 py-1 min-h-touch rounded-full active:scale-100 transition-all duration-200 group overflow-hidden relative cursor-pointer"
+                    style={{
+                      background: "linear-gradient(180deg, #BF5AF2 0%, rgb(90, 6, 146) 100%)",
+                      boxShadow: "inset 0 1px 0 0 rgba(255, 255, 255, 0.2)",
+                    }}
                   >
-                    <span
-                      className="fluid-text-sm font-semibold text-light relative"
-                      style={{ fontFamily: "var(--font-manrope)" }}
-                    >
+                    <span className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-full bg-gradient-to-b from-white/5 to-transparent" />
+                    <span className="pointer-events-none absolute inset-0 animate-btn-shine bg-gradient-to-r from-transparent via-white/5 to-transparent w-1/2" />
+                    <span className="relative z-10 fluid-text-sm font-semibold text-white/75 group-hover:text-white transition-colors duration-200 whitespace-nowrap" style={{ fontFamily: "var(--font-manrope)" }}>
                       {dict.nav.connect}
-                      {pathname.includes('/contact') && (
-                        <span className="absolute -bottom-0.5 left-0 w-full h-0.5 bg-[#666973] rounded-full" />
-                      )}
                     </span>
                   </Link>
                 )}
