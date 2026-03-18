@@ -92,7 +92,7 @@ export default async function VorterixLandingPage({
     <>
       <Navbar dict={dict} lang={lang} />
       <div className="relative z-[20]">
-        <main style={{ transform: 'none' }} className="[&>*]:!transform-none">
+        <main className="[&>*]:!transform-none">
           <SectionNav sections={[
             { id: "brief" },
             { id: "diseno" },

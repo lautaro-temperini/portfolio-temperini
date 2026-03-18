@@ -19,11 +19,7 @@ const BentoGridSkeleton = () => (
         {[1, 2, 3, 4, 5, 6, 7].map((i) => (
           <div 
             key={i} 
-            className="relative overflow-hidden rounded-xl bg-[#1A1A1A] border border-[#1A1A1A] flex flex-col animate-pulse"
-            style={{
-              aspectRatio: '1 / 1',
-              minHeight: '280px'
-            }}
+            className="relative overflow-hidden rounded-xl bg-[#1A1A1A] border border-[#1A1A1A] flex flex-col animate-pulse bento-skeleton-square"
           />
         ))}
       </div>

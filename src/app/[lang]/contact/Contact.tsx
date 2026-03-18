@@ -57,8 +57,7 @@ const Contact: React.FC<ContactProps> = ({ dict }) => {
 <div className="w-full max-w-none mx-auto">
           {/* Título de la sección */}
           <h2 
-            className="fluid-text-2xl md:fluid-text-3xl lg:fluid-text-4xl font-bold mb-6 md:mb-8 text-light text-center" 
-            style={{ fontFamily: "var(--font-manrope)" }}
+            className="fluid-text-2xl md:fluid-text-3xl lg:fluid-text-4xl font-bold mb-6 md:mb-8 text-light text-center font-manrope" 
           >
             {dict.contact.title}
           </h2>

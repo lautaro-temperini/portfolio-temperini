@@ -30,14 +30,12 @@ export default async function Projects({ lang }: ProjectsProps) {
         <div className="w-full flex flex-col items-start text-left mb-8 md:mb-12 lg:mb-14 px-4 md:px-6 lg:px-10">
           <div className="space-y-2">
             <h2
-              className="fluid-text-3xl md:fluid-text-4xl lg:fluid-text-5xl font-semibold leading-tight text-light mb-4 md:mb-6"
-              style={{ fontFamily: "var(--font-neue-haas)" }}
+              className="fluid-text-3xl md:fluid-text-4xl lg:fluid-text-5xl font-semibold leading-tight text-light mb-4 md:mb-6 font-neue-haas"
             >
               {dict.projects.title}
             </h2>
             <p
-              className="fluid-text-base md:fluid-text-lg font-semibold leading-relaxed text-accent max-w-full md:max-w-2xl lg:max-w-3xl"
-              style={{ fontFamily: "var(--font-manrope)" }}
+              className="fluid-text-base md:fluid-text-lg font-semibold leading-relaxed text-accent max-w-full md:max-w-2xl lg:max-w-3xl font-manrope"
             >
               {dict.projects.description}
             </p>

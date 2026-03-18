@@ -212,16 +212,10 @@ export default function Navbar({ dict, lang }: NavbarProps) {
     >
       <Link href={`/${lang}`} className="flex items-center justify-center group cursor-pointer" aria-label="Ir al inicio">
         <h1
-          className={`fluid-text-xl md:fluid-text-3xl lg:fluid-text-4xl xl:fluid-text-5xl font-medium tracking-[0.15em] transition-all duration-200
+          className={`fluid-text-xl md:fluid-text-3xl lg:fluid-text-4xl xl:fluid-text-5xl font-medium tracking-[0.15em] transition-all duration-200 font-manrope logo-outline
             ${(pathname === `/${lang}` || pathname === `/${lang}/`) ? 'underline underline-offset-8 decoration-[#666973]' : ''}
             group-hover:animate-flip
           `}
-          style={{
-            fontFamily: "var(--font-manrope)",
-            WebkitTextStroke: "3px #A6A6A6",
-            WebkitTextFillColor: "transparent",
-            color: "transparent",
-          }}
         >
           TEMPERINI
         </h1>
@@ -274,7 +268,7 @@ export default function Navbar({ dict, lang }: NavbarProps) {
           >
             <span className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-full bg-gradient-to-b from-white/5 to-transparent" />
             <span className="pointer-events-none absolute inset-0 animate-btn-shine bg-gradient-to-r from-transparent via-white/5 to-transparent w-1/2" />
-            <span className="relative z-10 text-sm font-semibold text-white/75 group-hover:text-white transition-colors duration-200 whitespace-nowrap" style={{ fontFamily: "var(--font-manrope)" }}>
+            <span className="relative z-10 text-sm font-semibold text-white/90 group-hover:text-white transition-colors duration-200 whitespace-nowrap font-manrope">
               {dict.nav.connect}
             </span>
           </Link>
@@ -338,7 +332,7 @@ export default function Navbar({ dict, lang }: NavbarProps) {
                   >
                     <span className="pointer-events-none absolute inset-x-0 top-0 h-1/2 rounded-t-full bg-gradient-to-b from-white/5 to-transparent" />
                     <span className="pointer-events-none absolute inset-0 animate-btn-shine bg-gradient-to-r from-transparent via-white/5 to-transparent w-1/2" />
-                    <span className="relative z-10 text-sm font-semibold text-white/75 group-hover:text-white transition-colors duration-200 whitespace-nowrap" style={{ fontFamily: "var(--font-manrope)" }}>
+                    <span className="relative z-10 text-sm font-semibold text-white/90 group-hover:text-white transition-colors duration-200 whitespace-nowrap font-manrope">
                       {dict.nav.connect}
                     </span>
                   </Link>

@@ -236,7 +236,6 @@ export default function TiltedCard({
         <div
           className="relative w-full bg-gray-200 rounded-[15px] skeleton"
           style={{
-            width: "100%",
             // Calcular el padding-bottom para mantener la proporción de aspecto
             paddingBottom: `${100 / aspectRatio}%`,
           }}
@@ -264,7 +263,6 @@ export default function TiltedCard({
       <div
         className="relative w-full transition-all duration-500 ease-out"
         style={{
-          width: "100%",
           // Mantener proporción de aspecto
           paddingBottom: `${100 / aspectRatio}%`,
           // Aplicar transformación solo en desktop

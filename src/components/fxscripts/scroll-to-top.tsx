@@ -265,11 +265,7 @@ export default function ScrollToTop({ size = 32 }: ScrollToTopProps) {
     isButtonVisible && !isFooterVisible && (
       <button
         onClick={scrollToTopOfPage}
-        style={{ 
-          width: Math.max(size, 44), // Mínimo 44px para accesibilidad
-          height: Math.max(size, 44) 
-        }}
-        className="fixed bottom-2 md:bottom-4 right-6 md:right-12 z-[99999] min-w-touch min-h-touch bg-white/10 backdrop-blur-sm flex items-center justify-center rounded-full hover:bg-white/20 transition-all duration-200 hover:scale-105"
+        className="fixed bottom-2 md:bottom-4 right-6 md:right-12 z-[99999] min-w-touch min-h-touch bg-white/10 backdrop-blur-sm flex items-center justify-center rounded-full hover:bg-white/20 transition-all duration-200 hover:scale-105 scroll-to-top-dynamic-size"
         aria-label="Scroll to top"
       >
         <ArrowUp size={size * 0.42} color="#f2f2f2" />
