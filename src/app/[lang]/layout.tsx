@@ -12,29 +12,11 @@ export default async function LangLayout({
 }) {
   const { lang } = await params
   const validLang: Lang = lang === "en" || lang === "es" ? lang : "es"
+
+  // Precarga del diccionario para el segmento [lang]
   preloadDictionary(validLang)
 
-  const jsonLdGraph = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebPage",
-        "@id": "https://temperini.vercel.app",
-        inLanguage: validLang,
-      },
-    ],
-  }
-
-  return (
-    <html lang={validLang}>
-      <head>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
-        />
-      </head>
-      <body>{children}</body>
-    </html>
-  )
+  // En App Router, SOLO el root layout (`src/app/layout.tsx`) debe renderizar <html>/<body>.
+  return <>{children}</>
 }
 

@@ -215,6 +215,7 @@ export default async function RootLayout({
           nonce={nonce}
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGraph) }}
+          suppressHydrationWarning
         />
       </head>
 

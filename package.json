@@ -8,7 +8,7 @@
     "deploy": "npm run export && gh-pages -d out",
     "lint": "next lint",
     "export": "next build && next export",
-    "dev": "next dev",
+    "dev": "next dev --webpack",
     "analyze": "ANALYZE=true next build",
     "postbuild": "next-sitemap",
     "sitemap": "next-sitemap",
