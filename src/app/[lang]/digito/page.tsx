@@ -72,9 +72,9 @@ export default async function DigitoPage({
             { id: "contexto" },
             { id: "problema" },
             { id: "research" },
-            { id: "estrategia" },
             { id: "fricciones" },
             { id: "arquitectura" },
+            { id: "tradeoffs", label: "Trade offs" },
             { id: "testing" },
             { id: "prototipo", label: lang === "es" ? "Prototipo" : "Prototype" },
             { id: "cierre", label: lang === "es" ? "Conclusión" : "Conclusion" },
@@ -93,9 +93,9 @@ export default async function DigitoPage({
                       href="#prototipo"
                       offset={60}
                       duration={400}
-                      className="inline-flex items-center gap-1 text-sm text-light/80 hover:text-light underline underline-offset-4 transition-colors"
+                      className="inline-flex items-center gap-1 text-sm  text-light/80 hover:text-light underline underline-offset-4 transition-colors"
                     >
-                      {lang === "es" ? "Ir al prototipo ↓" : "Go to prototype ↓"}
+                      {lang === "es" ? "• Ir al prototipo ↓" : "Go to prototype ↓"}
                     </ScrollToSection>
                   </div>
                 </div>
@@ -104,7 +104,7 @@ export default async function DigitoPage({
 
             {/* ==================== BANNER HERO ==================== */}
             <FadeOnScroll delay={80}>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-28">
+            <section className="w-full px-8 md:px-12 lg:px-20 mb-16">
   <div className="relative w-full h-[150px] md:h-[200px] rounded-lg overflow-hidden bg-[#0A1628]">
     <Image
       src="/images/digitoImages/DigitoRender3d.webp"
@@ -160,12 +160,65 @@ export default async function DigitoPage({
 
           {/* ==================== 2. CONTEXTO ==================== */}
             <FadeOnScroll delay={150}>
-            <section id="contexto" className="w-full px-8 md:px-12 lg:px-20 mb-28">
-            <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">{t.context?.title}</h2>
-            <div className="text-light leading-relaxed space-y-4 max-w-4xl">
-              <p className="text-lg">{t.context?.text1}</p>
-              <p className="text-lg">{t.context?.text2}</p>
-            </div>
+            <section id="contexto" className="w-full px-8 md:px-12 lg:px-20 mb-20">
+              <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0 [&>*]:h-full">
+                <Block colSpan={1}>
+                  <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">
+                    {lang === "es" ? "Contexto" : "Context"}
+                  </h2>
+                  <div className="text-light leading-relaxed space-y-4 max-w-4xl">
+                    <p className="text-lg">
+                      {lang === "es"
+                        ? "Dígito es una empresa de Business Intelligence y RPA. Su plataforma SaaS B2B incluía facturación, reportes y administración, pero el módulo operativo para consultores tenía baja adopción."
+                        : "Dígito is a Business Intelligence and RPA company. Its B2B SaaS platform included billing, reporting, and administration, but the operational module for consultants had low adoption."}
+                    </p>
+                    <p className="text-lg">
+                      {lang === "es"
+                        ? "Esto generaba fricción en el día a día del consultor y baja calidad en los datos operativos."
+                        : "This created daily friction for consultants and reduced the quality of operational data."}
+                    </p>
+                    <p className="text-lg">
+                      {lang === "es"
+                        ? "El objetivo fue claro: convertir el registro de horas en parte natural del flujo de trabajo, no en una tarea adicional."
+                        : "The goal was clear: make time logging a natural part of the work flow, not an additional task."}
+                    </p>
+                  </div>
+                </Block>
+
+                <Block colSpan={1}>
+                  <div className="text-light leading-relaxed space-y-4">
+                    <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">
+                      {lang === "es" ? "Scope: módulo operativo del consultor" : "Scope: consultant operational module"}
+                    </h2>
+                    <p className="text-lg">
+                      {lang === "es"
+                        ? "El brief original incluía 8 áreas de mejora. Rediseñar toda la plataforma era inviable en 3.5 meses."
+                        : "The original brief included 8 areas of improvement. Redesigning the entire platform was not feasible in 3.5 months."}
+                    </p>
+
+                    <p className="text-lg font-semibold">
+                      {lang === "es" ? "Esto permitió:" : "This enabled:"}
+                    </p>
+                    <ul className="list-disc pl-5 space-y-2">
+                      {[
+                        lang === "es"
+                          ? "Atacar directamente el problema detectado"
+                          : "Address the detected problem directly",
+                        lang === "es"
+                          ? "Proponer una solución completa y validable"
+                          : "Propose a complete, testable solution",
+                        lang === "es"
+                          ? "Sentar bases para futuras integraciones"
+                          : "Lay the groundwork for future integrations",
+                      ].map((item, index) => (
+                        <li key={index} className="text-light">
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </Block>
+              </GridContainer>
           </section>
             </FadeOnScroll>
 
@@ -177,13 +230,19 @@ export default async function DigitoPage({
 
           {/* ==================== 5. HIPÓTESIS INICIAL ==================== */}
             <FadeOnScroll>
-            <section id="problema" className="w-full px-8 md:px-12 lg:px-20 mb-28">
+            <section id="problema" className="w-full px-8 md:px-12 lg:px-20 mb-20">
             <div className="max-w-4xl mb-6">
               <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">{t.problem?.title}</h2>
             </div>
             <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0 [&>*]:h-full">
               <Block colSpan={1}>
-                <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 md:h-full">
+                <div
+                  className="bg-container/80 rounded-lg p-6 md:h-full"
+                  style={{
+                    boxShadow:
+                      "0 0 0 1px rgba(255, 255, 255, 0.06), 0 4px 12px rgba(0, 0, 0, 0.5)",
+                  }}
+                >
                   <h3 className="text-2xl font-semibold text-light mb-4">{t.problem?.businessImpact}</h3>
                   <div className="text-light leading-relaxed space-y-4">
                     {t.problem?.impactSummary && (
@@ -201,7 +260,13 @@ export default async function DigitoPage({
                 </div>
               </Block>
               <Block colSpan={1}>
-                    <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 md:h-full">
+                    <div
+                      className="bg-container/80 rounded-lg p-6 md:h-full"
+                      style={{
+                        boxShadow:
+                          "0 0 0 1px rgba(255, 255, 255, 0.06), 0 4px 12px rgba(0, 0, 0, 0.5)",
+                      }}
+                    >
                   <h3 className="text-2xl font-semibold text-light mb-4">
                     {t.problem?.title}
                   </h3>
@@ -243,7 +308,7 @@ export default async function DigitoPage({
 
           {/* ==================== 7. RESEARCH ==================== */}
             <FadeOnScroll>
-            <section id="research" className="w-full px-8 md:px-12 lg:px-20 mb-28">
+            <section id="research" className="w-full px-8 md:px-12 lg:px-20 mb-20">
             {/* Mobile: título + subtítulo + stats ocupando 1 viewport, fondo negro fullwidth */}
             <div className="block md:hidden -mx-8">
             <div className="px-8 py-16 flex flex-col gap-12">
@@ -284,7 +349,13 @@ export default async function DigitoPage({
               <div className="mb-8">
                 <BentoGrid cols={{ default: 1, md: 2 }} gap="md">
                   <BentoItem colSpan={1}>
-                    <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 h-full">
+                    <div
+                      className="bg-container/80 rounded-lg p-6 h-full"
+                      style={{
+                        boxShadow:
+                          "0 0 0 1px rgba(255, 255, 255, 0.06), 0 4px 12px rgba(0, 0, 0, 0.5)",
+                      }}
+                    >
                       <p className="text-4xl font-bold text-light">
                         {t.research.stats.stat1.value}
                       </p>
@@ -297,7 +368,13 @@ export default async function DigitoPage({
                     </div>
                   </BentoItem>
                   <BentoItem colSpan={1}>
-                    <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 h-full">
+                    <div
+                      className="bg-container/80 rounded-lg p-6 h-full"
+                      style={{
+                        boxShadow:
+                          "0 0 0 1px rgba(255, 255, 255, 0.06), 0 4px 12px rgba(0, 0, 0, 0.5)",
+                      }}
+                    >
                       <p className="text-4xl font-bold text-light">
                         {t.research.stats.stat2.value}
                       </p>
@@ -393,49 +470,6 @@ export default async function DigitoPage({
   <div className="h-px w-full bg-gradient-to-r from-transparent via-[#08A4E1]/40 to-transparent" />
 </div>
 
-          {/* ==================== 9. ESTRATEGIA ==================== */}
-            <FadeOnScroll delay={150}>
-            <section id="estrategia" className="w-full px-8 md:px-12 lg:px-20 mb-28">
-            <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">{t.strategy.title}</h2>
-            <div className="text-light leading-relaxed space-y-4 max-w-4xl">
-              <p className="text-lg">{t.strategy.text}</p>
-            </div>
-          </section>
-            </FadeOnScroll>
-
-          {/* ==================== 10. ALTERNATIVA Y ALCANCE - GridContainer 2 cols ==================== */}
-            <FadeOnScroll>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-28">
-            <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0 [&>*]:h-full">
-              <Block colSpan={1}>
-                <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 h-full">
-                  <h4 className="text-lg font-semibold text-light mb-4">{t.strategy.alternativeTitle}</h4>
-                  <p className="mb-4 text-light">{t.strategy.alternativeText}</p>
-                  <p className="text-light font-semibold mb-2">{t.strategy.discardedTitle}</p>
-                  <ul className="list-disc pl-5 space-y-2 mb-4">
-                    {(t.strategy.discardedReasons || []).map((reason: string, index: number) => (
-                      <li key={index} className="text-light">{reason}</li>
-                    ))}
-                  </ul>
-                  <p className="text-light mt-6">{t.strategy.conclusion}</p>
-                </div>
-              </Block>
-              <Block colSpan={1}>
-                <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 h-full">
-                  <h4 className="text-lg font-semibold text-light mb-4">{t.strategy.scopeTitle}</h4>
-                  <p className="mb-4 text-light">{t.strategy.scopeText1}</p>
-                  <h4 className="text-lg font-semibold text-light mt-4 mb-2">{t.strategy.thisAllowed}</h4>
-                  <ul className="list-disc pl-5 space-y-2 mb-4">
-                    {(t.strategy.thisAllowedItems || []).map((item: string, index: number) => (
-                      <li key={index} className="text-light">{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              </Block>
-            </GridContainer>
-          </section>
-            </FadeOnScroll>
-
           {/* ==================== PRINCIPIOS DE DISEÑO ==================== */}
             <FadeOnScroll>
             <section className="w-full px-8 md:px-12 lg:px-20 mb-28 hidden md:block">
@@ -464,14 +498,20 @@ export default async function DigitoPage({
 
           {/* ==================== 11. LOS 5 INSIGHTS EN BENTOGRID ==================== */}
             <FadeOnScroll delay={80}>
-            <section id="fricciones" className="w-full px-8 md:px-12 lg:px-20 mb-28">
+            <section id="fricciones" className="w-full px-8 md:px-12 lg:px-20 mb-20">
             <div className="max-w-4xl mb-8">
               <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">{t.frictions.title}</h2>
               <p className="text-light mb-8 text-lg">{t.frictions.subtitle}</p>
             </div>
             <BentoGrid cols={{ default: 1, md: 2, lg: 3 }} gap="md">
               <BentoItem colSpan={{ default: 1, md: 2 }}>
-                <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 md:h-full">
+                <div
+                  className="bg-container/80 rounded-lg p-6 md:h-full"
+                  style={{
+                    boxShadow:
+                      "0 0 0 1px rgba(255, 255, 255, 0.06), 0 4px 12px rgba(0, 0, 0, 0.5)",
+                  }}
+                >
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-2xl font-bold text-light">{t.frictions.friction1.number}</span>
                     <h3 className="text-xl font-bold text-light">{t.frictions.friction1.title}</h3>
@@ -493,7 +533,13 @@ export default async function DigitoPage({
                 </div>
               </BentoItem>
               <BentoItem colSpan={1}>
-                <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 md:h-full">
+                <div
+                  className="bg-container/80 rounded-lg p-6 md:h-full"
+                  style={{
+                    boxShadow:
+                      "0 0 0 1px rgba(255, 255, 255, 0.06), 0 4px 12px rgba(0, 0, 0, 0.5)",
+                  }}
+                >
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-2xl font-bold text-light">{t.frictions.friction2.number}</span>
                     <h3 className="text-xl font-bold text-light">{t.frictions.friction2.title}</h3>
@@ -515,7 +561,13 @@ export default async function DigitoPage({
                 </div>
               </BentoItem>
               <BentoItem colSpan={1}>
-                <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 md:h-full">
+                <div
+                  className="bg-container/80 rounded-lg p-6 md:h-full"
+                  style={{
+                    boxShadow:
+                      "0 0 0 1px rgba(255, 255, 255, 0.06), 0 4px 12px rgba(0, 0, 0, 0.5)",
+                  }}
+                >
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-2xl font-bold text-light">{t.frictions.friction3.number}</span>
                     <h3 className="text-xl font-bold text-light">{t.frictions.friction3.title}</h3>
@@ -537,7 +589,13 @@ export default async function DigitoPage({
                 </div>
               </BentoItem>
               <BentoItem colSpan={1}>
-                <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 md:h-full">
+                <div
+                  className="bg-container/80 rounded-lg p-6 md:h-full"
+                  style={{
+                    boxShadow:
+                      "0 0 0 1px rgba(255, 255, 255, 0.06), 0 4px 12px rgba(0, 0, 0, 0.5)",
+                  }}
+                >
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-2xl font-bold text-light">{t.frictions.friction4.number}</span>
                     <h3 className="text-xl font-bold text-light">{t.frictions.friction4.title}</h3>
@@ -559,7 +617,13 @@ export default async function DigitoPage({
                 </div>
               </BentoItem>
               <BentoItem colSpan={1}>
-                <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 md:h-full">
+                <div
+                  className="bg-container/80 rounded-lg p-6 md:h-full"
+                  style={{
+                    boxShadow:
+                      "0 0 0 1px rgba(255, 255, 255, 0.06), 0 4px 12px rgba(0, 0, 0, 0.5)",
+                  }}
+                >
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-2xl font-bold text-light">{t.frictions.friction5.number}</span>
                     <h3 className="text-xl font-bold text-light">{t.frictions.friction5.title}</h3>
@@ -625,7 +689,7 @@ export default async function DigitoPage({
 
           {/* ==================== Intro Arquitectura ==================== */}
             <FadeOnScroll>
-              <section id="arquitectura" className="w-full px-8 md:px-12 lg:px-20 mb-8">
+              <section id="arquitectura" className="w-full px-8 md:px-12 lg:px-20 mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-light mb-3">
                   {lang === "es" ? "Los tres ejes de arquitectura" : "The three architecture axes"}
                 </h2>
@@ -896,10 +960,60 @@ export default async function DigitoPage({
               </section>
             </FadeOnScroll>
 
+          {/* ==================== TRADE-OFFS CLAVE ==================== */}
+          <FadeOnScroll delay={80}>
+            <section id="tradeoffs" className="w-full px-8 md:px-12 lg:px-20 mb-28">
+              <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">
+                {lang === "es" ? "Lo que decidimos NO hacer" : "Key trade-offs"}
+              </h2>
+              <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0 [&>*]:h-full">
+                <Block colSpan={1}>
+                  <div
+                    className="bg-container/80 rounded-lg p-6 h-full"
+                    style={{
+                      boxShadow:
+                        "0 0 0 1px rgba(255, 255, 255, 0.06), 0 4px 12px rgba(0, 0, 0, 0.5)",
+                    }}
+                  >
+                    <h3 className="text-2xl font-semibold text-light mb-4">{t.strategy.aiTradeoffTitle}</h3>
+                    <div className="space-y-3 text-light leading-relaxed">
+                      <p>{t.strategy.aiTradeoffText1}</p>
+                      <p>{t.strategy.aiTradeoffText2}</p>
+                      <p>{t.strategy.aiTradeoffText3}</p>
+                      <p>{t.strategy.aiTradeoffText4}</p>
+                    </div>
+                  </div>
+                </Block>
+                <Block colSpan={1}>
+                  <div
+                    className="bg-container/80 rounded-lg p-6 h-full"
+                    style={{
+                      boxShadow:
+                        "0 0 0 1px rgba(255, 255, 255, 0.06), 0 4px 12px rgba(0, 0, 0, 0.5)",
+                    }}
+                  >
+                    <h3 className="text-2xl font-semibold text-light mb-4">{t.strategy.alternativeTitle}</h3>
+                    <p className="mb-4 text-light">{t.strategy.alternativeText}</p>
+                    <p className="text-light font-semibold mb-2">{t.strategy.discardedTitle}</p>
+                    <ul className="list-disc pl-5 space-y-2 mb-4">
+                      {(t.strategy.discardedReasons || []).map((reason: string, index: number) => (
+                        <li key={index} className="text-light">{reason}</li>
+                      ))}
+                    </ul>
+                    <p className="text-light mt-6">{t.strategy.conclusion}</p>
+                  </div>
+                </Block>
+              </GridContainer>
+            </section>
+          </FadeOnScroll>
+
 {/* ==================== 20. EVOLUCIÓN DEL DISEÑO - MVP → Wireframe → HiFi ==================== */}
 <FadeOnScroll delay={80}>
-  <section className="w-full px-8 md:px-12 lg:px-20 mb-16">
-    <div className="relative w-full aspect-video rounded-2xl overflow-hidden bg-[#0D0D0D]">
+  <section className="w-full px-8 md:px-12 lg:px-20 mb-28">
+    <div
+      className="relative w-full aspect-video rounded-2xl overflow-hidden bg-[#0D0D0D]"
+      style={{ position: "relative" }}
+    >
       <Image
         src="/images/digitoImages/comparativa-mvp-wireframe-hifi.webp"
         alt="Evolución del diseño: MVP original, wireframe de baja fidelidad y prototipo de alta fidelidad"
@@ -918,45 +1032,57 @@ export default async function DigitoPage({
 
           {/* ==================== 19. TESTING ==================== */}
             <FadeOnScroll>
-            <section id="testing" className="w-full px-8 md:px-12 lg:px-20 mb-28">
+            <section id="testing" className="w-full px-8 md:px-12 lg:px-20 mb-20">
             <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">{t.testing.title}</h2>
-            <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0 [&>*]:h-full mb-28">
+            <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0 [&>*]:h-full">
               <Block colSpan={1}>
-                <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 h-full">
-                  <p className="text-light mb-6 text-lg">{t.testing.subtitle}</p>
+                <div
+                  className="bg-container/80 rounded-lg p-6 h-full"
+                  style={{
+                    boxShadow:
+                      "0 0 0 1px rgba(255, 255, 255, 0.06), 0 4px 12px rgba(0, 0, 0, 0.5)",
+                  }}
+                >
+                  <h3 className="text-2xl font-bold text-light mb-4">{t.testing.subtitle}</h3>
                   <div className="bg-container/60 rounded-lg p-4 space-y-4 text-light">
                     <div>
-                      <h4 className="font-semibold text-light mb-2">
+                      <h5 className="font-medium text-light mb-2">
                         {lang === "es" ? "Participantes:" : "Participants:"}
-                      </h4>
-                      <p>{t.testing.participants}</p>
+                      </h5>
+                      <p className="text-sm text-light leading-relaxed">{t.testing.participants}</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-light mb-2">
+                      <h5 className="font-medium text-light mb-2">
                         {lang === "es" ? "Método:" : "Method:"}
-                      </h4>
-                      <p>{t.testing.method}</p>
+                      </h5>
+                      <p className="text-sm text-light leading-relaxed">{t.testing.method}</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-light mb-2">
+                      <h5 className="font-medium text-light mb-2">
                         {lang === "es" ? "Objetivo:" : "Objective:"}
-                      </h4>
-                      <p>{t.testing.objective}</p>
+                      </h5>
+                      <p className="text-sm text-light leading-relaxed">{t.testing.objective}</p>
                     </div>
                   </div>
                 </div>
               </Block>
               <Block colSpan={1}>
-                <div className="bg-container/80 rounded-lg p-6 border border-container-light/10 h-full">
+                <div
+                  className="bg-container/80 rounded-lg p-6 h-full"
+                  style={{
+                    boxShadow:
+                      "0 0 0 1px rgba(255, 255, 255, 0.06), 0 4px 12px rgba(0, 0, 0, 0.5)",
+                  }}
+                >
                   <h3 className="text-2xl font-bold text-light mb-4">{t.testing.frictionsTitle}</h3>
                   <div className="space-y-4">
                     <div className="bg-red-500/10 backdrop-blur-sm rounded-lg p-4 border border-red-400/30">
                       <h4 className="font-semibold text-light mb-2">{t.testing.friction1.title}</h4>
                       <p className="text-light text-sm leading-relaxed">{t.testing.friction1.text}</p>
                       <p className="text-light text-sm mt-2">
-                        <span className="font-semibold">
+                        <strong className="font-semibold">
                           {lang === "es" ? "Iteración:" : "Iteration:"}
-                        </span>{" "}
+                        </strong>{" "}
                         {(t.testing.iteration1.adjustments || []).join(" · ")}
                       </p>
                     </div>
@@ -964,9 +1090,9 @@ export default async function DigitoPage({
                       <h4 className="font-semibold text-light mb-2">{t.testing.friction2.title}</h4>
                       <p className="text-light text-sm leading-relaxed">{t.testing.friction2.text}</p>
                       <p className="text-light text-sm mt-2">
-                        <span className="font-semibold">
+                        <strong className="font-semibold">
                           {lang === "es" ? "Iteración:" : "Iteration:"}
-                        </span>{" "}
+                        </strong>{" "}
                         {(t.testing.iteration2.adjustments || []).join(" · ")}
                       </p>
                     </div>
@@ -1032,7 +1158,7 @@ export default async function DigitoPage({
 
          {/* ==================== 24. IMPACTO CUALITATIVO ==================== */}
 <FadeOnScroll delay={150}>
-  <section id="cierre" className="w-full px-8 md:px-12 lg:px-20 mb-28">
+  <section id="cierre" className="w-full px-8 md:px-12 lg:px-20 mb-20">
     <h2 className="text-3xl md:text-4xl font-bold text-light mb-8">
       {t.snapshot?.impactTitle}
     </h2>
@@ -1072,7 +1198,7 @@ export default async function DigitoPage({
 
           {/* ==================== 25. CIERRE ==================== */}
 <FadeOnScroll delay={150}>
-  <section className="w-full px-8 md:px-12 lg:px-20 mb-28">
+  <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
     <div className="max-w-3xl mx-auto mb-10 text-light">
       <h2 className="text-3xl md:text-4xl font-bold text-light mb-4 text-center">
         {t.snapshot?.reflectionTitle}

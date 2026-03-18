@@ -189,6 +189,7 @@ export default async function RootLayout({
   return (
     <html
       lang={validLang}
+      data-scroll-behavior="smooth"
       className={`${manrope.variable} ${neueHaas.variable}`}
       style={{ backgroundColor: '#0D0D0D' }}
     >
