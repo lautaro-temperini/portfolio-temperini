@@ -93,13 +93,25 @@ export default async function VorterixLandingPage({
       <Navbar dict={dict} lang={lang} />
       <div className="relative z-[20]">
         <main className="[&>*]:!transform-none">
-          <SectionNav sections={[
-            { id: "brief" },
-            { id: "diseno" },
-            { id: "conversion" },
-            { id: "decisiones", label: "Decisiones de diseño" },
-            { id: "iteraciones", label: "Iteraciones y UX" },
-          ]} />
+          <SectionNav
+            sections={[
+              { id: "brief", label: t.brief.title },
+              { id: "diseno", label: t.audience.title },
+              { id: "conversion", label: t.conversion.title },
+              {
+                id: "decisiones",
+                label:
+                  lang === "es"
+                    ? "Decisiones de diseño"
+                    : "Design decisions",
+              },
+              {
+                id: "iteraciones",
+                label:
+                  lang === "es" ? "Iteraciones y UX" : "Iterations & UX",
+              },
+            ]}
+          />
 
           {/* 1. Hero */}
           <FadeOnScroll>
@@ -348,7 +360,9 @@ export default async function VorterixLandingPage({
               <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0">
                 <Block colSpan={1}>
                   <div className="space-y-3">
-                    <h2 className="text-2xl md:text-3xl font-bold text-light">Decisiones de diseño</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold text-light">
+                      {lang === "es" ? "Decisiones de diseño" : "Design decisions"}
+                    </h2>
                     <ul className="space-y-3">
                       {t.conversion.decisions.map(
                         (dec: { title: string; text: string }, idx: number) => (

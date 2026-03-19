@@ -68,17 +68,34 @@ export default async function DigitoPage({
       <Navbar dict={dict} lang={lang} />
       <div className="relative z-[20]">
         <main className="[&>*]:!transform-none">
-          <SectionNav sections={[
-            { id: "contexto" },
-            { id: "problema" },
-            { id: "research" },
-            { id: "fricciones" },
-            { id: "arquitectura" },
-            { id: "tradeoffs", label: "Trade offs" },
-            { id: "testing" },
-            { id: "prototipo", label: lang === "es" ? "Prototipo" : "Prototype" },
-            { id: "cierre", label: lang === "es" ? "Conclusión" : "Conclusion" },
-          ]} />
+          <SectionNav
+            sections={[
+              { id: "contexto", label: t.context?.title },
+              { id: "problema", label: t.problem?.title },
+              { id: "research", label: t.research?.title },
+              { id: "fricciones", label: t.frictions?.title },
+              {
+                id: "arquitectura",
+                label: lang === "es" ? "Arquitectura" : "Architecture",
+              },
+              {
+                id: "tradeoffs",
+                label:
+                  lang === "es"
+                    ? "Lo que decidimos NO hacer"
+                    : "Key trade-offs",
+              },
+              { id: "testing", label: t.testing?.title },
+              {
+                id: "prototipo",
+                label: lang === "es" ? "Prototipo" : "Prototype",
+              },
+              {
+                id: "cierre",
+                label: lang === "es" ? "Conclusión" : "Conclusion",
+              },
+            ]}
+          />
             {/* ==================== 1. HERO SECTION ==================== */}
             <FadeOnScroll>
               <section className="w-full px-8 md:px-12 lg:px-20 pt-28 md:pt-32 lg:pt-36 mb-12">

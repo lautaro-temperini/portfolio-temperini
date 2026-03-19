@@ -91,15 +91,21 @@ export default async function LevelUpPage({
       <Navbar dict={dict} lang={lang} />
       <div className="relative z-[20]">
         <main className="[&>*]:!transform-none">
-          <SectionNav sections={[
-            { id: "desafio" },
-            { id: "problema" },
-            { id: "insight" },
-            { id: "sistema" },
-            { id: "propuesta" },
-            { id: "aprendizajes" },
-            { id: "reflexion" },
-          ]} />
+          <SectionNav
+            sections={[
+              { id: "desafio", label: t.challenge.title },
+              { id: "problema", label: t.problem.title },
+              { id: "insight", label: t.insight.title },
+              { id: "sistema", label: t.vision.title },
+              { id: "propuesta", label: t.decisionsTitle },
+              {
+                id: "aprendizajes",
+                label:
+                  lang === "es" ? "Aprendizajes clave" : "Key learnings",
+              },
+              { id: "reflexion", label: t.reflection.title },
+            ]}
+          />
           <CaseStudyLayout>
             {/* Hero Section - mismo padding top que Dígito */}
             <FadeOnScroll>

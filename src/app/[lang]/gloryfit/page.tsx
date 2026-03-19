@@ -88,14 +88,16 @@ import FadeOnScroll from "@/components/fxscripts/FadeOnScroll";
         <Navbar dict={dict} lang={lang} />
         <div className="relative z-[20]">
         <main className="[&>*]:!transform-none">
-          <SectionNav sections={[
-            { id: "reto" },
-            { id: "investigacion" },
-            { id: "estrategia" },
-            { id: "sistema" },
-            { id: "iteraciones" },
-            { id: "conclusion" },
-          ]} />
+          <SectionNav
+            sections={[
+              { id: "reto", label: t.challenge.title },
+              { id: "investigacion", label: t.research.title },
+              { id: "estrategia", label: t.strategy.title },
+              { id: "sistema", label: t.system.title },
+              { id: "iteraciones", label: t.iterations.title },
+              { id: "conclusion", label: t.conclusion.title },
+            ]}
+          />
           <CaseStudyLayout>
           {/* Hero Section - mismo padding top que Dígito */}
           <FadeOnScroll>
