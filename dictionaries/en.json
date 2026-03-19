@@ -303,7 +303,7 @@
             "Lay groundwork for future integrations"
           ],
           "ourDecisionText": "We prioritized the operations module where consultants log hours, manage tasks, and see workload, as it is the direct bottleneck for billing.",
-          "aiTradeoffTitle": "Trade-off: AI discarded",
+          "aiTradeoffTitle": "Automate the problem (AI)",
           "aiTradeoffText1": "We initially considered incorporating AI to automate time logging, a common solution with strong business appeal.",
           "aiTradeoffText2": "However, research showed the problem wasn't friction in logging, but the lack of perceived value. Users didn't forget — they simply didn't prioritize it.",
           "aiTradeoffText3": "Automating would optimize an action users already considered irrelevant. Even if they remembered, there were no incentives to log — so AI alone wouldn't solve adoption.",
