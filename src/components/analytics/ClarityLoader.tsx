@@ -40,11 +40,11 @@ export default function ClarityLoader() {
     }
 
     // Cargar después de que el navegador esté libre (no bloquea LCP)
-    if ("requestIdleCallback" in window) {
-      requestIdleCallback(inject, { timeout: 3000 })
-    } else {
-      window.addEventListener("load", inject, { once: true })
-    }
+   if (typeof requestIdleCallback !== "undefined") {
+  requestIdleCallback(inject, { timeout: 3000 })
+} else {
+  (window as Window).addEventListener("load", inject, { once: true })
+}
   }, [projectId])
 
   return null
