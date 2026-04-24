@@ -1,3 +1,4 @@
+import { headers } from "next/headers"
 import { getDictionary } from '@/lib/getDictionary'
 import Navbar from "@/components/navbar/Navbar";
 import ScrollToTop from "@/components/fxscripts/scroll-to-top";
@@ -8,41 +9,98 @@ import ImageBreakout from "@/components/sections/ImageBreakout";
 import InsightCard from "@/components/sections/InsightCard";
 import SectionNav from "@/components/case-study/SectionNav";
 import FadeOnScroll from "@/components/fxscripts/FadeOnScroll";
-    
-  export const metadata = {
-    title: "GloryFit | App de entrenamiento personalizado | Lautaro R. Temperini",
+import CaseStudyTracker from "@/components/analytics/CaseStudyTracker";
+
+const SITE_URL = "https://temperini.vercel.app"
+const PUBLISHED_DATE = "2026-02-10"
+
+export const metadata = {
+  title: "GloryFit | Fitness App UX Design | Case Study | Lautaro Temperini",
+  description:
+    "Rediseño UX/UI de app fitness para smartwatch Q18: rutinas personalizadas basadas en datos biométricos con onboarding que genera confianza. Buenos Aires, 2026.",
+  keywords: [
+    "fitness app UX design",
+    "smartwatch UX",
+    "wearable product design",
+    "onboarding design case study",
+    "biometric data UX",
+    "product designer Buenos Aires",
+    "health app design",
+  ],
+  authors: [{ name: "Lautaro Temperini", url: SITE_URL }],
+  creator: "Lautaro Temperini",
+  alternates: {
+    canonical: `${SITE_URL}/gloryfit`,
+    languages: {
+      'es': `${SITE_URL}/es/gloryfit`,
+      'en': `${SITE_URL}/en/gloryfit`,
+      'x-default': `${SITE_URL}/es/gloryfit`,
+    }
+  },
+  openGraph: {
+    title: "GloryFit | Fitness App UX | Case Study by Lautaro Temperini",
     description:
-      "Rediseño UX/UI de app fitness para smartwatch Q18: rutinas personalizadas basadas en datos biométricos con onboarding que genera confianza.",
-    keywords:
-      "GloryFit, UX/UI, smartwatch Q18, diseño de experiencia, rutinas personalizadas, datos biométricos, onboarding, confianza, Lautaro Temperini, fitness app, caso de estudio",
-    alternates: {
-      canonical: '/gloryfit',
+      "Rediseño UX/UI de app fitness para smartwatch Q18: rutinas personalizadas basadas en datos biométricos. Onboarding que genera confianza desde el primer uso. Buenos Aires, 2026.",
+    url: `${SITE_URL}/gloryfit`,
+    siteName: "Temperini Portfolio",
+    locale: "es_AR",
+    type: "article",
+    publishedTime: `${PUBLISHED_DATE}T00:00:00Z`,
+    modifiedTime: `${PUBLISHED_DATE}T00:00:00Z`,
+    authors: ["Lautaro Temperini"],
+    images: [
+      {
+        url: `${SITE_URL}/images/gloryfit-logo.png`,
+        width: 1200,
+        height: 630,
+        alt: "GloryFit - fitness app UX case study",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "GloryFit | Fitness App UX | Case Study",
+    description:
+      "Diseño UX/UI para una app de entrenamiento inteligente. Rutinas adaptadas, onboarding progresivo y decisiones basadas en datos biométricos.",
+    images: [`${SITE_URL}/images/gloryfit-logo.png`],
+  },
+};
+
+const jsonLdGloryfit = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": `${SITE_URL}/gloryfit#article`,
+      "headline": "GloryFit: Rediseño UX de App Fitness para Smartwatch Q18",
+      "description": "Rediseño UX/UI de app fitness: rutinas personalizadas basadas en datos biométricos con onboarding que genera confianza desde el primer uso.",
+      "author": {
+        "@type": "Person",
+        "@id": `${SITE_URL}/#person`,
+        "name": "Lautaro Temperini",
+        "url": SITE_URL,
+        "jobTitle": "Product Designer",
+        "sameAs": [
+          "https://www.linkedin.com/in/lautaro-temperini/",
+          "https://github.com/lautaro-temperini",
+        ],
+      },
+      "datePublished": PUBLISHED_DATE,
+      "dateModified": PUBLISHED_DATE,
+      "url": `${SITE_URL}/gloryfit`,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": `${SITE_URL}/gloryfit` },
+      "inLanguage": "es-AR",
+      "keywords": ["fitness app", "UX design", "smartwatch", "wearable", "product design", "case study"],
     },
-    openGraph: {
-      title: "GloryFit | App de entrenamiento personalizado | Lautaro R. Temperini",
-      description:
-        "App de fitness diseñada para personalizar rutinas según datos biométricos. Un enfoque estratégico de UX/UI que reduce fricción y construye confianza desde el primer uso.",
-      url: "https://temperini.vercel.app/gloryfit",
-      siteName: "Temperini Portfolio",
-      locale: "es_AR",
-      type: "website",
-      images: [
-        {
-          url: "https://temperini.vercel.app/images/gloryfit-logo.png",
-          width: 1200,
-          height: 630,
-          alt: "GloryFit - App de entrenamiento",
-        },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Portfolio", "item": SITE_URL },
+        { "@type": "ListItem", "position": 2, "name": "GloryFit", "item": `${SITE_URL}/gloryfit` },
       ],
     },
-    twitter: {
-      card: "summary_large_image",
-      title: "GloryFit | App de entrenamiento personalizado | Lautaro R. Temperini",
-      description:
-        "Diseño UX/UI para una app de entrenamiento inteligente. Rutinas adaptadas, onboarding progresivo y decisiones basadas en datos reales de usuarios.",
-      images: ["https://temperini.vercel.app/images/gloryfit-logo.png"],
-    },
-  };
+  ],
+}
 
   /**
    * Página de GloryFit localizada - Diseño editorial tipo Medium
@@ -57,6 +115,8 @@ import FadeOnScroll from "@/components/fxscripts/FadeOnScroll";
     const { lang: langParam } = await params
     const lang = (langParam === 'es' || langParam === 'en') ? langParam : 'es'
     const dict = await getDictionary(lang)
+    const headersList = await headers()
+    const nonce = headersList.get("x-nonce") || ""
     const t = (dict as any).projectPages?.gloryfit || {
       hero: { title: "GLORYFIT", subtitle: "Rutinas personalizadas a partir de tus datos", description: "" },
       snapshotTop: {
@@ -85,6 +145,17 @@ import FadeOnScroll from "@/components/fxscripts/FadeOnScroll";
 
     return (
       <>
+        <script
+          nonce={nonce}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGloryfit) }}
+          suppressHydrationWarning
+        />
+        <CaseStudyTracker
+          slug="gloryfit"
+          lang={lang}
+          sectionIds={["reto", "investigacion", "estrategia", "sistema", "iteraciones", "conclusion"]}
+        />
         <Navbar dict={dict} lang={lang} />
         <div className="relative z-[20]">
         <main className="[&>*]:!transform-none">

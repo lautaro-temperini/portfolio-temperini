@@ -1,3 +1,4 @@
+import { headers } from "next/headers"
 import { getDictionary } from "@/lib/getDictionary"
 import Navbar from "@/components/navbar/Navbar"
 import ScrollToTop from "@/components/fxscripts/scroll-to-top"
@@ -11,38 +12,95 @@ import { FeatureCard } from "@/components/sections/FeatureCard"
 import FadeOnScroll from "@/components/fxscripts/FadeOnScroll"
 import Image from "next/image"
 import SectionNav from "@/components/case-study/SectionNav"
+import CaseStudyTracker from "@/components/analytics/CaseStudyTracker"
+
+const SITE_URL = "https://temperini.vercel.app"
+const PUBLISHED_DATE = "2026-03-15"
 
 export const metadata = {
-  title: "Dígito | Módulo Operativo | Lautaro R. Temperini",
+  title: "Dígito | Módulo Operativo B2B SaaS | Case Study | Lautaro Temperini",
   description:
-    "Rediseño UX/UI del módulo operativo de Dígito: transformé el registro de horas de una tarea olvidada en parte natural del flujo diario.",
-  keywords:
-    "Dígito, UX/UI, time tracking, módulo operativo, registro de horas, B2B SaaS, Lautaro Temperini, caso de estudio, productividad, business intelligence",
+    "Rediseño UX/UI del módulo operativo de Dígito: transformé el registro de horas de una tarea olvidada en parte natural del flujo diario. B2B SaaS, Buenos Aires, 2026.",
+  keywords: [
+    "product design case study",
+    "B2B SaaS UX",
+    "time tracking UX",
+    "business intelligence design",
+    "módulo operativo",
+    "product designer Buenos Aires",
+    "SaaS adoption design",
+  ],
+  authors: [{ name: "Lautaro Temperini", url: SITE_URL }],
+  creator: "Lautaro Temperini",
   alternates: {
-    canonical: '/digito',
+    canonical: `${SITE_URL}/digito`,
+    languages: {
+      'es': `${SITE_URL}/es/digito`,
+      'en': `${SITE_URL}/en/digito`,
+      'x-default': `${SITE_URL}/es/digito`,
+    }
   },
   openGraph: {
-    title: "DÍGITO | Módulo Operativo | Lautaro R. Temperini",
-    description: "Dígito es una empresa de Business Intelligence y RPA. Su plataforma SaaS B2B incluía facturación, reportes y administración, pero el módulo operativo para consultores tenía baja adopción y uso inconsistente.",
-    url: "https://temperini.vercel.app/digito",
+    title: "DÍGITO | Módulo Operativo | Case Study by Lautaro Temperini",
+    description: "Rediseño del módulo operativo de Dígito (BI & RPA SaaS): transformé el registro de horas de baja adopción en flujo natural de trabajo. Buenos Aires, 2026.",
+    url: `${SITE_URL}/digito`,
     siteName: "Temperini Portfolio",
     locale: "es_AR",
-    type: "website",
+    type: "article",
+    publishedTime: `${PUBLISHED_DATE}T00:00:00Z`,
+    modifiedTime: `${PUBLISHED_DATE}T00:00:00Z`,
+    authors: ["Lautaro Temperini"],
     images: [
       {
-        url: "https://temperini.vercel.app/images/digito-logo.webp",
+        url: `${SITE_URL}/images/digito-logo.webp`,
         width: 1200,
         height: 630,
-        alt: "DÍGITO - Módulo Operativo",
+        alt: "DÍGITO - Módulo Operativo case study",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "DÍGITO | Módulo Operativo | Lautaro R. Temperini",
-    description: "Transformé el registro de horas de una tarea adicional en parte natural del flujo de trabajo.",
-    images: ["https://temperini.vercel.app/images/digito-logo.webp"],
+    title: "DÍGITO | Módulo Operativo | Case Study",
+    description: "Transformé el registro de horas de una tarea olvidada en parte natural del flujo diario. B2B SaaS product design.",
+    images: [`${SITE_URL}/images/digito-logo.webp`],
   },
+}
+
+const jsonLdDigito = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": `${SITE_URL}/digito#article`,
+      "headline": "Dígito: Rediseño del Módulo Operativo B2B SaaS",
+      "description": "Rediseño UX/UI del módulo operativo para transformar el registro de horas de una tarea olvidada en parte natural del flujo diario.",
+      "author": {
+        "@type": "Person",
+        "@id": `${SITE_URL}/#person`,
+        "name": "Lautaro Temperini",
+        "url": SITE_URL,
+        "jobTitle": "Product Designer",
+        "sameAs": [
+          "https://www.linkedin.com/in/lautaro-temperini/",
+          "https://github.com/lautaro-temperini",
+        ],
+      },
+      "datePublished": PUBLISHED_DATE,
+      "dateModified": PUBLISHED_DATE,
+      "url": `${SITE_URL}/digito`,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": `${SITE_URL}/digito` },
+      "inLanguage": "es-AR",
+      "keywords": ["B2B SaaS", "UX design", "time tracking", "product design", "case study"],
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Portfolio", "item": SITE_URL },
+        { "@type": "ListItem", "position": 2, "name": "Dígito", "item": `${SITE_URL}/digito` },
+      ],
+    },
+  ],
 }
 
 /**
@@ -59,12 +117,25 @@ export default async function DigitoPage({
   const lang = langParam === "es" || langParam === "en" ? langParam : "es"
   const dict = await getDictionary(lang)
   const digitoData = (dict as any).projectPages?.digito || {}
+  const headersList = await headers()
+  const nonce = headersList.get("x-nonce") || ""
 
   // Confiamos en los dictionaries - sin fallback innecesario
   const t: any = digitoData
 
   return (
     <>
+      <script
+        nonce={nonce}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdDigito) }}
+        suppressHydrationWarning
+      />
+      <CaseStudyTracker
+        slug="digito"
+        lang={lang}
+        sectionIds={["contexto", "problema", "research", "fricciones", "arquitectura", "tradeoffs", "testing", "prototipo", "cierre"]}
+      />
       <Navbar dict={dict} lang={lang} />
       <div className="relative z-[20]">
         <main className="[&>*]:!transform-none">

@@ -8,6 +8,7 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 import { headers } from 'next/headers'
 import ThirdPartyErrorFilter from '@/components/fxscripts/ThirdPartyErrorFilter'
 import VercelAnalyticsLoader from '@/components/analytics/VercelAnalyticsLoader'
+import ClarityLoader from '@/components/analytics/ClarityLoader'
 import "../styles/globals.css"
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://temperini.vercel.app'
@@ -227,11 +228,14 @@ export default async function RootLayout({
         <ThirdPartyErrorFilter />
         {children}
         
-        {/* Vercel Analytics - Carga después del load event */}
+        {/* Vercel Analytics + Speed Insights */}
         <VercelAnalyticsLoader />
-        
-        {/* Google Analytics - Ya optimizado por @next/third-parties/google con lazy loading */}
+
+        {/* Google Analytics */}
         {process.env.NEXT_PUBLIC_GA_ID && <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />}
+
+        {/* Microsoft Clarity — carga diferida con requestIdleCallback */}
+        <ClarityLoader />
       </body>
     </html>
   )

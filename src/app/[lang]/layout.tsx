@@ -1,5 +1,8 @@
+// src/app/[lang]/layout.tsx
 import type React from "react"
 import { preloadDictionary } from "@/lib/getDictionary"
+import { LanguagePreference } from "@/components/fxscripts/LanguagePreference"
+import GlobalTrackerWrapper from "@/components/analytics/GlobalTrackerWrapper"
 
 type Lang = "es" | "en"
 
@@ -13,10 +16,13 @@ export default async function LangLayout({
   const { lang } = await params
   const validLang: Lang = lang === "en" || lang === "es" ? lang : "es"
 
-  // Precarga del diccionario para el segmento [lang]
   preloadDictionary(validLang)
 
-  // En App Router, SOLO el root layout (`src/app/layout.tsx`) debe renderizar <html>/<body>.
-  return <>{children}</>
+  return (
+    <>
+      <LanguagePreference lang={validLang} />
+      <GlobalTrackerWrapper lang={validLang} />
+      {children}
+    </>
+  )
 }
-

@@ -1,3 +1,4 @@
+import { headers } from "next/headers"
 import { getDictionary } from '@/lib/getDictionary'
 import Navbar from "@/components/navbar/Navbar"
 import ScrollToTop from "@/components/fxscripts/scroll-to-top"
@@ -8,40 +9,97 @@ import ImageBreakout from "@/components/sections/ImageBreakout"
 import InsightCard from "@/components/sections/InsightCard"
 import SectionNav from "@/components/case-study/SectionNav"
 import FadeOnScroll from "@/components/fxscripts/FadeOnScroll"
+import CaseStudyTracker from "@/components/analytics/CaseStudyTracker"
+
+const SITE_URL = "https://temperini.vercel.app"
+const PUBLISHED_DATE = "2026-01-20"
 
 export const metadata = {
-  title: "LevelUp | Rediseño editorial gamer | Lautaro R. Temperini",
+  title: "LevelUp | Gaming Editorial Redesign | Case Study | Lautaro Temperini",
   description:
-    "Rediseñé la experiencia editorial de LevelUp con personalización y geosegmentación inteligente. Transformé un portal genérico en una experiencia relevante para el público gamer de Latinoamérica.",
-  keywords:
-    "LevelUp, rediseño editorial, personalización, geosegmentación, UX/UI, gaming, Latinoamérica, Lautaro Temperini, caso de estudio",
+    "Rediseñé la experiencia editorial de LevelUp con personalización y geosegmentación inteligente. Transformé un portal genérico en experiencia relevante para el público gamer de Latinoamérica. 2026.",
+  keywords: [
+    "gaming editorial UX",
+    "editorial redesign case study",
+    "personalization UX",
+    "geosegmentation design",
+    "product designer Buenos Aires",
+    "LatAm gaming design",
+    "content platform UX",
+  ],
+  authors: [{ name: "Lautaro Temperini", url: SITE_URL }],
+  creator: "Lautaro Temperini",
   alternates: {
-    canonical: '/levelup',
+    canonical: `${SITE_URL}/levelup`,
+    languages: {
+      'es': `${SITE_URL}/es/levelup`,
+      'en': `${SITE_URL}/en/levelup`,
+      'x-default': `${SITE_URL}/es/levelup`,
+    }
   },
   openGraph: {
-    title: "LevelUp | Rediseño editorial gamer | Lautaro R. Temperini",
+    title: "LevelUp | Gaming Editorial Redesign | Case Study by Lautaro Temperini",
     description:
-      "Rediseño de portal editorial con personalización por preferencias y geografía. Experiencia adaptada para el público gamer de Latinoamérica.",
-    url: "https://temperini.vercel.app/levelup",
+      "Rediseño de portal editorial gamer con personalización por preferencias y geosegmentación. Transformé un portal genérico en experiencia relevante para Latinoamérica. Buenos Aires, 2026.",
+    url: `${SITE_URL}/levelup`,
     siteName: "Temperini Portfolio",
     locale: "es_AR",
-    type: "website",
+    type: "article",
+    publishedTime: `${PUBLISHED_DATE}T00:00:00Z`,
+    modifiedTime: `${PUBLISHED_DATE}T00:00:00Z`,
+    authors: ["Lautaro Temperini"],
     images: [
       {
-        url: "https://temperini.vercel.app/images/levelup-logo.png",
+        url: `${SITE_URL}/images/levelup-logo.png`,
         width: 800,
         height: 600,
-        alt: "Logo de LevelUp",
+        alt: "LevelUp gaming editorial redesign case study",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "LevelUp | Rediseño editorial gamer | Lautaro R. Temperini",
+    title: "LevelUp | Gaming Editorial Redesign | Case Study",
     description:
       "Rediseño editorial con personalización y geosegmentación para el público gamer de Latinoamérica.",
-    images: ["https://temperini.vercel.app/images/levelup-logo.png"],
+    images: [`${SITE_URL}/images/levelup-logo.png`],
   },
+}
+
+const jsonLdLevelup = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": `${SITE_URL}/levelup#article`,
+      "headline": "LevelUp: Rediseño Editorial con Personalización y Geosegmentación",
+      "description": "Transformé un portal editorial genérico en una experiencia relevante para el público gamer de Latinoamérica mediante personalización y geosegmentación.",
+      "author": {
+        "@type": "Person",
+        "@id": `${SITE_URL}/#person`,
+        "name": "Lautaro Temperini",
+        "url": SITE_URL,
+        "jobTitle": "Product Designer",
+        "sameAs": [
+          "https://www.linkedin.com/in/lautaro-temperini/",
+          "https://github.com/lautaro-temperini",
+        ],
+      },
+      "datePublished": PUBLISHED_DATE,
+      "dateModified": PUBLISHED_DATE,
+      "url": `${SITE_URL}/levelup`,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": `${SITE_URL}/levelup` },
+      "inLanguage": "es-AR",
+      "keywords": ["gaming", "editorial design", "personalization", "UX design", "product design", "case study"],
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Portfolio", "item": SITE_URL },
+        { "@type": "ListItem", "position": 2, "name": "LevelUp", "item": `${SITE_URL}/levelup` },
+      ],
+    },
+  ],
 }
 
 export default async function LevelUpPage({
@@ -52,6 +110,8 @@ export default async function LevelUpPage({
   const { lang: langParam } = await params
   const lang = (langParam === 'es' || langParam === 'en') ? langParam : 'es'
   const dict = await getDictionary(lang)
+  const headersList = await headers()
+  const nonce = headersList.get("x-nonce") || ""
   const t = (dict as any).projectPages?.levelup || {
     hero: { title: "LEVEL UP", subtitle: "", description: "" },
     snapshotTop: {
@@ -88,6 +148,17 @@ export default async function LevelUpPage({
 
   return (
     <>
+      <script
+        nonce={nonce}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdLevelup) }}
+        suppressHydrationWarning
+      />
+      <CaseStudyTracker
+        slug="levelup"
+        lang={lang}
+        sectionIds={["desafio", "problema", "insight", "sistema", "propuesta", "reflexion"]}
+      />
       <Navbar dict={dict} lang={lang} />
       <div className="relative z-[20]">
         <main className="[&>*]:!transform-none">

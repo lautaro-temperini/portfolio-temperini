@@ -1,9 +1,106 @@
-# *
+# ============================================================================
+# ROBOTS.TXT OPTIMIZADO PARA GEO (GENERATIVE ENGINE OPTIMIZATION)
+# ============================================================================
+# Permitir a TODOS los crawlers (Google, OpenAI, Anthropic, Perplexity, etc.)
+# Sin restricciones para case studies de product design
+
+# ============================================================================
+# DEFAULT RULES (todos los bots no especificados)
+# ============================================================================
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Crawl-delay: 1
 
-# Host
+# ============================================================================
+# GOOGLE BOT (indexación tradicional + Bard)
+# ============================================================================
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Crawl-delay: 1
+
+# ============================================================================
+# OPENAI GPT BOT (ChatGPT, GPT-4)
+# https://platform.openai.com/docs/gptbot
+# ============================================================================
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+# Sin Crawl-delay — OpenAI lo respeta pero es menos crítico
+
+# ============================================================================
+# ANTHROPIC CLAUDE BOT
+# https://www.anthropic.com/claude-web-crawler-user-agent
+# ============================================================================
+User-agent: Claude-Web
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+# ============================================================================
+# PERPLEXITY BOT
+# https://www.perplexity.ai/faq#crawler
+# ============================================================================
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+# Perplexity es el crawler más importante para GEO — deja explícitamente permitido
+
+# ============================================================================
+# MICROSOFT BING BOT (para Copilot)
+# ============================================================================
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Crawl-delay: 1
+
+# ============================================================================
+# APPLE SIRI BOT
+# ============================================================================
+User-agent: AppleBot
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+
+# ============================================================================
+# AMAZON ALEXA BOT
+# ============================================================================
+User-agent: ia_archiver
+Allow: /
+Disallow: /api/
+
+# ============================================================================
+# COHERE BOT (modelos de IA generativa)
+# ============================================================================
+User-agent: cohere-ai
+Allow: /
+Disallow: /api/
+
+# ============================================================================
+# FACEBOOK/META BOT (para Threads, etc.)
+# ============================================================================
+User-agent: facebookexternalhit
+Allow: /
+Disallow: /api/
+
+# ============================================================================
+# HOST Y SITEMAP
+# ============================================================================
 Host: https://temperini.vercel.app
-
-# Sitemaps
 Sitemap: https://temperini.vercel.app/sitemap.xml
+
+# ============================================================================
+# POLÍTICAS GLOBALES
+# ============================================================================
+# - NO bloqueamos a ningún bot de IA — el contenido es público y citable
+# - Crawl-delay de 1 segundo es razonable para Vercel (no DDOS risk)
+# - /api/ bloqueado porque es privado, no es contenido público
+# - /admin/ bloqueado porque es administración
+# ============================================================================

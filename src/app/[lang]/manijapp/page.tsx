@@ -1,3 +1,4 @@
+import { headers } from "next/headers"
 import { getDictionary } from "@/lib/getDictionary"
 import Navbar from "@/components/navbar/Navbar"
 import ScrollToTop from "@/components/fxscripts/scroll-to-top"
@@ -8,31 +9,215 @@ import { BentoGrid, BentoItem } from "@/components/sections/BentoGrid"
 import FadeOnScroll from "@/components/fxscripts/FadeOnScroll"
 import SectionNav from "@/components/case-study/SectionNav"
 import DevImage from "@/components/DevImage"
+import CaseStudyTracker from "@/components/analytics/CaseStudyTracker"
+
+const SITE_URL = "https://temperini.vercel.app"
+const PUBLISHED_DATE = "2026-04-24"
 
 export const metadata = {
-  title: "Manijapp | Discovery de eventos alternativos | Lautaro R. Temperini",
+  title: "Manijapp: Underground Event Discovery Design | Validation Case Study | Lautaro Temperini",
   description:
-    "MVP independiente para discovery de eventos en CABA y La Plata: cómo pasé de 'centralizar eventos' a resolver un problema de curaduría y confianza.",
-  keywords:
-    "Manijapp, MVP, product design, discovery de eventos, UX/UI, validación, Lautaro Temperini, caso de estudio, startup, Buenos Aires",
+    "77-user validation study across 3 cycles: how I redesigned underground event discovery in Buenos Aires from aggregation to community-curated trust. Product design case study, April 2026.",
+  keywords: [
+    "product design case study",
+    "event discovery UX",
+    "marketplace design validation",
+    "UX retention study",
+    "community validation design",
+    "product designer Buenos Aires",
+    "two-sided marketplace design",
+  ],
+  authors: [{ name: "Lautaro Temperini", url: SITE_URL }],
+  creator: "Lautaro Temperini",
   alternates: {
-    canonical: "/manijapp",
+    canonical: `${SITE_URL}/manijapp`,
+    languages: {
+      'es': `${SITE_URL}/es/manijapp`,
+      'en': `${SITE_URL}/en/manijapp`,
+      'x-default': `${SITE_URL}/es/manijapp`,
+    }
   },
   openGraph: {
-    title: "Manijapp | Discovery de eventos alternativos | Lautaro R. Temperini",
+    title: "Manijapp: Underground Event Discovery | Case Study by Lautaro Temperini",
     description:
-      "Descubrir eventos no es el problema. El problema es saber cuáles valen la pena.",
-    url: "https://temperini.vercel.app/manijapp",
+      "77-user validation study, 3 cycles. How curation > aggregation in marketplace design. Buenos Aires, April 2026.",
+    url: `${SITE_URL}/manijapp`,
     siteName: "Temperini Portfolio",
     locale: "es_AR",
-    type: "website",
+    type: "article",
+    publishedTime: `${PUBLISHED_DATE}T00:00:00Z`,
+    modifiedTime: `${PUBLISHED_DATE}T00:00:00Z`,
+    authors: ["Lautaro Temperini"],
+    images: [
+      {
+        url: `${SITE_URL}/images/manijappImages/manijapp-hero.webp`,
+        width: 1200,
+        height: 630,
+        alt: "Manijapp case study: underground event discovery design validation in Buenos Aires",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Manijapp | Discovery de eventos alternativos | Lautaro R. Temperini",
+    title: "Manijapp: Underground Event Discovery | Case Study",
     description:
-      "Descubrir eventos no es el problema. El problema es saber cuáles valen la pena.",
+      "77-user validation study, 3 cycles. How curation > aggregation in marketplace design.",
+    images: [`${SITE_URL}/images/manijappImages/manijapp-hero.webp`],
   },
+}
+
+const jsonLdManijapp = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": `${SITE_URL}/manijapp#article`,
+      "headline": "Manijapp: Redesigning Underground Event Discovery in Buenos Aires",
+      "description":
+        "77-user validation study across 3 cycles: how community-curated trust outperforms aggregation in underground event discovery marketplaces.",
+      "author": {
+        "@type": "Person",
+        "@id": `${SITE_URL}/#person`,
+        "name": "Lautaro Temperini",
+        "url": SITE_URL,
+        "jobTitle": "Product Designer",
+        "sameAs": [
+          "https://www.linkedin.com/in/lautaro-temperini/",
+          "https://github.com/lautaro-temperini",
+        ],
+      },
+      "datePublished": PUBLISHED_DATE,
+      "dateModified": PUBLISHED_DATE,
+      "url": `${SITE_URL}/manijapp`,
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": `${SITE_URL}/manijapp`,
+      },
+      "image": {
+        "@type": "ImageObject",
+        "url": `${SITE_URL}/images/manijappImages/manijapp-hero.webp`,
+        "width": 1200,
+        "height": 630,
+      },
+      "inLanguage": "es-AR",
+      "keywords": [
+        "product design",
+        "case study",
+        "event discovery",
+        "marketplace design",
+        "UX validation",
+        "Argentina",
+        "community validation",
+        "retention",
+        "two-sided marketplace",
+      ],
+      "about": {
+        "@type": "SoftwareApplication",
+        "name": "Manijapp",
+        "description":
+          "Event discovery platform for underground scenes in Buenos Aires and La Plata, Argentina",
+        "applicationCategory": "EntertainmentApplication",
+        "operatingSystem": "Web",
+        "url": "https://manijapp.vercel.app",
+      },
+      "mentions": [
+        {
+          "@type": "Thing",
+          "name": "Two-sided Marketplace Design",
+          "description":
+            "Design methodology for platforms connecting event organizers (supply) and attendees (demand) in underground scenes",
+        },
+        {
+          "@type": "Thing",
+          "name": "Community Validation UX Pattern",
+          "description":
+            "UI pattern separating venue reputation (stars) from event quality (thumbs), used as trust signals in marketplace discovery",
+        },
+        {
+          "@type": "Thing",
+          "name": "Wizard of Oz Prototyping",
+          "description":
+            "Validation methodology where backend functionality is simulated manually (Google Sheets) while users interact with a real frontend",
+        },
+        {
+          "@type": "Thing",
+          "name": "Spec-Driven AI Development",
+          "description":
+            "Process of writing a product specification before executing with AI agents to prevent default design decisions",
+        },
+      ],
+      "teaches": [
+        "How to validate marketplace design with small cohorts (n=77) using iterative cycles",
+        "Why curation beats aggregation in trust-sensitive discovery markets",
+        "How to use Wizard of Oz methodology to test supply-side behavior before building backend",
+        "How to design with AI agents while maintaining designer judgment and product intent",
+      ],
+      "proficiencyLevel": "Expert",
+      "learningResourceType": "Case Study",
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Lautaro Temperini Portfolio",
+          "item": SITE_URL,
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Manijapp Case Study",
+          "item": `${SITE_URL}/manijapp`,
+        },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is Manijapp?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Manijapp is an independent MVP for underground event discovery in Buenos Aires (CABA) and La Plata, Argentina. Built by product designer Lautaro Temperini in 9 days and validated across 3 user cycles using GA4, Microsoft Clarity, and Supabase.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "What UX validation methodology was used in Manijapp?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Three iterative validation cycles: Cycle 1 (17 contacts, 5 real sessions — signal invalidated due to changing variables), Cycle 2 (77 sessions over 72 hours with locked variables — first confirmed retention signals), Cycle 3 (35 sessions over 96 hours — seeding experiment showing 13% vs 6.25% interaction with/without seeding). Each cycle produced chained decisions for the next.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "What were the key results of the Manijapp design validation study?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Across cycles 2 and 3: 43–44% event detail view rate, 6–13% community validation interaction (thumbs), 5–6% voluntary share rate, 1–2 organic event publications per cycle, and 3–4 users returning 4+ consecutive days without re-engagement stimulus. Cycle 3 showed channel saturation but improved engagement quality: 4 pages/session, 78% scroll depth, 1.5 active minutes.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "What is the core product design insight from Manijapp?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In underground event discovery, curation beats aggregation. The real user friction is not finding more events but identifying which ones are trustworthy. Community validation signals — specifically separating venue reputation (persistent stars) from event quality (contextual thumbs) — proved more effective than algorithm-based ranking in low-supply, high-trust-sensitivity markets.",
+          },
+        },
+        {
+          "@type": "Question",
+          "name": "Who designed and built Manijapp?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lautaro Temperini, a product designer based in Buenos Aires, Argentina. He led strategy, UX/UI, product discovery, and metrics across the full MVP lifecycle. He also has direct domain knowledge from years as a DJ with connections to the underground scene in CABA and La Plata.",
+          },
+        },
+      ],
+    },
+  ],
 }
 
 export default async function ManijappPage({
@@ -43,11 +228,19 @@ export default async function ManijappPage({
   const { lang: langParam } = await params
   const lang = langParam === "es" || langParam === "en" ? langParam : "es"
   const dict = await getDictionary(lang)
+  const headersList = await headers()
+  const nonce = headersList.get("x-nonce") || ""
 
   const es = lang === "es"
 
   return (
     <>
+      <script
+        nonce={nonce}
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdManijapp) }}
+        suppressHydrationWarning
+      />
       <Navbar dict={dict} lang={lang} />
       <div className="relative z-[20]">
         <main className="[&>*]:!transform-none">
@@ -99,8 +292,10 @@ export default async function ManijappPage({
             <section className="w-full px-8 md:px-12 lg:px-20 mb-16">
               <div className="relative w-full h-[150px] md:h-[200px] rounded-lg overflow-hidden bg-[#1C0900]">
                 <DevImage
+                  src="/images/manijappImages/manijapp-hero.webp"
                   alt="Banner Manijapp"
                   fill
+                  priority
                   imageClassName="object-cover"
                 />
               </div>
@@ -240,6 +435,7 @@ export default async function ManijappPage({
           <FadeOnScroll>
             <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
               <DevImage
+                src="/images/manijappImages/manijapp-explore-map-mockup.webp"
                 alt="Mockup de sección Explorar y mockup de Mapa"
                 fill
                 caption={es
@@ -300,6 +496,7 @@ export default async function ManijappPage({
                 </Block>
                 <Block colSpan={1}>
                   <DevImage
+                    src="/images/manijappImages/manijapp-competitive-advantage.webp"
                     alt="Fiesta electrónica underground en Buenos Aires: DJ mezclando en vinilo y digital frente a una pista densa, con luces rojas y azules entre humo y ambiente cinematográfico."
                     fill
                     className="w-full"
@@ -457,6 +654,7 @@ export default async function ManijappPage({
           <FadeOnScroll>
             <section className="w-full px-8 md:px-12 lg:px-20 mb-12">
               <DevImage
+                src="/images/manijappImages/manijapp-wizard-of-oz-flow.webp"
                 alt="Flujo Wizard of Oz: Form → Google Sheet → publicación manual"
                 fill
                 caption={es
@@ -474,6 +672,7 @@ export default async function ManijappPage({
               <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0">
                 <Block colSpan={1}>
                   <DevImage
+                    src="/images/manijappImages/manijapp-problem-insight.webp"
                     alt="Sistema de validación antes: estrellas y recomendación mezcladas, señal ambigua"
                     fill
                     caption={es
@@ -485,6 +684,7 @@ export default async function ManijappPage({
                 </Block>
                 <Block colSpan={1}>
                   <DevImage
+                    src="/images/manijappImages/manijapp-validation-before-after.webp"
                     alt="Sistema de validación después: estrellas para venue, pulgares para evento, tracking diferenciado"
                     fill
                     caption={es
@@ -617,10 +817,27 @@ export default async function ManijappPage({
             </section>
           </FadeOnScroll>
 
+          {/* Tres ciclos de validación — cronología visual */}
+          <FadeOnScroll delay={80}>
+            <section className="w-full px-8 md:px-12 lg:px-20 mb-12">
+              <DevImage
+                src="/images/manijappImages/manijapp-validation-cycles-123.webp"
+                alt="Cronología de los tres ciclos de validación: señales, decisiones y aprendizajes de cada iteración"
+                fill
+                caption={es
+                  ? "Ciclos 1, 2 y 3 — metodología encadenada, señales y decisiones de cada iteración."
+                  : "Cycles 1, 2, and 3 — chained methodology, signals and decisions from each iteration."}
+                className="w-full"
+                imageClassName="object-cover"
+              />
+            </section>
+          </FadeOnScroll>
+
           {/* Funnel / métricas reales */}
           <FadeOnScroll>
             <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
               <DevImage
+                src="/images/manijappImages/manijapp-funnel-core-loop.webp"
                 alt="Funnel de métricas reales: sesiones, detalle de evento, interacción con pulgares, compartir, publicar"
                 fill
                 caption={es
@@ -673,6 +890,7 @@ export default async function ManijappPage({
                 </Block>
                 <Block colSpan={1}>
                   <DevImage
+                    src="/images/manijappImages/manijapp-form-progressive-disclosure.webp"
                     alt="Formulario de carga de evento con revelación progresiva en 3 bloques y edición inline"
                     fill
                     caption={es
@@ -724,6 +942,7 @@ export default async function ManijappPage({
                 </Block>
                 <Block colSpan={1}>
                   <DevImage
+                    src="/images/manijappImages/manijapp-poc-to-v1-evolution.webp"
                     alt="Evolución del producto: POC inicial → v1 rediseñado"
                     fill
                     caption={es

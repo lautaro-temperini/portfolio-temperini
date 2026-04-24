@@ -14,8 +14,8 @@ const RUTAS_BLOQUEADAS: string[] = [] // Playground desbloqueado
 const IDIOMAS_SOPORTADOS = ['es', 'en'] as const
 type IdiomaSoportado = typeof IDIOMAS_SOPORTADOS[number]
 
-// Idioma por defecto: inglés
-const IDIOMA_POR_DEFECTO: IdiomaSoportado = 'en'
+// Idioma por defecto: español
+const IDIOMA_POR_DEFECTO: IdiomaSoportado = 'es'
 
 const RUTAS_EXCLUIDAS = [
   '/_next/',

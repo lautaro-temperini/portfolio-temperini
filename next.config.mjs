@@ -9,6 +9,9 @@ const withBundleAnalyzer = bundleAnalyzer({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // ============================================================================
+  // IMAGE OPTIMIZATION (crítico para og:images en GEO)
+  // ============================================================================
   images: {
     remotePatterns: [
       {
@@ -18,26 +21,49 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
-    formats: ['image/webp', 'image/avif'],
+    // Formatos moderno + fallback para máxima compatibilidad
+    formats: ['image/avif', 'image/webp'],
+    // Responsive sizes para diferentes dispositivos
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    qualities: [75, 90, 100],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384, 512, 768, 1024, 1280, 1536],
+    // Calidades optimizadas (menos = mejor para LCP)
+    qualities: [75, 85, 95],
+    // Minimizar LCP: usar blurHash y placeholder
+    dangerouslyAllowSVG: true,
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
-  
+
+  // ============================================================================
+  // COMPRESSION (gzip + brotli automático en Vercel)
+  // ============================================================================
+  compress: true,
+
+  // ============================================================================
+  // EXPERIMENTAL OPTIMIZATIONS
+  // ============================================================================
   experimental: {
     optimizePackageImports: ['lucide-react'],
+    // Optimización de bundle size
+    esmExternals: true,
   },
-  
-  // Configuración de compilador para reducir bundle
+
+  // ============================================================================
+  // COMPILER OPTIMIZATIONS
+  // ============================================================================
   compiler: {
+    // Remove console.log en producción (menos bundle)
     removeConsole: process.env.NODE_ENV === 'production' ? {
       exclude: ['error', 'warn'],
     } : false,
+    // Remueve styled-jsx si no lo usas
+    styledComponents: false,
   },
-  
-  // Optimización de webpack para navegadores modernos
+
+  // ============================================================================
+  // WEBPACK OPTIMIZATION
+  // ============================================================================
   webpack: (config, { isServer }) => {
-    // Configuración existente para videos
+    // Soporte para videos
     config.module.rules.push({
       test: /\.(webm|mp4)$/,
       use: {
@@ -47,27 +73,51 @@ const nextConfig = {
           outputPath: 'static/videos/',
         },
       },
-    });
-    
-    // Optimización para navegadores modernos (solo cliente)
+    })
+
+    // Optimizaciones para cliente moderno
     if (!isServer) {
-      // Resolver para evitar polyfills innecesarios de Node.js en el cliente
       config.resolve.fallback = {
         ...config.resolve.fallback,
         fs: false,
         net: false,
         tls: false,
-      };
-      
-      // Target ES2022+ para eliminar polyfills legacy
-      config.target = ['web', 'es2022'];
+      }
+      config.target = ['web', 'es2022']
     }
-    
-    return config;
+
+    return config
   },
-  
+
+  // ============================================================================
+  // REDIRECTS (manejo de idiomas + legacy URLs)
+  // ============================================================================
+  async redirects() {
+    return [
+      // Redirigir raíz a /es (por defecto) o idioma detectado (lo maneja proxy.ts)
+      // No agregar aquí porque lo maneja el middleware en proxy.ts
+    ]
+  },
+
+  // ============================================================================
+  // REWRITES (para SEO: mantener URLs limpias)
+  // ============================================================================
+  async rewrites() {
+    return {
+      beforeFiles: [
+        // Ya maneja el middleware (proxy.ts) la reescritura de idiomas
+      ],
+    }
+  },
+
+  // ============================================================================
+  // HEADERS (GEO + PERFORMANCE + SECURITY)
+  // ============================================================================
   async headers() {
     return [
+      // ======================================================================
+      // ASSETS ESTÁTICOS (1 año: immutable)
+      // ======================================================================
       {
         source: '/_next/static/:path*',
         headers: [
@@ -113,13 +163,96 @@ const nextConfig = {
           },
         ],
       },
+
+      // ======================================================================
+      // CASE STUDIES (GEO: contenido editorial no cambia)
+      // ======================================================================
+      {
+        source: '/(es|en)/(manijapp|digito|gloryfit|levelup|vorterix|rectofinal)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=604800, stale-while-revalidate=2592000',
+          },
+          {
+            key: 'Vary',
+            value: 'Accept-Language',
+          },
+        ],
+      },
+
+      // ======================================================================
+      // SITEMAPS Y ROBOTS (GEO: bots necesitan versiones frescas)
+      // ======================================================================
+      {
+        source: '/sitemap.xml',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=86400',
+          },
+          {
+            key: 'Content-Type',
+            value: 'application/xml',
+          },
+        ],
+      },
+      {
+        source: '/robots.txt',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=604800',
+          },
+          {
+            key: 'Content-Type',
+            value: 'text/plain',
+          },
+        ],
+      },
+
+      // ======================================================================
+      // PÁGINAS DINÁMICAS (home, contact - revalidación frecuente)
+      // ======================================================================
+      {
+  source: '/(es|en)',
+  headers: [
+    {
+      key: 'Cache-Control',
+      value: 'public, max-age=3600, stale-while-revalidate=86400',
+    },
+    {
+      key: 'Vary',
+      value: 'Accept-Language',
+    },
+  ],
+},
+{
+  source: '/(es|en)/',
+  headers: [
+    {
+      key: 'Cache-Control',
+      value: 'public, max-age=3600, stale-while-revalidate=86400',
+    },
+    {
+      key: 'Vary',
+      value: 'Accept-Language',
+    },
+  ],
+},
+
+      // ======================================================================
+      // SECURITY + GEO HEADERS (todas las rutas)
+      // ======================================================================
       {
         source: '/:path*',
         headers: [
+          // ---- Performance ----
           {
             key: 'X-DNS-Prefetch-Control',
             value: 'on',
           },
+          // ---- Security ----
           {
             key: 'X-Content-Type-Options',
             value: 'nosniff',
@@ -144,24 +277,21 @@ const nextConfig = {
             key: 'Strict-Transport-Security',
             value: 'max-age=31536000; includeSubDomains; preload',
           },
-          // CSP se maneja dinámicamente en middleware.ts con nonces
-          // No establecer CSP estático aquí para evitar conflictos
           {
             key: 'Cross-Origin-Opener-Policy',
             value: 'same-origin',
-          },
-          // Cache-Control optimizado para bfcache (back/forward cache)
-          // Permite que el navegador cachee la página para navegación rápida
-          // No usar 'no-store' que bloquea bfcache
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=0, must-revalidate',
           },
         ],
       },
     ]
   },
 
-};
+  // ============================================================================
+  // PRODUCTION OPTIMIZATIONS
+  // ============================================================================
+  productionBrowserSourceMaps: false, // Reduce bundle size
+  poweredByHeader: false, // Security: no revelar que usa Next.js
+  generateEtags: true, // Para revalidación de cache
+}
 
-export default withBundleAnalyzer(nextConfig);
+export default withBundleAnalyzer(nextConfig)
