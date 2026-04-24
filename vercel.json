@@ -1,7 +1,5 @@
 {
-  "toolbar": false
-}
-{
+  "toolbar": false,
   "version": 2,
   "env": {
     "NODE_ENV": "production"
