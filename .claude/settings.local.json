@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc *)",
+      "Bash(dir /b \"c:\\\\Users\\\\Ian y Sofia\\\\Desktop\\\\Lautaro\\\\portfolio-temperini\\\\src\")",
+      "Bash(dir /b \"c:\\\\Users\\\\Ian y Sofia\\\\Desktop\\\\Lautaro\\\\portfolio-temperini\")",
+      "Bash(findstr middleware *)"
+    ]
+  }
+}

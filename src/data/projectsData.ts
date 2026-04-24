@@ -29,7 +29,7 @@ export const projectsData: ProjectData[] = [
     featured: true,
   },
   {
-    id: 2,
+    id: 3,
     slug: "gloryfit",
     image: "/images/gloryfit-logo.png",
     previewImage: "/images/projects/gloryfit-preview.png",
@@ -40,7 +40,7 @@ export const projectsData: ProjectData[] = [
     tags: ["Wearable UX", "Biometric Data Design", "Android Material Design", "Progressive Onboarding", "Health App Personalization"],
   },
   {
-    id: 3,
+    id: 4,
     slug: "levelup",
     image: "/images/levelup-logo.png",
     previewImage: "/images/projects/levelup-preview.png",
@@ -51,7 +51,7 @@ export const projectsData: ProjectData[] = [
     tags: ["Editorial Redesign", "Geosegmentation UX", "Content Curation System", "Regional Personalization", "Gaming Media Design"],
   },
   {
-    id: 4,
+    id: 5,
     slug: "vorterix",
     image: "/images/vorterix-logo.png",
     previewImage: "/images/projects/vorterix-preview.webp",

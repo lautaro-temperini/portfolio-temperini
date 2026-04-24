@@ -15,6 +15,7 @@ module.exports = {
       '/contact',
       '/playground',
       '/digito',
+      '/manijapp',
       '/gloryfit',
       '/levelup',
       '/vorterix',
