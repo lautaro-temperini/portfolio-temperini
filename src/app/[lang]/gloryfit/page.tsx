@@ -9,7 +9,6 @@ import ImageBreakout from "@/components/sections/ImageBreakout";
 import InsightCard from "@/components/sections/InsightCard";
 import SectionNav from "@/components/case-study/SectionNav";
 import FadeOnScroll from "@/components/fxscripts/FadeOnScroll";
-import CaseStudyTracker from "@/components/analytics/CaseStudyTracker";
 
 const SITE_URL = "https://temperini.vercel.app"
 const PUBLISHED_DATE = "2026-02-10"
@@ -150,11 +149,6 @@ const jsonLdGloryfit = {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdGloryfit) }}
           suppressHydrationWarning
-        />
-        <CaseStudyTracker
-          slug="gloryfit"
-          lang={lang}
-          sectionIds={["reto", "investigacion", "estrategia", "sistema", "iteraciones", "conclusion"]}
         />
         <Navbar dict={dict} lang={lang} />
         <div className="relative z-[20]">

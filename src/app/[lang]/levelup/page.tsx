@@ -9,7 +9,6 @@ import ImageBreakout from "@/components/sections/ImageBreakout"
 import InsightCard from "@/components/sections/InsightCard"
 import SectionNav from "@/components/case-study/SectionNav"
 import FadeOnScroll from "@/components/fxscripts/FadeOnScroll"
-import CaseStudyTracker from "@/components/analytics/CaseStudyTracker"
 
 const SITE_URL = "https://temperini.vercel.app"
 const PUBLISHED_DATE = "2026-01-20"
@@ -153,11 +152,6 @@ export default async function LevelUpPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdLevelup) }}
         suppressHydrationWarning
-      />
-      <CaseStudyTracker
-        slug="levelup"
-        lang={lang}
-        sectionIds={["desafio", "problema", "insight", "sistema", "propuesta", "reflexion"]}
       />
       <Navbar dict={dict} lang={lang} />
       <div className="relative z-[20]">

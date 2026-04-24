@@ -9,7 +9,6 @@ import { BentoGrid, BentoItem } from "@/components/sections/BentoGrid"
 import FadeOnScroll from "@/components/fxscripts/FadeOnScroll"
 import SectionNav from "@/components/case-study/SectionNav"
 import DevImage from "@/components/DevImage"
-import CaseStudyTracker from "@/components/analytics/CaseStudyTracker"
 
 const SITE_URL = "https://temperini.vercel.app"
 const PUBLISHED_DATE = "2026-04-24"

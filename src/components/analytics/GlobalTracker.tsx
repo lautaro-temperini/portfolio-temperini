@@ -6,10 +6,10 @@ import CaseStudyTracker from "./CaseStudyTracker"
 
 const SECCIONES: Record<string, string[]> = {
   manijapp: ["contexto", "decisiones", "validacion", "supply", "ia", "cierre"],
-  digito:   [],   // agregá los IDs cuando tengas esa page
-  gloryfit: [],
-  levelup:  [],
-  vorterix: [],
+  digito:   ["contexto", "problema", "research", "fricciones", "arquitectura", "tradeoffs", "testing", "prototipo", "cierre"],
+  gloryfit: ["reto", "investigacion", "estrategia", "sistema", "iteraciones", "conclusion"],
+  levelup:  ["desafio", "problema", "insight", "sistema", "propuesta", "aprendizajes", "reflexion"],
+  vorterix: ["brief", "diseno", "conversion", "decisiones", "iteraciones"],
 }
 
 export default function GlobalTracker({ lang }: { lang: string }) {

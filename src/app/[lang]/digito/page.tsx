@@ -12,8 +12,6 @@ import { FeatureCard } from "@/components/sections/FeatureCard"
 import FadeOnScroll from "@/components/fxscripts/FadeOnScroll"
 import Image from "next/image"
 import SectionNav from "@/components/case-study/SectionNav"
-import CaseStudyTracker from "@/components/analytics/CaseStudyTracker"
-
 const SITE_URL = "https://temperini.vercel.app"
 const PUBLISHED_DATE = "2026-03-15"
 
@@ -131,11 +129,7 @@ export default async function DigitoPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdDigito) }}
         suppressHydrationWarning
       />
-      <CaseStudyTracker
-        slug="digito"
-        lang={lang}
-        sectionIds={["contexto", "problema", "research", "fricciones", "arquitectura", "tradeoffs", "testing", "prototipo", "cierre"]}
-      />
+      
       <Navbar dict={dict} lang={lang} />
       <div className="relative z-[20]">
         <main className="[&>*]:!transform-none">
