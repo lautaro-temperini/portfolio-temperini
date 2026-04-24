@@ -68,7 +68,7 @@ export default async function ManijappPage({
             <section className="w-full px-8 md:px-12 lg:px-20 pt-28 md:pt-32 lg:pt-36 mb-12">
               <div className="w-full max-w-7xl">
                 <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-semibold leading-tight text-light mb-4">
-                  Manijapp
+                  MANIJAPP
                 </h1>
                 <p className="text-xl md:text-2xl font-semibold text-light mb-3">
                   {es
