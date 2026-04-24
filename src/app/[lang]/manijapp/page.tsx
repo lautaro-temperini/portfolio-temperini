@@ -241,12 +241,12 @@ export default async function ManijappPage({
             <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
               <DevImage
                 alt="Mockup de sección Explorar y mockup de Mapa"
-                width={1200}
-                height={675}
+                fill
                 caption={es
                   ? "Sección Explorar y vista de Mapa — dos modos de acceso al mismo contenido según el contexto del usuario."
                   : "Explore section and Map view — two access modes for the same content depending on the user's context."}
                 className="w-full"
+                imageClassName="object-cover"
               />
             </section>
           </FadeOnScroll>
@@ -301,9 +301,9 @@ export default async function ManijappPage({
                 <Block colSpan={1}>
                   <DevImage
                     alt="Fiesta electrónica underground en Buenos Aires: DJ mezclando en vinilo y digital frente a una pista densa, con luces rojas y azules entre humo y ambiente cinematográfico."
-                    width={600}
-                    height={500}
+                    fill
                     className="w-full"
+                    imageClassName="object-cover"
                   />
                 </Block>
               </GridContainer>
@@ -458,12 +458,12 @@ export default async function ManijappPage({
             <section className="w-full px-8 md:px-12 lg:px-20 mb-12">
               <DevImage
                 alt="Flujo Wizard of Oz: Form → Google Sheet → publicación manual"
-                width={1200}
-                height={500}
+                fill
                 caption={es
                   ? "Flujo de carga: el organizador percibe que la publicación existe. El backend espera evidencia real de demanda."
                   : "Loading flow: the organizer perceives that publishing exists. The backend waits for real evidence of demand."}
                 className="w-full"
+                imageClassName="object-cover"
               />
             </section>
           </FadeOnScroll>
@@ -475,23 +475,23 @@ export default async function ManijappPage({
                 <Block colSpan={1}>
                   <DevImage
                     alt="Sistema de validación antes: estrellas y recomendación mezcladas, señal ambigua"
-                    width={600}
-                    height={400}
+                    fill
                     caption={es
                       ? "Antes — estrellas y recomendación mezcladas. Señal ambigua."
                       : "Before — stars and recommendation mixed. Ambiguous signal."}
                     className="w-full"
+                    imageClassName="object-cover"
                   />
                 </Block>
                 <Block colSpan={1}>
                   <DevImage
                     alt="Sistema de validación después: estrellas para venue, pulgares para evento, tracking diferenciado"
-                    width={600}
-                    height={400}
+                    fill
                     caption={es
                       ? "Después — sistemas separados. Tracking diferenciado por origen (card vs detalle)."
                       : "After — separate systems. Differentiated tracking by origin (card vs detail)."}
                     className="w-full"
+                    imageClassName="object-cover"
                   />
                 </Block>
               </GridContainer>
@@ -622,12 +622,12 @@ export default async function ManijappPage({
             <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
               <DevImage
                 alt="Funnel de métricas reales: sesiones, detalle de evento, interacción con pulgares, compartir, publicar"
-                width={1200}
-                height={600}
+                fill
                 caption={es
                   ? "Core loop con datos reales de los ciclos 2 y 3."
                   : "Core loop with real data from cycles 2 and 3."}
                 className="w-full"
+                imageClassName="object-cover"
               />
             </section>
           </FadeOnScroll>
@@ -674,12 +674,12 @@ export default async function ManijappPage({
                 <Block colSpan={1}>
                   <DevImage
                     alt="Formulario de carga de evento con revelación progresiva en 3 bloques y edición inline"
-                    width={600}
-                    height={500}
+                    fill
                     caption={es
                       ? "Formulario con revelación progresiva en 3 bloques y edición inline. Inspirado en Luma."
                       : "Progressive disclosure form in 3 blocks with inline editing. Inspired by Luma."}
                     className="w-full"
+                    imageClassName="object-cover"
                   />
                 </Block>
               </GridContainer>
@@ -725,12 +725,12 @@ export default async function ManijappPage({
                 <Block colSpan={1}>
                   <DevImage
                     alt="Evolución del producto: POC inicial → v1 rediseñado"
-                    width={600}
-                    height={450}
+                    fill
                     caption={es
                       ? "Del POC inicial al v1 rediseñado — la diferencia está en las decisiones tomadas antes de ejecutar."
                       : "From initial POC to redesigned v1 — the difference lies in decisions made before executing."}
                     className="w-full"
+                    imageClassName="object-cover"
                   />
                 </Block>
               </GridContainer>

@@ -36,20 +36,9 @@ export default function DevImage({
   caption,
 }: DevImageProps) {
   if (fill) {
-    if (!src) {
-      if (!isDev) return null
-      return (
-        <div
-          className={cn(
-            "absolute inset-0 flex items-center justify-center bg-container/40 border border-dashed border-container-light/20 font-mono text-sm text-light/30 text-center px-4",
-            className
-          )}
-        >
-          [{alt}]
-        </div>
-      )
-    }
-    return (
+    const image = !src ? (
+      isDev ? <div className={cn("absolute inset-0", imageClassName)} /> : null
+    ) : (
       <Image
         src={src}
         alt={alt}
@@ -58,6 +47,25 @@ export default function DevImage({
         sizes={sizes}
         priority={priority}
       />
+    )
+
+    if (caption) {
+      return (
+        <figure className={className}>
+          <div className="relative w-full bg-black rounded-lg overflow-hidden" style={{ aspectRatio: "16/9" }}>
+            {image}
+          </div>
+          <figcaption className="mt-2 px-8 text-center text-sm text-light/70">
+            {caption}
+          </figcaption>
+        </figure>
+      )
+    }
+
+    return (
+      <div className={cn("relative w-full bg-black rounded-lg overflow-hidden", className)} style={{ aspectRatio: "16/9" }}>
+        {image}
+      </div>
     )
   }
 
