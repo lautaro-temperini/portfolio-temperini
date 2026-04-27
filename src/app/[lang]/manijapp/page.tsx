@@ -5,7 +5,6 @@ import ScrollToTop from "@/components/fxscripts/scroll-to-top"
 import Footer from "@/components/footer/Footer"
 import { GridContainer } from "@/components/sections/GridContainer"
 import { Block } from "@/components/sections/Block"
-import { BentoGrid, BentoItem } from "@/components/sections/BentoGrid"
 import FadeOnScroll from "@/components/fxscripts/FadeOnScroll"
 import SectionNav from "@/components/case-study/SectionNav"
 import DevImage from "@/components/DevImage"
@@ -14,32 +13,32 @@ const SITE_URL = "https://temperini.vercel.app"
 const PUBLISHED_DATE = "2026-04-24"
 
 export const metadata = {
-  title: "Manijapp: Underground Event Discovery Design | Validation Case Study | Lautaro Temperini",
+  title: "Manijapp: Underground Event Discovery MVP | Validation Case Study | Lautaro Temperini",
   description:
-    "77-user validation study across 3 cycles: how I redesigned underground event discovery in Buenos Aires from aggregation to community-curated trust. Product design case study, April 2026.",
+    "MVP independiente para discovery de eventos alternativos en CABA y La Plata. Tres ciclos de validación en producción, validación comunitaria visible y geolocalización. Product design case study, 2026.",
   keywords: [
     "product design case study",
     "event discovery UX",
     "marketplace design validation",
-    "UX retention study",
-    "community validation design",
-    "product designer Buenos Aires",
     "two-sided marketplace design",
+    "spec-driven AI development",
+    "wizard of oz prototyping",
+    "product designer Buenos Aires",
   ],
   authors: [{ name: "Lautaro Temperini", url: SITE_URL }],
   creator: "Lautaro Temperini",
   alternates: {
     canonical: `${SITE_URL}/manijapp`,
     languages: {
-      'es': `${SITE_URL}/es/manijapp`,
-      'en': `${SITE_URL}/en/manijapp`,
-      'x-default': `${SITE_URL}/es/manijapp`,
-    }
+      es: `${SITE_URL}/es/manijapp`,
+      en: `${SITE_URL}/en/manijapp`,
+      "x-default": `${SITE_URL}/es/manijapp`,
+    },
   },
   openGraph: {
-    title: "Manijapp: Underground Event Discovery | Case Study by Lautaro Temperini",
+    title: "Manijapp: Underground Event Discovery MVP | Case Study by Lautaro Temperini",
     description:
-      "77-user validation study, 3 cycles. How curation > aggregation in marketplace design. Buenos Aires, April 2026.",
+      "Discovery de eventos alternativos en CABA y La Plata. Tres ciclos de validación en producción. Buenos Aires, 2026.",
     url: `${SITE_URL}/manijapp`,
     siteName: "Temperini Portfolio",
     locale: "es_AR",
@@ -52,15 +51,15 @@ export const metadata = {
         url: `${SITE_URL}/images/manijappImages/manijapp-hero.webp`,
         width: 1200,
         height: 630,
-        alt: "Manijapp case study: underground event discovery design validation in Buenos Aires",
+        alt: "Manijapp case study: underground event discovery MVP in Buenos Aires",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Manijapp: Underground Event Discovery | Case Study",
+    title: "Manijapp: Underground Event Discovery MVP | Case Study",
     description:
-      "77-user validation study, 3 cycles. How curation > aggregation in marketplace design.",
+      "MVP independiente para discovery de eventos alternativos. Validación comunitaria visible, tres ciclos en producción.",
     images: [`${SITE_URL}/images/manijappImages/manijapp-hero.webp`],
   },
 }
@@ -71,147 +70,140 @@ const jsonLdManijapp = {
     {
       "@type": "TechArticle",
       "@id": `${SITE_URL}/manijapp#article`,
-      "headline": "Manijapp: Redesigning Underground Event Discovery in Buenos Aires",
-      "description":
-        "77-user validation study across 3 cycles: how community-curated trust outperforms aggregation in underground event discovery marketplaces.",
-      "author": {
+      headline: "Manijapp: MVP de Discovery para Eventos Alternativos en CABA y La Plata",
+      description:
+        "MVP independiente con validación comunitaria visible y geolocalización. Tres ciclos de validación en producción para discovery de eventos alternativos.",
+      author: {
         "@type": "Person",
         "@id": `${SITE_URL}/#person`,
-        "name": "Lautaro Temperini",
-        "url": SITE_URL,
-        "jobTitle": "Product Designer",
-        "sameAs": [
+        name: "Lautaro Temperini",
+        url: SITE_URL,
+        jobTitle: "Product Designer",
+        sameAs: [
           "https://www.linkedin.com/in/lautaro-temperini/",
           "https://github.com/lautaro-temperini",
         ],
       },
-      "datePublished": PUBLISHED_DATE,
-      "dateModified": PUBLISHED_DATE,
-      "url": `${SITE_URL}/manijapp`,
-      "mainEntityOfPage": {
+      datePublished: PUBLISHED_DATE,
+      dateModified: PUBLISHED_DATE,
+      url: `${SITE_URL}/manijapp`,
+      mainEntityOfPage: {
         "@type": "WebPage",
         "@id": `${SITE_URL}/manijapp`,
       },
-      "image": {
+      image: {
         "@type": "ImageObject",
-        "url": `${SITE_URL}/images/manijappImages/manijapp-hero.webp`,
-        "width": 1200,
-        "height": 630,
+        url: `${SITE_URL}/images/manijappImages/manijapp-hero.webp`,
+        width: 1200,
+        height: 630,
       },
-      "inLanguage": "es-AR",
-      "keywords": [
+      inLanguage: "es-AR",
+      keywords: [
         "product design",
         "case study",
         "event discovery",
         "marketplace design",
         "UX validation",
+        "spec-driven development",
+        "wizard of oz",
         "Argentina",
-        "community validation",
-        "retention",
-        "two-sided marketplace",
       ],
-      "about": {
+      about: {
         "@type": "SoftwareApplication",
-        "name": "Manijapp",
-        "description":
-          "Event discovery platform for underground scenes in Buenos Aires and La Plata, Argentina",
-        "applicationCategory": "EntertainmentApplication",
-        "operatingSystem": "Web",
-        "url": "https://manijapp.vercel.app",
+        name: "Manijapp",
+        description:
+          "MVP independiente para discovery de eventos alternativos en CABA y La Plata, con validación comunitaria visible y geolocalización",
+        applicationCategory: "EntertainmentApplication",
+        operatingSystem: "Web",
+        url: "https://manijapp.vercel.app",
       },
-      "mentions": [
+      mentions: [
         {
           "@type": "Thing",
-          "name": "Two-sided Marketplace Design",
-          "description":
-            "Design methodology for platforms connecting event organizers (supply) and attendees (demand) in underground scenes",
+          name: "Spec-Driven AI Development",
+          description:
+            "Proceso de escribir una especificación de producto antes de ejecutar con agentes de IA, para evitar que la IA tome decisiones de diseño por defecto.",
         },
         {
           "@type": "Thing",
-          "name": "Community Validation UX Pattern",
-          "description":
-            "UI pattern separating venue reputation (stars) from event quality (thumbs), used as trust signals in marketplace discovery",
+          name: "Wizard of Oz Prototyping",
+          description:
+            "Metodología de validación donde el backend se simula manualmente (Google Sheets) mientras los usuarios interactúan con un frontend real.",
         },
         {
           "@type": "Thing",
-          "name": "Wizard of Oz Prototyping",
-          "description":
-            "Validation methodology where backend functionality is simulated manually (Google Sheets) while users interact with a real frontend",
-        },
-        {
-          "@type": "Thing",
-          "name": "Spec-Driven AI Development",
-          "description":
-            "Process of writing a product specification before executing with AI agents to prevent default design decisions",
+          name: "Community Validation UX Pattern",
+          description:
+            "Patrón UI que separa reputación de venue (estrellas) de calidad de evento (pulgares) como señales de confianza en marketplaces de discovery.",
         },
       ],
-      "teaches": [
-        "How to validate marketplace design with small cohorts (n=77) using iterative cycles",
-        "Why curation beats aggregation in trust-sensitive discovery markets",
-        "How to use Wizard of Oz methodology to test supply-side behavior before building backend",
-        "How to design with AI agents while maintaining designer judgment and product intent",
-      ],
-      "proficiencyLevel": "Expert",
-      "learningResourceType": "Case Study",
     },
     {
       "@type": "BreadcrumbList",
-      "itemListElement": [
+      itemListElement: [
         {
           "@type": "ListItem",
-          "position": 1,
-          "name": "Lautaro Temperini Portfolio",
-          "item": SITE_URL,
+          position: 1,
+          name: "Lautaro Temperini Portfolio",
+          item: SITE_URL,
         },
         {
           "@type": "ListItem",
-          "position": 2,
-          "name": "Manijapp Case Study",
-          "item": `${SITE_URL}/manijapp`,
+          position: 2,
+          name: "Manijapp Case Study",
+          item: `${SITE_URL}/manijapp`,
         },
       ],
     },
     {
       "@type": "FAQPage",
-      "mainEntity": [
+      mainEntity: [
         {
           "@type": "Question",
-          "name": "What is Manijapp?",
-          "acceptedAnswer": {
+          name: "¿Qué es Manijapp?",
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": "Manijapp is an independent MVP for underground event discovery in Buenos Aires (CABA) and La Plata, Argentina. Built by product designer Lautaro Temperini in 9 days and validated across 3 user cycles using GA4, Microsoft Clarity, and Supabase.",
+            text: "Manijapp es un MVP independiente para discovery de eventos alternativos en CABA y La Plata. Combina validación comunitaria visible (estrellas para venue, pulgares para evento) y geolocalización, con foco en eventos fuera del circuito tradicional que hoy solo circulan por Instagram, WhatsApp y boca a boca.",
           },
         },
         {
           "@type": "Question",
-          "name": "What UX validation methodology was used in Manijapp?",
-          "acceptedAnswer": {
+          name: "¿Cuál es el insight central del producto?",
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": "Three iterative validation cycles: Cycle 1 (17 contacts, 5 real sessions — signal invalidated due to changing variables), Cycle 2 (77 sessions over 72 hours with locked variables — first confirmed retention signals), Cycle 3 (35 sessions over 96 hours — seeding experiment showing 13% vs 6.25% interaction with/without seeding). Each cycle produced chained decisions for the next.",
+            text: "El problema no es encontrar más eventos. Es identificar cuáles valen la pena. La fricción está en la curaduría y la confianza, no en la disponibilidad. Eso redefine el producto: deja de ser un problema de aggregation y pasa a ser uno de curaduría con validación comunitaria.",
           },
         },
         {
           "@type": "Question",
-          "name": "What were the key results of the Manijapp design validation study?",
-          "acceptedAnswer": {
+          name: "¿Qué metodología de validación se usó?",
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": "Across cycles 2 and 3: 43–44% event detail view rate, 6–13% community validation interaction (thumbs), 5–6% voluntary share rate, 1–2 organic event publications per cycle, and 3–4 users returning 4+ consecutive days without re-engagement stimulus. Cycle 3 showed channel saturation but improved engagement quality: 4 pages/session, 78% scroll depth, 1.5 active minutes.",
+            text: "Tres ciclos encadenados de validación en producción. Ciclo 1: 17 contactos, 5 sesiones, señal invalidada por variables cambiantes. Ciclo 2: 89 usuarios activos con variables fijas, primer evento orgánico publicado, retención 7.9% a 7 días. Ciclo 3: experimento de seeding (13% vs 6.25% interacción con/sin), saturación de canal pero mejora cualitativa (4 páginas/sesión, 78% scroll, 1m 30s).",
           },
         },
         {
           "@type": "Question",
-          "name": "What is the core product design insight from Manijapp?",
-          "acceptedAnswer": {
+          name: "¿Qué es Spec-Driven Development en este contexto?",
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": "In underground event discovery, curation beats aggregation. The real user friction is not finding more events but identifying which ones are trustworthy. Community validation signals — specifically separating venue reputation (persistent stars) from event quality (contextual thumbs) — proved more effective than algorithm-based ranking in low-supply, high-trust-sensitivity markets.",
+            text: "Es el proceso de escribir una especificación clara antes de ejecutar con agentes de IA. Sin esa capa, la IA completa los vacíos y define el producto en lugar del diseñador: copy que no comunica, jerarquía sin lógica, estados indefinidos. La especificación permite dirigir al agente en lugar de dejar que el agente dirija — y evita contaminar los datos de validación con defaults del generador.",
           },
         },
         {
           "@type": "Question",
-          "name": "Who designed and built Manijapp?",
-          "acceptedAnswer": {
+          name: "¿Por qué empezar sin backend?",
+          acceptedAnswer: {
             "@type": "Answer",
-            "text": "Lautaro Temperini, a product designer based in Buenos Aires, Argentina. He led strategy, UX/UI, product discovery, and metrics across the full MVP lifecycle. He also has direct domain knowledge from years as a DJ with connections to the underground scene in CABA and La Plata.",
+            text: "Para no escalar infraestructura sin validación. El formulario de publicación existía desde el día uno: los eventos llegaban a un Google Sheet y la publicación la hacía Lautaro manualmente (Wizard of Oz). El trigger para construir backend real fue concreto: aparecieron eventos de organizadores reales y los datos simulados dejaron de ser neutrales.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "¿Quién diseñó y construyó Manijapp?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Lautaro Temperini, Product Designer en Buenos Aires. Lideró estrategia, UX/UI, discovery y métricas a través del ciclo de vida del MVP. Su contexto previo como DJ con red directa en la escena underground de CABA y La Plata redujo la fricción inicial del lado oferta del marketplace.",
           },
         },
       ],
@@ -246,16 +238,17 @@ export default async function ManijappPage({
           {/* ---- Navegación lateral con puntos ---- */}
           <SectionNav
             sections={[
-              { id: "contexto",   label: es ? "El problema"      : "The problem"      },
-              { id: "decisiones", label: es ? "Decisiones clave"  : "Key decisions"    },
-              { id: "validacion", label: es ? "Validación"        : "Validation"       },
-              { id: "supply",     label: "Supply"                                      },
-              { id: "ia",         label: es ? "Diseñar con IA"    : "Designing with AI"},
-              { id: "cierre",     label: es ? "Qué sigue"         : "What's next"      },
+              { id: "problema", label: es ? "El problema" : "The problem" },
+              { id: "metodologia", label: es ? "Metodología" : "Methodology" },
+              { id: "backend", label: es ? "Del Concierge al backend" : "From Concierge to backend" },
+              { id: "benchmarking", label: "Benchmarking" },
+              { id: "validacion", label: es ? "Validación" : "Validation" },
+              { id: "supply", label: "Supply" },
+              { id: "cierre", label: es ? "Qué sigue" : "What's next" },
             ]}
           />
 
-          {/* ==================== 1. HERO ==================== */}
+          {/* ==================== HERO ==================== */}
           <FadeOnScroll>
             <section className="w-full px-8 md:px-12 lg:px-20 pt-28 md:pt-32 lg:pt-36 mb-12">
               <div className="w-full max-w-7xl">
@@ -267,7 +260,7 @@ export default async function ManijappPage({
                     ? "Descubrir eventos no es el problema. El problema es saber cuáles valen la pena."
                     : "Discovering events isn't the problem. The problem is knowing which ones are worth it."}
                 </p>
-                <p className="text-base md:text-lg text-light leading-relaxed mb-6">
+                <p className="text-base md:text-lg text-light leading-relaxed mb-6 max-w-4xl">
                   {es
                     ? "MVP independiente para discovery de eventos alternativos en CABA y La Plata, con validación comunitaria visible y geolocalización."
                     : "Independent MVP for alternative event discovery in Buenos Aires and La Plata, with visible community validation and geolocation."}
@@ -279,7 +272,7 @@ export default async function ManijappPage({
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 text-sm text-[#2DD4BF] hover:text-[#5EEAD4] underline underline-offset-4 transition-colors"
                   >
-                    {es ? "• Ver Manijapp ↗" : "• View Manijapp ↗"}
+                    {es ? "• Ir a Manijapp ↗" : "• Visit Manijapp ↗"}
                   </a>
                 </div>
               </div>
@@ -292,7 +285,7 @@ export default async function ManijappPage({
               <div className="relative w-full h-[150px] md:h-[200px] rounded-lg overflow-hidden bg-[#1C0900]">
                 <DevImage
                   src="/images/manijappImages/manijapp-hero.webp"
-                  alt="Banner Manijapp"
+                  alt={es ? "Banner Manijapp" : "Manijapp banner"}
                   fill
                   priority
                   imageClassName="object-cover"
@@ -306,25 +299,31 @@ export default async function ManijappPage({
             <div className="text-sm text-light/80 space-y-2">
               <div>
                 <span className="text-light/70 font-semibold">{es ? "Tipo" : "Type"}</span>
-                {" · "}{es ? "MVP independiente, validación en producción" : "Independent MVP, production validation"}
+                {" · "}
+                {es
+                  ? "MVP independiente, validación en producción"
+                  : "Independent MVP, production validation"}
               </div>
               <div>
                 <span className="text-light/70 font-semibold">{es ? "Rol" : "Role"}</span>
-                {" · "}{es ? "Product Designer — estrategia, UX/UI, discovery, métricas" : "Product Designer — strategy, UX/UI, discovery, metrics"}
+                {" · "}
+                {es
+                  ? "Product Designer — estrategia, UX/UI, discovery, métricas"
+                  : "Product Designer — strategy, UX/UI, discovery, metrics"}
               </div>
               <div>
                 <span className="text-light/70 font-semibold">Timeline</span>
-                {" · "}{es ? "9 días de construcción + 3 ciclos de validación" : "9 days of building + 3 validation cycles"}
+                {" · "}
+                {es ? "3 semanas" : "3 weeks"}
               </div>
               <div>
                 <span className="text-light/70 font-semibold">Stack</span>
-                {" · "}React, Cursor, Vercel, Leaflet, GA4, Microsoft Clarity, Supabase
+                {" · "}React, Cursor, Vercel, GA4, Clarity, Supabase
               </div>
               <div>
                 <span className="text-light/70 font-semibold">{es ? "Estado" : "Status"}</span>
-                {" · "}{es
-                  ? "Validación activa. Próximo ciclo con distribución offline y retención sin estímulo."
-                  : "Active validation. Next cycle: offline distribution and unstimulated retention."}
+                {" · "}
+                {es ? "Validación activa." : "Active validation."}
               </div>
             </div>
           </section>
@@ -337,37 +336,40 @@ export default async function ManijappPage({
           {/* ==================== TL;DR ==================== */}
           <FadeOnScroll>
             <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
-              <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">TL;DR</h2>
-              <div className="max-w-4xl text-light leading-relaxed space-y-4">
-                <p className="text-lg">
-                  <span className="font-semibold">{es ? "Problema." : "Problem."}</span>{" "}
-                  {es
-                    ? "Los eventos independientes en CABA y La Plata no tienen una fuente centralizada confiable. El discovery ocurre de forma fragmentada: Instagram, WhatsApp, boca a boca."
-                    : "Independent events in Buenos Aires and La Plata lack a reliable centralized source. Discovery happens in fragmented ways: Instagram, WhatsApp, word of mouth."}
-                </p>
-                <p className="text-lg">
-                  <span className="font-semibold">Insight.</span>{" "}
-                  {es
-                    ? "El problema no es encontrar más eventos, sino identificar cuáles valen la pena. La fricción está en la curaduría y la confianza, no en la disponibilidad."
-                    : "The problem isn't finding more events — it's identifying which ones are worth it. The friction is in curation and trust, not availability."}
-                </p>
-                <p className="text-lg">
-                  <span className="font-semibold">{es ? "Solución." : "Solution."}</span>{" "}
-                  {es
-                    ? "Plataforma de discovery con validación comunitaria visible, geolocalización y foco en eventos fuera del circuito tradicional."
-                    : "A discovery platform with visible community validation, geolocation, and a focus on events outside the mainstream circuit."}
-                </p>
-                <p className="text-lg">
-                  <span className="font-semibold">{es ? "Resultados." : "Results."}</span>{" "}
-                  {es
-                    ? "Señales tempranas de retención sostenidas en múltiples días, comportamiento real en todo el core loop (exploración, validación, compartir, publicación) y primeros casos de supply sin pedido explícito."
-                    : "Early retention signals sustained over multiple days, real behavior across the full core loop (exploration, validation, sharing, publishing) and first cases of organic supply."}
-                </p>
-                <p className="text-sm text-light/50 italic">
-                  {es
-                    ? "Estado: Validación activa. Próximo ciclo con distribución offline y retención sin estímulo."
-                    : "Status: Active validation. Next cycle: offline distribution and unstimulated retention."}
-                </p>
+              <h2 className="text-3xl md:text-4xl font-bold text-light mb-8">TL;DR</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="rounded-2xl border border-subtle/60 bg-container/60 p-6 md:p-8">
+                  <h3 className="text-lg font-bold text-light mb-3">01. {es ? "Problema" : "Problem"}</h3>
+                  <p className="text-light/80 leading-relaxed">
+                    {es
+                      ? "Los eventos independientes en CABA y La Plata no tienen una fuente centralizada confiable. El discovery ocurre de forma fragmentada: Instagram, WhatsApp, boca a boca."
+                      : "Independent events in Buenos Aires and La Plata lack a reliable centralized source. Discovery happens in fragmented ways: Instagram, WhatsApp, word of mouth."}
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-subtle/60 bg-container/60 p-6 md:p-8">
+                  <h3 className="text-lg font-bold text-light mb-3">02. Insight</h3>
+                  <p className="text-light/80 leading-relaxed">
+                    {es
+                      ? "El problema no es encontrar más eventos, sino identificar cuáles valen la pena. La fricción está en la curaduría y la confianza, no en la disponibilidad."
+                      : "The problem isn't finding more events — it's identifying which ones are worth it. The friction is in curation and trust, not availability."}
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-subtle/60 bg-container/60 p-6 md:p-8">
+                  <h3 className="text-lg font-bold text-light mb-3">03. {es ? "Solución" : "Solution"}</h3>
+                  <p className="text-light/80 leading-relaxed">
+                    {es
+                      ? "Plataforma de discovery con validación comunitaria visible, geolocalización y foco en eventos fuera del circuito tradicional."
+                      : "A discovery platform with visible community validation, geolocation, and a focus on events outside the mainstream circuit."}
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-subtle/60 bg-container/60 p-6 md:p-8">
+                  <h3 className="text-lg font-bold text-light mb-3">04. {es ? "Resultados" : "Results"}</h3>
+                  <p className="text-light/80 leading-relaxed">
+                    {es
+                      ? "Señales tempranas de retención sostenidas en múltiples días, comportamiento real en todo el core loop (exploración, validación, compartir, publicación) y primeros casos de supply sin pedido explícito."
+                      : "Early retention signals sustained over multiple days, real behavior across the full core loop (exploration, validation, sharing, publishing) and first cases of supply without explicit request."}
+                  </p>
+                </div>
               </div>
             </section>
           </FadeOnScroll>
@@ -377,56 +379,52 @@ export default async function ManijappPage({
             <div className="h-px w-full bg-gradient-to-r from-transparent via-[#08A4E1]/40 to-transparent" />
           </div>
 
-          {/* ==================== EL PROBLEMA Y EL INSIGHT ==================== */}
-          <FadeOnScroll delay={150}>
-            <section id="contexto" className="w-full px-8 md:px-12 lg:px-20 mb-20">
-              <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0 [&>*]:h-full">
-                <Block colSpan={1}>
+          {/* ==================== EL PROBLEMA ==================== */}
+          <FadeOnScroll>
+            <section id="problema" className="w-full px-8 md:px-12 lg:px-20 mb-20">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+                <div className="text-light leading-relaxed space-y-4">
                   <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">
                     {es ? "El problema" : "The problem"}
                   </h2>
-                  <div className="text-light leading-relaxed space-y-4 max-w-4xl">
-                    <p className="text-lg">
-                      {es
-                        ? "Los fines de semana en La Plata y CABA, la pregunta \"¿qué hay para hacer?\" se resuelve mal. Eventbrite tiene los eventos masivos. CulturaBA tiene la agenda oficial. Instagram tiene todo mezclado."
-                        : "On weekends in La Plata and Buenos Aires, the question \"what is there to do?\" gets answered poorly. Eventbrite has the mainstream events. CulturaBA has the official calendar. Instagram has everything mixed together."}
-                    </p>
-                    <p className="text-lg">
-                      {es
-                        ? "El show en un lugar sin habilitación, la fiesta que solo circula por WhatsApp, el evento en un bar nuevo sin visibilidad — no aparecen en ninguna plataforma."
-                        : "The show at an unlicensed venue, the party that only circulates on WhatsApp, the event at a new bar with no visibility — none of them appear on any platform."}
-                    </p>
-                    <p className="text-lg">
-                      {es
-                        ? "La hipótesis inicial era simple: centralizar eventos cerca tuyo. Eso cambió en el primer ciclo de discovery."
-                        : "The initial hypothesis was simple: centralize events near you. That changed in the first discovery cycle."}
-                    </p>
-                  </div>
-                </Block>
+                  <p className="text-lg">
+                    {es
+                      ? "Los fines de semana en La Plata y CABA, la pregunta \"¿qué hay para hacer?\" se resuelve mal. Eventbrite tiene los eventos masivos. CulturaBA tiene la agenda oficial. Instagram tiene todo mezclado."
+                      : "On weekends in La Plata and Buenos Aires, the question \"what is there to do?\" gets answered poorly. Eventbrite has the mainstream events. CulturaBA has the official calendar. Instagram has everything mixed together."}
+                  </p>
+                  <p className="text-lg">
+                    {es
+                      ? "El show underground en un espacio alternativo, la fiesta que solo circula por WhatsApp, el evento en un bar nuevo sin visibilidad — no aparecen en ninguna plataforma."
+                      : "The underground show at an alternative space, the party that only circulates on WhatsApp, the event at a new bar with no visibility — none of them appear on any platform."}
+                  </p>
+                  <p className="text-lg">
+                    {es
+                      ? "La hipótesis inicial era simple: centralizar eventos cerca tuyo. Eso cambió en el primer ciclo de discovery."
+                      : "The initial hypothesis was simple: centralize events near you. That changed in the first discovery cycle."}
+                  </p>
+                </div>
 
-                <Block colSpan={1}>
-                  <div className="text-light leading-relaxed space-y-4">
-                    <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">
-                      {es ? "El insight que lo redefine" : "The insight that reframes it"}
-                    </h2>
-                    <p className="text-lg">
-                      {es
-                        ? "Tres testers sin conexión entre sí llegaron a la misma conclusión sin que nadie se las sugiriera: el diferencial no son todos los eventos, son los que no están en ningún otro lado."
-                        : "Three testers with no connection to each other reached the same conclusion without being prompted: the differentiator isn't all the events — it's the ones that aren't anywhere else."}
-                    </p>
-                    <p className="text-lg">
-                      {es
-                        ? "No querían otro Eventbrite. Querían el evento informal, verificado, que hoy solo circula por WhatsApp."
-                        : "They didn't want another Eventbrite. They wanted the informal, verified event that today only circulates on WhatsApp."}
-                    </p>
-                    <p className="text-lg font-semibold">
-                      {es
-                        ? "Eso redefine el producto. No es un problema de aggregation. Es un problema de curaduría y confianza."
-                        : "That reframes the product. It's not an aggregation problem. It's a curation and trust problem."}
-                    </p>
-                  </div>
-                </Block>
-              </GridContainer>
+                <div className="text-light leading-relaxed space-y-4">
+                  <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">
+                    {es ? "El insight que lo redefine" : "The insight that reframes it"}
+                  </h2>
+                  <p className="text-lg">
+                    {es
+                      ? "Con el prototipo en producción, la validación arrancó el mismo día. Cinco sesiones de guerrilla research. Tres de ellos llegaron a la misma conclusión sin que nadie se las sugiriera: el diferencial no son todos los eventos, son los que no están en ningún otro lado."
+                      : "With the prototype in production, validation started the same day. Five guerrilla research sessions. Three of them reached the same conclusion without anyone suggesting it: the differentiator isn't all the events — it's the ones that aren't anywhere else."}
+                  </p>
+                  <p className="text-lg">
+                    {es
+                      ? "No querían otro Eventbrite. Querían acceso a lo que existe cerca pero está invisible, verificado, que hoy solo circula por WhatsApp."
+                      : "They didn't want another Eventbrite. They wanted access to what exists nearby but is invisible — verified, currently circulating only on WhatsApp."}
+                  </p>
+                  <p className="text-lg font-semibold">
+                    {es
+                      ? "Eso redefine el producto. No es un problema de volumen. Es un problema de curaduría y confianza."
+                      : "That reframes the product. It's not a volume problem. It's a curation and trust problem."}
+                  </p>
+                </div>
+              </div>
             </section>
           </FadeOnScroll>
 
@@ -435,11 +433,17 @@ export default async function ManijappPage({
             <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
               <DevImage
                 src="/images/manijappImages/manijapp-explore-map-mockup.webp"
-                alt="Mockup de sección Explorar y mockup de Mapa"
+                alt={
+                  es
+                    ? "Mockup de la sección Explorar y vista de Mapa de Manijapp"
+                    : "Manijapp Explore section and Map view mockup"
+                }
                 fill
-                caption={es
-                  ? "Sección Explorar y vista de Mapa — dos modos de acceso al mismo contenido según el contexto del usuario."
-                  : "Explore section and Map view — two access modes for the same content depending on the user's context."}
+                caption={
+                  es
+                    ? "Sección Explorar y vista de Mapa — dos modos de acceso al mismo contenido según el contexto del usuario."
+                    : "Explore section and Map view — two access modes for the same content depending on the user's context."
+                }
                 className="w-full"
                 imageClassName="object-cover"
               />
@@ -451,217 +455,47 @@ export default async function ManijappPage({
             <div className="h-px w-full bg-gradient-to-r from-transparent via-[#08A4E1]/40 to-transparent" />
           </div>
 
-          {/* ==================== VENTAJA COMPETITIVA ==================== */}
+          {/* ==================== METODOLOGIA ==================== */}
           <FadeOnScroll>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
-              <h2 className="text-3xl md:text-4xl font-bold text-light mb-8">
-                {es ? "La ventaja de arrancar desde adentro" : "The advantage of starting from the inside"}
-              </h2>
-              <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0 items-start">
-                <Block colSpan={1}>
-                  <div className="text-light leading-relaxed space-y-6">
-                    <p className="text-lg">
-                      {es
-                        ? "La idea no vino de un análisis de mercado. Fui DJ durante años y tengo red directa con promotores y organizadores de la escena independiente en CABA y La Plata. Eso no es contexto biográfico — es acceso real al lado oferta del marketplace que reduce la fricción inicial que mata a la mayoría de los marketplaces de dos lados antes de llegar al primer evento real."
-                        : "The idea didn't come from a market analysis. I was a DJ for years and have direct connections with promoters and organizers from the independent scene in Buenos Aires and La Plata. That's not biographical context — it's real access to the supply side of the marketplace that reduces the cold-start friction that kills most two-sided marketplaces before they reach their first real event."}
-                    </p>
-                    <p className="text-lg">
-                      {es
-                        ? "El análisis de competidores lo confirmó desde adentro. El research de Jodify no fue de landing page, fue contacto directo posando como productora. Lo que emergió fue más útil que cualquier benchmarking superficial: Jodify opera como canal B2B con gatekeeping humano, llamada de onboarding, 10% de comisión, posicionamiento adicional pago. Funciona, pero excluye lo verdaderamente underground."
-                        : "The competitor analysis confirmed it from the inside. The Jodify research wasn't based on their landing page — it was direct contact posing as a venue. What emerged was more useful than any surface-level benchmarking: Jodify operates as a B2B channel with human gatekeeping, an onboarding call, 10% commission, and paid additional positioning. It works, but it excludes the truly underground."}
-                    </p>
-                    <div className="bg-gradient-to-br from-[#1C0900]/40 to-[#2D1200]/40 backdrop-blur-sm rounded-2xl p-8 border border-[#C45200]/30">
-                      <p className="text-light text-lg">
-                        {es ? (
-                          <>
-                            El contraste con Manijapp no es de features sino de enfoque: dos maneras distintas de construir confianza en un marketplace.{" "}
-                            <span className="font-semibold">
-                              Jodify valida antes de publicar. Manijapp valida después, vía comunidad.
-                            </span>{" "}
-                            Son apuestas distintas. Y esa distinción define qué tipo de oferta puede entrar y cuál queda afuera.
-                          </>
-                        ) : (
-                          <>
-                            The contrast with Manijapp isn't about features but about approach: two different ways of building trust in a marketplace.{" "}
-                            <span className="font-semibold">
-                              Jodify validates before publishing. Manijapp validates after, via community.
-                            </span>{" "}
-                            These are different bets. And that distinction defines what kind of supply can enter and what stays out.
-                          </>
-                        )}
-                      </p>
-                    </div>
-                  </div>
-                </Block>
-                <Block colSpan={1}>
-                  <DevImage
-                    src="/images/manijappImages/manijapp-competitive-advantage.webp"
-                    alt="Fiesta electrónica underground en Buenos Aires: DJ mezclando en vinilo y digital frente a una pista densa, con luces rojas y azules entre humo y ambiente cinematográfico."
-                    fill
-                    className="w-full"
-                    imageClassName="object-cover"
-                  />
-                </Block>
-              </GridContainer>
-            </section>
-          </FadeOnScroll>
-
-          {/* ==================== DIVIDER ==================== */}
-          <div className="w-full px-8 md:px-12 lg:px-20 mb-28">
-            <div className="h-px w-full bg-gradient-to-r from-transparent via-[#08A4E1]/40 to-transparent" />
-          </div>
-
-          {/* ==================== DECISIONES CLAVE ==================== */}
-          <FadeOnScroll delay={80}>
-            <section id="decisiones" className="w-full px-8 md:px-12 lg:px-20 mb-20">
-              <div className="max-w-4xl mb-8">
-                <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">
-                  {es ? "Decisiones clave" : "Key decisions"}
+            <section id="metodologia" className="w-full px-8 md:px-12 lg:px-20 mb-20">
+              <div className="max-w-5xl mx-auto mb-8">
+                <h2 className="text-3xl md:text-4xl font-bold text-light text-center">
+                  {es
+                    ? "Cómo se construyó: metodología antes que stack"
+                    : "How it was built: methodology before stack"}
                 </h2>
               </div>
-              <BentoGrid cols={{ default: 1, md: 2, lg: 3 }} gap="md">
-                {/* 01 — full width en md */}
-                <BentoItem colSpan={{ default: 1, md: 2 }}>
-                  <div className="bg-container/80 rounded-lg p-6 md:h-full card-elevated">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="text-2xl font-bold text-light">01</span>
-                      <h3 className="text-xl font-bold text-light">
-                        {es ? "Construir antes de hacer research formal" : "Build before formal research"}
-                      </h3>
-                    </div>
-                    <p className="text-light text-sm leading-relaxed mb-3">
-                      {es
-                        ? "No era para tener un producto terminado, sino algo concreto que mostrar a personas reales. Una pantalla genera reacciones que una idea no: cuando alguien ve el mapa, entiende en segundos y ahí aparecen las confusiones, lo que falta y los problemas de copy."
-                        : "Not to have a finished product, but something concrete to show real people. A screen generates reactions that an idea doesn't: when someone sees the map, they understand in seconds — and that's where the confusions, missing pieces, and copy problems emerge."}
-                    </p>
-                    <p className="text-light/70 text-sm italic">
-                      {es
-                        ? "El trade-off era claro: lanzar un prototipo sin todas las respuestas o perder semanas en research teórico que igual iba a cambiar al usarlo. Elegí lanzar y validar desde el día uno, usando el producto como herramienta de aprendizaje. Cinco conversaciones reales en 48 horas enseñaron más que cualquier encuesta por email."
-                        : "The trade-off was clear: launch a prototype without all the answers, or spend weeks on theoretical research that would change anyway once in use. I chose to launch and validate from day one, using the product as a learning tool. Five real conversations in 48 hours taught more than any email survey."}
-                    </p>
-                  </div>
-                </BentoItem>
 
-                {/* 02 */}
-                <BentoItem colSpan={1}>
-                  <div className="bg-container/80 rounded-lg p-6 md:h-full card-elevated">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="text-2xl font-bold text-light">02</span>
-                      <h3 className="text-xl font-bold text-light">Spec-Driven Development</h3>
-                    </div>
-                    <div className="space-y-2 text-light text-sm leading-relaxed">
-                      <p>
-                        {es
-                          ? "Sin especificación previa, la IA decide por vos. El criterio del designer se vuelve el input más crítico del sistema."
-                          : "Without prior specification, the AI decides for you. The designer's judgment becomes the most critical input in the system."}
-                      </p>
-                      <p className="text-light/70 italic">
-                        {es
-                          ? <>Antes de ejecutar con un agente, el producto necesita un{" "}<code className="rounded bg-container-light/10 px-1 text-xs">.md</code>{" "}que defina qué problema resuelve, quién lo usa y qué no puede decidir la IA sola.</>
-                          : <>Before executing with an agent, the product needs a{" "}<code className="rounded bg-container-light/10 px-1 text-xs">.md</code>{" "}that defines what problem it solves, who uses it, and what the AI cannot decide alone.</>}
-                      </p>
-                    </div>
-                  </div>
-                </BentoItem>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+                <div className="text-light leading-relaxed space-y-4">
+                  <h3 className="text-2xl font-semibold text-light mb-4">
+                    {es ? "Construir antes que research" : "Build before research"}
+                  </h3>
+                  <p className="text-lg">
+                    {es
+                      ? "El primer trade-off fue explícito: esperar a tener mayor claridad conceptual o salir a producción con un sistema incompleto."
+                      : "The first trade-off was explicit: wait for more conceptual clarity or ship to production with an incomplete system."}
+                  </p>
+                  <p className="text-lg">
+                    {es
+                      ? "La decisión fue lanzar. No por velocidad en sí misma, sino porque una interfaz genera un tipo de señal que ningún research previo puede reemplazar. Cinco conversaciones reales en 48 horas aportan más que cualquier encuesta por email."
+                      : "The decision was to launch. Not for speed itself, but because an interface generates a kind of signal no prior research can replace. Five real conversations in 48 hours teach more than any email survey."}
+                  </p>
+                </div>
 
-                {/* 03 */}
-                <BentoItem colSpan={1}>
-                  <div className="bg-container/80 rounded-lg p-6 md:h-full card-elevated">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="text-2xl font-bold text-light">03</span>
-                      <h3 className="text-xl font-bold text-light">
-                        {es ? "Wizard of Oz antes que backend" : "Wizard of Oz before backend"}
-                      </h3>
-                    </div>
-                    <div className="space-y-2 text-light text-sm leading-relaxed">
-                      <p>
-                        {es
-                          ? "El formulario existe, los datos llegan a un Google Sheet, la publicación se hace manualmente. El organizador percibe que el flujo existe."
-                          : "The form exists, data flows to a Google Sheet, and publishing is done manually. The organizer perceives that the flow exists."}
-                      </p>
-                      <p className="text-light/70 italic">
-                        {es
-                          ? "El backend real se construye cuando haya evidencia de intención de carga autónoma, no antes."
-                          : "The real backend gets built when there's evidence of autonomous upload intent, not before."}
-                      </p>
-                    </div>
-                  </div>
-                </BentoItem>
-
-                {/* 04 */}
-                <BentoItem colSpan={1}>
-                  <div className="bg-container/80 rounded-lg p-6 md:h-full card-elevated">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="text-2xl font-bold text-light">04</span>
-                      <h3 className="text-xl font-bold text-light">
-                        {es ? "Dos sistemas de validación separados" : "Two separate validation systems"}
-                      </h3>
-                    </div>
-                    <div className="space-y-3 text-light text-sm leading-relaxed">
-                      <div>
-                        <h4 className="font-semibold mb-1">
-                          {es ? "⭐ Estrellas → venue" : "⭐ Stars → venue"}
-                        </h4>
-                        <p>
-                          {es
-                            ? "Permanentes, reputación acumulada. Ligadas al lugar, no al evento."
-                            : "Permanent, accumulated reputation. Tied to the place, not the event."}
-                        </p>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold mb-1">
-                          {es ? "👍 Pulgares → evento" : "👍 Thumbs → event"}
-                        </h4>
-                        <p>
-                          {es
-                            ? "Contextuales, reversibles. Un voto desde la card es señal de escaneo. Desde el detalle, señal de decisión deliberada."
-                            : "Contextual, reversible. A vote from the card signals scanning behavior. From the detail, it signals deliberate decision-making."}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </BentoItem>
-
-                {/* 05 */}
-                <BentoItem colSpan={1}>
-                  <div className="bg-container/80 rounded-lg p-6 md:h-full card-elevated">
-                    <div className="flex items-center gap-3 mb-4">
-                      <span className="text-2xl font-bold text-light">05</span>
-                      <h3 className="text-xl font-bold text-light">
-                        {es ? "El botón Guardar como sensor" : "The Save button as a sensor"}
-                      </h3>
-                    </div>
-                    <div className="space-y-2 text-light text-sm leading-relaxed">
-                      <p>
-                        {es
-                          ? "Se mantuvo clickeable con \"Próximamente\". No por deuda técnica, sino como sensor deliberado."
-                          : "Kept clickable with \"Coming soon.\" Not as technical debt, but as a deliberate sensor."}
-                      </p>
-                      <p className="text-light/70 italic">
-                        {es
-                          ? "Si nadie lo toca, se elimina. Si hay clicks, se prioriza. Esa misma lógica rigió cada decisión de infraestructura del proyecto."
-                          : "If no one touches it, cut it. If there are clicks, prioritize it. That same logic drove every infrastructure decision in the project."}
-                      </p>
-                    </div>
-                  </div>
-                </BentoItem>
-              </BentoGrid>
-            </section>
-          </FadeOnScroll>
-
-          {/* Wizard of Oz — Form → Sheet → publicación manual */}
-          <FadeOnScroll>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-12">
-              <DevImage
-                src="/images/manijappImages/manijapp-wizard-of-oz-flow.webp"
-                alt="Flujo Wizard of Oz: Form → Google Sheet → publicación manual"
-                fill
-                caption={es
-                  ? "Flujo de carga: el organizador percibe que la publicación existe. El backend espera evidencia real de demanda."
-                  : "Loading flow: the organizer perceives that publishing exists. The backend waits for real evidence of demand."}
-                className="w-full"
-                imageClassName="object-cover"
-              />
+                <div className="text-light leading-relaxed space-y-4">
+                  <h3 className="text-2xl font-semibold text-light mb-4">
+                    {es
+                      ? "El costo de saltear la especificación"
+                      : "The cost of skipping the specification"}
+                  </h3>
+                  <p className="text-lg">
+                    {es
+                      ? "Sin un brief previo, la IA tomó miles de micro-decisiones que nunca pedí: copy que no comunicaba, jerarquía visual sin lógica, estados indefinidos. El costo no era solo eficiencia — era metodología. Si la UX tiene ruido de defaults del generador, los testers reaccionan a decisiones que nunca tomaste. Los datos quedan contaminados antes de empezar."
+                      : "Without a prior brief, the AI made thousands of micro-decisions I never asked for: copy that didn't communicate, visual hierarchy with no logic, undefined states. The cost wasn't only efficiency — it was methodology. If the UX has noise from generator defaults, testers react to decisions you never made. The data is contaminated before you even start."}
+                  </p>
+                </div>
+              </div>
             </section>
           </FadeOnScroll>
 
@@ -671,27 +505,264 @@ export default async function ManijappPage({
               <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0">
                 <Block colSpan={1}>
                   <DevImage
-                    src="/images/manijappImages/manijapp-problem-insight.webp"
-                    alt="Sistema de validación antes: estrellas y recomendación mezcladas, señal ambigua"
+                    src="/images/manijappImages/manijapp-validation-before.webp"
+                    alt={
+                      es
+                        ? "Sistema de validación antes: estrellas y recomendación mezcladas, señal ambigua"
+                        : "Validation system before: stars and recommendation mixed, ambiguous signal"
+                    }
                     fill
-                    caption={es
-                      ? "Antes — estrellas y recomendación mezcladas. Señal ambigua."
-                      : "Before — stars and recommendation mixed. Ambiguous signal."}
+                    caption={
+                      es
+                        ? "Antes — estrellas y recomendación mezcladas. Señal ambigua."
+                        : "Before — stars and recommendation mixed. Ambiguous signal."
+                    }
                     className="w-full"
                     imageClassName="object-cover"
                   />
                 </Block>
                 <Block colSpan={1}>
                   <DevImage
-                    src="/images/manijappImages/manijapp-validation-before-after.webp"
-                    alt="Sistema de validación después: estrellas para venue, pulgares para evento, tracking diferenciado"
+                    src="/images/manijappImages/manijapp-validation-after.webp"
+                    alt={
+                      es
+                        ? "Sistema de validación después: estrellas para venue, pulgares para evento, tracking diferenciado"
+                        : "Validation system after: stars for venue, thumbs for event, differentiated tracking"
+                    }
                     fill
-                    caption={es
-                      ? "Después — sistemas separados. Tracking diferenciado por origen (card vs detalle)."
-                      : "After — separate systems. Differentiated tracking by origin (card vs detail)."}
+                    caption={
+                      es
+                        ? "Después — sistemas separados. Tracking diferenciado por origen (card vs detalle)."
+                        : "After — separate systems. Differentiated tracking by origin (card vs detail)."
+                    }
                     className="w-full"
                     imageClassName="object-cover"
                   />
+                </Block>
+              </GridContainer>
+            </section>
+          </FadeOnScroll>
+
+          {/* Spec-Driven Development - destacado */}
+          <FadeOnScroll>
+            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
+              <div className="w-full rounded-2xl border border-[#C45200]/30 bg-gradient-to-br from-[#1C0900]/40 to-[#2D1200]/40 backdrop-blur-sm p-6 md:p-8 lg:p-10">
+                <h3 className="text-2xl font-semibold text-light mb-4">
+                  Spec-Driven Development
+                </h3>
+                <div className="text-light leading-relaxed space-y-4">
+                  <p className="text-lg">
+                    {es
+                      ? "La corrección no fue técnica, sino de proceso. Sin una especificación clara, la IA completa los vacíos y define el producto en lugar del diseñador."
+                      : "The fix wasn't technical, it was procedural. Without a clear specification, the AI fills the gaps and defines the product in place of the designer."}
+                  </p>
+                  <p className="text-lg">
+                    {es
+                      ? "El paso a un enfoque spec-driven introduce una diferencia clave: permite dirigir al agente en lugar de dejar que el agente dirija. Sin esa capa de control, la velocidad de ejecución amplifica el error y aumenta la superficie de corrección. Ese costo temprano no desaparece; se transforma en deuda técnica."
+                      : "Moving to a spec-driven approach introduces a key distinction: it lets you direct the agent instead of letting the agent direct. Without that control layer, execution speed amplifies error and increases the surface to correct. That early cost doesn't disappear; it turns into technical debt."}
+                  </p>
+                </div>
+              </div>
+            </section>
+          </FadeOnScroll>
+
+          {/* ==================== DIVIDER ==================== */}
+          <div className="w-full px-8 md:px-12 lg:px-20 mb-28">
+            <div className="h-px w-full bg-gradient-to-r from-transparent via-[#08A4E1]/40 to-transparent" />
+          </div>
+
+          {/* ==================== DEL CONCIERGE AL BACKEND ==================== */}
+          <FadeOnScroll>
+            <section id="backend" className="w-full px-8 md:px-12 lg:px-20 mb-20">
+              <h2 className="text-3xl md:text-4xl font-bold text-light mb-8">
+                {es ? "Del Concierge al backend" : "From Concierge to backend"}
+              </h2>
+
+              <h3 className="text-2xl font-semibold text-light mb-4">
+                {es ? "Contexto" : "Context"}
+              </h3>
+              <div className="text-light leading-relaxed space-y-4">
+                <p className="text-lg">
+                  {es
+                    ? "Un solo criterio rigió cada decisión técnica del proyecto: no construir infraestructura antes de tener evidencia que la justifique."
+                    : "A single criterion governed every technical decision in the project: don't build infrastructure before having evidence to justify it."}
+                </p>
+                <p className="text-lg">
+                  {es
+                    ? "El formulario de publicación existía desde el día uno. Los eventos que subían los organizadores llegaban a un Google Sheet y la publicación la hacía yo manualmente — era el flujo del lado oferta."
+                    : "The publishing form existed from day one. Events submitted by organizers landed in a Google Sheet and I published them manually — that was the supply-side flow."}
+                </p>
+                <p className="text-lg">
+                  {es
+                    ? "Los eventos que yo cargaba manualmente (flyers de Instagram, contactos directos) pasaban por asistencia de IA para extraer datos, pero con reglas documentadas, tabla de venues fijos y criterios de geocodificación para validar cada campo de manera sistematizada. La IA aceleraba la extracción pero cada dato requería revisión antes de publicar."
+                    : "Events I uploaded manually (Instagram flyers, direct contacts) went through AI-assisted extraction, but with documented rules, a fixed venue table, and geocoding criteria to validate each field systematically. AI accelerated extraction, but every data point still required review before publishing."}
+                </p>
+                <p className="text-lg">
+                  {es
+                    ? "El organizador percibía que el flujo funcionaba."
+                    : "The organizer perceived that the flow worked."}
+                </p>
+              </div>
+            </section>
+          </FadeOnScroll>
+
+          {/* IMAGE: Wizard of Oz flow */}
+          <FadeOnScroll>
+            <section className="w-full px-8 md:px-12 lg:px-20 mb-12">
+              <DevImage
+                src="/images/manijappImages/manijapp-wizard-of-oz-flow.webp"
+                alt={
+                  es
+                    ? "Flujo Wizard of Oz: Form → Google Sheet → publicación manual → Mail"
+                    : "Wizard of Oz flow: Form → Google Sheet → manual publish → Mail"
+                }
+                fill
+                caption={
+                  es
+                    ? "Flujo de carga: el organizador percibe que la publicación existe. El backend espera evidencia real de demanda."
+                    : "Loading flow: the organizer perceives publishing exists. The backend waits for real evidence of demand."
+                }
+                className="w-full"
+                imageClassName="object-cover"
+              />
+            </section>
+          </FadeOnScroll>
+
+          {/* IMAGE: Ingesta de eventos */}
+          <FadeOnScroll>
+            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
+              <DevImage
+                src="/images/manijappImages/manijapp-ingesta-flow.webp"
+                alt={
+                  es
+                    ? "Flujo de ingesta de eventos: Parseo → IA → Event_spec.md → Array → Ajustes manuales"
+                    : "Event ingestion flow: Parsing → AI → Event_spec.md → Array → Manual tuning"
+                }
+                fill
+                caption={
+                  es
+                    ? "Ingesta de eventos: extracción asistida por IA contra reglas documentadas, con revisión manual antes de publicar."
+                    : "Event ingestion: AI-assisted extraction against documented rules, with manual review before publishing."
+                }
+                className="w-full"
+                imageClassName="object-cover"
+              />
+            </section>
+          </FadeOnScroll>
+
+          {/* TRIGGER + APRENDIZAJE */}
+          <FadeOnScroll>
+            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 items-start">
+                <div className="text-light leading-relaxed space-y-4">
+                  <h3 className="text-2xl font-semibold text-light mb-4">
+                    {es ? "Trigger y decisión" : "Trigger and decision"}
+                  </h3>
+                  <p className="text-lg">
+                    {es
+                      ? "La misma lógica definió cuándo sumar Supabase. Durante las primeras semanas, los contadores de pulgares eran valores simulados — suficientes para validar si alguien tocaba los botones, no para medir comportamiento real. El trigger fue concreto: aparecieron eventos de organizadores reales. En ese momento los datos simulados dejaron de ser neutrales. Los números afectaban la credibilidad. Necesitaba persistencia real."
+                      : "The same logic defined when to add Supabase. During the first weeks, thumbs counters were simulated values — enough to validate whether someone tapped the buttons, not to measure real behavior. The trigger was concrete: real organizer events appeared. At that point simulated data stopped being neutral. The numbers affected credibility. I needed real persistence."}
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-2xl font-semibold text-light mb-4">
+                    {es ? "Aprendizaje" : "Learning"}
+                  </h3>
+                  <div className="text-light leading-relaxed space-y-4">
+                    <p className="text-lg">
+                      {es
+                        ? "Empecé sin backend para no escalar infraestructura sin validación. El problema: el costo de mantener todo manual fue mayor que el costo de construir persistencia temprana. La regla metodológica era correcta, pero el trade-off cambió — el costo tiende a cero."
+                        : "I started without a backend to avoid scaling infrastructure without validation. The problem: the cost of keeping everything manual was higher than the cost of building persistence early. The methodological rule was right, but the trade-off shifted — the cost tends to zero."}
+                    </p>
+                    <p className="text-lg">
+                      {es
+                        ? "La dependencia era triple: el interés dependía de la curaduría, la tracción dependía de la distribución, y ambas dependían de mi energía. Eso es sostenible para validar. No es sostenible en el tiempo."
+                        : "The dependency was triple: interest depended on curation, traction depended on distribution, and both depended on my energy. That's sustainable for validation. It's not sustainable over time."}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </FadeOnScroll>
+
+          {/* ==================== DIVIDER ==================== */}
+          <div className="w-full px-8 md:px-12 lg:px-20 mb-28">
+            <div className="h-px w-full bg-gradient-to-r from-transparent via-[#08A4E1]/40 to-transparent" />
+          </div>
+
+          {/* ==================== BENCHMARKING ==================== */}
+          <FadeOnScroll>
+            <section id="benchmarking" className="w-full px-8 md:px-12 lg:px-20 mb-20">
+              <h2 className="text-3xl md:text-4xl font-bold text-light mb-8">
+                {es
+                  ? "Benchmarking y definición del diferencial"
+                  : "Benchmarking and defining the differentiator"}
+              </h2>
+
+              <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0 items-start">
+                <Block colSpan={1}>
+                  <h3 className="text-2xl font-semibold text-light mb-4">Jodify</h3>
+                  <div className="text-light leading-relaxed space-y-4">
+                    <p className="text-lg">
+                      {es
+                        ? "El benchmark competitivo más útil tampoco vino de research — vino de cargar eventos. Jodify apareció en redes mientras operaba el catálogo. El análisis fue desde adentro: contacto directo posando como productora. Jodify opera como canal B2B con gatekeeping humano — llamada de onboarding, 10% de comisión, posicionamiento pago."
+                        : "The most useful competitive benchmark didn't come from research either — it came from loading events. Jodify showed up on social while I was running the catalog. The analysis was from the inside: direct contact posing as a venue. Jodify operates as a B2B channel with human gatekeeping — onboarding call, 10% commission, paid positioning."}
+                    </p>
+                    <p className="text-lg">
+                      {es
+                        ? "El contraste con Manijapp es estructural: Jodify valida antes de publicar, Manijapp valida después vía comunidad. Son apuestas distintas sobre cómo se construye confianza."
+                        : "The contrast with Manijapp is structural: Jodify validates before publishing, Manijapp validates after via community. They're different bets on how trust is built."}
+                    </p>
+                  </div>
+                </Block>
+                <Block colSpan={1}>
+                  <DevImage
+                    src="/images/manijappImages/dj.webp"
+                    alt={
+                      es
+                        ? "Fiesta electrónica underground en Buenos Aires: DJ mezclando en vinilo y digital frente a una pista densa, con luces rojas y azules entre humo y ambiente cinematográfico."
+                        : "Underground electronic party in Buenos Aires: a DJ mixing vinyl and digital in front of a dense crowd, red and blue lights cutting through smoke in a cinematic atmosphere."
+                    }
+                    fill
+                    className="w-full"
+                    imageClassName="object-cover"
+                  />
+                </Block>
+              </GridContainer>
+
+              {/* El naming */}
+              <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0 items-start mt-16">
+                <Block colSpan={1}>
+                  <DevImage
+                    alt={
+                      es
+                        ? "Imagen de evento alternativo"
+                        : "Alternative event image"}
+                    width={600}
+                    height={400}
+                    className="w-full"
+                    imageClassName="object-cover"
+                  />
+                </Block>
+                <Block colSpan={1}>
+                  <h3 className="text-2xl font-semibold text-light mb-4">
+                    {es
+                      ? "El naming: cuando la evidencia no es conclusiva"
+                      : "The naming: when the evidence isn't conclusive"}
+                  </h3>
+                  <div className="text-light leading-relaxed space-y-4">
+                    <p className="text-lg">
+                      {es
+                        ? "Después del primer ciclo aparecieron dos señales contradictorias sobre el nombre. Una persona con contexto de marketing lo validó. Otra con contexto de producto señaló que \"manija\" puede evocar segunda marca — nombres que priorizan lo fonético sobre lo aspiracional — y que eso podía bajarle el precio al producto."
+                        : "After the first cycle, two contradictory signals appeared about the name. Someone with a marketing background validated it. Someone with a product background pointed out that \"manija\" can evoke a second-tier brand — names that prioritize the phonetic over the aspirational — and that this could lower the product's perceived value."}
+                    </p>
+                    <p className="text-lg">
+                      {es
+                        ? "La decisión fue no cambiar. No porque una señal pesara más que la otra, sino porque no hay dato de que el nombre frene el uso o genere rechazo en el segmento target. Una opinión bien fundamentada no es evidencia de comportamiento. El trigger para revisarlo está definido: si el reposicionamiento hacia un segmento con mayor capacidad de pago avanza, el naming entra a revisión como parte del sistema de identidad. No antes."
+                        : "The decision was not to change it. Not because one signal outweighed the other, but because there's no data that the name slows usage or generates rejection in the target segment. A well-grounded opinion is not behavioral evidence. The trigger for revisiting it is defined: if repositioning toward a higher-paying segment advances, the naming goes into review as part of the identity system. Not before."}
+                    </p>
+                  </div>
                 </Block>
               </GridContainer>
             </section>
@@ -706,142 +777,185 @@ export default async function ManijappPage({
           <FadeOnScroll>
             <section id="validacion" className="w-full px-8 md:px-12 lg:px-20 mb-20">
               <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">
-                {es ? "Validación: tres ciclos, decisiones encadenadas" : "Validation: three cycles, chained decisions"}
+                {es
+                  ? "Validación: tres ciclos, decisiones encadenadas"
+                  : "Validation: three cycles, chained decisions"}
               </h2>
 
-              {/* Core loop table */}
-              <div className="mb-10">
-                <h3 className="text-xl font-semibold text-light mb-4">
-                  {es ? "Core loop con datos reales" : "Core loop with real data"}
-                </h3>
-                <div className="overflow-x-auto">
-                  <table className="w-full text-sm text-light">
-                    <thead>
-                      <tr className="border-b border-container-light/20">
-                        <th className="py-3 pr-6 text-left font-semibold text-light/70">{es ? "Paso" : "Step"}</th>
-                        <th className="py-3 pr-6 text-right font-semibold text-light/70">{es ? "Ciclo 2" : "Cycle 2"}</th>
-                        <th className="py-3 text-right font-semibold text-light/70">{es ? "Ciclo 3" : "Cycle 3"}</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-container-light/10">
-                      <tr>
-                        <td className="py-3 pr-6">{es ? "Entraron a la app" : "Entered the app"}</td>
-                        <td className="py-3 pr-6 text-right">{es ? "77 sesiones" : "77 sessions"}</td>
-                        <td className="py-3 text-right">{es ? "~35 sesiones" : "~35 sessions"}</td>
-                      </tr>
-                      <tr>
-                        <td className="py-3 pr-6">{es ? "Abrieron detalle de evento" : "Opened event detail"}</td>
-                        <td className="py-3 pr-6 text-right">43%</td>
-                        <td className="py-3 text-right">44%</td>
-                      </tr>
-                      <tr>
-                        <td className="py-3 pr-6">{es ? "Interactuaron con pulgares" : "Interacted with thumbs"}</td>
-                        <td className="py-3 pr-6 text-right">13%</td>
-                        <td className="py-3 text-right">6%</td>
-                      </tr>
-                      <tr>
-                        <td className="py-3 pr-6">{es ? "Compartieron eventos" : "Shared events"}</td>
-                        <td className="py-3 pr-6 text-right">5%</td>
-                        <td className="py-3 text-right">6%</td>
-                      </tr>
-                      <tr>
-                        <td className="py-3 pr-6">{es ? "Publicaron un evento" : "Published an event"}</td>
-                        <td className="py-3 pr-6 text-right">1</td>
-                        <td className="py-3 text-right">2</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <p className="mt-4 text-xs italic text-light/50">
-                  {es
-                    ? "El funnel completo existe con comportamiento real en cada paso. Los números son pequeños. La forma es correcta."
-                    : "The full funnel exists with real behavior at each step. Numbers are small. The shape is right."}
-                </p>
+              {/* Tabla de métricas */}
+              <div className="overflow-x-auto mb-12">
+                <table className="w-full text-sm text-light">
+                  <thead>
+                    <tr className="border-b border-container-light/20">
+                      <th className="py-3 pr-6 text-left font-semibold text-light/70">
+                        {es ? "Métrica" : "Metric"}
+                      </th>
+                      <th className="py-3 pr-6 text-right font-semibold text-light/70">
+                        {es ? "Ciclo 2" : "Cycle 2"}
+                      </th>
+                      <th className="py-3 text-right font-semibold text-light/70">
+                        {es ? "Ciclo 3" : "Cycle 3"}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-container-light/10">
+                    <tr>
+                      <td className="py-3 pr-6 font-semibold">
+                        {es ? "Usuarios activos (GA4)" : "Active users (GA4)"}
+                      </td>
+                      <td className="py-3 pr-6 text-right">89</td>
+                      <td className="py-3 text-right">32</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 pr-6 font-semibold">
+                        {es ? "Pages / sesión" : "Pages / session"}
+                      </td>
+                      <td className="py-3 pr-6 text-right">2.45</td>
+                      <td className="py-3 text-right">4.02</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 pr-6 font-semibold">Scroll depth</td>
+                      <td className="py-3 pr-6 text-right">63.7%</td>
+                      <td className="py-3 text-right">78.4%</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 pr-6 font-semibold">Active time</td>
+                      <td className="py-3 pr-6 text-right">57s</td>
+                      <td className="py-3 text-right">1m 30s</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 pr-6 font-semibold">
+                        {es ? "Retención 7 días (cohorte)" : "7-day retention (cohort)"}
+                      </td>
+                      <td className="py-3 pr-6 text-right">7.9% (7/89)</td>
+                      <td className="py-3 text-right">~7.1% (2/28)</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 pr-6 font-semibold">
+                        {es ? "Usuarios returning (GA4)" : "Returning users (GA4)"}
+                      </td>
+                      <td className="py-3 pr-6 text-right">2</td>
+                      <td className="py-3 text-right">3</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 pr-6 font-semibold">validation_tap</td>
+                      <td className="py-3 pr-6 text-right">13%</td>
+                      <td className="py-3 text-right">6.25%</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 pr-6 font-semibold">event_shared</td>
+                      <td className="py-3 pr-6 text-right">5.2%</td>
+                      <td className="py-3 text-right">6.25%</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 pr-6 font-semibold">event_submitted</td>
+                      <td className="py-3 pr-6 text-right">1</td>
+                      <td className="py-3 text-right">2</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
 
               {/* Tres ciclos */}
               <GridContainer cols={{ default: 1, md: 3 }} gap="md" className="!px-0 [&>*]:h-full">
                 <Block colSpan={1}>
-                  <div className="bg-container/80 rounded-lg p-6 h-full card-elevated">
+                  <div className="bg-container/80 rounded-lg p-6 h-full">
                     <h3 className="text-lg font-bold text-light mb-3">
-                      {es ? "Ciclo 1 · Primera señal, metodología contaminada" : "Cycle 1 · First signal, contaminated methodology"}
+                      {es
+                        ? "Ciclo 1 · Primera señal, metodología contaminada"
+                        : "Cycle 1 · First signal, contaminated methodology"}
                     </h3>
-                    <p className="text-light text-sm leading-relaxed mb-3">
-                      {es
-                        ? "17 contactos, 5 sesiones reales. Un usuario volvió tres veces en el mismo fin de semana sin ser contactado. Pero las variables de medición seguían cambiando. Eso invalida la señal."
-                        : "17 contacts, 5 real sessions. One user returned three times in the same weekend without being contacted. But the measurement variables kept changing. That invalidates the signal."}
-                    </p>
-                    <p className="text-xs italic text-light/50">
-                      {es
-                        ? "Decisión: freezar el producto y cerrar las condiciones antes del ciclo 2."
-                        : "Decision: freeze the product and lock conditions before cycle 2."}
-                    </p>
+                    <div className="text-light text-sm leading-relaxed space-y-3">
+                      <p>
+                        {es
+                          ? "17 contactos activados, 5 sesiones reales. Un usuario regresó tres veces sin intervención, lo que indicaba interés. Sin embargo, las variables del sistema cambiaban mientras se medía, lo que invalidaba la señal."
+                          : "17 contacts activated, 5 real sessions. One user returned three times without intervention, which indicated interest. However, system variables kept changing while measuring, which invalidated the signal."}
+                      </p>
+                      <p>
+                        {es
+                          ? "La decisión fue aislar condiciones antes de continuar."
+                          : "The decision was to isolate conditions before continuing."}
+                      </p>
+                      <p className="text-light/70">
+                        {es
+                          ? "Este ciclo expuso una inconsistencia: la validación comunitaria (diferencial clave) no era evidente en la interfaz. Remover los indicadores mejoró lo visual, pero rompió la estrategia. El brief funcionó como herramienta de corrección."
+                          : "This cycle also exposed an inconsistency: community validation, defined as a differentiator in the brief, wasn't visible during scanning. Removing the indicators from cards was correct visually but wrong strategically. The brief worked as a correction tool."}
+                      </p>
+                    </div>
                   </div>
                 </Block>
                 <Block colSpan={1}>
-                  <div className="bg-container/80 rounded-lg p-6 h-full card-elevated">
+                  <div className="bg-container/80 rounded-lg p-6 h-full">
                     <h3 className="text-lg font-bold text-light mb-3">
-                      {es ? "Ciclo 2 · Señales tempranas confirmadas" : "Cycle 2 · Early signals confirmed"}
+                      {es
+                        ? "Ciclo 2 · Señales tempranas confirmadas"
+                        : "Cycle 2 · Early signals confirmed"}
                     </h3>
-                    <p className="text-light text-sm leading-relaxed mb-3">
-                      {es
-                        ? "Con el outreach rediseñado y las variables fijas, se generó señal interpretable por primera vez: usuarios recurrentes durante cuatro días consecutivos sin contacto."
-                        : "With redesigned outreach and fixed variables, interpretable signal was generated for the first time: returning users over four consecutive days without contact."}
-                    </p>
-                    <p className="text-xs italic text-light/50">
-                      {es
-                        ? "Un evento publicado por un organizador que llegó desde la historia de una amiga — supply sin contacto directo."
-                        : "An event published by an organizer who arrived via a friend's story — supply without direct contact."}
-                    </p>
+                    <div className="text-light text-sm leading-relaxed space-y-3">
+                      <p>
+                        {es
+                          ? "Con variables controladas y un outreach rediseñado —más contextual y segmentado— comenzaron a aparecer patrones estables."
+                          : "With controlled variables and a redesigned outreach — more contextual and segmented — stable patterns started to emerge."}
+                      </p>
+                      <p>
+                        {es
+                          ? "Se registraron entre 4 y 6 returning users diarios durante varios días sin contacto directo, superando el umbral definido. Además, apareció un evento publicado por un organizador que llegó a través de una historia de Instagram, sin contacto directo. Eso indicaba que la distribución pasiva —historias, referencias de terceros— generaba supply sin intervención explícita."
+                          : "Between 4 and 6 daily returning users were recorded over several days without direct contact, exceeding the defined threshold. An event was also published by an organizer without prior intervention."}
+                      </p>
+                      <p className="text-light/70">
+                        {es
+                          ? "Ambas señales indicaban que el sistema empezaba a sostenerse por sí mismo."
+                          : "Both signals indicated the system was starting to sustain itself."}
+                      </p>
+                    </div>
                   </div>
                 </Block>
                 <Block colSpan={1}>
-                  <div className="bg-container/80 rounded-lg p-6 h-full card-elevated">
+                  <div className="bg-container/80 rounded-lg p-6 h-full">
                     <h3 className="text-lg font-bold text-light mb-3">
-                      {es ? "Ciclo 3 · Experimento de seeding y límite de red" : "Cycle 3 · Seeding experiment and network limit"}
+                      {es
+                        ? "Ciclo 3 · Experimento de seeding y límite de red"
+                        : "Cycle 3 · Seeding experiment and network limit"}
                     </h3>
-                    <p className="text-light text-sm leading-relaxed mb-3">
-                      {es
-                        ? "Con seeding: 13% de interacción. Sin seeding: 6,25%. La conversión del canal DM cayó de 77% a 64%, pero la calidad mejoró: 4 páginas/sesión, 78% scroll depth, 1,5 min activos."
-                        : "With seeding: 13% interaction. Without seeding: 6.25%. DM channel conversion dropped from 77% to 64%, but quality improved: 4 pages/session, 78% scroll depth, 1.5 active minutes."}
-                    </p>
-                    <p className="text-xs italic text-light/50">
-                      {es
-                        ? "No empeoró el producto. Se saturó la audiencia cercana. El canal siguiente: presencia en el ecosistema."
-                        : "The product didn't get worse. The close audience was saturated. The next channel: presence in the ecosystem."}
-                    </p>
+                    <div className="text-light text-sm leading-relaxed space-y-3">
+                      <p>
+                        {es
+                          ? "El tercer ciclo introdujo un experimento de seeding. La interacción con validación fue mayor en ese contexto, pero la calidad de sesión mejoró cuando se redujo la intervención."
+                          : "The third cycle introduced a seeding experiment. Interaction with validation was higher in that context, but session quality improved when intervention decreased."}
+                      </p>
+                      <p>
+                        {es
+                          ? "La retención se mantuvo estable, incluso con menor volumen y una red de distribución más distante. Esto sugiere que el producto no pierde valor; lo que se degrada es la eficiencia del canal."
+                          : "Retention stayed stable, even with lower volume and a more distant distribution network. This suggests the product doesn't lose value; what degrades is channel efficiency."}
+                      </p>
+                      <p className="text-light/70">
+                        {es
+                          ? "El aprendizaje es claro: el outreach directo tiene retorno decreciente. Escalar no implica insistir en el mismo canal, sino cambiarlo. El siguiente paso es presencia en el ecosistema, no mayor volumen de mensajes."
+                          : "The lesson is clear: direct outreach has diminishing returns. Scaling doesn't mean insisting on the same channel — it means changing it. The next step is presence in the ecosystem, not higher message volume."}
+                      </p>
+                    </div>
                   </div>
                 </Block>
               </GridContainer>
             </section>
           </FadeOnScroll>
 
-          {/* Tres ciclos de validación — cronología visual */}
-          <FadeOnScroll delay={80}>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-12">
-              <DevImage
-                src="/images/manijappImages/manijapp-validation-cycles-123.webp"
-                alt="Cronología de los tres ciclos de validación: señales, decisiones y aprendizajes de cada iteración"
-                fill
-                caption={es
-                  ? "Ciclos 1, 2 y 3 — metodología encadenada, señales y decisiones de cada iteración."
-                  : "Cycles 1, 2, and 3 — chained methodology, signals and decisions from each iteration."}
-                className="w-full"
-                imageClassName="object-cover"
-              />
-            </section>
-          </FadeOnScroll>
-
-          {/* Funnel / métricas reales */}
+          {/* IMAGE: Funnel core loop */}
           <FadeOnScroll>
             <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
               <DevImage
                 src="/images/manijappImages/manijapp-funnel-core-loop.webp"
-                alt="Funnel de métricas reales: sesiones, detalle de evento, interacción con pulgares, compartir, publicar"
+                alt={
+                  es
+                    ? "Funnel de métricas reales en el core loop: sesiones, detalle de evento, interacción con pulgares, compartir, publicar"
+                    : "Real metrics funnel across the core loop: sessions, event detail, thumbs interaction, share, publish"
+                }
                 fill
-                caption={es
-                  ? "Core loop con datos reales de los ciclos 2 y 3."
-                  : "Core loop with real data from cycles 2 and 3."}
+                caption={
+                  es
+                    ? "Funnel del core loop con datos reales de los ciclos 2 y 3."
+                    : "Core loop funnel with real data from cycles 2 and 3."
+                }
                 className="w-full"
                 imageClassName="object-cover"
               />
@@ -856,102 +970,50 @@ export default async function ManijappPage({
           {/* ==================== SUPPLY ==================== */}
           <FadeOnScroll>
             <section id="supply" className="w-full px-8 md:px-12 lg:px-20 mb-20">
-              <h2 className="text-3xl md:text-4xl font-bold text-light mb-8">
-                {es ? "Supply: no solo fricción, también incentivo" : "Supply: not just friction, also incentive"}
-              </h2>
-              <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0 items-start">
-                <Block colSpan={1}>
-                  <div className="text-light leading-relaxed space-y-6">
-                    <p className="text-lg">
-                      {es
-                        ? "La hipótesis inicial era que los organizadores no publicaban por fricción. Eso se rompe con dos señales convergentes. En research, una entrevistada lo dijo directo: \"subir eventos no es hábito, es una tarea más.\" En comportamiento, ningún organizador publicó de forma autónoma sin exposición previa al producto."
-                        : "The initial hypothesis was that organizers didn't publish due to friction. That breaks down with two converging signals. In research, one interviewee said it directly: \"posting events isn't a habit, it's just another task.\" In behavior, no organizer published autonomously without prior exposure to the product."}
-                    </p>
-                    <p className="text-lg">
-                      {es
-                        ? "La fricción no parece ser la única barrera. El incentivo y la visibilidad emergen como factores críticos. Publicar no ocurre si no hay audiencia que lo vea. Por eso la secuencia importa: primero tracción de usuarios, después escalar el lado oferta. Sin audiencia demostrable no hay propuesta comercial válida para venues ni organizadores."
-                        : "Friction alone doesn't seem to be the only barrier. Incentive and visibility emerge as critical factors. Publishing doesn't happen if there's no audience to see it. That's why the sequence matters: user traction first, then scale the supply side. Without demonstrable audience there's no valid commercial proposition for venues or organizers."}
-                    </p>
-                    <div
-                      className="rounded-lg bg-container/80 p-6"
-                      style={{ boxShadow: "0 0 0 1px rgba(255, 255, 255, 0.06), 0 4px 12px rgba(0, 0, 0, 0.5)" }}
-                    >
-                      <p className="font-semibold text-light">
-                        {es ? "La decisión concreta:" : "The concrete decision:"}
-                      </p>
-                      <p className="mt-2 text-sm leading-relaxed text-light">
-                        {es
-                          ? "No invertir en automatización de publicación hasta tener supply autónomo confirmado. Construirlo antes es infraestructura sin demanda validada."
-                          : "Not investing in publishing automation until autonomous supply is confirmed. Building it before is infrastructure without validated demand."}
-                      </p>
-                    </div>
-                  </div>
-                </Block>
-                <Block colSpan={1}>
-                  <DevImage
-                    src="/images/manijappImages/manijapp-form-progressive-disclosure.webp"
-                    alt="Formulario de carga de evento con revelación progresiva en 3 bloques y edición inline"
-                    fill
-                    caption={es
-                      ? "Formulario con revelación progresiva en 3 bloques y edición inline. Inspirado en Luma."
-                      : "Progressive disclosure form in 3 blocks with inline editing. Inspired by Luma."}
-                    className="w-full"
-                    imageClassName="object-cover"
-                  />
-                </Block>
-              </GridContainer>
-            </section>
-          </FadeOnScroll>
+              <div className="max-w-3xl mx-auto mb-8">
+                <h2 className="text-3xl md:text-4xl font-bold text-light text-center">
+                  {es
+                    ? "Supply: no solo fricción, también incentivo"
+                    : "Supply: not just friction, also incentive"}
+                </h2>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+                <div className="text-light leading-relaxed space-y-4">
+                  <p className="text-lg">
+                    {es
+                      ? "La hipótesis inicial era que tener red directa en la escena independiente resolvía el lado oferta. Años como DJ daban acceso a promotores y organizadores — suficiente para arrancar el supply sin depender de que desconocidos publicaran solos."
+                      : "The initial hypothesis was that having a direct network in the independent scene solved the supply side. Years as a DJ gave access to promoters and organizers — enough to bootstrap supply without depending on strangers publishing on their own."}
+                  </p>
+                  <p className="text-lg">
+                    {es
+                      ? "La señal existe pero no es suficiente. Tres submissions en dos ciclos confirman que la hipótesis de red directa genera alguna tracción, pero está lejos de sostener un catálogo de 40 eventos por fin de semana. El acceso a la escena reduce la fricción del arranque; no reemplaza el incentivo estructural que hace que un organizador publique solo."
+                      : "The signal exists but it's not enough. Three submissions across two cycles confirm that the direct-network hypothesis generates some traction, but it's far from sustaining a catalog of 40 events per weekend. Access to the scene reduces cold-start friction; it doesn't replace the structural incentive that makes an organizer publish on their own."}
+                  </p>
+                </div>
 
-          {/* ==================== DIVIDER ==================== */}
-          <div className="w-full px-8 md:px-12 lg:px-20 mb-28">
-            <div className="h-px w-full bg-gradient-to-r from-transparent via-[#08A4E1]/40 to-transparent" />
-          </div>
-
-          {/* ==================== DISEÑAR CON IA ==================== */}
-          <FadeOnScroll delay={80}>
-            <section id="ia" className="w-full px-8 md:px-12 lg:px-20 mb-20">
-              <h2 className="text-3xl md:text-4xl font-bold text-light mb-8">
-                {es ? "Diseñar con IA: lo que este proyecto muestra" : "Designing with AI: what this project shows"}
-              </h2>
-              <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0 items-start">
-                <Block colSpan={1}>
-                  <div className="text-light leading-relaxed space-y-5">
-                    <p className="text-lg">
-                      {es
-                        ? "La velocidad es real. Un POC funcional deployado en un día cambia qué proyectos son viables de explorar."
-                        : "The speed is real. A functional POC deployed in a day changes which projects are worth exploring."}
-                    </p>
-                    <p className="text-lg">
-                      {es
-                        ? "Pero la velocidad sin especificación redistribuye el trabajo — lo que no decidís antes lo decidís después, corrigiendo output en lugar de dirigiendo proceso."
-                        : "But speed without specification redistributes the work — what you don't decide upfront, you decide later, correcting output instead of directing process."}
-                    </p>
-                    <p className="text-lg">
-                      {es
-                        ? "Si el branding y la UX tienen ruido de defaults del generador, los testers reaccionan a decisiones que nunca tomaste. Los datos quedan contaminados antes de empezar. El criterio del designer no desaparece — se vuelve el input más crítico del sistema."
-                        : "If branding and UX carry noise from the generator's defaults, testers react to decisions you never made. Data gets contaminated before you even start. The designer's judgment doesn't disappear — it becomes the most critical input in the system."}
-                    </p>
-                    <p className="text-xl font-semibold">
-                      {es
-                        ? "Diseñar con IA no es una cuestión de herramientas. Es una cuestión de proceso."
-                        : "Designing with AI isn't a question of tools. It's a question of process."}
-                    </p>
-                  </div>
-                </Block>
-                <Block colSpan={1}>
-                  <DevImage
-                    src="/images/manijappImages/manijapp-poc-to-v1-evolution.webp"
-                    alt="Evolución del producto: POC inicial → v1 rediseñado"
-                    fill
-                    caption={es
-                      ? "Del POC inicial al v1 rediseñado — la diferencia está en las decisiones tomadas antes de ejecutar."
-                      : "From initial POC to redesigned v1 — the difference lies in decisions made before executing."}
-                    className="w-full"
-                    imageClassName="object-cover"
-                  />
-                </Block>
-              </GridContainer>
+                <div className="text-light leading-relaxed space-y-4">
+                  <p className="text-lg">
+                    {es
+                      ? "La segunda hipótesis fue fricción. Eso también se rompe con dos señales convergentes. En research, una entrevistada lo dijo directo: \"subir eventos no es hábito, es una tarea más.\" El rediseño del formulario reduce fricción para quien ya tiene intención, pero no genera esa intención."
+                      : "The second hypothesis was friction. That also breaks down with two converging signals. In research, an interviewee put it directly: \"posting events isn't a habit, it's just another task.\" The form redesign reduces friction for those who already have intent, but doesn't create the intent."}
+                  </p>
+                  <p className="text-lg font-semibold">
+                    {es
+                      ? "La conclusión es estructural: sin audiencia, no hay incentivo para publicar."
+                      : "The conclusion is structural: without an audience, there's no incentive to publish."}
+                  </p>
+                  <p className="text-lg">
+                    {es
+                      ? "Esto define la secuencia del producto. Primero se construye demanda. Luego se escala el supply. Sin una audiencia visible, no existe una propuesta de valor real para organizadores o venues."
+                      : "This defines the product sequence. Demand is built first. Then supply scales. Without a visible audience, there's no real value proposition for organizers or venues."}
+                  </p>
+                  <p className="text-lg">
+                    {es
+                      ? "Cuando esa masa crítica exista, la conversación cambia: deja de ser pedirle un favor a un organizador y pasa a ser ofrecerle acceso a una audiencia real. El modelo de negocio no se posterga; se secuencia."
+                      : "When that critical mass exists, the conversation changes: it stops being asking an organizer for a favor and becomes offering them access to a real audience. The business model isn't postponed; it's sequenced."}
+                  </p>
+                </div>
+              </div>
             </section>
           </FadeOnScroll>
 
@@ -961,65 +1023,31 @@ export default async function ManijappPage({
           </div>
 
           {/* ==================== QUÉ SIGUE ==================== */}
-          <FadeOnScroll delay={150}>
+          <FadeOnScroll>
             <section id="cierre" className="w-full px-8 md:px-12 lg:px-20 mb-20">
-              <div className="max-w-3xl mx-auto mb-10 text-center text-light">
-                <h2 className="text-3xl md:text-4xl font-bold text-light mb-4">
-                  {es ? "Qué sigue" : "What's next"}
-                </h2>
-                <p className="text-lg leading-relaxed">
+              <h2 className="text-3xl md:text-4xl font-bold text-light mb-8">
+                {es ? "Qué sigue" : "What's next"}
+              </h2>
+              <div className="text-light leading-relaxed space-y-4 mb-10">
+                <p className="text-lg">
                   {es
-                    ? "El ciclo 4 cambia el canal: de cold outreach digital a presencia en el ecosistema. Las stories de Instagram se formalizan como infraestructura de retención semanal."
-                    : "Cycle 4 changes the channel: from cold digital outreach to presence in the ecosystem. Instagram stories are formalized as weekly retention infrastructure."}
+                    ? "El ciclo 4 cambia el canal: de cold outreach digital a presencia en el ecosistema. Las stories de Instagram se formalizan como infraestructura de retención semanal — es la solución más barata disponible antes de construir cualquier feature de notificación."
+                    : "Cycle 4 changes the channel: from cold digital outreach to presence in the ecosystem. Instagram stories are formalized as weekly retention infrastructure — it's the cheapest solution available before building any notification feature."}
+                </p>
+                <p className="text-lg">
+                  {es
+                    ? "Los avances pendientes tienen triggers, no fechas."
+                    : "Pending advances have triggers, not dates."}
                 </p>
               </div>
-              <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0">
-                <Block colSpan={1}>
-                  <div className="h-full rounded-2xl border border-[#C45200]/30 bg-gradient-to-br from-[#1C0900]/40 to-[#2D1200]/40 p-6 text-light backdrop-blur-sm md:p-8">
-                    <h3 className="text-2xl font-semibold mb-4">
-                      {es ? "Decisiones pendientes" : "Pending decisions"}
-                    </h3>
-                    <ul className="space-y-3 text-sm leading-relaxed">
-                      {(es
-                        ? [
-                            "Automatización de publicación: cuando haya supply autónomo confirmado",
-                            "Backend de recomendaciones: cuando la retención esté validada semana a semana",
-                            "Migración a Next.js para OG tags dinámicos por evento",
-                            "Strategy Canvas: cuando los datos lo justifiquen",
-                          ]
-                        : [
-                            "Publishing automation: when autonomous supply is confirmed",
-                            "Recommendations backend: when retention is validated week over week",
-                            "Migration to Next.js for dynamic OG tags per event",
-                            "Strategy Canvas: when the data justifies it",
-                          ]
-                      ).map((item, i) => (
-                        <li key={i} className="flex items-start gap-2">
-                          <span className="mt-0.5 text-light/50">→</span>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </Block>
-                <Block colSpan={1}>
-                  <div className="h-full rounded-2xl border border-[#C45200]/30 bg-gradient-to-br from-[#1C0900]/40 to-[#2D1200]/40 p-6 text-light backdrop-blur-sm md:p-8">
-                    <h3 className="text-2xl font-semibold mb-4">
-                      {es ? "El principio que guía" : "The guiding principle"}
-                    </h3>
-                    <p className="text-lg leading-relaxed mb-4">
-                      {es
-                        ? "Las decisiones pendientes tienen triggers, no fechas."
-                        : "Pending decisions have triggers, not dates."}
-                    </p>
-                    <p className="leading-relaxed">
-                      {es
-                        ? "La decisión más importante no es qué construir. Es qué medir, con qué criterio, y cuándo la señal es suficiente para actuar."
-                        : "The most important decision isn't what to build. It's what to measure, by what criteria, and when the signal is sufficient to act."}
-                    </p>
-                  </div>
-                </Block>
-              </GridContainer>
+
+              <div className="w-full rounded-2xl border border-[#C45200]/30 bg-gradient-to-br from-[#1C0900]/40 to-[#2D1200]/40 backdrop-blur-sm p-6 md:p-8 lg:p-10">
+                <p className="text-xl text-light font-semibold leading-relaxed">
+                  {es
+                    ? <>La decisión más importante no es qué construir. <br /> Es qué medir, con qué criterio, y cuándo la señal es suficiente para actuar.</>
+                    : <>The most important decision isn't what to build. <br /> It's what to measure, by what criteria, and when the signal is sufficient to act.</>}
+                </p>
+              </div>
             </section>
           </FadeOnScroll>
 
