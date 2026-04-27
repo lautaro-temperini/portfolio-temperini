@@ -116,8 +116,8 @@ export default function AwwwardsProjectCard({ project, dict, lang, variant = "se
           <div className={`flex items-end ${isFeatured ? "gap-4 md:gap-6 lg:gap-8" : "gap-3 md:gap-4"}`}>
             {/* Logo - Featured más grande, Secondary más pequeño */}
             <div className={`relative flex-shrink-0 ${
-              project.slug === "digito" 
-                ? isFeatured 
+              (project.slug === "digito" || project.slug === "manijapp")
+                ? isFeatured
                   ? "w-14 h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 rounded-full overflow-hidden"
                   : "w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 rounded-full overflow-hidden"
                 : isFeatured

@@ -29,6 +29,17 @@ export const projectsData: ProjectData[] = [
     featured: true,
   },
   {
+    id: 2,
+    slug: "manijapp",
+    image: "/images/manijapp-logo.webp",
+    previewImage: "/images/projects/manijapp-preview.png",
+    title: "Manijapp",
+    subtitle: "MVP Validation",
+    description: "Case Study",
+    shortDescription: "MVP independiente para discovery de eventos alternativos. Tres ciclos de validación en producción, validación comunitaria visible y geolocalización.",
+    tags: ["Product Strategy", "MVP Validation", "Problem Discovery", "Community Validation", "Spec-Driven Development"],
+  },
+  {
     id: 3,
     slug: "gloryfit",
     image: "/images/gloryfit-logo.png",
