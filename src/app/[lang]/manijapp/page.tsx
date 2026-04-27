@@ -260,7 +260,7 @@ export default async function ManijappPage({
                     ? "Descubrir eventos no es el problema. El problema es saber cuáles valen la pena."
                     : "Discovering events isn't the problem. The problem is knowing which ones are worth it."}
                 </p>
-                <p className="text-base md:text-lg text-light leading-relaxed mb-6 max-w-4xl">
+                <p className="text-base md:text-lg text-light leading-relaxed mb-6 max-w-5xl">
                   {es
                     ? "MVP independiente para discovery de eventos alternativos en CABA y La Plata, con validación comunitaria visible y geolocalización."
                     : "Independent MVP for alternative event discovery in Buenos Aires and La Plata, with visible community validation and geolocation."}
@@ -282,15 +282,15 @@ export default async function ManijappPage({
           {/* ==================== BANNER ==================== */}
           <FadeOnScroll delay={80}>
             <section className="w-full px-8 md:px-12 lg:px-20 mb-16">
-              <div className="relative w-full h-[150px] md:h-[200px] rounded-lg overflow-hidden bg-[#1C0900]">
-                <DevImage
-                  src="/images/manijappImages/manijapp-hero.webp"
-                  alt={es ? "Banner Manijapp" : "Manijapp banner"}
-                  fill
-                  priority
-                  imageClassName="object-cover"
-                />
-              </div>
+              <DevImage
+  src="/images/manijappImages/manijapp-hero.webp"
+                    alt={es ? "Banner Manijapp" : "Manijapp banner"}
+                    width={1200}
+                    height={300}
+                    priority
+                   className="w-full overflow-hidden rounded-lg"
+  imageClassName="object-cover scale-105"
+/>
             </section>
           </FadeOnScroll>
 
@@ -438,11 +438,12 @@ export default async function ManijappPage({
                     ? "Mockup de la sección Explorar y vista de Mapa de Manijapp"
                     : "Manijapp Explore section and Map view mockup"
                 }
-                fill
+                width={1200}
+                height={675}
                 caption={
                   es
-                    ? "Sección Explorar y vista de Mapa — dos modos de acceso al mismo contenido según el contexto del usuario."
-                    : "Explore section and Map view — two access modes for the same content depending on the user's context."
+                    ? "Sección Explorar y vista de Mapa"
+                    : "Explore section and Map view"
                 }
                 className="w-full"
                 imageClassName="object-cover"
@@ -511,7 +512,8 @@ export default async function ManijappPage({
                         ? "Sistema de validación antes: estrellas y recomendación mezcladas, señal ambigua"
                         : "Validation system before: stars and recommendation mixed, ambiguous signal"
                     }
-                    fill
+                    width={600}
+                    height={400}
                     caption={
                       es
                         ? "Antes — estrellas y recomendación mezcladas. Señal ambigua."
@@ -529,7 +531,8 @@ export default async function ManijappPage({
                         ? "Sistema de validación después: estrellas para venue, pulgares para evento, tracking diferenciado"
                         : "Validation system after: stars for venue, thumbs for event, differentiated tracking"
                     }
-                    fill
+                    width={600}
+                    height={400}
                     caption={
                       es
                         ? "Después — sistemas separados. Tracking diferenciado por origen (card vs detalle)."
@@ -616,7 +619,8 @@ export default async function ManijappPage({
                     ? "Flujo Wizard of Oz: Form → Google Sheet → publicación manual → Mail"
                     : "Wizard of Oz flow: Form → Google Sheet → manual publish → Mail"
                 }
-                fill
+                width={1200}
+                height={400}
                 caption={
                   es
                     ? "Flujo de carga: el organizador percibe que la publicación existe. El backend espera evidencia real de demanda."
@@ -638,7 +642,8 @@ export default async function ManijappPage({
                     ? "Flujo de ingesta de eventos: Parseo → IA → Event_spec.md → Array → Ajustes manuales"
                     : "Event ingestion flow: Parsing → AI → Event_spec.md → Array → Manual tuning"
                 }
-                fill
+                width={1200}
+                height={400}
                 caption={
                   es
                     ? "Ingesta de eventos: extracción asistida por IA contra reglas documentadas, con revisión manual antes de publicar."
@@ -700,71 +705,39 @@ export default async function ManijappPage({
                   : "Benchmarking and defining the differentiator"}
               </h2>
 
-              <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0 items-start">
-                <Block colSpan={1}>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
+                <div className="text-light leading-relaxed space-y-4">
                   <h3 className="text-2xl font-semibold text-light mb-4">Jodify</h3>
-                  <div className="text-light leading-relaxed space-y-4">
-                    <p className="text-lg">
-                      {es
-                        ? "El benchmark competitivo más útil tampoco vino de research — vino de cargar eventos. Jodify apareció en redes mientras operaba el catálogo. El análisis fue desde adentro: contacto directo posando como productora. Jodify opera como canal B2B con gatekeeping humano — llamada de onboarding, 10% de comisión, posicionamiento pago."
-                        : "The most useful competitive benchmark didn't come from research either — it came from loading events. Jodify showed up on social while I was running the catalog. The analysis was from the inside: direct contact posing as a venue. Jodify operates as a B2B channel with human gatekeeping — onboarding call, 10% commission, paid positioning."}
-                    </p>
-                    <p className="text-lg">
-                      {es
-                        ? "El contraste con Manijapp es estructural: Jodify valida antes de publicar, Manijapp valida después vía comunidad. Son apuestas distintas sobre cómo se construye confianza."
-                        : "The contrast with Manijapp is structural: Jodify validates before publishing, Manijapp validates after via community. They're different bets on how trust is built."}
-                    </p>
-                  </div>
-                </Block>
-                <Block colSpan={1}>
-                  <DevImage
-                    src="/images/manijappImages/dj.webp"
-                    alt={
-                      es
-                        ? "Fiesta electrónica underground en Buenos Aires: DJ mezclando en vinilo y digital frente a una pista densa, con luces rojas y azules entre humo y ambiente cinematográfico."
-                        : "Underground electronic party in Buenos Aires: a DJ mixing vinyl and digital in front of a dense crowd, red and blue lights cutting through smoke in a cinematic atmosphere."
-                    }
-                    fill
-                    className="w-full"
-                    imageClassName="object-cover"
-                  />
-                </Block>
-              </GridContainer>
+                  <p className="text-lg">
+                    {es
+                      ? "El benchmark competitivo más útil tampoco vino de research — vino de cargar eventos. Jodify apareció en redes mientras operaba el catálogo. El análisis fue desde adentro: contacto directo posando como productora. Jodify opera como canal B2B con gatekeeping humano — llamada de onboarding, 10% de comisión, posicionamiento pago."
+                      : "The most useful competitive benchmark didn't come from research either — it came from loading events. Jodify showed up on social while I was running the catalog. The analysis was from the inside: direct contact posing as a venue. Jodify operates as a B2B channel with human gatekeeping — onboarding call, 10% commission, paid positioning."}
+                  </p>
+                  <p className="text-lg">
+                    {es
+                      ? "El contraste con Manijapp es estructural: Jodify valida antes de publicar, Manijapp valida después vía comunidad. Son apuestas distintas sobre cómo se construye confianza."
+                      : "The contrast with Manijapp is structural: Jodify validates before publishing, Manijapp validates after via community. They're different bets on how trust is built."}
+                  </p>
+                </div>
 
-              {/* El naming */}
-              <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0 items-start mt-16">
-                <Block colSpan={1}>
-                  <DevImage
-                    alt={
-                      es
-                        ? "Imagen de evento alternativo"
-                        : "Alternative event image"}
-                    width={600}
-                    height={400}
-                    className="w-full"
-                    imageClassName="object-cover"
-                  />
-                </Block>
-                <Block colSpan={1}>
+                <div className="text-light leading-relaxed space-y-4">
                   <h3 className="text-2xl font-semibold text-light mb-4">
                     {es
                       ? "El naming: cuando la evidencia no es conclusiva"
                       : "The naming: when the evidence isn't conclusive"}
                   </h3>
-                  <div className="text-light leading-relaxed space-y-4">
-                    <p className="text-lg">
-                      {es
-                        ? "Después del primer ciclo aparecieron dos señales contradictorias sobre el nombre. Una persona con contexto de marketing lo validó. Otra con contexto de producto señaló que \"manija\" puede evocar segunda marca — nombres que priorizan lo fonético sobre lo aspiracional — y que eso podía bajarle el precio al producto."
-                        : "After the first cycle, two contradictory signals appeared about the name. Someone with a marketing background validated it. Someone with a product background pointed out that \"manija\" can evoke a second-tier brand — names that prioritize the phonetic over the aspirational — and that this could lower the product's perceived value."}
-                    </p>
-                    <p className="text-lg">
-                      {es
-                        ? "La decisión fue no cambiar. No porque una señal pesara más que la otra, sino porque no hay dato de que el nombre frene el uso o genere rechazo en el segmento target. Una opinión bien fundamentada no es evidencia de comportamiento. El trigger para revisarlo está definido: si el reposicionamiento hacia un segmento con mayor capacidad de pago avanza, el naming entra a revisión como parte del sistema de identidad. No antes."
-                        : "The decision was not to change it. Not because one signal outweighed the other, but because there's no data that the name slows usage or generates rejection in the target segment. A well-grounded opinion is not behavioral evidence. The trigger for revisiting it is defined: if repositioning toward a higher-paying segment advances, the naming goes into review as part of the identity system. Not before."}
-                    </p>
-                  </div>
-                </Block>
-              </GridContainer>
+                  <p className="text-lg">
+                    {es
+                      ? "Después del primer ciclo aparecieron dos señales contradictorias sobre el nombre. Una persona con contexto de marketing lo validó. Otra con contexto de producto señaló que \"manija\" puede evocar segunda marca — nombres que priorizan lo fonético sobre lo aspiracional — y que eso podía bajarle el precio al producto."
+                      : "After the first cycle, two contradictory signals appeared about the name. Someone with a marketing background validated it. Someone with a product background pointed out that \"manija\" can evoke a second-tier brand — names that prioritize the phonetic over the aspirational — and that this could lower the product's perceived value."}
+                  </p>
+                  <p className="text-lg">
+                    {es
+                      ? "La decisión fue no cambiar. No porque una señal pesara más que la otra, sino porque no hay dato de que el nombre frene el uso o genere rechazo en el segmento target. Una opinión bien fundamentada no es evidencia de comportamiento. El trigger para revisarlo está definido: si el reposicionamiento hacia un segmento con mayor capacidad de pago avanza, el naming entra a revisión como parte del sistema de identidad. No antes."
+                      : "The decision was not to change it. Not because one signal outweighed the other, but because there's no data that the name slows usage or generates rejection in the target segment. A well-grounded opinion is not behavioral evidence. The trigger for revisiting it is defined: if repositioning toward a higher-paying segment advances, the naming goes into review as part of the identity system. Not before."}
+                  </p>
+                </div>
+              </div>
             </section>
           </FadeOnScroll>
 
@@ -900,7 +873,7 @@ export default async function ManijappPage({
                       <p>
                         {es
                           ? "Se registraron entre 4 y 6 returning users diarios durante varios días sin contacto directo, superando el umbral definido. Además, apareció un evento publicado por un organizador que llegó a través de una historia de Instagram, sin contacto directo. Eso indicaba que la distribución pasiva —historias, referencias de terceros— generaba supply sin intervención explícita."
-                          : "Between 4 and 6 daily returning users were recorded over several days without direct contact, exceeding the defined threshold. An event was also published by an organizer without prior intervention."}
+                          : "Between 4 and 6 daily returning users were recorded over several days without direct contact, exceeding the defined threshold. An event was also published by an organizer without prior intervention. This showed that passive distribution — Instagram stories, third-party references — generated supply without explicit intervention."}
                       </p>
                       <p className="text-light/70">
                         {es
@@ -950,7 +923,8 @@ export default async function ManijappPage({
                     ? "Funnel de métricas reales en el core loop: sesiones, detalle de evento, interacción con pulgares, compartir, publicar"
                     : "Real metrics funnel across the core loop: sessions, event detail, thumbs interaction, share, publish"
                 }
-                fill
+                width={1200}
+                height={650}
                 caption={
                   es
                     ? "Funnel del core loop con datos reales de los ciclos 2 y 3."
@@ -1014,6 +988,19 @@ export default async function ManijappPage({
                   </p>
                 </div>
               </div>
+
+              <DevImage
+                src="/images/manijappImages/dj.webp"
+                alt={
+                  es
+                    ? "Fiesta electrónica underground en Buenos Aires: DJ mezclando en vinilo y digital frente a una pista densa, con luces rojas y azules entre humo y ambiente cinematográfico."
+                    : "Underground electronic party in Buenos Aires: a DJ mixing vinyl and digital in front of a dense crowd, red and blue lights cutting through smoke in a cinematic atmosphere."
+                }
+                width={1200}
+                height={675}
+                className="w-full mt-12"
+                imageClassName="object-cover"
+              />
             </section>
           </FadeOnScroll>
 
@@ -1041,13 +1028,11 @@ export default async function ManijappPage({
                 </p>
               </div>
 
-              <div className="w-full rounded-2xl border border-[#C45200]/30 bg-gradient-to-br from-[#1C0900]/40 to-[#2D1200]/40 backdrop-blur-sm p-6 md:p-8 lg:p-10">
-                <p className="text-xl text-light font-semibold leading-relaxed">
-                  {es
-                    ? <>La decisión más importante no es qué construir. <br /> Es qué medir, con qué criterio, y cuándo la señal es suficiente para actuar.</>
-                    : <>The most important decision isn't what to build. <br /> It's what to measure, by what criteria, and when the signal is sufficient to act.</>}
-                </p>
-              </div>
+              <p className="text-xl text-light font-semibold leading-relaxed">
+                {es
+                  ? <>La decisión más importante no es qué construir. <br /> Es qué medir, con qué criterio, y cuándo la señal es suficiente para actuar.</>
+                  : <>The most important decision isn't what to build. <br /> It's what to measure, by what criteria, and when the signal is sufficient to act.</>}
+              </p>
             </section>
           </FadeOnScroll>
 

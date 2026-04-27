@@ -90,12 +90,12 @@ export default function DevImage({
 
   return (
     <figure className={className}>
-      <div className="relative w-full" style={{ aspectRatio: `${width}/${height}` }}>
+      <div className="relative w-full rounded-lg overflow-hidden" style={{ aspectRatio: `${width}/${height}` }}>
         <Image
           src={src}
           alt={alt}
           fill
-          className={cn("rounded-lg object-contain", imageClassName)}
+          className={cn("object-contain", imageClassName)}
           sizes={sizes}
           priority={priority}
         />
