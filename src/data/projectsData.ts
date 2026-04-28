@@ -7,6 +7,7 @@ export interface ProjectData {
   slug: string
   image: string // Logo del proyecto
   previewImage: string // Imagen grande para preview
+  previewObjectFit?: "cover" | "contain" // Controla cómo se muestra la preview (default: cover)
   title: string
   subtitle: string
   description: string
@@ -33,6 +34,7 @@ export const projectsData: ProjectData[] = [
     slug: "manijapp",
     image: "/images/manijapp-logo.webp",
     previewImage: "/images/projects/manijapp-preview.png",
+    previewObjectFit: "contain",
     title: "Manijapp",
     subtitle: "MVP Validation",
     description: "Case Study",
