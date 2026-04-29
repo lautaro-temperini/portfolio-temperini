@@ -9,6 +9,7 @@ import ImageBreakout from "@/components/sections/ImageBreakout";
 import InsightCard from "@/components/sections/InsightCard";
 import SectionNav from "@/components/case-study/SectionNav";
 import FadeOnScroll from "@/components/fxscripts/FadeOnScroll";
+import NextCaseStudy from "@/components/case-study/NextCaseStudy"
 
 const SITE_URL = "https://temperini.vercel.app"
 const PUBLISHED_DATE = "2026-02-10"
@@ -431,6 +432,7 @@ const jsonLdGloryfit = {
             </FadeOnScroll>
           </CaseStudyLayout>
         </main>
+        <NextCaseStudy currentSlug="gloryfit" lang={lang} />
         <Footer dict={dict} lang={lang} />
         <ScrollToTop size={48} />
         </div>

@@ -8,6 +8,7 @@ import SectionNav from "@/components/case-study/SectionNav"
 import FadeOnScroll from "@/components/fxscripts/FadeOnScroll"
 import { GridContainer } from "@/components/sections/GridContainer"
 import { Block } from "@/components/sections/Block"
+import NextCaseStudy from "@/components/case-study/NextCaseStudy"
 
 export const metadata = {
   title: "Paren la Mano | Landing que convierte audiencia en comunidad | Lautaro R. Temperini",
@@ -449,6 +450,7 @@ export default async function VorterixLandingPage({
             </section>
           </FadeOnScroll>
         </main>
+        <NextCaseStudy currentSlug="vorterix" lang={lang} />
         <Footer dict={dict} lang={lang} />
         <ScrollToTop size={48} />
       </div>

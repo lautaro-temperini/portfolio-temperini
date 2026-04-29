@@ -8,6 +8,7 @@ import { Block } from "@/components/sections/Block"
 import FadeOnScroll from "@/components/fxscripts/FadeOnScroll"
 import SectionNav from "@/components/case-study/SectionNav"
 import DevImage from "@/components/DevImage"
+import NextCaseStudy from "@/components/case-study/NextCaseStudy"
 
 const SITE_URL = "https://temperini.vercel.app"
 const PUBLISHED_DATE = "2026-04-24"
@@ -499,7 +500,7 @@ export default async function ManijappPage({
               </div>
             </section>
           </FadeOnScroll>
-        {/* Spec-Driven Development - destacado */}
+no        {/* Spec-Driven Development - destacado */}
           <FadeOnScroll>
             <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
               <div className="w-full rounded-2xl border border-[#C45200]/30 bg-gradient-to-br from-[#1C0900]/40 to-[#2D1200]/40 backdrop-blur-sm p-6 md:p-8 lg:p-10">
@@ -1005,6 +1006,7 @@ export default async function ManijappPage({
           </div>
         </main>
       </div>
+      <NextCaseStudy currentSlug="manijapp" lang={lang} />
       <div className="relative z-[20]">
         <Footer dict={dict} lang={lang} />
       </div>

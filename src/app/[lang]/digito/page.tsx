@@ -12,6 +12,7 @@ import { FeatureCard } from "@/components/sections/FeatureCard"
 import FadeOnScroll from "@/components/fxscripts/FadeOnScroll"
 import Image from "next/image"
 import SectionNav from "@/components/case-study/SectionNav"
+import NextCaseStudy from "@/components/case-study/NextCaseStudy"
 const SITE_URL = "https://temperini.vercel.app"
 const PUBLISHED_DATE = "2026-03-15"
 
@@ -1308,6 +1309,7 @@ export default async function DigitoPage({
 </FadeOnScroll>
         </main>
       </div>
+      <NextCaseStudy currentSlug="digito" lang={lang} />
       <div className="relative z-[20]">
         <Footer dict={dict} lang={lang} />
       </div>

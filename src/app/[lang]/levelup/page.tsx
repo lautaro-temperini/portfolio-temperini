@@ -9,6 +9,8 @@ import ImageBreakout from "@/components/sections/ImageBreakout"
 import InsightCard from "@/components/sections/InsightCard"
 import SectionNav from "@/components/case-study/SectionNav"
 import FadeOnScroll from "@/components/fxscripts/FadeOnScroll"
+import NextCaseStudy from "@/components/case-study/NextCaseStudy"
+import Image from "next/image"
 
 const SITE_URL = "https://temperini.vercel.app"
 const PUBLISHED_DATE = "2026-01-20"
@@ -232,7 +234,6 @@ export default async function LevelUpPage({
             {/* El Desafío + Mi rol en grid */}
             <FadeOnScroll>
             <ProseSection id="desafio" className="mb-20">
-              <h2 className="text-3xl font-bold text-light mb-6">{t.challenge.title}</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-10 md:gap-6">
                 <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
                   <h3 className="text-2xl font-semibold text-light mb-4">
@@ -298,6 +299,103 @@ export default async function LevelUpPage({
             </ProseSection>
             </FadeOnScroll>
 
+  <FadeOnScroll>
+            <div className="w-full px-8 md:px-12 lg:px-20 mb-20">
+              <div className="h-px w-full bg-gradient-to-r from-transparent via-[#EA580C]/50 to-transparent" />
+            </div>
+            </FadeOnScroll>
+
+            {/* Stories — 4 outputs en grid 2×2 */}
+            <FadeOnScroll>
+
+<div className="w-full px-8 md:px-12 lg:px-20 mb-10">
+  <h2 className="text-3xl font-bold text-light">
+    {lang === "es" ? "Assets para Social Media" : "Social Media Assets"}
+  </h2>
+</div>
+
+            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                {/* Story 1 — video social media, reorganización por personalización */}
+                <figure>
+                  <div className="relative w-full aspect-[9/16] md:aspect-auto md:h-[80vh] rounded-xl overflow-hidden bg-container bg-[#0d0d0d]">
+                    <video
+                      src="/images/levelupImages/Story1.webm"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="absolute inset-0 w-full h-full object-contain"
+                    />
+                  </div>
+                  <figcaption className="mt-3 text-sm text-accent text-center">
+                    {lang === "es"
+                      ? "Reorganización editorial por personalización — Social media"
+                      : "Editorial reorganization by personalization — Social media"}
+                  </figcaption>
+                </figure>
+
+                {/* Story 2 — video rediseño final con filtros */}
+                <figure>
+                  <div className="relative w-full aspect-[9/16] md:aspect-auto md:h-[80vh] rounded-xl overflow-hidden bg-container bg-[#0d0d0d]">
+                    <video
+                      src="/images/levelupImages/Story2.webm"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="absolute inset-0 w-full h-full object-contain"
+                    />
+                  </div>
+                  <figcaption className="mt-3 text-sm text-accent text-center">
+                    {lang === "es"
+                      ? "Rediseño final con filtros implementados"
+                      : "Final redesign with implemented filters"}
+                  </figcaption>
+                </figure>
+
+                {/* Story 3 — imagen Instagram, bullet con cambios */}
+                <figure>
+                  <div className="relative w-full aspect-[9/16] md:aspect-auto md:h-[80vh] rounded-xl overflow-hidden bg-container bg-[#0d0d0d]">
+                    <Image
+                      src="/images/levelupImages/Story3.webp"
+                      alt={lang === "es" ? "Historia Instagram — cambios clave" : "Instagram story — key changes"}
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
+                  <figcaption className="mt-3 text-sm text-accent text-center">
+                    {lang === "es"
+                      ? "Historia Instagram — resumen de cambios clave"
+                      : "Instagram story — key changes summary"}
+                  </figcaption>
+                </figure>
+
+                {/* Story 4 — video contextual con CTA */}
+                <figure>
+                  <div className="relative w-full aspect-[9/16] md:aspect-auto md:h-[80vh] rounded-xl overflow-hidden bg-container bg-[#0d0d0d]">
+                    <video
+                      src="/images/levelupImages/Story4.mp4"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      className="absolute inset-0 w-full h-full object-contain"
+                    />
+                  </div>
+                  <figcaption className="mt-3 text-sm text-accent text-center">
+                    {lang === "es"
+                      ? "Historia Instagram — video contextual con CTA"
+                      : "Instagram story — contextual video with CTA"}
+                  </figcaption>
+                </figure>
+
+              </div>
+            </section>
+            </FadeOnScroll>
+
             <FadeOnScroll>
             <div className="w-full px-8 md:px-12 lg:px-20 mb-20">
               <div className="h-px w-full bg-gradient-to-r from-transparent via-[#EA580C]/50 to-transparent" />
@@ -347,6 +445,7 @@ export default async function LevelUpPage({
                     ))}
                   </ul>
                 </div>
+                
 
                 {/* La versión final implementada */}
                 <div className="prose prose-invert max-w-none text-[#F1F1F1] leading-relaxed">
@@ -365,6 +464,22 @@ export default async function LevelUpPage({
               </div>
             </ProseSection>
             </FadeOnScroll>
+
+<div className="w-full px-8 md:px-12 lg:px-20 mt-10">
+  <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden bg-container bg-[#0d0d0d]">
+    <Image
+      src="/images/levelupImages/designsystem.webp"
+      alt="Design system LevelUp"
+      fill
+      className="object-contain"
+      sizes="(max-width: 768px) 100vw, 100vw"
+    />
+  </div>
+
+  <p className="mt-3 mb-6 text-sm text-accent text-center">
+    Sistema visual y decisiones de interfaz final
+  </p>
+</div>
 
             <FadeOnScroll>
             <div className="w-full px-8 md:px-12 lg:px-20 mb-20">
@@ -424,6 +539,7 @@ export default async function LevelUpPage({
             </FadeOnScroll>
           </CaseStudyLayout>
         </main>
+        <NextCaseStudy currentSlug="levelup" lang={lang} />
         <Footer dict={dict} lang={lang} />
         <ScrollToTop size={48} />
       </div>
