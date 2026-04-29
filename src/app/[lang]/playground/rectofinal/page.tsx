@@ -28,7 +28,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://temperini.vercel.app/images/rectofinal-logo.png",
+        url: "https://temperini.vercel.app/images/rectofinal-logo.webp",
         width: 800,
         height: 600,
         alt: "Logo de Recto Final",
@@ -40,7 +40,7 @@ export const metadata = {
     title: "Recto Final | Videojuego físico-digital | Lautaro R. Temperini",
     description:
       "Videojuego físico-digital donde la única salida es por el final. Instalación interactiva con Unity 2D y hardware modificado.",
-    images: ["https://temperini.vercel.app/images/rectofinal-logo.png"],
+    images: ["https://temperini.vercel.app/images/rectofinal-logo.webp"],
   },
 }
 

@@ -24,65 +24,27 @@ export default function Navbar({ dict, lang }: NavbarProps) {
   const pathname = usePathname()
 
   useEffect(() => {
-    // Inicializar con el valor actual del scroll
-    if (typeof window !== 'undefined') {
-      lastScrollY.current = window.scrollY || document.documentElement.scrollTop || 0
-    }
-
-    let ticking = false
+    lastScrollY.current = window.pageYOffset || 0
 
     const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          // Obtener la posición actual del scroll de forma robusta
-          const currentScrollY = window.scrollY || 
-                                window.pageYOffset || 
-                                document.documentElement.scrollTop || 
-                                0
+      const currentScrollY = window.pageYOffset || window.scrollY || document.documentElement.scrollTop || 0
 
-          // Threshold mínimo para evitar cambios muy pequeños que puedan causar flickering
-          const scrollThreshold = 5
-
-          // Si estamos cerca del top, siempre mostrar el navbar
-          if (currentScrollY < 100) {
-            setIsVisible(true)
-            lastScrollY.current = currentScrollY
-            ticking = false
-            return
-          }
-
-          // Calcular la diferencia de scroll
-          const scrollDifference = currentScrollY - lastScrollY.current
-
-          // Solo procesar si hay un cambio significativo
-          if (Math.abs(scrollDifference) > scrollThreshold) {
-            // Si scrolleamos hacia abajo (scroll aumentó)
-            if (scrollDifference > 0) {
-              setIsVisible(false)
-              setMobileMenuOpen(false)
-            } 
-            // Si scrolleamos hacia arriba (scroll disminuyó)
-            else {
-              setIsVisible(true)
-            }
-
-            lastScrollY.current = currentScrollY
-          }
-
-          ticking = false
-        })
-        ticking = true
+      if (currentScrollY < 100) {
+        setIsVisible(true)
+      } else if (currentScrollY < lastScrollY.current) {
+        setIsVisible(true)
+      } else if (currentScrollY > lastScrollY.current) {
+        setIsVisible(false)
+        setMobileMenuOpen(false)
       }
+
+      lastScrollY.current = currentScrollY
     }
 
-    // Registrar el listener inmediatamente
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    // También escuchar en document para máxima compatibilidad
-    document.addEventListener("scroll", handleScroll, { passive: true })
-    
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
     return () => {
-      window.removeEventListener("scroll", handleScroll)
-      document.removeEventListener("scroll", handleScroll)
+      window.removeEventListener('scroll', handleScroll)
     }
   }, [])
 

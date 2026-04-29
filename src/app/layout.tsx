@@ -1,4 +1,4 @@
-// ============================================================================
+﻿// ============================================================================
 // IMPORTS
 // ============================================================================
 import type React from "react"
@@ -90,7 +90,7 @@ export default async function RootLayout({
         "name": "Lautaro R. Temperini",
         "alternateName": "Lautaro Temperini",
         "url": "https://temperini.vercel.app",
-        "image": "https://temperini.vercel.app/images/foto-lautaro.png",
+        "image": "https://temperini.vercel.app/images/foto-lautaro.webp",
         "jobTitle": "Product Designer",
         "description": "Product Designer especializado en diseño end-to-end: research, prototipado y desarrollo front-end. Transformo problemas complejos en interfaces que las personas entienden.",
         "knowsAbout": [
@@ -140,7 +140,7 @@ export default async function RootLayout({
         "name": "Lautaro R. Temperini",
         "alternateName": "Lautaro Temperini",
         "url": "https://temperini.vercel.app",
-        "image": "https://temperini.vercel.app/images/foto-lautaro.png",
+        "image": "https://temperini.vercel.app/images/foto-lautaro.webp",
         "jobTitle": "Product Designer",
         "description": "Product Designer specializing in end-to-end design: research, prototyping, and front-end development. I turn complex problems into interfaces people understand.",
         "knowsAbout": [

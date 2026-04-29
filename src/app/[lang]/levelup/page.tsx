@@ -49,7 +49,7 @@ export const metadata = {
     authors: ["Lautaro Temperini"],
     images: [
       {
-        url: `${SITE_URL}/images/levelup-logo.png`,
+        url: `${SITE_URL}/images/levelup-logo.webp`,
         width: 800,
         height: 600,
         alt: "LevelUp gaming editorial redesign case study",
@@ -61,7 +61,7 @@ export const metadata = {
     title: "LevelUp | Gaming Editorial Redesign | Case Study",
     description:
       "Rediseño editorial con personalización y geosegmentación para el público gamer de Latinoamérica.",
-    images: [`${SITE_URL}/images/levelup-logo.png`],
+    images: [`${SITE_URL}/images/levelup-logo.webp`],
   },
 }
 

@@ -17,7 +17,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://temperini.vercel.app/images/foto-lautaro.png",
+        url: "https://temperini.vercel.app/images/foto-lautaro.webp",
         width: 1200,
         height: 630,
         alt: "Lautaro R. Temperini - En Construcción"
@@ -28,7 +28,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "En Construcción | Lautaro R. Temperini",
     description: "Esta sección está en desarrollo. Vuelve pronto para descubrir nuevos proyectos y experimentos creativos.",
-    images: ["https://temperini.vercel.app/images/foto-lautaro.png"]
+    images: ["https://temperini.vercel.app/images/foto-lautaro.webp"]
   }
 };
 

@@ -13,6 +13,7 @@
     "postbuild": "next-sitemap",
     "sitemap": "next-sitemap",
     "check:i18n": "node -r ts-node/register -e \"require('./scripts/check-dict-sync.ts')\"",
+    "optimize-images": "node scripts/optimize-images.js",
     "test": "playwright test",
     "test:ui": "playwright test --ui"
   },

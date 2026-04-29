@@ -49,10 +49,17 @@ export default function DevImage({
       />
     )
 
+    const containerStyle = {
+      aspectRatio: "16/9" as const,
+      contain: "layout style paint" as const,
+      WebkitBackfaceVisibility: "hidden" as const,
+      touchAction: "manipulation" as const,
+    } as React.CSSProperties
+
     if (caption) {
       return (
         <figure className={className}>
-          <div className="relative w-full bg-black rounded-lg overflow-hidden" style={{ aspectRatio: "16/9" }}>
+          <div className="relative w-full bg-black rounded-lg overflow-hidden" style={containerStyle}>
             {image}
           </div>
           <figcaption className="mt-2 px-8 text-center text-sm text-light/70">
@@ -63,7 +70,7 @@ export default function DevImage({
     }
 
     return (
-      <div className={cn("relative w-full bg-black rounded-lg overflow-hidden", className)} style={{ aspectRatio: "16/9" }}>
+      <div className={cn("relative w-full bg-black rounded-lg overflow-hidden", className)} style={containerStyle}>
         {image}
       </div>
     )
@@ -88,9 +95,16 @@ export default function DevImage({
     )
   }
 
+  const containerStyle = {
+    aspectRatio: `${width}/${height}`,
+    contain: "layout style paint" as const,
+    WebkitBackfaceVisibility: "hidden" as const,
+    touchAction: "manipulation" as const,
+  } as React.CSSProperties
+
   return (
     <figure className={className}>
-      <div className="relative w-full rounded-lg overflow-hidden" style={{ aspectRatio: `${width}/${height}` }}>
+      <div className="relative w-full rounded-lg overflow-hidden" style={containerStyle}>
         <Image
           src={src}
           alt={alt}

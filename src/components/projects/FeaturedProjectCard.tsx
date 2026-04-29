@@ -13,6 +13,7 @@ interface FeaturedProjectCardProps {
     subtitle: string
     shortDescription: string
     tags: string[]
+    previewObjectFit?: "cover" | "contain"
   }
   dict: any
   lang: "es" | "en"
@@ -33,7 +34,6 @@ export default function FeaturedProjectCard({
   const subtitle = projectData?.subtitle || project.subtitle
   const tags: string[] = projectData?.tags ? (Object.values(projectData.tags) as string[]) : project.tags
 
-  // 🎯 EVENTO GA4: Click en proyecto
   const handleProjectClick = () => {
     trackProjectClick({ slug: project.slug, title, location: "featured", lang })
   }
@@ -48,7 +48,7 @@ export default function FeaturedProjectCard({
             alt={title}
             fill
             sizes="100vw"
-            className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+            className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
             priority={isAboveTheFold}
           />
         </div>

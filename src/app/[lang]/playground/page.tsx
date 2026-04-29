@@ -33,7 +33,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://temperini.vercel.app/images/foto-lautaro.png",
+        url: "https://temperini.vercel.app/images/foto-lautaro.webp",
         width: 1200,
         height: 630,
         alt: "Lautaro R. Temperini - Playground"
@@ -46,7 +46,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Playground | Lautaro R. Temperini",
     description: "Laboratorio creativo donde experimento con código, diseño y tecnología. Explora prototipos interactivos, sketches y experimentos visuales.",
-    images: ["https://temperini.vercel.app/images/foto-lautaro.png"]
+    images: ["https://temperini.vercel.app/images/foto-lautaro.webp"]
   }
 }
 

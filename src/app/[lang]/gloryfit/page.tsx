@@ -49,7 +49,7 @@ export const metadata = {
     authors: ["Lautaro Temperini"],
     images: [
       {
-        url: `${SITE_URL}/images/gloryfit-logo.png`,
+        url: `${SITE_URL}/images/gloryfit-logo.webp`,
         width: 1200,
         height: 630,
         alt: "GloryFit - fitness app UX case study",
@@ -61,7 +61,7 @@ export const metadata = {
     title: "GloryFit | Fitness App UX | Case Study",
     description:
       "Diseño UX/UI para una app de entrenamiento inteligente. Rutinas adaptadas, onboarding progresivo y decisiones basadas en datos biométricos.",
-    images: [`${SITE_URL}/images/gloryfit-logo.png`],
+    images: [`${SITE_URL}/images/gloryfit-logo.webp`],
   },
 };
 

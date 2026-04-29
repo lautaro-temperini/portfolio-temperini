@@ -34,7 +34,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://temperini.vercel.app/images/foto-lautaro.png",
+        url: "https://temperini.vercel.app/images/foto-lautaro.webp",
         width: 800,
         height: 600,
         alt: "Foto de Lautaro Temperini"
@@ -45,7 +45,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Contacto | Lautaro R. Temperini",
     description: "Ponte en contacto con Lautaro R. Temperini para proyectos de diseño multimedia, desarrollo web y experiencias digitales.",
-    images: ["https://temperini.vercel.app/images/foto-lautaro.png"]
+    images: ["https://temperini.vercel.app/images/foto-lautaro.webp"]
   }
 };
 

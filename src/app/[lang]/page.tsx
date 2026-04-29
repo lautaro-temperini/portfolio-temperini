@@ -33,7 +33,7 @@ export async function generateMetadata({
       type: "website",
       images: [
         {
-          url: "https://temperini.vercel.app/images/foto-lautaro.png",
+          url: "https://temperini.vercel.app/images/foto-lautaro.webp",
           width: 1200,
           height: 630,
           alt: "Lautaro R. Temperini - Product Designer & Frontend Developer",
@@ -45,7 +45,7 @@ export async function generateMetadata({
       title: "Lautaro R. Temperini | Product Designer & Frontend Developer",
       description:
         "Portfolio de Lautaro R. Temperini: Product Designer especializado en UX/UI y Frontend Developer. Explora proyectos de diseño digital y desarrollo web.",
-      images: ["https://temperini.vercel.app/images/foto-lautaro.png"],
+      images: ["https://temperini.vercel.app/images/foto-lautaro.webp"],
     },
   }
 }

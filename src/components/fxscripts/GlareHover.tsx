@@ -5,7 +5,7 @@
 // ============================================================================
 
 import type React from "react"
-import { useRef, useState } from "react"
+import { useRef, useState, useEffect } from "react"
 
 // ============================================================================
 // TIPOS E INTERFACES
@@ -79,6 +79,19 @@ const GlareHover: React.FC<GlareHoverProps> = ({
 
   const glareOverlayRef = useRef<HTMLDivElement | null>(null)
   const [hasAnimationPlayed, setHasAnimationPlayed] = useState(false)
+  const [isMobileDevice, setIsMobileDevice] = useState(false)
+
+  // Detectar si es mobile al montar
+  useEffect(() => {
+    const checkScreenSize = () => {
+      if (typeof window !== "undefined") {
+        setIsMobileDevice(window.innerWidth < 768)
+      }
+    }
+    checkScreenSize()
+    window.addEventListener("resize", checkScreenSize)
+    return () => window.removeEventListener("resize", checkScreenSize)
+  }, [])
 
   // ============================================================================
   // FUNCIONES DE ANIMACIÓN
@@ -138,10 +151,11 @@ const GlareHover: React.FC<GlareHoverProps> = ({
     <div
       className={`relative overflow-hidden ${className}`}
       style={style}
-      onMouseEnter={animateGlareIn}
-      onMouseLeave={animateGlareOut}
+      onMouseEnter={isMobileDevice ? undefined : animateGlareIn}
+      onMouseLeave={isMobileDevice ? undefined : animateGlareOut}
     >
-      <div ref={glareOverlayRef} style={glareOverlayStyles} aria-hidden="true" />
+      {/* Solo renderizar el overlay en desktop */}
+      {!isMobileDevice && <div ref={glareOverlayRef} style={glareOverlayStyles} aria-hidden="true" />}
 
       {children}
     </div>

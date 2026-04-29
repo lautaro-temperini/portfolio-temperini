@@ -76,7 +76,7 @@ export default function AwwwardsProjectCard({ project, dict, lang, variant = "se
             alt={title}
             fill
             sizes={isFeatured ? "(max-width: 768px) 100vw, 100vw" : "(max-width: 768px) 100vw, 50vw"}
-            className={`${project.previewObjectFit === "contain" ? "object-contain" : "object-cover object-top"} transition-transform duration-700 ease-out ${project.slug === "manijapp" ? "group-hover:scale-105" : "group-hover:scale-105"}`}
+            className={`${project.previewObjectFit === "contain" ? "object-contain" : "object-cover object-center"} transition-transform duration-700 ease-out group-hover:scale-105`}
             priority={isFeatured} 
           />
         </div>

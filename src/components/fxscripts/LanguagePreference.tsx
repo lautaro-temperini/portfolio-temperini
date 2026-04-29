@@ -22,15 +22,8 @@ export function LanguagePreference({ lang }: { lang: Lang }) {
     const raw = localStorage.getItem(STORAGE_KEY)
     const stored: Lang | null = raw === 'es' || raw === 'en' ? raw : null
 
-    if (stored && stored !== lang) {
-      // Cookie was cleared but localStorage holds a different preference — honor it
-      persistLang(stored)
-      const newPath = `/${stored}${pathname.slice(`/${lang}`.length)}`
-      router.replace(newPath)
-      return
-    }
-
-    // Current lang is the right one — write it to both stores
+    // La URL siempre es la fuente de verdad (viene del middleware)
+    // Solo sincronizar localStorage y cookies con el idioma actual de la URL
     persistLang(lang)
   }, [lang, pathname, router])
 

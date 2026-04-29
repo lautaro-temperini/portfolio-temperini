@@ -1,4 +1,4 @@
-// ============================================================================
+﻿// ============================================================================
 // IMPORTS - Importaciones de librerías y componentes
 // ============================================================================
 
@@ -73,9 +73,9 @@ export default async function Perfil({ lang }: PerfilProps) {
               </p>
               {/* IMAGEN MÓVIL */}
               <div className="block md:hidden w-full my-12">
-                <div className="w-full max-w-xs sm:max-w-sm">
+                <div className="w-full max-w-xs sm:max-w-sm mx-auto">
                   <TiltedCard
-                    imageSrc="/images/foto-lautaro.png"
+                    imageSrc="/images/foto-lautaro.webp"
                     altText="Lautaro R. Temperini - Diseñador Multimedia"
                     captionText=""
                     aspectRatio={1}
@@ -96,7 +96,7 @@ export default async function Perfil({ lang }: PerfilProps) {
           {/* COLUMNA DERECHA: imagen desktop */}
           <div className="hidden md:block w-1/2">
             <TiltedCard
-              imageSrc="/images/foto-lautaro.png"
+              imageSrc="/images/foto-lautaro.webp"
               altText="Lautaro R. Temperini - Diseñador Multimedia"
               captionText=""
               aspectRatio={1}

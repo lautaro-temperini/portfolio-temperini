@@ -75,66 +75,19 @@ export default function ScrollToTop({ size = 32 }: ScrollToTopProps) {
    */
   useEffect(() => {
     setIsClientMounted(true)
-    
-    // Detectar el contenedor de scroll principal
-    let scrollContainer: HTMLElement | Window = window
-    
-    if (typeof window !== 'undefined') {
-      // Primero, intentar usar el scrollingElement estándar
-      const documentScrollElement = document.scrollingElement || document.documentElement
-      
-      if (documentScrollElement.scrollHeight > documentScrollElement.clientHeight + 10) {
-        scrollContainer = window
-      } else {
-        // Si el documento no tiene scroll, buscar contenedores con overflow
-        const allElements = Array.from(document.querySelectorAll('*')) as HTMLElement[]
-        const scrollableElements = allElements.filter(element => {
-          const computedStyle = window.getComputedStyle(element)
-          const hasVerticalScroll = 
-            (computedStyle.overflowY === 'auto' || computedStyle.overflowY === 'scroll') && 
-            element.scrollHeight > element.clientHeight + 10
-          return hasVerticalScroll
-        })
-        
-        if (scrollableElements.length > 0) {
-          scrollContainer = scrollableElements[0]
-        }
-      }
+
+    const checkPosition = () => {
+      const pos = window.pageYOffset || window.scrollY || document.documentElement.scrollTop || 0
+      setIsButtonVisible(pos > 50)
     }
 
-    /**
-     * Función que obtiene la posición actual de scroll
-     * Funciona tanto con window como con elementos HTML
-     */
-    const getCurrentScrollPosition = () => {
-      if (scrollContainer === window) {
-        return window.pageYOffset
-      } else if (scrollContainer instanceof HTMLElement) {
-        return scrollContainer.scrollTop
-      }
-      return 0
-    }
+    checkPosition()
 
-    /**
-     * Función que se ejecuta en cada evento de scroll
-     * Determina si el botón debe estar visible
-     */
-    const handleScrollEvent = () => {
-      const currentPosition = getCurrentScrollPosition()
-      
-      // Mostrar si el scroll es mayor a 50px
-      if (currentPosition > 50) {
-        setIsButtonVisible(true)
-      } else {
-        setIsButtonVisible(false)
-      }
-    }
+    window.addEventListener('scroll', checkPosition, { passive: true })
 
-    // Agregar listener de scroll
-    scrollContainer.addEventListener("scroll", handleScrollEvent)
-    
-    // Limpiar al desmontar
-    return () => scrollContainer.removeEventListener("scroll", handleScrollEvent)
+    return () => {
+      window.removeEventListener('scroll', checkPosition)
+    }
   }, [])
 
   // ============================================================================
@@ -181,74 +134,20 @@ export default function ScrollToTop({ size = 32 }: ScrollToTopProps) {
    * Usa una animación personalizada con curva ease-in-out
    */
   const scrollToTopOfPage = () => {
-    // Detectar el contenedor de scroll (misma lógica que arriba)
-    let scrollContainer: HTMLElement | Window = window
-    
-    if (typeof window !== 'undefined') {
-      const documentScrollElement = document.scrollingElement || document.documentElement
-      
-      if (documentScrollElement.scrollHeight > documentScrollElement.clientHeight + 10) {
-        scrollContainer = window
-      } else {
-        const allElements = Array.from(document.querySelectorAll('*')) as HTMLElement[]
-        const scrollableElements = allElements.filter(element => {
-          const computedStyle = window.getComputedStyle(element)
-          return (
-            (computedStyle.overflowY === 'auto' || computedStyle.overflowY === 'scroll') && 
-            element.scrollHeight > element.clientHeight + 10
-          )
-        })
-        
-        if (scrollableElements.length > 0) {
-          scrollContainer = scrollableElements[0]
-        }
-      }
+    const duration = 600
+    const startPosition = window.scrollY || window.pageYOffset || 0
+    const startTime = performance.now()
+
+    const easeInOutCubic = (t: number) =>
+      t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2
+
+    const animateScroll = (currentTime: number) => {
+      const elapsed = currentTime - startTime
+      const progress = Math.min(elapsed / duration, 1)
+      window.scrollTo({ top: startPosition * (1 - easeInOutCubic(progress)), behavior: 'instant' as ScrollBehavior })
+      if (progress < 1) requestAnimationFrame(animateScroll)
     }
 
-    // Configuración de la animación
-    const animationDuration = 300 // milisegundos
-    const startPosition = scrollContainer === window 
-      ? window.scrollY 
-      : (scrollContainer as HTMLElement).scrollTop
-    const totalDistance = -startPosition // Distancia negativa (hacia arriba)
-    const animationStartTime = performance.now()
-
-    /**
-     * Función de curva de animación ease-in-out cubic
-     * 
-     * @param t - Progreso de la animación (0 a 1)
-     * @returns Valor transformado con la curva
-     */
-    function easeInOutCubic(t: number) {
-      return t < 0.5
-        ? 4 * t * t * t
-        : 1 - Math.pow(-2 * t + 2, 3) / 2
-    }
-
-    /**
-     * Función que ejecuta cada frame de la animación
-     * 
-     * @param currentTime - Tiempo actual proporcionado por requestAnimationFrame
-     */
-    function animateScroll(currentTime: number) {
-      const elapsedTime = currentTime - animationStartTime
-      const animationProgress = Math.min(elapsedTime / animationDuration, 1)
-      const newPosition = startPosition + totalDistance * easeInOutCubic(animationProgress)
-      
-      // Aplicar la nueva posición de scroll
-      if (scrollContainer === window) {
-        window.scrollTo(0, newPosition)
-      } else if (scrollContainer instanceof HTMLElement) {
-        scrollContainer.scrollTop = newPosition
-      }
-      
-      // Continuar animación si no ha terminado
-      if (animationProgress < 1) {
-        requestAnimationFrame(animateScroll)
-      }
-    }
-
-    // Iniciar la animación
     requestAnimationFrame(animateScroll)
   }
 
@@ -265,7 +164,7 @@ export default function ScrollToTop({ size = 32 }: ScrollToTopProps) {
     isButtonVisible && !isFooterVisible && (
       <button
         onClick={scrollToTopOfPage}
-        className="fixed bottom-2 md:bottom-4 right-6 md:right-12 z-[99999] min-w-touch min-h-touch bg-white/10 backdrop-blur-sm flex items-center justify-center rounded-full hover:bg-white/20 transition-all duration-200 hover:scale-105 scroll-to-top-dynamic-size"
+        className="fixed bottom-2 md:bottom-4 right-6 md:right-12 z-[99999] min-w-touch min-h-touch bg-white/10 backdrop-blur-sm flex items-center justify-center rounded-full hover:bg-white/20 scroll-to-top-dynamic-size"
         aria-label="Scroll to top"
       >
         <ArrowUp size={size * 0.42} color="#f2f2f2" />

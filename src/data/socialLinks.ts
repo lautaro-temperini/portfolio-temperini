@@ -18,27 +18,27 @@
 export const socialLinks = [
   {
     name: "LinkedIn",
-    icon: "/images/icon-linkedin.png",
+    icon: "/images/icon-linkedin.webp",
     url: "https://www.linkedin.com/in/lautaro-temperini/",
   },
   {
     name: "Behance",
-    icon: "/images/icon-behance.png",
+    icon: "/images/icon-behance.webp",
     url: "https://www.behance.net/temperini",
   },
   {
     name: "Dribbble",
-    icon: "/images/icon-dribbble.png",
+    icon: "/images/icon-dribbble.webp",
     url: "https://dribbble.com/temperini",
   },
   {
     name: "Upwork",
-    icon: "/images/icon-upwork.png",
+    icon: "/images/icon-upwork.webp",
     url: "https://www.upwork.com/freelancers/~01529096d18cf48f3d",
   },
   {
     name: "GitHub",
-    icon: "/images/icon-github.png",
+    icon: "/images/icon-github.webp",
     url: "https://github.com/lautaro-temperini",
   },
 ]

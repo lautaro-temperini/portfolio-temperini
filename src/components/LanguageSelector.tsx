@@ -60,20 +60,21 @@ export default function LanguageSelector({ currentLang }: LanguageSelectorProps)
     }
 
     const pathSegments = pathname.split('/').filter(Boolean)
-    
+
     if (pathSegments[0] === 'es' || pathSegments[0] === 'en') {
       pathSegments[0] = newLanguage
     } else {
       pathSegments.unshift(newLanguage)
     }
-    
+
     const newPath = `/${pathSegments.join('/')}`
-    
+
     setIsDropdownOpen(false)
-    
-    // Establecer cookie para persistir la elección
+
+    // Persistir el idioma en ambos: localStorage y cookie
+    localStorage.setItem('preferred-lang', newLanguage)
     document.cookie = `NEXT_LOCALE=${newLanguage}; path=/; max-age=31536000`
-    
+
     router.push(newPath)
   }
 

@@ -499,54 +499,7 @@ export default async function ManijappPage({
               </div>
             </section>
           </FadeOnScroll>
-
-          {/* Sistema de validación antes/después */}
-          <FadeOnScroll delay={80}>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
-              <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0">
-                <Block colSpan={1}>
-                  <DevImage
-                    src="/images/manijappImages/manijapp-validation-before.webp"
-                    alt={
-                      es
-                        ? "Sistema de validación antes: estrellas y recomendación mezcladas, señal ambigua"
-                        : "Validation system before: stars and recommendation mixed, ambiguous signal"
-                    }
-                    width={600}
-                    height={400}
-                    caption={
-                      es
-                        ? "Antes — estrellas y recomendación mezcladas. Señal ambigua."
-                        : "Before — stars and recommendation mixed. Ambiguous signal."
-                    }
-                    className="w-full"
-                    imageClassName="object-cover"
-                  />
-                </Block>
-                <Block colSpan={1}>
-                  <DevImage
-                    src="/images/manijappImages/manijapp-validation-after.webp"
-                    alt={
-                      es
-                        ? "Sistema de validación después: estrellas para venue, pulgares para evento, tracking diferenciado"
-                        : "Validation system after: stars for venue, thumbs for event, differentiated tracking"
-                    }
-                    width={600}
-                    height={400}
-                    caption={
-                      es
-                        ? "Después — sistemas separados. Tracking diferenciado por origen (card vs detalle)."
-                        : "After — separate systems. Differentiated tracking by origin (card vs detail)."
-                    }
-                    className="w-full"
-                    imageClassName="object-cover"
-                  />
-                </Block>
-              </GridContainer>
-            </section>
-          </FadeOnScroll>
-
-          {/* Spec-Driven Development - destacado */}
+        {/* Spec-Driven Development - destacado */}
           <FadeOnScroll>
             <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
               <div className="w-full rounded-2xl border border-[#C45200]/30 bg-gradient-to-br from-[#1C0900]/40 to-[#2D1200]/40 backdrop-blur-sm p-6 md:p-8 lg:p-10">

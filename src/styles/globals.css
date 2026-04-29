@@ -1,4 +1,18 @@
 @tailwind base;
+
+/* Optimización para zoom en mobile */
+@media (max-width: 768px) {
+  img {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+  }
+
+  /* Prevenir flickering durante zoom */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
 @tailwind components;
 @tailwind utilities;
 
