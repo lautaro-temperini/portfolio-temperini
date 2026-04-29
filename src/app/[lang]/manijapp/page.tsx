@@ -500,7 +500,7 @@ export default async function ManijappPage({
               </div>
             </section>
           </FadeOnScroll>
-no        {/* Spec-Driven Development - destacado */}
+        {/* Spec-Driven Development - destacado */}
           <FadeOnScroll>
             <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
               <div className="w-full rounded-2xl border border-[#C45200]/30 bg-gradient-to-br from-[#1C0900]/40 to-[#2D1200]/40 backdrop-blur-sm p-6 md:p-8 lg:p-10">
