@@ -705,8 +705,8 @@ export default async function ManijappPage({
             <section id="validacion" className="w-full px-8 md:px-12 lg:px-20 mb-20">
               <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">
                 {es
-                  ? "Validación: tres ciclos, decisiones encadenadas"
-                  : "Validation: three cycles, chained decisions"}
+                  ? "Validación: cuatro ciclos, decisiones encadenadas"
+                  : "Validation: four cycles, chained decisions"}
               </h2>
 
               {/* Tabla de métricas */}
@@ -720,8 +720,11 @@ export default async function ManijappPage({
                       <th className="py-3 pr-6 text-right font-semibold text-light/70">
                         {es ? "Ciclo 2" : "Cycle 2"}
                       </th>
-                      <th className="py-3 text-right font-semibold text-light/70">
+                      <th className="py-3 pr-6 text-right font-semibold text-light/70">
                         {es ? "Ciclo 3" : "Cycle 3"}
+                      </th>
+                      <th className="py-3 text-right font-semibold text-light/70">
+                        {es ? "Ciclo 4" : "Cycle 4"}
                       </th>
                     </tr>
                   </thead>
@@ -731,53 +734,62 @@ export default async function ManijappPage({
                         {es ? "Usuarios activos (GA4)" : "Active users (GA4)"}
                       </td>
                       <td className="py-3 pr-6 text-right">89</td>
-                      <td className="py-3 text-right">32</td>
+                      <td className="py-3 pr-6 text-right">32</td>
+                      <td className="py-3 text-right">35</td>
                     </tr>
                     <tr>
                       <td className="py-3 pr-6 font-semibold">
                         {es ? "Pages / sesión" : "Pages / session"}
                       </td>
                       <td className="py-3 pr-6 text-right">2.45</td>
-                      <td className="py-3 text-right">4.02</td>
+                      <td className="py-3 pr-6 text-right">4.02</td>
+                      <td className="py-3 text-right">2.91</td>
                     </tr>
                     <tr>
                       <td className="py-3 pr-6 font-semibold">Scroll depth</td>
                       <td className="py-3 pr-6 text-right">63.7%</td>
-                      <td className="py-3 text-right">78.4%</td>
+                      <td className="py-3 pr-6 text-right">78.4%</td>
+                      <td className="py-3 text-right">65.35%</td>
                     </tr>
                     <tr>
                       <td className="py-3 pr-6 font-semibold">Active time</td>
                       <td className="py-3 pr-6 text-right">57s</td>
-                      <td className="py-3 text-right">1m 30s</td>
+                      <td className="py-3 pr-6 text-right">1m 30s</td>
+                      <td className="py-3 text-right">1m 0s</td>
                     </tr>
                     <tr>
                       <td className="py-3 pr-6 font-semibold">
                         {es ? "Retención 7 días (cohorte)" : "7-day retention (cohort)"}
                       </td>
                       <td className="py-3 pr-6 text-right">7.9% (7/89)</td>
-                      <td className="py-3 text-right">~7.1% (2/28)</td>
+                      <td className="py-3 pr-6 text-right">~7.1% (2/28)</td>
+                      <td className="py-3 text-right">4% (1/25)</td>
                     </tr>
                     <tr>
                       <td className="py-3 pr-6 font-semibold">
                         {es ? "Usuarios returning (GA4)" : "Returning users (GA4)"}
                       </td>
                       <td className="py-3 pr-6 text-right">2</td>
-                      <td className="py-3 text-right">3</td>
+                      <td className="py-3 pr-6 text-right">3</td>
+                      <td className="py-3 text-right">10</td>
                     </tr>
                     <tr>
                       <td className="py-3 pr-6 font-semibold">validation_tap</td>
                       <td className="py-3 pr-6 text-right">13%</td>
-                      <td className="py-3 text-right">6.25%</td>
+                      <td className="py-3 pr-6 text-right">6.25%</td>
+                      <td className="py-3 text-right">14.3%</td>
                     </tr>
                     <tr>
                       <td className="py-3 pr-6 font-semibold">event_shared</td>
                       <td className="py-3 pr-6 text-right">5.2%</td>
-                      <td className="py-3 text-right">6.25%</td>
+                      <td className="py-3 pr-6 text-right">6.25%</td>
+                      <td className="py-3 text-right">8.6%</td>
                     </tr>
                     <tr>
                       <td className="py-3 pr-6 font-semibold">event_submitted</td>
                       <td className="py-3 pr-6 text-right">1</td>
-                      <td className="py-3 text-right">2</td>
+                      <td className="py-3 pr-6 text-right">2</td>
+                      <td className="py-3 text-right">0</td>
                     </tr>
                   </tbody>
                 </table>
@@ -864,6 +876,33 @@ export default async function ManijappPage({
                   </div>
                 </Block>
               </GridContainer>
+
+              <div className="mt-8 md:mt-10">
+                <div className="bg-container/80 rounded-lg p-6">
+                  <h3 className="text-lg font-bold text-light mb-3">
+                    {es
+                      ? "Ciclo 4 · Retención sin intervención"
+                      : "Cycle 4 · Retention without intervention"}
+                  </h3>
+                  <div className="text-light text-sm leading-relaxed space-y-3">
+                    <p>
+                      {es
+                        ? "El cuarto ciclo no tuvo distribución, stories ni eventos nuevos. Sin ningún estímulo, 10 usuarios de ciclos anteriores volvieron solos. El engagement por usuario fue el más alto de toda la serie: validation_tap al 14.3%, event_shared al 8.6%."
+                        : "The fourth cycle had no distribution, stories, or new events. With no stimulus, 10 users from earlier cycles came back on their own. Per-user engagement was the highest in the entire series: validation_tap at 14.3%, event_shared at 8.6%."}
+                    </p>
+                    <p>
+                      {es
+                        ? "La ausencia de intervención es lo que hace este ciclo el más limpio. Cualquier métrica de ciclos anteriores podía explicarse por el efecto novedad del outreach. Acá no hay outreach. Lo que se mide es el producto solo."
+                        : "The absence of intervention is what makes this cycle the cleanest. Any metric from earlier cycles could be explained by the novelty effect of outreach. Here there is no outreach. What gets measured is the product alone."}
+                    </p>
+                    <p className="text-light/70">
+                      {es
+                        ? "La conclusión es concreta: el cuello de botella no es el producto ni la retención. Es la adquisición de usuarios con intención real. El outreach directo trae curiosidad, no hábito."
+                        : "The conclusion is concrete: the bottleneck isn't the product or retention. It's acquiring users with real intent. Direct outreach brings curiosity, not habit."}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </section>
           </FadeOnScroll>
 
@@ -881,8 +920,8 @@ export default async function ManijappPage({
                 height={650}
                 caption={
                   es
-                    ? "Funnel del core loop con datos reales de los ciclos 2 y 3."
-                    : "Core loop funnel with real data from cycles 2 and 3."
+                    ? "Funnel del core loop con datos reales de los ciclos 2, 3 y 4."
+                    : "Core loop funnel with real data from cycles 2, 3 and 4."
                 }
                 className="w-full"
                 imageClassName="object-cover"
@@ -965,45 +1004,56 @@ export default async function ManijappPage({
 
           {/* ==================== QUÉ SIGUE ==================== */}
           <FadeOnScroll>
-            <section id="cierre" className="w-full px-8 md:px-12 lg:px-20 mb-20">
+            <section id="cierre" className="w-full px-8 md:px-12 lg:px-20 mb-20 pb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-light mb-8">
                 {es ? "Qué sigue" : "What's next"}
               </h2>
               <div className="text-light leading-relaxed space-y-4 mb-10">
                 <p className="text-lg">
                   {es
-                    ? "El ciclo 4 cambia el canal: de cold outreach digital a presencia en el ecosistema. Las stories de Instagram se formalizan como infraestructura de retención semanal — es la solución más barata disponible antes de construir cualquier feature de notificación."
-                    : "Cycle 4 changes the channel: from cold digital outreach to presence in the ecosystem. Instagram stories are formalized as weekly retention infrastructure — it's the cheapest solution available before building any notification feature."}
+                    ? "El ciclo 4 confirmó que el cuello de botella es el canal, no el producto. La retención existe sin estímulo. El siguiente paso es adquisición de usuarios con intención real — gente que no me conoce y llega igual."
+                    : "Cycle 4 confirmed the bottleneck is the channel, not the product. Retention exists without stimulus. The next step is acquiring users with real intent — people who don't know me and still show up."}
                 </p>
                 <p className="text-lg">
                   {es
                     ? "Los avances pendientes tienen triggers, no fechas."
                     : "Pending advances have triggers, not dates."}
                 </p>
+                <p className="text-xl text-light font-semibold leading-relaxed">
+                  {es
+                    ? <>La decisión más importante no es qué construir. <br /> Es qué medir, con qué criterio, y cuándo la señal es suficiente para actuar.</>
+                    : <>The most important decision isn't what to build. <br /> It's what to measure, by what criteria, and when the signal is sufficient to act.</>}
+                </p>
+                <p className="text-lg">
+                  {es ? (
+                    <>
+                      Manijapp es un proyecto en curso —{" "}
+                      <a
+                        href="https://manijapp.vercel.app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#2DD4BF] underline underline-offset-2 transition-colors hover:text-[#5EEAD4]"
+                      >
+                        manijapp.vercel.app
+                      </a>
+                    </>
+                  ) : (
+                    <>
+                      Manijapp is an ongoing project —{" "}
+                      <a
+                        href="https://manijapp.vercel.app"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#2DD4BF] underline underline-offset-2 transition-colors hover:text-[#5EEAD4]"
+                      >
+                        manijapp.vercel.app
+                      </a>
+                    </>
+                  )}
+                </p>
               </div>
-
-              <p className="text-xl text-light font-semibold leading-relaxed">
-                {es
-                  ? <>La decisión más importante no es qué construir. <br /> Es qué medir, con qué criterio, y cuándo la señal es suficiente para actuar.</>
-                  : <>The most important decision isn't what to build. <br /> It's what to measure, by what criteria, and when the signal is sufficient to act.</>}
-              </p>
             </section>
           </FadeOnScroll>
-
-          {/* ==================== NOTA DE PIE ==================== */}
-          <div className="w-full px-8 md:px-12 lg:px-20 pb-16">
-            <p className="text-xs text-light/40 italic">
-              {es ? "Manijapp es un proyecto en curso — " : "Manijapp is an ongoing project — "}
-              <a
-                href="https://manijapp.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#2DD4BF] underline underline-offset-2 transition-colors hover:text-[#5EEAD4]"
-              >
-                manijapp.vercel.app
-              </a>
-            </p>
-          </div>
         </main>
       </div>
       <NextCaseStudy currentSlug="manijapp" lang={lang} />

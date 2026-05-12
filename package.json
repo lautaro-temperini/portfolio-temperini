@@ -15,7 +15,10 @@
     "check:i18n": "node -r ts-node/register -e \"require('./scripts/check-dict-sync.ts')\"",
     "optimize-images": "node scripts/optimize-images.js",
     "test": "playwright test",
-    "test:ui": "playwright test --ui"
+    "test:ui": "playwright test --ui",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:debug": "playwright test --debug"
   },
   "dependencies": {
     "@next/third-parties": "16.1.7",
