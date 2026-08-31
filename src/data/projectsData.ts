@@ -30,6 +30,18 @@ export const projectsData: ProjectData[] = [
     featured: true,
   },
   {
+    id: 6,
+    slug: "estoyai",
+    image: "/images/estoyai-logo.webp",
+    previewImage: "/images/projects/estoyai-preview.webp",
+    previewObjectFit: "contain",
+    title: "EstoyAi",
+    subtitle: "Registro de campo por voz",
+    description: "Case Study",
+    shortDescription: "Sistema offline-first para ONGs: el promotor dicta la visita, la IA local genera el informe y coordinación lo ve priorizado por criticidad. Halketon 2026.",
+    tags: ["Offline-First PWA", "Local AI (Whisper + Ollama)", "Social Impact", "Voice-to-Report", "Multi-Tenant", "Data Sovereignty"],
+  },
+  {
     id: 2,
     slug: "manijapp",
     image: "/images/manijapp-logo.webp",

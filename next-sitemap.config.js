@@ -22,6 +22,7 @@ module.exports = {
 
       // CASE STUDIES (caso study más importante arriba)
       { path: '/manijapp', changefreq: 'weekly', priority: 0.95, lastmod: '2026-04-24' },
+      { path: '/estoyai', changefreq: 'weekly', priority: 0.9, lastmod: '2026-08-30' },
       { path: '/digito', changefreq: 'weekly', priority: 0.85, lastmod: '2026-03-15' },
       { path: '/gloryfit', changefreq: 'monthly', priority: 0.8, lastmod: '2026-02-10' },
       { path: '/levelup', changefreq: 'monthly', priority: 0.8, lastmod: '2026-01-20' },

@@ -184,6 +184,7 @@ export function proxy(request: NextRequest) {
     'gloryfit',
     'about',
     'digito',
+    'estoyai',
     'manijapp',
     'vorterix',
     'playground',

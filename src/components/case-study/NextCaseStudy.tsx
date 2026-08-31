@@ -25,6 +25,15 @@ const ORDER: ProjectInfo[] = [
     labelEn: "View Dígito",
   },
   {
+    slug: "estoyai",
+    title: "ESTOYAI",
+    subtitleEs: "Registro de campo por voz para ONGs, offline-first e IA local",
+    subtitleEn: "Voice-based field reporting for NGOs, offline-first with local AI",
+    previewImage: "/images/nextcases/estoyai.webp",
+    labelEs: "Ver EstoyAi",
+    labelEn: "View EstoyAi",
+  },
+  {
     slug: "manijapp",
     title: "MANIJAPP",
     subtitleEs: "MVP independiente para discovery de eventos alternativos",
