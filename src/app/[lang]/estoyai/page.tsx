@@ -156,7 +156,7 @@ const jsonLdEstoyai = {
           name: "¿De dónde viene EstoyAi?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "La idea se disparó en Halketon (junio 2026), un hackathon para construir herramientas reales para organizaciones sociales argentinas, donde se investigaron 16 organizaciones y se encontró que 13 de 16 no pueden medir su impacto porque sus datos de campo no están sistematizados. Lautaro Temperini continuó y construyó EstoyAi por su cuenta después del evento. Pequeños Pasos, en General San Martín, es la organización piloto de referencia.",
+            text: "La idea se disparó en Halketon (junio 2026), un hackathon para construir herramientas reales para organizaciones sociales argentinas. Los organizadores entrevistaron a 16 ONGs; 13 de esas 16 caían en el Track 3 (impacto y reportes): no logran registrar su trabajo de campo de forma sistemática. En el evento Lautaro Temperini lideró producto y coordinación de un equipo de cuatro; después reconstruyó y continuó EstoyAi por su cuenta. Pequeños Pasos es la organización piloto de referencia.",
           },
         },
       ],
@@ -227,74 +227,6 @@ export default async function EstoyaiPage({
         "Coordinación lo ve en un tablero: clasificado por criticidad y con sus puntos accionables ya extraídos. Qué atender primero, sin leer todo.",
       textEn:
         "Coordination sees it on a board: sorted by criticality with its action points already extracted. What to attend to first, without reading everything.",
-    },
-  ]
-
-  // 7 diferenciales del brief
-  const diffs = [
-    {
-      titleEs: "Hace visible lo urgente",
-      titleEn: "Makes the urgent visible",
-      textEs:
-        "No se queda en generar documentos. Cada informe llega a coordinación clasificado por criticidad y con accionables. El equipo prioriza desde un tablero sin leer todo.",
-      textEn:
-        "It doesn't stop at generating documents. Each report reaches coordination sorted by criticality with action points. The team prioritizes from a board without reading everything.",
-    },
-    {
-      titleEs: "Es gratuito",
-      titleEn: "It's free",
-      textEs:
-        "Sin licencias, sin suscripciones, sin costos por uso. Una ONG puede instalarlo, usarlo y escalarlo sin pagar nada.",
-      textEn:
-        "No licenses, no subscriptions, no usage costs. An NGO can install, use, and scale it without paying anything.",
-    },
-    {
-      titleEs: "Es open source",
-      titleEn: "It's open source",
-      textEs:
-        "El código es público bajo licencia MIT. Cualquier organización o equipo técnico puede auditarlo, adaptarlo o mejorarlo.",
-      textEn:
-        "The code is public under the MIT license. Any organization or technical team can audit, adapt, or improve it.",
-    },
-    {
-      titleEs: "Funciona sin internet en campo",
-      titleEn: "Works without internet in the field",
-      textEs:
-        "El promotor graba en zona sin señal. El audio se encola y sube solo cuando hay conexión, sin intervención.",
-      textEn:
-        "The promoter records in a no-signal area. The audio queues and uploads on its own once connected, with no intervention.",
-    },
-    {
-      titleEs: "Corre en hardware estándar",
-      titleEn: "Runs on standard hardware",
-      textEs:
-        "Sin servidores en la nube ni GPU. Funciona en una PC de escritorio con 16 GB de RAM. La IA que procesa el audio corre localmente.",
-      textEn:
-        "No cloud servers, no GPU. It runs on a desktop PC with 16 GB of RAM. The AI that processes the audio runs locally.",
-    },
-    {
-      titleEs: "Los datos no salen de la organización",
-      titleEn: "Data never leaves the organization",
-      textEs:
-        "Transcripción, procesamiento y almacenamiento corren en la sede. Los datos de beneficiarios nunca pasan por servidores externos.",
-      textEn:
-        "Transcription, processing, and storage run at the office. Beneficiary data never passes through external servers.",
-    },
-    {
-      titleEs: "Es adaptable a cualquier ONG",
-      titleEn: "Adaptable to any NGO",
-      textEs:
-        "Los programas, los campos del informe y la estructura de los datos se configuran por organización. Se cambia configuración, no código.",
-      textEn:
-        "Programs, report fields, and data structure are configured per organization. You change configuration, not code.",
-    },
-    {
-      titleEs: "Fácil de instalar, para no técnicos",
-      titleEn: "Easy to install, for non-technical staff",
-      textEs:
-        "Instalador guiado para Windows, archivos .bat con nombres en castellano y un manual en lenguaje llano. Nadie en la sede necesita saber de Docker, servidores ni línea de comandos para levantar todo el stack de IA local.",
-      textEn:
-        "A guided Windows installer, .bat files named in plain Spanish, and a manual in plain language. No one at the office needs to know Docker, servers, or the command line to bring up the whole local-AI stack.",
     },
   ]
 
@@ -436,8 +368,8 @@ export default async function EstoyaiPage({
                 <span className="text-light/70 font-semibold">{es ? "Estado" : "Status"}</span>
                 {" · "}
                 {es
-                  ? "MVP funcional. Buscando primeras ONGs para un piloto real."
-                  : "Working MVP. Looking for the first NGOs for a real pilot."}
+                  ? "MVP funcional. No validado en uso real todavía (validé el problema con la dirección, no el flujo con un promotor). Buscando la primera ONG para un piloto."
+                  : "Working MVP. Not validated in real use yet (I validated the problem with leadership, not the flow with a promoter). Looking for the first NGO for a pilot."}
               </div>
             </div>
           </section>
@@ -450,7 +382,12 @@ export default async function EstoyaiPage({
           {/* ==================== TL;DR ==================== */}
           <FadeOnScroll>
             <section className="w-full px-8 md:px-12 lg:px-20 mb-20">
-              <h2 className="text-3xl md:text-4xl font-bold text-light mb-8">TL;DR</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">TL;DR</h2>
+              <p className="text-lg md:text-xl text-light font-semibold leading-relaxed mb-8 max-w-4xl">
+                {es
+                  ? "La tesis: entre una ONG de nutrición y una de tratamiento de consumos, lo único que cambia es el esquema de datos. No estás construyendo una solución para una ONG —estás construyendo infraestructura para el sector."
+                  : "The thesis: between a nutrition NGO and a substance-use treatment NGO, the only thing that changes is the data schema. You're not building a solution for one NGO —you're building infrastructure for the sector."}
+              </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="rounded-2xl border border-subtle/60 bg-container/60 p-6 md:p-8">
                   <h3 className="text-lg font-bold text-light mb-3">
@@ -486,8 +423,8 @@ export default async function EstoyaiPage({
                   </h3>
                   <p className="text-light/80 leading-relaxed">
                     {es
-                      ? "MVP funcional que continué y construí por mi cuenta a partir de una idea del hackathon Halketon, con dos verticales configuradas (Pequeños Pasos y DTC Villatranquila). Sin producción todavía: buscando el primer piloto real."
-                      : "Working MVP that I continued and built on my own from an idea at the Halketon hackathon, with two configured verticals (Pequeños Pasos and DTC Villatranquila). Not in production yet: looking for the first real pilot."}
+                      ? "MVP funcional, diseñado y construido en solitario después del hackathon. Validé el problema con la dirección de la ONG, no el flujo completo con un promotor en un día real. No validado en uso real todavía: ese es el próximo paso, no un dato que ya tenga."
+                      : "Working MVP, designed and built solo after the hackathon. I validated the problem with the NGO's leadership, not the full flow with a promoter on a real workday. Not validated in real use yet: that's the next step, not something I already have."}
                   </p>
                 </div>
               </div>
@@ -510,18 +447,13 @@ export default async function EstoyaiPage({
                   <div className="text-light leading-relaxed space-y-4 max-w-4xl">
                     <p className="text-lg">
                       {es
-                        ? "El punto de partida fue Halketon (jun 2026), un hackathon organizado por Paisanos, Crecimiento, Querido Lunes y Fardo para construir herramientas reales para organizaciones sociales argentinas. Ahí arrancó el research que dio origen a la idea."
-                        : "The starting point was Halketon (Jun 2026), a hackathon organized by Paisanos, Crecimiento, Querido Lunes, and Fardo to build real tools for Argentine social organizations. That's where the research that seeded the idea began."}
+                        ? "El punto de partida fue Halketon (jun 2026), un hackathon organizado por Paisanos, Crecimiento, Querido Lunes y Fardo para construir herramientas reales para organizaciones sociales argentinas."
+                        : "The starting point was Halketon (Jun 2026), a hackathon organized by Paisanos, Crecimiento, Querido Lunes, and Fardo to build real tools for Argentine social organizations."}
                     </p>
                     <p className="text-lg">
                       {es
-                        ? "Se investigaron 16 organizaciones a lo largo de siete dimensiones: cómo trabajan en campo, qué datos registran, con qué conectividad operan, qué tan técnico es su equipo y qué datos sensibles manejan."
-                        : "Sixteen organizations were researched across seven dimensions: how they work in the field, what data they record, what connectivity they operate with, how technical their team is, and what sensitive data they handle."}
-                    </p>
-                    <p className="text-lg">
-                      {es
-                        ? "El hallazgo fue consistente: el patrón siempre era cuadernos, WhatsApp y planillas. Y mientras la información vive en papel, la coordinación no tiene cómo ver qué pasó en territorio ni detectar a tiempo un caso urgente."
-                        : "The finding was consistent: the pattern was always notebooks, WhatsApp, and spreadsheets. And while the information lives on paper, coordination has no way to see what happened in the field or catch an urgent case in time."}
+                        ? "Los organizadores entrevistaron a 16 ONGs y agruparon los hallazgos en tres tracks. 13 de esas 16 caían en el Track 3 —impacto y reportes—: no logran registrar su trabajo de campo de forma sistemática. El patrón se repetía: cuadernos, WhatsApp y planillas. Mientras la información vive en papel, la coordinación no tiene cómo ver qué pasó en territorio ni detectar a tiempo un caso urgente."
+                        : "The organizers interviewed 16 NGOs and grouped the findings into three tracks. 13 of those 16 fell under Track 3 —impact and reporting—: they can't record their fieldwork systematically. The pattern repeated: notebooks, WhatsApp, spreadsheets. While the information lives on paper, coordination has no way to see what happened in the field or catch an urgent case in time."}
                     </p>
                   </div>
                 </Block>
@@ -532,19 +464,14 @@ export default async function EstoyaiPage({
                     </h2>
                     <p className="text-lg">
                       {es
-                        ? "De ese research surgió Pequeños Pasos (General San Martín, provincia de Buenos Aires) como caso piloto: promotores en territorio, múltiples programas de seguimiento de familias, carga administrativa real y una restricción concreta —trabajan en zonas sin señal."
-                        : "From that research came Pequeños Pasos (General San Martín, Buenos Aires province) as the pilot case: promoters in the field, multiple family follow-up programs, real administrative load, and one concrete constraint —they work in areas with no signal."}
-                    </p>
-                    <p className="text-lg">
-                      {es
-                        ? "Las hipótesis se validaron con la directora de la ONG durante el evento: esa conversación confirmó el problema y definió los límites técnicos."
-                        : "The hypotheses were validated with the NGO's director during the event: that conversation confirmed the problem and defined the technical limits."}
+                        ? "De ahí salió Pequeños Pasos como caso piloto: una ONG con promotores en territorio, múltiples programas de seguimiento de familias, carga administrativa real y una restricción concreta —trabajan en zonas sin señal. Validé el problema con su directora durante el evento: esa conversación confirmó el dolor y definió los límites técnicos."
+                        : "From there came Pequeños Pasos as the pilot case: an NGO with field promoters, multiple family follow-up programs, real administrative load, and one concrete constraint —they work in areas with no signal. I validated the problem with its director during the event: that conversation confirmed the pain and defined the technical limits."}
                     </p>
                     <div className="rounded-xl border-l-4 border-[#4C8DFF] bg-container/40 p-5">
                       <p className="text-light/90 leading-relaxed">
                         {es
-                          ? "Halketon fue el punto de partida: un prototipo de equipo en 12 horas, con la directora de la ONG a mano para validar el problema. Lo importante pasó después. Seguí el proyecto por mi cuenta y mutó en una idea distinta y más consistente: rediseñé toda la arquitectura para que una persona no técnica pueda instalar IA local (Whisper + Ollama), n8n y el pipeline completo en la PC de una sede —con internet intermitente, gratis y multi-tenant. Ese salto, del prototipo del evento a un sistema instalable y soberano, es el eje de este caso."
-                          : "Halketon was the starting point: a 12-hour team prototype, with the NGO's director on hand to validate the problem. What mattered came after. I continued the project on my own and it mutated into a distinct, more consistent idea: I redesigned the whole architecture so a non-technical person can install local AI (Whisper + Ollama), n8n, and the full pipeline on an NGO office PC —with intermittent internet, free, and multi-tenant. That leap, from the event's prototype to an installable, sovereign system, is the core of this case."}
+                          ? "Para ser preciso con el alcance: en Halketon lideré producto y coordinación en un equipo de cuatro que armó un prototipo en 12 horas. El sistema instalable, multi-tenant y offline-first que ves acá lo diseñé y construí solo después del evento —una reconstrucción completa, no una iteración del prototipo. Ese salto es el eje del caso."
+                          : "To be precise about scope: at Halketon I led product and coordination in a team of four that built a 12-hour prototype. The installable, multi-tenant, offline-first system you see here I designed and built solo after the event —a full rebuild, not an iteration of the prototype. That leap is the core of the case."}
                       </p>
                     </div>
                   </div>
@@ -602,18 +529,18 @@ export default async function EstoyaiPage({
                 {[
                   {
                     value: "16",
-                    labelEs: "organizaciones investigadas en 7 dimensiones",
-                    labelEn: "organizations researched across 7 dimensions",
+                    labelEs: "ONGs entrevistadas en el relevamiento de Halketon",
+                    labelEn: "NGOs interviewed in the Halketon research",
                   },
                   {
-                    value: "13/16",
-                    labelEs: "no pueden medir su impacto: datos de campo sin sistematizar",
-                    labelEn: "can't measure their impact: unsystematized field data",
+                    value: "13 de 16",
+                    labelEs: "manifestaron el problema del Track 3: registro de campo sin sistematizar",
+                    labelEn: "surfaced the Track 3 problem: unsystematized field recording",
                   },
                   {
                     value: "< 5 min",
-                    labelEs: "del audio de la visita al informe .docx archivable",
-                    labelEn: "from the visit audio to a filable .docx report",
+                    labelEs: "meta de diseño: del audio de la visita al .docx (estimación, no medida)",
+                    labelEn: "design goal: from visit audio to .docx (estimate, not measured)",
                   },
                   {
                     value: "$0",
@@ -639,8 +566,8 @@ export default async function EstoyaiPage({
               </BentoGrid>
               <p className="text-xs text-light/40 italic mt-4">
                 {es
-                  ? "Fuente: research del equipo con 16 organizaciones sociales argentinas, Halketon (jun 2026)."
-                  : "Source: team research with 16 Argentine social organizations, Halketon (Jun 2026)."}
+                  ? "Fuente: relevamiento de Halketon (Paisanos · Crecimiento · Querido Lunes · Fardo) a 16 ONGs argentinas, abr–may 2026. El proyecto tomó el Track 3 (impacto y reportes) con Pequeños Pasos."
+                  : "Source: Halketon research (Paisanos · Crecimiento · Querido Lunes · Fardo) across 16 Argentine NGOs, Apr–May 2026. The project took Track 3 (impact & reporting) with Pequeños Pasos."}
               </p>
             </section>
           </FadeOnScroll>
@@ -847,69 +774,6 @@ export default async function EstoyaiPage({
             </section>
           </FadeOnScroll>
 
-          {/* ==================== EN ACCIÓN (placeholders UI) ==================== */}
-          <FadeOnScroll>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-light mb-8">
-                {es ? "En acción" : "In action"}
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Placeholders en dev — soltar capturas reales en /public/images/estoyaiImages/
-                    y agregar el src correspondiente (estoyai-grabar.webp / -informes.webp / -docx.webp)
-                    o reemplazar por el <video> del demo cuando esté grabado. */}
-                <DevImage
-                  alt={
-                    es
-                      ? "Pantalla de grabación de la PWA: waveform activo mientras el promotor dicta la visita"
-                      : "PWA recording screen: active waveform while the promoter dictates the visit"
-                  }
-                  width={800}
-                  height={1000}
-                  caption={es ? "Grabar — la app en el celular del promotor" : "Record — the app on the promoter's phone"}
-                  className="w-full"
-                  imageClassName="object-cover"
-                />
-                <DevImage
-                  alt={
-                    es
-                      ? "Tablero /informes en la sede: tarjetas de casos con chips de criticidad (alta, media, baja) y accionables"
-                      : "/informes board at the office: case cards with criticality chips (high, medium, low) and action points"
-                  }
-                  width={800}
-                  height={1000}
-                  caption={
-                    es
-                      ? "Coordinación — tablero /informes con triaje por criticidad"
-                      : "Coordination — /informes board with triage by criticality"
-                  }
-                  className="w-full"
-                  imageClassName="object-cover"
-                />
-              </div>
-              <DevImage
-                alt={
-                  es
-                    ? "Informe .docx generado: estructura fija, editable e imprimible en Word"
-                    : "Generated .docx report: fixed structure, editable and printable in Word"
-                }
-                width={1200}
-                height={675}
-                caption={
-                  es
-                    ? "El informe .docx que llega a coordinación — editable, imprimible, auditable."
-                    : "The .docx report that reaches coordination — editable, printable, auditable."
-                }
-                className="w-full mt-6"
-                imageClassName="object-cover"
-              />
-              <p className="text-xs text-light/40 italic mt-4">
-                {es
-                  ? "Capturas del producto — se reemplazan por el demo real (instalación en sede + uso de un subdominio con todas las features) cuando esté grabado."
-                  : "Product screenshots — to be replaced by the real demo (office install + using a subdomain with all features) once recorded."}
-              </p>
-            </section>
-          </FadeOnScroll>
-
           {/* ==================== DIVIDER ==================== */}
           <div className="w-full px-8 md:px-12 lg:px-20 mb-28">
             <div className="h-px w-full bg-gradient-to-r from-transparent via-[#0056d2]/40 to-transparent" />
@@ -996,8 +860,13 @@ export default async function EstoyaiPage({
                     </h3>
                     <p className="text-light/85 leading-relaxed">
                       {es
-                        ? "La IA corre local y el modelo es chico: puede omitir algo. Por eso la criticidad no depende solo del modelo. Una red de seguridad por palabras clave fuerza ALTA ante términos de riesgo explícito (violencia, golpes, autolesión, un menor solo), para que una emergencia nunca se pierda por una omisión del modelo. El criterio de negocio no queda librado al azar del LLM."
-                        : "The AI runs locally and the model is small: it can miss something. So criticality doesn't rely on the model alone. A keyword safety net forces ALTA on explicit risk terms (violence, blows, self-harm, a minor left alone), so an emergency is never lost to a model omission. The business-critical rule isn't left to the LLM's chance."}
+                        ? "La IA corre local y el modelo es chico: puede omitir algo. Por eso la criticidad no depende solo del modelo. Una red de seguridad por palabras clave fuerza ALTA ante términos de riesgo explícito (violencia, golpes, autolesión, un menor solo). El principio, transferible a cualquier producto con IA: cuando el modelo decide algo con consecuencias reales, el diseño necesita un piso que no dependa del modelo."
+                        : "The AI runs locally and the model is small: it can miss something. So criticality doesn't rely on the model alone. A keyword safety net forces ALTA on explicit risk terms (violence, blows, self-harm, a minor left alone). The principle, transferable to any AI product: when the model decides something with real consequences, the design needs a floor that doesn't depend on the model."}
+                    </p>
+                    <p className="text-light/60 text-sm leading-relaxed mt-3">
+                      {es
+                        ? "Límite conocido: si el modelo omite una ALTA que no cae en ninguna keyword, puede pasar desapercibida. Por eso la transcripción completa queda siempre disponible y el promotor revisa y ajusta la prioridad antes de enviar a coordinación —la IA propone, una persona confirma."
+                        : "Known limit: if the model misses an ALTA that matches no keyword, it can slip through. That's why the full transcript is always available and the promoter reviews and adjusts the priority before sending to coordination —the AI proposes, a person confirms."}
                     </p>
                   </div>
                 </Block>
@@ -1022,8 +891,8 @@ export default async function EstoyaiPage({
                 </h3>
                 <p className="text-light/85 leading-relaxed mb-6 max-w-3xl">
                   {es
-                    ? "La tensión real no era “qué modelo es más inteligente”, sino qué calidad de clasificación se puede sostener en el hardware que una sede realmente tiene. Evalué modelos contra una rúbrica de criticidad y el fallo estaba en el modelo, no en el prompt:"
-                    : "The real tension wasn't “which model is smartest”, but what classification quality can be sustained on the hardware an office actually has. I evaluated models against a criticality rubric, and the failure was in the model, not the prompt:"}
+                    ? "La tensión real no era “qué modelo es más inteligente”, sino qué calidad de clasificación se puede sostener en el hardware que una sede realmente tiene. Evalué los modelos contra una rúbrica de 9 transcripciones (una por prioridad × programa) y el fallo estaba en el modelo, no en el prompt:"
+                    : "The real tension wasn't “which model is smartest”, but what classification quality can be sustained on the hardware an office actually has. I evaluated the models against a rubric of 9 transcripts (one per priority × program), and the failure was in the model, not the prompt:"}
                 </p>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm text-light">
@@ -1039,21 +908,21 @@ export default async function EstoyaiPage({
                         <td className="py-2 pr-6 font-semibold">gemma3:1b</td>
                         <td className="py-2 pr-6">4/9</td>
                         <td className="py-2 text-light/80">
-                          {es ? "Descartado — se le escapaban criticidades" : "Discarded — missed critical flags"}
+                          {es ? "Descartado — se le escaparon casos graves (ej. maltrato infantil)" : "Discarded — missed serious cases (e.g. child abuse)"}
                         </td>
                       </tr>
                       <tr>
                         <td className="py-2 pr-6 font-semibold text-[#34D399]">gemma3:4b</td>
                         <td className="py-2 pr-6 text-[#34D399]">8/9</td>
                         <td className="py-2 text-light/80">
-                          {es ? "Elegido — target de la sede (≥ 16 GB RAM)" : "Chosen — office target (≥ 16 GB RAM)"}
+                          {es ? "Elegido — default de producción; ~16 GB RAM, sin GPU" : "Chosen — production default; ~16 GB RAM, no GPU"}
                         </td>
                       </tr>
                       <tr>
                         <td className="py-2 pr-6 font-semibold">gemma3:12b</td>
                         <td className="py-2 pr-6">9/9</td>
                         <td className="py-2 text-light/80">
-                          {es ? "Mejor, pero pesado para hardware estándar" : "Better, but heavy for standard hardware"}
+                          {es ? "Mejor calidad, pero pide PC potente (≥ 24 GB)" : "Better quality, but needs a powerful PC (≥ 24 GB)"}
                         </td>
                       </tr>
                     </tbody>
@@ -1061,8 +930,8 @@ export default async function EstoyaiPage({
                 </div>
                 <p className="text-light/70 text-sm leading-relaxed mt-5">
                   {es
-                    ? "gemma3:4b quedó como default. En una PC con 8 GB el pipeline baja a un modelo más liviano (qwen3:1.7b / phi3:mini): la clasificación pierde un poco de precisión, pero el sistema arranca en el hardware que la ONG ya tiene. La red de seguridad por keywords cubre el piso de las ALTA en cualquier modelo."
-                    : "gemma3:4b is the default. On an 8 GB PC the pipeline steps down to a lighter model (qwen3:1.7b / phi3:mini): classification loses a bit of precision, but the system boots on the hardware the NGO already has. The keyword safety net covers the ALTA floor on any model."}
+                    ? "gemma3:4b quedó como default: es el piso de calidad y corre en una PC de escritorio con ~16 GB de RAM, sin GPU ni nube. Con 8 GB queda chico —el modelo tilda la máquina—; el 12b (9/9) rinde mejor pero pide un equipo más potente (≥24 GB). En hardware más limitado se baja a un modelo liviano (gemma3:1b / qwen3:1.7b), con un costo real de precisión que amortigua la red de keywords. Es un eval chico (9 transcripciones) y todavía sin correr sobre el hardware real de una sede: lo trato como criterio de decisión, no como benchmark cerrado."
+                    : "gemma3:4b is the default: it's the quality floor and runs on a desktop PC with ~16 GB of RAM, no GPU or cloud. On 8 GB it's too tight —the model stalls the machine—; the 12b (9/9) performs better but needs a more powerful box (≥24 GB). On more limited hardware it drops to a lighter model (gemma3:1b / qwen3:1.7b), with a real precision cost cushioned by the keyword net. It's a small eval (9 transcripts) and not yet run on a real office's hardware: I treat it as a decision criterion, not a closed benchmark."}
                 </p>
               </div>
             </section>
@@ -1112,14 +981,6 @@ export default async function EstoyaiPage({
                     textEn:
                       "NGOs already tried it: Asana, Notion, Salesforce, Trello. They abandoned them because the bottleneck isn't coordination —it's field recording. If visit data doesn't enter simply, the CRM stays empty anyway. EstoyAi solves capture; whatever integrates afterward is each organization's decision.",
                   },
-                  {
-                    titleEs: "Por qué los datos no salen de la sede",
-                    titleEn: "Why data never leaves the office",
-                    textEs:
-                      "Los registros incluyen datos de menores, familias en situación de vulnerabilidad y casos de violencia o salud mental. Ninguna API externa debería recibir ese audio. Todo el procesamiento corre en la PC de la ONG. Si la PC se apaga, el sistema se apaga. Esa es la garantía.",
-                    textEn:
-                      "Records include data on minors, families in vulnerable situations, and cases of violence or mental health. No external API should receive that audio. All processing runs on the NGO's PC. If the PC turns off, the system turns off. That's the guarantee.",
-                  },
                 ].map((d, i) => (
                   <Block key={i} colSpan={1}>
                     <FeatureCard
@@ -1149,7 +1010,7 @@ export default async function EstoyaiPage({
                     ? "El diferencial no es solo técnico: es una postura ética. Los datos de beneficiarios —muchas veces menores y familias vulnerables— son lo más sensible que maneja una ONG. EstoyAi los trata en consecuencia."
                     : "The differentiator isn't only technical: it's an ethical stance. Beneficiary data —often minors and vulnerable families— is the most sensitive thing an NGO handles. EstoyAi treats it accordingly."}
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {[
                     {
                       titleEs: "Procesamiento local",
@@ -1160,12 +1021,20 @@ export default async function EstoyaiPage({
                         "Whisper, Ollama, and storage run on the NGO's PC. No audio or data passes through external servers.",
                     },
                     {
+                      titleEs: "Auditable porque es abierto",
+                      titleEn: "Auditable because it's open",
+                      textEs:
+                        "El código es público (MIT): para una ONG, eso no es cosmético, es seguridad. Cualquier persona técnica de confianza puede verificar que los datos no se copian ni se envían a ningún lado. La privacidad no es una promesa, es inspeccionable.",
+                      textEn:
+                        "The code is public (MIT): for an NGO that isn't cosmetic, it's security. Any trusted technical person can verify that data isn't copied or sent anywhere. Privacy isn't a promise —it's inspectable.",
+                    },
+                    {
                       titleEs: "Sin dependencias de nube",
                       titleEn: "No cloud dependencies",
                       textEs:
-                        "Sin suscripciones a APIs de IA ni de transcripción. Si la PC se apaga, el sistema se apaga: la sede tiene control total.",
+                        "Sin suscripciones a APIs de IA ni de transcripción. Si la PC se apaga, el sistema se apaga: la sede tiene control total (y es también un punto único de falla — ver límites al cierre).",
                       textEn:
-                        "No subscriptions to AI or transcription APIs. If the PC turns off, the system turns off: the office has full control.",
+                        "No subscriptions to AI or transcription APIs. If the PC turns off, the system turns off: the office has full control (and it's also a single point of failure — see limits at the end).",
                     },
                     {
                       titleEs: "Alineado a la Ley 25.326",
@@ -1218,6 +1087,7 @@ export default async function EstoyaiPage({
                       es ? "Datos de beneficiarios en la nube de un tercero" : "Beneficiary data in a third party's cloud",
                       es ? "Otra pantalla que promotores y coordinación deben aprender" : "Another screen promoters and coordination must learn",
                       es ? "Genera documentos, pero no dice qué es urgente" : "Generates documents, but doesn't say what's urgent",
+                      es ? "Requiere setup técnico o alguien de IT para instalarlo" : "Needs technical setup or IT to install",
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm leading-relaxed">
                         <span className="text-light/30 mt-0.5">✕</span>
@@ -1237,6 +1107,7 @@ export default async function EstoyaiPage({
                       es ? "Todos los datos quedan en la PC de la sede" : "All data stays on the office PC",
                       es ? "Entrega un .docx en Word, sin pantalla nueva" : "Delivers a .docx in Word, no new screen",
                       es ? "Prioriza por criticidad y extrae accionables" : "Prioritizes by criticality and extracts action points",
+                      es ? "Instalable por no técnicos: instalador guiado, sin línea de comandos" : "Installable by non-technical staff: guided installer, no command line",
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-2 text-sm leading-relaxed">
                         <span className="text-[#34D399] mt-0.5">✓</span>
@@ -1246,20 +1117,6 @@ export default async function EstoyaiPage({
                   </ul>
                 </div>
               </div>
-
-              {/* 7 diferenciales */}
-              <BentoGrid cols={{ default: 1, md: 2, lg: 3 }} gap="md" className="[&>*]:h-full">
-                {diffs.map((d, i) => (
-                  <BentoItem key={i} colSpan={1}>
-                    <FeatureCard
-                      title={es ? d.titleEs : d.titleEn}
-                      description={es ? d.textEs : d.textEn}
-                      variant="dark"
-                      className="h-full"
-                    />
-                  </BentoItem>
-                ))}
-              </BentoGrid>
             </section>
           </FadeOnScroll>
 
@@ -1277,8 +1134,8 @@ export default async function EstoyaiPage({
                 </h2>
                 <p className="text-light text-lg leading-relaxed">
                   {es
-                    ? "EstoyAi no está atado a un tipo de intervención. Los programas, los campos del informe y la estructura de los datos se configuran por organización —multi-tenant por subdominio. Se cambia configuración, no código. Dos verticales muy distintas ya están armadas:"
-                    : "EstoyAi isn't tied to one type of intervention. Programs, report fields, and data structure are configured per organization —multi-tenant by subdomain. You change configuration, not code. Two very different verticals are already set up:"}
+                    ? "EstoyAi no está atado a un tipo de intervención. Los programas, los campos del informe y la estructura de los datos se configuran por organización —multi-tenant por subdominio. Se cambia configuración, no código. El piloto de referencia es Pequeños Pasos; además armé una segunda configuración muy distinta como prueba de concepto de la tesis:"
+                    : "EstoyAi isn't tied to one type of intervention. Programs, report fields, and data structure are configured per organization —multi-tenant by subdomain. You change configuration, not code. The reference pilot is Pequeños Pasos; I also built a very different second configuration as a proof of concept for the thesis:"}
                 </p>
               </div>
 
@@ -1338,7 +1195,7 @@ export default async function EstoyaiPage({
                     <div className="flex items-center gap-2 mb-3">
                       <h3 className="text-2xl font-semibold text-light">DTC Villatranquila</h3>
                       <span className="rounded-full bg-[#34D399]/15 border border-[#34D399]/40 px-2 py-0.5 text-[10px] font-semibold text-light/80">
-                        {es ? "2ª VERTICAL" : "2ND VERTICAL"}
+                        {es ? "PRUEBA DE CONCEPTO" : "PROOF OF CONCEPT"}
                       </span>
                     </div>
                     <p className="text-light/70 text-sm mb-4">
@@ -1346,8 +1203,8 @@ export default async function EstoyaiPage({
                     </p>
                     <p className="text-light/85 leading-relaxed">
                       {es
-                        ? "Una intervención completamente distinta —tratamiento de consumos problemáticos— resuelta solo con configuración. Es la prueba de que el sistema se adapta a realidades muy diferentes sin tocar el código: la captura por voz y el triaje por criticidad son los mismos; cambian los programas y los campos del informe."
-                        : "A completely different intervention —problematic substance-use treatment— solved with configuration alone. It's the proof that the system adapts to very different realities without touching code: voice capture and criticality triage are the same; the programs and report fields change."}
+                        ? "No es una segunda ONG a bordo: es una configuración que armé yo para una intervención en las antípodas —tratamiento de consumos problemáticos— y la validé contra mi propia experiencia en el modelo SEDRONAR. Prueba que el sistema se adapta solo con configuración: la captura por voz y el triaje por criticidad son los mismos; cambian los programas y los campos del informe."
+                        : "It isn't a second NGO on board: it's a configuration I built for an intervention at the opposite end —problematic substance-use treatment— and validated against my own experience with the SEDRONAR model. It proves the system adapts through configuration alone: voice capture and criticality triage are the same; only the programs and report fields change."}
                     </p>
                   </div>
                 </Block>
@@ -1369,10 +1226,55 @@ export default async function EstoyaiPage({
                 </h2>
                 <p className="text-light text-lg leading-relaxed">
                   {es
-                    ? "EstoyAi arrancó como una idea en Halketon (junio 2026) y lo seguí por mi cuenta hasta el MVP funcional que existe hoy, sobre la investigación con 16 organizaciones. Todavía no hay despliegues en producción: busco las primeras ONGs para un piloto real. El sistema está disponible para cualquier organización que quiera adoptarlo."
-                    : "EstoyAi started as an idea at Halketon (June 2026) and I carried it on my own to the working MVP that exists today, on top of the research with 16 organizations. There are no production deployments yet: I'm looking for the first NGOs for a real pilot. The system is available for any organization that wants to adopt it."}
+                    ? "Hoy EstoyAi es un MVP funcional, diseñado y construido en solitario después del hackathon. Validé el problema con la dirección de Pequeños Pasos, pero todavía nadie de una ONG usó el flujo completo en un día laboral real. El sistema está disponible para cualquier organización que quiera adoptarlo."
+                    : "Today EstoyAi is a working MVP, designed and built solo after the hackathon. I validated the problem with the leadership of Pequeños Pasos, but no one from an NGO has yet used the full flow on a real workday. The system is available for any organization that wants to adopt it."}
                 </p>
               </div>
+
+              {/* Límites conocidos + próximo paso */}
+              <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0 [&>*]:h-full mb-12">
+                <Block colSpan={1}>
+                  <div className="bg-container/80 rounded-lg p-6 md:p-8 h-full card-elevated">
+                    <h3 className="text-xl font-semibold text-light mb-3">
+                      {es ? "Límites conocidos" : "Known limits"}
+                    </h3>
+                    <ul className="space-y-2 text-light/80 text-sm leading-relaxed list-disc pl-5">
+                      <li>
+                        {es
+                          ? "Validé el problema con coordinación, no el comportamiento con un promotor: todo el producto depende de que efectivamente dicte 2 min al terminar la visita, y eso todavía no lo observé con nadie."
+                          : "I validated the problem with coordination, not the behavior with a promoter: the whole product depends on them actually dictating 2 min after the visit, and I haven't observed that with anyone yet."}
+                      </li>
+                      <li>
+                        {es
+                          ? "Calidad de transcripción en campo: audio de celular, ruido y tonada rioplatense son el mayor riesgo técnico. Es un frente abierto que hay que medir con audio real."
+                          : "Field transcription quality: phone audio, noise, and Rioplatense accent are the biggest technical risk. It's an open front to measure with real audio."}
+                      </li>
+                      <li>
+                        {es
+                          ? "Punto único de falla: todo corre en la PC de la sede. Es lo que da la soberanía, pero sin IT en la sede, si esa PC muere, no hay sistema. Mitigación hoy: backup manual a disco externo."
+                          : "Single point of failure: everything runs on the office PC. That's what gives sovereignty, but with no IT on site, if that PC dies there's no system. Current mitigation: manual backup to an external disk."}
+                      </li>
+                    </ul>
+                  </div>
+                </Block>
+                <Block colSpan={1}>
+                  <div className="bg-container/80 rounded-lg p-6 md:p-8 h-full card-elevated">
+                    <h3 className="text-xl font-semibold text-light mb-3">
+                      {es ? "Próximo paso real" : "Real next step"}
+                    </h3>
+                    <p className="text-light/80 text-sm leading-relaxed mb-3">
+                      {es
+                        ? "Poner el flujo completo en manos de un promotor y una coordinadora durante un día de trabajo, y medir lo único que valida el producto: ¿se usa sin mí al lado?, ¿el .docx es lo que el financiador pide?, ¿cuánto tiempo ahorra de verdad frente al cuaderno?"
+                        : "Put the full flow in the hands of a promoter and a coordinator during a real workday, and measure the only thing that validates the product: is it used without me next to it? is the .docx what the funder asks for? how much time does it really save versus the notebook?"}
+                    </p>
+                    <p className="text-light/80 text-sm leading-relaxed">
+                      {es
+                        ? "Qué haría distinto: llegar antes a esa sesión con la ONG, sin esperar a “tenerlo todo”. La lección de este proyecto es que el validador no es un examen final al que llegar listo —es una dependencia del roadmap."
+                        : "What I'd do differently: get to that session with the NGO sooner, without waiting to “have it all”. The lesson of this project is that the validator isn't a final exam you show up ready for —it's a dependency of the roadmap."}
+                    </p>
+                  </div>
+                </Block>
+              </GridContainer>
 
               <div className="max-w-3xl mx-auto mb-12">
                 <p className="text-xl md:text-2xl text-light font-semibold leading-relaxed text-center">
