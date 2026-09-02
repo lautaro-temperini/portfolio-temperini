@@ -779,6 +779,76 @@ export default async function EstoyaiPage({
             <div className="h-px w-full bg-gradient-to-r from-transparent via-[#0056d2]/40 to-transparent" />
           </div>
 
+          {/* ==================== EN ACCIÓN (capturas reales) ==================== */}
+          <FadeOnScroll>
+            <section className="w-full px-8 md:px-12 lg:px-20 mb-16">
+              <div className="max-w-4xl mb-8">
+                <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">
+                  {es ? "En acción" : "In action"}
+                </h2>
+                <p className="text-light text-lg leading-relaxed">
+                  {es
+                    ? "Capturas reales del sistema corriendo, con la configuración de Pequeños Pasos y datos de ejemplo: del dictado en el celular al informe priorizado en la sede."
+                    : "Real screenshots of the running system, with the Pequeños Pasos configuration and sample data: from dictation on the phone to the prioritized report at the office."}
+                </p>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {[
+                  {
+                    src: "/images/estoyaiImages/estoyai-app-registrar.webp",
+                    capEs: "1 · Elegir programa",
+                    capEn: "1 · Choose program",
+                    altEs: "Pantalla de la app: elegir el programa de la intervención (Primera Infancia, Niñez y Adolescencia, Oficios)",
+                    altEn: "App screen: choose the intervention program (Early Childhood, Childhood & Adolescence, Trades)",
+                  },
+                  {
+                    src: "/images/estoyaiImages/estoyai-app-grabar.webp",
+                    capEs: "2 · Dictar la visita",
+                    capEn: "2 · Dictate the visit",
+                    altEs: "Pantalla de grabación activa con waveform y temporizador mientras el promotor dicta",
+                    altEn: "Active recording screen with waveform and timer while the promoter dictates",
+                  },
+                  {
+                    src: "/images/estoyaiImages/estoyai-app-informes.webp",
+                    capEs: "3 · Tablero por criticidad",
+                    capEn: "3 · Board by criticality",
+                    altEs: "Tablero de coordinación: informes filtrados por programa y criticidad (Alta, Media, Baja) con accionables",
+                    altEn: "Coordination board: reports filtered by program and criticality (High, Medium, Low) with action points",
+                  },
+                  {
+                    src: "/images/estoyaiImages/estoyai-app-preview.webp",
+                    capEs: "4 · Informe .docx",
+                    capEn: "4 · The .docx report",
+                    altEs: "Vista del informe generado con estructura fija: resumen, identificación, intervención, acciones pendientes",
+                    altEn: "Generated report view with fixed structure: summary, identification, intervention, pending actions",
+                  },
+                ].map((s) => (
+                  <DevImage
+                    key={s.src}
+                    src={s.src}
+                    alt={es ? s.altEs : s.altEn}
+                    width={390}
+                    height={844}
+                    caption={es ? s.capEs : s.capEn}
+                    className="w-full"
+                    imageClassName="object-cover object-top"
+                    sizes="(max-width: 768px) 45vw, 22vw"
+                  />
+                ))}
+              </div>
+              <p className="text-xs text-light/40 italic mt-4">
+                {es
+                  ? "UI real corriendo en local (Next.js). El .docx final y la transcripción requieren el stack completo en la sede."
+                  : "Real UI running locally (Next.js). The final .docx and transcription require the full stack at the office."}
+              </p>
+            </section>
+          </FadeOnScroll>
+
+          {/* ==================== DIVIDER ==================== */}
+          <div className="w-full px-8 md:px-12 lg:px-20 mb-28">
+            <div className="h-px w-full bg-gradient-to-r from-transparent via-[#0056d2]/40 to-transparent" />
+          </div>
+
           {/* ==================== PRIORIZACIÓN POR CRITICIDAD ==================== */}
           <FadeOnScroll>
             <section id="criticidad" className="w-full px-8 md:px-12 lg:px-20 mb-16">
@@ -1282,6 +1352,26 @@ export default async function EstoyaiPage({
                     ? "Diseñar desde las restricciones —sin señal, sin presupuesto, sin equipo técnico, con datos que no pueden salir— no fue una limitación. Fue el producto."
                     : "Designing from the constraints —no signal, no budget, no technical team, with data that can't leave— wasn't a limitation. It was the product."}
                 </p>
+              </div>
+
+              <div className="max-w-4xl mx-auto mb-10">
+                <DevImage
+                  src="/images/estoyaiImages/estoyai-landing-hero.webp"
+                  alt={
+                    es
+                      ? "Landing pública de EstoyAi (estoyai.com): hero con el mensaje 'La ONG hace el trabajo. EstoyAi lo deja escrito' y un mockup del celular grabando"
+                      : "EstoyAi public landing (estoyai.com): hero with the message 'The NGO does the work. EstoyAi writes it down' and a phone recording mockup"
+                  }
+                  width={1440}
+                  height={820}
+                  caption={
+                    es
+                      ? "También diseñé la landing pública (estoyai.com), pensada para que otras ONGs adopten el sistema."
+                      : "I also designed the public landing (estoyai.com), aimed at getting other NGOs to adopt the system."
+                  }
+                  className="w-full"
+                  imageClassName="object-cover object-top"
+                />
               </div>
 
               <div className="flex flex-wrap justify-center gap-4">
