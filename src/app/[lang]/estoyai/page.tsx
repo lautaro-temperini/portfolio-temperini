@@ -1141,17 +1141,17 @@ export default async function EstoyaiPage({
 
               <div className="mb-10 rounded-2xl border-l-4 border-[#4C8DFF] bg-container/40 p-6 md:p-8">
                 <span className="text-xs font-bold tracking-widest text-[#4C8DFF]">
-                  {es ? "LA TESIS" : "THE THESIS"}
+                  {es ? "LA TESIS, EN LA ARQUITECTURA" : "THE THESIS, IN THE ARCHITECTURE"}
                 </span>
                 <p className="text-light text-lg md:text-xl leading-relaxed mt-3">
                   {es
-                    ? "Entre una ONG de nutrición y una de tratamiento de consumos, lo único que cambia es el esquema de datos. Si eso es cierto, no estás construyendo una solución para una ONG: estás construyendo infraestructura para el sector."
-                    : "Between a nutrition NGO and a substance-use treatment NGO, the only thing that changes is the data schema. If that's true, you're not building a solution for one NGO: you're building infrastructure for the sector."}
+                    ? "La tesis del arranque no es un eslogan: define la arquitectura. Lo específico de cada organización —programas, campos del informe, schema de extracción— es configuración; la captura por voz, el pipeline local y el triaje por criticidad son el núcleo compartido."
+                    : "The opening thesis isn't a slogan: it defines the architecture. What's specific to each organization —programs, report fields, extraction schema— is configuration; voice capture, the local pipeline, and criticality triage are the shared core."}
                 </p>
                 <p className="text-light/70 leading-relaxed mt-4">
                   {es
-                    ? "Esa observación redefinió el alcance del proyecto. La validé contra mi propia experiencia en el modelo SEDRONAR de tratamiento de consumos —una intervención en las antípodas de una visita de nutrición— y se sostuvo: la captura por voz y el triaje por criticidad son los mismos; cambian los programas y los campos del informe."
-                    : "That observation redefined the project's scope. I validated it against my own experience with the SEDRONAR substance-use treatment model —an intervention at the opposite end from a nutrition visit— and it held: voice capture and criticality triage are the same; only the programs and report fields change."}
+                    ? "Lo probé contra mi propia experiencia en el modelo SEDRONAR de tratamiento de consumos —una intervención en las antípodas de una visita de nutrición—: la estructura se sostuvo, solo cambió la configuración. Eso es lo que separa una herramienta para una ONG de una infraestructura para el sector."
+                    : "I tested it against my own experience with the SEDRONAR substance-use treatment model —an intervention at the opposite end from a nutrition visit—: the structure held, only the configuration changed. That's what separates a tool for one NGO from infrastructure for the sector."}
                 </p>
               </div>
 
@@ -1171,8 +1171,8 @@ export default async function EstoyaiPage({
                     </p>
                     <p className="text-light/85 leading-relaxed mb-4">
                       {es
-                        ? "La organización con la que se diseñó el sistema, alrededor de tres programas de seguimiento de familias:"
-                        : "The organization the system was designed with, around three family follow-up programs:"}
+                        ? "La organización con la que se diseñó el sistema, con tres programas de seguimiento de familias:"
+                        : "The organization the system was designed with, running three family follow-up programs:"}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {[
@@ -1251,8 +1251,8 @@ export default async function EstoyaiPage({
                       </li>
                       <li>
                         {es
-                          ? "Punto único de falla: todo corre en la PC de la sede. Es lo que da la soberanía, pero sin IT en la sede, si esa PC muere, no hay sistema. Mitigación hoy: backup manual a disco externo."
-                          : "Single point of failure: everything runs on the office PC. That's what gives sovereignty, but with no IT on site, if that PC dies there's no system. Current mitigation: manual backup to an external disk."}
+                          ? "Disponibilidad vs. durabilidad. Si la PC de la sede muere, el servicio se cae: es el precio de que nada salga de la sede, no algo que se pueda “mitigar” sin traicionar el modelo. Los datos, en cambio, sí están cubiertos —backup manual a un disco externo—. No auto-enviarlos a la nube es una decisión deliberada: los endpoints a R2 existen en el código pero quedan fuera del producto, por la misma razón de privacidad."
+                          : "Availability vs. durability. If the office PC dies, the service goes down: that's the price of nothing leaving the office, not something you can “mitigate” without betraying the model. The data, however, is covered —manual backup to an external disk—. Not auto-sending it to the cloud is a deliberate choice: the R2 endpoints exist in the code but stay out of the product, for the same privacy reason."}
                       </li>
                     </ul>
                   </div>
