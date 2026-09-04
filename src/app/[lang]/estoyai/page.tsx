@@ -792,7 +792,7 @@ export default async function EstoyaiPage({
                     : "Real screenshots of the running system, with the Pequeños Pasos configuration and sample data: from dictation on the phone to the prioritized report at the office."}
                 </p>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
                 {[
                   {
                     src: "/images/estoyaiImages/estoyai-app-registrar.webp",
@@ -809,16 +809,23 @@ export default async function EstoyaiPage({
                     altEn: "Active recording screen with waveform and timer while the promoter dictates",
                   },
                   {
+                    src: "/images/estoyaiImages/estoyai-app-registros.webp",
+                    capEs: "3 · Cola offline y estados",
+                    capEn: "3 · Offline queue & states",
+                    altEs: "Lista 'Mis registros': tarjetas con estados En cola, Procesando, Enviado a coordinación y Error con reintentar",
+                    altEn: "'My records' list: cards with states Queued, Processing, Sent to coordination, and Error with retry",
+                  },
+                  {
                     src: "/images/estoyaiImages/estoyai-app-informes.webp",
-                    capEs: "3 · Tablero por criticidad",
-                    capEn: "3 · Board by criticality",
+                    capEs: "4 · Tablero por criticidad",
+                    capEn: "4 · Board by criticality",
                     altEs: "Tablero de coordinación: informes filtrados por programa y criticidad (Alta, Media, Baja) con accionables",
                     altEn: "Coordination board: reports filtered by program and criticality (High, Medium, Low) with action points",
                   },
                   {
                     src: "/images/estoyaiImages/estoyai-app-preview.webp",
-                    capEs: "4 · Informe .docx",
-                    capEn: "4 · The .docx report",
+                    capEs: "5 · Informe .docx",
+                    capEn: "5 · The .docx report",
                     altEs: "Vista del informe generado con estructura fija: resumen, identificación, intervención, acciones pendientes",
                     altEn: "Generated report view with fixed structure: summary, identification, intervention, pending actions",
                   },
