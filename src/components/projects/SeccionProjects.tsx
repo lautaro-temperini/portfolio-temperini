@@ -78,7 +78,7 @@ export default async function Projects({ lang }: ProjectsProps) {
                 {projectsData
                   .filter((project) => project.slug !== "digito")
                   .sort((a, b) => {
-                    const order = ["manijapp", "gloryfit", "levelup", "vorterix"]
+                    const order = ["estoyai", "manijapp", "gloryfit", "levelup", "vorterix"]
                     return order.indexOf(a.slug) - order.indexOf(b.slug)
                   })
                   .map((project) => (
