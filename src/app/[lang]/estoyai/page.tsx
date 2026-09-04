@@ -774,9 +774,9 @@ export default async function EstoyaiPage({
           {/* ==================== EN ACCIÓN (capturas reales) ==================== */}
           <FadeOnScroll>
             <section className="w-full px-8 md:px-12 lg:px-20 mb-16">
-              {/* Izquierda: título + intro + los 5 pasos. Derecha: video del flujo */}
-              <div className="flex flex-col md:flex-row items-center gap-10 lg:gap-20">
-                <div className="md:flex-1 md:max-w-xl">
+              {/* Izquierda: título + intro + los 5 pasos. Derecha (centrado en su mitad): video */}
+              <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-10 lg:gap-16 mb-14">
+                <div className="md:max-w-xl">
                   <h2 className="text-3xl md:text-4xl font-bold text-light mb-5">
                     {es ? "En acción" : "In action"}
                   </h2>
@@ -825,14 +825,14 @@ export default async function EstoyaiPage({
                       : "Real UI running locally. The final .docx and transcription use the full stack at the office."}
                   </p>
                 </div>
-                <div className="w-full max-w-[300px] flex-shrink-0">
-                  <div className="w-full rounded-[2.2rem] border-[7px] border-[#0b0b0b] overflow-hidden shadow-2xl bg-black">
+                <div className="flex justify-center">
+                  <div className="w-full max-w-[300px] rounded-[2.2rem] border-[7px] border-[#0b0b0b] overflow-hidden shadow-2xl bg-black">
                     <video
                       autoPlay
                       muted
                       loop
                       playsInline
-                      preload="metadata"
+                      preload="auto"
                       aria-label={es ? "Grabación de pantalla del flujo real de la app" : "Screen recording of the app's real flow"}
                       className="block w-full h-auto"
                     >
@@ -840,6 +840,48 @@ export default async function EstoyaiPage({
                     </video>
                   </div>
                 </div>
+              </div>
+
+              {/* Fila de 4 capturas del flujo */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {[
+                  {
+                    src: "/images/estoyaiImages/estoyai-app-grabar.webp",
+                    capEs: "Dictar la visita", capEn: "Dictate the visit",
+                    altEs: "Pantalla de grabación activa con waveform y temporizador",
+                    altEn: "Active recording screen with waveform and timer",
+                  },
+                  {
+                    src: "/images/estoyaiImages/estoyai-app-registros.webp",
+                    capEs: "Cola offline y estados", capEn: "Offline queue & states",
+                    altEs: "Lista 'Mis registros' con estados En cola, Procesando, Enviado y Error",
+                    altEn: "'My records' list with states Queued, Processing, Sent, and Error",
+                  },
+                  {
+                    src: "/images/estoyaiImages/estoyai-app-informes.webp",
+                    capEs: "Tablero por criticidad", capEn: "Board by criticality",
+                    altEs: "Tablero de coordinación con filtros por criticidad y accionables",
+                    altEn: "Coordination board with criticality filters and action points",
+                  },
+                  {
+                    src: "/images/estoyaiImages/estoyai-app-preview.webp",
+                    capEs: "Informe .docx", capEn: "The .docx report",
+                    altEs: "Vista del informe generado con estructura fija",
+                    altEn: "Generated report view with a fixed structure",
+                  },
+                ].map((s) => (
+                  <DevImage
+                    key={s.src}
+                    src={s.src}
+                    alt={es ? s.altEs : s.altEn}
+                    width={390}
+                    height={844}
+                    caption={es ? s.capEs : s.capEn}
+                    className="w-full"
+                    imageClassName="object-cover object-top"
+                    sizes="(max-width: 768px) 45vw, 22vw"
+                  />
+                ))}
               </div>
             </section>
           </FadeOnScroll>
@@ -953,38 +995,6 @@ export default async function EstoyaiPage({
                   </div>
                 </Block>
               </GridContainer>
-
-              {/* Capturas: tablero de coordinación + informe .docx */}
-              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
-                <DevImage
-                  src="/images/estoyaiImages/estoyai-app-informes.webp"
-                  alt={
-                    es
-                      ? "Tablero de coordinación: informes filtrados por programa y criticidad (Alta, Media, Baja) con accionables"
-                      : "Coordination board: reports filtered by program and criticality (High, Medium, Low) with action points"
-                  }
-                  width={390}
-                  height={844}
-                  caption={es ? "El tablero, agrupado por criticidad" : "The board, grouped by criticality"}
-                  className="w-full"
-                  imageClassName="object-cover object-top"
-                  sizes="(max-width: 640px) 90vw, 360px"
-                />
-                <DevImage
-                  src="/images/estoyaiImages/estoyai-app-preview.webp"
-                  alt={
-                    es
-                      ? "Vista del informe .docx generado con estructura fija: resumen, identificación, intervención, acciones pendientes"
-                      : "Generated .docx report view with a fixed structure: summary, identification, intervention, pending actions"
-                  }
-                  width={390}
-                  height={844}
-                  caption={es ? "El informe .docx que llega a la sede" : "The .docx report that reaches the office"}
-                  className="w-full"
-                  imageClassName="object-cover object-top"
-                  sizes="(max-width: 640px) 90vw, 360px"
-                />
-              </div>
 
               {/* Pantalla de revisión: la IA propone, el promotor confirma */}
               <div className="mt-6 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 items-center rounded-2xl border border-subtle/60 bg-container/40 p-6 md:p-8">
@@ -1392,86 +1402,88 @@ export default async function EstoyaiPage({
                 </p>
               </div>
 
-              {/* 4 columnas: texto + captura por tenant, alturas igualadas */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
-                {/* Pequeños Pasos — texto */}
-                <div className="bg-container/80 rounded-lg p-6 card-elevated h-full flex flex-col justify-center">
-                  <div className="flex items-center gap-2 mb-3">
-                    <h3 className="text-xl font-semibold text-light">Pequeños Pasos</h3>
-                    <span className="rounded-full bg-[#0056d2]/20 border border-[#4C8DFF]/40 px-2 py-0.5 text-[10px] font-semibold text-light/80">
-                      {es ? "PILOTO" : "PILOT"}
-                    </span>
-                  </div>
-                  <p className="text-light/70 text-sm mb-4">
-                    {es
-                      ? "ONG de intervención territorial · pequenospasos.estoyai.com"
-                      : "Territorial-intervention NGO · pequenospasos.estoyai.com"}
-                  </p>
-                  <p className="text-light/85 text-sm leading-relaxed mb-4">
-                    {es
-                      ? "La organización con la que se diseñó el sistema, con tres programas de seguimiento de familias."
-                      : "The organization the system was designed with, running three family follow-up programs."}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {[
-                      es ? "Primera Infancia" : "Early Childhood",
-                      es ? "Niñez y Adolescencia" : "Childhood & Adolescence",
-                      es ? "Oficios" : "Trades",
-                    ].map((p) => (
-                      <span
-                        key={p}
-                        className="rounded-full border border-subtle/60 bg-white/[0.03] px-3 py-1 text-xs text-light/80"
-                      >
-                        {p}
+              {/* Un contenedor por tenant, con su texto (arriba) y su captura */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                {/* Pequeños Pasos */}
+                <div className="rounded-2xl border border-subtle/50 bg-container/40 p-5 grid grid-cols-1 sm:grid-cols-2 gap-5 items-start">
+                  <div>
+                    <div className="flex items-center gap-2 mb-3">
+                      <h3 className="text-xl font-semibold text-light">Pequeños Pasos</h3>
+                      <span className="rounded-full bg-[#0056d2]/20 border border-[#4C8DFF]/40 px-2 py-0.5 text-[10px] font-semibold text-light/80">
+                        {es ? "PILOTO" : "PILOT"}
                       </span>
-                    ))}
+                    </div>
+                    <p className="text-light/70 text-sm mb-4">
+                      {es
+                        ? "ONG de intervención territorial · pequenospasos.estoyai.com"
+                        : "Territorial-intervention NGO · pequenospasos.estoyai.com"}
+                    </p>
+                    <p className="text-light/85 text-sm leading-relaxed mb-4">
+                      {es
+                        ? "La organización con la que se diseñó el sistema, con tres programas de seguimiento de familias."
+                        : "The organization the system was designed with, running three family follow-up programs."}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {[
+                        es ? "Primera Infancia" : "Early Childhood",
+                        es ? "Niñez y Adolescencia" : "Childhood & Adolescence",
+                        es ? "Oficios" : "Trades",
+                      ].map((p) => (
+                        <span
+                          key={p}
+                          className="rounded-full border border-subtle/60 bg-white/[0.03] px-3 py-1 text-xs text-light/80"
+                        >
+                          {p}
+                        </span>
+                      ))}
+                    </div>
                   </div>
+                  <DevImage
+                    src="/images/estoyaiImages/estoyai-app-registrar.webp"
+                    alt={
+                      es
+                        ? "Pantalla 'Elegir programa' del tenant Pequeños Pasos: Primera Infancia, Niñez y Adolescencia, Oficios"
+                        : "'Choose program' screen for the Pequeños Pasos tenant: Early Childhood, Childhood & Adolescence, Trades"
+                    }
+                    width={390}
+                    height={844}
+                    className="w-full"
+                    imageClassName="object-cover object-top"
+                    sizes="(max-width: 768px) 45vw, 22vw"
+                  />
                 </div>
-                {/* Pequeños Pasos — captura */}
-                <DevImage
-                  src="/images/estoyaiImages/estoyai-app-registrar.webp"
-                  alt={
-                    es
-                      ? "Pantalla 'Elegir programa' del tenant Pequeños Pasos: Primera Infancia, Niñez y Adolescencia, Oficios"
-                      : "'Choose program' screen for the Pequeños Pasos tenant: Early Childhood, Childhood & Adolescence, Trades"
-                  }
-                  width={390}
-                  height={844}
-                  className="w-full"
-                  imageClassName="object-cover object-top"
-                  sizes="(max-width: 768px) 90vw, 22vw"
-                />
-                {/* DTC — texto */}
-                <div className="bg-container/80 rounded-lg p-6 card-elevated h-full flex flex-col justify-center">
-                  <div className="flex items-center gap-2 mb-3">
-                    <h3 className="text-xl font-semibold text-light">DTC Villatranquila</h3>
-                    <span className="rounded-full bg-[#34D399]/15 border border-[#34D399]/40 px-2 py-0.5 text-[10px] font-semibold text-light/80">
-                      {es ? "PRUEBA DE CONCEPTO" : "PROOF OF CONCEPT"}
-                    </span>
+                {/* DTC Villatranquila */}
+                <div className="rounded-2xl border border-subtle/50 bg-container/40 p-5 grid grid-cols-1 sm:grid-cols-2 gap-5 items-start">
+                  <div>
+                    <div className="flex items-center gap-2 mb-3">
+                      <h3 className="text-xl font-semibold text-light">DTC Villatranquila</h3>
+                      <span className="rounded-full bg-[#34D399]/15 border border-[#34D399]/40 px-2 py-0.5 text-[10px] font-semibold text-light/80">
+                        {es ? "PRUEBA DE CONCEPTO" : "PROOF OF CONCEPT"}
+                      </span>
+                    </div>
+                    <p className="text-light/70 text-sm mb-4">
+                      {es ? "Modelo SEDRONAR de tratamiento de consumos" : "SEDRONAR model for substance-use treatment"}
+                    </p>
+                    <p className="text-light/85 text-sm leading-relaxed">
+                      {es
+                        ? "No es una segunda ONG a bordo. Es una configuración que armé yo para una intervención en las antípodas (tratamiento de consumos problemáticos), y la validé contra mi propia experiencia en el modelo SEDRONAR. Prueba que el sistema se adapta solo con configuración. La captura por voz y el triaje por criticidad son los mismos, cambian los programas y los campos del informe."
+                        : "It isn't a second NGO on board. It's a configuration I built for an intervention at the opposite end (problematic substance-use treatment), validated against my own experience with the SEDRONAR model. It proves the system adapts through configuration alone. Voice capture and criticality triage are the same, only the programs and report fields change."}
+                    </p>
                   </div>
-                  <p className="text-light/70 text-sm mb-4">
-                    {es ? "Modelo SEDRONAR de tratamiento de consumos" : "SEDRONAR model for substance-use treatment"}
-                  </p>
-                  <p className="text-light/85 text-sm leading-relaxed">
-                    {es
-                      ? "No es una segunda ONG a bordo. Es una configuración que armé yo para una intervención en las antípodas (tratamiento de consumos problemáticos), y la validé contra mi propia experiencia en el modelo SEDRONAR. Prueba que el sistema se adapta solo con configuración. La captura por voz y el triaje por criticidad son los mismos, cambian los programas y los campos del informe."
-                      : "It isn't a second NGO on board. It's a configuration I built for an intervention at the opposite end (problematic substance-use treatment), validated against my own experience with the SEDRONAR model. It proves the system adapts through configuration alone. Voice capture and criticality triage are the same, only the programs and report fields change."}
-                  </p>
+                  <DevImage
+                    src="/images/estoyaiImages/estoyai-app-registrar-dtc.webp"
+                    alt={
+                      es
+                        ? "Misma pantalla en el tenant DTC Villa Tranquila: Hoja de Primer Contacto, Seguimiento, Taller / Actividad"
+                        : "Same screen for the DTC Villa Tranquila tenant: First Contact Sheet, Follow-up, Workshop / Activity"
+                    }
+                    width={390}
+                    height={844}
+                    className="w-full"
+                    imageClassName="object-cover object-top"
+                    sizes="(max-width: 768px) 45vw, 22vw"
+                  />
                 </div>
-                {/* DTC — captura */}
-                <DevImage
-                  src="/images/estoyaiImages/estoyai-app-registrar-dtc.webp"
-                  alt={
-                    es
-                      ? "Misma pantalla en el tenant DTC Villa Tranquila: Hoja de Primer Contacto, Seguimiento, Taller / Actividad"
-                      : "Same screen for the DTC Villa Tranquila tenant: First Contact Sheet, Follow-up, Workshop / Activity"
-                  }
-                  width={390}
-                  height={844}
-                  className="w-full"
-                  imageClassName="object-cover object-top"
-                  sizes="(max-width: 768px) 90vw, 22vw"
-                />
               </div>
               <p className="text-center text-light/60 text-sm mt-6 max-w-2xl mx-auto">
                 {es
@@ -1556,7 +1568,7 @@ export default async function EstoyaiPage({
                     muted
                     loop
                     playsInline
-                    preload="metadata"
+                    preload="auto"
                     aria-label={es ? "Recorrido de la landing pública de EstoyAi" : "Scroll-through of the EstoyAi public landing"}
                     className="block w-full h-auto"
                   >
