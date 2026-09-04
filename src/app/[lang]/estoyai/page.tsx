@@ -954,6 +954,33 @@ export default async function EstoyaiPage({
                 </Block>
               </GridContainer>
 
+              {/* Pantalla de revisión: la IA propone, el promotor confirma */}
+              <div className="mt-6 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 items-center rounded-2xl border border-subtle/60 bg-container/40 p-6 md:p-8">
+                <div>
+                  <h3 className="text-xl font-semibold text-light mb-3">
+                    {es ? "La IA propone, una persona confirma" : "The AI proposes, a person confirms"}
+                  </h3>
+                  <p className="text-light/85 leading-relaxed">
+                    {es
+                      ? "Antes de enviar a coordinación, el promotor abre la pantalla de revisión: puede corregir la prioridad (Alta / Media / Baja), el motivo, el resumen y los accionables, ver la transcripción completa y elegir qué secciones entran al .docx. La criticidad que asignó el modelo es un punto de partida editable, no una decisión automática sin control humano."
+                      : "Before sending to coordination, the promoter opens the review screen: they can fix the priority (High / Medium / Low), the reason, the summary, and the action points, see the full transcript, and choose which sections go into the .docx. The criticality the model assigned is an editable starting point, not an automatic decision without human control."}
+                  </p>
+                </div>
+                <DevImage
+                  src="/images/estoyaiImages/estoyai-app-editar.webp"
+                  alt={
+                    es
+                      ? "Pantalla 'Editar informe': selector de prioridad Alta/Media/Baja, motivo de criticidad, resumen, acciones pendientes y selección de secciones del .docx"
+                      : "'Edit report' screen: High/Medium/Low priority selector, criticality reason, summary, pending actions, and .docx section selection"
+                  }
+                  width={330}
+                  height={520}
+                  className="w-full max-w-[280px] mx-auto md:mx-0"
+                  imageClassName="object-cover object-top"
+                  sizes="(max-width: 768px) 70vw, 280px"
+                />
+              </div>
+
               {/* Decisión del modelo (eval) */}
               <div className="mt-6 rounded-2xl border border-[#0056d2]/25 bg-gradient-to-br from-[#04173a]/40 to-[#0d1c2e]/40 p-6 md:p-8">
                 <h3 className="text-xl font-semibold text-light mb-3">
@@ -1126,6 +1153,62 @@ export default async function EstoyaiPage({
                     </div>
                   ))}
                 </div>
+
+                {/* Diagrama: la sede por dentro (todo en Docker, nada sale) */}
+                <div className="mt-8 rounded-xl border border-[#34D399]/25 bg-black/20 p-5 md:p-6">
+                  <p className="text-[11px] font-bold tracking-widest text-[#34D399] mb-5 text-center">
+                    {es ? "TODO EN LA PC DE LA SEDE · DOCKER" : "ALL ON THE OFFICE PC · DOCKER"}
+                  </p>
+                  <div className="flex flex-col lg:flex-row items-stretch gap-3">
+                    <div className="rounded-lg border border-[#4C8DFF]/30 bg-white/[0.03] p-3 text-center lg:w-36 lg:flex lg:flex-col lg:justify-center">
+                      <span className="text-[10px] font-bold tracking-widest text-[#4C8DFF]">
+                        {es ? "CAMPO" : "FIELD"}
+                      </span>
+                      <p className="text-light text-sm font-semibold mt-1 leading-tight">
+                        {es ? "Celulares" : "Phones"}
+                      </p>
+                      <p className="text-light/50 text-xs">PWA offline</p>
+                    </div>
+                    <div className="flex items-center justify-center text-light/40 shrink-0" aria-hidden="true">
+                      <span className="lg:hidden text-xs">↓ Cloudflare Tunnel ↓</span>
+                      <span className="hidden lg:flex flex-col items-center leading-tight">
+                        <span className="text-lg">→</span>
+                        <span className="text-[9px] text-center">Cloudflare<br />Tunnel</span>
+                      </span>
+                    </div>
+                    <div className="flex-1 rounded-lg border border-dashed border-[#34D399]/40 bg-[#34D399]/[0.04] p-3">
+                      <div className="flex flex-col sm:flex-row items-stretch gap-2">
+                        {[
+                          { t: "app-pwa", s: es ? "PWA + API" : "PWA + API", c: "#4C8DFF" },
+                          { t: "n8n", s: es ? "orquestación" : "orchestration", c: "#4C8DFF" },
+                          { t: "faster-whisper", s: es ? "transcripción" : "transcription", c: "#4C8DFF" },
+                          { t: "Ollama · gemma3:4b", s: es ? "extracción IA" : "AI extraction", c: "#4C8DFF" },
+                          { t: "SQLite + .docx", s: es ? "datos e informe" : "data & report", c: "#34D399" },
+                        ].map((n, i, arr) => (
+                          <div key={n.t} className="flex flex-col sm:flex-row items-center sm:flex-1">
+                            <div className="w-full rounded-md border border-white/10 bg-white/[0.03] px-2 py-2 text-center">
+                              <p className="text-light text-xs font-semibold leading-tight" style={{ color: n.c }}>
+                                {n.t}
+                              </p>
+                              <p className="text-light/55 text-[10px] leading-tight mt-0.5">{n.s}</p>
+                            </div>
+                            {i < arr.length - 1 && (
+                              <span className="text-light/30 text-xs my-1 sm:my-0 sm:mx-1 shrink-0" aria-hidden="true">
+                                <span className="sm:hidden">↓</span>
+                                <span className="hidden sm:inline">→</span>
+                              </span>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-center text-light/55 text-xs mt-5 max-w-3xl mx-auto leading-relaxed">
+                    {es
+                      ? "El audio entra por el túnel a la sede; transcripción, IA, base de datos y generación del .docx ocurren en la misma máquina, todo dentro de Docker. Nada sale de ahí. Se instala con un instalador guiado, sin línea de comandos."
+                      : "Audio enters the office through the tunnel; transcription, AI, database, and .docx generation all happen on the same machine, inside Docker. Nothing leaves. It installs with a guided installer, no command line."}
+                  </p>
+                </div>
               </div>
             </section>
           </FadeOnScroll>
@@ -1279,6 +1362,43 @@ export default async function EstoyaiPage({
                   </div>
                 </Block>
               </GridContainer>
+
+              {/* Prueba visual del multi-tenant: misma pantalla, distinta config */}
+              <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <DevImage
+                  src="/images/estoyaiImages/estoyai-app-registrar.webp"
+                  alt={
+                    es
+                      ? "Pantalla 'Elegir programa' del tenant Pequeños Pasos: Primera Infancia, Niñez y Adolescencia, Oficios"
+                      : "'Choose program' screen for the Pequeños Pasos tenant: Early Childhood, Childhood & Adolescence, Trades"
+                  }
+                  width={390}
+                  height={560}
+                  caption="Pequeños Pasos"
+                  className="w-full"
+                  imageClassName="object-cover object-top"
+                  sizes="(max-width: 768px) 90vw, 45vw"
+                />
+                <DevImage
+                  src="/images/estoyaiImages/estoyai-app-registrar-dtc.webp"
+                  alt={
+                    es
+                      ? "Misma pantalla en el tenant DTC Villa Tranquila: Hoja de Primer Contacto, Seguimiento, Taller / Actividad"
+                      : "Same screen for the DTC Villa Tranquila tenant: First Contact Sheet, Follow-up, Workshop / Activity"
+                  }
+                  width={390}
+                  height={560}
+                  caption="DTC Villa Tranquila"
+                  className="w-full"
+                  imageClassName="object-cover object-top"
+                  sizes="(max-width: 768px) 90vw, 45vw"
+                />
+              </div>
+              <p className="text-center text-light/60 text-sm mt-4 max-w-2xl mx-auto">
+                {es
+                  ? "La misma pantalla y el mismo código en los dos tenants: cambian solo los programas y los campos del informe, por configuración."
+                  : "The same screen and the same code across both tenants: only the programs and report fields change, through configuration."}
+              </p>
             </section>
           </FadeOnScroll>
 
