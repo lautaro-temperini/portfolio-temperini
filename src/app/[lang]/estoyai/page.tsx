@@ -774,37 +774,38 @@ export default async function EstoyaiPage({
           {/* ==================== EN ACCIÓN (capturas reales) ==================== */}
           <FadeOnScroll>
             <section className="w-full px-8 md:px-12 lg:px-20 mb-16">
-              <div className="max-w-4xl mb-8">
-                <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">
-                  {es ? "En acción" : "In action"}
-                </h2>
-                <p className="text-light text-lg leading-relaxed">
-                  {es
-                    ? "Capturas reales del sistema corriendo, con la configuración de Pequeños Pasos y datos de ejemplo. Del dictado en el celular al informe priorizado en la sede."
-                    : "Real screenshots of the running system, with the Pequeños Pasos configuration and sample data. From dictation on the phone to the prioritized report at the office."}
-                </p>
-              </div>
-
-              {/* Video del flujo real (autoplay, muted, loop) */}
-              <div className="mb-10 flex flex-col items-center">
-                <div className="w-full max-w-[300px] rounded-[2rem] border-[6px] border-[#0b0b0b] overflow-hidden shadow-2xl bg-black">
-                  <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                    aria-label={es ? "Grabación de pantalla del flujo real de la app" : "Screen recording of the app's real flow"}
-                    className="block w-full h-auto"
-                  >
-                    <source src="/images/estoyaiImages/estoyai-demo.webm" type="video/webm" />
-                  </video>
+              {/* Título + intro a la izquierda, video del flujo a la derecha */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center mb-12">
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">
+                    {es ? "En acción" : "In action"}
+                  </h2>
+                  <p className="text-light text-lg leading-relaxed">
+                    {es
+                      ? "Capturas reales del sistema corriendo, con la configuración de Pequeños Pasos y datos de ejemplo. Del dictado en el celular al informe priorizado en la sede."
+                      : "Real screenshots of the running system, with the Pequeños Pasos configuration and sample data. From dictation on the phone to the prioritized report at the office."}
+                  </p>
+                  <p className="mt-4 text-sm text-light/60">
+                    {es
+                      ? "El flujo completo en la app, grabado en vivo."
+                      : "The full app flow, recorded live."}
+                  </p>
                 </div>
-                <p className="mt-3 text-sm text-light/70 text-center">
-                  {es
-                    ? "El flujo completo en la app, grabado en vivo."
-                    : "The full app flow, recorded live."}
-                </p>
+                <div className="flex justify-center md:justify-end">
+                  <div className="w-full max-w-[280px] rounded-[2rem] border-[6px] border-[#0b0b0b] overflow-hidden shadow-2xl bg-black">
+                    <video
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      aria-label={es ? "Grabación de pantalla del flujo real de la app" : "Screen recording of the app's real flow"}
+                      className="block w-full h-auto"
+                    >
+                      <source src="/images/estoyaiImages/estoyai-demo.webm" type="video/webm" />
+                    </video>
+                  </div>
+                </div>
               </div>
 
               <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
@@ -1101,12 +1102,12 @@ export default async function EstoyaiPage({
                       "NGOs already tried it with Asana, Notion, Salesforce, Trello, and abandoned them. The bottleneck isn't coordination, it's field recording. If visit data doesn't enter simply, the CRM stays empty anyway. EstoyAi solves capture, and whatever integrates afterward is each organization's call.",
                   },
                   {
-                    titleEs: "Por qué se dicta al salir, no durante la visita",
-                    titleEn: "Why they dictate on the way out, not during the visit",
+                    titleEs: "Por qué SQLite local y no un backend en la nube",
+                    titleEn: "Why local SQLite and not a cloud backend",
                     textEs:
-                      "El promotor dicta cuando termina la visita, no mientras acompaña a la familia. Registrar en el momento compite con la atención, y hablar en voz alta de datos sensibles frente a un menor o su familia no corresponde. Al salir del domicilio, el contexto está fresco y la familia ya no está delante.",
+                      "Un Supabase o cualquier base gestionada implica que los datos de beneficiarios vivan en un servidor de un tercero, justo lo contrario del modelo. SQLite guarda todo en un archivo dentro de la PC de la sede, sin servicio externo ni credenciales que mantener. Para una sede con un solo equipo trabajando es más que suficiente, y no agrega una dependencia de red donde no hace falta.",
                     textEn:
-                      "The promoter dictates once the visit ends, not while they're with the family. Recording in the moment competes with attention, and speaking sensitive data out loud in front of a minor or their family isn't appropriate. On the way out the context is still fresh and the family is no longer present.",
+                      "A Supabase or any managed database means beneficiary data lives on a third party's server, the exact opposite of the model. SQLite keeps everything in a file inside the office PC, with no external service or credentials to maintain. For an office with a single team working, it's more than enough, and it adds no network dependency where none is needed.",
                   },
                 ].map((d, i) => (
                   <Block key={i} colSpan={1}>
@@ -1119,6 +1120,50 @@ export default async function EstoyaiPage({
                   </Block>
                 ))}
               </GridContainer>
+
+              {/* Instalación, almacenamiento e integraciones */}
+              <div className="mt-6">
+                <h3 className="text-xl font-semibold text-light mb-5">
+                  {es ? "Instalación, datos e integraciones" : "Install, data, and integrations"}
+                </h3>
+                <BentoGrid cols={{ default: 1, md: 3 }} gap="md" className="[&>*]:h-full">
+                  {[
+                    {
+                      titleEs: "Instalación sin equipo técnico",
+                      titleEn: "Install with no technical team",
+                      textEs:
+                        "Una sede no tiene a alguien de sistemas. Todo el stack (Docker, la IA local, la base) se levanta con un instalador guiado para Windows hecho con Inno Setup, con archivos en castellano y un manual llano. Se instala y se usa, no se administra.",
+                      textEn:
+                        "An office has no IT person. The whole stack (Docker, the local AI, the database) comes up with a guided Windows installer built in Inno Setup, with Spanish-named files and a plain-language manual. You install and use it, you don't administer it.",
+                    },
+                    {
+                      titleEs: "Backup a un disco, no a la nube",
+                      titleEn: "Backup to a disk, not the cloud",
+                      textEs:
+                        "Los .docx y la base viven en la sede, y el backup va a un disco externo, manual y simple. Consideré un bucket R2, pero el free tier se llenaba con los audios y subir datos sensibles contradice el modelo. Google Drive quedó descartado por lo mismo.",
+                      textEn:
+                        "The .docx files and the database live at the office, and the backup goes to an external disk, manual and simple. I considered an R2 bucket, but the free tier filled up with the audio and uploading sensitive data contradicts the model. Google Drive was ruled out for the same reason.",
+                    },
+                    {
+                      titleEs: "Integración opcional con Podio",
+                      titleEn: "Optional Podio integration",
+                      textEs:
+                        "Para las ONGs que ya usan Podio dejé preparado un endpoint que empuja el informe hacia allá vía n8n. Es opcional. Nadie tiene que cambiar de herramienta, pero quien ya tiene una puede sincronizar el .docx sin trabajo extra.",
+                      textEn:
+                        "For NGOs that already use Podio I set up an endpoint that pushes the report there via n8n. It's optional. No one has to switch tools, but whoever already has one can sync the .docx with no extra work.",
+                    },
+                  ].map((d, i) => (
+                    <BentoItem key={i} colSpan={1}>
+                      <FeatureCard
+                        title={es ? d.titleEs : d.titleEn}
+                        description={es ? d.textEs : d.textEn}
+                        variant="dark"
+                        className="h-full"
+                      />
+                    </BentoItem>
+                  ))}
+                </BentoGrid>
+              </div>
             </section>
           </FadeOnScroll>
 
@@ -1338,63 +1383,42 @@ export default async function EstoyaiPage({
                 </p>
               </div>
 
-              <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0 [&>*]:h-full">
-                <Block colSpan={1}>
-                  <div className="bg-container/80 rounded-lg p-6 md:p-8 h-full card-elevated">
-                    <div className="flex items-center gap-2 mb-3">
-                      <h3 className="text-2xl font-semibold text-light">Pequeños Pasos</h3>
-                      <span className="rounded-full bg-[#0056d2]/20 border border-[#4C8DFF]/40 px-2 py-0.5 text-[10px] font-semibold text-light/80">
-                        {es ? "PILOTO" : "PILOT"}
-                      </span>
-                    </div>
-                    <p className="text-light/70 text-sm mb-4">
-                      {es
-                        ? "ONG de intervención territorial · pequenospasos.estoyai.com"
-                        : "Territorial-intervention NGO · pequenospasos.estoyai.com"}
-                    </p>
-                    <p className="text-light/85 leading-relaxed mb-4">
-                      {es
-                        ? "La organización con la que se diseñó el sistema, con tres programas de seguimiento de familias:"
-                        : "The organization the system was designed with, running three family follow-up programs:"}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {[
-                        es ? "Primera Infancia" : "Early Childhood",
-                        es ? "Niñez y Adolescencia" : "Childhood & Adolescence",
-                        es ? "Oficios" : "Trades",
-                      ].map((p) => (
-                        <span
-                          key={p}
-                          className="rounded-full border border-subtle/60 bg-white/[0.03] px-3 py-1 text-xs text-light/80"
-                        >
-                          {p}
-                        </span>
-                      ))}
-                    </div>
+              {/* 4 columnas: texto + captura por tenant */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
+                {/* Pequeños Pasos — texto */}
+                <div className="bg-container/80 rounded-lg p-6 card-elevated">
+                  <div className="flex items-center gap-2 mb-3">
+                    <h3 className="text-xl font-semibold text-light">Pequeños Pasos</h3>
+                    <span className="rounded-full bg-[#0056d2]/20 border border-[#4C8DFF]/40 px-2 py-0.5 text-[10px] font-semibold text-light/80">
+                      {es ? "PILOTO" : "PILOT"}
+                    </span>
                   </div>
-                </Block>
-                <Block colSpan={1}>
-                  <div className="bg-container/80 rounded-lg p-6 md:p-8 h-full card-elevated">
-                    <div className="flex items-center gap-2 mb-3">
-                      <h3 className="text-2xl font-semibold text-light">DTC Villatranquila</h3>
-                      <span className="rounded-full bg-[#34D399]/15 border border-[#34D399]/40 px-2 py-0.5 text-[10px] font-semibold text-light/80">
-                        {es ? "PRUEBA DE CONCEPTO" : "PROOF OF CONCEPT"}
+                  <p className="text-light/70 text-sm mb-4">
+                    {es
+                      ? "ONG de intervención territorial · pequenospasos.estoyai.com"
+                      : "Territorial-intervention NGO · pequenospasos.estoyai.com"}
+                  </p>
+                  <p className="text-light/85 text-sm leading-relaxed mb-4">
+                    {es
+                      ? "La organización con la que se diseñó el sistema, con tres programas de seguimiento de familias."
+                      : "The organization the system was designed with, running three family follow-up programs."}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      es ? "Primera Infancia" : "Early Childhood",
+                      es ? "Niñez y Adolescencia" : "Childhood & Adolescence",
+                      es ? "Oficios" : "Trades",
+                    ].map((p) => (
+                      <span
+                        key={p}
+                        className="rounded-full border border-subtle/60 bg-white/[0.03] px-3 py-1 text-xs text-light/80"
+                      >
+                        {p}
                       </span>
-                    </div>
-                    <p className="text-light/70 text-sm mb-4">
-                      {es ? "Modelo SEDRONAR de tratamiento de consumos" : "SEDRONAR model for substance-use treatment"}
-                    </p>
-                    <p className="text-light/85 leading-relaxed">
-                      {es
-                        ? "No es una segunda ONG a bordo. Es una configuración que armé yo para una intervención en las antípodas (tratamiento de consumos problemáticos), y la validé contra mi propia experiencia en el modelo SEDRONAR. Prueba que el sistema se adapta solo con configuración. La captura por voz y el triaje por criticidad son los mismos, cambian los programas y los campos del informe."
-                        : "It isn't a second NGO on board. It's a configuration I built for an intervention at the opposite end (problematic substance-use treatment), validated against my own experience with the SEDRONAR model. It proves the system adapts through configuration alone. Voice capture and criticality triage are the same, only the programs and report fields change."}
-                    </p>
+                    ))}
                   </div>
-                </Block>
-              </GridContainer>
-
-              {/* Prueba visual del multi-tenant: misma pantalla, distinta config */}
-              <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+                </div>
+                {/* Pequeños Pasos — captura */}
                 <DevImage
                   src="/images/estoyaiImages/estoyai-app-registrar.webp"
                   alt={
@@ -1404,11 +1428,28 @@ export default async function EstoyaiPage({
                   }
                   width={390}
                   height={844}
-                  caption="Pequeños Pasos"
                   className="w-full"
                   imageClassName="object-cover object-top"
-                  sizes="(max-width: 768px) 90vw, 45vw"
+                  sizes="(max-width: 768px) 90vw, 22vw"
                 />
+                {/* DTC — texto */}
+                <div className="bg-container/80 rounded-lg p-6 card-elevated">
+                  <div className="flex items-center gap-2 mb-3">
+                    <h3 className="text-xl font-semibold text-light">DTC Villatranquila</h3>
+                    <span className="rounded-full bg-[#34D399]/15 border border-[#34D399]/40 px-2 py-0.5 text-[10px] font-semibold text-light/80">
+                      {es ? "PRUEBA DE CONCEPTO" : "PROOF OF CONCEPT"}
+                    </span>
+                  </div>
+                  <p className="text-light/70 text-sm mb-4">
+                    {es ? "Modelo SEDRONAR de tratamiento de consumos" : "SEDRONAR model for substance-use treatment"}
+                  </p>
+                  <p className="text-light/85 text-sm leading-relaxed">
+                    {es
+                      ? "No es una segunda ONG a bordo. Es una configuración que armé yo para una intervención en las antípodas (tratamiento de consumos problemáticos), y la validé contra mi propia experiencia en el modelo SEDRONAR. Prueba que el sistema se adapta solo con configuración. La captura por voz y el triaje por criticidad son los mismos, cambian los programas y los campos del informe."
+                      : "It isn't a second NGO on board. It's a configuration I built for an intervention at the opposite end (problematic substance-use treatment), validated against my own experience with the SEDRONAR model. It proves the system adapts through configuration alone. Voice capture and criticality triage are the same, only the programs and report fields change."}
+                  </p>
+                </div>
+                {/* DTC — captura */}
                 <DevImage
                   src="/images/estoyaiImages/estoyai-app-registrar-dtc.webp"
                   alt={
@@ -1418,16 +1459,15 @@ export default async function EstoyaiPage({
                   }
                   width={390}
                   height={844}
-                  caption="DTC Villa Tranquila"
                   className="w-full"
                   imageClassName="object-cover object-top"
-                  sizes="(max-width: 768px) 90vw, 45vw"
+                  sizes="(max-width: 768px) 90vw, 22vw"
                 />
               </div>
-              <p className="text-center text-light/60 text-sm mt-4 max-w-2xl mx-auto">
+              <p className="text-center text-light/60 text-sm mt-6 max-w-2xl mx-auto">
                 {es
-                  ? "La misma pantalla y el mismo código en los dos tenants: cambian solo los programas y los campos del informe, por configuración."
-                  : "The same screen and the same code across both tenants: only the programs and report fields change, through configuration."}
+                  ? "La misma pantalla y el mismo código en los dos tenants. Cambian solo los programas y los campos del informe, por configuración."
+                  : "The same screen and the same code across both tenants. Only the programs and report fields change, through configuration."}
               </p>
             </section>
           </FadeOnScroll>
@@ -1496,15 +1536,11 @@ export default async function EstoyaiPage({
                 </Block>
               </GridContainer>
 
-              <div className="max-w-3xl mx-auto mb-12">
-                <p className="text-xl md:text-2xl text-light font-semibold leading-relaxed text-center">
-                  {es
-                    ? "Diseñar desde las restricciones, sin señal, sin presupuesto, sin equipo técnico, con datos que no pueden salir, no fue una limitación. Fue el producto."
-                    : "Designing from the constraints, no signal, no budget, no technical team, with data that can't leave, wasn't a limitation. It was the product."}
-                </p>
-              </div>
-
+              {/* Landing Page (video) */}
               <div className="max-w-4xl mx-auto mb-10">
+                <h3 className="text-2xl font-bold text-light mb-4">
+                  {es ? "Landing Page" : "Landing page"}
+                </h3>
                 <div className="w-full rounded-xl overflow-hidden border border-subtle/50 shadow-2xl bg-black">
                   <video
                     autoPlay
@@ -1518,14 +1554,14 @@ export default async function EstoyaiPage({
                     <source src="/images/estoyaiImages/estoyai-landing.webm" type="video/webm" />
                   </video>
                 </div>
-                <p className="mt-4 text-sm text-light/70 text-center max-w-2xl mx-auto leading-relaxed">
+                <p className="mt-4 text-sm text-light/70 leading-relaxed max-w-2xl">
                   {es
                     ? "También diseñé la landing pública, pensada para que otras ONGs adopten el sistema. Cada sede usa la app por su propio subdominio (pequenospasos.estoyai.com, dtcvillatranquila.estoyai.com) y entra con una contraseña que solo tiene su equipo."
                     : "I also designed the public landing, aimed at getting other NGOs to adopt the system. Each office uses the app through its own subdomain (pequenospasos.estoyai.com, dtcvillatranquila.estoyai.com) and logs in with a password held only by its team."}
                 </p>
               </div>
 
-              <div className="flex flex-wrap justify-center gap-4">
+              <div className="flex flex-wrap justify-center gap-4 mb-16">
                 <a
                   href="https://github.com/lautaro-temperini"
                   target="_blank"
@@ -1534,6 +1570,15 @@ export default async function EstoyaiPage({
                 >
                   {es ? "Ver el código (MIT) ↗" : "View the code (MIT) ↗"}
                 </a>
+              </div>
+
+              {/* Cierre final */}
+              <div className="max-w-3xl mx-auto">
+                <p className="text-2xl md:text-3xl text-light font-semibold leading-relaxed text-center">
+                  {es
+                    ? "Diseñar desde las restricciones, sin señal, sin presupuesto, sin equipo técnico, con datos que no pueden salir, no fue una limitación. Fue el producto."
+                    : "Designing from the constraints, no signal, no budget, no technical team, with data that can't leave, wasn't a limitation. It was the product."}
+                </p>
               </div>
             </section>
           </FadeOnScroll>
