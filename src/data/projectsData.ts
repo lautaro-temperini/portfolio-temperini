@@ -34,7 +34,7 @@ export const projectsData: ProjectData[] = [
     slug: "estoyai",
     image: "/images/estoyai-logo.webp",
     previewImage: "/images/projects/estoyai-preview.webp",
-    previewObjectFit: "cover",
+    previewObjectFit: "contain",
     title: "EstoyAi",
     subtitle: "Registro de campo por voz",
     description: "Case Study",

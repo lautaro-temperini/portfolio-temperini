@@ -1100,33 +1100,33 @@ export default async function EstoyaiPage({
                     titleEs: "Por qué offline-first",
                     titleEn: "Why offline-first",
                     textEs:
-                      "Los promotores visitan familias en zonas sin señal. Un formulario que requiere internet en el momento del registro es un formulario que no se usa. El audio se graba, queda guardado y sube solo cuando hay conexión. El promotor no tiene que hacer nada.",
+                      "Los promotores visitan zonas sin señal. Un formulario que pide internet en el momento no se usa. El audio se graba y sube solo cuando hay conexión. El promotor no hace nada más.",
                     textEn:
-                      "Promoters visit families in areas with no signal. A form that requires internet at the moment of recording is a form that goes unused. The audio is recorded, stored, and uploads on its own when there's a connection. The promoter does nothing.",
+                      "Promoters visit areas with no signal. A form that needs internet in the moment goes unused. The audio records and uploads on its own once connected. The promoter does nothing else.",
                   },
                   {
                     titleEs: "Por qué Word y no una app propia",
                     titleEn: "Why Word and not a custom app",
                     textEs:
-                      "Coordinadores y trabajadores sociales ya usan Word. No hay capacitación, no hay pantalla nueva que aprender. El .docx es editable, imprimible, archivable y auditable por cualquiera. Una app de visualización propia agregaría una dependencia más y excluiría a quien prefiere el papel.",
+                      "Coordinadores y trabajadores sociales ya usan Word. Sin capacitación, sin pantalla nueva. El .docx es editable, imprimible y auditable por cualquiera. Una app propia sumaría una dependencia y dejaría afuera a quien prefiere el papel.",
                     textEn:
-                      "Coordinators and social workers already use Word. No training, no new screen to learn. The .docx is editable, printable, filable, and auditable by anyone. A custom viewer would add one more dependency and exclude those who prefer paper.",
+                      "Coordinators and social workers already use Word. No training, no new screen. The .docx is editable, printable, and auditable by anyone. A custom app would add a dependency and exclude those who prefer paper.",
                   },
                   {
                     titleEs: "Por qué no un CRM",
                     titleEn: "Why not a CRM",
                     textEs:
-                      "Las ONGs ya lo intentaron con Asana, Notion, Salesforce, Trello, y los abandonaron. El cuello de botella no está en la coordinación sino en el registro de campo. Si los datos de las visitas no entran de forma simple, el CRM queda vacío igual. EstoyAi resuelve la captura, y lo que se integre después lo decide cada organización.",
+                      "Las ONGs ya probaron Asana, Notion, Salesforce, Trello, y los dejaron. El cuello de botella no es la coordinación sino el registro de campo. Si los datos no entran fácil, el CRM queda vacío igual. EstoyAi resuelve la captura, lo demás lo decide cada ONG.",
                     textEn:
-                      "NGOs already tried it with Asana, Notion, Salesforce, Trello, and abandoned them. The bottleneck isn't coordination, it's field recording. If visit data doesn't enter simply, the CRM stays empty anyway. EstoyAi solves capture, and whatever integrates afterward is each organization's call.",
+                      "NGOs already tried Asana, Notion, Salesforce, Trello, and dropped them. The bottleneck isn't coordination, it's field recording. If data doesn't enter easily, the CRM stays empty anyway. EstoyAi solves capture, the rest is each NGO's call.",
                   },
                   {
                     titleEs: "Por qué SQLite local y no un backend en la nube",
                     titleEn: "Why local SQLite and not a cloud backend",
                     textEs:
-                      "Un Supabase o cualquier base gestionada implica que los datos de beneficiarios vivan en un servidor de un tercero, justo lo contrario del modelo. SQLite guarda todo en un archivo dentro de la PC de la sede, sin servicio externo ni credenciales que mantener. Para una sede con un solo equipo trabajando es más que suficiente, y no agrega una dependencia de red donde no hace falta.",
+                      "Un Supabase pondría los datos de beneficiarios en un servidor ajeno, lo contrario del modelo. SQLite guarda todo en un archivo en la PC de la sede, sin servicio externo ni credenciales. Para una sola sede sobra, y no agrega una dependencia de red que no hace falta.",
                     textEn:
-                      "A Supabase or any managed database means beneficiary data lives on a third party's server, the exact opposite of the model. SQLite keeps everything in a file inside the office PC, with no external service or credentials to maintain. For an office with a single team working, it's more than enough, and it adds no network dependency where none is needed.",
+                      "A Supabase would put beneficiary data on someone else's server, the opposite of the model. SQLite keeps everything in a file on the office PC, no external service or credentials. For a single office it's plenty, and adds no network dependency you don't need.",
                   },
                 ].map((d, i) => (
                   <Block key={i} colSpan={1}>
@@ -1151,25 +1151,25 @@ export default async function EstoyaiPage({
                       titleEs: "Instalación sin equipo técnico",
                       titleEn: "Install with no technical team",
                       textEs:
-                        "Una sede no tiene a alguien de sistemas. Todo el stack (Docker, la IA local, la base) se levanta con un instalador guiado para Windows hecho con Inno Setup, con archivos en castellano y un manual llano. Se instala y se usa, no se administra.",
+                        "Un instalador guiado (Inno Setup) levanta todo el stack en Windows, sin línea de comandos. La sede instala y usa, no administra.",
                       textEn:
-                        "An office has no IT person. The whole stack (Docker, the local AI, the database) comes up with a guided Windows installer built in Inno Setup, with Spanish-named files and a plain-language manual. You install and use it, you don't administer it.",
+                        "A guided installer (Inno Setup) brings up the whole stack on Windows, no command line. The office installs and uses it, doesn't administer it.",
                     },
                     {
                       titleEs: "Backup a un disco, no a la nube",
                       titleEn: "Backup to a disk, not the cloud",
                       textEs:
-                        "Los .docx y la base viven en la sede, y el backup va a un disco externo, manual y simple. Consideré un bucket R2, pero el free tier se llenaba con los audios y subir datos sensibles contradice el modelo. Google Drive quedó descartado por lo mismo.",
+                        "El backup va a un disco externo. Consideré un bucket R2, pero el free tier se llenaba con los audios y subir datos sensibles contradice el modelo. Google Drive, lo mismo.",
                       textEn:
-                        "The .docx files and the database live at the office, and the backup goes to an external disk, manual and simple. I considered an R2 bucket, but the free tier filled up with the audio and uploading sensitive data contradicts the model. Google Drive was ruled out for the same reason.",
+                        "Backup goes to an external disk. I considered an R2 bucket, but the free tier filled up with the audio and uploading sensitive data contradicts the model. Google Drive, same.",
                     },
                     {
                       titleEs: "Integración opcional con Podio",
                       titleEn: "Optional Podio integration",
                       textEs:
-                        "Para las ONGs que ya usan Podio dejé preparado un endpoint que empuja el informe hacia allá vía n8n. Es opcional. Nadie tiene que cambiar de herramienta, pero quien ya tiene una puede sincronizar el .docx sin trabajo extra.",
+                        "Para las ONGs que ya usan Podio hay un endpoint que empuja el .docx vía n8n. Opcional: nadie cambia de herramienta.",
                       textEn:
-                        "For NGOs that already use Podio I set up an endpoint that pushes the report there via n8n. It's optional. No one has to switch tools, but whoever already has one can sync the .docx with no extra work.",
+                        "For NGOs already on Podio there's an endpoint that pushes the .docx via n8n. Optional: no one switches tools.",
                     },
                   ].map((d, i) => (
                     <BentoItem key={i} colSpan={1}>
@@ -1466,8 +1466,8 @@ export default async function EstoyaiPage({
                     </p>
                     <p className="text-light/85 text-sm leading-relaxed">
                       {es
-                        ? "No es una segunda ONG a bordo. Es una configuración que armé yo para una intervención en las antípodas (tratamiento de consumos problemáticos), y la validé contra mi propia experiencia en el modelo SEDRONAR. Prueba que el sistema se adapta solo con configuración. La captura por voz y el triaje por criticidad son los mismos, cambian los programas y los campos del informe."
-                        : "It isn't a second NGO on board. It's a configuration I built for an intervention at the opposite end (problematic substance-use treatment), validated against my own experience with the SEDRONAR model. It proves the system adapts through configuration alone. Voice capture and criticality triage are the same, only the programs and report fields change."}
+                        ? "No es una segunda ONG a bordo. Es una configuración que armé para una intervención opuesta (tratamiento de consumos), validada contra mi experiencia en el modelo SEDRONAR. Prueba que el sistema se adapta solo con configuración: mismo flujo, cambian los programas y los campos del informe."
+                        : "It isn't a second NGO on board. It's a configuration I built for an opposite intervention (substance-use treatment), validated against my SEDRONAR experience. It proves the system adapts through configuration alone: same flow, only the programs and report fields change."}
                     </p>
                   </div>
                   <DevImage
