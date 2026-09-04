@@ -774,25 +774,59 @@ export default async function EstoyaiPage({
           {/* ==================== EN ACCIÓN (capturas reales) ==================== */}
           <FadeOnScroll>
             <section className="w-full px-8 md:px-12 lg:px-20 mb-16">
-              {/* Título + intro a la izquierda, video del flujo a la derecha */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center mb-12">
-                <div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">
+              {/* Izquierda: título + intro + los 5 pasos. Derecha: video del flujo */}
+              <div className="flex flex-col md:flex-row items-center gap-10 lg:gap-20">
+                <div className="md:flex-1 md:max-w-xl">
+                  <h2 className="text-3xl md:text-4xl font-bold text-light mb-5">
                     {es ? "En acción" : "In action"}
                   </h2>
-                  <p className="text-light text-lg leading-relaxed">
+                  <p className="text-light/85 text-lg leading-relaxed mb-8">
                     {es
-                      ? "Capturas reales del sistema corriendo, con la configuración de Pequeños Pasos y datos de ejemplo. Del dictado en el celular al informe priorizado en la sede."
-                      : "Real screenshots of the running system, with the Pequeños Pasos configuration and sample data. From dictation on the phone to the prioritized report at the office."}
+                      ? "El flujo real corriendo, con la configuración de Pequeños Pasos y datos de ejemplo. Del dictado en el celular al informe priorizado en la sede."
+                      : "The real flow running, with the Pequeños Pasos configuration and sample data. From dictation on the phone to the prioritized report at the office."}
                   </p>
-                  <p className="mt-4 text-sm text-light/60">
+                  <ol className="space-y-4">
+                    {[
+                      {
+                        tEs: "Elegir programa", tEn: "Choose program",
+                        dEs: "el promotor abre la app y elige la intervención", dEn: "the promoter opens the app and picks the intervention",
+                      },
+                      {
+                        tEs: "Dictar la visita", tEn: "Dictate the visit",
+                        dEs: "unos dos minutos de voz, sin señal, con waveform en vivo", dEn: "about two minutes of voice, no signal, with a live waveform",
+                      },
+                      {
+                        tEs: "Cola offline", tEn: "Offline queue",
+                        dEs: "el audio se encola y sube solo cuando hay red", dEn: "the audio queues and uploads on its own once networked",
+                      },
+                      {
+                        tEs: "Tablero por criticidad", tEn: "Board by criticality",
+                        dEs: "coordinación ve los casos priorizados y sus accionables", dEn: "coordination sees prioritized cases and their action points",
+                      },
+                      {
+                        tEs: "Informe .docx", tEn: "The .docx report",
+                        dEs: "queda listo para revisar y enviar a la sede", dEn: "ready to review and send to the office",
+                      },
+                    ].map((s, i) => (
+                      <li key={i} className="flex items-start gap-4">
+                        <span className="flex-shrink-0 mt-0.5 flex h-7 w-7 items-center justify-center rounded-full border border-[#4C8DFF]/40 bg-[#0056d2]/15 text-sm font-bold text-[#4C8DFF]">
+                          {i + 1}
+                        </span>
+                        <div>
+                          <p className="text-light font-semibold leading-snug">{es ? s.tEs : s.tEn}</p>
+                          <p className="text-light/55 text-sm leading-snug">{es ? s.dEs : s.dEn}</p>
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                  <p className="mt-8 text-xs text-light/40 italic">
                     {es
-                      ? "El flujo completo en la app, grabado en vivo."
-                      : "The full app flow, recorded live."}
+                      ? "UI real corriendo en local. El .docx final y la transcripción usan el stack completo en la sede."
+                      : "Real UI running locally. The final .docx and transcription use the full stack at the office."}
                   </p>
                 </div>
-                <div className="flex justify-center md:justify-end">
-                  <div className="w-full max-w-[280px] rounded-[2rem] border-[6px] border-[#0b0b0b] overflow-hidden shadow-2xl bg-black">
+                <div className="w-full max-w-[300px] flex-shrink-0">
+                  <div className="w-full rounded-[2.2rem] border-[7px] border-[#0b0b0b] overflow-hidden shadow-2xl bg-black">
                     <video
                       autoPlay
                       muted
@@ -807,63 +841,6 @@ export default async function EstoyaiPage({
                   </div>
                 </div>
               </div>
-
-              <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-                {[
-                  {
-                    src: "/images/estoyaiImages/estoyai-app-registrar.webp",
-                    capEs: "1 · Elegir programa",
-                    capEn: "1 · Choose program",
-                    altEs: "Pantalla de la app: elegir el programa de la intervención (Primera Infancia, Niñez y Adolescencia, Oficios)",
-                    altEn: "App screen: choose the intervention program (Early Childhood, Childhood & Adolescence, Trades)",
-                  },
-                  {
-                    src: "/images/estoyaiImages/estoyai-app-grabar.webp",
-                    capEs: "2 · Dictar la visita",
-                    capEn: "2 · Dictate the visit",
-                    altEs: "Pantalla de grabación activa con waveform y temporizador mientras el promotor dicta",
-                    altEn: "Active recording screen with waveform and timer while the promoter dictates",
-                  },
-                  {
-                    src: "/images/estoyaiImages/estoyai-app-registros.webp",
-                    capEs: "3 · Cola offline y estados",
-                    capEn: "3 · Offline queue & states",
-                    altEs: "Lista 'Mis registros': tarjetas con estados En cola, Procesando, Enviado a coordinación y Error con reintentar",
-                    altEn: "'My records' list: cards with states Queued, Processing, Sent to coordination, and Error with retry",
-                  },
-                  {
-                    src: "/images/estoyaiImages/estoyai-app-informes.webp",
-                    capEs: "4 · Tablero por criticidad",
-                    capEn: "4 · Board by criticality",
-                    altEs: "Tablero de coordinación: informes filtrados por programa y criticidad (Alta, Media, Baja) con accionables",
-                    altEn: "Coordination board: reports filtered by program and criticality (High, Medium, Low) with action points",
-                  },
-                  {
-                    src: "/images/estoyaiImages/estoyai-app-preview.webp",
-                    capEs: "5 · Informe .docx",
-                    capEn: "5 · The .docx report",
-                    altEs: "Vista del informe generado con estructura fija: resumen, identificación, intervención, acciones pendientes",
-                    altEn: "Generated report view with fixed structure: summary, identification, intervention, pending actions",
-                  },
-                ].map((s) => (
-                  <DevImage
-                    key={s.src}
-                    src={s.src}
-                    alt={es ? s.altEs : s.altEn}
-                    width={390}
-                    height={844}
-                    caption={es ? s.capEs : s.capEn}
-                    className="w-full"
-                    imageClassName="object-cover object-top"
-                    sizes="(max-width: 768px) 45vw, 22vw"
-                  />
-                ))}
-              </div>
-              <p className="text-xs text-light/40 italic mt-4">
-                {es
-                  ? "UI real corriendo en local (Next.js). El .docx final y la transcripción requieren el stack completo en la sede."
-                  : "Real UI running locally (Next.js). The final .docx and transcription require the full stack at the office."}
-              </p>
             </section>
           </FadeOnScroll>
 
@@ -976,6 +953,38 @@ export default async function EstoyaiPage({
                   </div>
                 </Block>
               </GridContainer>
+
+              {/* Capturas: tablero de coordinación + informe .docx */}
+              <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                <DevImage
+                  src="/images/estoyaiImages/estoyai-app-informes.webp"
+                  alt={
+                    es
+                      ? "Tablero de coordinación: informes filtrados por programa y criticidad (Alta, Media, Baja) con accionables"
+                      : "Coordination board: reports filtered by program and criticality (High, Medium, Low) with action points"
+                  }
+                  width={390}
+                  height={844}
+                  caption={es ? "El tablero, agrupado por criticidad" : "The board, grouped by criticality"}
+                  className="w-full"
+                  imageClassName="object-cover object-top"
+                  sizes="(max-width: 640px) 90vw, 360px"
+                />
+                <DevImage
+                  src="/images/estoyaiImages/estoyai-app-preview.webp"
+                  alt={
+                    es
+                      ? "Vista del informe .docx generado con estructura fija: resumen, identificación, intervención, acciones pendientes"
+                      : "Generated .docx report view with a fixed structure: summary, identification, intervention, pending actions"
+                  }
+                  width={390}
+                  height={844}
+                  caption={es ? "El informe .docx que llega a la sede" : "The .docx report that reaches the office"}
+                  className="w-full"
+                  imageClassName="object-cover object-top"
+                  sizes="(max-width: 640px) 90vw, 360px"
+                />
+              </div>
 
               {/* Pantalla de revisión: la IA propone, el promotor confirma */}
               <div className="mt-6 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 items-center rounded-2xl border border-subtle/60 bg-container/40 p-6 md:p-8">
@@ -1383,10 +1392,10 @@ export default async function EstoyaiPage({
                 </p>
               </div>
 
-              {/* 4 columnas: texto + captura por tenant */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
+              {/* 4 columnas: texto + captura por tenant, alturas igualadas */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
                 {/* Pequeños Pasos — texto */}
-                <div className="bg-container/80 rounded-lg p-6 card-elevated">
+                <div className="bg-container/80 rounded-lg p-6 card-elevated h-full flex flex-col justify-center">
                   <div className="flex items-center gap-2 mb-3">
                     <h3 className="text-xl font-semibold text-light">Pequeños Pasos</h3>
                     <span className="rounded-full bg-[#0056d2]/20 border border-[#4C8DFF]/40 px-2 py-0.5 text-[10px] font-semibold text-light/80">
@@ -1433,7 +1442,7 @@ export default async function EstoyaiPage({
                   sizes="(max-width: 768px) 90vw, 22vw"
                 />
                 {/* DTC — texto */}
-                <div className="bg-container/80 rounded-lg p-6 card-elevated">
+                <div className="bg-container/80 rounded-lg p-6 card-elevated h-full flex flex-col justify-center">
                   <div className="flex items-center gap-2 mb-3">
                     <h3 className="text-xl font-semibold text-light">DTC Villatranquila</h3>
                     <span className="rounded-full bg-[#34D399]/15 border border-[#34D399]/40 px-2 py-0.5 text-[10px] font-semibold text-light/80">
@@ -1480,7 +1489,7 @@ export default async function EstoyaiPage({
           {/* ==================== ESTADO Y QUÉ SIGUE ==================== */}
           <FadeOnScroll delay={80}>
             <section id="cierre" className="w-full px-8 md:px-12 lg:px-20 mb-20 pb-16">
-              <div className="max-w-3xl mx-auto mb-12 text-center">
+              <div className="max-w-4xl mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-light mb-4">
                   {es ? "Estado y qué sigue" : "Status and what's next"}
                 </h2>
@@ -1561,7 +1570,7 @@ export default async function EstoyaiPage({
                 </p>
               </div>
 
-              <div className="flex flex-wrap justify-center gap-4 mb-16">
+              <div className="flex flex-wrap gap-4 mb-16">
                 <a
                   href="https://github.com/lautaro-temperini"
                   target="_blank"
@@ -1573,8 +1582,8 @@ export default async function EstoyaiPage({
               </div>
 
               {/* Cierre final */}
-              <div className="max-w-3xl mx-auto">
-                <p className="text-2xl md:text-3xl text-light font-semibold leading-relaxed text-center">
+              <div className="max-w-4xl border-l-2 border-[#0056d2] pl-6">
+                <p className="text-2xl md:text-3xl text-light font-semibold leading-relaxed">
                   {es
                     ? "Diseñar desde las restricciones, sin señal, sin presupuesto, sin equipo técnico, con datos que no pueden salir, no fue una limitación. Fue el producto."
                     : "Designing from the constraints, no signal, no budget, no technical team, with data that can't leave, wasn't a limitation. It was the product."}
