@@ -181,55 +181,6 @@ export default async function EstoyaiPage({
 
   const es = lang === "es"
 
-  // Pasos del flujo (índice firma)
-  const steps = [
-    {
-      num: "01",
-      titleEs: "Dicta",
-      titleEn: "Dictate",
-      textEs:
-        "El promotor termina la visita, abre la app en su celular y dicta en dos minutos lo que observó. Sin señal está bien.",
-      textEn:
-        "The promoter finishes the visit, opens the app on their phone, and dictates what they observed in two minutes. No signal is fine.",
-    },
-    {
-      num: "02",
-      titleEs: "Encola",
-      titleEn: "Queue",
-      textEs:
-        "El audio se guarda en el celular (IndexedDB) y sube solo cuando hay conexión. El promotor no tiene que hacer nada más.",
-      textEn:
-        "The audio is stored on the phone (IndexedDB) and uploads on its own once there's a connection. The promoter does nothing else.",
-    },
-    {
-      num: "03",
-      titleEs: "Procesa",
-      titleEn: "Process",
-      textEs:
-        "En la sede: Whisper transcribe, Ollama extrae los campos relevantes y se genera un informe .docx con estructura fija.",
-      textEn:
-        "At the office: Whisper transcribes, Ollama extracts the relevant fields, and a .docx report with a fixed structure is generated.",
-    },
-    {
-      num: "04",
-      titleEs: "Revisa",
-      titleEn: "Review",
-      textEs:
-        "El promotor revisa el informe, lo descarga y lo envía a coordinación. El documento es editable, imprimible y auditable.",
-      textEn:
-        "The promoter reviews the report, downloads it, and sends it to coordination. The document is editable, printable, and auditable.",
-    },
-    {
-      num: "05",
-      titleEs: "Prioriza",
-      titleEn: "Prioritize",
-      textEs:
-        "Coordinación lo ve en un tablero: clasificado por criticidad y con sus puntos accionables ya extraídos. Qué atender primero, sin leer todo.",
-      textEn:
-        "Coordination sees it on a board: sorted by criticality with its action points already extracted. What to attend to first, without reading everything.",
-    },
-  ]
-
   return (
     <>
       <script
@@ -250,7 +201,6 @@ export default async function EstoyaiPage({
               { id: "criticidad", label: es ? "Priorización" : "Prioritization" },
               { id: "decisiones", label: es ? "Decisiones" : "Key decisions" },
               { id: "soberania", label: es ? "Soberanía de datos" : "Data sovereignty" },
-              { id: "diferencial", label: es ? "Por qué es diferente" : "Why it's different" },
               { id: "config", label: es ? "Multi-ONG" : "Multi-NGO" },
               { id: "cierre", label: es ? "Estado y qué sigue" : "Status & next" },
             ]}
@@ -736,32 +686,6 @@ export default async function EstoyaiPage({
                     ? "Todo el procesamiento, transcripción, IA y almacenamiento, corre en la PC de la sede. Sin APIs externas, sin nube, sin GPU."
                     : "All processing, transcription, AI, and storage, runs on the office PC. No external APIs, no cloud, no GPU."}
                 </p>
-              </div>
-            </section>
-          </FadeOnScroll>
-
-          {/* ==================== ÍNDICE DE PASOS (firma) ==================== */}
-          <FadeOnScroll delay={80}>
-            <section className="w-full px-8 md:px-12 lg:px-20 mb-16">
-              <div className="border-t border-subtle/40">
-                {steps.map((step) => (
-                  <div
-                    key={step.num}
-                    className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-2 md:gap-10 items-baseline border-b border-subtle/40 py-8 md:py-10"
-                  >
-                    <span className="text-4xl md:text-6xl font-bold text-[#4C8DFF]/80 tabular-nums">
-                      {step.num}
-                    </span>
-                    <div>
-                      <h3 className="text-2xl md:text-3xl font-semibold text-light mb-2">
-                        {es ? step.titleEs : step.titleEn}
-                      </h3>
-                      <p className="text-light/80 text-lg leading-relaxed max-w-3xl">
-                        {es ? step.textEs : step.textEn}
-                      </p>
-                    </div>
-                  </div>
-                ))}
               </div>
             </section>
           </FadeOnScroll>
@@ -1307,66 +1231,6 @@ export default async function EstoyaiPage({
             </section>
           </FadeOnScroll>
 
-          {/* ==================== POR QUÉ ES DIFERENTE ==================== */}
-          <FadeOnScroll>
-            <section id="diferencial" className="w-full px-8 md:px-12 lg:px-20 mb-16">
-              <div className="max-w-4xl mb-8">
-                <h2 className="text-3xl md:text-4xl font-bold text-light mb-6">
-                  {es ? "Por qué es diferente" : "Why it's different"}
-                </h2>
-                <p className="text-light text-lg leading-relaxed">
-                  {es
-                    ? "La mayoría de las soluciones para ONGs asumen conectividad estable, presupuesto para licencias, equipos técnicos y smartphones uniformes. Nada de eso describe a las organizaciones que más necesitan sistematizar."
-                    : "Most NGO solutions assume stable connectivity, budget for licenses, technical teams, and uniform smartphones. None of that describes the organizations that most need to systematize."}
-                </p>
-              </div>
-
-              {/* Comparación patrón / enfoque */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
-                <div className="rounded-2xl border border-subtle/60 bg-container/40 p-6 md:p-8">
-                  <h3 className="text-light/60 font-semibold mb-4">
-                    {es ? "El patrón habitual" : "The usual pattern"}
-                  </h3>
-                  <ul className="space-y-3 text-light/70">
-                    {[
-                      es ? "Requiere conexión estable en el momento del registro" : "Requires stable connection at recording time",
-                      es ? "Licencias, suscripciones y costos por uso" : "Licenses, subscriptions, and usage costs",
-                      es ? "Datos de beneficiarios en la nube de un tercero" : "Beneficiary data in a third party's cloud",
-                      es ? "Otra pantalla que promotores y coordinación deben aprender" : "Another screen promoters and coordination must learn",
-                      es ? "Genera documentos, pero no dice qué es urgente" : "Generates documents, but doesn't say what's urgent",
-                      es ? "Requiere setup técnico o alguien de IT para instalarlo" : "Needs technical setup or IT to install",
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm leading-relaxed">
-                        <span className="text-light/30 mt-0.5">✕</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className="rounded-2xl border border-[#0056d2]/40 bg-gradient-to-br from-[#04173a]/40 to-[#0d1c2e]/40 p-6 md:p-8">
-                  <h3 className="text-[#4C8DFF] font-semibold mb-4">
-                    {es ? "El enfoque EstoyAi" : "The EstoyAi approach"}
-                  </h3>
-                  <ul className="space-y-3 text-light/90">
-                    {[
-                      es ? "Graba sin señal y sube solo cuando hay red" : "Records with no signal and uploads on its own once networked",
-                      es ? "Gratis y open source (MIT), sin nube" : "Free and open source (MIT), no cloud",
-                      es ? "Todos los datos quedan en la PC de la sede" : "All data stays on the office PC",
-                      es ? "Entrega un .docx en Word, sin pantalla nueva" : "Delivers a .docx in Word, no new screen",
-                      es ? "Prioriza por criticidad y extrae accionables" : "Prioritizes by criticality and extracts action points",
-                      es ? "Instalable por no técnicos: instalador guiado, sin línea de comandos" : "Installable by non-technical staff: guided installer, no command line",
-                    ].map((item, i) => (
-                      <li key={i} className="flex items-start gap-2 text-sm leading-relaxed">
-                        <span className="text-[#34D399] mt-0.5">✓</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </section>
-          </FadeOnScroll>
-
           {/* ==================== DIVIDER ==================== */}
           <div className="w-full px-8 md:px-12 lg:px-20 mb-28">
             <div className="h-px w-full bg-gradient-to-r from-transparent via-[#0056d2]/40 to-transparent" />
@@ -1490,6 +1354,38 @@ export default async function EstoyaiPage({
                   ? "La misma pantalla y el mismo código en los dos tenants. Cambian solo los programas y los campos del informe, por configuración."
                   : "The same screen and the same code across both tenants. Only the programs and report fields change, through configuration."}
               </p>
+
+              {/* Landing pública (video): la superficie de adopción */}
+              <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <div>
+                  <h3 className="text-2xl font-bold text-light mb-4">
+                    {es ? "Cómo entra una ONG nueva" : "How a new NGO gets in"}
+                  </h3>
+                  <p className="text-light/85 leading-relaxed mb-4">
+                    {es
+                      ? "Diseñé una landing pública para que una organización pueda evaluar el sistema sin hablar conmigo primero. Es la puerta de entrada del modelo de adopción: si la tesis es que sirve para muchas ONGs, tiene que poder llegar a ellas sin que yo esté en el medio."
+                      : "I designed a public landing so an organization can evaluate the system without talking to me first. It's the front door of the adoption model: if the thesis is that it serves many NGOs, it has to reach them without me in the middle."}
+                  </p>
+                  <p className="text-light/70 text-sm leading-relaxed">
+                    {es
+                      ? "Cada sede después usa la app por su propio subdominio (pequenospasos.estoyai.com, dtcvillatranquila.estoyai.com) y entra con una contraseña que solo tiene su equipo."
+                      : "Each office then uses the app through its own subdomain (pequenospasos.estoyai.com, dtcvillatranquila.estoyai.com) and logs in with a password held only by its team."}
+                  </p>
+                </div>
+                <div className="w-full rounded-xl overflow-hidden border border-subtle/50 shadow-2xl bg-black">
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    preload="auto"
+                    aria-label={es ? "Recorrido de la landing pública de EstoyAi" : "Scroll-through of the EstoyAi public landing"}
+                    className="block w-full h-auto"
+                  >
+                    <source src="/images/estoyaiImages/estoyai-landing.webm" type="video/webm" />
+                  </video>
+                </div>
+              </div>
             </section>
           </FadeOnScroll>
 
@@ -1556,31 +1452,6 @@ export default async function EstoyaiPage({
                   </div>
                 </Block>
               </GridContainer>
-
-              {/* Landing Page (video) */}
-              <div className="max-w-4xl mx-auto mb-10">
-                <h3 className="text-2xl font-bold text-light mb-4">
-                  {es ? "Landing Page" : "Landing page"}
-                </h3>
-                <div className="w-full rounded-xl overflow-hidden border border-subtle/50 shadow-2xl bg-black">
-                  <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    preload="auto"
-                    aria-label={es ? "Recorrido de la landing pública de EstoyAi" : "Scroll-through of the EstoyAi public landing"}
-                    className="block w-full h-auto"
-                  >
-                    <source src="/images/estoyaiImages/estoyai-landing.webm" type="video/webm" />
-                  </video>
-                </div>
-                <p className="mt-4 text-sm text-light/70 leading-relaxed max-w-2xl">
-                  {es
-                    ? "También diseñé la landing pública, pensada para que otras ONGs adopten el sistema. Cada sede usa la app por su propio subdominio (pequenospasos.estoyai.com, dtcvillatranquila.estoyai.com) y entra con una contraseña que solo tiene su equipo."
-                    : "I also designed the public landing, aimed at getting other NGOs to adopt the system. Each office uses the app through its own subdomain (pequenospasos.estoyai.com, dtcvillatranquila.estoyai.com) and logs in with a password held only by its team."}
-                </p>
-              </div>
 
               <div className="flex flex-wrap gap-4 mb-16">
                 <a
