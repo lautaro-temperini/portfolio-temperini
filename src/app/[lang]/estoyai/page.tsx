@@ -725,7 +725,7 @@ export default async function EstoyaiPage({
                       },
                       {
                         tEs: "Tablero por criticidad", tEn: "Board by criticality",
-                        dEs: "coordinación ve los casos priorizados y sus accionables", dEn: "coordination sees prioritized cases and their action points",
+                        dEs: "coordinación lo abre desde la PC de la sede, priorizado y con accionables", dEn: "coordination opens it from the office PC, prioritized and with action points",
                       },
                       {
                         tEs: "Informe .docx", tEn: "The .docx report",
@@ -766,8 +766,8 @@ export default async function EstoyaiPage({
                 </div>
               </div>
 
-              {/* Fila de 4 capturas del flujo */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {/* Fila de capturas del flujo del promotor (todas mobile de verdad) */}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 {[
                   {
                     src: "/images/estoyaiImages/estoyai-app-grabar.webp",
@@ -782,13 +782,6 @@ export default async function EstoyaiPage({
                     capEn: "Explicit states, so the promoter can pocket the phone and move on without waiting for the upload.",
                     altEs: "Lista 'Mis registros' con estados En cola, Procesando, Enviado y Error",
                     altEn: "'My records' list with states Queued, Processing, Sent, and Error",
-                  },
-                  {
-                    src: "/images/estoyaiImages/estoyai-app-informes.webp",
-                    capEs: "Separa criticidad clínica de errores técnicos del pipeline. No son la misma urgencia.",
-                    capEn: "Separates clinical criticality from technical pipeline errors. They aren't the same urgency.",
-                    altEs: "Tablero de coordinación con filtros por criticidad y accionables",
-                    altEn: "Coordination board with criticality filters and action points",
                   },
                   {
                     src: "/images/estoyaiImages/estoyai-app-preview.webp",
@@ -807,10 +800,15 @@ export default async function EstoyaiPage({
                     caption={es ? s.capEs : s.capEn}
                     className="w-full"
                     imageClassName="object-cover object-top"
-                    sizes="(max-width: 768px) 45vw, 22vw"
+                    sizes="(max-width: 768px) 45vw, 30vw"
                   />
                 ))}
               </div>
+              <p className="mt-5 text-xs text-light/40 italic">
+                {es
+                  ? "Las tres pantallas del promotor. Coordinación no trabaja acá: abre el tablero desde la PC de escritorio de la sede."
+                  : "The promoter's three screens. Coordination doesn't work here: they open the board from the office desktop PC."}
+              </p>
             </section>
           </FadeOnScroll>
 
@@ -917,8 +915,8 @@ export default async function EstoyaiPage({
                     </h3>
                     <p className="text-light/85 leading-relaxed">
                       {es
-                        ? "En la sede, coordinación abre un tablero mobile-first agrupado por criticidad. Arriba, “necesita atención hoy” separa dos cosas que no son lo mismo: la criticidad clínica (ALTA) de los errores técnicos del pipeline. No es igual llamar a una familia que reintentar un informe que falló. La meta es saber en 10 segundos qué atender primero."
-                        : "At the office, coordination opens a mobile-first board grouped by criticality. At the top, “needs attention today” separates two things that aren't the same: clinical criticality (ALTA) from technical pipeline errors. Calling a family isn't the same as retrying a failed report. The goal is knowing in 10 seconds what to attend to first."}
+                        ? "Coordinación abre el tablero desde la PC de escritorio de la sede, la misma máquina que corre Docker. Los informes se agrupan por criticidad y arriba “necesita atención hoy” separa dos cosas que no son lo mismo: la criticidad clínica (ALTA) de los errores técnicos del pipeline. No es igual llamar a una familia que reintentar un informe que falló. La meta es saber en 10 segundos qué atender primero."
+                        : "Coordination opens the board from the office desktop PC, the same machine that runs Docker. Reports are grouped by criticality, and at the top “needs attention today” separates two things that aren't the same: clinical criticality (ALTA) from technical pipeline errors. Calling a family isn't the same as retrying a failed report. The goal is knowing in 10 seconds what to attend to first."}
                     </p>
                     <p className="text-light/60 text-sm leading-relaxed mt-3">
                       {es
@@ -954,6 +952,67 @@ export default async function EstoyaiPage({
                   imageClassName="object-cover object-top"
                   sizes="(max-width: 768px) 70vw, 280px"
                 />
+              </div>
+
+              {/* Permisos: quién ve y quién edita */}
+              <div className="mt-6 rounded-2xl border border-subtle/60 bg-container/40 p-6 md:p-8">
+                <h3 className="text-xl font-semibold text-light mb-3">
+                  {es ? "Quién ve y quién edita" : "Who sees and who edits"}
+                </h3>
+                <p className="text-light/85 leading-relaxed max-w-3xl mb-6">
+                  {es
+                    ? "Los dos roles no comparten ni pantalla ni permisos. El operador trabaja desde el celular, en campo. Coordinación (administrativos y dirección) trabaja desde la PC de escritorio de la sede. Enviar a coordinación es la frontera entre los dos mundos."
+                    : "The two roles share neither screen nor permissions. The operator works from the phone, in the field. Coordination (admin staff and leadership) works from the office desktop PC. Sending to coordination is the boundary between the two worlds."}
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="rounded-xl border border-[#4C8DFF]/30 bg-white/[0.03] p-5">
+                    <span className="text-[10px] font-bold tracking-widest text-[#4C8DFF]">
+                      {es ? "OPERADOR · CELULAR" : "OPERATOR · PHONE"}
+                    </span>
+                    <ul className="mt-4 space-y-3 text-sm text-light/85 leading-relaxed">
+                      <li>
+                        <span className="text-light font-semibold">{es ? "Mis registros" : "My records"}</span>
+                        {" · "}
+                        {es
+                          ? "sus borradores. Los edita y los borra, pero solo hasta enviarlos."
+                          : "their drafts. They edit and delete them, but only up until they send them."}
+                      </li>
+                      <li>
+                        <span className="text-light font-semibold">{es ? "Informes del equipo" : "Team reports"}</span>
+                        {" · "}
+                        {es
+                          ? "los ve, no los toca. Sin editar ni borrar, ni siquiera los propios."
+                          : "they can see them, not touch them. No editing or deleting, not even their own."}
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="rounded-xl border border-[#34D399]/30 bg-white/[0.03] p-5">
+                    <span className="text-[10px] font-bold tracking-widest text-[#34D399]">
+                      {es ? "COORDINACIÓN · PC DE LA SEDE" : "COORDINATION · OFFICE PC"}
+                    </span>
+                    <ul className="mt-4 space-y-3 text-sm text-light/85 leading-relaxed">
+                      <li>
+                        <span className="text-light font-semibold">{es ? "Mis registros" : "My records"}</span>
+                        {" · "}
+                        {es
+                          ? "sin acceso. Los borradores ajenos no existen para coordinación."
+                          : "no access. Other people's drafts don't exist for coordination."}
+                      </li>
+                      <li>
+                        <span className="text-light font-semibold">{es ? "Informes del equipo" : "Team reports"}</span>
+                        {" · "}
+                        {es
+                          ? "los edita y los borra. Es el único rol que puede."
+                          : "they edit and delete them. It's the only role that can."}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <p className="text-light/60 text-sm leading-relaxed mt-5 max-w-3xl">
+                  {es
+                    ? "El borrador es privado a propósito: mientras el registro está a medio revisar es del operador y de nadie más, y coordinación no ve versiones intermedias. Enviar es el punto de no retorno, y por eso la pantalla de revisión existe antes y no después."
+                    : "The draft is private on purpose: while a record is half-reviewed it belongs to the operator and nobody else, and coordination never sees intermediate versions. Sending is the point of no return, which is why the review screen comes before it and not after."}
+                </p>
               </div>
 
               {/* Decisión del modelo (eval) */}
