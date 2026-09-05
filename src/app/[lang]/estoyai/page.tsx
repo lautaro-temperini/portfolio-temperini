@@ -254,8 +254,8 @@ export default async function EstoyaiPage({
                   <div className="text-center md:text-left">
                     <p className="text-2xl md:text-3xl font-semibold text-light mb-4 max-w-2xl">
                       {es
-                        ? "Del audio de una visita a un informe archivable, en menos de 5 minutos."
-                        : "From a visit's audio to a filable report, in under 5 minutes."}
+                        ? "Del audio de una visita a un informe archivable, en unos 5 minutos."
+                        : "From a visit's audio to a filable report, in about 5 minutes."}
                     </p>
                     <div className="flex flex-wrap justify-center md:justify-start gap-2">
                       {[
@@ -394,8 +394,8 @@ export default async function EstoyaiPage({
                     </p>
                     <p className="text-lg">
                       {es
-                        ? "Los organizadores entrevistaron a 16 ONGs y agruparon los hallazgos en tres tracks. 13 de esas 16 caían en el Track 3 (impacto y reportes). No logran registrar su trabajo de campo de forma sistemática, y el patrón se repetía siempre igual, cuadernos, WhatsApp y planillas. Mientras la información vive en papel, la coordinación no tiene cómo ver qué pasó en territorio ni detectar a tiempo un caso urgente."
-                        : "The organizers interviewed 16 NGOs and grouped the findings into three tracks. 13 of those 16 fell under Track 3 (impact and reporting). They can't record their fieldwork systematically, and the pattern was always the same, notebooks, WhatsApp, spreadsheets. While the information lives on paper, coordination has no way to see what happened in the field or catch an urgent case in time."}
+                        ? "Los organizadores entrevistaron a 16 ONGs y agruparon los hallazgos en tres tracks. 13 de esas 16 caían en el Track 3 (impacto y reportes). No logran registrar su trabajo de campo de forma sistemática, y el patrón se repetía siempre igual (cuadernos, WhatsApp y planillas). Mientras la información vive en papel, la coordinación no tiene cómo ver qué pasó en territorio ni detectar a tiempo un caso urgente."
+                        : "The organizers interviewed 16 NGOs and grouped the findings into three tracks. 13 of those 16 fell under Track 3 (impact and reporting). They can't record their fieldwork systematically, and the pattern was always the same (notebooks, WhatsApp, spreadsheets). While the information lives on paper, coordination has no way to see what happened in the field or catch an urgent case in time."}
                     </p>
                   </div>
                 </Block>
@@ -406,8 +406,8 @@ export default async function EstoyaiPage({
                     </h2>
                     <p className="text-lg">
                       {es
-                        ? "De ahí salió Pequeños Pasos como caso piloto: una ONG con promotores en territorio, múltiples programas de seguimiento de familias, carga administrativa real y una restricción concreta, trabajan en zonas sin señal. Validé el problema con su directora durante el evento: esa conversación confirmó el dolor y definió los límites técnicos."
-                        : "From there came Pequeños Pasos as the pilot case: an NGO with field promoters, multiple family follow-up programs, real administrative load, and one concrete constraint, they work in areas with no signal. I validated the problem with its director during the event: that conversation confirmed the pain and defined the technical limits."}
+                        ? "De ahí salió Pequeños Pasos como caso piloto: una ONG con promotores en territorio, múltiples programas de seguimiento de familias y carga administrativa real. Y una restricción concreta que terminó definiendo todo lo demás, trabajan en zonas sin señal. Validé el problema con su directora durante el evento, y esa conversación confirmó el dolor y fijó los límites técnicos."
+                        : "From there came Pequeños Pasos as the pilot case: an NGO with field promoters, multiple family follow-up programs, and real administrative load. Plus one concrete constraint that ended up defining everything else, they work in areas with no signal. I validated the problem with its director during the event, and that conversation confirmed the pain and set the technical limits."}
                     </p>
                     <div className="rounded-xl border-l-4 border-[#4C8DFF] bg-container/40 p-5">
                       <p className="text-light/90 leading-relaxed">
@@ -683,8 +683,8 @@ export default async function EstoyaiPage({
                 </div>
                 <p className="text-center text-light/50 text-xs mt-6">
                   {es
-                    ? "Todo el procesamiento, transcripción, IA y almacenamiento, corre en la PC de la sede. Sin APIs externas, sin nube, sin GPU."
-                    : "All processing, transcription, AI, and storage, runs on the office PC. No external APIs, no cloud, no GPU."}
+                    ? "Todo el procesamiento (transcripción, IA y almacenamiento) corre en la PC de la sede. Sin APIs externas, sin nube, sin GPU."
+                    : "All processing (transcription, AI, and storage) runs on the office PC. No external APIs, no cloud, no GPU."}
                 </p>
               </div>
             </section>
@@ -771,25 +771,29 @@ export default async function EstoyaiPage({
                 {[
                   {
                     src: "/images/estoyaiImages/estoyai-app-grabar.webp",
-                    capEs: "Dictar la visita", capEn: "Dictate the visit",
+                    capEs: "Waveform en vivo. Sin señal no hay confirmación del servidor, así que la única prueba de que está grabando es visual.",
+                    capEn: "Live waveform. With no signal there's no server confirmation, so the only proof it's recording is visual.",
                     altEs: "Pantalla de grabación activa con waveform y temporizador",
                     altEn: "Active recording screen with waveform and timer",
                   },
                   {
                     src: "/images/estoyaiImages/estoyai-app-registros.webp",
-                    capEs: "Cola offline y estados", capEn: "Offline queue & states",
+                    capEs: "Estados explícitos, para que el promotor guarde el celular y siga sin esperar la subida.",
+                    capEn: "Explicit states, so the promoter can pocket the phone and move on without waiting for the upload.",
                     altEs: "Lista 'Mis registros' con estados En cola, Procesando, Enviado y Error",
                     altEn: "'My records' list with states Queued, Processing, Sent, and Error",
                   },
                   {
                     src: "/images/estoyaiImages/estoyai-app-informes.webp",
-                    capEs: "Tablero por criticidad", capEn: "Board by criticality",
+                    capEs: "Separa criticidad clínica de errores técnicos del pipeline. No son la misma urgencia.",
+                    capEn: "Separates clinical criticality from technical pipeline errors. They aren't the same urgency.",
                     altEs: "Tablero de coordinación con filtros por criticidad y accionables",
                     altEn: "Coordination board with criticality filters and action points",
                   },
                   {
                     src: "/images/estoyaiImages/estoyai-app-preview.webp",
-                    capEs: "Informe .docx", capEn: "The .docx report",
+                    capEs: "Estructura fija, para que el financiador reciba siempre el mismo documento sin importar quién dictó.",
+                    capEn: "Fixed structure, so the funder always gets the same document no matter who dictated it.",
                     altEs: "Vista del informe generado con estructura fija",
                     altEn: "Generated report view with a fixed structure",
                   },
@@ -901,8 +905,8 @@ export default async function EstoyaiPage({
                     </p>
                     <p className="text-light/60 text-sm leading-relaxed mt-3">
                       {es
-                        ? "Límite conocido: si el modelo omite una ALTA que no cae en ninguna keyword, puede pasar desapercibida. Por eso la transcripción completa queda siempre disponible y el promotor revisa y ajusta la prioridad antes de enviar a coordinación, la IA propone, una persona confirma."
-                        : "Known limit: if the model misses an ALTA that matches no keyword, it can slip through. That's why the full transcript is always available and the promoter reviews and adjusts the priority before sending to coordination, the AI proposes, a person confirms."}
+                        ? "Límite conocido: si el modelo omite una ALTA que no cae en ninguna keyword, puede pasar desapercibida. Por eso la transcripción completa queda siempre disponible y el promotor revisa y ajusta la prioridad antes de enviar a coordinación. La IA propone, una persona confirma."
+                        : "Known limit: if the model misses an ALTA that matches no keyword, it can slip through. That's why the full transcript is always available and the promoter reviews and adjusts the priority before sending to coordination. The AI proposes, a person confirms."}
                     </p>
                   </div>
                 </Block>
@@ -913,8 +917,13 @@ export default async function EstoyaiPage({
                     </h3>
                     <p className="text-light/85 leading-relaxed">
                       {es
-                        ? "En la sede, coordinación abre un tablero mobile-first agrupado por criticidad. Arriba, “necesita atención hoy” separa dos cosas que no son lo mismo: la criticidad clínica (ALTA) de los errores técnicos del pipeline, no es igual llamar a una familia que reintentar un informe que falló. La meta: en 10 segundos, saber qué atender hoy sin leer todo."
-                        : "At the office, coordination opens a mobile-first board grouped by criticality. At the top, “needs attention today” separates two things that aren't the same: clinical criticality (ALTA) from technical pipeline errors, calling a family isn't the same as retrying a failed report. The goal: in 10 seconds, know what to attend to today without reading everything."}
+                        ? "En la sede, coordinación abre un tablero mobile-first agrupado por criticidad. Arriba, “necesita atención hoy” separa dos cosas que no son lo mismo: la criticidad clínica (ALTA) de los errores técnicos del pipeline. No es igual llamar a una familia que reintentar un informe que falló. La meta es saber en 10 segundos qué atender primero."
+                        : "At the office, coordination opens a mobile-first board grouped by criticality. At the top, “needs attention today” separates two things that aren't the same: clinical criticality (ALTA) from technical pipeline errors. Calling a family isn't the same as retrying a failed report. The goal is knowing in 10 seconds what to attend to first."}
+                    </p>
+                    <p className="text-light/60 text-sm leading-relaxed mt-3">
+                      {es
+                        ? "Los dos momentos de control humano se encadenan: para cuando coordinación abre el tablero, la prioridad de cada caso ya pasó por una persona. Nadie está mirando un triaje que decidió el modelo solo."
+                        : "The two moments of human control chain together: by the time coordination opens the board, every case's priority has already been through a person. Nobody is looking at a triage the model decided on its own."}
                     </p>
                   </div>
                 </Block>
@@ -1072,8 +1081,8 @@ export default async function EstoyaiPage({
                 <BentoGrid cols={{ default: 1, md: 3 }} gap="md" className="[&>*]:h-full">
                   {[
                     {
-                      titleEs: "Instalación sin equipo técnico",
-                      titleEn: "Install with no technical team",
+                      titleEs: "Un instalador, no un despliegue",
+                      titleEn: "An installer, not a deployment",
                       textEs:
                         "Un instalador guiado (Inno Setup) levanta todo el stack en Windows, sin línea de comandos. La sede instala y usa, no administra.",
                       textEn:
@@ -1152,12 +1161,12 @@ export default async function EstoyaiPage({
                         "No subscriptions to AI or transcription APIs. If the PC turns off, the system turns off: the office has full control (and it's also a single point of failure, see limits at the end).",
                     },
                     {
-                      titleEs: "Alineado a la Ley 25.326",
-                      titleEn: "Aligned with Law 25.326",
+                      titleEs: "Diseñado sobre la Ley 25.326",
+                      titleEn: "Designed around Law 25.326",
                       textEs:
-                        "El modelo de datos y los controles se documentan en función de la ley argentina de protección de datos personales y los derechos de los titulares.",
+                        "Tomé la ley argentina de protección de datos personales y los derechos de los titulares como marco para el modelo de datos y los controles. Es una decisión de diseño documentada, no una certificación de cumplimiento.",
                       textEn:
-                        "The data model and controls are documented around Argentina's personal data protection law and the rights of data subjects.",
+                        "I used Argentina's personal data protection law and the rights of data subjects as the framework for the data model and controls. It's a documented design decision, not a compliance certification.",
                     },
                   ].map((g, i) => (
                     <div
@@ -1245,8 +1254,8 @@ export default async function EstoyaiPage({
                 </h2>
                 <p className="text-light text-lg leading-relaxed">
                   {es
-                    ? "EstoyAi no está atado a un tipo de intervención. Los programas, los campos del informe y la estructura de los datos se configuran por organización, multi-tenant por subdominio. Se cambia configuración, no código. El piloto de referencia es Pequeños Pasos. Además armé una segunda configuración muy distinta, como prueba de concepto de la tesis."
-                    : "EstoyAi isn't tied to one type of intervention. Programs, report fields, and data structure are configured per organization, multi-tenant by subdomain. You change configuration, not code. The reference pilot is Pequeños Pasos. I also built a very different second configuration, as a proof of concept for the thesis."}
+                    ? "EstoyAi no está atado a un tipo de intervención. Es multi-tenant por subdominio: cada organización corre su propia configuración sobre el mismo código. El piloto de referencia es Pequeños Pasos, y armé una segunda configuración deliberadamente opuesta para poner la hipótesis a prueba."
+                    : "EstoyAi isn't tied to one type of intervention. It's multi-tenant by subdomain: each organization runs its own configuration on the same code. The reference pilot is Pequeños Pasos, and I built a deliberately opposite second configuration to put the hypothesis to the test."}
                 </p>
               </div>
 
@@ -1256,13 +1265,13 @@ export default async function EstoyaiPage({
                 </span>
                 <p className="text-light text-lg md:text-xl leading-relaxed mt-3">
                   {es
-                    ? "La tesis del arranque no es un eslogan, define la arquitectura. Lo específico de cada organización (programas, campos del informe, schema de extracción) es configuración. La captura por voz, el pipeline local y el triaje por criticidad son el núcleo compartido."
-                    : "The opening thesis isn't a slogan, it defines the architecture. What's specific to each organization (programs, report fields, extraction schema) is configuration. Voice capture, the local pipeline, and criticality triage are the shared core."}
+                    ? "La hipótesis del arranque no quedó en el pitch, definió dónde pasa la línea del código. Programas, campos del informe y schema de extracción viven en un archivo de configuración por tenant. La captura por voz, la cola offline, el pipeline local y el triaje por criticidad son núcleo compartido y no se tocan."
+                    : "The opening hypothesis didn't stay in the pitch, it defined where the line runs through the code. Programs, report fields, and extraction schema live in a per-tenant config file. Voice capture, the offline queue, the local pipeline, and criticality triage are shared core and stay untouched."}
                 </p>
                 <p className="text-light/70 leading-relaxed mt-4">
                   {es
-                    ? "Lo probé contra mi propia experiencia en el modelo SEDRONAR de tratamiento de consumos, una intervención en las antípodas de una visita de nutrición. La estructura se sostuvo y solo cambió la configuración. Eso es lo que separa una herramienta para una ONG de una infraestructura para el sector."
-                    : "I tested it against my own experience with the SEDRONAR substance-use treatment model, an intervention at the opposite end from a nutrition visit. The structure held and only the configuration changed. That's what separates a tool for one NGO from infrastructure for the sector."}
+                    ? "Sumar una organización nueva es escribir un archivo de configuración y levantar un subdominio. No es un fork ni una rama por cliente, que es donde este tipo de sistemas suele terminar."
+                    : "Adding a new organization means writing a config file and standing up a subdomain. It isn't a fork or a branch per client, which is where systems like this usually end up."}
                 </p>
               </div>
 
@@ -1316,11 +1325,11 @@ export default async function EstoyaiPage({
                     sizes="(max-width: 768px) 45vw, 22vw"
                   />
                 </div>
-                {/* DTC Villatranquila */}
+                {/* DTC Villa Tranquila */}
                 <div className="rounded-2xl border border-subtle/50 bg-container/40 p-5 grid grid-cols-1 sm:grid-cols-2 gap-5 items-start">
                   <div>
                     <div className="flex items-center gap-2 mb-3">
-                      <h3 className="text-xl font-semibold text-light">DTC Villatranquila</h3>
+                      <h3 className="text-xl font-semibold text-light">DTC Villa Tranquila</h3>
                       <span className="rounded-full bg-[#34D399]/15 border border-[#34D399]/40 px-2 py-0.5 text-[10px] font-semibold text-light/80">
                         {es ? "PRUEBA DE CONCEPTO" : "PROOF OF CONCEPT"}
                       </span>
@@ -1330,8 +1339,8 @@ export default async function EstoyaiPage({
                     </p>
                     <p className="text-light/85 text-sm leading-relaxed">
                       {es
-                        ? "No es una segunda ONG a bordo. Es una configuración que armé para una intervención opuesta (tratamiento de consumos), validada contra mi experiencia en el modelo SEDRONAR. Prueba que el sistema se adapta solo con configuración: mismo flujo, cambian los programas y los campos del informe."
-                        : "It isn't a second NGO on board. It's a configuration I built for an opposite intervention (substance-use treatment), validated against my SEDRONAR experience. It proves the system adapts through configuration alone: same flow, only the programs and report fields change."}
+                        ? "No es una segunda ONG a bordo. Es la prueba de la hipótesis: armé la configuración de una intervención en las antípodas de una visita de nutrición y la contrasté contra mi propia experiencia trabajando en el modelo SEDRONAR de tratamiento de consumos. El núcleo se sostuvo sin tocar una línea."
+                        : "It isn't a second NGO on board. It's the test of the hypothesis: I built the configuration for an intervention at the opposite end from a nutrition visit and checked it against my own experience working with the SEDRONAR substance-use treatment model. The core held without touching a line."}
                     </p>
                   </div>
                   <DevImage
@@ -1428,8 +1437,8 @@ export default async function EstoyaiPage({
                       </li>
                       <li>
                         {es
-                          ? "Disponibilidad vs. durabilidad. Si la PC de la sede muere, el servicio se cae: es el precio de que nada salga de la sede, no algo que se pueda “mitigar” sin traicionar el modelo. Los datos, en cambio, sí están cubiertos, backup manual a un disco externo. No auto-enviarlos a la nube es una decisión deliberada: los endpoints a R2 existen en el código pero quedan fuera del producto, por la misma razón de privacidad."
-                          : "Availability vs. durability. If the office PC dies, the service goes down: that's the price of nothing leaving the office, not something you can “mitigate” without betraying the model. The data, however, is covered, manual backup to an external disk. Not auto-sending it to the cloud is a deliberate choice: the R2 endpoints exist in the code but stay out of the product, for the same privacy reason."}
+                          ? "Disponibilidad vs. durabilidad. Si la PC de la sede muere, el servicio se cae: es el precio de que nada salga de la sede, no algo que se pueda “mitigar” sin traicionar el modelo. Los datos, en cambio, sí están cubiertos con backup manual a un disco externo. No auto-enviarlos a la nube es una decisión deliberada: los endpoints a R2 existen en el código pero quedan fuera del producto, por la misma razón de privacidad."
+                          : "Availability vs. durability. If the office PC dies, the service goes down: that's the price of nothing leaving the office, not something you can “mitigate” without betraying the model. The data, however, is covered by a manual backup to an external disk. Not auto-sending it to the cloud is a deliberate choice: the R2 endpoints exist in the code but stay out of the product, for the same privacy reason."}
                       </li>
                     </ul>
                   </div>
@@ -1468,8 +1477,8 @@ export default async function EstoyaiPage({
               <div className="max-w-4xl border-l-2 border-[#0056d2] pl-6">
                 <p className="text-2xl md:text-3xl text-light font-semibold leading-relaxed">
                   {es
-                    ? "Diseñar desde las restricciones, sin señal, sin presupuesto, sin equipo técnico, con datos que no pueden salir, no fue una limitación. Fue el producto."
-                    : "Designing from the constraints, no signal, no budget, no technical team, with data that can't leave, wasn't a limitation. It was the product."}
+                    ? "Sin señal, sin presupuesto, sin equipo técnico, con datos que no pueden salir. Diseñar desde esas restricciones no fue una limitación. Fue el producto."
+                    : "No signal, no budget, no technical team, with data that can't leave. Designing from those constraints wasn't a limitation. It was the product."}
                 </p>
               </div>
             </section>
