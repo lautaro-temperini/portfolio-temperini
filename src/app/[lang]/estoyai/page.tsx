@@ -927,6 +927,30 @@ export default async function EstoyaiPage({
                 </Block>
               </GridContainer>
 
+              {/* Captura real: el tablero en la PC de escritorio de la sede (16:9) */}
+              <figure className="mt-8">
+                <div className="w-full rounded-xl overflow-hidden border border-subtle/50 shadow-2xl bg-black">
+                  <DevImage
+                    src="/images/estoyaiImages/estoyai-app-tablero-desktop.webp"
+                    alt={
+                      es
+                        ? "Tablero 'Informes del equipo' en vista de escritorio: filtros por programa y por criticidad (Alta, Media, Baja), y tarjetas de casos con prioridad, quién lo registró, accionables y botón de borrar de coordinación"
+                        : "'Team reports' board in desktop view: filters by program and by criticality (High, Medium, Low), and case cards with priority, who recorded it, action points, and a delete-from-coordination button"
+                    }
+                    width={1600}
+                    height={900}
+                    className="w-full"
+                    imageClassName="object-cover object-top"
+                    sizes="(max-width: 768px) 100vw, 66vw"
+                  />
+                </div>
+                <figcaption className="mt-3 text-sm text-light/55 leading-relaxed max-w-3xl">
+                  {es
+                    ? "El tablero real corriendo en la sede, no un mockup. Solo coordinación llega a esta pantalla desde la PC, y solo ella tiene el botón de borrar sobre cada informe ya enviado."
+                    : "The real board running at the office, not a mockup. Only coordination reaches this screen from the PC, and only they get the delete button on each already-sent report."}
+                </figcaption>
+              </figure>
+
               {/* Pantalla de revisión: la IA propone, el promotor confirma */}
               <div className="mt-6 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 items-center rounded-2xl border border-subtle/60 bg-container/40 p-6 md:p-8">
                 <div>
