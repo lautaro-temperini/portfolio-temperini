@@ -1074,8 +1074,11 @@ export default async function EstoyaiPage({
               </GridContainer>
 
               {/* Instalación, almacenamiento e integraciones */}
-              <div className="mt-6">
-                <h3 className="text-xl font-semibold text-light mb-5">
+              <div className="mt-12 border-t border-subtle/40 pt-8">
+                <span className="text-xs font-bold tracking-widest text-[#4C8DFF]">
+                  {es ? "OTRAS DECISIONES DE BUILD" : "OTHER BUILD DECISIONS"}
+                </span>
+                <h3 className="text-2xl md:text-3xl font-bold text-light mt-3 mb-6">
                   {es ? "Instalación, datos e integraciones" : "Install, data, and integrations"}
                 </h3>
                 <BentoGrid cols={{ default: 1, md: 3 }} gap="md" className="[&>*]:h-full">
