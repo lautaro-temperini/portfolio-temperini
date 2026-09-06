@@ -292,8 +292,8 @@ export default async function EstoyaiPage({
                 <span className="text-light/70 font-semibold">{es ? "Rol" : "Role"}</span>
                 {" · "}
                 {es
-                  ? "Proyecto propio (solo), diseño de producto (research, UX/UI, design system) y desarrollo"
-                  : "Solo project, product design (research, UX/UI, design system) and development"}
+                  ? "Proyecto propio (solo), diseño de producto end to end (research, UX/UI) y desarrollo"
+                  : "Solo project, end-to-end product design (research, UX/UI) and development"}
               </div>
               <div>
                 <span className="text-light/70 font-semibold">{es ? "Origen" : "Origin"}</span>
@@ -337,8 +337,8 @@ export default async function EstoyaiPage({
                   </h3>
                   <p className="text-light/80 leading-relaxed">
                     {es
-                      ? "Las ONGs de territorio registran en cuadernos, WhatsApp y Excel. Alguien tiene que pasar todo a la computadora a mano, horas, y aun así es casi imposible ver qué caso necesita atención primero."
-                      : "NGOs in the field record in notebooks, WhatsApp, and Excel. Someone has to transcribe it all by hand, hours, and even then it's nearly impossible to see which case needs attention first."}
+                      ? "Las ONGs de territorio registran en cuadernos, WhatsApp y Excel. Alguien tiene que pasar todo a la computadora a mano. Son horas de trabajo, y aun así es casi imposible ver qué caso necesita atención primero."
+                      : "NGOs in the field record in notebooks, WhatsApp, and Excel. Someone has to transcribe it all by hand. It takes hours, and even then it's nearly impossible to see which case needs attention first."}
                   </p>
                 </div>
                 <div className="rounded-2xl border border-subtle/60 bg-container/60 p-6 md:p-8">
@@ -406,14 +406,14 @@ export default async function EstoyaiPage({
                     </h2>
                     <p className="text-lg">
                       {es
-                        ? "De ahí salió Pequeños Pasos como caso piloto: una ONG con promotores en territorio, múltiples programas de seguimiento de familias y carga administrativa real. Y una restricción concreta que terminó definiendo todo lo demás, trabajan en zonas sin señal. Validé el problema con su directora durante el evento, y esa conversación confirmó el dolor y fijó los límites técnicos."
-                        : "From there came Pequeños Pasos as the pilot case: an NGO with field promoters, multiple family follow-up programs, and real administrative load. Plus one concrete constraint that ended up defining everything else, they work in areas with no signal. I validated the problem with its director during the event, and that conversation confirmed the pain and set the technical limits."}
+                        ? "De ahí salió Pequeños Pasos como caso piloto: una ONG con promotores en territorio, varios programas de seguimiento de familias y carga administrativa real. La restricción que define todo lo demás es que trabajan en zonas sin señal. Validé el problema con su directora durante el evento, y esa conversación confirmó el dolor y fijó los límites técnicos."
+                        : "From there came Pequeños Pasos as the pilot case: an NGO with field promoters, several family follow-up programs, and real administrative load. The constraint that defines everything else is that they work in areas with no signal. I validated the problem with its director during the event, and that conversation confirmed the pain and set the technical limits."}
                     </p>
                     <div className="rounded-xl border-l-4 border-[#4C8DFF] bg-container/40 p-5">
                       <p className="text-light/90 leading-relaxed">
                         {es
-                          ? "Para ser preciso con el alcance: en Halketon lideré producto y coordinación en un equipo de cuatro que armó un prototipo en 12 horas. El sistema instalable, multi-tenant y offline-first que ves acá lo diseñé y construí solo después del evento, una reconstrucción completa, no una iteración del prototipo. Ese salto es el eje del caso."
-                          : "To be precise about scope: at Halketon I led product and coordination in a team of four that built a 12-hour prototype. The installable, multi-tenant, offline-first system you see here I designed and built solo after the event, a full rebuild, not an iteration of the prototype. That leap is the core of the case."}
+                          ? "Para ser preciso con el alcance: en Halketon lideré producto y coordinación en un equipo de cuatro que armó un prototipo en 12 horas. El sistema instalable, multi-tenant y offline-first que ves acá lo diseñé y construí solo después del evento. Fue una reconstrucción completa, no una iteración del prototipo. Ese salto es el eje del caso."
+                          : "To be precise about scope: at Halketon I led product and coordination in a team of four that built a 12-hour prototype. The installable, multi-tenant, offline-first system you see here I designed and built solo after the event. It was a full rebuild, not an iteration of the prototype. That leap is the core of the case."}
                       </p>
                     </div>
                   </div>
@@ -712,10 +712,6 @@ export default async function EstoyaiPage({
                   <ol className="space-y-4">
                     {[
                       {
-                        tEs: "Elegir programa", tEn: "Choose program",
-                        dEs: "el promotor abre la app y elige la intervención", dEn: "the promoter opens the app and picks the intervention",
-                      },
-                      {
                         tEs: "Dictar la visita", tEn: "Dictate the visit",
                         dEs: "unos dos minutos de voz, sin señal, con waveform en vivo", dEn: "about two minutes of voice, no signal, with a live waveform",
                       },
@@ -724,12 +720,8 @@ export default async function EstoyaiPage({
                         dEs: "el audio se encola y sube solo cuando hay red", dEn: "the audio queues and uploads on its own once networked",
                       },
                       {
-                        tEs: "Tablero por criticidad", tEn: "Board by criticality",
-                        dEs: "coordinación lo abre desde la PC de la sede, priorizado y con accionables", dEn: "coordination opens it from the office PC, prioritized and with action points",
-                      },
-                      {
                         tEs: "Informe .docx", tEn: "The .docx report",
-                        dEs: "queda listo para revisar y enviar a la sede", dEn: "ready to review and send to the office",
+                        dEs: "queda listo para revisar y enviar a coordinación", dEn: "ready to review and send to coordination",
                       },
                     ].map((s, i) => (
                       <li key={i} className="flex items-start gap-4">
@@ -806,8 +798,8 @@ export default async function EstoyaiPage({
               </div>
               <p className="mt-5 text-xs text-light/40 italic">
                 {es
-                  ? "Las tres pantallas del promotor. Coordinación no trabaja acá: abre el tablero desde la PC de escritorio de la sede."
-                  : "The promoter's three screens. Coordination doesn't work here: they open the board from the office desktop PC."}
+                  ? "Las tres pantallas del promotor, en el celular. El tablero que ve coordinación llega más abajo."
+                  : "The promoter's three screens, on the phone. The board coordination sees comes further down."}
               </p>
             </section>
           </FadeOnScroll>
@@ -863,9 +855,9 @@ export default async function EstoyaiPage({
                     titleEs: "Rutina, evolución esperada",
                     titleEn: "Routine, expected progress",
                     textEs:
-                      "Seguimiento habitual con buena evolución y sin acciones pendientes. Entra igual al sistema, el historial se construye con todo, no solo con lo urgente, pero no compite por la atención del equipo.",
+                      "Seguimiento habitual con buena evolución y sin acciones pendientes. Entra igual al sistema: el historial se construye con todo, no solo con lo urgente. Pero no compite por la atención del equipo.",
                     textEn:
-                      "Regular follow-up with good progress and no pending actions. It still enters the system, the history is built from everything, not only the urgent, but it doesn't compete for the team's attention.",
+                      "Regular follow-up with good progress and no pending actions. It still enters the system: the history is built from everything, not only the urgent. But it doesn't compete for the team's attention.",
                   },
                 ].map((c) => (
                   <div
@@ -889,67 +881,22 @@ export default async function EstoyaiPage({
                 ))}
               </div>
 
-              {/* Red de seguridad + tablero */}
-              <GridContainer cols={{ default: 1, md: 2 }} gap="lg" className="!px-0 [&>*]:h-full">
-                <Block colSpan={1}>
-                  <div className="bg-container/80 rounded-lg p-6 md:p-8 h-full card-elevated">
-                    <h3 className="text-xl font-semibold text-light mb-3">
-                      {es ? "Una red de seguridad sobre la IA" : "A safety net over the AI"}
-                    </h3>
-                    <p className="text-light/85 leading-relaxed">
-                      {es
-                        ? "La IA corre local y el modelo es chico: puede omitir algo. Por eso la criticidad no depende solo del modelo. Una red de seguridad por palabras clave fuerza ALTA ante términos de riesgo explícito (violencia, golpes, autolesión, un menor solo). El principio, transferible a cualquier producto con IA: cuando el modelo decide algo con consecuencias reales, el diseño necesita un piso que no dependa del modelo."
-                        : "The AI runs locally and the model is small: it can miss something. So criticality doesn't rely on the model alone. A keyword safety net forces ALTA on explicit risk terms (violence, blows, self-harm, a minor left alone). The principle, transferable to any AI product: when the model decides something with real consequences, the design needs a floor that doesn't depend on the model."}
-                    </p>
-                    <p className="text-light/60 text-sm leading-relaxed mt-3">
-                      {es
-                        ? "Límite conocido: si el modelo omite una ALTA que no cae en ninguna keyword, puede pasar desapercibida. Por eso la transcripción completa queda siempre disponible y el promotor revisa y ajusta la prioridad antes de enviar a coordinación. La IA propone, una persona confirma."
-                        : "Known limit: if the model misses an ALTA that matches no keyword, it can slip through. That's why the full transcript is always available and the promoter reviews and adjusts the priority before sending to coordination. The AI proposes, a person confirms."}
-                    </p>
-                  </div>
-                </Block>
-                <Block colSpan={1}>
-                  <div className="bg-container/80 rounded-lg p-6 md:p-8 h-full card-elevated">
-                    <h3 className="text-xl font-semibold text-light mb-3">
-                      {es ? "El tablero de coordinación" : "The coordination board"}
-                    </h3>
-                    <p className="text-light/85 leading-relaxed">
-                      {es
-                        ? "Coordinación abre el tablero desde la PC de escritorio de la sede, la misma máquina que corre Docker. Los informes se agrupan por criticidad y arriba “necesita atención hoy” separa dos cosas que no son lo mismo: la criticidad clínica (ALTA) de los errores técnicos del pipeline. No es igual llamar a una familia que reintentar un informe que falló. La meta es saber en 10 segundos qué atender primero."
-                        : "Coordination opens the board from the office desktop PC, the same machine that runs Docker. Reports are grouped by criticality, and at the top “needs attention today” separates two things that aren't the same: clinical criticality (ALTA) from technical pipeline errors. Calling a family isn't the same as retrying a failed report. The goal is knowing in 10 seconds what to attend to first."}
-                    </p>
-                    <p className="text-light/60 text-sm leading-relaxed mt-3">
-                      {es
-                        ? "Los dos momentos de control humano se encadenan: para cuando coordinación abre el tablero, la prioridad de cada caso ya pasó por una persona. Nadie está mirando un triaje que decidió el modelo solo."
-                        : "The two moments of human control chain together: by the time coordination opens the board, every case's priority has already been through a person. Nobody is looking at a triage the model decided on its own."}
-                    </p>
-                  </div>
-                </Block>
-              </GridContainer>
-
-              {/* Captura real: el tablero en la PC de escritorio de la sede (16:9) */}
-              <figure className="mt-8">
-                <div className="w-full rounded-xl overflow-hidden border border-subtle/50 shadow-2xl bg-black">
-                  <DevImage
-                    src="/images/estoyaiImages/estoyai-app-tablero-desktop.webp"
-                    alt={
-                      es
-                        ? "Tablero 'Informes del equipo' en vista de escritorio: filtros por programa y por criticidad (Alta, Media, Baja), y tarjetas de casos con prioridad, quién lo registró, accionables y botón de borrar de coordinación"
-                        : "'Team reports' board in desktop view: filters by program and by criticality (High, Medium, Low), and case cards with priority, who recorded it, action points, and a delete-from-coordination button"
-                    }
-                    width={1600}
-                    height={900}
-                    className="w-full"
-                    imageClassName="object-cover object-top"
-                    sizes="(max-width: 768px) 100vw, 66vw"
-                  />
-                </div>
-                <figcaption className="mt-3 text-sm text-light/55 leading-relaxed max-w-3xl">
+              {/* Red de seguridad sobre la IA */}
+              <div className="bg-container/80 rounded-lg p-6 md:p-8 card-elevated">
+                <h3 className="text-xl font-semibold text-light mb-3">
+                  {es ? "Una red de seguridad sobre la IA" : "A safety net over the AI"}
+                </h3>
+                <p className="text-light/85 leading-relaxed max-w-3xl">
                   {es
-                    ? "El tablero real corriendo en la sede, no un mockup. Solo coordinación llega a esta pantalla desde la PC, y solo ella tiene el botón de borrar sobre cada informe ya enviado."
-                    : "The real board running at the office, not a mockup. Only coordination reaches this screen from the PC, and only they get the delete button on each already-sent report."}
-                </figcaption>
-              </figure>
+                    ? "La IA corre local y el modelo es chico: puede omitir algo. Por eso la criticidad no depende solo del modelo. Una red de seguridad por palabras clave fuerza ALTA ante términos de riesgo explícito (violencia, golpes, autolesión, un menor solo). El principio, transferible a cualquier producto con IA: cuando el modelo decide algo con consecuencias reales, el diseño necesita un piso que no dependa del modelo."
+                    : "The AI runs locally and the model is small: it can miss something. So criticality doesn't rely on the model alone. A keyword safety net forces ALTA on explicit risk terms (violence, blows, self-harm, a minor left alone). The principle, transferable to any AI product: when the model decides something with real consequences, the design needs a floor that doesn't depend on the model."}
+                </p>
+                <p className="text-light/60 text-sm leading-relaxed mt-3 max-w-3xl">
+                  {es
+                    ? "Límite conocido: si el modelo omite una ALTA que no cae en ninguna keyword, puede pasar desapercibida. Por eso la transcripción completa queda siempre disponible y el promotor revisa y ajusta la prioridad antes de enviar a coordinación. La decisión final de prioridad siempre queda en una persona."
+                    : "Known limit: if the model misses an ALTA that matches no keyword, it can slip through. That's why the full transcript is always available and the promoter reviews and adjusts the priority before sending to coordination. The final priority call always stays with a person."}
+                </p>
+              </div>
 
               {/* Pantalla de revisión: la IA propone, el promotor confirma */}
               <div className="mt-6 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 items-center rounded-2xl border border-subtle/60 bg-container/40 p-6 md:p-8">
@@ -978,6 +925,47 @@ export default async function EstoyaiPage({
                 />
               </div>
 
+              {/* El tablero de coordinación: lo que ve coordinación una vez enviado */}
+              <div className="mt-6 bg-container/80 rounded-lg p-6 md:p-8 card-elevated">
+                <h3 className="text-xl font-semibold text-light mb-3">
+                  {es ? "El tablero de coordinación" : "The coordination board"}
+                </h3>
+                <p className="text-light/85 leading-relaxed max-w-3xl">
+                  {es
+                    ? "Coordinación abre el tablero desde la PC de escritorio de la sede, la misma máquina que corre Docker. Los informes se agrupan por criticidad y arriba “necesita atención hoy” separa dos cosas que no son lo mismo: la criticidad clínica (ALTA) de los errores técnicos del pipeline. No es igual llamar a una familia que reintentar un informe que falló. La meta es saber en 10 segundos qué atender primero."
+                    : "Coordination opens the board from the office desktop PC, the same machine that runs Docker. Reports are grouped by criticality, and at the top “needs attention today” separates two things that aren't the same: clinical criticality (ALTA) from technical pipeline errors. Calling a family isn't the same as retrying a failed report. The goal is knowing in 10 seconds what to attend to first."}
+                </p>
+                <p className="text-light/60 text-sm leading-relaxed mt-3 max-w-3xl">
+                  {es
+                    ? "Acá se cierran los dos momentos de control humano: para cuando coordinación abre el tablero, la prioridad de cada caso ya pasó por una persona. Nadie está mirando un triaje que decidió el modelo solo."
+                    : "This is where the two moments of human control close: by the time coordination opens the board, every case's priority has already been through a person. Nobody is looking at a triage the model decided on its own."}
+                </p>
+              </div>
+
+              {/* Captura real: el tablero en la PC de escritorio de la sede (16:9) */}
+              <figure className="mt-8">
+                <div className="w-full rounded-xl overflow-hidden border border-subtle/50 shadow-2xl bg-black">
+                  <DevImage
+                    src="/images/estoyaiImages/estoyai-app-tablero-desktop.webp"
+                    alt={
+                      es
+                        ? "Tablero 'Informes del equipo' en vista de escritorio: filtros por programa y por criticidad (Alta, Media, Baja), y tarjetas de casos con prioridad, quién lo registró, accionables y botón de borrar de coordinación"
+                        : "'Team reports' board in desktop view: filters by program and by criticality (High, Medium, Low), and case cards with priority, who recorded it, action points, and a delete-from-coordination button"
+                    }
+                    width={1600}
+                    height={900}
+                    className="w-full"
+                    imageClassName="object-cover object-top"
+                    sizes="(max-width: 768px) 100vw, 66vw"
+                  />
+                </div>
+                <figcaption className="mt-3 text-sm text-light/55 leading-relaxed max-w-3xl">
+                  {es
+                    ? "El tablero real corriendo, no un mockup. El botón de borrar sobre cada informe ya enviado es exclusivo de coordinación."
+                    : "The real board running, not a mockup. The delete button on each already-sent report belongs to coordination alone."}
+                </figcaption>
+              </figure>
+
               {/* Permisos: quién ve y quién edita */}
               <div className="mt-6 rounded-2xl border border-subtle/60 bg-container/40 p-6 md:p-8">
                 <h3 className="text-xl font-semibold text-light mb-3">
@@ -985,13 +973,13 @@ export default async function EstoyaiPage({
                 </h3>
                 <p className="text-light/85 leading-relaxed max-w-3xl mb-6">
                   {es
-                    ? "Los dos roles no comparten ni pantalla ni permisos. El operador trabaja desde el celular, en campo. Coordinación (administrativos y dirección) trabaja desde la PC de escritorio de la sede. Enviar a coordinación es la frontera entre los dos mundos."
-                    : "The two roles share neither screen nor permissions. The operator works from the phone, in the field. Coordination (admin staff and leadership) works from the office desktop PC. Sending to coordination is the boundary between the two worlds."}
+                    ? "Los dos roles no comparten ni pantalla ni permisos. El promotor trabaja desde el celular, en campo. Coordinación (administrativos y dirección) trabaja desde la PC de escritorio de la sede. Enviar a coordinación es la frontera entre los dos mundos."
+                    : "The two roles share neither screen nor permissions. The promoter works from the phone, in the field. Coordination (admin staff and leadership) works from the office desktop PC. Sending to coordination is the boundary between the two worlds."}
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="rounded-xl border border-[#4C8DFF]/30 bg-white/[0.03] p-5">
                     <span className="text-[10px] font-bold tracking-widest text-[#4C8DFF]">
-                      {es ? "OPERADOR · CELULAR" : "OPERATOR · PHONE"}
+                      {es ? "PROMOTOR · CELULAR" : "PROMOTER · PHONE"}
                     </span>
                     <ul className="mt-4 space-y-3 text-sm text-light/85 leading-relaxed">
                       <li>
@@ -1034,8 +1022,8 @@ export default async function EstoyaiPage({
                 </div>
                 <p className="text-light/60 text-sm leading-relaxed mt-5 max-w-3xl">
                   {es
-                    ? "El borrador es privado a propósito: mientras el registro está a medio revisar es del operador y de nadie más, y coordinación no ve versiones intermedias. Enviar es el punto de no retorno, y por eso la pantalla de revisión existe antes y no después."
-                    : "The draft is private on purpose: while a record is half-reviewed it belongs to the operator and nobody else, and coordination never sees intermediate versions. Sending is the point of no return, which is why the review screen comes before it and not after."}
+                    ? "El borrador es privado a propósito: mientras el registro está a medio revisar es del promotor y de nadie más, y coordinación no ve versiones intermedias. Enviar es el punto de no retorno, y por eso la pantalla de revisión existe antes y no después."
+                    : "The draft is private on purpose: while a record is half-reviewed it belongs to the promoter and nobody else, and coordination never sees intermediate versions. Sending is the point of no return, which is why the review screen comes before it and not after."}
                 </p>
               </div>
 
