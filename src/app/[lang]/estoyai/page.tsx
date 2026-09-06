@@ -1146,12 +1146,14 @@ export default async function EstoyaiPage({
 
               {/* Instalación, almacenamiento e integraciones */}
               <div className="mt-12 border-t border-subtle/40 pt-8">
-                <span className="text-xs font-bold tracking-widest text-[#4C8DFF]">
-                  {es ? "OTRAS DECISIONES DE BUILD" : "OTHER BUILD DECISIONS"}
-                </span>
-                <h3 className="text-2xl md:text-3xl font-bold text-light mt-3 mb-6">
+                <h3 className="text-2xl md:text-3xl font-bold text-light mb-3">
                   {es ? "Instalación, datos e integraciones" : "Install, data, and integrations"}
                 </h3>
+                <p className="text-light/70 leading-relaxed mb-6 max-w-3xl">
+                  {es
+                    ? "Tres decisiones de build más chicas, con la misma lógica: cada una sale de una restricción de la sede, no de una preferencia técnica."
+                    : "Three smaller build decisions, same logic: each one comes from a constraint of the office, not a technical preference."}
+                </p>
                 <BentoGrid cols={{ default: 1, md: 3 }} gap="md" className="[&>*]:h-full">
                   {[
                     {
@@ -1197,10 +1199,7 @@ export default async function EstoyaiPage({
           <FadeOnScroll delay={80}>
             <section id="soberania" className="w-full px-8 md:px-12 lg:px-20 mb-28">
               <div className="w-full rounded-2xl border border-[#34D399]/30 bg-gradient-to-br from-[#04231a]/60 to-[#0d1c2e]/60 p-8 md:p-12">
-                <span className="text-xs font-bold tracking-widest text-[#34D399]">
-                  {es ? "SOBERANÍA DE DATOS" : "DATA SOVEREIGNTY"}
-                </span>
-                <h2 className="text-3xl md:text-4xl font-bold text-light mt-3 mb-4">
+                <h2 className="text-3xl md:text-4xl font-bold text-light mb-4">
                   {es ? "Los datos no salen de la sede" : "Data never leaves the office"}
                 </h2>
                 <p className="text-light text-lg leading-relaxed max-w-3xl mb-8">
@@ -1334,10 +1333,7 @@ export default async function EstoyaiPage({
               </div>
 
               <div className="mb-10 rounded-2xl border-l-4 border-[#4C8DFF] bg-container/40 p-6 md:p-8">
-                <span className="text-xs font-bold tracking-widest text-[#4C8DFF]">
-                  {es ? "LA TESIS, EN LA ARQUITECTURA" : "THE THESIS, IN THE ARCHITECTURE"}
-                </span>
-                <p className="text-light text-lg md:text-xl leading-relaxed mt-3">
+                <p className="text-light text-lg md:text-xl leading-relaxed">
                   {es
                     ? "La hipótesis del arranque no quedó en el pitch, definió dónde pasa la línea del código. Programas, campos del informe y schema de extracción viven en un archivo de configuración por tenant. La captura por voz, la cola offline, el pipeline local y el triaje por criticidad son núcleo compartido y no se tocan."
                     : "The opening hypothesis didn't stay in the pitch, it defined where the line runs through the code. Programs, report fields, and extraction schema live in a per-tenant config file. Voice capture, the offline queue, the local pipeline, and criticality triage are shared core and stay untouched."}
